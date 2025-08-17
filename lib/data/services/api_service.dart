@@ -7,7 +7,7 @@ import '../models/settings_models.dart';
 
 class ApiService {
   late final Dio _dio;
-  static const String baseUrl = 'https://api.whisperfire.app'; // Replace with your API URL
+  static const String baseUrl = 'https://whisperfire-backend-production.up.railway.app'; // Railway backend URL
   static const Duration timeout = Duration(seconds: 18);
 
   ApiService() {
