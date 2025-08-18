@@ -443,4 +443,4 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
       return MockData.mockPatternResponse;
     }
   }
-} 
+}

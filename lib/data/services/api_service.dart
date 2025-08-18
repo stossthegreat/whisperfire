@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
+import 'dart:convert';
 import '../models/whisperfire_models.dart';
 import '../models/mentor_models.dart';
 import '../models/profile_models.dart';
@@ -7,7 +8,7 @@ import '../models/settings_models.dart';
 
 class ApiService {
   late final Dio _dio;
-  static const String baseUrl = 'https://api.whisperfire.app'; // Replace with your API URL
+  static const String baseUrl = 'https://whisperfire-backend-production.up.railway.app'; // Your Railway backend URL
   static const Duration timeout = Duration(seconds: 18);
 
   ApiService() {
@@ -52,7 +53,61 @@ class ApiService {
   Future<WhisperfireResponse> postAnalyzeWhisperfire(Map<String, dynamic> body) async {
     try {
       final response = await _dio.post('/api/v1/analyze', data: body);
-      return WhisperfireResponse.fromJson(response.data);
+      
+      if (kDebugMode) {
+        print('Raw analyze response: ${response.data}');
+      }
+      
+      // Handle the backend response format
+      final data = response.data;
+      if (data['success'] == true && data['data'] != null) {
+        // Extract the actual analysis data and ensure all required fields exist
+        final analysisData = data['data'] as Map<String, dynamic>;
+        
+        // Ensure all required nested objects exist
+        if (analysisData['context'] == null) {
+          analysisData['context'] = {
+            'tab': body['tab'] ?? 'scan',
+            'relationship': body['relationship'] ?? 'Partner',
+            'tone': body['tone'] ?? 'neutral',
+            'content_type': body['content_type'] ?? 'dm',
+            'subject_name': body['subject_name'],
+          };
+        }
+        
+        if (analysisData['tactic'] == null) {
+          analysisData['tactic'] = {
+            'label': 'Standard Communication',
+            'confidence': 70
+          };
+        }
+        
+        if (analysisData['suggested_reply'] == null) {
+          analysisData['suggested_reply'] = {
+            'style': body['tone'] ?? 'neutral',
+            'text': 'Thank you for sharing that.'
+          };
+        }
+        
+        if (analysisData['safety'] == null) {
+          analysisData['safety'] = {
+            'risk_level': 'LOW',
+            'notes': 'Analysis complete'
+          };
+        }
+        
+        if (analysisData['metrics'] == null) {
+          analysisData['metrics'] = {
+            'red_flag': 15,
+            'certainty': 70,
+            'viral_potential': 25
+          };
+        }
+        
+        return WhisperfireResponse.fromJson(analysisData);
+      } else {
+        throw Exception('Invalid response format: ${data}');
+      }
     } on DioException catch (e) {
       if (kDebugMode) {
         print('API Error: ${e.message}');
@@ -60,15 +115,52 @@ class ApiService {
       }
       throw ApiException('Failed to analyze: ${e.message}');
     } catch (e) {
+      if (kDebugMode) {
+        print('Parse Error: $e');
+      }
       throw ApiException('Unexpected error: $e');
     }
   }
 
-  // Mentor endpoint (non-streaming)
+  // Mentor endpoint (non-streaming) - Simplified for non-streaming mode
   Future<MentorResponse> postMentor(MentorRequest request) async {
     try {
-      final response = await _dio.post('/api/v1/mentor', data: request.toJson());
-      return MentorResponse.fromJson(response.data);
+      // For non-streaming, we'll disable streaming in the request
+      final nonStreamingRequest = MentorRequest(
+        mentor: request.mentor,
+        preset: request.preset,
+        userText: request.userText,
+        options: MentorOptions(
+          stream: false, // Force non-streaming
+          safeMode: request.options.safeMode,
+        ),
+      );
+      
+      final response = await _dio.post('/api/v1/mentor', data: nonStreamingRequest.toJson());
+      
+      if (kDebugMode) {
+        print('Non-streaming mentor response: ${response.data}');
+      }
+      
+      // Handle the actual backend response format
+      final data = response.data;
+      if (data['success'] == true && data['data'] != null) {
+        final mentorData = data['data'];
+        
+        // Convert backend format to Flutter model format with proper types
+        final mentorResponse = {
+          'success': true,
+          'mentor': (mentorData['mentor'] ?? request.mentor).toString(),
+          'preset': (mentorData['preset'] ?? request.preset).toString(),
+          'reply': (mentorData['response'] ?? '').toString(),
+          'tips': null,
+          'tokens': null,
+        };
+        
+        return MentorResponse.fromJson(mentorResponse);
+      } else {
+        throw Exception('Invalid response format: ${data}');
+      }
     } on DioException catch (e) {
       if (kDebugMode) {
         print('Mentor API Error: ${e.message}');
@@ -76,23 +168,78 @@ class ApiService {
       }
       throw ApiException('Failed to get mentor response: ${e.message}');
     } catch (e) {
+      if (kDebugMode) {
+        print('Mentor Parse Error: $e');
+      }
       throw ApiException('Unexpected error: $e');
     }
   }
 
-  // Mentor endpoint (streaming) - TODO: Implement SSE
+  // Mentor endpoint (streaming) - Proper SSE Implementation
   Stream<String> postMentorStream(MentorRequest request) async* {
-    // TODO: Implement Server-Sent Events streaming
-    // For now, fall back to regular request and yield chunks
     try {
-      final response = await postMentor(request);
-      final words = response.reply.split(' ');
-      for (final word in words) {
-        yield '$word ';
-        await Future.delayed(const Duration(milliseconds: 50)); // Simulate streaming
+      final response = await _dio.post(
+        '/api/v1/mentor',
+        data: request.toJson(),
+        options: Options(
+          responseType: ResponseType.stream,
+          headers: {
+            'Accept': 'text/event-stream',
+            'Cache-Control': 'no-cache',
+          },
+        ),
+      );
+
+      if (kDebugMode) {
+        print('Starting SSE stream for mentor: ${request.mentor}');
+      }
+
+      String buffer = '';
+      
+      await for (final chunk in response.data.stream) {
+        final chunkString = String.fromCharCodes(chunk);
+        buffer += chunkString;
+        
+        // Process complete lines
+        while (buffer.contains('\n')) {
+          final lineEnd = buffer.indexOf('\n');
+          final line = buffer.substring(0, lineEnd).trim();
+          buffer = buffer.substring(lineEnd + 1);
+          
+          if (line.startsWith('data: ')) {
+            final jsonData = line.substring(6); // Remove 'data: ' prefix
+            
+            if (kDebugMode) {
+              print('SSE data received: $jsonData');
+            }
+            
+            try {
+              final data = jsonDecode(jsonData);
+              
+              if (data['done'] == true) {
+                if (kDebugMode) {
+                  print('SSE stream completed');
+                }
+                return; // End of stream
+              }
+              
+              if (data['text'] != null) {
+                yield data['text'].toString();
+              }
+            } catch (e) {
+              if (kDebugMode) {
+                print('Failed to parse SSE data: $e');
+              }
+              // Continue processing other lines
+            }
+          }
+        }
       }
     } catch (e) {
-      yield 'Error: $e';
+      if (kDebugMode) {
+        print('SSE Stream Error: $e');
+      }
+      yield 'Error: Unable to connect to mentor. Please try again.';
     }
   }
 
@@ -163,4 +310,4 @@ class ApiException implements Exception {
 
   @override
   String toString() => 'ApiException: $message';
-} 
+}

@@ -188,4 +188,4 @@ class WhisperfireServices {
       longGame: output.longGame,
     );
   }
-} 
+}
