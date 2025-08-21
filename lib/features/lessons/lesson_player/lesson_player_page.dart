@@ -340,12 +340,17 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
             style: GoogleFonts.playfairDisplay(
               fontSize: 24,
               fontWeight: FontWeight.bold,
+              color: Colors.black,
             ),
           ),
           const SizedBox(height: 16),
           Text(
             content.hook,
-            style: GoogleFonts.inter(fontSize: 16, height: 1.6),
+            style: GoogleFonts.inter(
+              fontSize: 16, 
+              height: 1.6,
+              color: Colors.black,
+            ),
           ),
           const SizedBox(height: 24),
           TtsControls(text: content.hook),
@@ -364,6 +369,7 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
             style: GoogleFonts.playfairDisplay(
               fontSize: 24,
               fontWeight: FontWeight.bold,
+              color: Colors.black,
             ),
           ),
           const SizedBox(height: 16),
@@ -384,7 +390,11 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
                 Expanded(
                   child: Text(
                     concept,
-                    style: GoogleFonts.inter(fontSize: 16, height: 1.5),
+                    style: GoogleFonts.inter(
+                      fontSize: 16, 
+                      height: 1.5,
+                      color: Colors.black,
+                    ),
                   ),
                 ),
               ],
@@ -405,12 +415,17 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
             style: GoogleFonts.playfairDisplay(
               fontSize: 24,
               fontWeight: FontWeight.bold,
+              color: Colors.black,
             ),
           ),
           const SizedBox(height: 16),
           Text(
             content.drill.question,
-            style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.w500),
+            style: GoogleFonts.inter(
+              fontSize: 18, 
+              fontWeight: FontWeight.w500,
+              color: Colors.black,
+            ),
           ),
           const SizedBox(height: 24),
           ...content.drill.options.asMap().entries.map((entry) {
@@ -430,7 +445,10 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
                   ),
                   child: Text(
                     option,
-                    style: GoogleFonts.inter(fontSize: 16),
+                    style: GoogleFonts.inter(
+                      fontSize: 16,
+                      color: Colors.black,
+                    ),
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -452,12 +470,16 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
             style: GoogleFonts.playfairDisplay(
               fontSize: 24,
               fontWeight: FontWeight.bold,
+              color: Colors.black,
             ),
           ),
           const SizedBox(height: 16),
           Text(
             content.rewrite.prompt,
-            style: GoogleFonts.inter(fontSize: 16),
+            style: GoogleFonts.inter(
+              fontSize: 16,
+              color: Colors.black,
+            ),
           ),
           const SizedBox(height: 16),
           Container(
@@ -468,7 +490,11 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
             ),
             child: Text(
               content.rewrite.input,
-              style: GoogleFonts.inter(fontSize: 16, fontStyle: FontStyle.italic),
+              style: GoogleFonts.inter(
+                fontSize: 16, 
+                fontStyle: FontStyle.italic,
+                color: Colors.black,
+              ),
             ),
           ),
           const SizedBox(height: 16),
@@ -501,12 +527,16 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
             style: GoogleFonts.playfairDisplay(
               fontSize: 24,
               fontWeight: FontWeight.bold,
+              color: Colors.black,
             ),
           ),
           const SizedBox(height: 16),
           Text(
             content.reflection,
-            style: GoogleFonts.inter(fontSize: 16),
+            style: GoogleFonts.inter(
+              fontSize: 16,
+              color: Colors.black,
+            ),
           ),
           const SizedBox(height: 24),
           TextField(

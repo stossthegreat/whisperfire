@@ -83,15 +83,33 @@ class WorldOverviewPage extends ConsumerWidget {
             final lessonCount = lessons.length;
             
             return Container(
-              margin: const EdgeInsets.only(bottom: 20),
+              margin: const EdgeInsets.only(bottom: 24),
               decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Colors.white,
+                    color.withValues(alpha: 0.02),
+                  ],
+                ),
+                borderRadius: BorderRadius.circular(24),
+                border: Border.all(
+                  color: color.withValues(alpha: 0.15),
+                  width: 1.5,
+                ),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.1),
-                    blurRadius: 10,
-                    offset: const Offset(0, 4),
+                    color: color.withValues(alpha: 0.08),
+                    blurRadius: 20,
+                    offset: const Offset(0, 8),
+                    spreadRadius: 0,
+                  ),
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.04),
+                    blurRadius: 40,
+                    offset: const Offset(0, 16),
+                    spreadRadius: 0,
                   ),
                 ],
               ),
@@ -290,42 +308,110 @@ class WorldOverviewPage extends ConsumerWidget {
   
   Widget _buildLessonTile(BuildContext context, Lesson lesson) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 12),
+      margin: const EdgeInsets.only(bottom: 16),
       decoration: BoxDecoration(
-        color: Colors.grey[50],
-        borderRadius: BorderRadius.circular(12),
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            Colors.white,
+            _getCategoryColor(category).withValues(alpha: 0.02),
+          ],
+        ),
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(
+          color: _getCategoryColor(category).withValues(alpha: 0.1),
+          width: 1,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: _getCategoryColor(category).withValues(alpha: 0.06),
+            blurRadius: 12,
+            offset: const Offset(0, 4),
+            spreadRadius: 0,
+          ),
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.03),
+            blurRadius: 24,
+            offset: const Offset(0, 8),
+            spreadRadius: 0,
+          ),
+        ],
       ),
-      child: ListTile(
-        contentPadding: const EdgeInsets.all(16),
-        title: Text(
-          lesson.title,
-          style: GoogleFonts.inter(
-            fontSize: 16,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
-        subtitle: Text(
-          '${lesson.xp} XP',
-          style: GoogleFonts.inter(
-            fontSize: 14,
-            color: Colors.grey[600],
-          ),
-        ),
-        trailing: Icon(
-          Icons.play_circle_outline,
-          color: _getCategoryColor(category),
-        ),
-        onTap: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (context) => LessonPlayerPage(
-                category: lesson.category,
-                world: lesson.world,
-                lesson: lesson.lesson,
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(16),
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => LessonPlayerPage(
+                  category: lesson.category,
+                  world: lesson.world,
+                  lesson: lesson.lesson,
+                ),
               ),
+            );
+          },
+          child: Padding(
+            padding: const EdgeInsets.all(20),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        lesson.title,
+                        style: GoogleFonts.inter(
+                          fontSize: 17,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.black87,
+                        ),
+                      ),
+                      const SizedBox(height: 6),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                        decoration: BoxDecoration(
+                          color: _getCategoryColor(category).withValues(alpha: 0.1),
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(
+                            color: _getCategoryColor(category).withValues(alpha: 0.2),
+                            width: 1,
+                          ),
+                        ),
+                        child: Text(
+                          '${lesson.xp} XP',
+                          style: GoogleFonts.inter(
+                            fontSize: 13,
+                            color: _getCategoryColor(category),
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: _getCategoryColor(category).withValues(alpha: 0.1),
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(
+                      color: _getCategoryColor(category).withValues(alpha: 0.2),
+                      width: 1,
+                    ),
+                  ),
+                  child: Icon(
+                    Icons.play_circle_outline,
+                    color: _getCategoryColor(category),
+                    size: 24,
+                  ),
+                ),
+              ],
             ),
-          );
-        },
+          ),
+        ),
       ),
     );
   }

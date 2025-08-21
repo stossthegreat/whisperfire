@@ -163,25 +163,6 @@ class _MentorCardState extends ConsumerState<_MentorCard>
     super.dispose();
   }
 
-  Color _getMentorColor() {
-    switch (widget.mentor.id) {
-      case 'casanova':
-        return const Color(0xFFEC4899); // Pink for charm
-      case 'cleopatra':
-        return const Color(0xFFF59E0B); // Gold for influence
-      case 'machiavelli':
-        return const Color(0xFF6B7280); // Gray for strategy
-      case 'sun_tzu':
-        return const Color(0xFFEF4444); // Red for warfare
-      case 'marcus_aurelius':
-        return const Color(0xFF8B5CF6); // Purple for wisdom
-      case 'churchill':
-        return const Color(0xFFEA580C); // Orange for resolve
-      default:
-        return WFColors.purple400;
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
@@ -257,7 +238,7 @@ class _MentorCardState extends ConsumerState<_MentorCard>
   }
 
   Widget _buildMentorPortrait() {
-    // Use the actual mentor portrait images from assets
+    // Use a beautiful placeholder instead of trying to load non-existent images
     return Container(
       width: double.infinity,
       height: double.infinity,
@@ -266,64 +247,70 @@ class _MentorCardState extends ConsumerState<_MentorCard>
           topLeft: Radius.circular(WFDims.radiusLarge),
           topRight: Radius.circular(WFDims.radiusLarge),
         ),
-      ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(WFDims.radiusLarge),
-          topRight: Radius.circular(WFDims.radiusLarge),
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            Colors.white.withValues(alpha: 0.15),
+            Colors.white.withValues(alpha: 0.05),
+          ],
         ),
-        child: Image.asset(
-          'assets/images/mentors/${widget.mentor.id}.png',
-          fit: BoxFit.cover,
-          width: double.infinity,
-          height: double.infinity,
-          errorBuilder: (context, error, stackTrace) {
-            // Fallback to placeholder if image fails to load
-            return Container(
-              width: 140,
-              height: 140,
+      ),
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              width: 120,
+              height: 120,
               decoration: BoxDecoration(
-                color: Colors.white.withValues(alpha: 0.15),
-                borderRadius: BorderRadius.circular(70),
+                shape: BoxShape.circle,
+                color: Colors.white.withValues(alpha: 0.2),
                 border: Border.all(
                   color: Colors.white.withValues(alpha: 0.4),
-                  width: 2,
+                  width: 3,
                 ),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black.withValues(alpha: 0.2),
-                    blurRadius: 10,
-                    offset: const Offset(0, 4),
+                    blurRadius: 15,
+                    offset: const Offset(0, 6),
                   ),
                 ],
               ),
               child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      widget.mentor.avatar,
-                      style: const TextStyle(
-                        fontSize: 56,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    const SizedBox(height: 8),
-                    Text(
-                      _getMentorSubtitle(),
-                      style: const TextStyle(
-                        fontSize: 12,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w500,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ],
+                child: Text(
+                  widget.mentor.avatar,
+                  style: const TextStyle(
+                    fontSize: 60,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
-            );
-          },
+            ),
+            const SizedBox(height: 16),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              decoration: BoxDecoration(
+                color: Colors.white.withValues(alpha: 0.15),
+                borderRadius: BorderRadius.circular(20),
+                border: Border.all(
+                  color: Colors.white.withValues(alpha: 0.3),
+                  width: 1,
+                ),
+              ),
+              child: Text(
+                _getMentorSubtitle(),
+                style: const TextStyle(
+                  fontSize: 14,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w600,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ],
         ),
       ),
     );

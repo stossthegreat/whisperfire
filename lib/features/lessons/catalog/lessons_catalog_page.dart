@@ -80,9 +80,33 @@ class LessonsCatalogPage extends ConsumerWidget {
       },
       child: Container(
         decoration: BoxDecoration(
-          color: Color(color).withOpacity(0.1),
-          borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: Color(color).withOpacity(0.3)),
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              Color(color).withValues(alpha: 0.05),
+              Color(color).withValues(alpha: 0.1),
+            ],
+          ),
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(
+            color: Color(color).withValues(alpha: 0.2),
+            width: 1.5,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: Color(color).withValues(alpha: 0.08),
+              blurRadius: 16,
+              offset: const Offset(0, 6),
+              spreadRadius: 0,
+            ),
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.04),
+              blurRadius: 32,
+              offset: const Offset(0, 12),
+              spreadRadius: 0,
+            ),
+          ],
         ),
         child: Padding(
           padding: const EdgeInsets.all(16),
