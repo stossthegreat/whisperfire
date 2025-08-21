@@ -227,14 +227,25 @@ class _MentorCardState extends ConsumerState<_MentorCard>
                                           ),
                                         ],
                                       ),
-                                      child: Center(
-                                        child: Text(
-                                          widget.mentor.avatar,
-                                          style: const TextStyle(
-                                            fontSize: 60,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold,
-                                          ),
+                                      child: ClipOval(
+                                        child: Image.asset(
+                                          'assets/images/mentors/${widget.mentor.id}.png',
+                                          fit: BoxFit.cover,
+                                          width: 120,
+                                          height: 120,
+                                          errorBuilder: (context, error, stackTrace) {
+                                            // Fallback to emoji if image fails to load
+                                            return Center(
+                                              child: Text(
+                                                widget.mentor.avatar,
+                                                style: const TextStyle(
+                                                  fontSize: 60,
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            );
+                                          },
                                         ),
                                       ),
                                     ),
