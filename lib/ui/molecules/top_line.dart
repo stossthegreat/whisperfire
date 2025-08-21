@@ -26,13 +26,19 @@ class TopLine extends StatelessWidget {
               children: [
                 Text(
                   tabLabel,
-                  style: WFTextStyles.h3,
+                  style: WFTextStyles.h3.copyWith(
+                    fontSize: 26, // Bigger text
+                    fontWeight: FontWeight.w800, // Thicker text
+                    color: Colors.black, // Black text for analyze page
+                  ),
                 ),
                 const SizedBox(height: 4),
                 Text(
                   profileTag,
                   style: WFTextStyles.bodySmall.copyWith(
-                    color: WFColors.textTertiary,
+                    color: Colors.black, // Black text for analyze page
+                    fontSize: 16, // Bigger text
+                    fontWeight: FontWeight.w600, // Thicker text
                   ),
                 ),
               ],

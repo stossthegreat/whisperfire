@@ -1,91 +1,73 @@
-import 'package:json_annotation/json_annotation.dart';
-import 'package:equatable/equatable.dart';
 
-part 'profile_models.g.dart';
 
-@JsonSerializable()
-class UserProfile extends Equatable {
-  @JsonKey(name: 'user_id')
-  final String userId;
-  final String username;
-  @JsonKey(name: 'power_rank')
-  final String powerRank;
-  final int level;
-  final int xp;
-  @JsonKey(name: 'next_level_xp')
-  final int nextLevelXp;
-  @JsonKey(name: 'chosen_mentor')
-  final String chosenMentor;
-  final List<String> goals;
-  final ProfileStats stats;
-  final List<String> achievements;
-  @JsonKey(name: 'daily_streak')
-  final int dailyStreak;
-  @JsonKey(name: 'completed_lessons')
-  final int completedLessons;
-  @JsonKey(name: 'unlocked_worlds')
-  final List<String> unlockedWorlds;
-  @JsonKey(name: 'saved_tactics')
-  final int savedTactics;
+class CategoryProgress {
+  int xp;
+  int level;
 
-  const UserProfile({
-    required this.userId,
-    required this.username,
-    required this.powerRank,
-    required this.level,
-    required this.xp,
-    required this.nextLevelXp,
-    required this.chosenMentor,
-    required this.goals,
-    required this.stats,
-    required this.achievements,
-    required this.dailyStreak,
-    required this.completedLessons,
-    required this.unlockedWorlds,
-    required this.savedTactics,
-  });
+  CategoryProgress({this.xp = 0, this.level = 1});
 
-  factory UserProfile.fromJson(Map<String, dynamic> json) => _$UserProfileFromJson(json);
-  Map<String, dynamic> toJson() => _$UserProfileToJson(this);
+  factory CategoryProgress.fromJson(Map<String, dynamic> json) {
+    return CategoryProgress(
+      xp: json['xp'] as int? ?? 0,
+      level: json['level'] as int? ?? 1,
+    );
+  }
 
-  @override
-  List<Object?> get props => [
-    userId,
-    username,
-    powerRank,
-    level,
-    xp,
-    nextLevelXp,
-    chosenMentor,
-    goals,
-    stats,
-    achievements,
-    dailyStreak,
-    completedLessons,
-    unlockedWorlds,
-    savedTactics,
-  ];
+  Map<String, dynamic> toJson() {
+    return {
+      'xp': xp,
+      'level': level,
+    };
+  }
 }
 
-@JsonSerializable()
-class ProfileStats extends Equatable {
-  final int recognition;
-  final int resistance;
-  final int awareness;
-  final int counterplay;
-  final int intuition;
+class UserProfile {
+  String id;
+  int xpTotal;
+  Map<String, CategoryProgress> categories;
+  Set<String> unlockedLessons;
 
-  const ProfileStats({
-    required this.recognition,
-    required this.resistance,
-    required this.awareness,
-    required this.counterplay,
-    required this.intuition,
-  });
+  UserProfile({
+    required this.id,
+    this.xpTotal = 0,
+    Map<String, CategoryProgress>? categories,
+    Set<String>? unlockedLessons,
+  }) : categories = categories ?? {},
+       unlockedLessons = unlockedLessons ?? {};
 
-  factory ProfileStats.fromJson(Map<String, dynamic> json) => _$ProfileStatsFromJson(json);
-  Map<String, dynamic> toJson() => _$ProfileStatsToJson(this);
+  void ensureCategory(String key) {
+    categories.putIfAbsent(key, () => CategoryProgress());
+  }
 
-  @override
-  List<Object?> get props => [recognition, resistance, awareness, counterplay, intuition];
+  factory UserProfile.fromJson(Map<String, dynamic> json) {
+    final categoriesMap = <String, CategoryProgress>{};
+    if (json['categories'] != null) {
+      final categoriesJson = json['categories'] as Map<String, dynamic>;
+      categoriesJson.forEach((key, value) {
+        categoriesMap[key] = CategoryProgress.fromJson(value as Map<String, dynamic>);
+      });
+    }
+
+    final unlockedLessonsSet = <String>{};
+    if (json['unlockedLessons'] != null) {
+      final unlockedList = json['unlockedLessons'] as List<dynamic>;
+      unlockedLessonsSet.addAll(unlockedList.cast<String>());
+    }
+
+    return UserProfile(
+      id: json['id'] as String,
+      xpTotal: json['xpTotal'] as int? ?? 0,
+      categories: categoriesMap,
+      unlockedLessons: unlockedLessonsSet,
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'xpTotal': xpTotal,
+      'categories': categories.map((key, value) => MapEntry(key, value.toJson())),
+      'unlockedLessons': unlockedLessons.toList(),
+    };
+  }
 } 

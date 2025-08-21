@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import '../../../core/theme/theme.dart';
-import '../../../data/services/cache_service.dart';
-import '../../../data/models/settings_models.dart';
+import '../../../data/providers.dart';
+import '../../../data/models/profile_models.dart';
 import '../../atoms/atoms.dart';
 import '../../shared/loading_shell.dart';
-import '../../molecules/molecules.dart';
+import '../../../features/lessons/catalog/lessons_catalog_page.dart';
+import '../../../features/lessons/world_overview/world_overview_page.dart';
 
 class LessonsPage extends ConsumerStatefulWidget {
   const LessonsPage({super.key});
@@ -15,46 +17,44 @@ class LessonsPage extends ConsumerStatefulWidget {
 }
 
 class _LessonsPageState extends ConsumerState<LessonsPage> {
-  bool _isLoading = true;
-  
-  @override
-  void initState() {
-    super.initState();
-    _loadData();
-  }
-
-  void _loadData() async {
-    // Simulate loading worlds/lessons
-    await Future.delayed(const Duration(milliseconds: 500));
-    if (mounted) {
-      setState(() => _isLoading = false);
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
+    final profileAsync = ref.watch(userProfileProvider);
+
     return Scaffold(
       backgroundColor: WFColors.base,
       body: SafeArea(
-        child: _isLoading 
-          ? const LoadingShell()
-          : const _LessonsContent(),
+        child: profileAsync.when(
+          data: (profile) {
+            return _LessonsContent(profile: profile);
+          },
+          loading: () {
+            return const LoadingShell();
+          },
+          error: (error, stack) {
+            return const Center(
+              child: Text('Error loading profile'),
+            );
+          },
+        ),
       ),
     );
   }
 }
 
-class _LessonsContent extends StatelessWidget {
-  const _LessonsContent();
+class _LessonsContent extends ConsumerWidget {
+  final UserProfile profile;
+
+  const _LessonsContent({required this.profile});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return SingleChildScrollView(
       padding: const EdgeInsets.all(WFDims.paddingL),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Header
+          // Header with XP
           Center(
             child: Column(
               children: [
@@ -67,83 +67,152 @@ class _LessonsContent extends StatelessWidget {
                     boxShadow: WFShadows.purpleGlow,
                   ),
                   child: Icon(
-                    Icons.shield,
+                    Icons.school,
                     size: 40,
                     color: WFColors.textPrimary,
                   ),
                 ),
                 const SizedBox(height: WFDims.spacingL),
-                Text('Defense Training', style: WFTextStyles.h1),
+                Text('Training Hub', style: WFTextStyles.h1),
                 const SizedBox(height: WFDims.spacingS),
                 Text(
-                  'Master the art of psychological self-defense',
+                  'Total XP: ${profile.xpTotal}',
+                  style: WFTextStyles.bodyMedium.copyWith(
+                    color: WFColors.purple400,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: WFDims.spacingS),
+                Text(
+                  'Master psychological warfare techniques',
                   style: WFTextStyles.bodyMedium.copyWith(color: WFColors.textTertiary),
                 ),
               ],
             ),
           ),
           
-          const SizedBox(height: WFDims.spacingXXL),
+          const SizedBox(height: WFDims.spacingXL),
           
-          // Worlds grid placeholder
-          Text('Training Worlds', style: WFTextStyles.h3),
+          // Categories Grid
+          Text(
+            'Choose Your Path',
+            style: WFTextStyles.h2.copyWith(
+              color: WFColors.textPrimary,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: WFDims.spacingM),
+          Text(
+            'Select a category to begin your training',
+            style: WFTextStyles.bodyMedium.copyWith(color: WFColors.textTertiary),
+          ),
           const SizedBox(height: WFDims.spacingL),
           
-          // Grid of world cards
-          ...List.generate(6, (index) => Padding(
-            padding: EdgeInsets.only(bottom: WFDims.spacingL),
-            child: GlassCard(
-              child: Row(
-                children: [
-                  Container(
-                    width: 60,
-                    height: 60,
-                    decoration: BoxDecoration(
-                      gradient: index % 2 == 0 ? WFGradients.tealPurple : WFGradients.redPink,
-                      borderRadius: BorderRadius.circular(WFDims.radiusMedium),
-                    ),
-                    child: Center(
-                      child: Text(
-                        ['💫', '🎭', '⏰', '🧠', '❄️', '🎪'][index],
-                        style: const TextStyle(fontSize: 24),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: WFDims.spacingL),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          ['Seductive Gravity', 'Frame Control', 'Scarcity & Obsession', 
-                           'Psychological Warfare', 'Cold Power', 'Deception & Camouflage'][index],
-                          style: WFTextStyles.h4,
-                        ),
-                        const SizedBox(height: 4),
-                        Text(
-                          ['Recognize Charm Tactics', 'Conversational Defense', 'Emotional Manipulation',
-                           'Advanced Manipulation', 'Status Games', 'Truth vs Lies'][index],
-                          style: WFTextStyles.bodySmall.copyWith(color: WFColors.textTertiary),
-                        ),
-                        const SizedBox(height: WFDims.spacingS),
-                        Text(
-                          '${[8, 6, 7, 9, 5, 10][index]} lessons',
-                          style: WFTextStyles.labelMedium.copyWith(color: WFColors.purple400),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Icon(
-                    index < 2 ? Icons.chevron_right : Icons.lock,
-                    color: index < 2 ? WFColors.purple400 : WFColors.gray500,
-                  ),
-                ],
-              ),
+          // Categories Grid
+          GridView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            padding: const EdgeInsets.all(0),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              crossAxisSpacing: 16,
+              mainAxisSpacing: 16,
+              childAspectRatio: 0.8,
             ),
-          )),
-          
-          const SizedBox(height: WFDims.spacingXXL),
+            itemCount: 6,
+            itemBuilder: (context, index) {
+              final categoryData = [
+                {'slug': 'seduction', 'name': 'Seduction', 'color': 0xFFE91E63, 'emoji': '💫'},
+                {'slug': 'gravity', 'name': 'Cold Power', 'color': 0xFF26A69A, 'emoji': '❄️'},
+                {'slug': 'frame', 'name': 'Frame Control', 'color': 0xFF3F51B5, 'emoji': '🎭'},
+                {'slug': 'scarcity', 'name': 'Scarcity & Obsession', 'color': 0xFFFF9800, 'emoji': '💎'},
+                {'slug': 'psychwar', 'name': 'Psychological Warfare', 'color': 0xFF9C27B0, 'emoji': '⚔️'},
+                {'slug': 'deception', 'name': 'Deception & Masks', 'color': 0xFF4CAF50, 'emoji': '🎭'},
+              ];
+              
+              final category = categoryData[index];
+              final categoryProgress = profile.categories[category['slug']!] ?? CategoryProgress();
+              
+              return _buildCategoryCard(
+                context,
+                category['slug'] as String,
+                category['name'] as String,
+                category['color'] as int,
+                category['emoji'] as String,
+                categoryProgress,
+              );
+            },
+          ),
         ],
+      ),
+    );
+  }
+  
+  Widget _buildCategoryCard(
+    BuildContext context,
+    String categorySlug,
+    String categoryName,
+    int color,
+    String emoji,
+    CategoryProgress progress,
+  ) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => WorldOverviewPage(category: categorySlug),
+          ),
+        );
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          color: Color(color).withOpacity(0.1),
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(color: Color(color).withOpacity(0.3)),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                emoji,
+                style: const TextStyle(fontSize: 48),
+              ),
+              const SizedBox(height: 16),
+              Text(
+                categoryName,
+                style: WFTextStyles.h3.copyWith(
+                  color: Color(color),
+                  fontWeight: FontWeight.bold,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 16),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                decoration: BoxDecoration(
+                  color: Color(color),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Text(
+                  'Lv.${progress.level}',
+                  style: WFTextStyles.bodySmall.copyWith(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 8),
+              Text(
+                '${progress.xp} XP',
+                style: WFTextStyles.bodySmall.copyWith(
+                  color: Color(color),
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

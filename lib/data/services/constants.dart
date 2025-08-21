@@ -81,28 +81,8 @@ class MentorConstants {
 
 // Mock user data for development
 class MockData {
-  static const UserProfile mockUser = UserProfile(
-    userId: 'defender_001',
-    username: 'ShadowDefender',
-    powerRank: 'Guardian',
-    level: 7,
-    xp: 2450,
-    nextLevelXp: 3000,
-    chosenMentor: 'sun_tzu',
-    goals: ['manipulation_defense', 'influence_awareness'],
-    stats: ProfileStats(
-      recognition: 78,
-      resistance: 65,
-      awareness: 88,
-      counterplay: 42,
-      intuition: 71,
-    ),
-    achievements: ['First Defense', 'Pattern Recognition', 'Counter-Strike'],
-    dailyStreak: 12,
-    completedLessons: 23,
-    unlockedWorlds: ['seductive_gravity', 'frame_control'],
-    savedTactics: 15,
-  );
+  // Note: mockUser removed - now using the lesson engine UserProfile structure
+  // The lesson engine will create default profiles automatically
 
   static WhisperfireResponse get mockScanResponse => const WhisperfireResponse(
     context: WhisperfireContext(
@@ -202,5 +182,27 @@ class MockData {
     ],
     counterIntervention: 'Immediate boundary setting and documentation',
     longGame: 'Complete psychological control and dependency',
+  );
+}
+
+// ===== UPDATED MOCK DATA =====
+extension MockDataProfile on MockData {
+  static final UserProfile enhancedMockUser = UserProfile(
+    id: 'defender_001',
+    xpTotal: 2450,
+    categories: {
+      'seduction': CategoryProgress(xp: 1200, level: 3),
+      'gravity': CategoryProgress(xp: 800, level: 2),
+      'frame': CategoryProgress(xp: 450, level: 2),
+      'scarcity': CategoryProgress(xp: 300, level: 1),
+      'psychwar': CategoryProgress(xp: 200, level: 1),
+      'deception': CategoryProgress(xp: 100, level: 1),
+    },
+    unlockedLessons: {
+      'seduction-world1-lesson1',
+      'seduction-world1-lesson2',
+      'seduction-world1-lesson3',
+      'seduction-world2-lesson6',
+    },
   );
 } 

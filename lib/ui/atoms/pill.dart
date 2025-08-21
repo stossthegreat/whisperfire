@@ -34,6 +34,8 @@ class Pill extends StatelessWidget {
         text,
         style: WFTextStyles.labelMedium.copyWith(
           color: textColor ?? WFColors.purple300,
+          fontSize: 16, // Bigger text
+          fontWeight: FontWeight.w600, // Thicker text
         ),
       ),
     );

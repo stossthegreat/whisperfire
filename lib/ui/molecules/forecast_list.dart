@@ -22,29 +22,39 @@ class ForecastList extends StatelessWidget {
           ),
           child: Row(
             children: [
-              Text('📈', style: const TextStyle(fontSize: 14)),
+              Text('📈', style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600)),
               const SizedBox(width: WFDims.spacingS),
               Expanded(
                 child: RichText(
                   text: TextSpan(
-                    style: WFTextStyles.bodyMedium,
+                    style: WFTextStyles.bodyMedium.copyWith(
+                      fontSize: 18, // Bigger text
+                      fontWeight: FontWeight.w600, // Thicker text
+                      color: Colors.black, // Black text for analyze page
+                    ),
                     children: [
                       TextSpan(
                         text: '${forecast.window} — ',
                         style: TextStyle(
-                          color: WFColors.purple400,
-                          fontWeight: FontWeight.w600,
+                          color: Colors.black, // Black text for analyze page
+                          fontWeight: FontWeight.w700,
+                          fontSize: 18, // Bigger text
                         ),
                       ),
                       TextSpan(
                         text: '${forecast.event} ',
-                        style: TextStyle(color: WFColors.textSecondary),
+                        style: TextStyle(
+                          color: Colors.black, // Black text for analyze page
+                          fontSize: 18, // Bigger text
+                          fontWeight: FontWeight.w600, // Thicker text
+                        ),
                       ),
                       TextSpan(
                         text: '(${forecast.likelihood}%)',
                         style: TextStyle(
-                          color: WFColors.textTertiary,
-                          fontSize: 12,
+                          color: Colors.black, // Black text for analyze page
+                          fontSize: 16, // Bigger text
+                          fontWeight: FontWeight.w600, // Thicker text
                         ),
                       ),
                     ],

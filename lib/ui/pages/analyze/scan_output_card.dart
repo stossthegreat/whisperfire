@@ -71,7 +71,14 @@ class ScanOutputCard extends StatelessWidget {
       children: [
         SectionTitle(emoji: emoji, title: title),
         const SizedBox(height: WFDims.titleBodySpacing),
-        Text(content, style: WFTextStyles.bodyMedium),
+        Text(
+          content, 
+          style: WFTextStyles.bodyMedium.copyWith(
+            fontSize: 18, // Bigger text
+            fontWeight: FontWeight.w600, // Thicker text
+            color: Colors.black, // Black text for output cards
+          )
+        ),
         const SizedBox(height: WFDims.sectionSpacing),
       ],
     );
@@ -92,12 +99,24 @@ class ScanOutputCard extends StatelessWidget {
               left: BorderSide(color: WFColors.purple400, width: 3),
             ),
           ),
-          child: Text(result.powerPlay, style: WFTextStyles.bodyMedium.copyWith(fontStyle: FontStyle.italic)),
+          child: Text(
+            result.powerPlay, 
+            style: WFTextStyles.bodyMedium.copyWith(
+              fontStyle: FontStyle.italic,
+              fontSize: 18, // Bigger text
+              fontWeight: FontWeight.w600, // Thicker text
+              color: Colors.black, // Black text for output cards
+            )
+          ),
         ),
         const SizedBox(height: WFDims.spacingS),
         Text(
           result.suggestedReply.text.split('\n').first, // First line
-          style: WFTextStyles.bodySmall.copyWith(color: WFColors.textMuted),
+          style: WFTextStyles.bodySmall.copyWith(
+            color: Colors.black, // Black text for output cards
+            fontSize: 16, // Bigger text
+            fontWeight: FontWeight.w600, // Thicker text
+          ),
         ),
         const SizedBox(height: WFDims.sectionSpacing),
       ],

@@ -39,6 +39,7 @@ dependencies:
   # Storage
   hive: ^2.2.3
   hive_flutter: ^1.1.0
+  shared_preferences: ^2.2.3
   
   # Markdown
   flutter_markdown: ^0.6.18
@@ -46,6 +47,10 @@ dependencies:
   # Utils
   equatable: ^2.0.5
   json_annotation: ^4.8.1
+  
+  # TTS & Celebrations
+  flutter_tts: ^3.8.3
+  confetti: ^0.7.0
 
 dev_dependencies:
   flutter_test:
@@ -65,5 +70,7 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+
+
 
 

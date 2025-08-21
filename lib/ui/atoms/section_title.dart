@@ -19,9 +19,22 @@ class SectionTitle extends StatelessWidget {
       padding: padding ?? const EdgeInsets.only(left: WFDims.spacingL),
       child: Row(
         children: [
-          Text(emoji, style: const TextStyle(fontSize: 16)),
+          Text(
+            emoji, 
+            style: const TextStyle(
+              fontSize: 20, // Bigger emoji
+              fontWeight: FontWeight.w600, // Thicker text
+            )
+          ),
           const SizedBox(width: WFDims.spacingL),
-          Text(title, style: WFTextStyles.sectionTitle),
+          Text(
+            title, 
+            style: WFTextStyles.sectionTitle.copyWith(
+              fontSize: 18, // Bigger title
+              fontWeight: FontWeight.w800, // Thicker text
+              color: Colors.black, // Black text for analyze page
+            )
+          ),
         ],
       ),
     );

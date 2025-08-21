@@ -47,7 +47,9 @@ class ReceiptsList extends StatelessWidget {
                 child: Text(
                   receipt,
                   style: WFTextStyles.bodyMedium.copyWith(
-                    color: WFColors.textSecondary,
+                    color: Colors.black, // Black text for analyze page
+                    fontSize: 18, // Bigger text
+                    fontWeight: FontWeight.w600, // Thicker text
                   ),
                 ),
               ),

@@ -41,10 +41,10 @@ class WFColors {
   static const Color gray900 = Color(0xFF111827);
   
   // Text colors
-  static const Color textPrimary = Color(0xFFF9FAFB); // near-white
-  static const Color textSecondary = Color(0xFFD1D5DB); // gray-300
-  static const Color textTertiary = Color(0xFF9CA3AF); // gray-400
-  static const Color textMuted = Color(0xFF6B7280); // gray-500
+  static const Color textPrimary = Color(0xFFFFFFFF); // white (was near-black)
+  static const Color textSecondary = Color(0xFFE5E7EB); // gray-200 (was gray-700)
+  static const Color textTertiary = Color(0xFF9CA3AF); // gray-400 (was gray-500)
+  static const Color textMuted = Color(0xFF6B7280); // gray-500 (was gray-400)
   
   // Status colors
   static const Color success = Color(0xFF10B981);

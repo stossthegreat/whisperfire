@@ -60,9 +60,22 @@ class _MetricBarState extends State<MetricBar> with SingleTickerProviderStateMix
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(widget.label, style: WFTextStyles.labelMedium),
-            Text('${widget.value}%', 
-                 style: WFTextStyles.labelMedium.copyWith(color: WFColors.textTertiary)),
+            Text(
+              widget.label, 
+              style: WFTextStyles.labelMedium.copyWith(
+                fontSize: 16, // Bigger text
+                fontWeight: FontWeight.w700, // Thicker text
+                color: Colors.black, // Black text for analyze page
+              )
+            ),
+            Text(
+              '${widget.value}%', 
+              style: WFTextStyles.labelMedium.copyWith(
+                color: Colors.black, // Black text for analyze page
+                fontSize: 16, // Bigger text
+                fontWeight: FontWeight.w700, // Thicker text
+              )
+            ),
           ],
         ),
         const SizedBox(height: 6),

@@ -107,7 +107,14 @@ class PatternOutputCard extends StatelessWidget {
       children: [
         SectionTitle(emoji: emoji, title: title),
         const SizedBox(height: WFDims.titleBodySpacing),
-        Text(content, style: WFTextStyles.bodyMedium),
+        Text(
+          content, 
+          style: WFTextStyles.bodyMedium.copyWith(
+            fontSize: 18, // Bigger text
+            fontWeight: FontWeight.w600, // Thicker text
+            color: Colors.black, // Black text for output cards
+          )
+        ),
         const SizedBox(height: WFDims.sectionSpacing),
       ],
     );
@@ -134,7 +141,14 @@ class PatternOutputCard extends StatelessWidget {
                 ),
               ),
               Expanded(
-                child: Text(item, style: WFTextStyles.bodyMedium),
+                child: Text(
+                  item, 
+                  style: WFTextStyles.bodyMedium.copyWith(
+                    fontSize: 18, // Bigger text
+                    fontWeight: FontWeight.w600, // Thicker text
+                    color: Colors.black, // Black text for output cards
+                  )
+                ),
               ),
             ],
           ),
@@ -209,7 +223,12 @@ class PatternOutputCard extends StatelessWidget {
           ),
           child: Text(
             result.suggestedReply.text,
-            style: WFTextStyles.bodyMedium.copyWith(fontStyle: FontStyle.italic),
+            style: WFTextStyles.bodyMedium.copyWith(
+              fontStyle: FontStyle.italic,
+              fontSize: 18, // Bigger text
+              fontWeight: FontWeight.w600, // Thicker text
+              color: Colors.black, // Black text for output cards
+            ),
           ),
         ),
         const SizedBox(height: WFDims.sectionSpacing),

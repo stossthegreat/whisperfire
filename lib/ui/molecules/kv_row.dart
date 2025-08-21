@@ -26,6 +26,8 @@ class KVRow extends StatelessWidget {
               label,
               style: WFTextStyles.bodySmall.copyWith(
                 color: WFColors.gray400,
+                fontSize: 16, // Bigger text
+                fontWeight: FontWeight.w600, // Thicker text
               ),
             ),
           ),
@@ -36,6 +38,8 @@ class KVRow extends StatelessWidget {
               value,
               style: WFTextStyles.bodySmall.copyWith(
                 color: WFColors.textPrimary,
+                fontSize: 16, // Bigger text
+                fontWeight: FontWeight.w600, // Thicker text
               ),
             ),
           ),
