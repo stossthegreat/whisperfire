@@ -8,6 +8,7 @@ import '../../atoms/atoms.dart';
 import '../../shared/loading_shell.dart';
 import '../../../features/lessons/catalog/lessons_catalog_page.dart';
 import '../../../features/lessons/world_overview/world_overview_page.dart';
+import '../../../widgets/app_header.dart';
 
 class LessonsPage extends ConsumerStatefulWidget {
   const LessonsPage({super.key});
@@ -23,6 +24,7 @@ class _LessonsPageState extends ConsumerState<LessonsPage> {
 
     return Scaffold(
       backgroundColor: WFColors.base,
+      appBar: const AppHeader(),
       body: SafeArea(
         child: profileAsync.when(
           data: (profile) {

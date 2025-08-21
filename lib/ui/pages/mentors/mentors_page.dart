@@ -6,6 +6,7 @@ import '../../../data/models/mentor_models.dart';
 import '../../../core/theme/theme.dart';
 import '../../atoms/glass_card.dart';
 import 'mentor_detail_page.dart';
+import '../../../widgets/app_header.dart';
 
 class MentorsPage extends ConsumerStatefulWidget {
   const MentorsPage({super.key});
@@ -34,6 +35,7 @@ class _MentorsPageState extends ConsumerState<MentorsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: WFColors.base,
+      appBar: const AppHeader(),
       body: SafeArea(
         child: _isLoading 
           ? const _LoadingShell()

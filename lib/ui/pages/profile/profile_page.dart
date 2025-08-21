@@ -7,6 +7,7 @@ import '../../../data/models/profile_models.dart';
 import '../../atoms/atoms.dart';
 import '../../shared/loading_shell.dart';
 import '../../../features/profile/profile_screen.dart';
+import '../../../widgets/app_header.dart';
 
 class ProfilePage extends ConsumerStatefulWidget {
   const ProfilePage({super.key});
@@ -22,6 +23,7 @@ class _ProfilePageState extends ConsumerState<ProfilePage> {
 
     return Scaffold(
       backgroundColor: WFColors.base,
+      appBar: const AppHeader(),
       body: SafeArea(
         child: profileAsync.when(
           data: (profile) {

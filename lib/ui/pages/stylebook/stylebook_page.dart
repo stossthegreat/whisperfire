@@ -9,6 +9,7 @@ import '../atoms/pill.dart';
 import '../atoms/divider_faint.dart';
 import '../atoms/wf_icon_button.dart';
 import '../atoms/wf_primary_button.dart';
+import '../../../widgets/app_header.dart';
 
 class StylebookPage extends StatelessWidget {
   const StylebookPage({super.key});
@@ -17,10 +18,7 @@ class StylebookPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: WFColors.base,
-      appBar: AppBar(
-        title: Text('WHISPERFIRE Stylebook', style: WFTextStyles.h4),
-        backgroundColor: Colors.transparent,
-      ),
+      appBar: const AppHeader(),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(WFDims.paddingL),
         child: Column(

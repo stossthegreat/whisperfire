@@ -10,6 +10,7 @@ import '../../atoms/atoms.dart';
 import '../../molecules/molecules.dart';
 import 'scan_output_card.dart';
 import 'pattern_output_card.dart';
+import '../../../widgets/app_header.dart';
 
 // ===== PROVIDERS =====
 final apiServiceProvider = Provider<ApiService>((ref) => ApiService());
@@ -63,6 +64,7 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
 
     return Scaffold(
       backgroundColor: WFColors.base,
+      appBar: const AppHeader(),
       body: SafeArea(
         child: SingleChildScrollView(
           controller: _scrollController,

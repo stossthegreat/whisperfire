@@ -4,6 +4,7 @@ import '../../../core/theme/theme.dart';
 import '../../../data/models/settings_models.dart';
 import '../../../data/services/cache_service.dart';
 import '../../atoms/atoms.dart';
+import '../../../widgets/app_header.dart';
 
 // ===== PROVIDERS =====
 final appSettingsProvider = StateNotifierProvider<AppSettingsNotifier, AppSettings>((ref) {
@@ -68,6 +69,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
     
     return Scaffold(
       backgroundColor: WFColors.base,
+      appBar: const AppHeader(),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(WFDims.paddingL),
