@@ -75,7 +75,7 @@ class _LessonsContent extends ConsumerWidget {
                   ),
                 ),
                 const SizedBox(height: WFDims.spacingL),
-                Text('Training Hub', style: WFTextStyles.h1),
+                Text('Training Hub', style: WFTextStyles.h1.copyWith(color: Colors.black)),
                 const SizedBox(height: WFDims.spacingS),
                 Text(
                   'Total XP: ${profile.xpTotal}',
@@ -87,7 +87,7 @@ class _LessonsContent extends ConsumerWidget {
                 const SizedBox(height: WFDims.spacingS),
                 Text(
                   'Master psychological warfare techniques',
-                  style: WFTextStyles.bodyMedium.copyWith(color: WFColors.textTertiary),
+                  style: WFTextStyles.bodyMedium.copyWith(color: Colors.black),
                 ),
               ],
             ),
@@ -99,7 +99,7 @@ class _LessonsContent extends ConsumerWidget {
           Text(
             'Choose Your Path',
             style: WFTextStyles.h2.copyWith(
-              color: WFColors.textPrimary,
+              color: Colors.black,
               fontWeight: FontWeight.bold,
             ),
           ),
