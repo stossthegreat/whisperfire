@@ -1,72 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/theme/theme.dart';
-import '../../../data/models/settings_models.dart';
-import '../../../data/services/cache_service.dart';
-import '../../atoms/atoms.dart';
 import '../../../widgets/app_header.dart';
+import '../../atoms/atoms.dart';
+import 'sub_pages/account_settings_page.dart';
+import 'sub_pages/appearance_settings_page.dart';
+import 'sub_pages/notification_settings_page.dart';
+import 'sub_pages/privacy_settings_page.dart';
+import 'sub_pages/support_info_page.dart';
+import 'sub_pages/legal_documents_page.dart';
 
-// ===== PROVIDERS =====
-final appSettingsProvider = StateNotifierProvider<AppSettingsNotifier, AppSettings>((ref) {
-  return AppSettingsNotifier();
-});
-
-// ===== STATE NOTIFIERS =====
-class AppSettingsNotifier extends StateNotifier<AppSettings> {
-  AppSettingsNotifier() : super(CacheService.getSettings());
-
-  void updateTone(String tone) {
-    state = state.copyWith(defaultTone: tone);
-    _saveSettings();
-  }
-
-  void updateAnalyzeMode(String mode) {
-    state = state.copyWith(defaultAnalyzeMode: mode);
-    _saveSettings();
-  }
-
-  void updateStreaming(bool streaming) {
-    state = state.copyWith(streaming: streaming);
-    _saveSettings();
-  }
-
-  void updateSaveHistory(bool saveHistory) {
-    state = state.copyWith(saveHistory: saveHistory);
-    _saveSettings();
-  }
-
-  void updateSafeMode(bool safeMode) {
-    state = state.copyWith(safeMode: safeMode);
-    _saveSettings();
-  }
-
-  void updateOcrLang(String ocrLang) {
-    state = state.copyWith(ocrLang: ocrLang);
-    _saveSettings();
-  }
-
-  void _saveSettings() {
-    CacheService.saveSettings(state);
-  }
-
-  void resetToDefaults() {
-    state = AppSettings.defaults();
-    _saveSettings();
-  }
-}
-
-class SettingsPage extends ConsumerStatefulWidget {
+class SettingsPage extends ConsumerWidget {
   const SettingsPage({super.key});
 
   @override
-  ConsumerState<SettingsPage> createState() => _SettingsPageState();
-}
-
-class _SettingsPageState extends ConsumerState<SettingsPage> {
-  @override
-  Widget build(BuildContext context) {
-    final settings = ref.watch(appSettingsProvider);
-    
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       backgroundColor: WFColors.base,
       appBar: const AppHeader(),
@@ -98,7 +46,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                     Text('SETTINGS', style: WFTextStyles.h1),
                     const SizedBox(height: WFDims.spacingS),
                     Text(
-                      'Configure your defense system',
+                      'Customize your Beguile AI experience',
                       style: WFTextStyles.bodyMedium.copyWith(color: WFColors.textTertiary),
                     ),
                   ],
@@ -107,112 +55,175 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
               
               const SizedBox(height: WFDims.spacingXXL),
               
-              // Analysis Defaults
-              _settingsSection(
-                'Analysis Defaults',
+              // Settings Categories
+              _buildSettingsCategory(
+                context,
+                'Account & Privacy',
+                'Manage your account and data',
+                Icons.person,
                 [
-                  _settingDropdown(
-                    'Default Tone',
-                    'Controls the intensity of analysis responses',
-                    settings.defaultTone,
-                    ['brutal', 'soft', 'clinical'],
-                    _getToneDisplayNames(),
-                    (value) => ref.read(appSettingsProvider.notifier).updateTone(value),
+                  _buildSettingsTile(
+                    context,
+                    'Account Settings',
+                    'Profile, deletion, data management',
+                    Icons.account_circle,
+                    () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const AccountSettingsPage()),
+                    ),
                   ),
-                  _settingDropdown(
-                    'Default Mode',
-                    'Choose between quick scan or deep pattern analysis',
-                    settings.defaultAnalyzeMode,
-                    ['scan', 'pattern'],
-                    {'scan': 'Scan', 'pattern': 'Pattern'},
-                    (value) => ref.read(appSettingsProvider.notifier).updateAnalyzeMode(value),
+                  _buildSettingsTile(
+                    context,
+                    'Privacy & Security',
+                    'Data sharing, permissions, security',
+                    Icons.security,
+                    () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const PrivacySettingsPage()),
+                    ),
                   ),
                 ],
               ),
               
               const SizedBox(height: WFDims.spacingL),
               
-              // Behavior Settings
-              _settingsSection(
-                'Behavior',
+              _buildSettingsCategory(
+                context,
+                'Appearance & Experience',
+                'Customize how the app looks and feels',
+                Icons.palette,
                 [
-                  _settingToggle(
-                    'Streaming',
-                    'Stream mentor responses in real-time',
-                    settings.streaming,
-                    (value) => ref.read(appSettingsProvider.notifier).updateStreaming(value),
+                  _buildSettingsTile(
+                    context,
+                    'Appearance',
+                    'Theme, colors, fonts, animations',
+                    Icons.dark_mode,
+                    () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const AppearanceSettingsPage()),
+                    ),
                   ),
-                  _settingToggle(
-                    'Save History',
-                    'Keep local history of your sessions',
-                    settings.saveHistory,
-                    (value) => ref.read(appSettingsProvider.notifier).updateSaveHistory(value),
-                  ),
-                  _settingToggle(
-                    'Safe Mode',
-                    'Soften harsh language in responses',
-                    settings.safeMode,
-                    (value) => ref.read(appSettingsProvider.notifier).updateSafeMode(value),
+                  _buildSettingsTile(
+                    context,
+                    'Haptics & Sound',
+                    'Vibration feedback and audio',
+                    Icons.vibration,
+                    () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const NotificationSettingsPage()),
+                    ),
                   ),
                 ],
               ),
               
               const SizedBox(height: WFDims.spacingL),
               
-              // Advanced Settings
-              _settingsSection(
-                'Advanced',
+              _buildSettingsCategory(
+                context,
+                'Notifications & Reminders',
+                'Stay updated and motivated',
+                Icons.notifications,
                 [
-                  _settingDropdown(
-                    'OCR Language',
-                    'Language for optical character recognition',
-                    settings.ocrLang,
-                    ['eng', 'spa', 'fra', 'deu', 'ita', 'por'],
-                    _getLanguageDisplayNames(),
-                    (value) => ref.read(appSettingsProvider.notifier).updateOcrLang(value),
+                  _buildSettingsTile(
+                    context,
+                    'Study Reminders',
+                    'Daily practice notifications',
+                    Icons.schedule,
+                    () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const NotificationSettingsPage()),
+                    ),
+                  ),
+                  _buildSettingsTile(
+                    context,
+                    'Achievement Alerts',
+                    'Level up and milestone notifications',
+                    Icons.emoji_events,
+                    () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const NotificationSettingsPage()),
+                    ),
                   ),
                 ],
               ),
               
               const SizedBox(height: WFDims.spacingL),
               
-              // Data Management
-              _settingsSection(
-                'Data Management',
+              _buildSettingsCategory(
+                context,
+                'Support & Information',
+                'Get help and learn more',
+                Icons.help,
                 [
-                  _settingAction(
-                    'Clear History',
-                    'Remove all saved analysis and mentor sessions',
-                    Icons.delete_outline,
-                    () => _showClearHistoryDialog(context),
+                  _buildSettingsTile(
+                    context,
+                    'Help & Support',
+                    'FAQs, tutorials, contact support',
+                    Icons.support_agent,
+                    () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const SupportInfoPage()),
+                    ),
                   ),
-                  _settingAction(
-                    'Export Data',
-                    'Download your profile and session data',
-                    Icons.download,
-                    () => _exportData(context),
-                  ),
-                  _settingAction(
-                    'Reset Settings',
-                    'Reset all settings to default values',
-                    Icons.restart_alt,
-                    () => _showResetDialog(context, ref),
+                  _buildSettingsTile(
+                    context,
+                    'About Beguile AI',
+                    'Version info, credits, legal',
+                    Icons.info,
+                    () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const SupportInfoPage()),
+                    ),
                   ),
                 ],
               ),
               
-              const SizedBox(height: WFDims.spacingL),
-              
-              // About Section
-              _settingsSection(
-                'About',
+              // Legal Section
+              _buildSettingsCategory(
+                context,
+                'Legal & Policies',
+                'Read important legal documents',
+                Icons.description,
                 [
-                  _settingInfo('Version', '1.0.0'),
-                  _settingInfo('Build', 'Phase 7 Development'),
-                  _settingInfo('API Status', 'Development Mode'),
+                  _buildSettingsTile(
+                    context,
+                    'Terms of Service',
+                    'Read our complete terms of service',
+                    Icons.description,
+                    () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const LegalDocumentsPage(documentType: 'terms'),
+                      ),
+                    ),
+                  ),
+                  _buildSettingsTile(
+                    context,
+                    'Privacy Policy',
+                    'Read our complete privacy policy',
+                    Icons.privacy_tip,
+                    () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const LegalDocumentsPage(documentType: 'privacy'),
+                      ),
+                    ),
+                  ),
+                  _buildSettingsTile(
+                    context,
+                    'Disclaimer & Safety',
+                    'Important safety information and disclaimers',
+                    Icons.warning,
+                    () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const LegalDocumentsPage(documentType: 'disclaimer'),
+                      ),
+                    ),
+                  ),
                 ],
               ),
-              
+
               const SizedBox(height: WFDims.spacingXXL),
             ],
           ),
@@ -221,12 +232,26 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
     );
   }
 
-  Widget _settingsSection(String title, List<Widget> children) {
+  Widget _buildSettingsCategory(
+    BuildContext context,
+    String title,
+    String subtitle,
+    IconData icon,
+    List<Widget> children,
+  ) {
     return GlassCard(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(title, style: WFTextStyles.h3),
+          Row(
+            children: [
+              Icon(icon, color: WFColors.purple400, size: 24),
+              const SizedBox(width: WFDims.spacingS),
+              Text(title, style: WFTextStyles.h3),
+            ],
+          ),
+          const SizedBox(height: WFDims.spacingS),
+          Text(subtitle, style: WFTextStyles.bodySmall.copyWith(color: WFColors.textTertiary)),
           const SizedBox(height: WFDims.spacingL),
           ...children.expand((child) => [
             child,
@@ -237,202 +262,44 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
     );
   }
 
-  Widget _settingToggle(String title, String subtitle, bool value, ValueChanged<bool> onChanged) {
-    return Row(
-      children: [
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(title, style: WFTextStyles.labelLarge),
-              const SizedBox(height: 2),
-              Text(subtitle, style: WFTextStyles.bodySmall.copyWith(color: WFColors.textTertiary)),
-            ],
-          ),
-        ),
-        Switch(
-          value: value,
-          onChanged: onChanged,
-          activeColor: WFColors.purple400,
-          inactiveThumbColor: WFColors.gray500,
-          inactiveTrackColor: WFColors.gray700,
-        ),
-      ],
-    );
-  }
-
-  Widget _settingDropdown(
+  Widget _buildSettingsTile(
+    BuildContext context,
     String title,
     String subtitle,
-    String value,
-    List<String> options,
-    Map<String, String> displayNames,
-    ValueChanged<String> onChanged,
+    IconData icon,
+    VoidCallback onTap,
   ) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(title, style: WFTextStyles.labelLarge),
-        const SizedBox(height: 2),
-        Text(subtitle, style: WFTextStyles.bodySmall.copyWith(color: WFColors.textTertiary)),
-        const SizedBox(height: WFDims.spacingS),
-        Container(
-          width: double.infinity,
-          padding: const EdgeInsets.symmetric(horizontal: WFDims.paddingM),
-          decoration: BoxDecoration(
-            color: WFColors.gray800.withOpacity(0.5),
-            borderRadius: BorderRadius.circular(WFDims.radiusSmall),
-            border: Border.all(color: WFColors.glassBorder),
-          ),
-          child: DropdownButton<String>(
-            value: value,
-            onChanged: (newValue) => newValue != null ? onChanged(newValue) : null,
-            dropdownColor: WFColors.gray800,
-            underline: const SizedBox(),
-            isExpanded: true,
-            style: WFTextStyles.bodyMedium,
-            items: options.map((option) {
-              return DropdownMenuItem<String>(
-                value: option,
-                child: Text(
-                  displayNames[option] ?? option.toUpperCase(),
-                  style: WFTextStyles.bodyMedium.copyWith(color: WFColors.textPrimary),
-                ),
-              );
-            }).toList(),
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget _settingAction(String title, String subtitle, IconData icon, VoidCallback onTap) {
-    return GestureDetector(
+    return InkWell(
       onTap: onTap,
-      child: Row(
-        children: [
-          Icon(icon, size: WFDims.iconM, color: WFColors.purple400),
-          const SizedBox(width: WFDims.spacingM),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(title, style: WFTextStyles.labelLarge),
-                const SizedBox(height: 2),
-                Text(subtitle, style: WFTextStyles.bodySmall.copyWith(color: WFColors.textTertiary)),
-              ],
+      borderRadius: BorderRadius.circular(WFDims.radiusMedium),
+      child: Container(
+        padding: const EdgeInsets.all(WFDims.paddingM),
+        decoration: BoxDecoration(
+          color: WFColors.gray800.withOpacity(0.3),
+          borderRadius: BorderRadius.circular(WFDims.radiusMedium),
+          border: Border.all(color: WFColors.glassBorder.withOpacity(0.3)),
+        ),
+        child: Row(
+          children: [
+            Icon(icon, color: WFColors.purple400, size: 20),
+            const SizedBox(width: WFDims.spacingM),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(title, style: WFTextStyles.labelLarge),
+                  const SizedBox(height: 2),
+                  Text(subtitle, style: WFTextStyles.bodySmall.copyWith(color: WFColors.textTertiary)),
+                ],
+              ),
             ),
-          ),
-          Icon(Icons.chevron_right, size: WFDims.iconM, color: WFColors.gray500),
-        ],
-      ),
-    );
-  }
-
-  Widget _settingInfo(String title, String value) {
-    return Row(
-      children: [
-        Expanded(
-          child: Text(title, style: WFTextStyles.labelLarge),
+            Icon(
+              Icons.arrow_forward_ios,
+              color: WFColors.textTertiary,
+              size: 16,
+            ),
+          ],
         ),
-        Text(value, style: WFTextStyles.bodyMedium.copyWith(color: WFColors.textTertiary)),
-      ],
-    );
-  }
-
-  Map<String, String> _getToneDisplayNames() {
-    return {
-      'brutal': 'Brutal (Savage)',
-      'soft': 'Soft (Gentle)',
-      'clinical': 'Clinical (Neutral)',
-    };
-  }
-
-  Map<String, String> _getLanguageDisplayNames() {
-    return {
-      'eng': 'English',
-      'spa': 'Spanish',
-      'fra': 'French',
-      'deu': 'German',
-      'ita': 'Italian',
-      'por': 'Portuguese',
-    };
-  }
-
-  void _showClearHistoryDialog(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        backgroundColor: WFColors.gray900,
-        title: Text('Clear History', style: WFTextStyles.h3),
-        content: Text(
-          'This will permanently delete all your saved analysis and mentor sessions. This action cannot be undone.',
-          style: WFTextStyles.bodyMedium,
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.of(context).pop(),
-            child: Text('Cancel', style: WFTextStyles.button.copyWith(color: WFColors.gray400)),
-          ),
-          WFPrimaryButton(
-            text: 'Clear All',
-            onPressed: () async {
-              await CacheService.clearHistory();
-              if (context.mounted) {
-                Navigator.of(context).pop();
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text('History cleared', style: WFTextStyles.bodySmall),
-                    backgroundColor: WFColors.purple600,
-                  ),
-                );
-              }
-            },
-          ),
-        ],
-      ),
-    );
-  }
-
-  void _exportData(BuildContext context) {
-    // Placeholder for data export functionality
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text('Export functionality coming soon', style: WFTextStyles.bodySmall),
-        backgroundColor: WFColors.purple600,
-      ),
-    );
-  }
-
-  void _showResetDialog(BuildContext context, WidgetRef ref) {
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        backgroundColor: WFColors.gray900,
-        title: Text('Reset Settings', style: WFTextStyles.h3),
-        content: Text(
-          'This will reset all your settings to their default values. Your profile and history will not be affected.',
-          style: WFTextStyles.bodyMedium,
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.of(context).pop(),
-            child: Text('Cancel', style: WFTextStyles.button.copyWith(color: WFColors.gray400)),
-          ),
-          WFPrimaryButton(
-            text: 'Reset',
-            onPressed: () {
-              ref.read(appSettingsProvider.notifier).resetToDefaults();
-              Navigator.of(context).pop();
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text('Settings reset to defaults', style: WFTextStyles.bodySmall),
-                  backgroundColor: WFColors.purple600,
-                ),
-              );
-            },
-          ),
-        ],
       ),
     );
   }

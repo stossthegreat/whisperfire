@@ -134,6 +134,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen>
                         style: GoogleFonts.playfairDisplay(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
+                          color: Colors.white,
                         ),
                       ),
                       const SizedBox(height: 24),

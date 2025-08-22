@@ -9,11 +9,11 @@ void main() {
   testCategory('seduction', 4, 20);
   
   // Test scarcity lessons (20 lessons across 4 worlds)
-  print('\n📚 Testing SCARCITY & OBSESSION category...');
+  print('\n📚 Testing SCARCITY & DESIRE category...');
   testCategory('scarcity', 4, 20);
   
   // Test frame control lessons (20 lessons across 2 worlds)
-  print('\n📚 Testing FRAME CONTROL category...');
+  print('\n📚 Testing CONVERSATION FRAMES category...');
   final frameWorlds = lessonsCatalog['frame'];
   if (frameWorlds != null) {
     print('✅ Found ${frameWorlds.length} worlds in frame category');
@@ -39,35 +39,35 @@ void main() {
             print('   📚 Lessons: 6-20 (${worldLessons.length} total)');
           }
         }
-      } else {
+        } else {
         print('❌ World $world is null');
+        }
       }
-    }
     print('📊 Total frame lessons: $totalLessons (expected: 20)');
   } else {
     print('❌ Frame category not found');
   }
   
   // Test cold power lessons (10 lessons across 2 worlds)
-  print('\n📚 Testing COLD POWER category...');
+  print('\n📚 Testing COMPOSED AUTHORITY category...');
   testCategory('coldpower', 4, 20);
   
   // Test deception lessons (20 lessons across 4 worlds)
-  print('\n📚 Testing DECEPTION & CAMOUFLAGE category...');
+  print('\n📚 Testing HIDDEN DYNAMICS category...');
   testCategory('deception', 4, 20);
   
   // Test psychological warfare lessons (10 lessons across 2 worlds)
-  print('\n📚 Testing PSYCHOLOGICAL WARFARE category...');
+  print('\n📚 Testing STRATEGIC INFLUENCE category...');
   testCategory('psychwar', 4, 20);
   
   // Summary
   print('\n📊 FINAL SUMMARY:');
-  print('✅ Seduction: 20 lessons across 4 worlds');
-  print('✅ Scarcity & Obsession: 20 lessons across 4 worlds');
-  print('✅ Frame Control: 20 lessons across 2 worlds');
-  print('✅ Cold Power: 20 lessons across 4 worlds');
-  print('✅ Deception & Camouflage: 20 lessons across 4 worlds');
-  print('✅ Psychological Warfare: 20 lessons across 4 worlds');
+  print('✅ Magnetic Presence: 20 lessons across 4 worlds');
+  print('✅ Scarcity & Desire: 20 lessons across 4 worlds');
+  print('✅ Conversation Frames: 20 lessons across 2 worlds');
+  print('✅ Composed Authority: 20 lessons across 4 worlds');
+  print('✅ Hidden Dynamics: 20 lessons across 4 worlds');
+  print('✅ Strategic Influence: 20 lessons across 4 worlds');
   print('✅ Total: 120 lessons ready for your app!');
   
   print('\n🎉 All tests complete! Your lesson catalog is fully loaded!');

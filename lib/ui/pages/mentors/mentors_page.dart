@@ -66,7 +66,7 @@ class _MentorsContent extends ConsumerWidget {
                     borderRadius: BorderRadius.circular(WFDims.radiusXLarge),
                     boxShadow: WFShadows.purpleGlow,
                   ),
-                  child: Icon(
+                  child: const Icon(
                     Icons.psychology,
                     size: 40,
                     color: WFColors.textPrimary,
@@ -192,7 +192,7 @@ class _MentorCardState extends ConsumerState<_MentorCard>
                             child: Container(
                               width: double.infinity,
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.only(
+                                borderRadius: const BorderRadius.only(
                                   topLeft: Radius.circular(WFDims.radiusLarge),
                                   topRight: Radius.circular(WFDims.radiusLarge),
                                 ),
@@ -231,18 +231,16 @@ class _MentorCardState extends ConsumerState<_MentorCard>
                                         child: Image.asset(
                                           'assets/images/mentors/${widget.mentor.id}.png',
                                           fit: BoxFit.cover,
-                                          width: 120,
-                                          height: 120,
                                           errorBuilder: (context, error, stackTrace) {
-                                            // Fallback to emoji if image fails to load
-                                            return Center(
-                                              child: Text(
-                                                widget.mentor.avatar,
-                                                style: const TextStyle(
-                                                  fontSize: 60,
-                                                  color: Colors.white,
-                                                  fontWeight: FontWeight.bold,
-                                                ),
+                                            return Container(
+                                              decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                gradient: WFGradients.purpleGradient,
+                                              ),
+                                              child: const Icon(
+                                                Icons.person,
+                                                size: 60,
+                                                color: WFColors.textPrimary,
                                               ),
                                             );
                                           },
@@ -283,7 +281,7 @@ class _MentorCardState extends ConsumerState<_MentorCard>
                               width: double.infinity,
                               decoration: BoxDecoration(
                                 color: WFColors.gray800.withValues(alpha: 0.3),
-                                borderRadius: BorderRadius.only(
+                                borderRadius: const BorderRadius.only(
                                   bottomLeft: Radius.circular(WFDims.radiusLarge),
                                   bottomRight: Radius.circular(WFDims.radiusLarge),
                                 ),
@@ -378,4 +376,4 @@ class _LoadingShell extends StatelessWidget {
       ),
     );
   }
-} 
+}

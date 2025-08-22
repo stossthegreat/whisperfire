@@ -196,7 +196,7 @@ class CategoryOverviewPage extends ConsumerWidget {
         return [
           {
             'world': 1,
-            'title': 'Seductive Gravity',
+            'title': 'Magnetic Attraction',
             'subtitle': 'Recognize Charm Tactics',
             'emoji': '💫',
             'lessonCount': 5,
@@ -204,7 +204,7 @@ class CategoryOverviewPage extends ConsumerWidget {
           },
           {
             'world': 2,
-            'title': 'Frame Control',
+            'title': 'Conversation Frames',
             'subtitle': 'Conversational Defense',
             'emoji': '🎭',
             'lessonCount': 5,
@@ -212,16 +212,16 @@ class CategoryOverviewPage extends ConsumerWidget {
           },
           {
             'world': 3,
-            'title': 'Scarcity & Obsession',
-            'subtitle': 'Emotional Manipulation',
+            'title': 'Scarcity & Desire',
+            'subtitle': 'Emotional Dynamics',
             'emoji': '⏰',
             'lessonCount': 5,
             'requiredXp': 100,
           },
           {
             'world': 4,
-            'title': 'Psychological Warfare',
-            'subtitle': 'Advanced Manipulation',
+            'title': 'Strategic Influence',
+            'subtitle': 'Advanced Influence',
             'emoji': '🧠',
             'lessonCount': 5,
             'requiredXp': 250,
@@ -258,7 +258,7 @@ class CategoryOverviewPage extends ConsumerWidget {
           },
           {
             'world': 2,
-            'title': 'Psychological Warfare',
+            'title': 'Strategic Influence',
             'subtitle': 'Advanced Techniques',
             'emoji': '🎯',
             'lessonCount': 5,

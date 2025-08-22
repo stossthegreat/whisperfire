@@ -15,7 +15,7 @@ class AppHeader extends StatelessWidget implements PreferredSizeWidget {
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
-            fontSize: 26,
+            fontSize: 48,
             letterSpacing: 1.2,
           ),
         ),

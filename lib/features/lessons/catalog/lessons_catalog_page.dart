@@ -28,12 +28,12 @@ class LessonsCatalogPage extends ConsumerWidget {
 
   Widget _buildCategoriesGrid(BuildContext context, UserProfile profile) {
     const categoryData = [
-      {'slug': 'seduction', 'name': 'Seduction', 'color': 0xFFE91E63, 'emoji': '💫'},
-      {'slug': 'gravity', 'name': 'Cold Power', 'color': 0xFF26A69A, 'emoji': '❄️'},
-      {'slug': 'frame', 'name': 'Frame Control', 'color': 0xFF3F51B5, 'emoji': '🎭'},
-      {'slug': 'scarcity', 'name': 'Scarcity & Obsession', 'color': 0xFFFF9800, 'emoji': '💎'},
-      {'slug': 'psychwar', 'name': 'Psychological Warfare', 'color': 0xFF9C27B0, 'emoji': '⚔️'},
-      {'slug': 'deception', 'name': 'Deception & Masks', 'color': 0xFF4CAF50, 'emoji': '🎭'},
+      {'slug': 'seduction', 'name': 'Magnetic Presence', 'color': 0xFFE91E63, 'emoji': '💫'},
+      {'slug': 'gravity', 'name': 'Composed Authority', 'color': 0xFF26A69A, 'emoji': '❄️'},
+      {'slug': 'frame', 'name': 'Conversation Frames', 'color': 0xFF3F51B5, 'emoji': '🎭'},
+      {'slug': 'scarcity', 'name': 'Scarcity & Desire', 'color': 0xFFFF9800, 'emoji': '💎'},
+      {'slug': 'psychwar', 'name': 'Strategic Influence', 'color': 0xFF9C27B0, 'emoji': '⚔️'},
+      {'slug': 'deception', 'name': 'Hidden Dynamics', 'color': 0xFF4CAF50, 'emoji': '🎭'},
     ];
 
     return GridView.builder(

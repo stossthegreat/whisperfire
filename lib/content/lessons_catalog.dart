@@ -3,12 +3,12 @@ import 'package:whisperfire/data/models/lesson_models.dart';
 const kCategories = ['seduction','gravity','frame','scarcity','deception','coldpower'];
 
 const kCategoryNames = {
-  'seduction': 'Seduction',
-  'gravity'  : 'Cold Power',
-  'frame'    : 'Frame Control',
-  'scarcity' : 'Scarcity & Obsession',
-  'deception': 'Deception & Masks',
-  'coldpower': 'Cold Power',
+  'seduction': 'Magnetic Presence',
+  'gravity'  : 'Composed Authority',
+  'frame'    : 'Conversation Frames',
+  'scarcity' : 'Scarcity & Desire',
+  'deception': 'Hidden Dynamics',
+  'coldpower': 'Composed Authority',
 };
 
 /// Map<category, Map<world, Map<lessonNum, Lesson>>>

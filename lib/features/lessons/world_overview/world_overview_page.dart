@@ -418,12 +418,12 @@ class WorldOverviewPage extends ConsumerWidget {
   
   String _getCategoryDisplayName(String category) {
     switch (category) {
-      case 'seduction': return 'Seduction';
-      case 'gravity': return 'Cold Power';
-      case 'frame': return 'Frame Control';
-      case 'scarcity': return 'Scarcity & Obsession';
-      case 'psychwar': return 'Psychological Warfare';
-      case 'deception': return 'Deception & Masks';
+      case 'seduction': return 'Magnetic Presence';
+      case 'gravity': return 'Composed Authority';
+      case 'frame': return 'Conversation Frames';
+      case 'scarcity': return 'Scarcity & Desire';
+      case 'psychwar': return 'Strategic Influence';
+      case 'deception': return 'Hidden Dynamics';
       default: return category;
     }
   }

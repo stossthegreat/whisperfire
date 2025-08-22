@@ -75,19 +75,14 @@ class _LessonsContent extends ConsumerWidget {
                   ),
                 ),
                 const SizedBox(height: WFDims.spacingL),
-                Text('Training Hub', style: WFTextStyles.h1.copyWith(color: Colors.black)),
+                Text('Learning Hub', style: WFTextStyles.h1.copyWith(color: Colors.white)),
                 const SizedBox(height: WFDims.spacingS),
                 Text(
                   'Total XP: ${profile.xpTotal}',
                   style: WFTextStyles.bodyMedium.copyWith(
-                    color: WFColors.purple400,
+                    color: Colors.white,
                     fontWeight: FontWeight.bold,
                   ),
-                ),
-                const SizedBox(height: WFDims.spacingS),
-                Text(
-                  'Master psychological warfare techniques',
-                  style: WFTextStyles.bodyMedium.copyWith(color: Colors.black),
                 ),
               ],
             ),
@@ -99,14 +94,9 @@ class _LessonsContent extends ConsumerWidget {
           Text(
             'Choose Your Path',
             style: WFTextStyles.h2.copyWith(
-              color: Colors.black,
+              color: Colors.white,
               fontWeight: FontWeight.bold,
             ),
-          ),
-          const SizedBox(height: WFDims.spacingM),
-          Text(
-            'Select a category to begin your training',
-            style: WFTextStyles.bodyMedium.copyWith(color: WFColors.textTertiary),
           ),
           const SizedBox(height: WFDims.spacingL),
           
@@ -119,17 +109,17 @@ class _LessonsContent extends ConsumerWidget {
               crossAxisCount: 2,
               crossAxisSpacing: 16,
               mainAxisSpacing: 16,
-              childAspectRatio: 0.8,
+              childAspectRatio: 1.0,
             ),
             itemCount: 6,
             itemBuilder: (context, index) {
               final categoryData = [
-                {'slug': 'seduction', 'name': 'Seduction', 'color': 0xFFE91E63, 'emoji': '💫'},
-                {'slug': 'gravity', 'name': 'Cold Power', 'color': 0xFF26A69A, 'emoji': '❄️'},
-                {'slug': 'frame', 'name': 'Frame Control', 'color': 0xFF3F51B5, 'emoji': '🎭'},
-                {'slug': 'scarcity', 'name': 'Scarcity & Obsession', 'color': 0xFFFF9800, 'emoji': '💎'},
-                {'slug': 'psychwar', 'name': 'Psychological Warfare', 'color': 0xFF9C27B0, 'emoji': '⚔️'},
-                {'slug': 'deception', 'name': 'Deception & Masks', 'color': 0xFF4CAF50, 'emoji': '🎭'},
+                {'slug': 'seduction', 'name': 'Magnetic Presence', 'color': 0xFFE91E63, 'emoji': '💫'},
+                {'slug': 'gravity', 'name': 'Composed Authority', 'color': 0xFF26A69A, 'emoji': '❄️'},
+                {'slug': 'frame', 'name': 'Conversation Frames', 'color': 0xFF3F51B5, 'emoji': '🎭'},
+                {'slug': 'scarcity', 'name': 'Scarcity & Desire', 'color': 0xFFFF9800, 'emoji': '💎'},
+                {'slug': 'psychwar', 'name': 'Strategic Influence', 'color': 0xFF9C27B0, 'emoji': '⚔️'},
+                {'slug': 'deception', 'name': 'Hidden Dynamics', 'color': 0xFF4CAF50, 'emoji': '🎭'},
               ];
               
               final category = categoryData[index];
@@ -173,29 +163,29 @@ class _LessonsContent extends ConsumerWidget {
           border: Border.all(color: Color(color).withOpacity(0.3)),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.all(12),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 emoji,
-                style: const TextStyle(fontSize: 48),
+                style: const TextStyle(fontSize: 36),
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 12),
               Text(
                 categoryName,
-                style: WFTextStyles.h3.copyWith(
+                style: WFTextStyles.h4.copyWith(
                   color: Color(color),
                   fontWeight: FontWeight.bold,
                 ),
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 12),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                 decoration: BoxDecoration(
                   color: Color(color),
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(10),
                 ),
                 child: Text(
                   'Lv.${progress.level}',
@@ -205,7 +195,7 @@ class _LessonsContent extends ConsumerWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 6),
               Text(
                 '${progress.xp} XP',
                 style: WFTextStyles.bodySmall.copyWith(

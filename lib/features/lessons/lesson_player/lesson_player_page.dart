@@ -82,78 +82,115 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
   }
   
   void _completeLesson(Lesson lesson) async {
+    if (!mounted) return; // Safety check
+    
     _confettiController.play();
     
     // Award XP
     final userId = ref.read(currentUserIdProvider);
     await ref.read(progressServiceProvider).awardXp(userId, lesson);
     
-    // Show completion dialog
+    // Invalidate userProfileProvider to refresh all UI components
+    ref.invalidate(userProfileProvider);
+    
+    // Double-check if still mounted before showing dialog
     if (mounted) {
-      showDialog(
-        context: context,
-        barrierDismissible: false,
-        builder: (context) => _buildCompletionDialog(lesson),
-      );
+      // Use a small delay to ensure the XP award is processed
+      await Future.delayed(const Duration(milliseconds: 100));
+      
+      if (mounted) {
+        showDialog(
+          context: context,
+          barrierDismissible: false,
+          builder: (dialogContext) => _buildCompletionDialog(lesson, dialogContext),
+        );
+      }
     }
   }
   
-  Widget _buildCompletionDialog(Lesson lesson) {
-    return AlertDialog(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      title: Text(
-        'Lesson Complete!',
-        style: GoogleFonts.playfairDisplay(
-          fontSize: 24,
-          fontWeight: FontWeight.bold,
-        ),
-        textAlign: TextAlign.center,
-      ),
-      content: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(
-            'You earned ${lesson.xp} XP!',
-            style: GoogleFonts.inter(fontSize: 18),
+  Widget _buildCompletionDialog(Lesson lesson, BuildContext dialogContext) {
+    return WillPopScope(
+      onWillPop: () async {
+        // Handle back button press
+        Navigator.of(dialogContext).pop();
+        Future.delayed(const Duration(milliseconds: 100), () {
+          if (mounted) {
+            Navigator.of(context).pop();
+          }
+        });
+        return false; // Prevent default back behavior
+      },
+      child: AlertDialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        title: Text(
+          'Lesson Complete!',
+          style: GoogleFonts.playfairDisplay(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
           ),
-          const SizedBox(height: 16),
-          Container(
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: Colors.purple[50],
-              borderRadius: BorderRadius.circular(12),
+          textAlign: TextAlign.center,
+        ),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              'You earned ${lesson.xp} XP!',
+              style: GoogleFonts.inter(fontSize: 18),
             ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.star, color: Colors.purple[600], size: 24),
-                const SizedBox(width: 8),
-                Text(
-                  '${lesson.xp} XP',
-                  style: GoogleFonts.inter(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.purple[600],
+            const SizedBox(height: 16),
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.purple[50],
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.star, color: Colors.purple[600], size: 24),
+                  const SizedBox(width: 8),
+                  Text(
+                    '${lesson.xp} XP',
+                    style: GoogleFonts.inter(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.purple[600],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () {
+              // Close dialog first
+              Navigator.of(dialogContext).pop();
+              // Use a small delay to ensure dialog is closed before navigation
+              Future.delayed(const Duration(milliseconds: 100), () {
+                if (mounted) {
+                  Navigator.of(context).pop();
+                }
+              });
+            },
+            child: const Text('Back to Worlds'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              // Close dialog first
+              Navigator.of(dialogContext).pop();
+              // Use a small delay to ensure dialog is closed before navigation
+              Future.delayed(const Duration(milliseconds: 100), () {
+                if (mounted) {
+                  Navigator.of(context).pop();
+                }
+              });
+            },
+            child: const Text('Continue'),
           ),
         ],
       ),
-      actions: [
-        TextButton(
-          onPressed: () => Navigator.of(context).pop(),
-          child: const Text('Back to Worlds'),
-        ),
-        ElevatedButton(
-          onPressed: () {
-            Navigator.of(context).pop();
-            // TODO: Navigate to next lesson
-          },
-          child: const Text('Next Lesson'),
-        ),
-      ],
     );
   }
 
@@ -500,6 +537,7 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
           const SizedBox(height: 16),
           TextField(
             maxLines: 3,
+            style: TextStyle(color: Colors.black), // Make user text black
             decoration: InputDecoration(
               hintText: 'Your rewrite...',
               border: OutlineInputBorder(
@@ -541,6 +579,7 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
           const SizedBox(height: 24),
           TextField(
             maxLines: 5,
+            style: TextStyle(color: Colors.black), // Make user text black
             decoration: InputDecoration(
               hintText: 'Your thoughts...',
               border: OutlineInputBorder(
@@ -565,7 +604,7 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
         else
           const SizedBox(width: 100),
         
-        if (_currentStep < 5)
+        if (_currentStep < 4) // Changed from 5 to 4 so reflection step shows Complete Lesson
           ElevatedButton(
             onPressed: _nextStep,
             child: const Text('Next'),
