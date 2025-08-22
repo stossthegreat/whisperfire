@@ -31,6 +31,7 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
   late AnimationController _cardController;
   
   int _currentStep = 0;
+  bool _isCompleting = false; // Flag to prevent multiple completion calls
   
   @override
   void initState() {
@@ -82,7 +83,9 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
   }
   
   void _completeLesson(Lesson lesson) async {
-    if (!mounted) return; // Safety check
+    if (!mounted || _isCompleting) return; // Prevent multiple completion calls
+    
+    _isCompleting = true; // Set flag to prevent duplicate calls
     
     _confettiController.play();
     
@@ -167,6 +170,8 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
             onPressed: () {
               // Close dialog first
               Navigator.of(dialogContext).pop();
+              // Reset completion flag
+              _isCompleting = false;
               // Use a small delay to ensure dialog is closed before navigation
               Future.delayed(const Duration(milliseconds: 100), () {
                 if (mounted) {
@@ -180,6 +185,8 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
             onPressed: () {
               // Close dialog first
               Navigator.of(dialogContext).pop();
+              // Reset completion flag
+              _isCompleting = false;
               // Use a small delay to ensure dialog is closed before navigation
               Future.delayed(const Duration(milliseconds: 100), () {
                 if (mounted) {
