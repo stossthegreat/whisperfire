@@ -783,7 +783,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'gravity',
         world: 2,
         lesson: 6,
-        xp: 60,
+        xp: 75,
         content: LessonContent(
           hook: 'Versailles, 1775. Marie Antoinette enters the ballroom masked. Her smile is hidden. Her eyes unreadable. Every man wonders: is she amused? Bored? Angry? No one knows. That is the trap. The mask creates distance — and distance creates obsession. Composed Authority thrives on uncertainty. What is unseen burns hotter in the mind than what is revealed in the light.',
           concept: [
@@ -813,7 +813,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'gravity',
         world: 2,
         lesson: 7,
-        xp: 60,
+        xp: 75,
         content: LessonContent(
           hook: 'Hollywood, 1955. James Dean doesn\'t show up to the party. He\'s the only one missing, yet every conversation circles back to him. "Where is he?" "Did you hear what he\'s doing?" His absence filled the room more than anyone\'s presence. Composed Authority teaches: sometimes not showing up is the loudest appearance you can make.',
           concept: [
@@ -843,7 +843,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'gravity',
         world: 2,
         lesson: 8,
-        xp: 60,
+        xp: 75,
         content: LessonContent(
           hook: 'Berlin, 1936. Leni Riefenstahl stands behind the camera. She doesn\'t shout. She doesn\'t plead. She simply stares through the lens at her crew. The gaze alone commands them — icy, unblinking, eternal. A composed gaze says: "I see you, but I do not bend to you." It is more terrifying than a shout, more intoxicating than a kiss.',
           concept: [
@@ -873,7 +873,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'gravity',
         world: 2,
         lesson: 9,
-        xp: 60,
+        xp: 75,
         content: LessonContent(
           hook: 'Ancient Rome. A general kneels before Caesar, begging forgiveness. Caesar listens, expression unreadable. Then he turns his head and walks away without a word. The man collapses in tears. The cold shoulder is not indifference — it is annihilation. It forces the other to crawl for warmth that may never come.',
           concept: [
@@ -903,7 +903,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'gravity',
         world: 2,
         lesson: 10,
-        xp: 60,
+        xp: 75,
         content: LessonContent(
           hook: 'London, 1997. Princess Diana walks into a gala after her divorce. The world expected her broken, weeping. Instead, she is radiant — cool, untouchable, the embodiment of grace turned into defiance. The photographers swarm. The man who left her looks smaller than ever. Composed Authority is not the absence of emotion. It is the throne you sit on when the world wants you crawling.',
           concept: [
@@ -935,7 +935,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'gravity',
         world: 3,
         lesson: 11,
-        xp: 70,
+        xp: 100,
         content: LessonContent(
           hook: 'Vienna, 1805. Beethoven is asked why he sometimes pauses for long stretches in his compositions. He smiles, tapping his temple: "Silence is the most powerful note." The audience leans in, desperate, waiting for the next sound. Composed Authority thrives on the pause. A moment of silence in speech or presence creates tension sharper than a blade.',
           concept: [
@@ -965,7 +965,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'gravity',
         world: 3,
         lesson: 12,
-        xp: 70,
+        xp: 100,
         content: LessonContent(
           hook: 'Moscow, 1945. Stalin is told of a betrayal. He doesn\'t rage. He doesn\'t shout. He smiles — a smile so calm, so cold, the traitor\'s knees buckle. A hot fury can be dismissed as weakness. A composed smile says: "I already own your fate."',
           concept: [
@@ -995,7 +995,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'gravity',
         world: 3,
         lesson: 13,
-        xp: 70,
+        xp: 100,
         content: LessonContent(
           hook: 'Paris, 1920. Hemingway is laughing in a café, animated, alive. Then suddenly — silence. His face falls into stillness. His tone drops. Everyone at the table feels it: the room chills. This shift, sudden and deliberate, forces all attention back to him. Composed Authority knows that sudden stillness is as commanding as thunder.',
           concept: [
@@ -1025,7 +1025,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'gravity',
         world: 3,
         lesson: 14,
-        xp: 70,
+        xp: 100,
         content: LessonContent(
           hook: 'Tokyo, 1600. A samurai stands surrounded by enemies. He does not unsheathe his blade. He simply breathes — steady, calm, eyes fixed. His stillness unnerves them more than any strike. Composed Authority is serenity in the storm. It makes the furious look foolish, the desperate look weak.',
           concept: [
@@ -1055,7 +1055,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'gravity',
         world: 3,
         lesson: 15,
-        xp: 70,
+        xp: 100,
         content: LessonContent(
           hook: 'New York, 1984. Madonna, mid-interview, is pressed with invasive questions. She smirks, stands, and walks away. The cameras keep rolling, but the interview is over. By leaving, she controls the narrative. By absence, she creates myth. Composed Authority is not only knowing when to appear, but when to vanish.',
           concept: [
@@ -1087,7 +1087,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'gravity',
         world: 4,
         lesson: 16,
-        xp: 80,
+        xp: 125,
         content: LessonContent(
           hook: 'London, 1890. Oscar Wilde delivers one of his cutting one-liners in a crowded salon. The room erupts with laughter — except for one man, seated across from him, who does not move, does not smile, does not blink. Wilde falters for the briefest second. Composed Authority thrives in the refusal to give recognition. The stone face unsettles more than any insult.',
           concept: [
@@ -1117,7 +1117,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'gravity',
         world: 4,
         lesson: 17,
-        xp: 80,
+        xp: 125,
         content: LessonContent(
           hook: 'Hollywood, 1950. Marilyn Monroe is being hounded at a party. A man won\'t stop trying to charm her. She turns her body away, greets someone else, laughs at another\'s joke. He doesn\'t exist anymore. His desperation grows; the more he fights for her attention, the more invisible she makes him. The freeze-out is the ultimate rejection without a word.',
           concept: [
@@ -1147,7 +1147,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'gravity',
         world: 4,
         lesson: 18,
-        xp: 80,
+        xp: 125,
         content: LessonContent(
           hook: 'Florence, 1500. Machiavelli, when asked about a rival\'s talents, replies: "Yes, he is clever… for a child." Praise coated in frost burns deeper than insult. It gives with one hand and takes with the other, leaving them confused, insecure, desperate to prove themselves.',
           concept: [
@@ -1177,7 +1177,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'gravity',
         world: 4,
         lesson: 19,
-        xp: 80,
+        xp: 125,
         content: LessonContent(
           hook: 'New York, 1990. A Wall Street negotiator lets his rival rush through papers, demand answers, flood the room with energy. He speaks slowly, deliberately, checking each clause as though he has all the time in the world. By moving like a glacier, he forces the frantic man to drown in his own urgency. Composed Authority is time used as a weapon.',
           concept: [
@@ -1393,7 +1393,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'frame',
         world: 2,
         lesson: 6,
-        xp: 60,
+        xp: 75,
         content: LessonContent(
           hook: 'Venice, 1720. A masquerade ball. Candlelight flickers on painted masks. Casanova does not reveal himself with declarations; he drifts past her, gaze lingering a heartbeat too long, vanishing into the crowd. She laughs with others but keeps glancing at the doorway, searching for the phantom presence that left a mark without words. Seduction thrives not in possession, but in haunting absence.',
           concept: [
@@ -1423,7 +1423,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'frame',
         world: 2,
         lesson: 7,
-        xp: 60,
+        xp: 75,
         content: LessonContent(
           hook: 'Kyoto, 11th century. In The Tale of Genji, the prince courts women not with conquest but with patience. A glance one evening, a poem slipped under a door the next, a silent gift of incense the following week. Each layer builds anticipation until longing itself becomes unbearable. The art is not in arrival, but in delay.',
           concept: [
@@ -1453,7 +1453,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'frame',
         world: 2,
         lesson: 8,
-        xp: 60,
+        xp: 75,
         content: LessonContent(
           hook: 'Paris, 1935. Pablo Picasso sits in a café, sketching on a napkin. A woman leans over, fascinated. He folds it and tucks it away. "May I see it?" she asks. He smirks: "Not yet." She spends the evening desperate for the reveal, only to realize the sketch matters less than the anticipation he orchestrated. Seduction is not the gift itself—it is the unfinished riddle.',
           concept: [
@@ -1483,7 +1483,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'frame',
         world: 2,
         lesson: 9,
-        xp: 60,
+        xp: 75,
         content: LessonContent(
           hook: 'Paris opera house, 1875. A young baron escorts his lover through the gilded hall. His hand hovers just above hers, never touching, never claiming—an almost unbearable closeness. She feels heat without contact, possession without grasp. True seduction lies not in the obvious touch, but in the electricity of almost.',
           concept: [
@@ -1513,7 +1513,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'frame',
         world: 2,
         lesson: 10,
-        xp: 60,
+        xp: 75,
         content: LessonContent(
           hook: 'Hollywood, 1955. James Dean, equal parts rebel and innocent, enters a party. To some, he\'s danger; to others, he\'s vulnerability. The contradiction multiplies intrigue: the untamed wolf with the boyish grin. True seduction lies in refusing to be one thing—your contradictions force others to crave decoding.',
           concept: [
@@ -1545,7 +1545,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'frame',
         world: 3,
         lesson: 11,
-        xp: 70,
+        xp: 100,
         content: LessonContent(
           hook: 'Cairo, 1920. In the thick air of a jazz club, a woman in emerald silk doesn\'t smile, doesn\'t speak—she only looks. Her gaze lingers, slow and deliberate, as if peeling away every defense. Men who meet it laugh nervously, tug their collars, retreat. One man, however, cannot look away. He feels undressed, claimed, consumed. A glance, wielded correctly, is not observation—it is possession.',
           concept: [
@@ -1575,7 +1575,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'frame',
         world: 3,
         lesson: 12,
-        xp: 70,
+        xp: 100,
         content: LessonContent(
           hook: 'Vienna, 1805. At a private salon, Beethoven plays a sonata. The most devastating moment is not a cascade of notes but a pause, a silence so thick the room holds its breath. Anticipation floods the air—every ear leans into the void. When the music resumes, it lands like thunder. Silence, used deliberately, is the loudest sound in the world.',
           concept: [
@@ -1605,7 +1605,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'frame',
         world: 3,
         lesson: 13,
-        xp: 70,
+        xp: 100,
         content: LessonContent(
           hook: 'Paris, 1958. Yves Saint Laurent unveils a gown, but backstage, the hem is deliberately unfinished. Critics sneer—until weeks later, women across Europe beg for replicas. By withholding perfection, he gave them hunger. Desire is not about giving everything—it\'s about giving almost everything, leaving the soul restless for the missing piece.',
           concept: [
@@ -1635,7 +1635,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'frame',
         world: 3,
         lesson: 14,
-        xp: 70,
+        xp: 100,
         content: LessonContent(
           hook: 'Istanbul, 1890. A merchant lights oud incense in a narrow alley before leaving. Hours after he\'s gone, the fragrance still lingers—haunting, intoxicating, inseparable from him. People remember him less for his words and more for the trace he left behind. Seduction is not just in presence—it is in the afterglow.',
           concept: [
@@ -1665,7 +1665,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'frame',
         world: 3,
         lesson: 15,
-        xp: 70,
+        xp: 100,
         content: LessonContent(
           hook: 'London, 1927. A poet leans across the table to his muse. "Your beauty unsettles me," he murmurs, "but your silence unsettles me more." The line wounds and flatters in equal measure. She cannot dismiss him; his words cling like perfume and venom. True seduction is not in empty praise, but in compliments laced with a sting that forces them to replay it endlessly.',
           concept: [
@@ -1697,7 +1697,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'frame',
         world: 4,
         lesson: 16,
-        xp: 80,
+        xp: 125,
         content: LessonContent(
           hook: 'Venice, 1703. A masked courtesan whispers to a nobleman in the candlelit shadows of Carnival: "If I told you the truth, you\'d never sleep again." Then she laughs and disappears into the crowd. He spends years recalling that one line, haunted by the mystery of a secret never revealed. A hint of danger intoxicates far more than confession.',
           concept: [
@@ -1727,7 +1727,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'frame',
         world: 4,
         lesson: 17,
-        xp: 80,
+        xp: 125,
         content: LessonContent(
           hook: 'Kyoto, 1650. A geisha entertains a samurai with gentle teasing. She praises his haiku, then with a sly smile adds: "It is beautiful… in its simplicity." He laughs, stung and charmed at once. She strokes his pride, then nicks it with a blade. He leaves restless, desperate to win her unqualified admiration. Seduction thrives on duality—pleasure followed by the faintest cut.',
           concept: [
@@ -1757,7 +1757,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'frame',
         world: 4,
         lesson: 18,
-        xp: 80,
+        xp: 125,
         content: LessonContent(
           hook: 'New York, 1982. At Studio 54, a man holds the entire dance floor in thrall—until he suddenly vanishes. No word, no goodbye. Whispers ripple through the crowd: "Where did he go?" His absence becomes larger than his presence. The next night, all eyes search for him. Seduction is not only in showing up—it is in leaving when the desire peaks.',
           concept: [
@@ -1787,7 +1787,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'frame',
         world: 4,
         lesson: 19,
-        xp: 80,
+        xp: 125,
         content: LessonContent(
           hook: 'Madrid, 1901. On a balcony, two lovers lean close. Lips nearly touch—then she withdraws, smiling. The kiss never lands. The man is left drunk on what almost was. Denial is not rejection—it is an acceleration. What is withheld burns hotter than what is consumed.',
           concept: [
@@ -1817,7 +1817,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'frame',
         world: 4,
         lesson: 20,
-        xp: 80,
+        xp: 125,
         content: LessonContent(
           hook: 'Berlin, 1932. In a smoke-choked café, a poet tells a woman: "Every man here wants you. But I am the only one who dares admit I don\'t." She laughs, unsettled. He has shattered the frame—no longer a pursuer, but the pursued. Frame control is the alchemy of seduction: whoever defines reality owns the game.',
           concept: [
@@ -4137,7 +4137,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'psychwar',
         world: 4,
         lesson: 16,
-        xp: 80,
+        xp: 125,
         content: LessonContent(
           hook: 'Mafia New York, 1970s. A man under suspicion is invited to a meeting. He speaks nervously, filling the room with explanations, excuses, reassurances. His words betray his fear. Across the table, his boss says nothing. Just silence. The man keeps talking—until he reveals everything. Silence, weaponized, is louder than any shout.',
           concept: [
@@ -4167,7 +4167,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'psychwar',
         world: 4,
         lesson: 17,
-        xp: 80,
+        xp: 125,
         content: LessonContent(
           hook: 'Feudal Japan. A samurai bows deeply to his enemy lord, agreeing to every command. He never resists, never argues. Months later, when trust is won, he strikes at the moment least expected. Submission was not weakness—it was camouflage. Agreement became his sharpest disguise.',
           concept: [
@@ -4197,7 +4197,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'psychwar',
         world: 4,
         lesson: 18,
-        xp: 80,
+        xp: 125,
         content: LessonContent(
           hook: 'Cold War diplomacy. A negotiator never offers an opinion. Instead, he mirrors the desires of his opponent: "That\'s an interesting thought." "I can see why you\'d feel that way." The opponent mistakes reflection for rapport, slowly lowering his guard. By the end, he has revealed his full playbook—while the mirror never once showed its own face.',
           concept: [
@@ -4227,7 +4227,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'psychwar',
         world: 4,
         lesson: 19,
-        xp: 80,
+        xp: 125,
         content: LessonContent(
           hook: '1930s Chicago. A gangster corners a shop owner: "Do you want to pay for protection monthly—or in one big sum right now?" The choice is an illusion. Both roads lead to surrender. The man never realizes he could refuse the game altogether. This is the art of the false choice: framing captivity as freedom.',
           concept: [
@@ -4257,7 +4257,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'psychwar',
         world: 4,
         lesson: 20,
-        xp: 80,
+        xp: 125,
         content: LessonContent(
           hook: 'Ancient Mongolia. A hunter watches the herd for days. He does not chase the strongest animal. He does not rush. He waits for the one that lingers at the edges, limping, distracted. When he strikes, it looks inevitable. The kill was not in the attack—it was in the patience before it.',
           concept: [
