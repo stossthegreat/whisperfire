@@ -8,7 +8,7 @@ const kCategoryNames = {
   'frame'    : 'Conversation Frames',
   'scarcity' : 'Scarcity & Desire',
   'deception': 'Hidden Dynamics',
-  'coldpower': 'Composed Authority',
+  'coldpower': 'Strategic Influence',
 };
 
 /// Map<category, Map<world, Map<lessonNum, Lesson>>>

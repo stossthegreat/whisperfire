@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/theme/theme.dart';
+import '../../../core/utils/text_sanitizer.dart';
 import '../../../data/models/mentor_models.dart';
 import '../../../data/services/api_service.dart';
 import '../../../data/services/cache_service.dart';
@@ -527,8 +528,8 @@ class _MessageBubble extends StatelessWidget {
                     border: isUser ? null : Border.all(color: WFColors.glassBorder.withOpacity(0.3)),
                   ),
                   child: Text(
-                    message.text,
-                    style: WFTextStyles.bodyMedium.copyWith(
+                    TextSanitizer.sanitizeText(message.text),
+                    style: WFTextStyles.mentorResponse.copyWith(
                       color: WFColors.textPrimary,
                     ),
                   ),
