@@ -223,7 +223,7 @@ class SettingsPage extends ConsumerWidget {
                   ),
                 ],
               ),
-
+              
               const SizedBox(height: WFDims.spacingXXL),
             ],
           ),
@@ -247,7 +247,7 @@ class SettingsPage extends ConsumerWidget {
             children: [
               Icon(icon, color: WFColors.purple400, size: 24),
               const SizedBox(width: WFDims.spacingS),
-              Text(title, style: WFTextStyles.h3),
+          Text(title, style: WFTextStyles.h3),
             ],
           ),
           const SizedBox(height: WFDims.spacingS),
@@ -274,25 +274,25 @@ class SettingsPage extends ConsumerWidget {
       borderRadius: BorderRadius.circular(WFDims.radiusMedium),
       child: Container(
         padding: const EdgeInsets.all(WFDims.paddingM),
-        decoration: BoxDecoration(
+          decoration: BoxDecoration(
           color: WFColors.gray800.withOpacity(0.3),
           borderRadius: BorderRadius.circular(WFDims.radiusMedium),
           border: Border.all(color: WFColors.glassBorder.withOpacity(0.3)),
         ),
-        child: Row(
-          children: [
+      child: Row(
+        children: [
             Icon(icon, color: WFColors.purple400, size: 20),
-            const SizedBox(width: WFDims.spacingM),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(title, style: WFTextStyles.labelLarge),
-                  const SizedBox(height: 2),
-                  Text(subtitle, style: WFTextStyles.bodySmall.copyWith(color: WFColors.textTertiary)),
-                ],
-              ),
+          const SizedBox(width: WFDims.spacingM),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(title, style: WFTextStyles.labelLarge),
+                const SizedBox(height: 2),
+                Text(subtitle, style: WFTextStyles.bodySmall.copyWith(color: WFColors.textTertiary)),
+              ],
             ),
+          ),
             Icon(
               Icons.arrow_forward_ios,
               color: WFColors.textTertiary,

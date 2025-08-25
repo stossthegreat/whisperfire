@@ -173,7 +173,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'seduction',
         world: 2,
         lesson: 6,
-        xp: 50,
+        xp: 75,
         content: LessonContent(
           hook: 'Venice, 1528. Pietro Aretino, the scandalous poet, never tells the whole tale. His letters are riddles, his plays stop mid-thought. His audiences leave theatres aflame with questions, inventing endings in their own minds. Aretino understood: the seducer never finishes the story—he lets desire write its own sequel. To leave a door ajar is to invite the imagination inside.',
           concept: [
@@ -203,7 +203,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'seduction',
         world: 2,
         lesson: 7,
-        xp: 50,
+        xp: 75,
         content: LessonContent(
           hook: 'Kyoto, 1776. A geisha pours sake with one hand and slices a glance with the other. Her laughter warms; her silence chills. One samurai suitor leaves with his chest swelling from her praise; the next leaves gutted by her indifference. The power lies not in kindness, nor in cruelty—but in the oscillation between the two. The heart addicted to warmth craves it most when it fears frost.',
           concept: [
@@ -233,7 +233,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'seduction',
         world: 2,
         lesson: 8,
-        xp: 50,
+        xp: 75,
         content: LessonContent(
           hook: 'Paris, 1847. Balzac observes: lovers don\'t fall for each other—they fall for themselves, reflected in each other\'s eyes. The master seducer doesn\'t shine light; he becomes a mirror. He listens with predator\'s patience, then offers back a fragment of their soul, polished, brighter, more intoxicating. Nothing binds tighter than being seen—not as you are, but as you wish to be.',
           concept: [
@@ -263,7 +263,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'seduction',
         world: 2,
         lesson: 9,
-        xp: 50,
+        xp: 75,
         content: LessonContent(
           hook: 'Naples, 1610. Caravaggio paints with shadow, leaving half his canvas in darkness. The light is precious because it is rare. So too with touch. The seducer understands: hands are instruments of worship or devastation, but only when seldom used. Touch too freely and you are a tavern drunk. Touch rarely, and you become a priest of the body.',
           concept: [
@@ -293,7 +293,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'seduction',
         world: 2,
         lesson: 10,
-        xp: 50,
+        xp: 75,
         content: LessonContent(
           hook: 'Baghdad, 1258. In the court of the Caliph, a concubine sings sweet verses into a poet\'s ear. Then, with a sudden laugh, she mocks his clumsy sandals before vanishing into the harem. He spends the night feverish—was she cruel or kind? Both. He doesn\'t realize: her honey needed the sting. Pure sweetness suffocates; venom revives.',
           concept: [
@@ -325,7 +325,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'seduction',
         world: 3,
         lesson: 11,
-        xp: 50,
+        xp: 100,
         content: LessonContent(
           hook: 'Istanbul, 1555. Roxelana, once a slave, now queen beside Suleiman the Magnificent, does not storm her rivals. She waits. Her enemies exhaust themselves in gossip and maneuvering, while she sits silent, weaving. By the time they realize the threads surround them, it is too late. Seduction is not only motion—it is the weaponization of stillness.',
           concept: [
@@ -623,7 +623,616 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
       ),
     },
   },
-  'gravity': {1: {}, 2: {}, 3: {}, 4: {}},
+  'gravity': {
+    1: {
+      1: Lesson(
+        id: 'gravity_1_1',
+        title: 'The Temperature of Authority',
+        category: 'gravity',
+        world: 1,
+        lesson: 1,
+        xp: 50,
+        content: LessonContent(
+          hook: 'Moscow, 1945. Stalin walks into the war room, and though his body is frail, the air freezes. He speaks only once in the meeting. One sentence. Then silence. Generals argue for hours around his absence of words, every man terrified to be the one Stalin finally interrupts. When he does, he does not raise his voice. He only says: "Enough." It lands harder than a firing squad. True authority is not heat — it is temperature control. Composure makes others burn themselves alive trying to melt you.',
+          concept: [
+            'Heat pleads. Composure commands. The one who stays steady when others beg reveals themselves as the natural center.',
+            'Silence is a weapon sharper than interruption. A pause can make others trip over themselves to fill it.',
+            'Composed Authority is not suppression. It is restraint. It is an aura that says: "I do not need this moment. You do."'
+          ],
+          drill: Drill(
+            question: 'At your next meeting, social event, or gathering: Do not rush to speak. Let silence fall. Watch who breaks first. When you do speak, deliver half the words you normally would. Measured, slow. Observe how the weight of your voice doubles when it emerges from stillness.',
+            options: [
+              'Fill every silence immediately to avoid awkwardness.',
+              'Let silence fall. Speak only when necessary, with measured words.'
+            ],
+            answerIndex: 1
+          ),
+          rewrite: RewriteTask(
+            prompt: 'Take this: "I totally agree, let me explain why." Forge it into something more composed and authoritative.',
+            input: 'I totally agree, let me explain why.',
+            example: 'That\'s enough. I\'ve heard what I need.'
+          ),
+          reflection: 'Do you fill silence to ease your discomfort — or do you let it crown you? When was the last time you spoke like every word was a blade?'
+        ),
+      ),
+      2: Lesson(
+        id: 'gravity_1_2',
+        title: 'The Luxury of Distance',
+        category: 'gravity',
+        world: 1,
+        lesson: 2,
+        xp: 50,
+        content: LessonContent(
+          hook: 'The French Riviera, 1961. Alain Delon leans against the balcony rail, a cigarette loose between his fingers. The party hums behind him, desperate to pull him back into its current. But he doesn\'t chase. He drifts. He lets them orbit him like moons to a planet that doesn\'t even notice its own gravity. Some people attract by attention; Delon attracted by distance. The closer they wanted him, the further he leaned back. Desire is not always heat — sometimes it is the frost on glass you cannot touch.',
+          concept: [
+            'Rarity = Value. The less of you people can access, the more they crave entry.',
+            'Withholding is not rejection. It is invitation sharpened into obsession.',
+            'Composed Authority is luxury. You are the silk cord, not the begging hand.'
+          ],
+          drill: Drill(
+            question: 'Leave one message unanswered for 24 hours. At a gathering, step outside alone for five minutes when the energy peaks. Return like you never left. Watch how absence re-ignites their chase.',
+            options: [
+              'Always respond immediately to maintain connection.',
+              'Create strategic distance to increase your value and mystery.'
+            ],
+            answerIndex: 1
+          ),
+          rewrite: RewriteTask(
+            prompt: 'Take this: "I miss you so much, when can I see you again?" Forge it into something more composed and distant.',
+            input: 'I miss you so much, when can I see you again?',
+            example: 'I\'ve been enjoying my quiet. We\'ll see if you\'re worth breaking it.'
+          ),
+          reflection: 'Are you a firework — dazzling, then gone — or are you the northern star, composed, distant, always craved but never caught?'
+        ),
+      ),
+      3: Lesson(
+        id: 'gravity_1_3',
+        title: 'The Glacier\'s Pace',
+        category: 'gravity',
+        world: 1,
+        lesson: 3,
+        xp: 50,
+        content: LessonContent(
+          hook: 'Tokyo, 1980s. Yakuza boss Kazuo Taoka is surrounded by chaos. Deals collapse, rivals circle, tempers flare. He sips his tea. No rush. When he finally nods, an entire room of killers breathes again. His timing is glacial, but glaciers carve valleys and crush empires. Power is not shown in speed; it is revealed in patience. The person who never hurries makes the world walk at their pace.',
+          concept: [
+            'Urgency is weakness. The one who must decide now is already enslaved.',
+            'Patience is terror. The longer you wait, the more they imagine the storm you\'re holding back.',
+            'Composed Authority is inevitability. Like a glacier, you may be slow — but you are unstoppable.'
+          ],
+          drill: Drill(
+            question: 'When pressured for a quick answer, say: "I\'ll let you know tomorrow." Practice waiting 10 full seconds before replying in tense conversations. Watch how their anxiety grows in your silence.',
+            options: [
+              'Respond immediately to show efficiency and care.',
+              'Take your time. Let others wait and wonder about your decision.'
+            ],
+            answerIndex: 1
+          ),
+          rewrite: RewriteTask(
+            prompt: 'Take this: "Yes, yes, fine, let\'s do it." Forge it into something more composed and deliberate.',
+            input: 'Yes, yes, fine, let\'s do it.',
+            example: 'Not yet. I\'ll decide when it\'s time.'
+          ),
+          reflection: 'Are you the hunted, panting to keep up? Or are you the glacier — slow, composed, inevitable, carving history while others crumble?'
+        ),
+      ),
+      4: Lesson(
+        id: 'gravity_1_4',
+        title: 'The Discipline of Composure',
+        category: 'gravity',
+        world: 1,
+        lesson: 4,
+        xp: 50,
+        content: LessonContent(
+          hook: 'Sparta, 480 BC. The Persian envoy mocks Leonidas, offering riches if he kneels. Leonidas doesn\'t move. He doesn\'t shout. He doesn\'t threaten. He only smirks and says: "Come and take them." His men cheer not because of his rage, but because of his unshakable stillness. Composed Authority is discipline made flesh. It is refusing to flinch, even when the blade touches your throat.',
+          concept: [
+            'Control of the self is control of the room. Panic spreads. So does composure.',
+            'A steady face is a weapon. It makes your enemies doubt, your allies believe.',
+            'Composed Authority is not suppression — it is sculpted restraint.'
+          ],
+          drill: Drill(
+            question: 'Practice holding a neutral face when insulted. Count to three before responding to any provocation. Never let them see the crack. Let them wonder what\'s behind the composure.',
+            options: [
+              'React immediately to show you\'re not a pushover.',
+              'Maintain composure. Let others wonder what you\'re thinking.'
+            ],
+            answerIndex: 1
+          ),
+          rewrite: RewriteTask(
+            prompt: 'Take this: "How dare you say that to me?!" Forge it into something more composed and controlled.',
+            input: 'How dare you say that to me?!',
+            example: 'Interesting. I\'ll remember you said that.'
+          ),
+          reflection: 'Do you rule your emotions, or do your emotions rule you? Who has truly mastered the battlefield of the face?'
+        ),
+      ),
+      5: Lesson(
+        id: 'gravity_1_5',
+        title: 'The Crown of Indifference',
+        category: 'gravity',
+        world: 1,
+        lesson: 5,
+        xp: 50,
+        content: LessonContent(
+          hook: 'Harvard, 1962. A young senator named John F. Kennedy is mobbed after a speech. Dozens shout for his attention. He smiles faintly but never stops walking. He gives no one person his full gaze, yet all feel brushed by his aura. The secret? He wore indifference like a crown. The crowd didn\'t want his words — they wanted to matter to him. Indifference is not neglect. It is throne-room psychology. It makes others kneel just for the hope of recognition.',
+          concept: [
+            'Attention is oxygen. Starve them, and they suffocate. Grant them a breath, and they worship you.',
+            'Composed Authority thrives on selective light. Let them live in shadow until you choose to shine.',
+            'Indifference is not cruelty. It is the crown you wear that keeps the masses beneath you.'
+          ],
+          drill: Drill(
+            question: 'Next time you walk into a crowded space, do not rush to greet anyone. Let them approach you first. Give three people less than they want, and one person just enough to feel special. Watch the hierarchy form around you.',
+            options: [
+              'Greet everyone warmly to show you\'re friendly and approachable.',
+              'Let others come to you. Be selective about who gets your full attention.'
+            ],
+            answerIndex: 1
+          ),
+          rewrite: RewriteTask(
+            prompt: 'Take this: "It\'s so great to see you! I\'ve missed you!" Forge it into something more composed and indifferent.',
+            input: 'It\'s so great to see you! I\'ve missed you!',
+            example: 'I noticed you. That\'s enough for tonight.'
+          ),
+          reflection: 'Do you beg to be remembered, or do you sit so high that memory itself begs to hold you?'
+        ),
+      ),
+    },
+    2: {
+      6: Lesson(
+        id: 'gravity_2_6',
+        title: 'The Mask That Freezes Desire',
+        category: 'gravity',
+        world: 2,
+        lesson: 6,
+        xp: 60,
+        content: LessonContent(
+          hook: 'Versailles, 1775. Marie Antoinette enters the ballroom masked. Her smile is hidden. Her eyes unreadable. Every man wonders: is she amused? Bored? Angry? No one knows. That is the trap. The mask creates distance — and distance creates obsession. Composed Authority thrives on uncertainty. What is unseen burns hotter in the mind than what is revealed in the light.',
+          concept: [
+            'The mask is not deception — it is control. You reveal only what you choose.',
+            'Ambiguity enslaves the imagination. What they can\'t know, they must invent.',
+            'The unreadable face is stronger than the beautiful face. Beauty fades. Mystery multiplies.'
+          ],
+          drill: Drill(
+            question: 'Next time someone asks you a personal question, answer with something half-true, half-shadow. Practice smiling without showing teeth. Let them wonder what you\'re hiding.',
+            options: [
+              'Be completely honest and open about your thoughts and feelings.',
+              'Maintain some mystery. Let others wonder about your true thoughts.'
+            ],
+            answerIndex: 1
+          ),
+          rewrite: RewriteTask(
+            prompt: 'Take this: "I\'m so into you, I can\'t stop thinking about you." Forge it into something more mysterious and composed.',
+            input: 'I\'m so into you, I can\'t stop thinking about you.',
+            example: 'You\'ll never know exactly what I think when I look at you — and that\'s why you can\'t stop thinking of me.'
+          ),
+          reflection: 'Are you addicted to being understood — or addicted to being desired? Which one lasts longer?'
+        ),
+      ),
+      7: Lesson(
+        id: 'gravity_2_7',
+        title: 'The Frost of Absence',
+        category: 'gravity',
+        world: 2,
+        lesson: 7,
+        xp: 60,
+        content: LessonContent(
+          hook: 'Hollywood, 1955. James Dean doesn\'t show up to the party. He\'s the only one missing, yet every conversation circles back to him. "Where is he?" "Did you hear what he\'s doing?" His absence filled the room more than anyone\'s presence. Composed Authority teaches: sometimes not showing up is the loudest appearance you can make.',
+          concept: [
+            'Absence weaponizes curiosity. The less they see you, the more they imagine you.',
+            'Cold withdrawal increases value. Distance makes hearts restless.',
+            'Being scarce is more seductive than being available.'
+          ],
+          drill: Drill(
+            question: 'Cancel one non-essential plan this week. Let them feel your absence. Delete one post from your social feed. Let them miss your presence.',
+            options: [
+              'Always be available and present to maintain strong connections.',
+              'Create strategic absences to increase your value and mystery.'
+            ],
+            answerIndex: 1
+          ),
+          rewrite: RewriteTask(
+            prompt: 'Take this: "Sorry I couldn\'t make it last night." Forge it into something more composed and distant.',
+            input: 'Sorry I couldn\'t make it last night.',
+            example: 'I don\'t show up everywhere — only where it matters.'
+          ),
+          reflection: 'Do you exhaust people by being ever-present, or do you ignite them by being a rare fire they must chase?'
+        ),
+      ),
+      8: Lesson(
+        id: 'gravity_2_8',
+        title: 'The Gaze of Winter',
+        category: 'gravity',
+        world: 2,
+        lesson: 8,
+        xp: 60,
+        content: LessonContent(
+          hook: 'Berlin, 1936. Leni Riefenstahl stands behind the camera. She doesn\'t shout. She doesn\'t plead. She simply stares through the lens at her crew. The gaze alone commands them — icy, unblinking, eternal. A composed gaze says: "I see you, but I do not bend to you." It is more terrifying than a shout, more intoxicating than a kiss.',
+          concept: [
+            'The eyes are weapons. Composed Authority sharpens them into blades.',
+            'Look less often. But when you do, make it linger.',
+            'The gaze is not affection. It is dominion.'
+          ],
+          drill: Drill(
+            question: 'In your next conversation, look away more often than you look at them. When you finally do look at them, hold it a second longer than is comfortable.',
+            options: [
+              'Maintain constant eye contact to show interest and engagement.',
+              'Use strategic eye contact. Look away often, then hold their gaze when you do look.'
+            ],
+            answerIndex: 1
+          ),
+          rewrite: RewriteTask(
+            prompt: 'Take this: "You look amazing tonight." Forge it into something more composed and commanding.',
+            input: 'You look amazing tonight.',
+            example: 'Don\'t move. I want to remember you exactly like this.'
+          ),
+          reflection: 'Do you scatter your gaze like coins, or do you make it a jewel that others would kill to receive?'
+        ),
+      ),
+      9: Lesson(
+        id: 'gravity_2_9',
+        title: 'The Cold Shoulder of Kings',
+        category: 'gravity',
+        world: 2,
+        lesson: 9,
+        xp: 60,
+        content: LessonContent(
+          hook: 'Ancient Rome. A general kneels before Caesar, begging forgiveness. Caesar listens, expression unreadable. Then he turns his head and walks away without a word. The man collapses in tears. The cold shoulder is not indifference — it is annihilation. It forces the other to crawl for warmth that may never come.',
+          concept: [
+            'Cold rejection burns longer than hot anger.',
+            'Withdrawal is a verdict. When you deny attention, you deny existence.',
+            'Composed Authority doesn\'t scream "no." It whispers "nothing."'
+          ],
+          drill: Drill(
+            question: 'Next time someone offends you, give them no words. Only absence. Respond to minor disrespect with silence instead of defense.',
+            options: [
+              'Confront disrespect immediately to show you won\'t be pushed around.',
+              'Respond with strategic silence. Let your absence speak louder than words.'
+            ],
+            answerIndex: 1
+          ),
+          rewrite: RewriteTask(
+            prompt: 'Take this: "I don\'t like what you did." Forge it into something more composed and distant.',
+            input: 'I don\'t like what you did.',
+            example: 'You no longer have my attention.'
+          ),
+          reflection: 'Do you waste energy explaining yourself to those beneath you? Or do you let your silence pronounce the final judgment?'
+        ),
+      ),
+      10: Lesson(
+        id: 'gravity_2_10',
+        title: 'The Throne of Frost',
+        category: 'gravity',
+        world: 2,
+        lesson: 10,
+        xp: 60,
+        content: LessonContent(
+          hook: 'London, 1997. Princess Diana walks into a gala after her divorce. The world expected her broken, weeping. Instead, she is radiant — cool, untouchable, the embodiment of grace turned into defiance. The photographers swarm. The man who left her looks smaller than ever. Composed Authority is not the absence of emotion. It is the throne you sit on when the world wants you crawling.',
+          concept: [
+            'Composed Authority is elegance under fire. It makes your enemies look petty and your admirers look small.',
+            'Control your image — control your narrative. A calm face destroys gossip.',
+            'The throne of frost is built on dignity, not fury.'
+          ],
+          drill: Drill(
+            question: 'When someone hopes to see you break, walk in stronger, colder, more radiant. Turn heartbreak into spectacle. Let them see you thrive.',
+            options: [
+              'Show your vulnerability to build authentic connections.',
+              'Maintain composure even in difficult situations. Let your strength speak for itself.'
+            ],
+            answerIndex: 1
+          ),
+          rewrite: RewriteTask(
+            prompt: 'Take this: "You hurt me, but I\'ll be okay." Forge it into something more composed and powerful.',
+            input: 'You hurt me, but I\'ll be okay.',
+            example: 'You expected me shattered. Instead, I became untouchable.'
+          ),
+          reflection: 'Do you fall when they expect, or do you rise so composed and shining they wish they had never doubted you?'
+        ),
+      ),
+    },
+    3: {
+      11: Lesson(
+        id: 'gravity_3_11',
+        title: 'The Pause That Cuts Deeper Than Words',
+        category: 'gravity',
+        world: 3,
+        lesson: 11,
+        xp: 70,
+        content: LessonContent(
+          hook: 'Vienna, 1805. Beethoven is asked why he sometimes pauses for long stretches in his compositions. He smiles, tapping his temple: "Silence is the most powerful note." The audience leans in, desperate, waiting for the next sound. Composed Authority thrives on the pause. A moment of silence in speech or presence creates tension sharper than a blade.',
+          concept: [
+            'Silence is not absence — it is pressure.',
+            'Pauses make others chase your rhythm.',
+            'The one who speaks least always speaks loudest.'
+          ],
+          drill: Drill(
+            question: 'When telling a story, insert a deliberate pause before the climax. Watch them lean in. In argument, pause instead of rushing to defend yourself. Let the silence choke them.',
+            options: [
+              'Always respond immediately to maintain control of the conversation.',
+              'Use strategic pauses to create tension and force others to chase your rhythm.'
+            ],
+            answerIndex: 1
+          ),
+          rewrite: RewriteTask(
+            prompt: 'Take this: "I love being around you." Forge it into something that uses silence strategically.',
+            input: 'I love being around you.',
+            example: '…You notice how quiet it feels when you\'re not here?'
+          ),
+          reflection: 'Do you rush to fill the air, or do you command it so others drown in the silence you create?'
+        ),
+      ),
+      12: Lesson(
+        id: 'gravity_3_12',
+        title: 'The Icy Smile',
+        category: 'gravity',
+        world: 3,
+        lesson: 12,
+        xp: 70,
+        content: LessonContent(
+          hook: 'Moscow, 1945. Stalin is told of a betrayal. He doesn\'t rage. He doesn\'t shout. He smiles — a smile so calm, so cold, the traitor\'s knees buckle. A hot fury can be dismissed as weakness. A composed smile says: "I already own your fate."',
+          concept: [
+            'Smiles are not always warmth — they can be tools of control.',
+            'A composed smile signals certainty, not kindness.',
+            'Fear comes not from what you show, but what you don\'t.'
+          ],
+          drill: Drill(
+            question: 'Next time someone insults you, smile slowly instead of snapping back. In conversation, practice smiling without joy — let it radiate control, not kindness.',
+            options: [
+              'React immediately to show you won\'t be disrespected.',
+              'Respond with a slow, controlled smile that signals your certainty.'
+            ],
+            answerIndex: 1
+          ),
+          rewrite: RewriteTask(
+            prompt: 'Take this: "You\'ll regret crossing me." Forge it into something more composed and controlled.',
+            input: 'You\'ll regret crossing me.',
+            example: 'A slow smile. "We\'ll see."'
+          ),
+          reflection: 'Does your smile beg for approval, or does it freeze the room into silence?'
+        ),
+      ),
+      13: Lesson(
+        id: 'gravity_3_13',
+        title: 'The Temperature Drop',
+        category: 'gravity',
+        world: 3,
+        lesson: 13,
+        xp: 70,
+        content: LessonContent(
+          hook: 'Paris, 1920. Hemingway is laughing in a café, animated, alive. Then suddenly — silence. His face falls into stillness. His tone drops. Everyone at the table feels it: the room chills. This shift, sudden and deliberate, forces all attention back to him. Composed Authority knows that sudden stillness is as commanding as thunder.',
+          concept: [
+            'A change in temperature is more shocking than consistency.',
+            'Controlled stillness resets the dynamic.',
+            'The more composed you grow in a moment of heat, the more magnetic you become.'
+          ],
+          drill: Drill(
+            question: 'In heated debate, drop your voice instead of raising it. In flirtation, let laughter vanish into silence for one beat too long.',
+            options: [
+              'Match the energy of others to maintain connection.',
+              'Use sudden stillness to reset dynamics and command attention.'
+            ],
+            answerIndex: 1
+          ),
+          rewrite: RewriteTask(
+            prompt: 'Take this: "I\'m not joking now." Forge it into something that uses temperature shifts strategically.',
+            input: 'I\'m not joking now.',
+            example: 'Notice how the air just shifted? That\'s not by accident.'
+          ),
+          reflection: 'Are you predictable in your energy — or do you shock the room with sudden composure?'
+        ),
+      ),
+      14: Lesson(
+        id: 'gravity_3_14',
+        title: 'The Untouchable Calm',
+        category: 'gravity',
+        world: 3,
+        lesson: 14,
+        xp: 70,
+        content: LessonContent(
+          hook: 'Tokyo, 1600. A samurai stands surrounded by enemies. He does not unsheathe his blade. He simply breathes — steady, calm, eyes fixed. His stillness unnerves them more than any strike. Composed Authority is serenity in the storm. It makes the furious look foolish, the desperate look weak.',
+          concept: [
+            'Calm is more frightening than rage.',
+            'Composure is armor; it makes others question their own stability.',
+            'Composed stillness can unravel the strong faster than aggression.'
+          ],
+          drill: Drill(
+            question: 'Next time someone raises their voice, lower yours. Practice holding eye contact without any reaction, even under insult.',
+            options: [
+              'Match their intensity to show you\'re not intimidated.',
+              'Maintain composure and let your calm unsettle them.'
+            ],
+            answerIndex: 1
+          ),
+          rewrite: RewriteTask(
+            prompt: 'Take this: "Stop yelling at me." Forge it into something that uses calm as a weapon.',
+            input: 'Stop yelling at me.',
+            example: 'Are you finished? (uttered in complete calm).'
+          ),
+          reflection: 'Do you match the storm of others, or do you make them drown in their own noise?'
+        ),
+      ),
+      15: Lesson(
+        id: 'gravity_3_15',
+        title: 'The Art of Withdrawal',
+        category: 'gravity',
+        world: 3,
+        lesson: 15,
+        xp: 70,
+        content: LessonContent(
+          hook: 'New York, 1984. Madonna, mid-interview, is pressed with invasive questions. She smirks, stands, and walks away. The cameras keep rolling, but the interview is over. By leaving, she controls the narrative. By absence, she creates myth. Composed Authority is not only knowing when to appear, but when to vanish.',
+          concept: [
+            'Walking away is stronger than winning the argument.',
+            'Withdrawal creates demand. They must chase what they lost.',
+            'The exit is a weapon — use it.'
+          ],
+          drill: Drill(
+            question: 'End one conversation before they expect it. Leave them wanting more. In text, stop replying at the high point — let silence echo.',
+            options: [
+              'Stay engaged until the conversation naturally concludes.',
+              'End strategically when interest peaks, leaving them wanting more.'
+            ],
+            answerIndex: 1
+          ),
+          rewrite: RewriteTask(
+            prompt: 'Take this: "I\'m done with this." Forge it into something that uses withdrawal strategically.',
+            input: 'I\'m done with this.',
+            example: 'This conversation no longer interests me. Goodbye.'
+          ),
+          reflection: 'Do you cling until you lose value, or do you leave while the hunger is strongest?'
+        ),
+      ),
+    },
+    4: {
+      16: Lesson(
+        id: 'gravity_4_16',
+        title: 'The Stone Face',
+        category: 'gravity',
+        world: 4,
+        lesson: 16,
+        xp: 80,
+        content: LessonContent(
+          hook: 'London, 1890. Oscar Wilde delivers one of his cutting one-liners in a crowded salon. The room erupts with laughter — except for one man, seated across from him, who does not move, does not smile, does not blink. Wilde falters for the briefest second. Composed Authority thrives in the refusal to give recognition. The stone face unsettles more than any insult.',
+          concept: [
+            'Laughter, smiles, nods — these are gifts. Withhold them.',
+            'Neutrality is power. The less emotion you show, the more others reveal.',
+            'Composure forces others to scramble for warmth.'
+          ],
+          drill: Drill(
+            question: 'When someone tries to impress you, resist giving approval. Let silence do the talking. In conflict, master the deadpan stare.',
+            options: [
+              'Show appreciation to encourage positive behavior.',
+              'Withhold approval strategically to maintain power and mystery.'
+            ],
+            answerIndex: 1
+          ),
+          rewrite: RewriteTask(
+            prompt: 'Take this: "That\'s funny." Forge it into something that uses the stone face technique.',
+            input: 'That\'s funny.',
+            example: 'A silent, unreadable look that forces them to question themselves.'
+          ),
+          reflection: 'Do you hand out validation like coins — or make them earn every flicker of expression?'
+        ),
+      ),
+      17: Lesson(
+        id: 'gravity_4_17',
+        title: 'The Freeze-Out',
+        category: 'gravity',
+        world: 4,
+        lesson: 17,
+        xp: 80,
+        content: LessonContent(
+          hook: 'Hollywood, 1950. Marilyn Monroe is being hounded at a party. A man won\'t stop trying to charm her. She turns her body away, greets someone else, laughs at another\'s joke. He doesn\'t exist anymore. His desperation grows; the more he fights for her attention, the more invisible she makes him. The freeze-out is the ultimate rejection without a word.',
+          concept: [
+            'Attention is currency. Cut it off and watch them starve.',
+            'Indifference wounds deeper than anger.',
+            'Composed Authority denies even the dignity of acknowledgment.'
+          ],
+          drill: Drill(
+            question: 'Next time someone presses too hard, give them nothing. Turn away. Speak to another. On text, leave the desperate unanswered.',
+            options: [
+              'Give everyone equal attention to be fair and kind.',
+              'Use strategic indifference to control who gets your attention.'
+            ],
+            answerIndex: 1
+          ),
+          rewrite: RewriteTask(
+            prompt: 'Take this: "Stop bothering me." Forge it into something that uses the freeze-out technique.',
+            input: 'Stop bothering me.',
+            example: 'The blank silence of someone who no longer even sees them.'
+          ),
+          reflection: 'Do you give attention to all who beg for it — or do you starve them until they wither?'
+        ),
+      ),
+      18: Lesson(
+        id: 'gravity_4_18',
+        title: 'The Frosted Compliment',
+        category: 'gravity',
+        world: 4,
+        lesson: 18,
+        xp: 80,
+        content: LessonContent(
+          hook: 'Florence, 1500. Machiavelli, when asked about a rival\'s talents, replies: "Yes, he is clever… for a child." Praise coated in frost burns deeper than insult. It gives with one hand and takes with the other, leaving them confused, insecure, desperate to prove themselves.',
+          concept: [
+            'Backhanded compliments destabilize more than criticism.',
+            'Ambiguity makes them crave clarity.',
+            'Composed Authority elevates, then cuts — leaving them hooked.'
+          ],
+          drill: Drill(
+            question: 'Compliment someone, then twist it. "You\'re confident… almost too confident." Offer faint praise with a blade hidden beneath.',
+            options: [
+              'Give genuine, unqualified compliments to build confidence.',
+              'Use strategic ambiguity to create insecurity and dependence.'
+            ],
+            answerIndex: 1
+          ),
+          rewrite: RewriteTask(
+            prompt: 'Take this: "You look nice." Forge it into something that uses the frosted compliment technique.',
+            input: 'You look nice.',
+            example: 'You almost look dangerous like that. Almost.'
+          ),
+          reflection: 'Do your words flatter — or do they freeze, leaving the other desperate to thaw them?'
+        ),
+      ),
+      19: Lesson(
+        id: 'gravity_4_19',
+        title: 'The Glacier Pace',
+        category: 'gravity',
+        world: 4,
+        lesson: 19,
+        xp: 80,
+        content: LessonContent(
+          hook: 'New York, 1990. A Wall Street negotiator lets his rival rush through papers, demand answers, flood the room with energy. He speaks slowly, deliberately, checking each clause as though he has all the time in the world. By moving like a glacier, he forces the frantic man to drown in his own urgency. Composed Authority is time used as a weapon.',
+          concept: [
+            'Slow is terrifying when others are rushing.',
+            'Patience is domination disguised.',
+            'The slower you go, the more they reveal.'
+          ],
+          drill: Drill(
+            question: 'Next negotiation, don\'t rush to answer. Let seconds pass. Make them sweat. Walk slower into a room than anyone else.',
+            options: [
+              'Move efficiently to show respect for others\' time.',
+              'Use deliberate slowness to control the pace and unsettle others.'
+            ],
+            answerIndex: 1
+          ),
+          rewrite: RewriteTask(
+            prompt: 'Take this: "Let\'s finish quickly." Forge it into something that uses glacier pace strategically.',
+            input: 'Let\'s finish quickly.',
+            example: 'We\'ll finish when I decide it\'s finished.'
+          ),
+          reflection: 'Do you move at the world\'s pace, or do you make the world crawl at yours?'
+        ),
+      ),
+      20: Lesson(
+        id: 'gravity_4_20',
+        title: 'The Winter Crown',
+        category: 'gravity',
+        world: 4,
+        lesson: 20,
+        xp: 100,
+        content: LessonContent(
+          hook: 'Constantinople, 1453. As the city falls, the last Byzantine emperor, Constantine XI, removes his imperial regalia and calmly walks into battle, never to return. He dies not with panic, but with icy dignity. His calm became legend. This is the final crown of Composed Authority: to remain untouchable, even in ruin.',
+          concept: [
+            'Composed dignity is immortal.',
+            'Even defeat can be framed as majesty.',
+            'The final weapon is poise in the face of collapse.'
+          ],
+          drill: Drill(
+            question: 'Next time you lose — smile, nod, and thank them as if you\'ve given them a gift. In heartbreak, show serenity, not collapse.',
+            options: [
+              'Show your true emotions to build authentic connections.',
+              'Maintain composure even in defeat to preserve your dignity and power.'
+            ],
+            answerIndex: 1
+          ),
+          rewrite: RewriteTask(
+            prompt: 'Take this: "I can\'t live without you." Forge it into something that uses the winter crown technique.',
+            input: 'I can\'t live without you.',
+            example: 'You\'ll remember how calm I was when you left.'
+          ),
+          reflection: 'Do you collapse when the ice cracks — or do you wear the crown of composure until the end?'
+        ),
+      ),
+    },
+  },
   'frame': {
     1: {
       1: const Lesson(
@@ -784,7 +1393,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'frame',
         world: 2,
         lesson: 6,
-        xp: 50,
+        xp: 60,
         content: LessonContent(
           hook: 'Venice, 1720. A masquerade ball. Candlelight flickers on painted masks. Casanova does not reveal himself with declarations; he drifts past her, gaze lingering a heartbeat too long, vanishing into the crowd. She laughs with others but keeps glancing at the doorway, searching for the phantom presence that left a mark without words. Seduction thrives not in possession, but in haunting absence.',
           concept: [
@@ -814,7 +1423,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'frame',
         world: 2,
         lesson: 7,
-        xp: 50,
+        xp: 60,
         content: LessonContent(
           hook: 'Kyoto, 11th century. In The Tale of Genji, the prince courts women not with conquest but with patience. A glance one evening, a poem slipped under a door the next, a silent gift of incense the following week. Each layer builds anticipation until longing itself becomes unbearable. The art is not in arrival, but in delay.',
           concept: [
@@ -844,7 +1453,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'frame',
         world: 2,
         lesson: 8,
-        xp: 50,
+        xp: 60,
         content: LessonContent(
           hook: 'Paris, 1935. Pablo Picasso sits in a café, sketching on a napkin. A woman leans over, fascinated. He folds it and tucks it away. "May I see it?" she asks. He smirks: "Not yet." She spends the evening desperate for the reveal, only to realize the sketch matters less than the anticipation he orchestrated. Seduction is not the gift itself—it is the unfinished riddle.',
           concept: [
@@ -874,7 +1483,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'frame',
         world: 2,
         lesson: 9,
-        xp: 50,
+        xp: 60,
         content: LessonContent(
           hook: 'Paris opera house, 1875. A young baron escorts his lover through the gilded hall. His hand hovers just above hers, never touching, never claiming—an almost unbearable closeness. She feels heat without contact, possession without grasp. True seduction lies not in the obvious touch, but in the electricity of almost.',
           concept: [
@@ -904,7 +1513,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'frame',
         world: 2,
         lesson: 10,
-        xp: 50,
+        xp: 60,
         content: LessonContent(
           hook: 'Hollywood, 1955. James Dean, equal parts rebel and innocent, enters a party. To some, he\'s danger; to others, he\'s vulnerability. The contradiction multiplies intrigue: the untamed wolf with the boyish grin. True seduction lies in refusing to be one thing—your contradictions force others to crave decoding.',
           concept: [
@@ -928,13 +1537,15 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
           reflection: 'Do you flatten yourself into predictability, or do you weave paradoxes that make people hunger to decode you?'
         ),
       ),
+    },
+    3: {
       11: Lesson(
-        id: 'frame_2_11',
+        id: 'frame_3_11',
         title: 'The Glance That Burns',
         category: 'frame',
-        world: 2,
+        world: 3,
         lesson: 11,
-        xp: 50,
+        xp: 70,
         content: LessonContent(
           hook: 'Cairo, 1920. In the thick air of a jazz club, a woman in emerald silk doesn\'t smile, doesn\'t speak—she only looks. Her gaze lingers, slow and deliberate, as if peeling away every defense. Men who meet it laugh nervously, tug their collars, retreat. One man, however, cannot look away. He feels undressed, claimed, consumed. A glance, wielded correctly, is not observation—it is possession.',
           concept: [
@@ -959,12 +1570,12 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         ),
       ),
       12: Lesson(
-        id: 'frame_2_12',
+        id: 'frame_3_12',
         title: 'The Silence Between Notes',
         category: 'frame',
-        world: 2,
+        world: 3,
         lesson: 12,
-        xp: 50,
+        xp: 70,
         content: LessonContent(
           hook: 'Vienna, 1805. At a private salon, Beethoven plays a sonata. The most devastating moment is not a cascade of notes but a pause, a silence so thick the room holds its breath. Anticipation floods the air—every ear leans into the void. When the music resumes, it lands like thunder. Silence, used deliberately, is the loudest sound in the world.',
           concept: [
@@ -989,12 +1600,12 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         ),
       ),
       13: Lesson(
-        id: 'frame_2_13',
+        id: 'frame_3_13',
         title: 'The Gift of Withholding',
         category: 'frame',
-        world: 2,
+        world: 3,
         lesson: 13,
-        xp: 50,
+        xp: 70,
         content: LessonContent(
           hook: 'Paris, 1958. Yves Saint Laurent unveils a gown, but backstage, the hem is deliberately unfinished. Critics sneer—until weeks later, women across Europe beg for replicas. By withholding perfection, he gave them hunger. Desire is not about giving everything—it\'s about giving almost everything, leaving the soul restless for the missing piece.',
           concept: [
@@ -1019,12 +1630,12 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         ),
       ),
       14: Lesson(
-        id: 'frame_2_14',
+        id: 'frame_3_14',
         title: 'The Scent That Stays',
         category: 'frame',
-        world: 2,
+        world: 3,
         lesson: 14,
-        xp: 50,
+        xp: 70,
         content: LessonContent(
           hook: 'Istanbul, 1890. A merchant lights oud incense in a narrow alley before leaving. Hours after he\'s gone, the fragrance still lingers—haunting, intoxicating, inseparable from him. People remember him less for his words and more for the trace he left behind. Seduction is not just in presence—it is in the afterglow.',
           concept: [
@@ -1049,12 +1660,12 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         ),
       ),
       15: Lesson(
-        id: 'frame_2_15',
+        id: 'frame_3_15',
         title: 'The Poisoned Compliment',
         category: 'frame',
-        world: 2,
+        world: 3,
         lesson: 15,
-        xp: 50,
+        xp: 70,
         content: LessonContent(
           hook: 'London, 1927. A poet leans across the table to his muse. "Your beauty unsettles me," he murmurs, "but your silence unsettles me more." The line wounds and flatters in equal measure. She cannot dismiss him; his words cling like perfume and venom. True seduction is not in empty praise, but in compliments laced with a sting that forces them to replay it endlessly.',
           concept: [
@@ -1078,13 +1689,15 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
           reflection: 'Do you hand out cheap validation, or do you craft words that live inside them, sweet and sharp at once?'
         ),
       ),
+    },
+    4: {
       16: Lesson(
-        id: 'frame_2_16',
+        id: 'frame_4_16',
         title: 'The Dangerous Secret',
         category: 'frame',
-        world: 2,
+        world: 4,
         lesson: 16,
-        xp: 50,
+        xp: 80,
         content: LessonContent(
           hook: 'Venice, 1703. A masked courtesan whispers to a nobleman in the candlelit shadows of Carnival: "If I told you the truth, you\'d never sleep again." Then she laughs and disappears into the crowd. He spends years recalling that one line, haunted by the mystery of a secret never revealed. A hint of danger intoxicates far more than confession.',
           concept: [
@@ -1109,12 +1722,12 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         ),
       ),
       17: Lesson(
-        id: 'frame_2_17',
+        id: 'frame_4_17',
         title: 'The Feather and the Blade',
         category: 'frame',
-        world: 2,
+        world: 4,
         lesson: 17,
-        xp: 50,
+        xp: 80,
         content: LessonContent(
           hook: 'Kyoto, 1650. A geisha entertains a samurai with gentle teasing. She praises his haiku, then with a sly smile adds: "It is beautiful… in its simplicity." He laughs, stung and charmed at once. She strokes his pride, then nicks it with a blade. He leaves restless, desperate to win her unqualified admiration. Seduction thrives on duality—pleasure followed by the faintest cut.',
           concept: [
@@ -1139,12 +1752,12 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         ),
       ),
       18: Lesson(
-        id: 'frame_2_18',
+        id: 'frame_4_18',
         title: 'The Disappearing Act',
         category: 'frame',
-        world: 2,
+        world: 4,
         lesson: 18,
-        xp: 50,
+        xp: 80,
         content: LessonContent(
           hook: 'New York, 1982. At Studio 54, a man holds the entire dance floor in thrall—until he suddenly vanishes. No word, no goodbye. Whispers ripple through the crowd: "Where did he go?" His absence becomes larger than his presence. The next night, all eyes search for him. Seduction is not only in showing up—it is in leaving when the desire peaks.',
           concept: [
@@ -1169,12 +1782,12 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         ),
       ),
       19: Lesson(
-        id: 'frame_2_19',
+        id: 'frame_4_19',
         title: 'The Unreachable Kiss',
         category: 'frame',
-        world: 2,
+        world: 4,
         lesson: 19,
-        xp: 50,
+        xp: 80,
         content: LessonContent(
           hook: 'Madrid, 1901. On a balcony, two lovers lean close. Lips nearly touch—then she withdraws, smiling. The kiss never lands. The man is left drunk on what almost was. Denial is not rejection—it is an acceleration. What is withheld burns hotter than what is consumed.',
           concept: [
@@ -1199,12 +1812,12 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         ),
       ),
       20: Lesson(
-        id: 'frame_2_20',
+        id: 'frame_4_20',
         title: 'The Frame of Fire',
         category: 'frame',
-        world: 2,
+        world: 4,
         lesson: 20,
-        xp: 50,
+        xp: 80,
         content: LessonContent(
           hook: 'Berlin, 1932. In a smoke-choked café, a poet tells a woman: "Every man here wants you. But I am the only one who dares admit I don\'t." She laughs, unsettled. He has shattered the frame—no longer a pursuer, but the pursued. Frame control is the alchemy of seduction: whoever defines reality owns the game.',
           concept: [
@@ -1510,7 +2123,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'scarcity',
         world: 2,
         lesson: 10,
-        xp: 50,
+        xp: 75,
         content: LessonContent(
           hook: 'Venice, 1580. Casanova leaves women not just in pleasure, but in torment. He was gone days ago, yet his words, gestures, and silences replay endlessly in their minds. To haunt is the highest form of seduction. It is not the kiss they crave again — it is the echo of the kiss, the phantom that refuses to die.',
           concept: [
@@ -1542,7 +2155,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'scarcity',
         world: 3,
         lesson: 11,
-        xp: 60,
+        xp: 100,
         content: LessonContent(
           hook: 'Berlin, 1929. Marlene Dietrich takes a man\'s hand, whispers a compliment so soft it trembles in his chest. He leans closer—just as she turns away, laughing at another\'s joke. His warmth collapses into frost. He spends days replaying the moment, addicted to the memory of her sun. Seduction is not constant heat—it is the plunge between fire and ice.',
           concept: [
@@ -1572,7 +2185,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'scarcity',
         world: 3,
         lesson: 12,
-        xp: 60,
+        xp: 100,
         content: LessonContent(
           hook: 'Venice, 1510. A masked courtesan leans forward, her breath grazing a nobleman\'s ear. Just as he opens his mouth to speak, she drifts away across the ballroom floor, swallowed by the crowd. He spends the night chasing her shadow. Seduction is not pursuit—it is choreography.',
           concept: [
@@ -1602,7 +2215,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'scarcity',
         world: 3,
         lesson: 13,
-        xp: 60,
+        xp: 100,
         content: LessonContent(
           hook: 'Mughal India, 1620. Nur Jahan gifts her lover a rose laced with saffron. Sweet on the tongue, bitter on the breath. He never forgets it. Pleasure alone fades. Pain alone repels. But a blend—honey laced with steel—creates memory that burns forever.',
           concept: [
@@ -1632,7 +2245,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'scarcity',
         world: 3,
         lesson: 14,
-        xp: 60,
+        xp: 100,
         content: LessonContent(
           hook: 'Vienna, 1805. Beethoven slams his fingers on the keys, flooding the hall with thunder. Just as the audience leans forward, desperate, he halts. Silence. That pause—the aching gap—rings louder than the music itself. The audience sits on edge, begging for release. Seduction is music. Without silence, noise is nothing.',
           concept: [
@@ -1662,7 +2275,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'scarcity',
         world: 3,
         lesson: 15,
-        xp: 60,
+        xp: 100,
         content: LessonContent(
           hook: 'Hollywood, 1955. Marilyn Monroe doesn\'t cling to her date at a party. She laughs with others, lets her hand rest a second too long on another man\'s arm. Her companion watches, half in rage, half in hunger. Jealousy is gasoline. A dangerous fuel—but in measured doses, it burns hotter than devotion.',
           concept: [
@@ -1694,7 +2307,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'scarcity',
         world: 4,
         lesson: 16,
-        xp: 70,
+        xp: 100,
         content: LessonContent(
           hook: 'Venice, 1725. At the masquerade, Casanova enters behind a porcelain mask. His identity is unknown, but his movements are deliberate—fluid, enigmatic. A woman leans in, whispering, "Who are you really?" He does not answer. That single question haunts her the entire night. Seduction begins not with revelation, but with concealment.',
           concept: [
@@ -1724,7 +2337,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'scarcity',
         world: 4,
         lesson: 17,
-        xp: 70,
+        xp: 100,
         content: LessonContent(
           hook: 'Cairo, 1001 nights. Scheherazade spins tales that end on a cliff\'s edge. The Sultan cannot kill her—he must know what happens next. Each unfinished story buys her another dawn. Seduction is no different: the story you leave unfinished will hold them captive long after your words fade.',
           concept: [
@@ -1754,7 +2367,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'scarcity',
         world: 4,
         lesson: 18,
-        xp: 70,
+        xp: 100,
         content: LessonContent(
           hook: 'Paris, 1890. In the cabaret, Sarah Bernhardt doesn\'t speak first. She lets the spotlight warm her profile, waiting until the silence swells. The audience leans forward, begging for her voice. Only then does she deliver a single line, and the room collapses in applause. True seduction is theater: light and shadow. You decide when to step into view.',
           concept: [
@@ -1784,7 +2397,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'scarcity',
         world: 4,
         lesson: 19,
-        xp: 70,
+        xp: 100,
         content: LessonContent(
           hook: 'Alexandria, Cleopatra receives Roman envoys. She studies each gesture, each word, then reflects it back like polished glass. To the serious one, she is grave. To the playful one, she is mischief. Each leaves convinced she is uniquely aligned with him. But none have seen the real Cleopatra. Seduction thrives not in authenticity, but in reflection.',
           concept: [
@@ -1814,7 +2427,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'scarcity',
         world: 4,
         lesson: 20,
-        xp: 70,
+        xp: 100,
         content: LessonContent(
           hook: 'Tokyo, 1923. A geisha spends weeks captivating a wealthy merchant—smiles, music, tea ceremonies. Just as he thinks he has secured her, she vanishes. No explanation. For months, he burns incense at the teahouse door, desperate for her return. When she reappears, her worth has tripled. The most seductive act is sometimes disappearance.',
           concept: [
@@ -2000,7 +2613,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'deception',
         world: 2,
         lesson: 6,
-        xp: 60,
+        xp: 100,
         content: LessonContent(
           hook: 'Normandy, 1944. A Spaniard named Garbo sends false reports to Hitler: "The invasion will be at Calais." His intel is so convincing the Fuhrer diverts Panzer divisions away from Normandy. On D-Day, thousands of Allied soldiers live because of one man\'s betrayal. The greatest lies don\'t hide—they redirect. The double cross works because the victim believes they are the one being trusted.',
           concept: [
@@ -2030,7 +2643,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'deception',
         world: 2,
         lesson: 7,
-        xp: 60,
+        xp: 100,
         content: LessonContent(
           hook: 'Baghdad, 1258. The Mongols breach the city walls. Instead of hiding, Caliph Al-Mustaʿsim parades through the streets in silk, declaring calm. The citizens hesitate to flee—believing him. By the time they realize the truth, escape is impossible. The city burns. Whoever owns the story owns reality itself.',
           concept: [
@@ -2060,7 +2673,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'deception',
         world: 2,
         lesson: 8,
-        xp: 60,
+        xp: 100,
         content: LessonContent(
           hook: 'Cold War, Moscow. A diplomat meets a beautiful stranger in a hotel bar. She laughs at his jokes, leans close, makes him feel like the most interesting man alive. By dawn, there are photos of him in bed, and the KGB owns him. He thought he was seducing—he was being seduced. The honey trap weaponizes desire, turning passion into chains.',
           concept: [
@@ -2090,7 +2703,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'deception',
         world: 2,
         lesson: 9,
-        xp: 60,
+        xp: 100,
         content: LessonContent(
           hook: 'Ancient Greece. A general captures rebels. Instead of threatening them, he offers two "choices": execution now, or lifelong service in his army. They believe they\'ve chosen freedom by choosing servitude. The trick: both options lead to the same destination. The false choice is control disguised as liberty.',
           concept: [
@@ -2120,7 +2733,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'deception',
         world: 2,
         lesson: 10,
-        xp: 60,
+        xp: 100,
         content: LessonContent(
           hook: 'Venice, 1500s. Merchants rise and fall in mysterious patterns. Prices soar, rumors swirl, guild wars erupt—yet behind it all is one banker pulling invisible strings, funding both sides, whispering in both ears. He is never seen. His name is never spoken. Yet every outcome traces back to his hand. The greatest deceiver is not the actor—it\'s the director who writes the script from the wings.',
           concept: [
@@ -2152,7 +2765,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'deception',
         world: 3,
         lesson: 11,
-        xp: 70,
+        xp: 100,
         content: LessonContent(
           hook: 'Occupied Paris, 1942. Resistance fighters walk among German patrols unnoticed—not by hiding, but by blending. No fancy hats, no flashy gestures, no eye contact. Just quiet conformity. The soldiers see them every day but never once notice them. The perfect camouflage is not the disguise—it\'s invisibility by ordinariness.',
           concept: [
@@ -2182,7 +2795,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'deception',
         world: 3,
         lesson: 12,
-        xp: 70,
+        xp: 100,
         content: LessonContent(
           hook: 'A tiger in the tall grass waits, unmoving, as deer graze inches away. Its hunger gnaws, but it does not flinch. The prey relaxes, convinced there is no danger. Then, with terrifying precision, the tiger strikes. Camouflage is not just appearance—it\'s timing. The longer you wait, the deadlier your strike.',
           concept: [
@@ -2212,7 +2825,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'deception',
         world: 3,
         lesson: 13,
-        xp: 70,
+        xp: 100,
         content: LessonContent(
           hook: 'Tokyo, 1600s. A spy infiltrates a rival clan by mirroring their dialect, their rituals, even their drinking games. Within weeks, they treat him like family. When he disappears with their secrets, they cannot comprehend how he was ever a stranger. True camouflage is not about clothes—it\'s about psychology.',
           concept: [
@@ -2242,7 +2855,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'deception',
         world: 3,
         lesson: 14,
-        xp: 70,
+        xp: 100,
         content: LessonContent(
           hook: 'Berlin, 1945. A Soviet officer in a stolen German uniform marches straight into enemy command posts, issuing false orders. Soldiers obey without question—not because they know him, but because the mask of rank commands reflexive obedience. Authority, real or not, is its own camouflage.',
           concept: [
@@ -2272,7 +2885,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'deception',
         world: 3,
         lesson: 15,
-        xp: 70,
+        xp: 100,
         content: LessonContent(
           hook: 'Medieval castles built secret passages where lords could watch feasts from hidden slits in the walls. Guests laughed, flirted, schemed—never realizing eyes observed them. The unseen presence shapes behavior more than the seen. Camouflage is not only blending in—it\'s hiding where no one even thinks to look.',
           concept: [
@@ -2304,7 +2917,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'deception',
         world: 4,
         lesson: 16,
-        xp: 70,
+        xp: 100,
         content: LessonContent(
           hook: 'Cold War, 1962. During a tense negotiation, one diplomat speaks endlessly, trying to dominate the room. His counterpart sits in silence, his gaze steady, saying nothing. The silence grows unbearable. The speaker reveals too much, desperate to fill the void. Silence was not weakness—it was the loudest move in the room.',
           concept: [
@@ -2334,7 +2947,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'deception',
         world: 4,
         lesson: 17,
-        xp: 70,
+        xp: 100,
         content: LessonContent(
           hook: 'Tokyo, 1800s. A thief is suspected in a gambling house. When accused, he simply mirrors his accuser\'s outrage: "How dare you insult me like this!" His anger is identical, his body language copied, his tone echoed. The crowd believes him, because we trust our own reflection. The real thief walks out untouched.',
           concept: [
@@ -2364,7 +2977,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'deception',
         world: 4,
         lesson: 18,
-        xp: 70,
+        xp: 100,
         content: LessonContent(
           hook: 'London, 1890s. A banker accused of fraud admits nothing… until months later. By then, evidence has faded, emotions cooled. When he finally "confesses," it feels like closure, not crime. Timing reshapes truth. Delay is camouflage—the crime is remembered faintly, the confession feels refreshing.',
           concept: [
@@ -2394,7 +3007,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'deception',
         world: 4,
         lesson: 19,
-        xp: 70,
+        xp: 100,
         content: LessonContent(
           hook: 'Wall Street, 2008. Investors are sold financial products so complex that even experts can\'t explain them. The fog of jargon hides the rot beneath. Complexity isn\'t always brilliance. Sometimes it is camouflage. The thicker the fog, the easier the theft.',
           concept: [
@@ -2458,7 +3071,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'coldpower',
         world: 1,
         lesson: 1,
-        xp: 200,
+        xp: 125,
         content: LessonContent(
           hook: 'Rome, 180 AD. A senator, trembling, delivers news to Marcus Aurelius: his most trusted general has been cut down in battle. The Senate chamber expects grief, rage, perhaps madness. Instead, Aurelius turns his head slowly, his expression carved from stone. He writes in his journal without looking up: "The universe is change; our mind is choice." His enemies are chilled to the bone. They realize: no one can move a man who does not allow himself to be moved.',
           concept: [
@@ -2488,7 +3101,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'coldpower',
         world: 1,
         lesson: 2,
-        xp: 200,
+        xp: 125,
         content: LessonContent(
           hook: 'Cannes, 1960s. Brigitte Bardot sits among billionaires and kings. One brags of his yachts, another of his fame. She studies her nails. They escalate—diamonds, castles, armies. She stirs her coffee, unmoved. By midnight, the wealthiest men alive are begging for a single smile. Her indifference stripped them of everything money could buy. Desire burns hottest against the ice.',
           concept: [
@@ -2518,7 +3131,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'coldpower',
         world: 1,
         lesson: 3,
-        xp: 200,
+        xp: 125,
         content: LessonContent(
           hook: 'Cuban Missile Crisis, 1962. Khrushchev shouts, slams, pounds. Kennedy sits in abyssal silence. Thirty seconds. A minute. Khrushchev grows frantic, his rage now desperate. When Kennedy finally says, "Are you finished?"—the room dies. Silence won the war before weapons could.',
           concept: [
@@ -2548,7 +3161,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'coldpower',
         world: 1,
         lesson: 4,
-        xp: 200,
+        xp: 125,
         content: LessonContent(
           hook: 'Las Vegas, 1978. A poker master holds garbage cards. His opponents search his eyes, his breath, his hands. His face is porcelain, blank, inhuman. They fold aces out of fear of ghosts. He wins empires holding nothing. The porcelain mask turns their need to read into their own undoing.',
           concept: [
@@ -2578,7 +3191,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'coldpower',
         world: 1,
         lesson: 5,
-        xp: 200,
+        xp: 125,
         content: LessonContent(
           hook: 'Supreme Court, 1950s. A lawyer delivers weak arguments. Justice Frankfurter leans back. He does not interrupt. He does not scold. He waits. Ten seconds. Twenty. The courtroom suffocates. The lawyer collapses under the silence. When the Justice finally says: "Proceed."—it feels like a sentence. The pause destroyed him more than thunder could.',
           concept: [
@@ -2610,7 +3223,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'coldpower',
         world: 2,
         lesson: 6,
-        xp: 250,
+        xp: 125,
         content: LessonContent(
           hook: 'Versailles, 1700s. The courtiers bow as Louis XIV enters—not because he commands it, but because he radiates it. He never asks for respect; he exists as if he was born entitled to it. When a duke dares to withhold his bow, the king\'s silence and slight glance at the guards ends the rebellion. His frame is reality itself. The Sun King does not beg the planets to orbit—he assumes they will.',
           concept: [
@@ -2640,7 +3253,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'coldpower',
         world: 2,
         lesson: 7,
-        xp: 250,
+        xp: 125,
         content: LessonContent(
           hook: 'Andy Warhol, Studio 54. Celebrities fight for his eyes. He scans the crowd, blank. Then, for three seconds, he rests his gaze on one nobody. The club freezes. By dawn, that nobody is famous. Warhol\'s attention turned dust into gold. To be looked at by him was to be made real. To be ignored was to be erased.',
           concept: [
@@ -2670,7 +3283,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'coldpower',
         world: 2,
         lesson: 8,
-        xp: 250,
+        xp: 125,
         content: LessonContent(
           hook: 'Greta Garbo retires at the height of her fame. The world screams for her return. Her absence makes her immortal. Decades later, her silence is more seductive than all the actresses still begging for attention. Presence creates familiarity; absence creates myth.',
           concept: [
@@ -2700,7 +3313,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'coldpower',
         world: 2,
         lesson: 9,
-        xp: 250,
+        xp: 125,
         content: LessonContent(
           hook: '1940s Hollywood. Orson Welles steps into a room, not with facts, but with shadows. His voice suggests secrets, his posture hints at empires unseen. He never proves; he implies. The less he shows, the more people imagine. And what they imagine is always greater than what you could confess.',
           concept: [
@@ -2730,7 +3343,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'coldpower',
         world: 2,
         lesson: 10,
-        xp: 250,
+        xp: 125,
         content: LessonContent(
           hook: 'Mount Everest, 1953. Few reach its peak, fewer still survive. Its very difficulty makes it divine. The mountain never descends; it forces men to die climbing. The summit seduces not by approach—but by demanding others ascend. The higher you remain, the more they crave the climb.',
           concept: [
@@ -2762,7 +3375,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'coldpower',
         world: 3,
         lesson: 11,
-        xp: 300,
+        xp: 125,
         content: LessonContent(
           hook: 'Venice, 16th century. Casanova did not seduce by constant presence. He intoxicated, then vanished. A night of wine, poetry, and touch—and then nothing. Days later, the women grew frantic, their minds replaying every detail. He had poured the sweetest wine into their veins, then pulled the cup away. Desire is not born from indulgence—it is born from denial.',
           concept: [
@@ -2792,7 +3405,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'coldpower',
         world: 3,
         lesson: 12,
-        xp: 300,
+        xp: 125,
         content: LessonContent(
           hook: 'Paris, 1920s. Josephine Baker dances, laughter bursting like champagne. Her lovers drown in joy. Then, abruptly, she grows cold—her gaze distant, her laughter gone. They panic, desperate to bring the fire back. It is the dance of flame and frost: one moment intoxicating warmth, the next a deathly chill. The moth never loves the candle\'s flame—it loves the risk of being burned.',
           concept: [
@@ -2822,7 +3435,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'coldpower',
         world: 3,
         lesson: 13,
-        xp: 300,
+        xp: 125,
         content: LessonContent(
           hook: 'Napoleon at Josephine\'s door. He writes feverishly, begging for her. She delays. Hours, then days. Each minute stretches into eternity. His empire bends under his command, but in her silence, he crumbles. By the time she appears, his hunger is not desire—it is desperation. Waiting did what power could not: it enslaved him.',
           concept: [
@@ -2852,7 +3465,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'coldpower',
         world: 3,
         lesson: 14,
-        xp: 300,
+        xp: 125,
         content: LessonContent(
           hook: 'Cleopatra sails the Nile, flanked by two Roman titans—Caesar and Antony. Each believes he is her chosen. Each feels the other\'s shadow. She feeds both, never choosing, never closing the wound. Their jealousy is her crown. Men who conquered worlds now clawed at each other for her smile. To spark rivalry is to forge obsession sharper than steel.',
           concept: [
@@ -2882,7 +3495,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'coldpower',
         world: 3,
         lesson: 15,
-        xp: 300,
+        xp: 125,
         content: LessonContent(
           hook: 'Las Vegas, 1960s. The slot machine doesn\'t pay every time. It pays unpredictably. That\'s why gamblers lose fortunes—because the reward might come this spin. Lovers work the same way. If you respond every time, the game dies. If you reward randomly, unpredictably, they cannot stop pulling your lever. Intermittence is the secret of every addiction in history.',
           concept: [
@@ -2914,7 +3527,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'coldpower',
         world: 4,
         lesson: 16,
-        xp: 400,
+        xp: 125,
         content: LessonContent(
           hook: 'Spain, 1930s. Federico García Lorca, the poet, sat with lovers who adored him. He gave them glances, words, fragments—but never himself whole. His allure was not in what he gave, but in what he withheld. He was the fire no one could fully hold, and so they burned themselves trying.',
           concept: [
@@ -2944,7 +3557,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'coldpower',
         world: 4,
         lesson: 17,
-        xp: 400,
+        xp: 125,
         content: LessonContent(
           hook: 'Hollywood, 1950s. Marilyn Monroe laughed, dazzled, consumed every gaze in the room. Then she disappeared for weeks. When she returned, demand for her doubled. Her absence was her sharpest performance. An eclipse always returns more dazzling because it leaves. Seduction demands you vanish, so they ache for your return.',
           concept: [
@@ -2974,7 +3587,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'coldpower',
         world: 4,
         lesson: 18,
-        xp: 400,
+        xp: 125,
         content: LessonContent(
           hook: 'The Medici courts of Florence. A courtesan serves sugared almonds laced with opium. The men who eat them never forget her—they crave her touch as much as the drug. Seduction works the same: lace sweetness with danger. They must feel that you are both cure and curse, pleasure and poison.',
           concept: [
@@ -3004,7 +3617,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'coldpower',
         world: 4,
         lesson: 19,
-        xp: 400,
+        xp: 125,
         content: LessonContent(
           hook: 'Vienna, 1900s. Freud listened as his patient became obsessed with him. Why? Because he reflected her deepest thoughts back to her, amplifying them. She didn\'t love him—she loved her own reflection in his mirror. The cruel truth: people don\'t fall for you. They fall for the parts of themselves you reflect back.',
           concept: [
@@ -3034,7 +3647,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'coldpower',
         world: 4,
         lesson: 20,
-        xp: 500,
+        xp: 125,
         content: LessonContent(
           hook: 'The myth of Circe. She enchanted men not with spells, but with transformation. Once you drank from her cup, you could never return unchanged. This is the ultimate law: seduction must leave scars. When they leave you, they must never be the same. The memory of you must haunt every future lover. That is how you win eternity.',
           concept: [
@@ -3372,7 +3985,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'psychwar',
         world: 3,
         lesson: 11,
-        xp: 70,
+        xp: 100,
         content: LessonContent(
           hook: 'Ancient Rome. Senators whisper rebellion. Caesar doesn\'t confront them directly. Instead, he spreads subtle rumors—this one mocked you in private, that one plans to betray you first. Unity fractures into suspicion. Soon, his enemies fight one another, too busy to unite against him. He never drew a sword—he simply split their trust.',
           concept: [
@@ -3402,7 +4015,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'psychwar',
         world: 3,
         lesson: 12,
-        xp: 70,
+        xp: 100,
         content: LessonContent(
           hook: 'Medieval France. A rival lord presents his enemy with a lavish horse, adorned in silk. Days later, the animal collapses, diseased. The lord accepts the gift, and with it, ruin. Not every offering is kindness. Sometimes generosity is a weapon wrapped in velvet.',
           concept: [
@@ -3432,7 +4045,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'psychwar',
         world: 3,
         lesson: 13,
-        xp: 70,
+        xp: 100,
         content: LessonContent(
           hook: 'Renaissance Italy. A courtier flatters a duke: "No man alive is as wise as you." The duke beams, but over time, the words poison him. He stops listening to counsel, believing he already knows best. Flattery sharpens pride into blindness, and blindness into downfall.',
           concept: [
@@ -3462,7 +4075,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'psychwar',
         world: 3,
         lesson: 14,
-        xp: 70,
+        xp: 100,
         content: LessonContent(
           hook: 'Cold War interrogation rooms. Some prisoners were not beaten—they were drowned in contradiction. Guards would praise them one hour, insult them the next. They\'d be promised release, then threatened with life sentences. The goal wasn\'t answers—it was disorientation. Confusion breaks the mind faster than cruelty.',
           concept: [
@@ -3492,7 +4105,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         category: 'psychwar',
         world: 3,
         lesson: 15,
-        xp: 70,
+        xp: 100,
         content: LessonContent(
           hook: 'Hannibal, 3rd century BC. After crossing into enemy territory, he burned the ships behind him. His soldiers had no path home but victory. By destroying retreat, he left them only one road: forward. A ruthless tactic—sometimes the absence of escape creates the fiercest resolve.',
           concept: [

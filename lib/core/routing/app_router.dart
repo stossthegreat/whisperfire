@@ -9,6 +9,7 @@ import '../../ui/pages/settings/settings_page.dart';
 import '../../ui/pages/mentors/mentor_detail_page.dart';
 import '../../features/lessons/lesson_player/lesson_player_page.dart';
 import '../../features/lessons/world_overview/world_overview_page.dart';
+import '../../ui/pages/onboarding/beguile_onboarding.dart';
 import '../../data/services/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../content/lessons_catalog.dart';
@@ -17,6 +18,17 @@ class AppRouter {
   static final GoRouter router = GoRouter(
     initialLocation: '/lessons',
     routes: [
+      // Onboarding route (outside shell)
+      GoRoute(
+        path: '/onboarding',
+        name: 'onboarding',
+        builder: (context, state) => BeguileOnboarding(
+          onFinish: () {
+            // Mark onboarding as complete and navigate to main app
+            context.go('/lessons');
+          },
+        ),
+      ),
       ShellRoute(
         builder: (context, state, child) => MainShell(child: child),
         routes: [

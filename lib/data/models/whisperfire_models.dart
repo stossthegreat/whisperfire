@@ -3,39 +3,55 @@ import 'package:equatable/equatable.dart';
 
 part 'whisperfire_models.g.dart';
 
-// UNIFIED WHISPERFIRE SCHEMA (EXACT MATCH - NO FIELD RENAMING)
+// ============================
+// UNIFIED WHISPERFIRE SCHEMA
+// ============================
+
 @JsonSerializable()
 class WhisperfireResponse extends Equatable {
   final WhisperfireContext context;
   final String headline;
+
   @JsonKey(name: 'core_take')
   final String coreTake;
+
   final WhisperfireTactic tactic;
   final String motives;
   final String targeting;
+
   @JsonKey(name: 'power_play')
   final String powerPlay;
+
   final List<String> receipts;
+
   @JsonKey(name: 'next_moves')
   final String nextMoves;
+
   @JsonKey(name: 'suggested_reply')
   final WhisperfireSuggestedReply suggestedReply;
+
   final WhisperfireSafety safety;
   final WhisperfireMetrics metrics;
+
   final WhisperfirePattern? pattern;
   final WhisperfireAmbiguity? ambiguity;
-  
+
   // Optional enrichers for Pattern mode
   @JsonKey(name: 'hidden_agenda')
   final String? hiddenAgenda;
+
   final List<WhisperfireArchetype>? archetypes;
+
   @JsonKey(name: 'trigger_pattern_map')
   final String? triggerPatternMap;
+
   final List<String>? contradictions;
   final List<String>? weapons;
   final List<WhisperfireForecast>? forecast;
+
   @JsonKey(name: 'counter_intervention')
   final String? counterIntervention;
+
   @JsonKey(name: 'long_game')
   final String? longGame;
 
@@ -64,44 +80,49 @@ class WhisperfireResponse extends Equatable {
     this.longGame,
   });
 
-  factory WhisperfireResponse.fromJson(Map<String, dynamic> json) => _$WhisperfireResponseFromJson(json);
+  factory WhisperfireResponse.fromJson(Map<String, dynamic> json) =>
+      _$WhisperfireResponseFromJson(json);
+
   Map<String, dynamic> toJson() => _$WhisperfireResponseToJson(this);
 
   @override
   List<Object?> get props => [
-    context,
-    headline,
-    coreTake,
-    tactic,
-    motives,
-    targeting,
-    powerPlay,
-    receipts,
-    nextMoves,
-    suggestedReply,
-    safety,
-    metrics,
-    pattern,
-    ambiguity,
-    hiddenAgenda,
-    archetypes,
-    triggerPatternMap,
-    contradictions,
-    weapons,
-    forecast,
-    counterIntervention,
-    longGame,
-  ];
+        context,
+        headline,
+        coreTake,
+        tactic,
+        motives,
+        targeting,
+        powerPlay,
+        receipts,
+        nextMoves,
+        suggestedReply,
+        safety,
+        metrics,
+        pattern,
+        ambiguity,
+        hiddenAgenda,
+        archetypes,
+        triggerPatternMap,
+        contradictions,
+        weapons,
+        forecast,
+        counterIntervention,
+        longGame,
+      ];
 }
 
 @JsonSerializable()
 class WhisperfireContext extends Equatable {
   final String relationship;
   final String tone;
+
   @JsonKey(name: 'content_type')
   final String contentType;
+
   @JsonKey(name: 'subject_name')
   final String? subjectName;
+
   final String tab;
 
   const WhisperfireContext({
@@ -112,7 +133,9 @@ class WhisperfireContext extends Equatable {
     required this.tab,
   });
 
-  factory WhisperfireContext.fromJson(Map<String, dynamic> json) => _$WhisperfireContextFromJson(json);
+  factory WhisperfireContext.fromJson(Map<String, dynamic> json) =>
+      _$WhisperfireContextFromJson(json);
+
   Map<String, dynamic> toJson() => _$WhisperfireContextToJson(this);
 
   @override
@@ -121,7 +144,7 @@ class WhisperfireContext extends Equatable {
 
 @JsonSerializable()
 class WhisperfireTactic extends Equatable {
-  final String label;
+  final String label; // e.g., "Gaslighting"
   final int confidence; // 0-100
 
   const WhisperfireTactic({
@@ -129,7 +152,9 @@ class WhisperfireTactic extends Equatable {
     required this.confidence,
   });
 
-  factory WhisperfireTactic.fromJson(Map<String, dynamic> json) => _$WhisperfireTacticFromJson(json);
+  factory WhisperfireTactic.fromJson(Map<String, dynamic> json) =>
+      _$WhisperfireTacticFromJson(json);
+
   Map<String, dynamic> toJson() => _$WhisperfireTacticToJson(this);
 
   @override
@@ -146,7 +171,9 @@ class WhisperfireSuggestedReply extends Equatable {
     required this.text,
   });
 
-  factory WhisperfireSuggestedReply.fromJson(Map<String, dynamic> json) => _$WhisperfireSuggestedReplyFromJson(json);
+  factory WhisperfireSuggestedReply.fromJson(Map<String, dynamic> json) =>
+      _$WhisperfireSuggestedReplyFromJson(json);
+
   Map<String, dynamic> toJson() => _$WhisperfireSuggestedReplyToJson(this);
 
   @override
@@ -164,7 +191,9 @@ class WhisperfireSafety extends Equatable {
     required this.notes,
   });
 
-  factory WhisperfireSafety.fromJson(Map<String, dynamic> json) => _$WhisperfireSafetyFromJson(json);
+  factory WhisperfireSafety.fromJson(Map<String, dynamic> json) =>
+      _$WhisperfireSafetyFromJson(json);
+
   Map<String, dynamic> toJson() => _$WhisperfireSafetyToJson(this);
 
   @override
@@ -175,7 +204,9 @@ class WhisperfireSafety extends Equatable {
 class WhisperfireMetrics extends Equatable {
   @JsonKey(name: 'red_flag')
   final int redFlag; // 0-100
+
   final int certainty; // 0-100
+
   @JsonKey(name: 'viral_potential')
   final int viralPotential; // 0-100
 
@@ -185,7 +216,9 @@ class WhisperfireMetrics extends Equatable {
     required this.viralPotential,
   });
 
-  factory WhisperfireMetrics.fromJson(Map<String, dynamic> json) => _$WhisperfireMetricsFromJson(json);
+  factory WhisperfireMetrics.fromJson(Map<String, dynamic> json) =>
+      _$WhisperfireMetricsFromJson(json);
+
   Map<String, dynamic> toJson() => _$WhisperfireMetricsToJson(this);
 
   @override
@@ -202,7 +235,9 @@ class WhisperfirePattern extends Equatable {
     this.prognosis,
   });
 
-  factory WhisperfirePattern.fromJson(Map<String, dynamic> json) => _$WhisperfirePatternFromJson(json);
+  factory WhisperfirePattern.fromJson(Map<String, dynamic> json) =>
+      _$WhisperfirePatternFromJson(json);
+
   Map<String, dynamic> toJson() => _$WhisperfirePatternToJson(this);
 
   @override
@@ -212,6 +247,7 @@ class WhisperfirePattern extends Equatable {
 @JsonSerializable()
 class WhisperfireAmbiguity extends Equatable {
   final String? warning;
+
   @JsonKey(name: 'missing_evidence')
   final List<String>? missingEvidence;
 
@@ -220,7 +256,9 @@ class WhisperfireAmbiguity extends Equatable {
     this.missingEvidence,
   });
 
-  factory WhisperfireAmbiguity.fromJson(Map<String, dynamic> json) => _$WhisperfireAmbiguityFromJson(json);
+  factory WhisperfireAmbiguity.fromJson(Map<String, dynamic> json) =>
+      _$WhisperfireAmbiguityFromJson(json);
+
   Map<String, dynamic> toJson() => _$WhisperfireAmbiguityToJson(this);
 
   @override
@@ -237,7 +275,9 @@ class WhisperfireArchetype extends Equatable {
     required this.weight,
   });
 
-  factory WhisperfireArchetype.fromJson(Map<String, dynamic> json) => _$WhisperfireArchetypeFromJson(json);
+  factory WhisperfireArchetype.fromJson(Map<String, dynamic> json) =>
+      _$WhisperfireArchetypeFromJson(json);
+
   Map<String, dynamic> toJson() => _$WhisperfireArchetypeToJson(this);
 
   @override
@@ -246,8 +286,8 @@ class WhisperfireArchetype extends Equatable {
 
 @JsonSerializable()
 class WhisperfireForecast extends Equatable {
-  final String window;
-  final String event;
+  final String window; // e.g., "3-5 days"
+  final String event;  // e.g., "Escalation attempt"
   final int likelihood; // 0-100
 
   const WhisperfireForecast({
@@ -256,9 +296,11 @@ class WhisperfireForecast extends Equatable {
     required this.likelihood,
   });
 
-  factory WhisperfireForecast.fromJson(Map<String, dynamic> json) => _$WhisperfireForecastFromJson(json);
+  factory WhisperfireForecast.fromJson(Map<String, dynamic> json) =>
+      _$WhisperfireForecastFromJson(json);
+
   Map<String, dynamic> toJson() => _$WhisperfireForecastToJson(this);
 
   @override
   List<Object?> get props => [window, event, likelihood];
-} 
+}

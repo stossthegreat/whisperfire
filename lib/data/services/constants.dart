@@ -191,18 +191,18 @@ extension MockDataProfile on MockData {
     id: 'defender_001',
     xpTotal: 2450,
     categories: {
-      'seduction': CategoryProgress(xp: 1200, level: 3),
+      'charisma': CategoryProgress(xp: 1200, level: 3),
       'gravity': CategoryProgress(xp: 800, level: 2),
       'frame': CategoryProgress(xp: 450, level: 2),
       'scarcity': CategoryProgress(xp: 300, level: 1),
-      'psychwar': CategoryProgress(xp: 200, level: 1),
-      'deception': CategoryProgress(xp: 100, level: 1),
+      'composed_authority': CategoryProgress(xp: 200, level: 1),
+      'hidden_dynamics': CategoryProgress(xp: 100, level: 1),
     },
     unlockedLessons: {
-      'seduction-world1-lesson1',
-      'seduction-world1-lesson2',
-      'seduction-world1-lesson3',
-      'seduction-world2-lesson6',
+      'charisma-world1-lesson1',
+      'charisma-world1-lesson2',
+      'charisma-world1-lesson3',
+      'charisma-world2-lesson6',
     },
   );
 } 

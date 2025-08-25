@@ -87,7 +87,7 @@ class _ProfilePageState extends ConsumerState<ProfilePage>
                           style: GoogleFonts.playfairDisplay(
                             fontSize: 24,
                             fontWeight: FontWeight.bold,
-                            color: Colors.black, // Black text for lessons page
+                            color: Colors.white, // White text for profile page
                           ),
                         ),
                         const SizedBox(height: 24),
@@ -95,6 +95,62 @@ class _ProfilePageState extends ConsumerState<ProfilePage>
                           _buildCategoryCard(context, category, profile)
                         ),
                       ],
+                    ),
+                  ),
+                ),
+                // Profile stats
+                SliverToBoxAdapter(
+                  child: Padding(
+                    padding: const EdgeInsets.all(WFDims.paddingL),
+                    child: Container(
+                      padding: const EdgeInsets.all(WFDims.paddingL),
+                      decoration: BoxDecoration(
+                        color: WFColors.gray800.withOpacity(0.3),
+                        borderRadius: BorderRadius.circular(WFDims.radiusMedium),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('Profile Stats', style: WFTextStyles.h3),
+                          const SizedBox(height: WFDims.spacingM),
+                          Row(
+                            children: [
+                              Expanded(
+                                child: _StatCard(
+                                  title: 'Total XP',
+                                  value: '${profile.xpTotal}',
+                                  icon: Icons.star,
+                                  color: WFColors.purple400,
+                                ),
+                              ),
+                              const SizedBox(width: WFDims.spacingM),
+                              Expanded(
+                                child: _StatCard(
+                                  title: 'Lessons Completed',
+                                  value: '${profile.unlockedLessons.length}',
+                                  icon: Icons.school,
+                                  color: WFColors.success,
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: WFDims.spacingM),
+                          // Reset onboarding button for testing
+                          ElevatedButton(
+                            onPressed: () async {
+                              profile.hasSeenOnboarding = false;
+                              await ref.read(profileRepoProvider).saveProfile(profile);
+                              ref.invalidate(userProfileProvider);
+                              if (context.mounted) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(content: Text('Onboarding reset! Refresh the app to see it.')),
+                                );
+                              }
+                            },
+                            child: const Text('Reset Onboarding (Test)'),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -308,25 +364,74 @@ class _ProfilePageState extends ConsumerState<ProfilePage>
 
   Color _getCategoryColor(String category) {
     switch (category) {
-      case 'seduction': return const Color(0xFFE91E63);
+      case 'charisma': return const Color(0xFFE91E63);
       case 'gravity': return const Color(0xFF26A69A);
       case 'frame': return const Color(0xFF3F51B5);
       case 'scarcity': return const Color(0xFFFF9800);
-      case 'psychwar': return const Color(0xFF9C27B0);
-      case 'deception': return const Color(0xFF4CAF50);
+      case 'composed_authority': return const Color(0xFF9C27B0);
+      case 'hidden_dynamics': return const Color(0xFF4CAF50);
       default: return Colors.purple;
     }
   }
 
   IconData _getCategoryIcon(String category) {
     switch (category) {
-      case 'seduction': return Icons.favorite;
+      case 'charisma': return Icons.favorite;
       case 'gravity': return Icons.arrow_downward;
       case 'frame': return Icons.crop_square;
       case 'scarcity': return Icons.trending_up;
-      case 'psychwar': return Icons.psychology;
-      case 'deception': return Icons.masks;
+      case 'composed_authority': return Icons.psychology;
+      case 'hidden_dynamics': return Icons.masks;
       default: return Icons.school;
     }
+  }
+}
+
+class _StatCard extends StatelessWidget {
+  final String title;
+  final String value;
+  final IconData icon;
+  final Color color;
+
+  const _StatCard({
+    required this.title,
+    required this.value,
+    required this.icon,
+    required this.color,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(WFDims.paddingM),
+      decoration: BoxDecoration(
+        color: WFColors.gray800.withOpacity(0.3),
+        borderRadius: BorderRadius.circular(WFDims.radiusMedium),
+        border: Border.all(color: color.withOpacity(0.3)),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Icon(icon, color: color, size: 20),
+              const SizedBox(width: WFDims.spacingS),
+              Text(
+                title,
+                style: WFTextStyles.bodyMedium.copyWith(
+                  color: WFColors.textSecondary,
+                  fontSize: 12,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: WFDims.spacingS),
+          Text(
+            value,
+            style: WFTextStyles.h3.copyWith(color: color),
+          ),
+        ],
+      ),
+    );
   }
 } 

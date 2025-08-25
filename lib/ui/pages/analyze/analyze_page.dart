@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:google_ml_kit/google_ml_kit.dart';
 import '../../../core/theme/theme.dart';
 import '../../../data/models/whisperfire_models.dart';
 import '../../../data/services/api_service.dart';
@@ -39,7 +41,11 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
   @override
   void initState() {
     super.initState();
-    _loadSettings();
+    
+    // Delay provider updates until after widget tree is built
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _loadSettings();
+    });
   }
 
   void _loadSettings() {
@@ -123,32 +129,14 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
                     
                     const SizedBox(height: WFDims.spacingL),
                     
-                    // Mode selector & OCR
+                    // Mode selector
+                    Text('Mode', style: WFTextStyles.h4),
+                    const SizedBox(height: WFDims.spacingS),
                     Row(
                       children: [
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text('Mode', style: WFTextStyles.h4),
-                              const SizedBox(height: WFDims.spacingS),
-                              Row(
-                                children: [
-                                  _modeButton('scan', 'Scan', selectedMode),
-                                  const SizedBox(width: WFDims.spacingS),
-                                  _modeButton('pattern', 'Pattern', selectedMode),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                        WFIconButton(
-                          icon: Icons.camera_alt,
-                          onPressed: () {
-                            _showOCRModal(context);
-                          },
-                          tooltip: 'OCR (Tesseract)',
-                        ),
+                        _modeButton('scan', 'Scan', selectedMode),
+                        const SizedBox(width: WFDims.spacingS),
+                        _modeButton('pattern', 'Pattern', selectedMode),
                       ],
                     ),
                   ],
@@ -173,30 +161,61 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
                         style: WFTextStyles.bodySmall.copyWith(color: WFColors.textTertiary),
                       ),
                     const SizedBox(height: WFDims.spacingS),
-                    TextField(
-                      controller: _textController,
-                      maxLines: selectedMode == 'scan' ? 6 : 8,
-                      style: WFTextStyles.bodyMedium,
-                      decoration: InputDecoration(
-                        hintText: selectedMode == 'scan' 
-                          ? 'Paste the message you want to analyze...'
-                          : 'Message 1\nMessage 2\nMessage 3...',
-                        hintStyle: WFTextStyles.bodyMedium.copyWith(color: WFColors.textMuted),
-                        filled: true,
-                        fillColor: WFColors.gray800.withOpacity(0.5),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(WFDims.radiusMedium),
-                          borderSide: BorderSide(color: WFColors.glassBorder),
+                    Stack(
+                      children: [
+                        TextField(
+                          controller: _textController,
+                          maxLines: selectedMode == 'scan' ? 6 : 8,
+                          style: WFTextStyles.bodyMedium,
+                          decoration: InputDecoration(
+                            hintText: selectedMode == 'scan' 
+                              ? 'Paste the message you want to analyze...'
+                              : 'Message 1\nMessage 2\nMessage 3...',
+                            hintStyle: WFTextStyles.bodyMedium.copyWith(color: WFColors.textMuted),
+                            filled: true,
+                            fillColor: WFColors.gray800.withOpacity(0.5),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(WFDims.radiusMedium),
+                              borderSide: BorderSide(color: WFColors.glassBorder),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(WFDims.radiusMedium),
+                              borderSide: BorderSide(color: WFColors.glassBorder),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(WFDims.radiusMedium),
+                              borderSide: BorderSide(color: WFColors.purple400, width: 2),
+                            ),
+                          ),
                         ),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(WFDims.radiusMedium),
-                          borderSide: BorderSide(color: WFColors.glassBorder),
+                        // OCR button - bottom right
+                        Positioned(
+                          bottom: 8,
+                          right: 8,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: WFColors.purple400.withOpacity(0.9),
+                              borderRadius: BorderRadius.circular(20),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.1),
+                                  blurRadius: 8,
+                                  offset: const Offset(0, 2),
+                                ),
+                              ],
+                            ),
+                            child: IconButton(
+                              onPressed: () => _showOCRModal(context),
+                              icon: const Icon(
+                                Icons.camera_alt,
+                                color: Colors.white,
+                                size: 20,
+                              ),
+                              tooltip: 'OCR (Tesseract)',
+                            ),
+                          ),
                         ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(WFDims.radiusMedium),
-                          borderSide: BorderSide(color: WFColors.purple400, width: 2),
-                        ),
-                      ),
+                      ],
                     ),
                   ],
                 ),
@@ -312,17 +331,34 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              'OCR functionality will be available soon. Upload an image to extract text automatically.',
+              'Upload an image to extract text automatically using OCR.',
               style: WFTextStyles.bodyMedium,
             ),
             const SizedBox(height: WFDims.spacingL),
-            WFPrimaryButton(
-              text: 'Upload Image',
-              icon: Icons.upload,
-              onPressed: () {
-                Navigator.of(context).pop();
-                // TODO: Implement OCR
-              },
+            Row(
+              children: [
+                Expanded(
+                  child: WFPrimaryButton(
+                    text: 'Camera',
+                    icon: Icons.camera_alt,
+                    onPressed: () async {
+                      Navigator.of(context).pop();
+                      await _pickImage(ImageSource.camera);
+                    },
+                  ),
+                ),
+                const SizedBox(width: WFDims.spacingS),
+                Expanded(
+                  child: WFPrimaryButton(
+                    text: 'Gallery',
+                    icon: Icons.photo_library,
+                    onPressed: () async {
+                      Navigator.of(context).pop();
+                      await _pickImage(ImageSource.gallery);
+                    },
+                  ),
+                ),
+              ],
             ),
           ],
         ),
@@ -334,6 +370,134 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
         ],
       ),
     );
+  }
+
+  Future<void> _pickImage(ImageSource source) async {
+    // Store context before async operations
+    final context = this.context;
+    
+    try {
+      final ImagePicker picker = ImagePicker();
+      final XFile? image = await picker.pickImage(
+        source: source,
+        maxWidth: 1920,
+        maxHeight: 1080,
+        imageQuality: 85,
+      );
+
+      if (image != null) {
+        // Check if widget is still mounted before showing dialog
+        if (!mounted) return;
+        
+        // Show loading dialog
+        showDialog(
+          context: context,
+          barrierDismissible: false,
+          builder: (dialogContext) => AlertDialog(
+            backgroundColor: WFColors.gray900,
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const CircularProgressIndicator(color: WFColors.purple400),
+                const SizedBox(height: WFDims.spacingM),
+                Text('Processing image with OCR...', style: WFTextStyles.bodyMedium),
+              ],
+            ),
+          ),
+        );
+
+        try {
+          // Create InputImage from the picked image
+          final inputImage = InputImage.fromFilePath(image.path);
+          
+          // Initialize text recognizer
+          final textRecognizer = GoogleMlKit.vision.textRecognizer();
+          
+          // Process the image
+          final RecognizedText recognizedText = await textRecognizer.processImage(inputImage);
+          
+          // Extract text blocks
+          String extractedText = '';
+          for (TextBlock block in recognizedText.blocks) {
+            for (TextLine line in block.lines) {
+              extractedText += '${line.text}\n';
+            }
+          }
+          
+          // Clean up the recognizer
+          textRecognizer.close();
+          
+          // Check if widget is still mounted before closing dialog
+          if (!mounted) return;
+          
+          // Close loading dialog
+          Navigator.of(context).pop();
+
+          if (extractedText.trim().isNotEmpty) {
+            // Insert extracted text into the controller
+            _textController.text = extractedText.trim();
+            
+            // Show success message
+            if (mounted) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text('✅ OCR Complete! Extracted ${extractedText.trim().split('\n').length} lines of text.'),
+                  backgroundColor: WFColors.purple400,
+                  duration: const Duration(seconds: 3),
+                ),
+              );
+            }
+          } else {
+            // Show warning if no text was extracted
+            if (mounted) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text('⚠️ No text detected in the image. Please try a clearer image.'),
+                  backgroundColor: WFColors.warning,
+                  duration: const Duration(seconds: 3),
+                ),
+              );
+            }
+          }
+          
+        } catch (ocrError) {
+          // Check if widget is still mounted before closing dialog
+          if (!mounted) return;
+          
+          // Close loading dialog
+          Navigator.of(context).pop();
+          
+          // Show OCR error
+          if (mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text('❌ OCR Error: ${ocrError.toString()}'),
+                backgroundColor: WFColors.redPink[0],
+                duration: const Duration(seconds: 4),
+              ),
+            );
+          }
+        }
+      }
+    } catch (e) {
+      // Check if widget is still mounted before closing dialog
+      if (!mounted) return;
+      
+      // Close loading dialog if open
+      if (Navigator.canPop(context)) {
+        Navigator.of(context).pop();
+      }
+      
+      // Show error message
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Error processing image: ${e.toString()}'),
+            backgroundColor: WFColors.redPink[0],
+          ),
+        );
+      }
+    }
   }
 
   Future<void> _analyze(WidgetRef ref) async {
@@ -389,19 +553,19 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
 
       ref.read(analyzeResultProvider.notifier).state = guardedResponse;
 
-      // Save to history if enabled
-      final settings = CacheService.getSettings();
-      if (settings.saveHistory) {
-        await CacheService.saveAnalysisHistory(
-          DateTime.now().millisecondsSinceEpoch.toString(),
-          {
-            'mode': selectedMode,
-            'tone': selectedTone,
-            'input': _textController.text,
-            'result': guardedResponse.toJson(),
-          },
-        );
-      }
+      // Save to history if enabled - DISABLED TO FIX HIVE ERROR
+      // final settings = CacheService.getSettings();
+      // if (settings.saveHistory) {
+      //   await CacheService.saveAnalysisHistory(
+      //     DateTime.now().millisecondsSinceEpoch.toString(),
+      //     {
+      //       'mode': selectedMode,
+      //       'tone': selectedTone,
+      //       'input': _textController.text.trim(),
+      //       'result': guardedResponse.toJson(),
+      //     },
+      //   );
+      // }
 
       // Scroll to results
       WidgetsBinding.instance.addPostFrameCallback((_) {

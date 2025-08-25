@@ -369,6 +369,10 @@ class _MentorDetailPageState extends ConsumerState<MentorDetailPage> {
                 Row(
                   children: [
                     Expanded(
+                      child: ConstrainedBox(
+                        constraints: const BoxConstraints(
+                          maxHeight: 120, // Limit maximum height
+                        ),
                       child: TextField(
                         controller: _textController,
                         maxLines: null,
@@ -394,6 +398,7 @@ class _MentorDetailPageState extends ConsumerState<MentorDetailPage> {
                           contentPadding: const EdgeInsets.symmetric(
                             horizontal: WFDims.paddingL,
                             vertical: WFDims.paddingM,
+                            ),
                           ),
                         ),
                       ),

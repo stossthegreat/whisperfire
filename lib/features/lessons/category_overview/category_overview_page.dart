@@ -192,7 +192,7 @@ class CategoryOverviewPage extends ConsumerWidget {
 
   List<Map<String, dynamic>> _getWorldsForCategory(String category) {
     switch (category) {
-      case 'seduction':
+      case 'charisma':
         return [
           {
             'world': 1,
@@ -291,7 +291,7 @@ class CategoryOverviewPage extends ConsumerWidget {
 
   IconData _getCategoryIcon(String category) {
     switch (category) {
-      case 'seduction':
+      case 'charisma':
         return Icons.favorite;
       case 'defense':
         return Icons.shield;
@@ -306,7 +306,7 @@ class CategoryOverviewPage extends ConsumerWidget {
 
   String _getCategoryDescription(String category) {
     switch (category) {
-      case 'seduction':
+      case 'charisma':
         return 'Master the art of recognizing and defending against seductive manipulation tactics';
       case 'defense':
         return 'Build psychological armor against all forms of manipulation';

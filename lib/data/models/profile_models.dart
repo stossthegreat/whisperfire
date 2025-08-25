@@ -26,12 +26,14 @@ class UserProfile {
   int xpTotal;
   Map<String, CategoryProgress> categories;
   Set<String> unlockedLessons;
+  bool hasSeenOnboarding;
 
   UserProfile({
     required this.id,
     this.xpTotal = 0,
     Map<String, CategoryProgress>? categories,
     Set<String>? unlockedLessons,
+    this.hasSeenOnboarding = false,
   }) : categories = categories ?? {},
        unlockedLessons = unlockedLessons ?? {};
 
@@ -59,6 +61,7 @@ class UserProfile {
       xpTotal: json['xpTotal'] as int? ?? 0,
       categories: categoriesMap,
       unlockedLessons: unlockedLessonsSet,
+      hasSeenOnboarding: json['hasSeenOnboarding'] as bool? ?? false,
     );
   }
 
@@ -68,6 +71,7 @@ class UserProfile {
       'xpTotal': xpTotal,
       'categories': categories.map((key, value) => MapEntry(key, value.toJson())),
       'unlockedLessons': unlockedLessons.toList(),
+      'hasSeenOnboarding': hasSeenOnboarding,
     };
   }
 } 

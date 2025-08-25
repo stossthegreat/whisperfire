@@ -355,24 +355,24 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen>
 
   Color _getCategoryColor(String category) {
     switch (category) {
-      case 'seduction': return const Color(0xFFE91E63);
+      case 'charisma': return const Color(0xFFE91E63);
       case 'gravity': return const Color(0xFF26A69A);
       case 'frame': return const Color(0xFF3F51B5);
       case 'scarcity': return const Color(0xFFFF9800);
-      case 'psychwar': return const Color(0xFF9C27B0);
-      case 'deception': return const Color(0xFF4CAF50);
+      case 'composed_authority': return const Color(0xFF9C27B0);
+      case 'hidden_dynamics': return const Color(0xFF4CAF50);
       default: return Colors.purple;
     }
   }
 
   IconData _getCategoryIcon(String category) {
     switch (category) {
-      case 'seduction': return Icons.favorite;
+      case 'charisma': return Icons.favorite;
       case 'gravity': return Icons.arrow_downward;
       case 'frame': return Icons.crop_square;
       case 'scarcity': return Icons.trending_up;
-      case 'psychwar': return Icons.psychology;
-      case 'deception': return Icons.masks;
+      case 'composed_authority': return Icons.psychology;
+      case 'hidden_dynamics': return Icons.masks;
       default: return Icons.school;
     }
   }

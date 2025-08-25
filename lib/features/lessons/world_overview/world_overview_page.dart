@@ -418,24 +418,24 @@ class WorldOverviewPage extends ConsumerWidget {
   
   String _getCategoryDisplayName(String category) {
     switch (category) {
-      case 'seduction': return 'Magnetic Presence';
+      case 'charisma': return 'Magnetic Presence';
       case 'gravity': return 'Composed Authority';
       case 'frame': return 'Conversation Frames';
       case 'scarcity': return 'Scarcity & Desire';
-      case 'psychwar': return 'Strategic Influence';
-      case 'deception': return 'Hidden Dynamics';
+      case 'composed_authority': return 'Composed Authority';
+      case 'hidden_dynamics': return 'Hidden Dynamics';
       default: return category;
     }
   }
   
   Color _getCategoryColor(String category) {
     switch (category) {
-      case 'seduction': return const Color(0xFFE91E63);
+      case 'charisma': return const Color(0xFFE91E63);
       case 'gravity': return const Color(0xFF26A69A);
       case 'frame': return const Color(0xFF3F51B5);
       case 'scarcity': return const Color(0xFFFF9800);
-      case 'psychwar': return const Color(0xFF9C27B0);
-      case 'deception': return const Color(0xFF4CAF50);
+      case 'composed_authority': return const Color(0xFF9C27B0);
+      case 'hidden_dynamics': return const Color(0xFF4CAF50);
       default: return Colors.purple;
     }
   }

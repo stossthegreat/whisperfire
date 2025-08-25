@@ -8,16 +8,16 @@ void main() {
   print('\n1. Checking catalog access...');
   print('Categories: ${lessonsCatalog.keys.toList()}');
   
-  // Test 2: Check seduction category
-  print('\n2. Checking seduction category...');
-  final seductionWorlds = lessonsCatalog['seduction'];
-  if (seductionWorlds != null) {
-    print('✅ Seduction category found');
-    print('Worlds: ${seductionWorlds.keys.toList()}');
+  // Test 2: Check charisma category
+  print('\n2. Checking charisma category...');
+  final charismaWorlds = lessonsCatalog['charisma'];
+  if (charismaWorlds != null) {
+    print('✅ Charisma category found');
+    print('Worlds: ${charismaWorlds.keys.toList()}');
     
     // Test 3: Check world 1
     print('\n3. Checking world 1...');
-    final world1 = seductionWorlds[1];
+    final world1 = charismaWorlds[1];
     if (world1 != null) {
       print('✅ World 1 found');
       print('Lessons: ${world1.keys.toList()}');
@@ -38,7 +38,7 @@ void main() {
       print('❌ World 1 not found');
     }
   } else {
-    print('❌ Seduction category not found');
+    print('❌ Charisma category not found');
   }
   
   print('\n🎉 Test complete!');

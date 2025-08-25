@@ -1,19 +1,48 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../core/theme/theme.dart';
+import '../../data/providers.dart';
+import '../../data/models/profile_models.dart';
+import '../../ui/pages/onboarding/beguile_onboarding.dart';
 import '../shared/loading_shell.dart';
 
-class MainShell extends StatelessWidget {
+class MainShell extends ConsumerWidget {
   final Widget child;
   
   const MainShell({super.key, required this.child});
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: WFColors.base,
-      body: child,
-      bottomNavigationBar: const _BottomNavBar(),
+  Widget build(BuildContext context, WidgetRef ref) {
+    final profileAsync = ref.watch(userProfileProvider);
+    
+    return profileAsync.when(
+      data: (profile) {
+        // Check if user has seen onboarding
+        if (!profile.hasSeenOnboarding) {
+          return BeguileOnboarding(
+            onFinish: () {
+              // Mark onboarding as complete and refresh profile
+              profile.hasSeenOnboarding = true;
+              ref.read(profileRepoProvider).saveProfile(profile);
+              ref.invalidate(userProfileProvider);
+            },
+          );
+        }
+        
+        // Show main app if onboarding is complete
+        return Scaffold(
+          backgroundColor: WFColors.base,
+          body: child,
+          bottomNavigationBar: _BottomNavBar(),
+        );
+      },
+      loading: () => const LoadingShell(),
+      error: (error, stack) => Scaffold(
+        body: Center(
+          child: Text('Error loading profile: $error'),
+        ),
+      ),
     );
   }
 }

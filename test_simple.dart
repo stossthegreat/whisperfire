@@ -4,9 +4,9 @@ void main() {
   print('🧪 Complete WhisperFire Lessons Test');
   print('====================================');
   
-  // Test seduction lessons (20 lessons across 4 worlds)
-  print('\n📚 Testing SEDUCTION category...');
-  testCategory('seduction', 4, 20);
+  // Test charisma lessons (20 lessons across 4 worlds)
+  print('\n📚 Testing CHARISMA category...');
+  testCategory('charisma', 4, 20);
   
   // Test scarcity lessons (20 lessons across 4 worlds)
   print('\n📚 Testing SCARCITY & DESIRE category...');
@@ -50,15 +50,15 @@ void main() {
   
   // Test cold power lessons (10 lessons across 2 worlds)
   print('\n📚 Testing COMPOSED AUTHORITY category...');
-  testCategory('coldpower', 4, 20);
+  testCategory('composed_authority', 4, 20);
   
-  // Test deception lessons (20 lessons across 4 worlds)
+  // Test hidden_dynamics lessons (20 lessons across 4 worlds)
   print('\n📚 Testing HIDDEN DYNAMICS category...');
-  testCategory('deception', 4, 20);
+  testCategory('hidden_dynamics', 4, 20);
   
   // Test psychological warfare lessons (10 lessons across 2 worlds)
   print('\n📚 Testing STRATEGIC INFLUENCE category...');
-  testCategory('psychwar', 4, 20);
+  testCategory('composed_authority', 4, 20);
   
   // Summary
   print('\n📊 FINAL SUMMARY:');

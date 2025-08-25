@@ -33,6 +33,10 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
   int _currentStep = 0;
   bool _isCompleting = false; // Flag to prevent multiple completion calls
   
+  // Text controllers for validation
+  late TextEditingController _rewriteController;
+  late TextEditingController _reflectionController;
+  
   @override
   void initState() {
     super.initState();
@@ -51,6 +55,10 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
       vsync: this,
     );
     
+    // Initialize text controllers
+    _rewriteController = TextEditingController();
+    _reflectionController = TextEditingController();
+    
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _cardController.forward();
     });
@@ -61,16 +69,53 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
     _confettiController.dispose();
     _pageController.dispose();
     _cardController.dispose();
+    _rewriteController.dispose();
+    _reflectionController.dispose();
     super.dispose();
   }
   
   void _nextStep() {
+    // Validate current step before proceeding
+    if (!_canProceedToNextStep()) {
+      return;
+    }
+    
     if (_currentStep < 4) {
       setState(() {
         _currentStep++;
       });
       _pageController.forward(from: 0);
     }
+  }
+  
+  bool _canProceedToNextStep() {
+    // Check if user has entered text for rewrite step
+    if (_currentStep == 3) { // Rewrite step (index 3)
+      if (_rewriteController.text.trim().isEmpty) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Please enter your rewrite before continuing'),
+            backgroundColor: Colors.orange,
+          ),
+        );
+        return false;
+      }
+    }
+    
+    // Check if user has entered text for reflection step
+    if (_currentStep == 4) { // Reflection step (index 4)
+      if (_reflectionController.text.trim().isEmpty) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Please enter your reflection before completing the lesson'),
+            backgroundColor: Colors.orange,
+          ),
+        );
+        return false;
+      }
+    }
+    
+    return true;
   }
   
   void _previousStep() {
@@ -83,6 +128,17 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
   }
   
   void _completeLesson(Lesson lesson) async {
+    // Validate reflection is filled before completing
+    if (_reflectionController.text.trim().isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Please enter your reflection before completing the lesson'),
+          backgroundColor: Colors.orange,
+        ),
+      );
+      return;
+    }
+    
     if (!mounted || _isCompleting) return; // Prevent multiple completion calls
     
     _isCompleting = true; // Set flag to prevent duplicate calls
@@ -101,12 +157,12 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
       // Use a small delay to ensure the XP award is processed
       await Future.delayed(const Duration(milliseconds: 100));
       
-      if (mounted) {
-        showDialog(
-          context: context,
-          barrierDismissible: false,
+    if (mounted) {
+      showDialog(
+        context: context,
+        barrierDismissible: false,
           builder: (dialogContext) => _buildCompletionDialog(lesson, dialogContext),
-        );
+      );
       }
     }
   }
@@ -124,79 +180,79 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
         return false; // Prevent default back behavior
       },
       child: AlertDialog(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        title: Text(
-          'Lesson Complete!',
-          style: GoogleFonts.playfairDisplay(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-          ),
-          textAlign: TextAlign.center,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      title: Text(
+        'Lesson Complete!',
+        style: GoogleFonts.playfairDisplay(
+          fontSize: 24,
+          fontWeight: FontWeight.bold,
         ),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              'You earned ${lesson.xp} XP!',
-              style: GoogleFonts.inter(fontSize: 18),
+        textAlign: TextAlign.center,
+      ),
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            'You earned ${lesson.xp} XP!',
+            style: GoogleFonts.inter(fontSize: 18),
+          ),
+          const SizedBox(height: 16),
+          Container(
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: Colors.purple[50],
+              borderRadius: BorderRadius.circular(12),
             ),
-            const SizedBox(height: 16),
-            Container(
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: Colors.purple[50],
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.star, color: Colors.purple[600], size: 24),
-                  const SizedBox(width: 8),
-                  Text(
-                    '${lesson.xp} XP',
-                    style: GoogleFonts.inter(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.purple[600],
-                    ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.star, color: Colors.purple[600], size: 24),
+                const SizedBox(width: 8),
+                Text(
+                  '${lesson.xp} XP',
+                  style: GoogleFonts.inter(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.purple[600],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-          ],
-        ),
-        actions: [
-          TextButton(
-            onPressed: () {
-              // Close dialog first
-              Navigator.of(dialogContext).pop();
-              // Reset completion flag
-              _isCompleting = false;
-              // Use a small delay to ensure dialog is closed before navigation
-              Future.delayed(const Duration(milliseconds: 100), () {
-                if (mounted) {
-                  Navigator.of(context).pop();
-                }
-              });
-            },
-            child: const Text('Back to Worlds'),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              // Close dialog first
-              Navigator.of(dialogContext).pop();
-              // Reset completion flag
-              _isCompleting = false;
-              // Use a small delay to ensure dialog is closed before navigation
-              Future.delayed(const Duration(milliseconds: 100), () {
-                if (mounted) {
-                  Navigator.of(context).pop();
-                }
-              });
-            },
-            child: const Text('Continue'),
           ),
         ],
+      ),
+      actions: [
+        TextButton(
+            onPressed: () {
+              // Close dialog first
+              Navigator.of(dialogContext).pop();
+              // Reset completion flag
+              _isCompleting = false;
+              // Use a small delay to ensure dialog is closed before navigation
+              Future.delayed(const Duration(milliseconds: 100), () {
+                if (mounted) {
+                  Navigator.of(context).pop();
+                }
+              });
+            },
+          child: const Text('Back to Worlds'),
+        ),
+        ElevatedButton(
+          onPressed: () {
+              // Close dialog first
+              Navigator.of(dialogContext).pop();
+              // Reset completion flag
+              _isCompleting = false;
+              // Use a small delay to ensure dialog is closed before navigation
+              Future.delayed(const Duration(milliseconds: 100), () {
+                if (mounted) {
+            Navigator.of(context).pop();
+                }
+              });
+          },
+            child: const Text('Continue'),
+        ),
+      ],
       ),
     );
   }
@@ -543,6 +599,7 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
           ),
           const SizedBox(height: 16),
           TextField(
+            controller: _rewriteController,
             maxLines: 3,
             style: TextStyle(color: Colors.black), // Make user text black
             decoration: InputDecoration(
@@ -585,6 +642,7 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
           ),
           const SizedBox(height: 24),
           TextField(
+            controller: _reflectionController,
             maxLines: 5,
             style: TextStyle(color: Colors.black), // Make user text black
             decoration: InputDecoration(
@@ -658,12 +716,12 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
   
   Color _getCategoryColor(String category) {
     switch (category) {
-      case 'seduction': return const Color(0xFFE91E63);
+      case 'charisma': return const Color(0xFFE91E63);
       case 'gravity': return const Color(0xFF26A69A);
       case 'frame': return const Color(0xFF3F51B5);
       case 'scarcity': return const Color(0xFFFF9800);
-      case 'psychwar': return const Color(0xFF9C27B0);
-      case 'deception': return const Color(0xFF4CAF50);
+      case 'composed_authority': return const Color(0xFF9C27B0);
+      case 'hidden_dynamics': return const Color(0xFF4CAF50);
       default: return Colors.purple;
     }
   }

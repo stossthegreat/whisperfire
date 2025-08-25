@@ -13,7 +13,7 @@ void main() {
   // Test 2: Check if we can access a specific lesson
   print('\n2. Testing lesson access...');
   try {
-    final lesson = lessonsCatalog['seduction']?[1]?[1];
+    final lesson = lessonsCatalog['charisma']?[1]?[1];
     if (lesson != null) {
       print('✅ Successfully loaded lesson: ${lesson.title}');
       print('   Category: ${lesson.category}');
@@ -22,7 +22,7 @@ void main() {
       print('   Hook length: ${lesson.content.hook.length} characters');
       print('   Concepts: ${lesson.content.concept.length}');
     } else {
-      print('❌ Failed to load lesson seduction_1_1');
+      print('❌ Failed to load lesson charisma_1_1');
     }
   } catch (e) {
     print('❌ Error loading lesson: $e');
@@ -32,7 +32,7 @@ void main() {
   print('\n3. Testing lesson repository...');
   try {
     final repo = LessonRepo();
-    final lesson = repo.load('seduction', 1, 1);
+    final lesson = repo.load('charisma', 1, 1);
     print('✅ Lesson repository working');
   } catch (e) {
     print('❌ Lesson repository error: $e');
@@ -42,7 +42,7 @@ void main() {
   print('\n4. Testing discoverLessons method...');
   try {
     final repo = LessonRepo();
-    final lessons = repo.discoverLessons('seduction', 1);
+    final lessons = repo.discoverLessons('charisma', 1);
     print('✅ discoverLessons working: found ${lessons.length} lessons');
     if (lessons.isNotEmpty) {
       print('   First lesson: ${lessons.first.title}');

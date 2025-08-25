@@ -10,7 +10,7 @@ void main() {
   print('\n1. Testing LessonRepo directly...');
   try {
     final repo = LessonRepo();
-    final lessons = repo.discoverLessons('seduction', 1);
+    final lessons = repo.discoverLessons('charisma', 1);
     print('✅ LessonRepo.discoverLessons returned: $lessons');
   } catch (e) {
     print('❌ LessonRepo error: $e');
