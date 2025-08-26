@@ -148,6 +148,9 @@ class _LessonsContent extends ConsumerWidget {
     String emoji,
     CategoryProgress progress,
   ) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
+    
     return GestureDetector(
       onTap: () {
         Navigator.of(context).push(
@@ -158,31 +161,39 @@ class _LessonsContent extends ConsumerWidget {
       },
       child: Container(
         decoration: BoxDecoration(
-          color: Color(color).withOpacity(0.1),
+          color: Color(color).withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: Color(color).withOpacity(0.3)),
+          border: Border.all(color: Color(color).withValues(alpha: 0.3)),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(12),
+          padding: EdgeInsets.all(screenWidth * 0.03),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 emoji,
-                style: const TextStyle(fontSize: 36),
+                style: TextStyle(fontSize: screenWidth * 0.09),
               ),
-              const SizedBox(height: 12),
-              Text(
-                categoryName,
-                style: WFTextStyles.h4.copyWith(
-                  color: Color(color),
-                  fontWeight: FontWeight.bold,
+              SizedBox(height: screenHeight * 0.015),
+              Flexible(
+                child: Text(
+                  categoryName,
+                  style: WFTextStyles.h4.copyWith(
+                    color: Color(color),
+                    fontWeight: FontWeight.bold,
+                    fontSize: screenWidth * 0.035,
+                  ),
+                  textAlign: TextAlign.center,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                 ),
-                textAlign: TextAlign.center,
               ),
-              const SizedBox(height: 12),
+              SizedBox(height: screenHeight * 0.015),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                padding: EdgeInsets.symmetric(
+                  horizontal: screenWidth * 0.025, 
+                  vertical: screenHeight * 0.005
+                ),
                 decoration: BoxDecoration(
                   color: Color(color),
                   borderRadius: BorderRadius.circular(10),
@@ -192,14 +203,16 @@ class _LessonsContent extends ConsumerWidget {
                   style: WFTextStyles.bodySmall.copyWith(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
+                    fontSize: screenWidth * 0.025,
                   ),
                 ),
               ),
-              const SizedBox(height: 6),
+              SizedBox(height: screenHeight * 0.008),
               Text(
                 '${progress.xp} XP',
                 style: WFTextStyles.bodySmall.copyWith(
                   color: Color(color),
+                  fontSize: screenWidth * 0.025,
                 ),
               ),
             ],

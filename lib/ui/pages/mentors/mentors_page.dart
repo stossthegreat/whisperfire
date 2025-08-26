@@ -86,14 +86,14 @@ class _MentorsContent extends ConsumerWidget {
           
           const SizedBox(height: WFDims.spacingXXL),
           
-          // Mentors grid (2 columns for beautiful square cards)
+          // Mentors grid (2 columns for beautiful square cards) - RESPONSIVE
           GridView.count(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
-            crossAxisCount: 2,
-            mainAxisSpacing: WFDims.spacingL,
-            crossAxisSpacing: WFDims.spacingL,
-            childAspectRatio: 1.0, // Perfect square
+            crossAxisCount: MediaQuery.of(context).size.width > 600 ? 2 : 1,
+            mainAxisSpacing: MediaQuery.of(context).size.height * 0.02,
+            crossAxisSpacing: MediaQuery.of(context).size.width * 0.04,
+            childAspectRatio: MediaQuery.of(context).size.width > 600 ? 1.0 : 1.2,
             children: MentorConstants.mentors.map((mentor) {
               return _MentorCard(mentor: mentor);
             }).toList(),
