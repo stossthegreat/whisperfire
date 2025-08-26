@@ -29,6 +29,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
             'Mystery is a vacuum. Nature abhors it; the human psyche craves it.',
             'Power resides in the pause. Anticipation is manufactured in silence, in glance, in delay.'
           ],
+          teaching: 'The human mind cannot resist filling blanks. When you withhold information, others will build you palaces of imagination. Reveal everything, and you collapse into the ordinary. Mystery makes you more than human — it makes you myth.',
           drill: Drill(
             question: 'They reach out with eagerness, seeking instant reassurance. What do you do?',
             options: [
@@ -59,6 +60,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
             'Eyes are not for looking, they are for being looked into.',
             'Stillness is the loudest sound.'
           ],
+          teaching: 'Presence is not about being seen—it is about being felt. When you enter a room, you bring an atmosphere that others cannot ignore. Your energy announces you before your body arrives. The most magnetic people don\'t seek attention; they command it through the sheer force of their being.',
           drill: Drill(
             question: 'You enter a gathering. They look for your approach. What do you do?',
             options: [
@@ -83,6 +85,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 3,
         xp: 50,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Paris, 1924. A young writer, desperate for her approval, pours his heart out to Gertrude Stein. He speaks of love in clichés, in well-worn phrases he thinks are original. She listens, smiling faintly. Then: "A rose is a rose is a rose." He is bewildered. She has not answered; she has set a riddle. For weeks, he will be haunted, trying to decode her. Literal language informs. Poetic language transforms.',
           concept: [
             'Subtext is the true text.',
@@ -113,6 +116,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 4,
         xp: 50,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'The Roman Forum, 44 BC. Julius Caesar does not show Cleopatra his legions. He shows her his epilepsy. The seizure shakes him, but he allows her to see it. Not a loss of power—an ultimate display of it. He proves he trusts her with the crack in his marble. True power is not the absence of weakness; it is control over which weakness you reveal, and to whom.',
           concept: [
             'Strategic unveiling. Reveal flaws that are strengths in disguise.',
@@ -143,6 +147,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 5,
         xp: 50,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'The French Riviera, 1966. Brigitte Bardot is surrounded by suitors—millionaires, heirs, actors. She turns to the poorest man at the table: "And you? What would you offer me that they cannot?" Instantly, the dynamic shifts. The hunters become applicants. Seduction is not winning them over; it is auditioning them for access to you.',
           concept: [
             'The frame is everything: you are the prize.',
@@ -175,6 +180,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 6,
         xp: 75,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Venice, 1528. Pietro Aretino, the scandalous poet, never tells the whole tale. His letters are riddles, his plays stop mid-thought. His audiences leave theatres aflame with questions, inventing endings in their own minds. Aretino understood: the seducer never finishes the story—he lets desire write its own sequel. To leave a door ajar is to invite the imagination inside.',
           concept: [
             'Minds crave completion. An unfinished gesture is more haunting than a finished one.',
@@ -205,6 +211,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 7,
         xp: 75,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Kyoto, 1776. A geisha pours sake with one hand and slices a glance with the other. Her laughter warms; her silence chills. One samurai suitor leaves with his chest swelling from her praise; the next leaves gutted by her indifference. The power lies not in kindness, nor in cruelty—but in the oscillation between the two. The heart addicted to warmth craves it most when it fears frost.',
           concept: [
             'Desire is thermodynamic—built on contrast, not consistency.',
@@ -235,6 +242,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 8,
         xp: 75,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Paris, 1847. Balzac observes: lovers don\'t fall for each other—they fall for themselves, reflected in each other\'s eyes. The master seducer doesn\'t shine light; he becomes a mirror. He listens with predator\'s patience, then offers back a fragment of their soul, polished, brighter, more intoxicating. Nothing binds tighter than being seen—not as you are, but as you wish to be.',
           concept: [
             'People love themselves first. Reflect that image and they\'ll mistake it for love.',
@@ -265,6 +273,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 9,
         xp: 75,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Naples, 1610. Caravaggio paints with shadow, leaving half his canvas in darkness. The light is precious because it is rare. So too with touch. The seducer understands: hands are instruments of worship or devastation, but only when seldom used. Touch too freely and you are a tavern drunk. Touch rarely, and you become a priest of the body.',
           concept: [
             'Scarcity turns a brush of skin into a coronation.',
@@ -301,6 +310,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
             'Praise too much and you bore them. Cut them once, and they bleed into your hands.',
             'Honey without venom is a lullaby. Venom without honey is cruelty. Together—they are addiction.'
           ],
+                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           drill: Drill(
             question: 'They boast: "Everyone loves me." What do you say?',
             options: [
@@ -327,6 +337,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 11,
         xp: 100,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Istanbul, 1555. Roxelana, once a slave, now queen beside Suleiman the Magnificent, does not storm her rivals. She waits. Her enemies exhaust themselves in gossip and maneuvering, while she sits silent, weaving. By the time they realize the threads surround them, it is too late. Seduction is not only motion—it is the weaponization of stillness.',
           concept: [
             'Patience is a blade sharper than impulse.',
@@ -357,6 +368,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 12,
         xp: 50,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Rome, 47 BC. Cleopatra enters rolled in a carpet, unveiled at Caesar\'s feet. She coils around him—not with words, but with timing. She strikes not with constant attention, but sudden, unforgettable gestures. The serpent does not chase—it waits, coils, then strikes once, and the prey never forgets.',
           concept: [
             'A single unforgettable move outweighs a hundred small ones.',
@@ -387,6 +399,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 13,
         xp: 50,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'London, 1813. Lord Byron seduces not with safety, but with danger. His lovers know he may vanish, betray, destroy—but that danger is the intoxication. Fire is beautiful because it might consume you. Seduction without risk is a hearth; seduction with danger is a wildfire.',
           concept: [
             'Safety comforts, but danger ensnares.',
@@ -417,6 +430,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 14,
         xp: 50,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Milan, 1498. Ludovico Sforza\'s mistress does not win him by honesty. She wins him with performance. To one man she is fragile, to another fierce, to another playful. Each swears they know the "real her." None do. The fox survives because it wears a thousand faces. Seduction is not authenticity—it is artistry.',
           concept: [
             'People don\'t want the truth; they want the truth that flatters their fantasy.',
@@ -453,6 +467,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
             'Ambiguity allows them to project their desires onto you.',
             'Speak like prophecy, and they\'ll remember your words long after forgetting your face.'
           ],
+                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           drill: Drill(
             question: 'They ask: "Do you see a future with me?" What do you say?',
             options: [
@@ -479,6 +494,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 16,
         xp: 50,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Vienna, 1895. A salon of intellects debates Freud\'s new theories. At the far end, a woman says nothing. She listens, her gaze unwavering. When she finally speaks, every voice dies. Her silence had already bent the room around her. When she spoke, she was the only one heard. She is the black hole: pulling attention, not by noise, but by gravity.',
           concept: [
             'The most magnetic presence is not loud—it is inevitable.',
@@ -509,6 +525,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 17,
         xp: 50,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Havana, 1956. Hemingway sits at Floridita with a glass of rum. A woman beside him doesn\'t laugh loudly, doesn\'t flirt openly. She simply listens, eyes steady, letting silence stretch. He finds himself confessing more than he\'s ever told anyone. She never asked—she pulled. Like an undertow, unseen but irresistible, she drags secrets from him without lifting a hand.',
           concept: [
             'Attraction is not only push—it is pull.',
@@ -539,6 +556,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 18,
         xp: 50,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Kyoto, 1600. A geisha plays shamisen under dim lantern light. She does not rush, does not overwhelm. Each note lingers, each glance lasts a heartbeat too long. Men leave her house not intoxicated by frenzy, but haunted by slow fire. She does not erupt—she smolders. And the ember she plants burns in their chest long after she is gone.',
           concept: [
             'Seduction is not always lightning—it is ember.',
@@ -569,6 +587,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 19,
         xp: 50,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Venice, 1720. Casanova sits with a young noblewoman. He barely speaks of himself. Instead, every time she hints at her desires, he reflects them back—framed, elevated. She leaves convinced he is her soulmate. In truth, she fell in love with her own reflection in his eyes. The greatest seducers don\'t seduce you—they make you seduce yourself.',
           concept: [
             'People are most enchanted when they see themselves reflected beautifully.',
@@ -605,6 +624,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
             'Gravity works in silence. It doesn\'t convince; it compels.',
             'The highest art is to become the force they orbit, the law they cannot break.'
           ],
+                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           drill: Drill(
             question: 'They protest: "I shouldn\'t want this." What do you say?',
             options: [
@@ -633,6 +653,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 1,
         xp: 50,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Moscow, 1945. Stalin walks into the war room, and though his body is frail, the air freezes. He speaks only once in the meeting. One sentence. Then silence. Generals argue for hours around his absence of words, every man terrified to be the one Stalin finally interrupts. When he does, he does not raise his voice. He only says: "Enough." It lands harder than a firing squad. True authority is not heat — it is temperature control. Composure makes others burn themselves alive trying to melt you.',
           concept: [
             'Heat pleads. Composure commands. The one who stays steady when others beg reveals themselves as the natural center.',
@@ -663,6 +684,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 2,
         xp: 50,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'The French Riviera, 1961. Alain Delon leans against the balcony rail, a cigarette loose between his fingers. The party hums behind him, desperate to pull him back into its current. But he doesn\'t chase. He drifts. He lets them orbit him like moons to a planet that doesn\'t even notice its own gravity. Some people attract by attention; Delon attracted by distance. The closer they wanted him, the further he leaned back. Desire is not always heat — sometimes it is the frost on glass you cannot touch.',
           concept: [
             'Rarity = Value. The less of you people can access, the more they crave entry.',
@@ -693,6 +715,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 3,
         xp: 50,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Tokyo, 1980s. Yakuza boss Kazuo Taoka is surrounded by chaos. Deals collapse, rivals circle, tempers flare. He sips his tea. No rush. When he finally nods, an entire room of killers breathes again. His timing is glacial, but glaciers carve valleys and crush empires. Power is not shown in speed; it is revealed in patience. The person who never hurries makes the world walk at their pace.',
           concept: [
             'Urgency is weakness. The one who must decide now is already enslaved.',
@@ -723,6 +746,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 4,
         xp: 50,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Sparta, 480 BC. The Persian envoy mocks Leonidas, offering riches if he kneels. Leonidas doesn\'t move. He doesn\'t shout. He doesn\'t threaten. He only smirks and says: "Come and take them." His men cheer not because of his rage, but because of his unshakable stillness. Composed Authority is discipline made flesh. It is refusing to flinch, even when the blade touches your throat.',
           concept: [
             'Control of the self is control of the room. Panic spreads. So does composure.',
@@ -759,6 +783,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
             'Composed Authority thrives on selective light. Let them live in shadow until you choose to shine.',
             'Indifference is not cruelty. It is the crown you wear that keeps the masses beneath you.'
           ],
+                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           drill: Drill(
             question: 'Next time you walk into a crowded space, do not rush to greet anyone. Let them approach you first. Give three people less than they want, and one person just enough to feel special. Watch the hierarchy form around you.',
             options: [
@@ -785,6 +810,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 6,
         xp: 75,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Versailles, 1775. Marie Antoinette enters the ballroom masked. Her smile is hidden. Her eyes unreadable. Every man wonders: is she amused? Bored? Angry? No one knows. That is the trap. The mask creates distance — and distance creates obsession. Composed Authority thrives on uncertainty. What is unseen burns hotter in the mind than what is revealed in the light.',
           concept: [
             'The mask is not deception — it is control. You reveal only what you choose.',
@@ -815,6 +841,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 7,
         xp: 75,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Hollywood, 1955. James Dean doesn\'t show up to the party. He\'s the only one missing, yet every conversation circles back to him. "Where is he?" "Did you hear what he\'s doing?" His absence filled the room more than anyone\'s presence. Composed Authority teaches: sometimes not showing up is the loudest appearance you can make.',
           concept: [
             'Absence weaponizes curiosity. The less they see you, the more they imagine you.',
@@ -845,6 +872,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 8,
         xp: 75,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Berlin, 1936. Leni Riefenstahl stands behind the camera. She doesn\'t shout. She doesn\'t plead. She simply stares through the lens at her crew. The gaze alone commands them — icy, unblinking, eternal. A composed gaze says: "I see you, but I do not bend to you." It is more terrifying than a shout, more intoxicating than a kiss.',
           concept: [
             'The eyes are weapons. Composed Authority sharpens them into blades.',
@@ -875,6 +903,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 9,
         xp: 75,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Ancient Rome. A general kneels before Caesar, begging forgiveness. Caesar listens, expression unreadable. Then he turns his head and walks away without a word. The man collapses in tears. The cold shoulder is not indifference — it is annihilation. It forces the other to crawl for warmth that may never come.',
           concept: [
             'Cold rejection burns longer than hot anger.',
@@ -911,6 +940,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
             'Control your image — control your narrative. A calm face destroys gossip.',
             'The throne of frost is built on dignity, not fury.'
           ],
+                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           drill: Drill(
             question: 'When someone hopes to see you break, walk in stronger, colder, more radiant. Turn heartbreak into spectacle. Let them see you thrive.',
             options: [
@@ -937,6 +967,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 11,
         xp: 100,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Vienna, 1805. Beethoven is asked why he sometimes pauses for long stretches in his compositions. He smiles, tapping his temple: "Silence is the most powerful note." The audience leans in, desperate, waiting for the next sound. Composed Authority thrives on the pause. A moment of silence in speech or presence creates tension sharper than a blade.',
           concept: [
             'Silence is not absence — it is pressure.',
@@ -967,6 +998,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 12,
         xp: 100,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Moscow, 1945. Stalin is told of a betrayal. He doesn\'t rage. He doesn\'t shout. He smiles — a smile so calm, so cold, the traitor\'s knees buckle. A hot fury can be dismissed as weakness. A composed smile says: "I already own your fate."',
           concept: [
             'Smiles are not always warmth — they can be tools of control.',
@@ -997,6 +1029,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 13,
         xp: 100,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Paris, 1920. Hemingway is laughing in a café, animated, alive. Then suddenly — silence. His face falls into stillness. His tone drops. Everyone at the table feels it: the room chills. This shift, sudden and deliberate, forces all attention back to him. Composed Authority knows that sudden stillness is as commanding as thunder.',
           concept: [
             'A change in temperature is more shocking than consistency.',
@@ -1027,6 +1060,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 14,
         xp: 100,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Tokyo, 1600. A samurai stands surrounded by enemies. He does not unsheathe his blade. He simply breathes — steady, calm, eyes fixed. His stillness unnerves them more than any strike. Composed Authority is serenity in the storm. It makes the furious look foolish, the desperate look weak.',
           concept: [
             'Calm is more frightening than rage.',
@@ -1063,6 +1097,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
             'Withdrawal creates demand. They must chase what they lost.',
             'The exit is a weapon — use it.'
           ],
+                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           drill: Drill(
             question: 'End one conversation before they expect it. Leave them wanting more. In text, stop replying at the high point — let silence echo.',
             options: [
@@ -1089,6 +1124,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 16,
         xp: 125,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'London, 1890. Oscar Wilde delivers one of his cutting one-liners in a crowded salon. The room erupts with laughter — except for one man, seated across from him, who does not move, does not smile, does not blink. Wilde falters for the briefest second. Composed Authority thrives in the refusal to give recognition. The stone face unsettles more than any insult.',
           concept: [
             'Laughter, smiles, nods — these are gifts. Withhold them.',
@@ -1119,6 +1155,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 17,
         xp: 125,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Hollywood, 1950. Marilyn Monroe is being hounded at a party. A man won\'t stop trying to charm her. She turns her body away, greets someone else, laughs at another\'s joke. He doesn\'t exist anymore. His desperation grows; the more he fights for her attention, the more invisible she makes him. The freeze-out is the ultimate rejection without a word.',
           concept: [
             'Attention is currency. Cut it off and watch them starve.',
@@ -1149,6 +1186,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 18,
         xp: 125,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Florence, 1500. Machiavelli, when asked about a rival\'s talents, replies: "Yes, he is clever… for a child." Praise coated in frost burns deeper than insult. It gives with one hand and takes with the other, leaving them confused, insecure, desperate to prove themselves.',
           concept: [
             'Backhanded compliments destabilize more than criticism.',
@@ -1179,6 +1217,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 19,
         xp: 125,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'New York, 1990. A Wall Street negotiator lets his rival rush through papers, demand answers, flood the room with energy. He speaks slowly, deliberately, checking each clause as though he has all the time in the world. By moving like a glacier, he forces the frantic man to drown in his own urgency. Composed Authority is time used as a weapon.',
           concept: [
             'Slow is terrifying when others are rushing.',
@@ -1215,6 +1254,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
             'Even defeat can be framed as majesty.',
             'The final weapon is poise in the face of collapse.'
           ],
+                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           drill: Drill(
             question: 'Next time you lose — smile, nod, and thank them as if you\'ve given them a gift. In heartbreak, show serenity, not collapse.',
             options: [
@@ -1243,6 +1283,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 1,
         xp: 50,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'London, 1953. Winston Churchill is asked at a press conference if he fears losing relevance after stepping down as Prime Minister. The room chuckles, cameras flash. He raises his cigar, exhales deliberately, and only after silence reclaims the hall does he answer: "History will be kind to me—for I intend to write it." The insult collapses. The journalists laugh nervously, aware they are no longer observers but characters in his frame. He didn\'t argue. He didn\'t defend. He defined the reality.',
           concept: [
             'Whoever speaks with composure first sets the tone.',
@@ -1273,6 +1314,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 2,
         xp: 50,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Hollywood, 1973. Marlon Brando walks on stage at the Academy Awards. He has sent a young Native American woman, Sacheen Littlefeather, to decline his Oscar on live television. The audience boos. She does not flinch. She doesn\'t shout back. She simply holds her silence until the room caves into discomfort. Her calm is heavier than their outrage. By the time she leaves, the boos have transformed into applause. Rage burned out; composure endured.',
           concept: [
             'Emotional stillness is a fortress. The one who doesn\'t react defines reality.',
@@ -1303,6 +1345,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 3,
         xp: 50,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Paris, 1927. Josephine Baker is swarmed by admirers after a performance. A wealthy patron demands her attention, insisting on an autograph. She takes the pen, studies him silently, then signs not his notebook, but the back of her own glove. She hands it to him without explanation. He is stunned—waiting for meaning, scrambling to interpret. Her delay in giving clarity turns a trivial signature into an artifact.',
           concept: [
             'He who waits controls. The pause unsettles, stretches anticipation.',
@@ -1333,6 +1376,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 4,
         xp: 50,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'New York, 1960. Gore Vidal and Norman Mailer clash on live TV. Mailer mocks Vidal, sneering at his "softness." Vidal doesn\'t rise. He doesn\'t bark back. He tilts his head, sighs theatrically, and says: "Norman, once again you mistake volume for substance." The audience erupts. Mailer has ridiculed himself by swinging at air.',
           concept: [
             'Mockery is not met with defense—it is reflected back.',
@@ -1369,6 +1413,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
             'Stories bypass logic; they implant inevitability.',
             'When you tell the story, you own the script.'
           ],
+                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           drill: Drill(
             question: 'They say: "Prove it." What do you do?',
             options: [
@@ -1395,6 +1440,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 6,
         xp: 75,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Venice, 1720. A masquerade ball. Candlelight flickers on painted masks. Casanova does not reveal himself with declarations; he drifts past her, gaze lingering a heartbeat too long, vanishing into the crowd. She laughs with others but keeps glancing at the doorway, searching for the phantom presence that left a mark without words. Seduction thrives not in possession, but in haunting absence.',
           concept: [
             'Mystery seduces harder than certainty.',
@@ -1425,6 +1471,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 7,
         xp: 75,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Kyoto, 11th century. In The Tale of Genji, the prince courts women not with conquest but with patience. A glance one evening, a poem slipped under a door the next, a silent gift of incense the following week. Each layer builds anticipation until longing itself becomes unbearable. The art is not in arrival, but in delay.',
           concept: [
             'Rushed desire collapses. Longing stretches it into obsession.',
@@ -1455,6 +1502,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 8,
         xp: 75,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Paris, 1935. Pablo Picasso sits in a café, sketching on a napkin. A woman leans over, fascinated. He folds it and tucks it away. "May I see it?" she asks. He smirks: "Not yet." She spends the evening desperate for the reveal, only to realize the sketch matters less than the anticipation he orchestrated. Seduction is not the gift itself—it is the unfinished riddle.',
           concept: [
             'Humans crave completion; withholding creates compulsion.',
@@ -1485,6 +1533,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 9,
         xp: 75,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Paris opera house, 1875. A young baron escorts his lover through the gilded hall. His hand hovers just above hers, never touching, never claiming—an almost unbearable closeness. She feels heat without contact, possession without grasp. True seduction lies not in the obvious touch, but in the electricity of almost.',
           concept: [
             'Tension > contact. The moment before the kiss often outweighs the kiss itself.',
@@ -1521,6 +1570,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
             'Softness wrapped in danger, cruelty laced with tenderness—such paradoxes ignite obsession.',
             'A single archetype is forgettable; a contradiction is unforgettable.'
           ],
+                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           drill: Drill(
             question: 'They tease: "You\'re trouble, aren\'t you?" What do you say?',
             options: [
@@ -1547,6 +1597,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 11,
         xp: 100,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Cairo, 1920. In the thick air of a jazz club, a woman in emerald silk doesn\'t smile, doesn\'t speak—she only looks. Her gaze lingers, slow and deliberate, as if peeling away every defense. Men who meet it laugh nervously, tug their collars, retreat. One man, however, cannot look away. He feels undressed, claimed, consumed. A glance, wielded correctly, is not observation—it is possession.',
           concept: [
             'The eyes seduce more than words.',
@@ -1577,6 +1628,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 12,
         xp: 100,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Vienna, 1805. At a private salon, Beethoven plays a sonata. The most devastating moment is not a cascade of notes but a pause, a silence so thick the room holds its breath. Anticipation floods the air—every ear leans into the void. When the music resumes, it lands like thunder. Silence, used deliberately, is the loudest sound in the world.',
           concept: [
             'Speech is cheap; silence is costly.',
@@ -1607,6 +1659,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 13,
         xp: 100,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Paris, 1958. Yves Saint Laurent unveils a gown, but backstage, the hem is deliberately unfinished. Critics sneer—until weeks later, women across Europe beg for replicas. By withholding perfection, he gave them hunger. Desire is not about giving everything—it\'s about giving almost everything, leaving the soul restless for the missing piece.',
           concept: [
             'Completion satisfies; incompletion enslaves.',
@@ -1637,6 +1690,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 14,
         xp: 100,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Istanbul, 1890. A merchant lights oud incense in a narrow alley before leaving. Hours after he\'s gone, the fragrance still lingers—haunting, intoxicating, inseparable from him. People remember him less for his words and more for the trace he left behind. Seduction is not just in presence—it is in the afterglow.',
           concept: [
             'A lingering trace can outlast hours of presence.',
@@ -1673,6 +1727,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
             'A poisoned compliment binds desire with doubt, making them crave more for resolution.',
             'To seduce is to disturb equilibrium.'
           ],
+                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           drill: Drill(
             question: 'They ask: "Do you think I\'m attractive?" What do you say?',
             options: [
@@ -1699,6 +1754,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 16,
         xp: 125,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Venice, 1703. A masked courtesan whispers to a nobleman in the candlelit shadows of Carnival: "If I told you the truth, you\'d never sleep again." Then she laughs and disappears into the crowd. He spends years recalling that one line, haunted by the mystery of a secret never revealed. A hint of danger intoxicates far more than confession.',
           concept: [
             'The promise of revelation seduces more than the revelation itself.',
@@ -1729,6 +1785,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 17,
         xp: 125,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Kyoto, 1650. A geisha entertains a samurai with gentle teasing. She praises his haiku, then with a sly smile adds: "It is beautiful… in its simplicity." He laughs, stung and charmed at once. She strokes his pride, then nicks it with a blade. He leaves restless, desperate to win her unqualified admiration. Seduction thrives on duality—pleasure followed by the faintest cut.',
           concept: [
             'Praise alone dulls desire; tension sharpens it.',
@@ -1759,6 +1816,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 18,
         xp: 125,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'New York, 1982. At Studio 54, a man holds the entire dance floor in thrall—until he suddenly vanishes. No word, no goodbye. Whispers ripple through the crowd: "Where did he go?" His absence becomes larger than his presence. The next night, all eyes search for him. Seduction is not only in showing up—it is in leaving when the desire peaks.',
           concept: [
             'Timing your exit is more powerful than timing your entrance.',
@@ -1789,6 +1847,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 19,
         xp: 125,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Madrid, 1901. On a balcony, two lovers lean close. Lips nearly touch—then she withdraws, smiling. The kiss never lands. The man is left drunk on what almost was. Denial is not rejection—it is an acceleration. What is withheld burns hotter than what is consumed.',
           concept: [
             'Fulfillment is an end; deferral is a chain.',
@@ -1825,6 +1884,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
             'Reversing roles unsettles and excites.',
             'Seduction is not begging—it is dictating the script.'
           ],
+                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           drill: Drill(
             question: 'They tease: "You like me, don\'t you?" What do you say?',
             options: [
@@ -1853,6 +1913,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 1,
         xp: 50,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Versailles, 1745. The King\'s messenger delivers a necklace to Madame de Pompadour. She doesn\'t touch it. For hours, the unopened box sits untouched as the King paces, his mind devoured by uncertainty. When she finally replies, she sends not words, not consent — but a pressed flower. His obsession is no accident. She understood: what you hold back is stronger than what you give.',
           concept: [
             'Scarcity fuels obsession.',
@@ -1883,6 +1944,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 2,
         xp: 50,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Berlin, 1930. A club freezes not when Marlene Dietrich enters, but seconds later, when people realize she\'s already there. She doesn\'t demand attention. Her stillness, her scent, her silence announce her. A man approaches. She does not look at him. She lets him burn in the quiet until she finally lowers her eyes like a guillotine. He is conquered before words.',
           concept: [
             'Your energy enters a room before your body.',
@@ -1913,6 +1975,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 3,
         xp: 50,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Paris, 1924. A young writer pours clichés of love at Gertrude Stein\'s feet. When he\'s finished, she says only: "A rose is a rose is a rose." He is bewildered, but hooked. She gave him no answer, only a riddle. He will spend weeks lost in her words. Literal language informs. Poetic language transforms.',
           concept: [
             'Subtext is stronger than plain text.',
@@ -1943,6 +2006,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 4,
         xp: 50,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Rome, 44 BC. Julius Caesar does not show Cleopatra his armies. He shows her his seizures. The most powerful man alive, trembling in her presence. It is not weakness. It is intimacy disguised as surrender. By revealing a fracture, he created a bond stronger than steel.',
           concept: [
             'Vulnerability, when chosen, is power.',
@@ -1979,6 +2043,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
             'Assume value. Never beg for it.',
             'Their desire reflects their taste, not your worth.'
           ],
+                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           drill: Drill(
             question: 'They say: "You\'re so beautiful." How do you respond?',
             options: [
@@ -2005,6 +2070,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 6,
         xp: 50,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Paris, 1922. Marcel Proust does not simply tell a story; he builds a labyrinth of memory, leaving corridors unexplored and doors locked forever. A single description — a madeleine dipped in tea — detonates an entire universe of memory. Yet he never maps the universe; he gives you only a fragment, a hint. The rest you must chase inside your own mind. His genius is in the unfinished. The reader becomes the co-creator, forever haunted by what they cannot complete.',
           concept: [
             'The Mind Hates a Vacuum: When you leave something incomplete, the psyche rushes to fill it.',
@@ -2035,6 +2101,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 7,
         xp: 50,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Berlin, 1929. Marlene Dietrich, all smoke and contradictions, pulls a man in with her eyes — molten, unflinching. He leans in, hungry. Suddenly, she turns cold, her attention gone, her posture steel. The heat evaporates, leaving him shivering in its absence. By night\'s end, he is addicted, desperate to recreate the warmth she gave and snatched away.',
           concept: [
             'Addiction is Born in Contrast: Heat means nothing without cold.',
@@ -2065,6 +2132,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 8,
         xp: 50,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Fifth Avenue, 1961. Tiffany\'s windows are mostly empty. A single necklace lies in velvet darkness, and it feels like a holy relic. Audrey Hepburn does not beg for it — she gazes, detached, elevating both herself and the object. Scarcity isn\'t real; it\'s engineered. The rare is worshiped.',
           concept: [
             'Commonness is Death: Abundant affection becomes invisible.',
@@ -2095,6 +2163,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 9,
         xp: 50,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Florence, 1501. Michelangelo does not create David by adding — he removes. Chip by chip, absence becomes form. The masterpiece is not what he built, but what he took away. Longing is carved the same way — not by piling on affection, but by deliberate subtraction.',
           concept: [
             'Creation by Subtraction: Stop filling silence. Let absence echo.',
@@ -2131,6 +2200,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
             'Small, Strange Details Stick: A whispered phrase, a touch in an unexpected place, an unfinished look.',
             'Presence Fades. Echoes Remain: Seduction that ends with the night dies. Seduction that lingers owns them.'
           ],
+                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           drill: Drill(
             question: 'After the first kiss, what do you say?',
             options: [
@@ -2157,6 +2227,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 11,
         xp: 100,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Berlin, 1929. Marlene Dietrich takes a man\'s hand, whispers a compliment so soft it trembles in his chest. He leans closer—just as she turns away, laughing at another\'s joke. His warmth collapses into frost. He spends days replaying the moment, addicted to the memory of her sun. Seduction is not constant heat—it is the plunge between fire and ice.',
           concept: [
             'Emotion lives in contrast, not consistency.',
@@ -2187,6 +2258,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 12,
         xp: 100,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Venice, 1510. A masked courtesan leans forward, her breath grazing a nobleman\'s ear. Just as he opens his mouth to speak, she drifts away across the ballroom floor, swallowed by the crowd. He spends the night chasing her shadow. Seduction is not pursuit—it is choreography.',
           concept: [
             'Desire thrives on rhythm: advance, retreat, return.',
@@ -2217,6 +2289,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 13,
         xp: 100,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Mughal India, 1620. Nur Jahan gifts her lover a rose laced with saffron. Sweet on the tongue, bitter on the breath. He never forgets it. Pleasure alone fades. Pain alone repels. But a blend—honey laced with steel—creates memory that burns forever.',
           concept: [
             'Pure sweetness breeds boredom.',
@@ -2247,6 +2320,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 14,
         xp: 100,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Vienna, 1805. Beethoven slams his fingers on the keys, flooding the hall with thunder. Just as the audience leans forward, desperate, he halts. Silence. That pause—the aching gap—rings louder than the music itself. The audience sits on edge, begging for release. Seduction is music. Without silence, noise is nothing.',
           concept: [
             'Build energy like a symphony, then stop.',
@@ -2283,6 +2357,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
             'Subtle suggestion of competition sharpens your value.',
             'But too much fire burns the house down.'
           ],
+                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           drill: Drill(
             question: 'At an event, they cling to you. What do you do?',
             options: [
@@ -2309,6 +2384,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 16,
         xp: 100,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Venice, 1725. At the masquerade, Casanova enters behind a porcelain mask. His identity is unknown, but his movements are deliberate—fluid, enigmatic. A woman leans in, whispering, "Who are you really?" He does not answer. That single question haunts her the entire night. Seduction begins not with revelation, but with concealment.',
           concept: [
             'The unknown is more magnetic than the known.',
@@ -2339,6 +2415,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 17,
         xp: 100,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Cairo, 1001 nights. Scheherazade spins tales that end on a cliff\'s edge. The Sultan cannot kill her—he must know what happens next. Each unfinished story buys her another dawn. Seduction is no different: the story you leave unfinished will hold them captive long after your words fade.',
           concept: [
             'A good story is bait; an unfinished one is a shackle.',
@@ -2369,6 +2446,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 18,
         xp: 100,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Paris, 1890. In the cabaret, Sarah Bernhardt doesn\'t speak first. She lets the spotlight warm her profile, waiting until the silence swells. The audience leans forward, begging for her voice. Only then does she deliver a single line, and the room collapses in applause. True seduction is theater: light and shadow. You decide when to step into view.',
           concept: [
             'People notice what you choose to illuminate.',
@@ -2399,6 +2477,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 19,
         xp: 100,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Alexandria, Cleopatra receives Roman envoys. She studies each gesture, each word, then reflects it back like polished glass. To the serious one, she is grave. To the playful one, she is mischief. Each leaves convinced she is uniquely aligned with him. But none have seen the real Cleopatra. Seduction thrives not in authenticity, but in reflection.',
           concept: [
             'People fall in love with their reflection in you.',
@@ -2435,6 +2514,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
             'To vanish is to engrave your outline in their memory.',
             'A strategic disappearance turns you from a person into a myth.'
           ],
+                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           drill: Drill(
             question: 'They expect your constant presence. What do you do?',
             options: [
@@ -2463,6 +2543,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 1,
         xp: 50,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Florence, 1513. A candlelit banquet. Cesare Borgia lifts a golden chalice, blessing God in front of noblemen and priests. By morning, the rivals who toasted with him are dead, poisoned with the wine he sanctified. The city praises his piety. Machiavelli, watching from the shadows, writes in despair: "Everyone sees what you appear to be, few feel what you are." The deadliest predator doesn\'t roar like a beast—it prays like a saint.',
           concept: [
             'Virtue as Armor: People weaponize morality as the ultimate disguise.',
@@ -2493,6 +2574,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 2,
         xp: 50,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Berlin, 1943. A radio crackles. Goebbels\' voice fills the air: "The Allies bomb women and children." True—but stripped of context, it becomes poison. He crafts lies from fragments of truth, knowing that a half-truth is harder to fight than a blatant falsehood. The audience believes because pieces are real. Like a glass of wine with a drop of cyanide—the drink is mostly pure, but death hides in the dilution.',
           concept: [
             'The Half-Truth: Lies anchored in reality.',
@@ -2523,6 +2605,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 3,
         xp: 50,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Moscow, 1967. Apartment #42, third floor, same routine for 20 years. A man feeds pigeons at dawn, lends sugar to neighbors, reads Pushkin quietly by lamp. Nobody suspects the librarian is a KGB ghost courier—carrying messages that decide wars. His invisibility comes not from shadows but from banality. He is the wallpaper. He is the chair in the room nobody notices. True power doesn\'t need mystery—it thrives in ordinariness.',
           concept: [
             'Blandness as Weapon: To hide, become boring.',
@@ -2553,6 +2636,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 4,
         xp: 50,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Ancient China, 200 BC. A battlefield littered with broken banners. Han Xin retreats, leaving supplies and weapons scattered. The enemy surges forward, laughing at his weakness. But the laughter dies as ambush horns echo from the mountains—Han Xin\'s "defeated" army crashes down from the hills, annihilating the overconfident pursuers. What looked like collapse was bait. Weakness was camouflage for the kill.',
           concept: [
             'Weaponized Helplessness: Pretend to be beaten to bait overconfidence.',
@@ -2589,6 +2673,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
             'Weaponized Care: Claiming to protect while controlling.',
             'Modern Application: The line between care and manipulation is razor-thin.'
           ],
+                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           drill: Drill(
             question: 'Someone says: "I didn\'t tell you because I didn\'t want you to worry." This is:',
             options: [
@@ -2615,6 +2700,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 6,
         xp: 100,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Normandy, 1944. A Spaniard named Garbo sends false reports to Hitler: "The invasion will be at Calais." His intel is so convincing the Fuhrer diverts Panzer divisions away from Normandy. On D-Day, thousands of Allied soldiers live because of one man\'s betrayal. The greatest lies don\'t hide—they redirect. The double cross works because the victim believes they are the one being trusted.',
           concept: [
             'Trust is the Bait: The deeper the trust, the sharper the betrayal.',
@@ -2645,6 +2731,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 7,
         xp: 100,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Baghdad, 1258. The Mongols breach the city walls. Instead of hiding, Caliph Al-Mustaʿsim parades through the streets in silk, declaring calm. The citizens hesitate to flee—believing him. By the time they realize the truth, escape is impossible. The city burns. Whoever owns the story owns reality itself.',
           concept: [
             'The First Story Wins: Once a narrative is believed, it\'s hard to uproot.',
@@ -2675,6 +2762,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 8,
         xp: 100,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Cold War, Moscow. A diplomat meets a beautiful stranger in a hotel bar. She laughs at his jokes, leans close, makes him feel like the most interesting man alive. By dawn, there are photos of him in bed, and the KGB owns him. He thought he was seducing—he was being seduced. The honey trap weaponizes desire, turning passion into chains.',
           concept: [
             'Desire is Leverage: People reveal more when they want something.',
@@ -2705,6 +2793,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 9,
         xp: 100,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Ancient Greece. A general captures rebels. Instead of threatening them, he offers two "choices": execution now, or lifelong service in his army. They believe they\'ve chosen freedom by choosing servitude. The trick: both options lead to the same destination. The false choice is control disguised as liberty.',
           concept: [
             'Choice as Illusion: Offer two paths, both ending where you want.',
@@ -2741,6 +2830,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
             'Hands-Off Influence: If they don\'t see you, they can\'t blame you.',
             'Modern Edge: Anonymous leaks, silent investors, shadow puppeteers.'
           ],
+                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           drill: Drill(
             question: 'Two rivals destroy each other while a third party "stays out of it." Later, he\'s the only one left standing. Was he uninvolved?',
             options: [
@@ -2767,6 +2857,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 11,
         xp: 100,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Occupied Paris, 1942. Resistance fighters walk among German patrols unnoticed—not by hiding, but by blending. No fancy hats, no flashy gestures, no eye contact. Just quiet conformity. The soldiers see them every day but never once notice them. The perfect camouflage is not the disguise—it\'s invisibility by ordinariness.',
           concept: [
             'Stand Out Strategically: Be memorable only when you choose.',
@@ -2797,6 +2888,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 12,
         xp: 100,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'A tiger in the tall grass waits, unmoving, as deer graze inches away. Its hunger gnaws, but it does not flinch. The prey relaxes, convinced there is no danger. Then, with terrifying precision, the tiger strikes. Camouflage is not just appearance—it\'s timing. The longer you wait, the deadlier your strike.',
           concept: [
             'Patience is Camouflage: Waiting disarms suspicion.',
@@ -2827,6 +2919,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 13,
         xp: 100,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Tokyo, 1600s. A spy infiltrates a rival clan by mirroring their dialect, their rituals, even their drinking games. Within weeks, they treat him like family. When he disappears with their secrets, they cannot comprehend how he was ever a stranger. True camouflage is not about clothes—it\'s about psychology.',
           concept: [
             'Mirroring Builds Trust: Subtle mimicry creates unconscious acceptance.',
@@ -2857,6 +2950,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 14,
         xp: 100,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Berlin, 1945. A Soviet officer in a stolen German uniform marches straight into enemy command posts, issuing false orders. Soldiers obey without question—not because they know him, but because the mask of rank commands reflexive obedience. Authority, real or not, is its own camouflage.',
           concept: [
             'Uniforms Are Shortcuts: Symbols override skepticism.',
@@ -2893,6 +2987,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
             'Silence is Camouflage: Words announce presence; silence conceals it.',
             'Modern Edge: Observe unnoticed—knowing the game before you play it.'
           ],
+                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           drill: Drill(
             question: 'You\'re in a group chat where rivals boast. Do you:',
             options: [
@@ -2919,6 +3014,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 16,
         xp: 100,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Cold War, 1962. During a tense negotiation, one diplomat speaks endlessly, trying to dominate the room. His counterpart sits in silence, his gaze steady, saying nothing. The silence grows unbearable. The speaker reveals too much, desperate to fill the void. Silence was not weakness—it was the loudest move in the room.',
           concept: [
             'Noise Reveals, Silence Conceals: The quiet one forces others to expose themselves.',
@@ -2949,6 +3045,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 17,
         xp: 100,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Tokyo, 1800s. A thief is suspected in a gambling house. When accused, he simply mirrors his accuser\'s outrage: "How dare you insult me like this!" His anger is identical, his body language copied, his tone echoed. The crowd believes him, because we trust our own reflection. The real thief walks out untouched.',
           concept: [
             'Mirroring Disarms: People see themselves in you and drop suspicion.',
@@ -2979,6 +3076,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 18,
         xp: 100,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'London, 1890s. A banker accused of fraud admits nothing… until months later. By then, evidence has faded, emotions cooled. When he finally "confesses," it feels like closure, not crime. Timing reshapes truth. Delay is camouflage—the crime is remembered faintly, the confession feels refreshing.',
           concept: [
             'Delay Dissolves Emotion: Time weakens outrage.',
@@ -3009,6 +3107,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 19,
         xp: 100,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Wall Street, 2008. Investors are sold financial products so complex that even experts can\'t explain them. The fog of jargon hides the rot beneath. Complexity isn\'t always brilliance. Sometimes it is camouflage. The thicker the fog, the easier the theft.',
           concept: [
             'Obscurity Protects Lies: Confuse them, and they stop asking.',
@@ -3045,6 +3144,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
             'False Trails Protect: Give them clues to chase while you vanish.',
             'Defense Today: When someone disappears without explanation—look for the trails they left behind.'
           ],
+                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           drill: Drill(
             question: 'A business partner ghosts you suddenly. What do you think?',
             options: [
@@ -3073,6 +3173,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 1,
         xp: 125,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Rome, 180 AD. A senator, trembling, delivers news to Marcus Aurelius: his most trusted general has been cut down in battle. The Senate chamber expects grief, rage, perhaps madness. Instead, Aurelius turns his head slowly, his expression carved from stone. He writes in his journal without looking up: "The universe is change; our mind is choice." His enemies are chilled to the bone. They realize: no one can move a man who does not allow himself to be moved.',
           concept: [
             'Cold power begins with detachment—your emotions are yours, never theirs.',
@@ -3103,6 +3204,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 2,
         xp: 125,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Cannes, 1960s. Brigitte Bardot sits among billionaires and kings. One brags of his yachts, another of his fame. She studies her nails. They escalate—diamonds, castles, armies. She stirs her coffee, unmoved. By midnight, the wealthiest men alive are begging for a single smile. Her indifference stripped them of everything money could buy. Desire burns hottest against the ice.',
           concept: [
             'Indifference weaponizes status.',
@@ -3133,6 +3235,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 3,
         xp: 125,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Cuban Missile Crisis, 1962. Khrushchev shouts, slams, pounds. Kennedy sits in abyssal silence. Thirty seconds. A minute. Khrushchev grows frantic, his rage now desperate. When Kennedy finally says, "Are you finished?"—the room dies. Silence won the war before weapons could.',
           concept: [
             'Silence is not absence. Silence is a weapon.',
@@ -3163,6 +3266,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 4,
         xp: 125,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Las Vegas, 1978. A poker master holds garbage cards. His opponents search his eyes, his breath, his hands. His face is porcelain, blank, inhuman. They fold aces out of fear of ghosts. He wins empires holding nothing. The porcelain mask turns their need to read into their own undoing.',
           concept: [
             'Unreadability is armor.',
@@ -3199,6 +3303,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
             'A delayed word carries ten times the weight.',
             'Let silence hang like a blade above the guilty.'
           ],
+                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           drill: Drill(
             question: 'Someone makes a crude joke in your presence. What do you do?',
             options: [
@@ -3225,6 +3330,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 6,
         xp: 125,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Versailles, 1700s. The courtiers bow as Louis XIV enters—not because he commands it, but because he radiates it. He never asks for respect; he exists as if he was born entitled to it. When a duke dares to withhold his bow, the king\'s silence and slight glance at the guards ends the rebellion. His frame is reality itself. The Sun King does not beg the planets to orbit—he assumes they will.',
           concept: [
             'Value is never requested. It is embodied.',
@@ -3255,6 +3361,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 7,
         xp: 125,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Andy Warhol, Studio 54. Celebrities fight for his eyes. He scans the crowd, blank. Then, for three seconds, he rests his gaze on one nobody. The club freezes. By dawn, that nobody is famous. Warhol\'s attention turned dust into gold. To be looked at by him was to be made real. To be ignored was to be erased.',
           concept: [
             'Attention is a currency more powerful than money.',
@@ -3285,6 +3392,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 8,
         xp: 125,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Greta Garbo retires at the height of her fame. The world screams for her return. Her absence makes her immortal. Decades later, her silence is more seductive than all the actresses still begging for attention. Presence creates familiarity; absence creates myth.',
           concept: [
             'Scarcity is the highest luxury.',
@@ -3315,6 +3423,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 9,
         xp: 125,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: '1940s Hollywood. Orson Welles steps into a room, not with facts, but with shadows. His voice suggests secrets, his posture hints at empires unseen. He never proves; he implies. The less he shows, the more people imagine. And what they imagine is always greater than what you could confess.',
           concept: [
             'Perception is more powerful than reality.',
@@ -3351,6 +3460,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
             'When you make yourself hard to reach, your worth multiplies.',
             'Make them climb. Make them sweat for your presence.'
           ],
+                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           drill: Drill(
             question: 'They say: "Why don\'t you make more effort for me?" What do you do?',
             options: [
@@ -3377,6 +3487,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 11,
         xp: 125,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Venice, 16th century. Casanova did not seduce by constant presence. He intoxicated, then vanished. A night of wine, poetry, and touch—and then nothing. Days later, the women grew frantic, their minds replaying every detail. He had poured the sweetest wine into their veins, then pulled the cup away. Desire is not born from indulgence—it is born from denial.',
           concept: [
             'Obsession thrives on withdrawal.',
@@ -3407,6 +3518,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 12,
         xp: 125,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Paris, 1920s. Josephine Baker dances, laughter bursting like champagne. Her lovers drown in joy. Then, abruptly, she grows cold—her gaze distant, her laughter gone. They panic, desperate to bring the fire back. It is the dance of flame and frost: one moment intoxicating warmth, the next a deathly chill. The moth never loves the candle\'s flame—it loves the risk of being burned.',
           concept: [
             'Obsession is fueled by contrast.',
@@ -3437,6 +3549,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 13,
         xp: 125,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Napoleon at Josephine\'s door. He writes feverishly, begging for her. She delays. Hours, then days. Each minute stretches into eternity. His empire bends under his command, but in her silence, he crumbles. By the time she appears, his hunger is not desire—it is desperation. Waiting did what power could not: it enslaved him.',
           concept: [
             'The longer the wait, the deeper the hook.',
@@ -3467,6 +3580,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 14,
         xp: 125,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Cleopatra sails the Nile, flanked by two Roman titans—Caesar and Antony. Each believes he is her chosen. Each feels the other\'s shadow. She feeds both, never choosing, never closing the wound. Their jealousy is her crown. Men who conquered worlds now clawed at each other for her smile. To spark rivalry is to forge obsession sharper than steel.',
           concept: [
             'A rival makes desire burn brighter.',
@@ -3503,6 +3617,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
             'Randomness breeds obsession.',
             'The strongest chains are woven from uncertainty.'
           ],
+                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           drill: Drill(
             question: 'They ask: "Why are you so unpredictable?" What do you do?',
             options: [
@@ -3529,6 +3644,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 16,
         xp: 125,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Spain, 1930s. Federico García Lorca, the poet, sat with lovers who adored him. He gave them glances, words, fragments—but never himself whole. His allure was not in what he gave, but in what he withheld. He was the fire no one could fully hold, and so they burned themselves trying.',
           concept: [
             'Desire dies when fulfilled completely.',
@@ -3559,6 +3675,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 17,
         xp: 125,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Hollywood, 1950s. Marilyn Monroe laughed, dazzled, consumed every gaze in the room. Then she disappeared for weeks. When she returned, demand for her doubled. Her absence was her sharpest performance. An eclipse always returns more dazzling because it leaves. Seduction demands you vanish, so they ache for your return.',
           concept: [
             'To vanish is to increase value.',
@@ -3589,6 +3706,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 18,
         xp: 125,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'The Medici courts of Florence. A courtesan serves sugared almonds laced with opium. The men who eat them never forget her—they crave her touch as much as the drug. Seduction works the same: lace sweetness with danger. They must feel that you are both cure and curse, pleasure and poison.',
           concept: [
             'Pure sweetness fades. Sweetness laced with venom lingers.',
@@ -3619,6 +3737,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 19,
         xp: 125,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Vienna, 1900s. Freud listened as his patient became obsessed with him. Why? Because he reflected her deepest thoughts back to her, amplifying them. She didn\'t love him—she loved her own reflection in his mirror. The cruel truth: people don\'t fall for you. They fall for the parts of themselves you reflect back.',
           concept: [
             'To obsess someone, reflect their hidden self.',
@@ -3655,6 +3774,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
             'Once touched by your fire, they can never feel warmth in lesser flames.',
             'The goal is not to win them now—but to live rent-free in their soul forever.'
           ],
+                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           drill: Drill(
             question: 'They whisper: "I\'ll never forget you." What do you do?',
             options: [
@@ -3683,6 +3803,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 1,
         xp: 50,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'China, 500 BC. The armies gather. Spears gleam. But Sun Tzu doesn\'t unleash soldiers—he unleashes whispers. Fires are lit in random hills at night to suggest phantom armies. Drums echo in empty valleys to mimic battalions. Rumors of plague spread through enemy camps. By dawn, the enemy commander trembles before shadows that don\'t exist. When Sun Tzu advances, the enemy has already surrendered—beaten not by swords, but by their own imagination. The first true battlefield is not the land—it is the mind.',
           concept: [
             'War of Perceptions: Make them see what isn\'t there.',
@@ -3713,6 +3834,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 2,
         xp: 50,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Salem, 1692. A girl points her trembling hand: "She\'s with the Devil." No evidence. No proof. Just a spark. Fear spreads like fire through dry grass. Fathers betray daughters. Neighbors turn executioner. No army was needed—terror itself held the sword. The lesson? Fear is the cheapest, most devastating weapon. Once it spreads, it doesn\'t need to be true. It only needs to be believed.',
           concept: [
             'Fear Overrides Reason: Panic erases logic.',
@@ -3743,6 +3865,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 3,
         xp: 50,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Cold War Berlin. An American diplomat receives a quiet remark at dinner: "Strange, your secretary takes a lot of late-night calls." That\'s it. Just a seed. Days later, another whisper: "She lingers near the phones too long, doesn\'t she?" Soon the diplomat distrusts everyone. He checks shadows, eyes his friends like enemies. No chains are needed—the KGB turned his own mind into his prison. Doubt is the cheapest poison. Once planted, it grows itself.',
           concept: [
             'Seeds Over Swords: Suggestion beats confrontation.',
@@ -3773,6 +3896,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 4,
         xp: 50,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'France, 1680. Court whispers accuse Madame de Montespan of poison plots. Instead of defending herself, she turns the blade back: "How curious you think of poison. Why so detailed? Unless…" The room shifts. Her accuser begins defending themselves, sweating under suspicion. The mirror trick is perfect reversal: you accuse me? I make you the guilty one. No evidence needed—just reflection turned sharp.',
           concept: [
             'Accusation Reversal: Mirror suspicion back at attacker.',
@@ -3809,6 +3933,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
             'Silence as Pressure: Pauses make others fill the void.',
             'Defense Today: Don\'t mistake silence for superiority—it\'s a tactic, not truth.'
           ],
+                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           drill: Drill(
             question: 'They give you long pauses, forcing you to babble explanations. Do you:',
             options: [
@@ -3835,6 +3960,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 6,
         xp: 50,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Venice, 1500. A merchant is accused of smuggling. In court, he admits: "Yes, I did send ships without full duty. But only to feed orphans in winter." He weaves fact with virtue, lie with charity. By the end, the judges argue for him. The genius? He didn\'t deny guilt. He bent it into a half-truth wrapped in nobility. A pure lie risks collapse. A half-truth survives.',
           concept: [
             'Best Lies Hold Truth: A shard of reality makes poison drinkable.',
@@ -3865,6 +3991,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 7,
         xp: 50,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Paris, 1770. An aristocrat hosts salons where he mocks the king. But when guards arrive, he dons another mask: loyal servant, hand over heart. When spies listen, he wears yet another: bumbling fool, harmless. The truth? He is all and none. He survives by shifting masks faster than others can pin him down. If you cannot read the mask, you cannot touch the man beneath.',
           concept: [
             'Multiple Personae: One face for friends, another for enemies.',
@@ -3895,6 +4022,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 8,
         xp: 50,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Berlin, 1933. A young officer is tested. His superior says: "We agree loyalty is everything, yes?" The officer nods. Next: "And loyalty requires obedience, yes?" Another nod. Soon he finds himself agreeing to betray his own conscience—all from a chain of small yeses. Agreement is not always alignment. It can be a trap set one nod at a time.',
           concept: [
             'Incremental Consent: Each small "yes" leads to bigger concessions.',
@@ -3925,6 +4053,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 9,
         xp: 50,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Hollywood, 1950s. An actress is told: "You\'re far too brilliant for this role—it\'s beneath you." She blushes at the praise… then quits. Months later, she realizes the role went to another star. The compliment wasn\'t praise—it was poison. The serpent\'s compliment inflates ego while steering you away from power. Not every sweet word is meant to lift you—some are designed to move you.',
           concept: [
             'Flattery as Leash: People follow where their ego is stroked.',
@@ -3961,6 +4090,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
             'Spectacle as Smoke: Loud colors, big gestures, shiny surfaces hide the move.',
             'Defense Today: Ask—what am I not looking at while dazzled?'
           ],
+                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           drill: Drill(
             question: 'An ad flashes: "LIMITED TIME! BUY NOW!" What do you do?',
             options: [
@@ -3987,6 +4117,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 11,
         xp: 100,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Ancient Rome. Senators whisper rebellion. Caesar doesn\'t confront them directly. Instead, he spreads subtle rumors—this one mocked you in private, that one plans to betray you first. Unity fractures into suspicion. Soon, his enemies fight one another, too busy to unite against him. He never drew a sword—he simply split their trust.',
           concept: [
             'Suspicion Destroys Unity: A divided enemy cannot stand.',
@@ -4017,6 +4148,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 12,
         xp: 100,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Medieval France. A rival lord presents his enemy with a lavish horse, adorned in silk. Days later, the animal collapses, diseased. The lord accepts the gift, and with it, ruin. Not every offering is kindness. Sometimes generosity is a weapon wrapped in velvet.',
           concept: [
             'A Gift Can Carry Chains: The more generous the act, the more careful you must be.',
@@ -4047,6 +4179,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 13,
         xp: 100,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Renaissance Italy. A courtier flatters a duke: "No man alive is as wise as you." The duke beams, but over time, the words poison him. He stops listening to counsel, believing he already knows best. Flattery sharpens pride into blindness, and blindness into downfall.',
           concept: [
             'Flattery is a Cage: Praise lulls you into weakness.',
@@ -4077,6 +4210,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 14,
         xp: 100,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Cold War interrogation rooms. Some prisoners were not beaten—they were drowned in contradiction. Guards would praise them one hour, insult them the next. They\'d be promised release, then threatened with life sentences. The goal wasn\'t answers—it was disorientation. Confusion breaks the mind faster than cruelty.',
           concept: [
             'Mixed Signals Corrode Trust: Uncertainty leaves people clinging to the abuser.',
@@ -4113,6 +4247,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
             'Desperation Can Be Engineered: Forced scarcity amplifies commitment.',
             'Defense Today: If someone cuts off your alternatives, ask who benefits from your cornering.'
           ],
+                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           drill: Drill(
             question: 'A boss insists: "You either stay late every night—or you\'ll lose your spot." What do you realize?',
             options: [
@@ -4139,6 +4274,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 16,
         xp: 125,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Mafia New York, 1970s. A man under suspicion is invited to a meeting. He speaks nervously, filling the room with explanations, excuses, reassurances. His words betray his fear. Across the table, his boss says nothing. Just silence. The man keeps talking—until he reveals everything. Silence, weaponized, is louder than any shout.',
           concept: [
             'Speech Reveals, Silence Conceals: The less you speak, the more others expose.',
@@ -4169,6 +4305,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 17,
         xp: 125,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Feudal Japan. A samurai bows deeply to his enemy lord, agreeing to every command. He never resists, never argues. Months later, when trust is won, he strikes at the moment least expected. Submission was not weakness—it was camouflage. Agreement became his sharpest disguise.',
           concept: [
             'Agree to Disarm: Agreement removes suspicion.',
@@ -4199,6 +4336,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 18,
         xp: 125,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: 'Cold War diplomacy. A negotiator never offers an opinion. Instead, he mirrors the desires of his opponent: "That\'s an interesting thought." "I can see why you\'d feel that way." The opponent mistakes reflection for rapport, slowly lowering his guard. By the end, he has revealed his full playbook—while the mirror never once showed its own face.',
           concept: [
             'Mirroring Creates Illusion: People trust themselves when reflected back.',
@@ -4229,6 +4367,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
         lesson: 19,
         xp: 125,
         content: LessonContent(
+          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           hook: '1930s Chicago. A gangster corners a shop owner: "Do you want to pay for protection monthly—or in one big sum right now?" The choice is an illusion. Both roads lead to surrender. The man never realizes he could refuse the game altogether. This is the art of the false choice: framing captivity as freedom.',
           concept: [
             'Two Doors, Same Prison: An enemy narrows your vision to options that serve them.',
@@ -4265,6 +4404,7 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
             'The Watcher Always Wins: Observation reveals the inevitable opening.',
             'Defense Today: If someone lingers quietly, don\'t mistake them for absent—they may be calculating.'
           ],
+                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
           drill: Drill(
             question: 'An opponent stays silent, watching for weeks before acting. What do you recognize?',
             options: [

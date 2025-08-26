@@ -19,14 +19,15 @@ class Lesson {
 }
 
 class LessonContent {
-  final String hook, reflection;
+  final String hook, reflection, teaching;
   final List<String> concept;
   final Drill drill;
   final RewriteTask rewrite;
   
   const LessonContent({
     required this.hook, 
-    required this.concept, 
+    required this.concept,
+    required this.teaching,
     required this.drill,
     required this.rewrite, 
     required this.reflection,

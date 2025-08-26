@@ -42,16 +42,17 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
   void initState() {
     super.initState();
     
-    // Delay provider updates until after widget tree is built
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      _loadSettings();
-    });
+    // Load settings immediately to ensure providers are initialized
+    _loadSettings();
   }
 
   void _loadSettings() {
     final settings = CacheService.getSettings();
-    ref.read(analyzeToneProvider.notifier).state = settings.defaultTone;
-    ref.read(analyzeModeProvider.notifier).state = settings.defaultAnalyzeMode;
+    // Initialize providers with correct default values
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      ref.read(analyzeToneProvider.notifier).state = settings.defaultTone;
+      ref.read(analyzeModeProvider.notifier).state = settings.defaultAnalyzeMode;
+    });
   }
 
   @override
@@ -593,7 +594,7 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
 
   Widget _buildResultCard(WhisperfireResponse result, String mode) {
     if (mode == 'scan') {
-      return ScanOutputCard(result: result);
+      return ScanOutputCard(result: result, original: _textController.text.trim());
     } else {
       return PatternOutputCard(result: result);
     }

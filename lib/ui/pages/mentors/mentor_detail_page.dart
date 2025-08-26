@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 import '../../../core/theme/theme.dart';
 import '../../../core/utils/text_sanitizer.dart';
 import '../../../data/models/mentor_models.dart';
 import '../../../data/services/api_service.dart';
 import '../../../data/services/cache_service.dart';
-import '../../../data/services/whisperfire_services.dart';
 import '../../atoms/atoms.dart';
-import '../../molecules/molecules.dart';
 
 // ===== PROVIDERS =====
 final apiServiceProvider = Provider<ApiService>((ref) => ApiService());
@@ -25,6 +22,9 @@ final streamingEnabledProvider = StateProvider<bool>((ref) {
   final settings = CacheService.getSettings();
   return settings.streaming;
 });
+
+// NEW: Preset selection provider
+final selectedPresetProvider = StateProvider<String>((ref) => 'chat');
 
 // ===== DATA MODELS =====
 class MentorMessage {
@@ -179,13 +179,14 @@ class MentorDetailPage extends ConsumerStatefulWidget {
 class _MentorDetailPageState extends ConsumerState<MentorDetailPage> {
   final _textController = TextEditingController();
   final _scrollController = ScrollController();
-  String _selectedPreset = 'chat';
-  
+
   @override
   void initState() {
     super.initState();
+    
+    // Initialize preset to 'chat' when page loads
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      _scrollToBottom();
+      ref.read(selectedPresetProvider.notifier).state = 'chat';
     });
   }
 
@@ -208,9 +209,10 @@ class _MentorDetailPageState extends ConsumerState<MentorDetailPage> {
 
   @override
   Widget build(BuildContext context) {
-    final messages = ref.watch(mentorMessagesProvider(widget.mentor.id));
+    final selectedPreset = ref.watch(selectedPresetProvider);
     final isTyping = ref.watch(isTypingProvider(widget.mentor.id));
-    final streamingEnabled = ref.watch(streamingEnabledProvider);
+    final messages = ref.watch(mentorMessagesProvider(widget.mentor.id));
+    final streaming = ref.watch(streamingEnabledProvider);
     final settings = CacheService.getSettings();
 
     // Auto-scroll when new messages arrive
@@ -266,10 +268,10 @@ class _MentorDetailPageState extends ConsumerState<MentorDetailPage> {
         actions: [
           Row(
             children: [
-              Icon(Icons.stream, size: 16, color: streamingEnabled ? WFColors.purple400 : WFColors.gray500),
+              Icon(Icons.stream, size: 16, color: streaming ? WFColors.purple400 : WFColors.gray500),
               const SizedBox(width: 4),
               Switch(
-                value: streamingEnabled,
+                value: streaming,
                 onChanged: (value) {
                   ref.read(streamingEnabledProvider.notifier).state = value;
                   // Update settings
@@ -331,35 +333,35 @@ class _MentorDetailPageState extends ConsumerState<MentorDetailPage> {
             padding: const EdgeInsets.all(WFDims.paddingL),
             child: Column(
               children: [
-                // Preset row (4 fixed buttons): Drill | Advise | Roleplay | Chat
+                // Preset selection buttons
                 Row(
                   children: [
                     _PresetButton(
                       preset: 'drill',
                       label: 'Drill',
-                      isSelected: _selectedPreset == 'drill',
-                      onTap: () => setState(() => _selectedPreset = 'drill'),
+                      isSelected: selectedPreset == 'drill',
+                      onTap: () => ref.read(selectedPresetProvider.notifier).state = 'drill',
                     ),
                     const SizedBox(width: WFDims.spacingS),
                     _PresetButton(
                       preset: 'advise',
                       label: 'Advise',
-                      isSelected: _selectedPreset == 'advise',
-                      onTap: () => setState(() => _selectedPreset = 'advise'),
+                      isSelected: selectedPreset == 'advise',
+                      onTap: () => ref.read(selectedPresetProvider.notifier).state = 'advise',
                     ),
                     const SizedBox(width: WFDims.spacingS),
                     _PresetButton(
                       preset: 'roleplay',
                       label: 'Roleplay',
-                      isSelected: _selectedPreset == 'roleplay',
-                      onTap: () => setState(() => _selectedPreset = 'roleplay'),
+                      isSelected: selectedPreset == 'roleplay',
+                      onTap: () => ref.read(selectedPresetProvider.notifier).state = 'roleplay',
                     ),
                     const SizedBox(width: WFDims.spacingS),
                     _PresetButton(
                       preset: 'chat',
                       label: 'Chat',
-                      isSelected: _selectedPreset == 'chat',
-                      onTap: () => setState(() => _selectedPreset = 'chat'),
+                      isSelected: selectedPreset == 'chat',
+                      onTap: () => ref.read(selectedPresetProvider.notifier).state = 'chat',
                     ),
                   ],
                 ),
@@ -427,10 +429,11 @@ class _MentorDetailPageState extends ConsumerState<MentorDetailPage> {
     _textController.clear();
     
     final settings = CacheService.getSettings();
+    final selectedPreset = ref.read(selectedPresetProvider);
     
     ref.read(mentorMessagesProvider(widget.mentor.id).notifier).sendMessage(
       userText: text,
-      preset: _selectedPreset,
+      preset: selectedPreset,
       streaming: ref.read(streamingEnabledProvider),
       safeMode: settings.safeMode,
       ref: ref,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:share_plus/share_plus.dart';
 import '../../../core/theme/theme.dart';
 import '../../../data/models/whisperfire_models.dart';
 import '../../../data/services/whisperfire_services.dart';
@@ -8,76 +9,133 @@ import '../../molecules/molecules.dart';
 
 class ScanOutputCard extends StatelessWidget {
   final WhisperfireResponse result;
-  const ScanOutputCard({super.key, required this.result});
+  final String original;
+  const ScanOutputCard({super.key, required this.result, required this.original});
 
   @override
   Widget build(BuildContext context) {
     final profileTag = WhisperfireServices.extractProfileTag(result);
-    final receipts = WhisperfireServices.getReceipts(result, 'scan');
-    final original = receipts.isNotEmpty ? receipts.first : '';
-    final whyBullets = _splitBullets(result.powerPlay); // used for “Why it works”
+    final whyBullets = _splitBullets(result.powerPlay);
     final principle = (result.counterIntervention ?? '').trim();
 
     return GlassCard(
       child: Stack(
         children: [
-          // CONTENT
-          Padding(
-            padding: const EdgeInsets.only(top: 0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                // Top line with Red Flag + share button
-                TopLine(
-                  tabLabel: '🔍 SCAN — ${_nickname(result.tactic.label)}',
-                  profileTag: profileTag,
-                  rightWidget: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      SizedBox(
-                        width: 120,
-                        child: MetricBar(
-                          label: 'Red Flag',
-                          value: result.metrics.redFlag,
-                          color: WFColors.redPink[0],
-                        ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              TopLine(
+                tabLabel: '🔍 SCAN — ${_nickname(result.tactic.label)}',
+                profileTag: profileTag,
+                rightWidget: Column(
+                  children: [
+                    // Share button - top right
+                    Container(
+                      decoration: BoxDecoration(
+                        color: WFColors.purple400.withOpacity(0.9),
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.1),
+                            blurRadius: 8,
+                            offset: const Offset(0, 2),
+                          ),
+                        ],
                       ),
-                      const SizedBox(width: 8),
-                      _shareButton(context, _shareTextScan(result, original)),
-                    ],
-                  ),
+                      child: IconButton(
+                        onPressed: () => _shareScanAnalysis(result, original),
+                        icon: const Icon(
+                          Icons.share,
+                          color: Colors.white,
+                          size: 20,
+                        ),
+                        tooltip: 'Share Analysis',
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    // Red flag below share button
+                    SizedBox(
+                      width: 120,
+                      child: MetricBar(
+                        label: 'Red Flag',
+                        value: result.metrics.redFlag,
+                        color: WFColors.redPink[0],
+                      ),
+                    ),
+                  ],
                 ),
+              ),
 
-                // 1) 💥 Headline (TOP)
-                _section('💥', 'Headline', result.headline),
+              // 1) 💥 Headline (TOP)
+              _section('💥', 'Headline', result.headline),
 
-                // 2) 📨 Message (you wrote)
-                _section('📨', 'Message (you wrote)', original),
+              // 2) 📨 Message (you wrote)
+              _section('📨', 'Message (you wrote)', original),
 
-                // 3) 💀 What actually happened (plain English)
-                _section('💀', 'What actually happened', result.coreTake),
+              // 3) 💀 What actually happened (plain English)
+              _section('💀', 'What actually happened', result.coreTake),
 
-                // 4) ⚠️ Mistake (use motives if it carries the failure idea, else fallback)
-                if (result.motives.trim().isNotEmpty)
-                  _section('⚠️', 'Mistake', result.motives),
+              // 4) ⚠️ Mistake (use motives if it carries the failure idea, else fallback)
+              if (result.motives.trim().isNotEmpty)
+                _section('⚠️', 'Mistake', result.motives),
 
-                // 5) 🔥 What you should’ve said (one lethal line or first line)
-                _section('🔥', 'What you should’ve said', _oneLine(result.suggestedReply.text)),
+              // 5) 🔥 What you should've said (one lethal line or first line)
+              _section('🔥', 'What you should\'ve said', _oneLine(result.suggestedReply.text)),
 
-                // 6) ✨ Why it works (3–5 bullets from power_play)
-                if (whyBullets.isNotEmpty)
-                  _bullets('✨', 'Why it works', whyBullets),
+              // 6) ✨ Why it works (3–5 bullets from power_play)
+              if (whyBullets.isNotEmpty)
+                _bullets('✨', 'Why it works', whyBullets),
 
-                // 7) 🚀 Principle for next time (counter_intervention)
-                if (principle.isNotEmpty)
-                  _section('🚀', 'Principle for next time', principle),
+              // 7) 🚀 Principle for next time (counter_intervention)
+              if (principle.isNotEmpty)
+                _section('🚀', 'Principle for next time', principle),
 
-                const SizedBox(height: WFDims.sectionSpacing),
-                const DividerFaint(),
-
-                // Footer brand
-                _brandFooter(),
-              ],
+              // Add spacing before the logo
+              const SizedBox(height: 60),
+            ],
+          ),
+          
+          // Beguile AI logo - positioned at the very bottom
+          Positioned(
+            bottom: 16,
+            right: 16,
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [WFColors.purple400, WFColors.purple600],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+                borderRadius: BorderRadius.circular(20),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.15),
+                    blurRadius: 10,
+                    offset: const Offset(0, 3),
+                  ),
+                ],
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(
+                    Icons.auto_awesome,
+                    color: Colors.white,
+                    size: 24,
+                  ),
+                  const SizedBox(width: 8),
+                  Text(
+                    'Beguile AI',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w700,
+                      letterSpacing: 0.5,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ],
@@ -87,45 +145,35 @@ class ScanOutputCard extends StatelessWidget {
 
   // ——— helpers ———
 
-  IconButton _shareButton(BuildContext ctx, String text) {
-    return IconButton(
-      tooltip: 'Share',
-      icon: const Icon(Icons.ios_share_rounded, size: 20, color: Colors.black),
-      onPressed: () async {
-        await Clipboard.setData(ClipboardData(text: text));
-        ScaffoldMessenger.of(ctx).showSnackBar(
-          const SnackBar(content: Text('Copied to clipboard')),
-        );
-      },
-    );
-  }
+  void _shareScanAnalysis(WhisperfireResponse result, String original) {
+    final shareText = '''
+🔍 SCAN ANALYSIS
 
-  String _shareTextScan(WhisperfireResponse r, String original) {
-    final why = _splitBullets(r.powerPlay).join('\n• ');
-    final principle = (r.counterIntervention ?? '').trim();
-    return '''
-[Whisperfire • Scan]
-
-💥 ${r.headline}
+${result.headline}
 
 📨 You wrote:
 $original
 
 💀 What happened:
-${r.coreTake}
+${result.coreTake}
 
 ⚠️ Mistake:
-${r.motives}
+${result.motives}
 
 🔥 Rewrite:
-${_oneLine(r.suggestedReply.text)}
+${_oneLine(result.suggestedReply.text)}
 
 ✨ Why it works:
-${why.isNotEmpty ? '• $why' : '-'}
+${_splitBullets(result.powerPlay).join('\n• ')}
 
 🚀 Principle:
-${principle.isNotEmpty ? principle : '-'}
-'''.trim();
+${result.counterIntervention ?? ''}
+
+Powered by Beguile AI 🚀
+''';
+
+    // Use Flutter's share functionality
+    Share.share(shareText, subject: 'Scan Analysis - Beguile AI');
   }
 
   String _nickname(String label) {
@@ -206,26 +254,6 @@ ${principle.isNotEmpty ? principle : '-'}
         )),
         const SizedBox(height: WFDims.sectionSpacing),
       ],
-    );
-  }
-
-  Widget _brandFooter() {
-    return Padding(
-      padding: const EdgeInsets.only(top: 6, bottom: 2),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Icon(Icons.local_fire_department_rounded, size: 16, color: Colors.black),
-          const SizedBox(width: 6),
-          Text(
-            'Whisperfire • The Seduction Engine',
-            style: WFTextStyles.bodySmall.copyWith(
-              color: Colors.black,
-              fontWeight: FontWeight.w700,
-            ),
-          ),
-        ],
-      ),
     );
   }
 }
