@@ -289,24 +289,6 @@ class _MentorDetailPageState extends ConsumerState<MentorDetailPage> {
       ),
       body: Column(
         children: [
-          // Quick tips header
-          Container(
-            width: double.infinity,
-            margin: const EdgeInsets.all(WFDims.paddingL),
-            child: GlassCard(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('Quick Tips', style: WFTextStyles.h4),
-                  const SizedBox(height: WFDims.spacingS),
-                  Text('• Ask me to drill you on specific tactics', style: WFTextStyles.bodySmall),
-                  Text('• Request step-by-step advice for situations', style: WFTextStyles.bodySmall),
-                  Text('• Practice roleplay scenarios with feedback', style: WFTextStyles.bodySmall),
-                ],
-              ),
-            ),
-          ),
-          
           // Messages
           Expanded(
             child: ListView.builder(

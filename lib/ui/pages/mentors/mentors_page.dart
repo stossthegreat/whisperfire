@@ -100,6 +100,8 @@ class _MentorsContent extends ConsumerWidget {
           ),
           
           const SizedBox(height: WFDims.spacingXXL),
+          // Add extra bottom padding to prevent overflow
+          const SizedBox(height: 100),
         ],
       ),
     );

@@ -47,6 +47,7 @@ dependencies:
   # Utils
   equatable: ^2.0.5
   json_annotation: ^4.8.1
+  package_info_plus: ^8.0.2
   
   # Sharing
   share_plus: ^7.2.1
