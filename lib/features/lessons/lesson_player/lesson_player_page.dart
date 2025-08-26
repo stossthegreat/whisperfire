@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:confetti/confetti.dart';
+import '../../../utils/color_compat.dart';
 import '../../../data/providers.dart';
 import '../../../data/models/lesson_models.dart';
 import '../widgets/tts_controls.dart';
