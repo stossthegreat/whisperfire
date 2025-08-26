@@ -1,3 +1,7 @@
+// android/app/build.gradle.kts
+
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("kotlin-android")
@@ -5,37 +9,47 @@ plugins {
     id("dev.flutter.flutter-gradle-plugin")
 }
 
+// Read version values the same way Flutter's Groovy template did.
+// If local.properties doesn't have them (often git-ignored), we fall back to 1 / "1.0".
+val localProps = Properties().apply {
+    val f = rootProject.file("local.properties")
+    if (f.exists()) f.inputStream().use { load(it) }
+}
+val flutterVersionCode = (localProps.getProperty("flutter.versionCode") ?: "1").toInt()
+val flutterVersionName = localProps.getProperty("flutter.versionName") ?: "1.0"
+
 android {
     namespace = "com.example.whisperfire"
-    compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
 
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
-
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11.toString()
-    }
+    // Use explicit ints in KTS (don’t rely on flutter.compileSdkVersion in KTS)
+    compileSdk = 34
+    // If this line causes "unresolved reference", just delete it.
+    // ndkVersion = flutter.ndkVersion
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId = "com.example.whisperfire"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = flutter.minSdkVersion
-        targetSdk = flutter.targetSdkVersion
-        versionCode = flutter.versionCode
-        versionName = flutter.versionName
+        minSdk = 21
+        targetSdk = 34
+
+        // Kotlin DSL property assignments:
+        versionCode = flutterVersionCode
+        versionName = flutterVersionName
     }
 
     buildTypes {
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
+            // Debug signing so you can build quickly; change later for Play release.
             signingConfig = signingConfigs.getByName("debug")
         }
+    }
+
+    // AGP 8.x expects Java 17
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = "17"
     }
 }
 
