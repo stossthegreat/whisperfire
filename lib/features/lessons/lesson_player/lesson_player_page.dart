@@ -81,7 +81,7 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
       return;
     }
     
-    if (_currentStep < 4) {
+    if (_currentStep < 5) { // Changed from 4 to 5 to handle 6 steps
       setState(() {
         _currentStep++;
       });
@@ -91,7 +91,7 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
   
   bool _canProceedToNextStep() {
     // Check if user has entered text for rewrite step
-    if (_currentStep == 3) { // Rewrite step (index 3)
+    if (_currentStep == 4) { // Rewrite step (index 4, was 3)
       if (_rewriteController.text.trim().isEmpty) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
@@ -104,7 +104,7 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
     }
     
     // Check if user has entered text for reflection step
-    if (_currentStep == 4) { // Reflection step (index 4)
+    if (_currentStep == 5) { // Reflection step (index 5, was 4)
       if (_reflectionController.text.trim().isEmpty) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
@@ -370,7 +370,7 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
   }
   
   Widget _buildStepIndicator() {
-    final steps = ['Hook', 'Concept', 'Drill', 'Rewrite', 'Reflection'];
+    final steps = ['Hook', 'Concept', 'Teaching', 'Drill', 'Rewrite', 'Reflection'];
     
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -421,10 +421,12 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
       case 1:
         return _buildConceptStep(lesson.content);
       case 2:
-        return _buildDrillStep(lesson.content);
+        return _buildTeachingStep(lesson.content);
       case 3:
-        return _buildRewriteStep(lesson.content);
+        return _buildDrillStep(lesson.content);
       case 4:
+        return _buildRewriteStep(lesson.content);
+      case 5:
         return _buildReflectionStep(lesson.content);
       default:
         return const SizedBox.shrink();
@@ -505,7 +507,36 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
       ),
     );
   }
-  
+
+  Widget _buildTeachingStep(LessonContent content) {
+    return FrostedCard(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'The Teaching',
+            style: GoogleFonts.playfairDisplay(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
+          ),
+          const SizedBox(height: 16),
+          Text(
+            content.teaching,
+            style: GoogleFonts.inter(
+              fontSize: 16, 
+              height: 1.6,
+              color: Colors.black,
+            ),
+          ),
+          const SizedBox(height: 24),
+          TtsControls(text: content.teaching),
+        ],
+      ),
+    );
+  }
+
   Widget _buildDrillStep(LessonContent content) {
     return FrostedCard(
       child: Column(
@@ -670,7 +701,7 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
         else
           const SizedBox(width: 100),
         
-        if (_currentStep < 4) // Changed from 5 to 4 so reflection step shows Complete Lesson
+        if (_currentStep < 5) // Changed from 4 to 5 so reflection step shows Complete Lesson
           ElevatedButton(
             onPressed: _nextStep,
             child: const Text('Next'),

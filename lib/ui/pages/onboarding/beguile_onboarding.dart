@@ -111,91 +111,91 @@ class _WelcomeSlide extends StatelessWidget {
         ),
         child: Padding(
           padding: EdgeInsets.all(screenWidth * 0.05),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
               SizedBox(height: screenHeight * 0.05),
-              
-              // Welcome text
-              Text(
-                'Welcome to',
-                style: WFTextStyles.h2.copyWith(
-                  color: WFColors.gray400,
-                  fontWeight: FontWeight.w600,
+          
+          // Welcome text
+          Text(
+            'Welcome to',
+            style: WFTextStyles.h2.copyWith(
+              color: WFColors.gray400,
+              fontWeight: FontWeight.w600,
                   fontSize: screenWidth * 0.045,
-                ),
-              ),
+            ),
+          ),
               SizedBox(height: screenHeight * 0.01),
-              
-              // App name with gradient
-              ShaderMask(
-                shaderCallback: (bounds) => WFGradients.purpleGradient.createShader(bounds),
-                child: Text(
-                  'BEGUILE AI',
-                  style: WFTextStyles.h1.copyWith(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w900,
-                    letterSpacing: 2.0,
+          
+          // App name with gradient
+          ShaderMask(
+            shaderCallback: (bounds) => WFGradients.purpleGradient.createShader(bounds),
+            child: Text(
+              'BEGUILE AI',
+              style: WFTextStyles.h1.copyWith(
+                color: Colors.white,
+                fontWeight: FontWeight.w900,
+                letterSpacing: 2.0,
                     fontSize: screenWidth * 0.08,
-                  ),
-                ),
               ),
+            ),
+          ),
               SizedBox(height: screenHeight * 0.02),
-              
-              // Tagline
-              Text(
-                'Where desire becomes strategy.',
-                style: WFTextStyles.h3.copyWith(
-                  color: WFColors.purple400,
-                  fontWeight: FontWeight.w700,
+          
+          // Tagline
+          Text(
+            'Where desire becomes strategy.',
+            style: WFTextStyles.h3.copyWith(
+              color: WFColors.purple400,
+              fontWeight: FontWeight.w700,
                   fontSize: screenWidth * 0.04,
-                ),
-              ),
+            ),
+          ),
               SizedBox(height: screenHeight * 0.04),
-              
-              // Legendary description
-              Text(
-                'You\'ve been chosen to step into the circle. Learn to hold the frame, ignite tension, and speak in lines that live rent-free in their minds forever.',
-                style: WFTextStyles.bodyLarge.copyWith(
-                  color: WFColors.gray300,
-                  height: 1.6,
-                  fontWeight: FontWeight.w500,
+          
+          // Legendary description
+          Text(
+            'You\'ve been chosen to step into the circle. Learn to hold the frame, ignite tension, and speak in lines that live rent-free in their minds forever.',
+            style: WFTextStyles.bodyLarge.copyWith(
+              color: WFColors.gray300,
+              height: 1.6,
+              fontWeight: FontWeight.w500,
                   fontSize: screenWidth * 0.035,
-                ),
-              ),
+            ),
+          ),
               SizedBox(height: screenHeight * 0.03),
-              
-              // Warning element
-              Container(
+          
+          // Warning element
+          Container(
                 padding: EdgeInsets.all(screenWidth * 0.04),
-                decoration: BoxDecoration(
+            decoration: BoxDecoration(
                   color: Colors.amber.withValues(alpha: 0.1),
                   border: Border.all(color: Colors.amber.withValues(alpha: 0.3)),
                   borderRadius: BorderRadius.circular(8),
-                ),
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.warning_amber_rounded,
+            ),
+            child: Row(
+              children: [
+                Icon(
+                  Icons.warning_amber_rounded,
                       color: Colors.amber,
                       size: screenWidth * 0.06,
-                    ),
+                ),
                     SizedBox(width: screenWidth * 0.03),
-                    Expanded(
-                      child: Text(
+                Expanded(
+                  child: Text(
                         'This app contains mature themes and advanced psychological concepts. Use responsibly.',
                         style: TextStyle(
                           color: Colors.amber[200],
                           fontSize: screenWidth * 0.03,
-                        ),
-                      ),
                     ),
-                  ],
+                  ),
                 ),
-              ),
-              
+              ],
+            ),
+          ),
+          
               SizedBox(height: screenHeight * 0.05),
-            ],
+        ],
           ),
         ),
       ),
@@ -218,98 +218,98 @@ class _LessonsSlide extends StatelessWidget {
         ),
         child: Padding(
           padding: EdgeInsets.all(screenWidth * 0.05),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
               SizedBox(height: screenHeight * 0.05),
-              
-              // Title
-              Text(
-                'THE DOJO',
-                style: WFTextStyles.h1.copyWith(
-                  color: WFColors.purple400,
-                  fontWeight: FontWeight.w900,
-                  letterSpacing: 2.0,
+          
+          // Title
+          Text(
+            'THE DOJO',
+            style: WFTextStyles.h1.copyWith(
+              color: WFColors.purple400,
+              fontWeight: FontWeight.w900,
+              letterSpacing: 2.0,
                   fontSize: screenWidth * 0.08,
-                ),
-              ),
+            ),
+          ),
               SizedBox(height: screenHeight * 0.01),
-              
-              // Subtitle
-              Text(
-                'Where legends are forged',
-                style: WFTextStyles.h3.copyWith(
-                  color: WFColors.gray400,
-                  fontWeight: FontWeight.w600,
+          
+          // Subtitle
+          Text(
+            'Where legends are forged',
+            style: WFTextStyles.h3.copyWith(
+              color: WFColors.gray400,
+              fontWeight: FontWeight.w600,
                   fontSize: screenWidth * 0.04,
-                ),
-              ),
+            ),
+          ),
               SizedBox(height: screenHeight * 0.04),
-              
-              // App screenshot
-              Container(
-                width: double.infinity,
+          
+          // App screenshot
+          Container(
+            width: double.infinity,
                 height: screenHeight * 0.35,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
-                  border: Border.all(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(
                     color: WFColors.purple400.withValues(alpha: 0.3),
-                    width: 2,
-                  ),
-                ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(14),
-                  child: Image.asset(
-                    'assets/images/onboarding/lessons_screenshot.png',
-                    fit: BoxFit.cover,
-                    errorBuilder: (context, error, stackTrace) => Container(
-                      color: WFColors.gray800,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.school,
+                width: 2,
+              ),
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(14),
+              child: Image.asset(
+                'assets/images/onboarding/lessons_screenshot.png',
+                fit: BoxFit.cover,
+                errorBuilder: (context, error, stackTrace) => Container(
+                  color: WFColors.gray800,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.school,
                             size: screenWidth * 0.12,
-                            color: WFColors.purple400,
-                          ),
-                          SizedBox(height: screenHeight * 0.02),
-                          Text(
-                            'LESSONS SCREENSHOT',
-                            style: WFTextStyles.bodyMedium.copyWith(
-                              color: WFColors.gray400,
-                              fontWeight: FontWeight.w600,
-                              fontSize: screenWidth * 0.035,
-                            ),
-                          ),
-                          SizedBox(height: screenHeight * 0.01),
-                          Text(
-                            'Add lessons_screenshot.png to assets',
-                            style: WFTextStyles.bodySmall.copyWith(
-                              color: WFColors.gray500,
-                              fontSize: screenWidth * 0.03,
-                            ),
-                          ),
-                        ],
+                        color: WFColors.purple400,
                       ),
-                    ),
+                          SizedBox(height: screenHeight * 0.02),
+                      Text(
+                        'LESSONS SCREENSHOT',
+                        style: WFTextStyles.bodyMedium.copyWith(
+                          color: WFColors.gray400,
+                          fontWeight: FontWeight.w600,
+                              fontSize: screenWidth * 0.035,
+                        ),
+                      ),
+                          SizedBox(height: screenHeight * 0.01),
+                      Text(
+                        'Add lessons_screenshot.png to assets',
+                        style: WFTextStyles.bodySmall.copyWith(
+                          color: WFColors.gray500,
+                              fontSize: screenWidth * 0.03,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
+            ),
+          ),
               SizedBox(height: screenHeight * 0.03),
-              
-              // Legendary explanation
-              Text(
-                'Behind these doors lie 120+ lessons across 6 legendary categories. Each world unlocks new levels of mastery. You start as a student. You\'ll leave as a master.',
-                style: WFTextStyles.bodyLarge.copyWith(
-                  color: WFColors.gray300,
-                  height: 1.6,
-                  fontWeight: FontWeight.w500,
+          
+          // Legendary explanation
+          Text(
+            'Behind these doors lie 120+ lessons across 6 legendary categories. Each world unlocks new levels of mastery. You start as a student. You\'ll leave as a master.',
+            style: WFTextStyles.bodyLarge.copyWith(
+              color: WFColors.gray300,
+              height: 1.6,
+              fontWeight: FontWeight.w500,
                   fontSize: screenWidth * 0.035,
-                ),
-              ),
-              
+            ),
+          ),
+          
               SizedBox(height: screenHeight * 0.05),
-            ],
+        ],
           ),
         ),
       ),
@@ -332,98 +332,98 @@ class _MentorsSlide extends StatelessWidget {
         ),
         child: Padding(
           padding: EdgeInsets.all(screenWidth * 0.05),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
               SizedBox(height: screenHeight * 0.05),
-              
-              // Title
-              Text(
-                'THE COUNCIL',
-                style: WFTextStyles.h1.copyWith(
-                  color: WFColors.purple400,
-                  fontWeight: FontWeight.w900,
-                  letterSpacing: 2.0,
+          
+          // Title
+          Text(
+            'THE COUNCIL',
+            style: WFTextStyles.h1.copyWith(
+              color: WFColors.purple400,
+              fontWeight: FontWeight.w900,
+              letterSpacing: 2.0,
                   fontSize: screenWidth * 0.08,
-                ),
-              ),
+            ),
+          ),
               SizedBox(height: screenHeight * 0.01),
-              
-              // Subtitle
-              Text(
-                'Ancient wisdom at your fingertips',
-                style: WFTextStyles.h3.copyWith(
-                  color: WFColors.gray400,
-                  fontWeight: FontWeight.w600,
+          
+          // Subtitle
+          Text(
+            'Ancient wisdom at your fingertips',
+            style: WFTextStyles.h3.copyWith(
+              color: WFColors.gray400,
+              fontWeight: FontWeight.w600,
                   fontSize: screenWidth * 0.04,
-                ),
-              ),
+            ),
+          ),
               SizedBox(height: screenHeight * 0.04),
-              
-              // App screenshot
-              Container(
-                width: double.infinity,
+          
+          // App screenshot
+          Container(
+            width: double.infinity,
                 height: screenHeight * 0.35,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
-                  border: Border.all(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(
                     color: WFColors.purple400.withValues(alpha: 0.3),
-                    width: 2,
-                  ),
-                ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(14),
-                  child: Image.asset(
-                    'assets/images/onboarding/mentors_screenshot.png',
-                    fit: BoxFit.cover,
-                    errorBuilder: (context, error, stackTrace) => Container(
-                      color: WFColors.gray800,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.psychology,
+                width: 2,
+              ),
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(14),
+              child: Image.asset(
+                'assets/images/onboarding/mentors_screenshot.png',
+                fit: BoxFit.cover,
+                errorBuilder: (context, error, stackTrace) => Container(
+                  color: WFColors.gray800,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.psychology,
                             size: screenWidth * 0.12,
-                            color: WFColors.purple400,
-                          ),
-                          SizedBox(height: screenHeight * 0.02),
-                          Text(
-                            'MENTORS SCREENSHOT',
-                            style: WFTextStyles.bodySmall.copyWith(
-                              color: WFColors.gray400,
-                              fontWeight: FontWeight.w600,
-                              fontSize: screenWidth * 0.035,
-                            ),
-                          ),
-                          SizedBox(height: screenHeight * 0.01),
-                          Text(
-                            'Add mentors_screenshot.png to assets',
-                            style: WFTextStyles.bodySmall.copyWith(
-                              color: WFColors.gray500,
-                              fontSize: screenWidth * 0.03,
-                            ),
-                          ),
-                        ],
+                        color: WFColors.purple400,
                       ),
-                    ),
+                          SizedBox(height: screenHeight * 0.02),
+                      Text(
+                        'MENTORS SCREENSHOT',
+                        style: WFTextStyles.bodySmall.copyWith(
+                          color: WFColors.gray400,
+                          fontWeight: FontWeight.w600,
+                              fontSize: screenWidth * 0.035,
+                        ),
+                      ),
+                          SizedBox(height: screenHeight * 0.01),
+                      Text(
+                        'Add mentors_screenshot.png to assets',
+                        style: WFTextStyles.bodySmall.copyWith(
+                          color: WFColors.gray500,
+                              fontSize: screenWidth * 0.03,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
+            ),
+          ),
               SizedBox(height: screenHeight * 0.03),
-              
-              // Legendary explanation
-              Text(
+          
+          // Legendary explanation
+          Text(
                 'Six legendary mentors await your questions. Casanova teaches charm defense. Cleopatra reveals power plays. Machiavelli exposes cunning. Each AI mentor is a master of their domain.',
-                style: WFTextStyles.bodyLarge.copyWith(
-                  color: WFColors.gray300,
-                  height: 1.6,
-                  fontWeight: FontWeight.w500,
+            style: WFTextStyles.bodyLarge.copyWith(
+              color: WFColors.gray300,
+              height: 1.6,
+              fontWeight: FontWeight.w500,
                   fontSize: screenWidth * 0.035,
-                ),
-              ),
-              
+            ),
+          ),
+          
               SizedBox(height: screenHeight * 0.05),
-            ],
+        ],
           ),
         ),
       ),
@@ -446,98 +446,98 @@ class _AnalyzeSlide extends StatelessWidget {
         ),
         child: Padding(
           padding: EdgeInsets.all(screenWidth * 0.05),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
               SizedBox(height: screenHeight * 0.05),
-              
-              // Title
-              Text(
-                'THE SCANNER',
-                style: WFTextStyles.h1.copyWith(
-                  color: WFColors.purple400,
-                  fontWeight: FontWeight.w900,
-                  letterSpacing: 2.0,
+          
+          // Title
+          Text(
+            'THE SCANNER',
+            style: WFTextStyles.h1.copyWith(
+              color: WFColors.purple400,
+              fontWeight: FontWeight.w900,
+              letterSpacing: 2.0,
                   fontSize: screenWidth * 0.08,
-                ),
-              ),
+            ),
+          ),
               SizedBox(height: screenHeight * 0.01),
-              
-              // Subtitle
-              Text(
-                'See through every facade',
-                style: WFTextStyles.h3.copyWith(
-                  color: WFColors.gray400,
-                  fontWeight: FontWeight.w600,
+          
+          // Subtitle
+          Text(
+            'See through every facade',
+            style: WFTextStyles.h3.copyWith(
+              color: WFColors.gray400,
+              fontWeight: FontWeight.w600,
                   fontSize: screenWidth * 0.04,
-                ),
-              ),
+            ),
+          ),
               SizedBox(height: screenHeight * 0.04),
-              
-              // App screenshot
-              Container(
-                width: double.infinity,
+          
+          // App screenshot
+          Container(
+            width: double.infinity,
                 height: screenHeight * 0.35,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
-                  border: Border.all(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(
                     color: WFColors.purple400.withValues(alpha: 0.3),
-                    width: 2,
-                  ),
-                ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(14),
-                  child: Image.asset(
-                    'assets/images/onboarding/analyze_screenshot.png',
-                    fit: BoxFit.cover,
-                    errorBuilder: (context, error, stackTrace) => Container(
-                      color: WFColors.gray800,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.analytics,
+                width: 2,
+              ),
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(14),
+              child: Image.asset(
+                'assets/images/onboarding/analyze_screenshot.png',
+                fit: BoxFit.cover,
+                errorBuilder: (context, error, stackTrace) => Container(
+                  color: WFColors.gray800,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.analytics,
                             size: screenWidth * 0.12,
-                            color: WFColors.purple400,
-                          ),
-                          SizedBox(height: screenHeight * 0.02),
-                          Text(
-                            'ANALYZE SCREENSHOT',
-                            style: WFTextStyles.bodyMedium.copyWith(
-                              color: WFColors.gray400,
-                              fontWeight: FontWeight.w600,
-                              fontSize: screenWidth * 0.035,
-                            ),
-                          ),
-                          SizedBox(height: screenHeight * 0.01),
-                          Text(
-                            'Add analyze_screenshot.png to assets',
-                            style: WFTextStyles.bodySmall.copyWith(
-                              color: WFColors.gray500,
-                              fontSize: screenWidth * 0.03,
-                            ),
-                          ),
-                        ],
+                        color: WFColors.purple400,
                       ),
-                    ),
+                          SizedBox(height: screenHeight * 0.02),
+                      Text(
+                        'ANALYZE SCREENSHOT',
+                        style: WFTextStyles.bodyMedium.copyWith(
+                          color: WFColors.gray400,
+                          fontWeight: FontWeight.w600,
+                              fontSize: screenWidth * 0.035,
+                        ),
+                      ),
+                          SizedBox(height: screenHeight * 0.01),
+                      Text(
+                        'Add analyze_screenshot.png to assets',
+                        style: WFTextStyles.bodySmall.copyWith(
+                          color: WFColors.gray500,
+                              fontSize: screenWidth * 0.03,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
+            ),
+          ),
               SizedBox(height: screenHeight * 0.03),
-              
-              // Legendary explanation
-              Text(
+          
+          // Legendary explanation
+          Text(
                 'Upload any message and our AI reveals the hidden psychology. Spot manipulation tactics. Understand power dynamics. See through every facade with surgical precision.',
-                style: WFTextStyles.bodyLarge.copyWith(
-                  color: WFColors.gray300,
-                  height: 1.6,
-                  fontWeight: FontWeight.w500,
+            style: WFTextStyles.bodyLarge.copyWith(
+              color: WFColors.gray300,
+              height: 1.6,
+              fontWeight: FontWeight.w500,
                   fontSize: screenWidth * 0.035,
-                ),
-              ),
-              
+            ),
+          ),
+          
               SizedBox(height: screenHeight * 0.05),
-            ],
+        ],
           ),
         ),
       ),
@@ -560,29 +560,29 @@ class _PowerSlide extends StatelessWidget {
         ),
         child: Padding(
           padding: EdgeInsets.all(screenWidth * 0.05),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
               SizedBox(height: screenHeight * 0.05),
-              
-              // Title
-              Text(
+          
+          // Title
+          Text(
                 'THE POWER',
-                style: WFTextStyles.h1.copyWith(
-                  color: WFColors.purple400,
-                  fontWeight: FontWeight.w900,
-                  letterSpacing: 2.0,
+            style: WFTextStyles.h1.copyWith(
+              color: WFColors.purple400,
+              fontWeight: FontWeight.w900,
+              letterSpacing: 2.0,
                   fontSize: screenWidth * 0.08,
-                ),
-              ),
+            ),
+          ),
               SizedBox(height: screenHeight * 0.01),
-              
-              // Subtitle
-              Text(
+          
+          // Subtitle
+          Text(
                 'Knowledge is your weapon',
-                style: WFTextStyles.h3.copyWith(
-                  color: WFColors.gray400,
-                  fontWeight: FontWeight.w600,
+            style: WFTextStyles.h3.copyWith(
+              color: WFColors.gray400,
+              fontWeight: FontWeight.w600,
                   fontSize: screenWidth * 0.04,
                 ),
               ),
@@ -608,12 +608,12 @@ class _PowerSlide extends StatelessWidget {
                       color: WFColors.gray800,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
+            children: [
                           Icon(
                             Icons.flash_on,
                             size: screenWidth * 0.12,
-                            color: WFColors.purple400,
-                          ),
+                  color: WFColors.purple400,
+                ),
                           SizedBox(height: screenHeight * 0.02),
                           Text(
                             'POWER SCREENSHOT',
@@ -629,29 +629,29 @@ class _PowerSlide extends StatelessWidget {
                             style: WFTextStyles.bodySmall.copyWith(
                               color: WFColors.gray500,
                               fontSize: screenWidth * 0.03,
-                            ),
-                          ),
-                        ],
-                      ),
+                ),
+              ),
+            ],
+          ),
                     ),
                   ),
                 ),
               ),
               SizedBox(height: screenHeight * 0.03),
-              
-              // Legendary explanation
-              Text(
+          
+          // Legendary explanation
+          Text(
                 'This knowledge is dangerous. It gives you the power to see through manipulation, control social dynamics, and command respect. Use it wisely. Use it well.',
-                style: WFTextStyles.bodyLarge.copyWith(
-                  color: WFColors.gray300,
-                  height: 1.6,
-                  fontWeight: FontWeight.w500,
+            style: WFTextStyles.bodyLarge.copyWith(
+              color: WFColors.gray300,
+              height: 1.6,
+              fontWeight: FontWeight.w500,
                   fontSize: screenWidth * 0.035,
-                ),
-              ),
-              
+            ),
+          ),
+          
               SizedBox(height: screenHeight * 0.05),
-            ],
+        ],
           ),
         ),
       ),

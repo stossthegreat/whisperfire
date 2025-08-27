@@ -17,1888 +17,1298 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
     1: {
       1: Lesson(
         id: 'seduction_1_1',
-        title: 'The First Law — To Withhold is to Possess',
+        title: 'The Power of Mystery',
         category: 'seduction',
         world: 1,
         lesson: 1,
         xp: 50,
         content: LessonContent(
-          hook: 'Versailles, 1745. The King\'s messenger, breathless, delivers a diamond necklace to Madame de Pompadour. An answer to his proposal is expected. She doesn\'t even lift her eyes from her book. For three hours, she lets the unopened box sit on her escritoire, a silent testament to his anxiety. She knows the most powerful man in Europe is pacing in his chambers, imagining every reason for her delay. When she finally sends a reply, it contains a single, pressed flower. For your patience, the note reads. She did not give him her answer; she gave him an obsession. The art of seduction begins not with what you offer, but with what you deliberately hold back.',
+          hook: 'Rome shook beneath Caesar\'s legions, but it was undone by silk. Cleopatra did not rush him with beauty or gifts. She arrived rolled in a carpet, unwrapped like a secret the world was not meant to see. She spoke little. She revealed less. Yet the conqueror of empires became her captive. Mystery was her throne.',
           concept: [
-            'Scarcity is an algorithm of the mind. The brain assigns greater value to what is rare or delayed.',
-            'Mystery is a vacuum. Nature abhors it; the human psyche craves it.',
-            'Power resides in the pause. Anticipation is manufactured in silence, in glance, in delay.'
+            'Mystery is oxygen. Without it, attraction suffocates.',
+            'Answers close doors; questions open captivation.',
+            'What you deny binds tighter than what you give.',
+            'A veil holds more power than a confession.'
           ],
-          teaching: 'The human mind cannot resist filling blanks. When you withhold information, others will build you palaces of imagination. Reveal everything, and you collapse into the ordinary. Mystery makes you more than human — it makes you myth.',
+          teaching: 'The mind does not loop on what it already knows — it replays what it cannot solve. Mystery hijacks imagination, forcing the other to replay you in their head long after you leave. The unanswered text, the unspoken thought, the pause before a kiss — these are not gaps. They are hooks that pull endlessly.',
           drill: Drill(
-            question: 'They reach out with eagerness, seeking instant reassurance. What do you do?',
+            question: 'They ask: "Do you even like me?"',
             options: [
-              'Throw your attention into their hands like copper coins.',
-              'Let silence gnaw at them. Hours later, carve the wound deeper: "Strange… you\'ve left a shadow I didn\'t expect. It lingers."'
+              'Of course I do.',
+              'You\'ll have to decide for yourself.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Rewrite this needy message into one that creates scarcity and mystery.',
-            input: 'I\'m free all weekend. Please see me.',
-            example: 'My weekend is a locked diary. I\'m considering whether to let you write in it.'
+            prompt: 'Transform this statement into one that creates mystery.',
+            input: 'I was just home last night.',
+            example: 'I didn\'t sleep much — but not for the reason you think.'
           ),
-          reflection: 'When was the last time you gave your entire self away in a moment of excitement, only to watch their interest fade? What part of yourself could you have kept veiled?'
+          reflection: 'When have you smothered interest with too much certainty? What veil could you leave in place so curiosity never stops clawing at them?'
         ),
       ),
       2: Lesson(
         id: 'seduction_1_2',
-        title: 'The Second Law — Presence is a Physical Spell',
+        title: 'Scarcity is a Crown',
         category: 'seduction',
         world: 1,
         lesson: 2,
         xp: 50,
         content: LessonContent(
-          hook: 'Berlin, 1930. A hush falls not when she enters, but a moment after. Marlene Dietrich is already at the center of the room, yet no one saw her arrive. It is her atmosphere that announces her—a cloud of tobacco flower and absolute self-possession. She doesn\'t look at the crowd; she allows the crowd to witness her. A man approaches. She doesn\'t turn her head. She lets him stand there, exposed in his own audacity, until the tension is unbearable. Then, slowly, she lowers her cigarette holder, and her eyes, heavy-lidded and knowing, finally meet his. He shivers. She conquered him before she spoke a word.',
+          hook: 'Paris, 1889. La Goulue, queen of the Moulin Rouge, danced once and refused every encore. Dukes and princes begged. Bankers offered fortunes. She simply shook her head. They left with her image burned into their minds — not because of what they saw, but because of what she denied.',
           concept: [
-            'You enter a room twice: first with your energy, then with your body.',
-            'Eyes are not for looking, they are for being looked into.',
-            'Stillness is the loudest sound.'
+            'Abundance is invisible. Scarcity is sacred.',
+            'The denied "yes" haunts longer than a hundred given.',
+            'Flood attention and it drowns. Withhold it and it shines.',
+            'Your time is the crown; wear it high.'
           ],
-          teaching: 'Presence is not about being seen—it is about being felt. When you enter a room, you bring an atmosphere that others cannot ignore. Your energy announces you before your body arrives. The most magnetic people don\'t seek attention; they command it through the sheer force of their being.',
+          teaching: 'The human mind inflates rarity into value. When you are too available, you become background noise. When your time is rationed, your "yes" becomes mythic. Scarcity forces others to compete, and competition multiplies attraction. Your absence becomes louder than others\' presence.',
           drill: Drill(
-            question: 'You enter a gathering. They look for your approach. What do you do?',
+            question: 'They ask: "When are you free?"',
             options: [
-              'Rush forward with a cheerful smile, desperate to be welcomed.',
-              'Occupy a place of power, still and certain. Let your eyes brush theirs too long—then abandon them to wonder why you did not stay.'
+              'Anytime, just say when.',
+              'Thursday, maybe. If you tempt me enough to cancel my plans.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Rewrite this desperate greeting into one that commands presence.',
-            input: 'Hey! Over here! I saved you a seat!',
-            example: '(A gesture only). You catch their eye, then slowly summon them with a tilt of your hand. Not frantic. A command.'
+            prompt: 'Transform this statement into one that creates scarcity.',
+            input: 'Yes, I\'m free whenever.',
+            example: 'Thursday\'s possible — but only if you give me a reason worth it.'
           ),
-          reflection: 'When you walk into a room, do you feel like a guest waiting to be acknowledged, or the sovereign of your own energy?'
+          reflection: 'Where are you giving yourself away like a common coin? What would change if your presence felt like a rare jewel, glimpsed but never owned?'
         ),
       ),
       3: Lesson(
         id: 'seduction_1_3',
-        title: 'The Third Law — Language is a Labyrinth',
+        title: 'Presence is a Spell',
         category: 'seduction',
         world: 1,
         lesson: 3,
         xp: 50,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Paris, 1924. A young writer, desperate for her approval, pours his heart out to Gertrude Stein. He speaks of love in clichés, in well-worn phrases he thinks are original. She listens, smiling faintly. Then: "A rose is a rose is a rose." He is bewildered. She has not answered; she has set a riddle. For weeks, he will be haunted, trying to decode her. Literal language informs. Poetic language transforms.',
+          hook: 'New York, 1977. Studio 54 blazed with noise and glitter. Then Grace Jones entered. She didn\'t rush. She didn\'t speak. Her heels struck the floor like drums of war. Her perfume cut through smoke. Heads turned before she even looked up. By the time she opened her mouth, the room was already hers. Presence had cast its spell.',
           concept: [
-            'Subtext is the true text.',
-            'The unfinished sentence is a hook.',
-            'Revelation through concealment.'
+            'Presence precedes words. You are felt before you are heard.',
+            'Stillness intoxicates more than frenzy.',
+            'Aura is not decoration; it is domination.',
+            'When the senses are captured, the mind follows.'
           ],
+          teaching: 'Humans read presence in seconds: posture, rhythm, silence, eyes. Before logic has a chance, instinct decides. The one who moves deliberately, who commands space, who radiates calm intensity — they enslave attention without effort. Presence is not what you say. It is what you emanate.',
           drill: Drill(
-            question: 'They demand: "What are you looking for?" What do you say?',
+            question: 'First meeting:',
             options: [
-              'Spill your hopes like coins on a tavern table.',
-              'Leave them a door half-open: "What I\'m looking for doesn\'t live in words. It only survives in silences. If you can bear those with me, you may know."'
+              'Hi, nice to meet you.',
+              'At last… we meet.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Rewrite this direct statement into one that creates mystery and intrigue.',
-            input: 'I can\'t stop thinking about you.',
-            example: 'You\'ve become a rather delightful interruption to my otherwise orderly thoughts.'
+            prompt: 'Transform this statement into one that commands presence.',
+            input: 'Call me back later.',
+            example: 'Call me when you\'re ready for something unforgettable.'
           ),
-          reflection: 'Do you wield words like bricks to build walls of facts, or like stained glass that transforms the light?'
+          reflection: 'What enters the room before your words? How could you sculpt a presence that intoxicates before you even speak?'
         ),
       ),
       4: Lesson(
         id: 'seduction_1_4',
-        title: 'The Fourth Law — Vulnerability is a Calculated Strike',
+        title: 'The Haunting Memory',
         category: 'seduction',
         world: 1,
         lesson: 4,
         xp: 50,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'The Roman Forum, 44 BC. Julius Caesar does not show Cleopatra his legions. He shows her his epilepsy. The seizure shakes him, but he allows her to see it. Not a loss of power—an ultimate display of it. He proves he trusts her with the crack in his marble. True power is not the absence of weakness; it is control over which weakness you reveal, and to whom.',
+          hook: 'Monte Carlo, 1963. A tycoon boasted to Brigitte Bardot of yachts and jewels. She leaned in, whispered: "Money buys many things… but not the one I\'m thinking of." Then she vanished. Months later, he was still obsessed — not with her presence, but with the ghost she left behind.',
           concept: [
-            'Strategic unveiling. Reveal flaws that are strengths in disguise.',
-            'The gift of trust. A curated confession forces reciprocity.',
-            'The illusion of intimacy. A chosen decoy feels like depth without baring your soul.'
+            'Captivation is an unfinished story.',
+            'Absence carves deeper than presence.',
+            'The half-said line lives longer than the speech.',
+            'Ghosts linger longer than flesh.'
           ],
+          teaching: 'Humans cannot release the unresolved. An unanswered question, a door left ajar, a line cut short — these haunt endlessly. Closure kills attraction. The haunting is born in what never fully resolves. The strongest pull thrives not in the kiss, but in the echo left after.',
           drill: Drill(
-            question: 'They ask about your scars, hungry for weakness. What do you reveal?',
+            question: 'At the end of the night:',
             options: [
-              'Spill your tragedies like spilled wine.',
-              'Offer one scar, sharpened into a blade: "I\'ve been broken before. It taught me my passion cuts both ways—beautiful, but never harmless."'
+              'That was fun, let\'s do it again.',
+              'Tonight reminded me of something I swore I\'d never repeat… maybe I\'ll tell you next time.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Rewrite this vulnerable confession into one that shows strength through calculated weakness.',
-            input: 'I\'m scared of getting hurt again.',
-            example: 'My heart doesn\'t break easily, but when it does, it breaks beautifully. I\'m still learning to wield that risk.'
+            prompt: 'Transform this statement into one that creates haunting mystery.',
+            input: 'Thanks for coffee, see you soon.',
+            example: 'Dangerous coffee… you woke up something I thought was buried.'
           ),
-          reflection: 'What curated vulnerability could you reveal that would make someone lean in closer, not recoil?'
+          reflection: 'Do you close every encounter neatly? Or could you leave behind a ghost — a whisper that lingers long after you\'re gone?'
         ),
       ),
       5: Lesson(
         id: 'seduction_1_5',
-        title: 'The Fifth Law — You are the Prize',
+        title: 'The Mirror of Desire',
         category: 'seduction',
         world: 1,
         lesson: 5,
         xp: 50,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'The French Riviera, 1966. Brigitte Bardot is surrounded by suitors—millionaires, heirs, actors. She turns to the poorest man at the table: "And you? What would you offer me that they cannot?" Instantly, the dynamic shifts. The hunters become applicants. Seduction is not winning them over; it is auditioning them for access to you.',
+          hook: 'Venice, 18th century. Casanova never conquered with declarations of self. He captured hearts by reflecting others. To one woman, he was a poet who "understood her soul." To another, a savior. To another, a danger. They swore he knew them better than they knew themselves. In truth, he showed them their own fantasies, perfectly mirrored.',
           concept: [
-            'The frame is everything: you are the prize.',
-            'Assume value, don\'t plead for it.',
-            'Their desire is a mirror, not a verdict.'
+            'People don\'t fall for you — they fall for themselves, seen through you.',
+            'The mirror pulls deeper than the spotlight.',
+            'To be unforgettable, reflect their hidden longing.',
+            'The greatest allure is not seen — it is reflected.'
           ],
+          teaching: 'People ache to be understood, but their deepest ache is to have their secret desires reflected back without judgment. Casanova knew: give them not you, but themselves. They will swear you are their soulmate, when in truth they are in love with their own reflection. This is the mirror\'s most intoxicating trick.',
           drill: Drill(
-            question: 'They compliment you: "You\'re really beautiful." How do you respond?',
+            question: 'They say: "I\'ve always wanted someone who understands me."',
             options: [
-              'Bow, blush, gush with thanks.',
-              'Tilt your head, let a smirk play. "I know. But it\'s refreshing to hear it from someone with refined taste."'
+              'I understand you.',
+              'Strange… I was about to say the same about you.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Rewrite this supplicant statement into one that positions you as the prize.',
-            input: 'I\'d be lucky to date someone like you.',
-            example: 'You strike me as someone who would thrive with me at their side.'
+            prompt: 'Transform this statement into one that mirrors their desire.',
+            input: 'You\'re beautiful.',
+            example: 'It\'s eerie… you feel like the person I\'ve been searching for without knowing it.'
           ),
-          reflection: 'Do you carry yourself as a supplicant begging for validation—or as the prize others are privileged to pursue?'
+          reflection: 'Do you try to impress with your identity, or mirror theirs? What would happen if you became the reflection of their deepest unspoken desire?'
         ),
       ),
     },
     2: {
       6: Lesson(
         id: 'seduction_2_6',
-        title: 'The Sixth Law — The Half-Open Door',
+        title: 'The Ice Mask',
         category: 'seduction',
         world: 2,
         lesson: 6,
         xp: 75,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Venice, 1528. Pietro Aretino, the scandalous poet, never tells the whole tale. His letters are riddles, his plays stop mid-thought. His audiences leave theatres aflame with questions, inventing endings in their own minds. Aretino understood: the seducer never finishes the story—he lets desire write its own sequel. To leave a door ajar is to invite the imagination inside.',
+          hook: 'Vienna, 1815. At the Congress of Vienna, Metternich sits among kings. He smiles politely, never warmly. He answers questions, but reveals nothing. The French rage, the Prussians boast, the Russians plot. Metternich listens with a mask of calm neutrality. Days later, every faction has exposed its secrets trying to break his silence. The man who gave nothing gained everything.',
           concept: [
-            'Minds crave completion. An unfinished gesture is more haunting than a finished one.',
-            'Suggestion breeds obsession; revelation kills it.',
-            'The half-open door is more seductive than the throne room wide open.'
+            'The blank mask provokes projection.',
+            'What you don\'t reveal cannot be attacked.',
+            'Social neutrality is misread as superiority.',
+            'The less you show, the more others show.'
           ],
+          teaching: 'Humans cannot bear a void. When you reveal nothing, others project, confess, and compete to break your neutrality. They give themselves away. The one who speaks least often controls the most. The Ice Mask is not coldness — it is the throne built from restraint.',
           drill: Drill(
-            question: 'They ask: "So what happened next?" What do you do?',
+            question: 'At a party, asked: "So, what do you do?"',
             options: [
-              'Finish the tale, tidy and whole.',
-              'Leave them suspended in silence. "Some nights shouldn\'t be spoken of. They should be remembered the way they burn."'
+              'Spill details.',
+              'Enough to keep life interesting. What about you?'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Rewrite this complete statement into one that leaves the story unfinished and mysterious.',
-            input: 'I once had my heart broken. It was painful.',
-            example: 'That summer by the sea… some storms leave you wetter than the rain.'
+            prompt: 'Transform this statement into one that maintains mystery.',
+            input: 'I love talking about myself.',
+            example: 'Guess. I\'m curious what picture I give off.'
           ),
-          reflection: 'Do you insist on final chapters? Or do you let them wander forever in the corridors of what you might have meant?'
+          reflection: 'Do you rush to reveal yourself? Or could you let silence do the revealing for you?'
         ),
       ),
       7: Lesson(
         id: 'seduction_2_7',
-        title: 'The Seventh Law — The Feather and the Knife',
+        title: 'Deliberate Distance',
         category: 'seduction',
         world: 2,
         lesson: 7,
         xp: 75,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Kyoto, 1776. A geisha pours sake with one hand and slices a glance with the other. Her laughter warms; her silence chills. One samurai suitor leaves with his chest swelling from her praise; the next leaves gutted by her indifference. The power lies not in kindness, nor in cruelty—but in the oscillation between the two. The heart addicted to warmth craves it most when it fears frost.',
+          hook: 'Fashion Week, 1995. Anna Wintour never roams the room. She sits still, sunglasses on. Others orbit her like moons. She offers three minutes of attention, then turns away. The distance is deliberate. The effort required to reach her makes her presence gravitational.',
           concept: [
-            'Desire is thermodynamic—built on contrast, not consistency.',
-            'Warmth without the shadow of cold is meaningless.',
-            'The seducer designs the climate, not merely reacts to it.'
+            'Chasing lowers status; being sought creates it.',
+            'Distance is gravity.',
+            'The pursued always controls the pursuit.',
+            'Access becomes value when it is earned, not offered.'
           ],
+          teaching: 'We crave what we must work for. The one who approaches less forces others to approach more. By setting deliberate distance, you make every step toward you feel like an achievement. You don\'t have to chase — gravity pulls.',
           drill: Drill(
-            question: 'They text in the morning, glowing from last night\'s connection. What do you do?',
+            question: 'At an event:',
             options: [
-              'Mirror the glow, keep the warmth steady.',
-              'Withhold. Hours later, offer something oblique. "Saw a crow this morning with eyes too human. It reminded me of you."'
+              'Rush to meet everyone.',
+              'Stand still, observing. Let them come to you.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Rewrite this eager statement into one that creates contrast and tension.',
-            input: 'Last night was amazing, I want more.',
-            example: 'You disrupted my schedule. I\'ll forgive you only if it happens again.'
+            prompt: 'Transform this statement into one that creates distance.',
+            input: 'I just had to come talk to you!',
+            example: 'You looked like the only person worth meeting here.'
           ),
-          reflection: 'Do you leave them basking in endless sunlight, or do you remind them the night can always fall?'
+          reflection: 'Do you chase attention, or let gravity work for you?'
         ),
       ),
       8: Lesson(
         id: 'seduction_2_8',
-        title: 'The Eighth Law — The Mirror in Their Chest',
+        title: 'Rare Attention',
         category: 'seduction',
         world: 2,
         lesson: 8,
         xp: 75,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Paris, 1847. Balzac observes: lovers don\'t fall for each other—they fall for themselves, reflected in each other\'s eyes. The master seducer doesn\'t shine light; he becomes a mirror. He listens with predator\'s patience, then offers back a fragment of their soul, polished, brighter, more intoxicating. Nothing binds tighter than being seen—not as you are, but as you wish to be.',
+          hook: 'Florence, 1500s. Michelangelo kept popes waiting. He denied commissions from princes. His rare "yes" was worth more than a hundred other men\'s work. By rationing his attention, he transformed from artisan into untouchable genius. His absence built demand stronger than his presence ever could.',
           concept: [
-            'People love themselves first. Reflect that image and they\'ll mistake it for love.',
-            'Listening is not passive; it is surveillance for leverage.',
-            'The mirror is a trap—they are dazzled by their own reflection, not by you.'
+            'What everyone gets is worthless; what few get is priceless.',
+            'Scarcity multiplies interest.',
+            'Attention is a throne — give it rarely, and it rules.',
+            'The rarest "yes" is remembered longer than countless approvals.'
           ],
+          teaching: 'Humans inflate the value of rarity. If your attention is always available, it cheapens. But when you ration your presence, people fight for it, exaggerate it, and worship it. Scarcity forces imagination to do your work for you.',
           drill: Drill(
-            question: 'They say: "I love how adventurous I am." How do you respond?',
+            question: 'They text: "Want to hang out?"',
             options: [
-              'Yeah, you\'re really adventurous.',
-              'Adventurous is too small a word. You move like someone who\'s always one step ahead of the map.'
+              'Sure, I\'m free anytime.',
+              'Possibly. Thursday\'s the only window.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Rewrite this simple compliment into one that reflects their self-image back to them.',
-            input: 'You\'re so funny.',
-            example: 'You remind me of a blade wrapped in silk. People laugh, but I know they should be cautious.'
+            prompt: 'Transform this statement into one that creates scarcity.',
+            input: 'Yes, I\'m always around.',
+            example: 'One window this week. Make it count.'
           ),
-          reflection: 'Do you impose yourself on them—or do you reflect them so perfectly they drown in their own brilliance?'
+          reflection: 'Where do you flood your attention until it\'s invisible? How could making it rare transform it into gold?'
         ),
       ),
       9: Lesson(
         id: 'seduction_2_9',
-        title: 'The Ninth Law — The Scarcity of Touch',
+        title: 'Social Freezing',
         category: 'seduction',
         world: 2,
         lesson: 9,
         xp: 75,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Naples, 1610. Caravaggio paints with shadow, leaving half his canvas in darkness. The light is precious because it is rare. So too with touch. The seducer understands: hands are instruments of worship or devastation, but only when seldom used. Touch too freely and you are a tavern drunk. Touch rarely, and you become a priest of the body.',
+          hook: 'London, 1980s. A courtier jokes out of turn to Queen Elizabeth II. She does not scold. She simply cools. Her smile fades to politeness, her replies shorten, her eyes harden. The offender feels the temperature drop. They crave her warmth again, desperate to repair what they broke. The freeze was punishment enough.',
           concept: [
-            'Scarcity turns a brush of skin into a coronation.',
-            'The memory of one touch lasts longer than the indulgence of many.',
-            'To withhold is to carve longing into the flesh itself.'
+            'Warmth is addictive; its removal is torture.',
+            'Silence punishes deeper than correction.',
+            'Withholding warmth bends behavior faster than lectures.',
+            'The chill forces craving for heat.'
           ],
+          teaching: 'Humans are wired to chase social warmth. When it vanishes without explanation, the brain panics, replaying the mistake. This discomfort is sharper than argument. Freezing someone out forces them to self-correct to thaw the ice.',
           drill: Drill(
-            question: 'They lean close, expecting your hand on theirs. What do you do?',
+            question: 'They make a crude joke.',
             options: [
-              'Take it instantly. Gratify the hunger.',
-              'Let the moment hang. Then, graze one finger across their wrist—withdraw as if you sinned.'
+              'Laugh nervously, explain.',
+              'Fall silent. Cold glance. Turn away.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Rewrite this eager statement into one that creates scarcity around touch.',
-            input: 'I want to hold you all night.',
-            example: 'Your skin feels like something I shouldn\'t touch twice in one lifetime.'
+            prompt: 'Transform this statement into one that uses social freezing.',
+            input: 'Don\'t say that.',
+            example: 'Pause. Neutral look. Continue as if it wasn\'t said.'
           ),
-          reflection: 'Are your hands cheap merchants, selling themselves everywhere? Or do they deliver relics that people dream of years later?'
+          reflection: 'Do you waste energy correcting when coldness would punish deeper?'
         ),
       ),
       10: Lesson(
         id: 'seduction_2_10',
-        title: 'The Tenth Law — The Sting in the Honey',
+        title: 'Cold Humor',
         category: 'seduction',
         world: 2,
         lesson: 10,
         xp: 75,
         content: LessonContent(
-          hook: 'Baghdad, 1258. In the court of the Caliph, a concubine sings sweet verses into a poet\'s ear. Then, with a sudden laugh, she mocks his clumsy sandals before vanishing into the harem. He spends the night feverish—was she cruel or kind? Both. He doesn\'t realize: her honey needed the sting. Pure sweetness suffocates; venom revives.',
+          hook: 'Parliament, 1980s. An opponent sneers: "The Right Honourable Lady is heartless." Margaret Thatcher doesn\'t argue. She cuts: "Interesting… someone who\'s never created a job presumes to lecture me on caring for workers." The chamber erupts. He is finished. Cold humor destroyed him more than fury ever could.',
           concept: [
-            'Seduction is not kindness; it is tension.',
-            'Praise too much and you bore them. Cut them once, and they bleed into your hands.',
-            'Honey without venom is a lullaby. Venom without honey is cruelty. Together—they are addiction.'
+            'Warm humor bonds; cold humor dominates.',
+            'Wit is a scalpel — cut with precision.',
+            'Ridicule silences faster than logic.',
+            'A sharp tongue is sharper than a sword.'
           ],
-                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
+          teaching: 'Humans fear humiliation more than pain. Cold humor makes the attacker their own punchline. Unlike warm jokes, it doesn\'t unite — it divides, it wounds, it establishes hierarchy. One cutting line can end an argument forever.',
           drill: Drill(
-            question: 'They boast: "Everyone loves me." What do you say?',
+            question: 'They mock: "You think you\'re so smart."',
             options: [
-              'Of course they do! You\'re perfect.',
-              'Smile slow. "Everyone? Then why are you working so hard for just one pair of eyes?"'
+              'Laugh it off.',
+              'I don\'t think it. I just notice the contrast.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Rewrite this fawning statement into one that mixes praise with a subtle sting.',
-            input: 'You\'re so amazing, I admire you.',
-            example: 'You\'re extraordinary—but I can\'t decide if it\'s brilliance or a beautiful disguise.'
+            prompt: 'Transform this statement into one that uses cold humor.',
+            input: 'Stop making fun of me.',
+            example: 'I\'d answer, but I don\'t spar beneath my weight class.'
           ),
-          reflection: 'Do you overdose them with sugar until they forget you, or do you lace it with poison so they never recover?'
+          reflection: 'Do you use humor to please, or to rule? Where could a scalpel of wit replace defense with dominance?'
         ),
       ),
     },
     3: {
       11: Lesson(
         id: 'seduction_3_11',
-        title: 'The Spider\'s Stillness',
+        title: 'The Freeze-Out',
         category: 'seduction',
         world: 3,
         lesson: 11,
         xp: 100,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Istanbul, 1555. Roxelana, once a slave, now queen beside Suleiman the Magnificent, does not storm her rivals. She waits. Her enemies exhaust themselves in gossip and maneuvering, while she sits silent, weaving. By the time they realize the threads surround them, it is too late. Seduction is not only motion—it is the weaponization of stillness.',
+          hook: 'Hollywood, 1950s. A studio chief didn\'t scream at actors who betrayed him. He erased them. Their names disappeared from call sheets. Invitations dried up. Rooms fell silent when they entered. Alive, but socially gone. They begged for anger, for a fight, anything but the suffocating void. Nothing is more terrifying than absence.',
           concept: [
-            'Patience is a blade sharper than impulse.',
-            'Stillness magnifies presence. When you do move, the world shakes.',
-            'In silence, others reveal themselves, desperate to fill the void.'
+            'Conflict feeds connection; absence severs it.',
+            'Attention, even negative, is nourishment.',
+            'Silence is starvation.',
+            'Absence is exile without words.'
           ],
+          teaching: 'People will fight, argue, even accept punishment — as long as it keeps them in your orbit. But when you remove yourself entirely, you deny them the oxygen of recognition. No argument, no closure, no catharsis — just absence. The freeze-out is annihilation disguised as silence.',
           drill: Drill(
-            question: 'They press you for an answer: "Do you like me or not?" What do you do?',
+            question: 'They betray your trust.',
             options: [
-              'Rush to confess.',
-              'A pause. A slow smile. "You\'re impatient. That tells me more than any answer could."'
+              'Confront, argue, demand.',
+              'Remove. Block. Erase.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Rewrite this direct confession into one that creates mystery and power.',
-            input: 'Yes, I like you.',
-            example: 'If I didn\'t, you wouldn\'t be standing this close to the web.'
+            prompt: 'Transform this statement into one that uses the freeze-out technique.',
+            input: 'I\'m done with you.',
+            example: 'No response at all — the void speaks louder.'
           ),
-          reflection: 'Do you rush to declare yourself—or let others tangle themselves in the silence you spin?'
+          reflection: 'Do you keep feeding people with attention? Where could absence cut deeper than confrontation?'
         ),
       ),
       12: Lesson(
         id: 'seduction_3_12',
-        title: 'The Coiled Serpent',
+        title: 'Selective Engagement',
         category: 'seduction',
         world: 3,
         lesson: 12,
-        xp: 50,
+        xp: 100,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Rome, 47 BC. Cleopatra enters rolled in a carpet, unveiled at Caesar\'s feet. She coils around him—not with words, but with timing. She strikes not with constant attention, but sudden, unforgettable gestures. The serpent does not chase—it waits, coils, then strikes once, and the prey never forgets.',
+          hook: 'Silicon Valley, 2000s. A CEO scans ten executives. One receives her full gaze, another a clipped nod, the rest — nothing. The ignored fidget, stumble, overcompensate. Her selective attention rearranges the room\'s hierarchy more brutally than any org chart. Those she anoints rise. Those she withholds from fade.',
           concept: [
-            'A single unforgettable move outweighs a hundred small ones.',
-            'Sudden intensity burns deeper than steady affection.',
-            'To strike rarely is to strike memorably.'
+            'Attention is a crown. Not all deserve it.',
+            'Unequal focus creates invisible ranks.',
+            'A glance can knight or exile.',
+            'The one who decides who matters becomes the axis of the room.'
           ],
+          teaching: 'Humans crave recognition more than wealth. Selective engagement weaponizes this craving. Equal attention makes you ordinary. But when your focus is rationed — when some bask in it while others are starved — you create a living hierarchy. People stop seeking truth. They seek your gaze.',
           drill: Drill(
-            question: 'They expect routine flattery. What do you do?',
+            question: 'In a group setting:',
             options: [
-              'You\'re beautiful every day.',
-              'Weeks of restraint. Then, suddenly, in a whisper: "Tonight, you look like you were carved to ruin kings."'
+              'Thanks everyone, great input.',
+              'Lock eyes with one: "That\'s sharp. Keep talking."'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Rewrite this constant compliment into one that creates sudden, memorable impact.',
-            input: 'You\'re always gorgeous.',
-            example: 'You walked in like a secret I\'ll never forgive myself for keeping.'
+            prompt: 'Transform this statement into one that uses selective engagement.',
+            input: 'I value everyone here.',
+            example: 'You — stay. The rest, we\'re done.'
           ),
-          reflection: 'Are you constant background noise, or the strike that leaves venom in their blood forever?'
+          reflection: 'Do you spread your attention like crumbs? Or do you crown selectively, forcing others to fight for it?'
         ),
       ),
       13: Lesson(
         id: 'seduction_3_13',
-        title: 'The Controlled Burn',
+        title: 'Strategic Mystery',
         category: 'seduction',
         world: 3,
         lesson: 13,
-        xp: 50,
+        xp: 100,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'London, 1813. Lord Byron seduces not with safety, but with danger. His lovers know he may vanish, betray, destroy—but that danger is the intoxication. Fire is beautiful because it might consume you. Seduction without risk is a hearth; seduction with danger is a wildfire.',
+          hook: 'Banksy sells art for millions yet walks unseen. No interviews, no face, no story. The less he reveals, the larger he becomes. Critics invent mythologies. Collectors fight for fragments. His invisibility is his aura. Concealment turned a street painter into a legend.',
           concept: [
-            'Safety comforts, but danger ensnares.',
-            'A hint of unpredictability keeps the pulse racing.',
-            'Never burn everything—burn just enough to make them fear the flames.'
+            'The unknown expands; the known shrinks.',
+            'Revealed men are men; concealed men are myths.',
+            'Mystery multiplies presence.',
+            'The shadow is larger than the figure.'
           ],
+          teaching: 'The human mind cannot resist filling blanks. Conceal one piece, and others will build you palaces of imagination. Reveal everything, and you collapse into the ordinary. Strategic mystery makes you more than human — it makes you legend. The concealed detail haunts longer than the revealed confession.',
           drill: Drill(
-            question: 'They ask: "Will you always be here?" What do you say?',
+            question: 'They press: "Tell me everything about you."',
             options: [
-              'Of course, forever.',
-              'I\'ll be here as long as it\'s worth burning for.'
+              'Overshare.',
+              'Not everything is for today.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Rewrite this safe promise into one that creates controlled danger and intrigue.',
-            input: 'Don\'t worry, I\'ll never hurt you.',
-            example: 'A fire doesn\'t apologize for its heat. It just teaches you how close you\'re willing to stand.'
+            prompt: 'Transform this statement into one that creates strategic mystery.',
+            input: 'Here\'s my whole life.',
+            example: 'Some chapters aren\'t for every reader.'
           ),
-          reflection: 'Do you promise safety and lull them to sleep—or do you ignite a fire that keeps them awake at night?'
+          reflection: 'Where are you shrinking by revealing too much? What part of yourself should remain legend, not explanation?'
         ),
       ),
       14: Lesson(
         id: 'seduction_3_14',
-        title: 'The Fox\'s Mask',
+        title: 'Cold Command',
         category: 'seduction',
         world: 3,
         lesson: 14,
-        xp: 50,
+        xp: 100,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Milan, 1498. Ludovico Sforza\'s mistress does not win him by honesty. She wins him with performance. To one man she is fragile, to another fierce, to another playful. Each swears they know the "real her." None do. The fox survives because it wears a thousand faces. Seduction is not authenticity—it is artistry.',
+          hook: 'WWII. General George S. Patton never begged men to follow. He didn\'t soften commands with smiles. His words were steel: direct, absolute, final. Soldiers didn\'t love him — but they obeyed him without hesitation. Cold clarity delivered victories where warm persuasion would have bred hesitation.',
           concept: [
-            'People don\'t want the truth; they want the truth that flatters their fantasy.',
-            'To wear a mask is not deception—it is adaptation.',
-            'The best mask is the one they beg you to keep wearing.'
+            'Authority diluted by affection is no authority at all.',
+            'Clarity is colder than charisma — and more feared.',
+            'Leaders who need love cannot rule.',
+            'Command creates obedience faster than suggestion.'
           ],
+          teaching: 'When leaders crave affection, they erode authority. People obey the one who speaks as if disobedience isn\'t possible. Cold command doesn\'t shout or cajole. It simply states reality so firmly that no other version exists. It is clarity carved into stone.',
           drill: Drill(
-            question: 'They ask: "Who are you, really?" What do you reveal?',
+            question: 'Your team misses a deadline.',
             options: [
-              'Spill your unvarnished self.',
-              'A low smile. "Whoever you need me to be tonight."'
+              'Guys, can we try to focus?',
+              'This is delivered tomorrow. No debate.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Rewrite this rigid self-declaration into one that suggests adaptability and mystery.',
-            input: 'This is just me, take it or leave it.',
-            example: 'I\'ve lived many lives. Which one are you hoping to meet?'
+            prompt: 'Transform this statement into one that uses cold command.',
+            input: 'Please finish this.',
+            example: 'By morning, this is finished. Questions only about execution.'
           ),
-          reflection: 'Do you cling to a rigid self—or do you shapeshift into the vision they\'re starving for?'
+          reflection: 'Do you lead to be liked, or to be obeyed? Where could cold clarity replace soft persuasion?'
         ),
       ),
       15: Lesson(
         id: 'seduction_3_15',
-        title: 'The Oracle\'s Shadow',
+        title: 'The Predator\'s Calm',
         category: 'seduction',
         world: 3,
         lesson: 15,
-        xp: 50,
+        xp: 100,
         content: LessonContent(
-          hook: 'Delphi, 440 BC. The Pythia breathes vapors, her words half-mad, half-divine. Kings tremble not because she tells the future, but because she speaks in riddles. The power is not in clarity, but in ambiguity that feels prophetic. A seducer who speaks like an oracle forces others to supply meaning—and in supplying it, they bind themselves.',
+          hook: 'The snow leopard waits. Hours. Days. Still, patient, inevitable. It does not chase frantically. It knows it will strike once, perfectly. Prey sense the calm — not hunger, but destiny. When the leopard finally moves, the hunt ends before it begins. Stillness is more terrifying than rage.',
           concept: [
-            'Mystery is more magnetic than certainty.',
-            'Ambiguity allows them to project their desires onto you.',
-            'Speak like prophecy, and they\'ll remember your words long after forgetting your face.'
+            'Desperation chases; power waits.',
+            'Stillness radiates inevitability.',
+            'Calm is louder than frenzy.',
+            'The predator\'s silence wins before the strike.'
           ],
-                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
+          teaching: 'Humans sense desperation like prey smell fear. The overeager suitor, the frantic salesman — both betray weakness. But the one who waits with calm, who radiates inevitability, terrifies. Calmness signals: I already know I will win. That certainty enslaves others long before the strike.',
           drill: Drill(
-            question: 'They ask: "Do you see a future with me?" What do you say?',
+            question: 'In negotiation:',
             options: [
-              'Yes, I want forever.',
-              'The future is a storm. But some storms are worth walking into.'
+              'Rush, pile on concessions.',
+              'State terms once. Wait. Silence does the rest.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Rewrite this plain answer into one that speaks like prophecy.',
-            input: 'I think we\'ll last.',
-            example: 'Some stories aren\'t measured in time, but in how deeply they cut.'
+            prompt: 'Transform this statement into one that uses the predator\'s calm.',
+            input: 'Please let\'s make this deal today.',
+            example: 'This is the deal. Time decides, not me.'
           ),
-          reflection: 'Do you answer plainly, and let interest die, or do you answer like prophecy, making them carry your riddle in their chest?'
+          reflection: 'Where do you bleed strength by rushing? What would change if you moved like the predator — inevitable, still, patient?'
         ),
       ),
     },
     4: {
       16: Lesson(
         id: 'seduction_4_16',
-        title: 'The Black Hole Effect',
+        title: 'The High Throne',
         category: 'seduction',
         world: 4,
         lesson: 16,
-        xp: 50,
+        xp: 125,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Vienna, 1895. A salon of intellects debates Freud\'s new theories. At the far end, a woman says nothing. She listens, her gaze unwavering. When she finally speaks, every voice dies. Her silence had already bent the room around her. When she spoke, she was the only one heard. She is the black hole: pulling attention, not by noise, but by gravity.',
+          hook: 'Versailles, 1685. Louis XIV rises with the dawn. Courtiers line up for hours just to watch him put on his shoes. They fight for the honor of pouring his wine. His true power wasn\'t the rituals, but the belief that he was untouchable. He acted as if majesty itself flowed through him — and others enforced that belief on his behalf.',
           concept: [
-            'The most magnetic presence is not loud—it is inevitable.',
-            'Silence bends orbit; when you do speak, it feels like revelation.',
-            'People are addicted not to your words, but to the force of being pulled toward you.'
+            'Majesty is belief enforced by others.',
+            'When you sit high, others kneel low.',
+            'Distance creates divinity.',
+            'Conviction crowns itself.'
           ],
+          teaching: 'People accept whatever reality you embody consistently. If you act as if your time, your presence, your space is sacred — others will enforce that sacredness for you. The High Throne isn\'t built of gold. It is built of unbreakable conviction.',
           drill: Drill(
-            question: 'In a group, conversation turns chaotic. What do you do?',
+            question: 'They treat you casually.',
             options: [
-              'Fight to be heard.',
-              'Stay still. Wait. Then speak once. The silence you create is louder than their shouting.'
+              'Laugh along, lower yourself.',
+              'Calmly: "Let\'s keep this professional."'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Rewrite this desperate plea into one that commands attention through presence.',
-            input: 'Hey, let me talk, I have a point too.',
-            example: 'Strange how everyone missed the obvious. (And then drop your line like prophecy).'
+            prompt: 'Transform this statement into one that commands the high throne.',
+            input: 'Don\'t disrespect me.',
+            example: 'My time is reserved for those who respect it. Are you one of them?'
           ),
-          reflection: 'Do you chase attention—or do you let attention collapse into you?'
+          reflection: 'Where do you let others treat you as ordinary? What would change if you sat on your own throne?'
         ),
       ),
       17: Lesson(
         id: 'seduction_4_17',
-        title: 'The Undertow',
+        title: 'Silent Punishment',
         category: 'seduction',
         world: 4,
         lesson: 17,
-        xp: 50,
+        xp: 125,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Havana, 1956. Hemingway sits at Floridita with a glass of rum. A woman beside him doesn\'t laugh loudly, doesn\'t flirt openly. She simply listens, eyes steady, letting silence stretch. He finds himself confessing more than he\'s ever told anyone. She never asked—she pulled. Like an undertow, unseen but irresistible, she drags secrets from him without lifting a hand.',
+          hook: 'Tokyo, 1980s. An employee disrupts harmony. He isn\'t scolded. He isn\'t fired. He is ignored. Conversations close when he enters. Invitations evaporate. The silence gnaws until he begs for inclusion. The absence hurts worse than public humiliation. He punishes himself — trying to claw his way back into warmth.',
           concept: [
-            'Attraction is not only push—it is pull.',
-            'A well-timed pause draws more than a thousand questions.',
-            'When people give you secrets, they give you pieces of their soul.'
+            'Words can be resisted. Silence cannot.',
+            'Exile is sharper than explanation.',
+            'The freeze makes them discipline themselves.',
+            'Absence is judgment no defense can fight.'
           ],
+          teaching: 'A lecture invites argument. Silence gives none. When warmth disappears, the brain spirals endlessly, replaying what went wrong. The ignored become their own jailers, punishing themselves harder than you ever could. Silent Punishment is power without risk.',
           drill: Drill(
-            question: 'They finish telling you about their day and glance expectantly. What do you do?',
+            question: 'They interrupt you.',
             options: [
-              'Cool! What else happened?',
-              'Quiet. Let silence stretch. Then softly: "That sounds like it mattered more than you\'re saying."'
+              'Stop cutting me off.',
+              'Withhold warmth. Short answers. Look elsewhere.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Rewrite this surface question into one that pulls deeper revelations.',
-            input: 'Tell me more about your work.',
-            example: 'I can hear the parts you\'re not saying.'
+            prompt: 'Transform this statement into one that uses silent punishment.',
+            input: 'Don\'t do that.',
+            example: 'Silence. Neutral stare. Return to your point.'
           ),
-          reflection: 'Do you surface-skate across people\'s words—or do you let them drown themselves in the depths of what they reveal to you?'
+          reflection: 'Where do you explain when silence would wound deeper?'
         ),
       ),
       18: Lesson(
         id: 'seduction_4_18',
-        title: 'The Slow Burn of Devotion',
+        title: 'Indifference to Praise & Insult',
         category: 'seduction',
         world: 4,
         lesson: 18,
-        xp: 50,
+        xp: 125,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Kyoto, 1600. A geisha plays shamisen under dim lantern light. She does not rush, does not overwhelm. Each note lingers, each glance lasts a heartbeat too long. Men leave her house not intoxicated by frenzy, but haunted by slow fire. She does not erupt—she smolders. And the ember she plants burns in their chest long after she is gone.',
+          hook: 'Rome, 161 AD. Marcus Aurelius receives news of victory and harsh criticism on the same day. He reacts to both identically: calm acknowledgment, then back to his journal. His advisors are baffled. Shouldn\'t he celebrate? Shouldn\'t he rage? But Marcus had transcended. Neither flattery nor insult could touch him. That indifference was his armor.',
           concept: [
-            'Seduction is not always lightning—it is ember.',
-            'Slow, deliberate attention engraves itself deeper than quick passion.',
-            'The long game binds people tighter than a sudden spark.'
+            'Praise and insult are chains of the same metal.',
+            'He who reacts is ruled.',
+            'Emotional independence is the final shield.',
+            'Indifference is invincibility.'
           ],
+          teaching: 'Most people are puppets pulled by words. Compliments inflate them, insults deflate them. But the one who treats both as irrelevant terrifies — because they cannot be bribed, baited, or broken. Indifference severs every string.',
           drill: Drill(
-            question: 'They look at you, waiting for a compliment. What do you give?',
+            question: 'They praise, then insult.',
             options: [
-              'You\'re stunning.',
-              'A pause. A low voice: "The longer I look, the harder it gets to look away."'
+              'Glow at praise, bristle at insult.',
+              'Same calm tone → "Thank you for sharing."'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Rewrite this simple compliment into one that creates lingering, slow-burning desire.',
-            input: 'I like your smile.',
-            example: 'Your smile doesn\'t leave. Even when you\'re gone, it lingers like smoke.'
+            prompt: 'Transform this statement into one that shows indifference.',
+            input: 'That means a lot! / That\'s unfair!',
+            example: 'Your words say more about you than about me.'
           ),
-          reflection: 'Are you a firework—brilliant and gone—or an ember that burns in their chest for years?'
+          reflection: 'Do you still dance for praise or flinch at insult? What would change if both became meaningless noise?'
         ),
       ),
       19: Lesson(
         id: 'seduction_4_19',
-        title: 'The Mirror of Desire',
+        title: 'Calculated Precision',
         category: 'seduction',
         world: 4,
         lesson: 19,
-        xp: 50,
+        xp: 125,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Venice, 1720. Casanova sits with a young noblewoman. He barely speaks of himself. Instead, every time she hints at her desires, he reflects them back—framed, elevated. She leaves convinced he is her soulmate. In truth, she fell in love with her own reflection in his eyes. The greatest seducers don\'t seduce you—they make you seduce yourself.',
+          hook: 'Versailles, 1670s. A courtier betrays Madame de Maintenon. At the next gathering, she remarks, "How curious that some mistake private conversations for public entertainment." She names no one, but everyone knows. His reputation shatters. Her response was surgical: calm, precise, impossible to accuse.',
           concept: [
-            'People are most enchanted when they see themselves reflected beautifully.',
-            'To mirror is not to mimic—it is to exalt.',
-            'Give them back their own desire, but painted in gold.'
+            'Hot revenge exposes weakness; calm precision terrifies.',
+            'Precision is more feared than rage.',
+            'Damage that looks rational cannot be punished.',
+            'The scalpel cuts deeper than the axe.'
           ],
+          teaching: 'People expect rage. They brace for shouting. But calm consequences, dressed as reason, cut deeper. The target cannot protest without exposing themselves. Precision wounds reputation, not just feelings. It is judgment disguised as fairness.',
           drill: Drill(
-            question: 'They say: "I want someone adventurous." What do you reflect back?',
+            question: 'They betray you.',
             options: [
-              'Me too, I love adventure.',
-              'I can already tell—your soul doesn\'t belong in safe places.'
+              'Explode with rage.',
+              'Coolly: "Trust is rarer than gold. Some spend it too cheaply."'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Rewrite this simple agreement into one that reflects and elevates their desires.',
-            input: 'I like adventurous people.',
-            example: 'You look like the kind of person who would kiss lightning if it dared you.'
+            prompt: 'Transform this statement into one that uses calculated precision.',
+            input: 'How dare you do this to me!',
+            example: 'I should\'ve known you\'d trade loyalty for attention.'
           ),
-          reflection: 'Do you try to impress—or do you reflect their hidden longings until they\'re convinced you are their answer?'
+          reflection: 'Do you punish with emotion, or with precision? Where could subtle consequence cut sharper than fury?'
         ),
       ),
       20: Lesson(
         id: 'seduction_4_20',
-        title: 'The Gravity Cannot Be Resisted',
+        title: 'Cold Majesty',
         category: 'seduction',
         world: 4,
         lesson: 20,
-        xp: 50,
-        content: LessonContent(
-          hook: 'Pisa, 1589. Galileo drops two spheres from the Leaning Tower. They fall at the same speed, proving gravity spares none. Seduction at its peak is not persuasion. It is inevitability. When the force is real, they cannot resist. They don\'t choose you. They fall.',
-          concept: [
-            'True seduction does not argue—it makes refusal impossible.',
-            'Gravity works in silence. It doesn\'t convince; it compels.',
-            'The highest art is to become the force they orbit, the law they cannot break.'
-          ],
-                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          drill: Drill(
-            question: 'They protest: "I shouldn\'t want this." What do you say?',
-            options: [
-              'Please, give me a chance.',
-              'A quiet murmur. "You already do. Fighting it only proves how strong it is."'
-            ],
-            answerIndex: 1
-          ),
-          rewrite: RewriteTask(
-            prompt: 'Rewrite this begging plea into one that speaks with the authority of natural law.',
-            input: 'Please choose me.',
-            example: 'This isn\'t choice—it\'s law.'
-          ),
-          reflection: 'Do you beg to be wanted—or do you become the force of nature they cannot resist, no matter how they try?'
-        ),
-      ),
-    },
-  },
-  'gravity': {
-    1: {
-      1: Lesson(
-        id: 'gravity_1_1',
-        title: 'The Temperature of Authority',
-        category: 'gravity',
-        world: 1,
-        lesson: 1,
-        xp: 50,
-        content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Moscow, 1945. Stalin walks into the war room, and though his body is frail, the air freezes. He speaks only once in the meeting. One sentence. Then silence. Generals argue for hours around his absence of words, every man terrified to be the one Stalin finally interrupts. When he does, he does not raise his voice. He only says: "Enough." It lands harder than a firing squad. True authority is not heat — it is temperature control. Composure makes others burn themselves alive trying to melt you.',
-          concept: [
-            'Heat pleads. Composure commands. The one who stays steady when others beg reveals themselves as the natural center.',
-            'Silence is a weapon sharper than interruption. A pause can make others trip over themselves to fill it.',
-            'Composed Authority is not suppression. It is restraint. It is an aura that says: "I do not need this moment. You do."'
-          ],
-          drill: Drill(
-            question: 'At your next meeting, social event, or gathering: Do not rush to speak. Let silence fall. Watch who breaks first. When you do speak, deliver half the words you normally would. Measured, slow. Observe how the weight of your voice doubles when it emerges from stillness.',
-            options: [
-              'Fill every silence immediately to avoid awkwardness.',
-              'Let silence fall. Speak only when necessary, with measured words.'
-            ],
-            answerIndex: 1
-          ),
-          rewrite: RewriteTask(
-            prompt: 'Take this: "I totally agree, let me explain why." Forge it into something more composed and authoritative.',
-            input: 'I totally agree, let me explain why.',
-            example: 'That\'s enough. I\'ve heard what I need.'
-          ),
-          reflection: 'Do you fill silence to ease your discomfort — or do you let it crown you? When was the last time you spoke like every word was a blade?'
-        ),
-      ),
-      2: Lesson(
-        id: 'gravity_1_2',
-        title: 'The Luxury of Distance',
-        category: 'gravity',
-        world: 1,
-        lesson: 2,
-        xp: 50,
-        content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'The French Riviera, 1961. Alain Delon leans against the balcony rail, a cigarette loose between his fingers. The party hums behind him, desperate to pull him back into its current. But he doesn\'t chase. He drifts. He lets them orbit him like moons to a planet that doesn\'t even notice its own gravity. Some people attract by attention; Delon attracted by distance. The closer they wanted him, the further he leaned back. Desire is not always heat — sometimes it is the frost on glass you cannot touch.',
-          concept: [
-            'Rarity = Value. The less of you people can access, the more they crave entry.',
-            'Withholding is not rejection. It is invitation sharpened into obsession.',
-            'Composed Authority is luxury. You are the silk cord, not the begging hand.'
-          ],
-          drill: Drill(
-            question: 'Leave one message unanswered for 24 hours. At a gathering, step outside alone for five minutes when the energy peaks. Return like you never left. Watch how absence re-ignites their chase.',
-            options: [
-              'Always respond immediately to maintain connection.',
-              'Create strategic distance to increase your value and mystery.'
-            ],
-            answerIndex: 1
-          ),
-          rewrite: RewriteTask(
-            prompt: 'Take this: "I miss you so much, when can I see you again?" Forge it into something more composed and distant.',
-            input: 'I miss you so much, when can I see you again?',
-            example: 'I\'ve been enjoying my quiet. We\'ll see if you\'re worth breaking it.'
-          ),
-          reflection: 'Are you a firework — dazzling, then gone — or are you the northern star, composed, distant, always craved but never caught?'
-        ),
-      ),
-      3: Lesson(
-        id: 'gravity_1_3',
-        title: 'The Glacier\'s Pace',
-        category: 'gravity',
-        world: 1,
-        lesson: 3,
-        xp: 50,
-        content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Tokyo, 1980s. Yakuza boss Kazuo Taoka is surrounded by chaos. Deals collapse, rivals circle, tempers flare. He sips his tea. No rush. When he finally nods, an entire room of killers breathes again. His timing is glacial, but glaciers carve valleys and crush empires. Power is not shown in speed; it is revealed in patience. The person who never hurries makes the world walk at their pace.',
-          concept: [
-            'Urgency is weakness. The one who must decide now is already enslaved.',
-            'Patience is terror. The longer you wait, the more they imagine the storm you\'re holding back.',
-            'Composed Authority is inevitability. Like a glacier, you may be slow — but you are unstoppable.'
-          ],
-          drill: Drill(
-            question: 'When pressured for a quick answer, say: "I\'ll let you know tomorrow." Practice waiting 10 full seconds before replying in tense conversations. Watch how their anxiety grows in your silence.',
-            options: [
-              'Respond immediately to show efficiency and care.',
-              'Take your time. Let others wait and wonder about your decision.'
-            ],
-            answerIndex: 1
-          ),
-          rewrite: RewriteTask(
-            prompt: 'Take this: "Yes, yes, fine, let\'s do it." Forge it into something more composed and deliberate.',
-            input: 'Yes, yes, fine, let\'s do it.',
-            example: 'Not yet. I\'ll decide when it\'s time.'
-          ),
-          reflection: 'Are you the hunted, panting to keep up? Or are you the glacier — slow, composed, inevitable, carving history while others crumble?'
-        ),
-      ),
-      4: Lesson(
-        id: 'gravity_1_4',
-        title: 'The Discipline of Composure',
-        category: 'gravity',
-        world: 1,
-        lesson: 4,
-        xp: 50,
-        content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Sparta, 480 BC. The Persian envoy mocks Leonidas, offering riches if he kneels. Leonidas doesn\'t move. He doesn\'t shout. He doesn\'t threaten. He only smirks and says: "Come and take them." His men cheer not because of his rage, but because of his unshakable stillness. Composed Authority is discipline made flesh. It is refusing to flinch, even when the blade touches your throat.',
-          concept: [
-            'Control of the self is control of the room. Panic spreads. So does composure.',
-            'A steady face is a weapon. It makes your enemies doubt, your allies believe.',
-            'Composed Authority is not suppression — it is sculpted restraint.'
-          ],
-          drill: Drill(
-            question: 'Practice holding a neutral face when insulted. Count to three before responding to any provocation. Never let them see the crack. Let them wonder what\'s behind the composure.',
-            options: [
-              'React immediately to show you\'re not a pushover.',
-              'Maintain composure. Let others wonder what you\'re thinking.'
-            ],
-            answerIndex: 1
-          ),
-          rewrite: RewriteTask(
-            prompt: 'Take this: "How dare you say that to me?!" Forge it into something more composed and controlled.',
-            input: 'How dare you say that to me?!',
-            example: 'Interesting. I\'ll remember you said that.'
-          ),
-          reflection: 'Do you rule your emotions, or do your emotions rule you? Who has truly mastered the battlefield of the face?'
-        ),
-      ),
-      5: Lesson(
-        id: 'gravity_1_5',
-        title: 'The Crown of Indifference',
-        category: 'gravity',
-        world: 1,
-        lesson: 5,
-        xp: 50,
-        content: LessonContent(
-          hook: 'Harvard, 1962. A young senator named John F. Kennedy is mobbed after a speech. Dozens shout for his attention. He smiles faintly but never stops walking. He gives no one person his full gaze, yet all feel brushed by his aura. The secret? He wore indifference like a crown. The crowd didn\'t want his words — they wanted to matter to him. Indifference is not neglect. It is throne-room psychology. It makes others kneel just for the hope of recognition.',
-          concept: [
-            'Attention is oxygen. Starve them, and they suffocate. Grant them a breath, and they worship you.',
-            'Composed Authority thrives on selective light. Let them live in shadow until you choose to shine.',
-            'Indifference is not cruelty. It is the crown you wear that keeps the masses beneath you.'
-          ],
-                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          drill: Drill(
-            question: 'Next time you walk into a crowded space, do not rush to greet anyone. Let them approach you first. Give three people less than they want, and one person just enough to feel special. Watch the hierarchy form around you.',
-            options: [
-              'Greet everyone warmly to show you\'re friendly and approachable.',
-              'Let others come to you. Be selective about who gets your full attention.'
-            ],
-            answerIndex: 1
-          ),
-          rewrite: RewriteTask(
-            prompt: 'Take this: "It\'s so great to see you! I\'ve missed you!" Forge it into something more composed and indifferent.',
-            input: 'It\'s so great to see you! I\'ve missed you!',
-            example: 'I noticed you. That\'s enough for tonight.'
-          ),
-          reflection: 'Do you beg to be remembered, or do you sit so high that memory itself begs to hold you?'
-        ),
-      ),
-    },
-    2: {
-      6: Lesson(
-        id: 'gravity_2_6',
-        title: 'The Mask That Freezes Desire',
-        category: 'gravity',
-        world: 2,
-        lesson: 6,
-        xp: 75,
-        content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Versailles, 1775. Marie Antoinette enters the ballroom masked. Her smile is hidden. Her eyes unreadable. Every man wonders: is she amused? Bored? Angry? No one knows. That is the trap. The mask creates distance — and distance creates obsession. Composed Authority thrives on uncertainty. What is unseen burns hotter in the mind than what is revealed in the light.',
-          concept: [
-            'The mask is not deception — it is control. You reveal only what you choose.',
-            'Ambiguity enslaves the imagination. What they can\'t know, they must invent.',
-            'The unreadable face is stronger than the beautiful face. Beauty fades. Mystery multiplies.'
-          ],
-          drill: Drill(
-            question: 'Next time someone asks you a personal question, answer with something half-true, half-shadow. Practice smiling without showing teeth. Let them wonder what you\'re hiding.',
-            options: [
-              'Be completely honest and open about your thoughts and feelings.',
-              'Maintain some mystery. Let others wonder about your true thoughts.'
-            ],
-            answerIndex: 1
-          ),
-          rewrite: RewriteTask(
-            prompt: 'Take this: "I\'m so into you, I can\'t stop thinking about you." Forge it into something more mysterious and composed.',
-            input: 'I\'m so into you, I can\'t stop thinking about you.',
-            example: 'You\'ll never know exactly what I think when I look at you — and that\'s why you can\'t stop thinking of me.'
-          ),
-          reflection: 'Are you addicted to being understood — or addicted to being desired? Which one lasts longer?'
-        ),
-      ),
-      7: Lesson(
-        id: 'gravity_2_7',
-        title: 'The Frost of Absence',
-        category: 'gravity',
-        world: 2,
-        lesson: 7,
-        xp: 75,
-        content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Hollywood, 1955. James Dean doesn\'t show up to the party. He\'s the only one missing, yet every conversation circles back to him. "Where is he?" "Did you hear what he\'s doing?" His absence filled the room more than anyone\'s presence. Composed Authority teaches: sometimes not showing up is the loudest appearance you can make.',
-          concept: [
-            'Absence weaponizes curiosity. The less they see you, the more they imagine you.',
-            'Cold withdrawal increases value. Distance makes hearts restless.',
-            'Being scarce is more seductive than being available.'
-          ],
-          drill: Drill(
-            question: 'Cancel one non-essential plan this week. Let them feel your absence. Delete one post from your social feed. Let them miss your presence.',
-            options: [
-              'Always be available and present to maintain strong connections.',
-              'Create strategic absences to increase your value and mystery.'
-            ],
-            answerIndex: 1
-          ),
-          rewrite: RewriteTask(
-            prompt: 'Take this: "Sorry I couldn\'t make it last night." Forge it into something more composed and distant.',
-            input: 'Sorry I couldn\'t make it last night.',
-            example: 'I don\'t show up everywhere — only where it matters.'
-          ),
-          reflection: 'Do you exhaust people by being ever-present, or do you ignite them by being a rare fire they must chase?'
-        ),
-      ),
-      8: Lesson(
-        id: 'gravity_2_8',
-        title: 'The Gaze of Winter',
-        category: 'gravity',
-        world: 2,
-        lesson: 8,
-        xp: 75,
-        content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Berlin, 1936. Leni Riefenstahl stands behind the camera. She doesn\'t shout. She doesn\'t plead. She simply stares through the lens at her crew. The gaze alone commands them — icy, unblinking, eternal. A composed gaze says: "I see you, but I do not bend to you." It is more terrifying than a shout, more intoxicating than a kiss.',
-          concept: [
-            'The eyes are weapons. Composed Authority sharpens them into blades.',
-            'Look less often. But when you do, make it linger.',
-            'The gaze is not affection. It is dominion.'
-          ],
-          drill: Drill(
-            question: 'In your next conversation, look away more often than you look at them. When you finally do look at them, hold it a second longer than is comfortable.',
-            options: [
-              'Maintain constant eye contact to show interest and engagement.',
-              'Use strategic eye contact. Look away often, then hold their gaze when you do look.'
-            ],
-            answerIndex: 1
-          ),
-          rewrite: RewriteTask(
-            prompt: 'Take this: "You look amazing tonight." Forge it into something more composed and commanding.',
-            input: 'You look amazing tonight.',
-            example: 'Don\'t move. I want to remember you exactly like this.'
-          ),
-          reflection: 'Do you scatter your gaze like coins, or do you make it a jewel that others would kill to receive?'
-        ),
-      ),
-      9: Lesson(
-        id: 'gravity_2_9',
-        title: 'The Cold Shoulder of Kings',
-        category: 'gravity',
-        world: 2,
-        lesson: 9,
-        xp: 75,
-        content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Ancient Rome. A general kneels before Caesar, begging forgiveness. Caesar listens, expression unreadable. Then he turns his head and walks away without a word. The man collapses in tears. The cold shoulder is not indifference — it is annihilation. It forces the other to crawl for warmth that may never come.',
-          concept: [
-            'Cold rejection burns longer than hot anger.',
-            'Withdrawal is a verdict. When you deny attention, you deny existence.',
-            'Composed Authority doesn\'t scream "no." It whispers "nothing."'
-          ],
-          drill: Drill(
-            question: 'Next time someone offends you, give them no words. Only absence. Respond to minor disrespect with silence instead of defense.',
-            options: [
-              'Confront disrespect immediately to show you won\'t be pushed around.',
-              'Respond with strategic silence. Let your absence speak louder than words.'
-            ],
-            answerIndex: 1
-          ),
-          rewrite: RewriteTask(
-            prompt: 'Take this: "I don\'t like what you did." Forge it into something more composed and distant.',
-            input: 'I don\'t like what you did.',
-            example: 'You no longer have my attention.'
-          ),
-          reflection: 'Do you waste energy explaining yourself to those beneath you? Or do you let your silence pronounce the final judgment?'
-        ),
-      ),
-      10: Lesson(
-        id: 'gravity_2_10',
-        title: 'The Throne of Frost',
-        category: 'gravity',
-        world: 2,
-        lesson: 10,
-        xp: 75,
-        content: LessonContent(
-          hook: 'London, 1997. Princess Diana walks into a gala after her divorce. The world expected her broken, weeping. Instead, she is radiant — cool, untouchable, the embodiment of grace turned into defiance. The photographers swarm. The man who left her looks smaller than ever. Composed Authority is not the absence of emotion. It is the throne you sit on when the world wants you crawling.',
-          concept: [
-            'Composed Authority is elegance under fire. It makes your enemies look petty and your admirers look small.',
-            'Control your image — control your narrative. A calm face destroys gossip.',
-            'The throne of frost is built on dignity, not fury.'
-          ],
-                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          drill: Drill(
-            question: 'When someone hopes to see you break, walk in stronger, colder, more radiant. Turn heartbreak into spectacle. Let them see you thrive.',
-            options: [
-              'Show your vulnerability to build authentic connections.',
-              'Maintain composure even in difficult situations. Let your strength speak for itself.'
-            ],
-            answerIndex: 1
-          ),
-          rewrite: RewriteTask(
-            prompt: 'Take this: "You hurt me, but I\'ll be okay." Forge it into something more composed and powerful.',
-            input: 'You hurt me, but I\'ll be okay.',
-            example: 'You expected me shattered. Instead, I became untouchable.'
-          ),
-          reflection: 'Do you fall when they expect, or do you rise so composed and shining they wish they had never doubted you?'
-        ),
-      ),
-    },
-    3: {
-      11: Lesson(
-        id: 'gravity_3_11',
-        title: 'The Pause That Cuts Deeper Than Words',
-        category: 'gravity',
-        world: 3,
-        lesson: 11,
-        xp: 100,
-        content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Vienna, 1805. Beethoven is asked why he sometimes pauses for long stretches in his compositions. He smiles, tapping his temple: "Silence is the most powerful note." The audience leans in, desperate, waiting for the next sound. Composed Authority thrives on the pause. A moment of silence in speech or presence creates tension sharper than a blade.',
-          concept: [
-            'Silence is not absence — it is pressure.',
-            'Pauses make others chase your rhythm.',
-            'The one who speaks least always speaks loudest.'
-          ],
-          drill: Drill(
-            question: 'When telling a story, insert a deliberate pause before the climax. Watch them lean in. In argument, pause instead of rushing to defend yourself. Let the silence choke them.',
-            options: [
-              'Always respond immediately to maintain control of the conversation.',
-              'Use strategic pauses to create tension and force others to chase your rhythm.'
-            ],
-            answerIndex: 1
-          ),
-          rewrite: RewriteTask(
-            prompt: 'Take this: "I love being around you." Forge it into something that uses silence strategically.',
-            input: 'I love being around you.',
-            example: '…You notice how quiet it feels when you\'re not here?'
-          ),
-          reflection: 'Do you rush to fill the air, or do you command it so others drown in the silence you create?'
-        ),
-      ),
-      12: Lesson(
-        id: 'gravity_3_12',
-        title: 'The Icy Smile',
-        category: 'gravity',
-        world: 3,
-        lesson: 12,
-        xp: 100,
-        content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Moscow, 1945. Stalin is told of a betrayal. He doesn\'t rage. He doesn\'t shout. He smiles — a smile so calm, so cold, the traitor\'s knees buckle. A hot fury can be dismissed as weakness. A composed smile says: "I already own your fate."',
-          concept: [
-            'Smiles are not always warmth — they can be tools of control.',
-            'A composed smile signals certainty, not kindness.',
-            'Fear comes not from what you show, but what you don\'t.'
-          ],
-          drill: Drill(
-            question: 'Next time someone insults you, smile slowly instead of snapping back. In conversation, practice smiling without joy — let it radiate control, not kindness.',
-            options: [
-              'React immediately to show you won\'t be disrespected.',
-              'Respond with a slow, controlled smile that signals your certainty.'
-            ],
-            answerIndex: 1
-          ),
-          rewrite: RewriteTask(
-            prompt: 'Take this: "You\'ll regret crossing me." Forge it into something more composed and controlled.',
-            input: 'You\'ll regret crossing me.',
-            example: 'A slow smile. "We\'ll see."'
-          ),
-          reflection: 'Does your smile beg for approval, or does it freeze the room into silence?'
-        ),
-      ),
-      13: Lesson(
-        id: 'gravity_3_13',
-        title: 'The Temperature Drop',
-        category: 'gravity',
-        world: 3,
-        lesson: 13,
-        xp: 100,
-        content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Paris, 1920. Hemingway is laughing in a café, animated, alive. Then suddenly — silence. His face falls into stillness. His tone drops. Everyone at the table feels it: the room chills. This shift, sudden and deliberate, forces all attention back to him. Composed Authority knows that sudden stillness is as commanding as thunder.',
-          concept: [
-            'A change in temperature is more shocking than consistency.',
-            'Controlled stillness resets the dynamic.',
-            'The more composed you grow in a moment of heat, the more magnetic you become.'
-          ],
-          drill: Drill(
-            question: 'In heated debate, drop your voice instead of raising it. In flirtation, let laughter vanish into silence for one beat too long.',
-            options: [
-              'Match the energy of others to maintain connection.',
-              'Use sudden stillness to reset dynamics and command attention.'
-            ],
-            answerIndex: 1
-          ),
-          rewrite: RewriteTask(
-            prompt: 'Take this: "I\'m not joking now." Forge it into something that uses temperature shifts strategically.',
-            input: 'I\'m not joking now.',
-            example: 'Notice how the air just shifted? That\'s not by accident.'
-          ),
-          reflection: 'Are you predictable in your energy — or do you shock the room with sudden composure?'
-        ),
-      ),
-      14: Lesson(
-        id: 'gravity_3_14',
-        title: 'The Untouchable Calm',
-        category: 'gravity',
-        world: 3,
-        lesson: 14,
-        xp: 100,
-        content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Tokyo, 1600. A samurai stands surrounded by enemies. He does not unsheathe his blade. He simply breathes — steady, calm, eyes fixed. His stillness unnerves them more than any strike. Composed Authority is serenity in the storm. It makes the furious look foolish, the desperate look weak.',
-          concept: [
-            'Calm is more frightening than rage.',
-            'Composure is armor; it makes others question their own stability.',
-            'Composed stillness can unravel the strong faster than aggression.'
-          ],
-          drill: Drill(
-            question: 'Next time someone raises their voice, lower yours. Practice holding eye contact without any reaction, even under insult.',
-            options: [
-              'Match their intensity to show you\'re not intimidated.',
-              'Maintain composure and let your calm unsettle them.'
-            ],
-            answerIndex: 1
-          ),
-          rewrite: RewriteTask(
-            prompt: 'Take this: "Stop yelling at me." Forge it into something that uses calm as a weapon.',
-            input: 'Stop yelling at me.',
-            example: 'Are you finished? (uttered in complete calm).'
-          ),
-          reflection: 'Do you match the storm of others, or do you make them drown in their own noise?'
-        ),
-      ),
-      15: Lesson(
-        id: 'gravity_3_15',
-        title: 'The Art of Withdrawal',
-        category: 'gravity',
-        world: 3,
-        lesson: 15,
-        xp: 100,
-        content: LessonContent(
-          hook: 'New York, 1984. Madonna, mid-interview, is pressed with invasive questions. She smirks, stands, and walks away. The cameras keep rolling, but the interview is over. By leaving, she controls the narrative. By absence, she creates myth. Composed Authority is not only knowing when to appear, but when to vanish.',
-          concept: [
-            'Walking away is stronger than winning the argument.',
-            'Withdrawal creates demand. They must chase what they lost.',
-            'The exit is a weapon — use it.'
-          ],
-                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          drill: Drill(
-            question: 'End one conversation before they expect it. Leave them wanting more. In text, stop replying at the high point — let silence echo.',
-            options: [
-              'Stay engaged until the conversation naturally concludes.',
-              'End strategically when interest peaks, leaving them wanting more.'
-            ],
-            answerIndex: 1
-          ),
-          rewrite: RewriteTask(
-            prompt: 'Take this: "I\'m done with this." Forge it into something that uses withdrawal strategically.',
-            input: 'I\'m done with this.',
-            example: 'This conversation no longer interests me. Goodbye.'
-          ),
-          reflection: 'Do you cling until you lose value, or do you leave while the hunger is strongest?'
-        ),
-      ),
-    },
-    4: {
-      16: Lesson(
-        id: 'gravity_4_16',
-        title: 'The Stone Face',
-        category: 'gravity',
-        world: 4,
-        lesson: 16,
         xp: 125,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'London, 1890. Oscar Wilde delivers one of his cutting one-liners in a crowded salon. The room erupts with laughter — except for one man, seated across from him, who does not move, does not smile, does not blink. Wilde falters for the briefest second. Composed Authority thrives in the refusal to give recognition. The stone face unsettles more than any insult.',
+          hook: 'Mountains do not argue with storms. They remain, immovable. The rare person who reaches Cold Majesty is the same: they do not punish, they do not chase, they do not explain. Their presence alone bends the room. People defer without knowing why. Majesty is not acted — it radiates.',
           concept: [
-            'Laughter, smiles, nods — these are gifts. Withhold them.',
-            'Neutrality is power. The less emotion you show, the more others reveal.',
-            'Composure forces others to scramble for warmth.'
+            'True power is effortless.',
+            'Majesty is gravity, not motion.',
+            'The highest throne requires no defense.',
+            'Final dominance is not forced — it is accepted as law.'
           ],
+          teaching: 'At the final stage, presence stops being strategy. It becomes aura. Others lower their voices, adjust their behavior, offer respect without you lifting a finger. This is Cold Majesty: influence so natural it feels like physics. A mountain does not move. It makes others move around it.',
           drill: Drill(
-            question: 'When someone tries to impress you, resist giving approval. Let silence do the talking. In conflict, master the deadpan stare.',
+            question: 'You enter a hostile room.',
             options: [
-              'Show appreciation to encourage positive behavior.',
-              'Withhold approval strategically to maintain power and mystery.'
+              'Argue, prove yourself.',
+              'Sit calm, silent. Speak once. The room bends.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Take this: "That\'s funny." Forge it into something that uses the stone face technique.',
-            input: 'That\'s funny.',
-            example: 'A silent, unreadable look that forces them to question themselves.'
+            prompt: 'Transform this statement into one that commands cold majesty.',
+            input: 'Please respect me.',
+            example: 'Respect is not requested. It happens.'
           ),
-          reflection: 'Do you hand out validation like coins — or make them earn every flicker of expression?'
-        ),
-      ),
-      17: Lesson(
-        id: 'gravity_4_17',
-        title: 'The Freeze-Out',
-        category: 'gravity',
-        world: 4,
-        lesson: 17,
-        xp: 125,
-        content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Hollywood, 1950. Marilyn Monroe is being hounded at a party. A man won\'t stop trying to charm her. She turns her body away, greets someone else, laughs at another\'s joke. He doesn\'t exist anymore. His desperation grows; the more he fights for her attention, the more invisible she makes him. The freeze-out is the ultimate rejection without a word.',
-          concept: [
-            'Attention is currency. Cut it off and watch them starve.',
-            'Indifference wounds deeper than anger.',
-            'Composed Authority denies even the dignity of acknowledgment.'
-          ],
-          drill: Drill(
-            question: 'Next time someone presses too hard, give them nothing. Turn away. Speak to another. On text, leave the desperate unanswered.',
-            options: [
-              'Give everyone equal attention to be fair and kind.',
-              'Use strategic indifference to control who gets your attention.'
-            ],
-            answerIndex: 1
-          ),
-          rewrite: RewriteTask(
-            prompt: 'Take this: "Stop bothering me." Forge it into something that uses the freeze-out technique.',
-            input: 'Stop bothering me.',
-            example: 'The blank silence of someone who no longer even sees them.'
-          ),
-          reflection: 'Do you give attention to all who beg for it — or do you starve them until they wither?'
-        ),
-      ),
-      18: Lesson(
-        id: 'gravity_4_18',
-        title: 'The Frosted Compliment',
-        category: 'gravity',
-        world: 4,
-        lesson: 18,
-        xp: 125,
-        content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Florence, 1500. Machiavelli, when asked about a rival\'s talents, replies: "Yes, he is clever… for a child." Praise coated in frost burns deeper than insult. It gives with one hand and takes with the other, leaving them confused, insecure, desperate to prove themselves.',
-          concept: [
-            'Backhanded compliments destabilize more than criticism.',
-            'Ambiguity makes them crave clarity.',
-            'Composed Authority elevates, then cuts — leaving them hooked.'
-          ],
-          drill: Drill(
-            question: 'Compliment someone, then twist it. "You\'re confident… almost too confident." Offer faint praise with a blade hidden beneath.',
-            options: [
-              'Give genuine, unqualified compliments to build confidence.',
-              'Use strategic ambiguity to create insecurity and dependence.'
-            ],
-            answerIndex: 1
-          ),
-          rewrite: RewriteTask(
-            prompt: 'Take this: "You look nice." Forge it into something that uses the frosted compliment technique.',
-            input: 'You look nice.',
-            example: 'You almost look dangerous like that. Almost.'
-          ),
-          reflection: 'Do your words flatter — or do they freeze, leaving the other desperate to thaw them?'
-        ),
-      ),
-      19: Lesson(
-        id: 'gravity_4_19',
-        title: 'The Glacier Pace',
-        category: 'gravity',
-        world: 4,
-        lesson: 19,
-        xp: 125,
-        content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'New York, 1990. A Wall Street negotiator lets his rival rush through papers, demand answers, flood the room with energy. He speaks slowly, deliberately, checking each clause as though he has all the time in the world. By moving like a glacier, he forces the frantic man to drown in his own urgency. Composed Authority is time used as a weapon.',
-          concept: [
-            'Slow is terrifying when others are rushing.',
-            'Patience is domination disguised.',
-            'The slower you go, the more they reveal.'
-          ],
-          drill: Drill(
-            question: 'Next negotiation, don\'t rush to answer. Let seconds pass. Make them sweat. Walk slower into a room than anyone else.',
-            options: [
-              'Move efficiently to show respect for others\' time.',
-              'Use deliberate slowness to control the pace and unsettle others.'
-            ],
-            answerIndex: 1
-          ),
-          rewrite: RewriteTask(
-            prompt: 'Take this: "Let\'s finish quickly." Forge it into something that uses glacier pace strategically.',
-            input: 'Let\'s finish quickly.',
-            example: 'We\'ll finish when I decide it\'s finished.'
-          ),
-          reflection: 'Do you move at the world\'s pace, or do you make the world crawl at yours?'
-        ),
-      ),
-      20: Lesson(
-        id: 'gravity_4_20',
-        title: 'The Winter Crown',
-        category: 'gravity',
-        world: 4,
-        lesson: 20,
-        xp: 100,
-        content: LessonContent(
-          hook: 'Constantinople, 1453. As the city falls, the last Byzantine emperor, Constantine XI, removes his imperial regalia and calmly walks into battle, never to return. He dies not with panic, but with icy dignity. His calm became legend. This is the final crown of Composed Authority: to remain untouchable, even in ruin.',
-          concept: [
-            'Composed dignity is immortal.',
-            'Even defeat can be framed as majesty.',
-            'The final weapon is poise in the face of collapse.'
-          ],
-                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          drill: Drill(
-            question: 'Next time you lose — smile, nod, and thank them as if you\'ve given them a gift. In heartbreak, show serenity, not collapse.',
-            options: [
-              'Show your true emotions to build authentic connections.',
-              'Maintain composure even in defeat to preserve your dignity and power.'
-            ],
-            answerIndex: 1
-          ),
-          rewrite: RewriteTask(
-            prompt: 'Take this: "I can\'t live without you." Forge it into something that uses the winter crown technique.',
-            input: 'I can\'t live without you.',
-            example: 'You\'ll remember how calm I was when you left.'
-          ),
-          reflection: 'Do you collapse when the ice cracks — or do you wear the crown of composure until the end?'
+          reflection: 'What would it feel like to carry yourself as inevitable? How would people orbit you differently if your presence alone was law?'
         ),
       ),
     },
   },
   'frame': {
     1: {
-      1: const Lesson(
+      1: Lesson(
         id: 'frame_1_1',
-        title: 'The Weight of the First Word',
+        title: 'The Frame is Reality',
         category: 'frame',
         world: 1,
         lesson: 1,
         xp: 50,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'London, 1953. Winston Churchill is asked at a press conference if he fears losing relevance after stepping down as Prime Minister. The room chuckles, cameras flash. He raises his cigar, exhales deliberately, and only after silence reclaims the hall does he answer: "History will be kind to me—for I intend to write it." The insult collapses. The journalists laugh nervously, aware they are no longer observers but characters in his frame. He didn\'t argue. He didn\'t defend. He defined the reality.',
+          hook: 'Nuremberg Trials, 1946. Hermann Göring is accused of murder. The prosecutor calls him a criminal. Göring leans back: "Criminal? I was defending my nation. History is written by interpreters." For a moment, the room tilts. He is no longer defendant — he is narrator. Reality bent because he seized the frame.',
           concept: [
-            'Whoever speaks with composure first sets the tone.',
-            'Do not defend your frame; project it as reality.',
-            'The crowd instinctively sides with the one who appears to author the script.'
+            'Reality is not fact — it\'s interpretation.',
+            'Whoever defines the frame, defines the truth.',
+            'Accepting their frame is defeat before the fight.',
+            'A frame is the invisible lens through which words are judged.'
           ],
+          teaching: 'A frame is the invisible lens through which words are judged. If they call you "late," the frame is irresponsibility. If you reframe it as "I value depth over clocks," the same fact becomes power. People don\'t fight events; they fight meanings. See the frame — and redraw it.',
           drill: Drill(
-            question: 'Someone teases you: "Oh, you\'re always late, aren\'t you?" What do you say?',
+            question: 'They say: "You\'re being difficult."',
             options: [
-              'I know, sorry, I\'ll do better.',
-              'Fashionably late. I\'d hate to arrive before the mood does.'
+              'No, I\'m not.',
+              'I\'m being thorough. Excellence always feels difficult to the impatient.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this defensive statement into one that sets the frame.',
-            input: 'No, that\'s not true!',
-            example: 'Truth seems optional tonight. Shall we begin?'
+            prompt: 'Transform this statement into one that reframes the situation.',
+            input: 'You\'re always late.',
+            example: 'No — I arrive exactly when the conversation becomes worth having.'
           ),
-          reflection: 'When was the last time you defended yourself instead of defining the room? Whose script are you reciting—and when will you start writing your own?'
+          reflection: 'When did you last defend yourself inside someone else\'s story? How would life shift if you always rewrote the script instead?'
         ),
       ),
-      2: const Lesson(
+      2: Lesson(
         id: 'frame_1_2',
-        title: 'The Frame Belongs to the Calm',
+        title: 'Wit Jujitsu (Flipping Insults)',
         category: 'frame',
         world: 1,
         lesson: 2,
         xp: 50,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Hollywood, 1973. Marlon Brando walks on stage at the Academy Awards. He has sent a young Native American woman, Sacheen Littlefeather, to decline his Oscar on live television. The audience boos. She does not flinch. She doesn\'t shout back. She simply holds her silence until the room caves into discomfort. Her calm is heavier than their outrage. By the time she leaves, the boos have transformed into applause. Rage burned out; composure endured.',
+          hook: 'Parliament, 1946. Churchill is told: "You\'re drunk!" He raises his glass: "And you, madam, are ugly. But I shall be sober in the morning." The chamber erupts. The insult evaporates. He didn\'t defend — he inverted.',
           concept: [
-            'Emotional stillness is a fortress. The one who doesn\'t react defines reality.',
-            'Noise always tires itself out. Stillness endures.',
-            'A calm frame radiates inevitability—it feels like gravity.'
+            'Insults are traps: defense keeps you inside them.',
+            'Wit is jujitsu: their momentum becomes your strike.',
+            'The crowd remembers the laugh, not the attack.',
+            'To deny is to kneel. To reframe is to rise.'
           ],
+          teaching: 'To deny is to kneel. To reframe is to rise. A sharp line — humorous, ironic, absurd — destroys the sting and flips attention. The master never absorbs an insult; he redirects it into spectacle.',
           drill: Drill(
-            question: 'They accuse: "You\'re lying." How do you respond?',
+            question: 'They sneer: "You think you\'re clever."',
             options: [
-              'I swear I\'m telling the truth!',
-              'A pause. A slow smile. "Interesting that\'s where your mind went."'
+              'No, I don\'t.',
+              'Thank you. I was worried it wasn\'t obvious.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this defensive statement into one that maintains frame control.',
-            input: 'Calm down, I didn\'t mean it like that.',
-            example: 'You seem passionate. I admire commitment, even when it\'s misplaced.'
+            prompt: 'Transform this statement into one that uses wit jujitsu.',
+            input: 'You\'re arrogant.',
+            example: 'Confidently accurate. Easy to confuse the two.'
           ),
-          reflection: 'Do you let other people\'s storms pull you into their weather, or do you remain the climate they must adapt to?'
+          reflection: 'Do you collapse into defense when mocked — or do you turn mockery into the stage for your dominance?'
         ),
       ),
-      3: const Lesson(
+      3: Lesson(
         id: 'frame_1_3',
-        title: 'Delay is Domination',
+        title: 'The Higher Ground',
         category: 'frame',
         world: 1,
         lesson: 3,
         xp: 50,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Paris, 1927. Josephine Baker is swarmed by admirers after a performance. A wealthy patron demands her attention, insisting on an autograph. She takes the pen, studies him silently, then signs not his notebook, but the back of her own glove. She hands it to him without explanation. He is stunned—waiting for meaning, scrambling to interpret. Her delay in giving clarity turns a trivial signature into an artifact.',
+          hook: 'Versailles, 1783. Marie Antoinette is accused of draining France with her spending. She smiles serenely: "I don\'t waste — I remind the nation of its glory. Perhaps the true poverty lies not in my feasts, but in your failure to inspire celebration." She doesn\'t grovel — she ascends. The accusers shrink.',
           concept: [
-            'He who waits controls. The pause unsettles, stretches anticipation.',
-            'Delay magnifies perceived value. Scarcity + time = obsession.',
-            'Instant answers feel cheap. Delayed ones feel deliberate.'
+            'Fight in the mud and you\'re muddy, even if you win.',
+            'The higher ground makes critics look small.',
+            'Superiority is quiet, not loud.',
+            'Status is perception. Engaging petty attacks validates them.'
           ],
+          teaching: 'Status is perception. Engaging petty attacks validates them. Rising above — framing yourself as above the squabble — turns attackers into beggars. The higher ground is calm disdain dressed as elegance.',
           drill: Drill(
-            question: 'They text: "So, do you like me or not?" What do you do?',
+            question: 'They accuse: "You\'re selfish."',
             options: [
-              'Of course I do!',
-              'Wait an hour. Reply: "I\'m still deciding if you\'re my kind of chaos."'
+              'No, I\'m not!',
+              'If refusing gossip makes me selfish, I\'ll carry that crown.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this apologetic statement into one that uses delay strategically.',
-            input: 'Sorry for the late reply, I was busy.',
-            example: 'I respond when the words are worth sending. Tonight they are.'
+            prompt: 'Transform this statement into one that takes the higher ground.',
+            input: 'You\'re petty.',
+            example: 'Petty is fighting this. I prefer the higher ground.'
           ),
-          reflection: 'Do you rush to fill silence to ease your anxiety, or do you let others suffer in the suspense of your timing?'
+          reflection: 'Where do you let small conflicts drag you down? What would it feel like to make others climb to reach you instead?'
         ),
       ),
-      4: const Lesson(
+      4: Lesson(
         id: 'frame_1_4',
-        title: 'Ridicule is a Mirror',
+        title: 'Humor as Armor',
         category: 'frame',
         world: 1,
         lesson: 4,
         xp: 50,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'New York, 1960. Gore Vidal and Norman Mailer clash on live TV. Mailer mocks Vidal, sneering at his "softness." Vidal doesn\'t rise. He doesn\'t bark back. He tilts his head, sighs theatrically, and says: "Norman, once again you mistake volume for substance." The audience erupts. Mailer has ridiculed himself by swinging at air.',
+          hook: 'Tonight Show, 1962. Johnny Carson bombs a joke. The crowd freezes. He grins: "Well, that went over like a pregnant pole-vaulter." The room explodes. Failure turns to legend. Humor became armor.',
           concept: [
-            'Mockery is not met with defense—it is reflected back.',
-            'The fool is the one trying hardest to prove power.',
-            'A single elegant turn transforms ridicule into self-exposure.'
+            'Self-deprecation steals enemies\' weapons.',
+            'The joker is untouchable — flaws become punchlines.',
+            'Humor reframes weakness as charisma.',
+            'Laughter makes people forgive, trust, and admire.'
           ],
+          teaching: 'Laughter makes people forgive, trust, and admire. The moment you laugh at yourself, you become invincible — because no one can wound what you already claimed. Humor is the most elegant shield.',
           drill: Drill(
-            question: 'They say: "You\'re not as smart as you think." What do you say?',
+            question: 'They say: "You never take anything seriously!"',
             options: [
-              'Yes I am! Look at my…',
-              'And yet, here we are. You still can\'t stop listening.'
+              'Yes, I do.',
+              'Correct. I\'ve been practicing for my clown audition all week.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this defensive statement into one that reflects mockery back.',
-            input: 'Don\'t make fun of me.',
-            example: 'Careful—you\'re auditioning for my next anecdote.'
+            prompt: 'Transform this statement into one that uses humor as armor.',
+            input: 'You\'re weird.',
+            example: 'Thank you. It takes effort to stand out in a world obsessed with blending in.'
           ),
-          reflection: 'When mocked, do you become the clown who proves their insult true, or the mirror that makes them choke on their own joke?'
+          reflection: 'When do you armor yourself with defensiveness instead of laughter? How could humor turn pressure into magnetism?'
         ),
       ),
-      5: const Lesson(
+      5: Lesson(
         id: 'frame_1_5',
-        title: 'Authority Lives in Story',
+        title: 'Silence as a Weapon',
         category: 'frame',
         world: 1,
         lesson: 5,
         xp: 50,
         content: LessonContent(
-          hook: 'Silicon Valley, 2007. A journalist challenges Steve Jobs on the iPhone launch: "Why should anyone believe Apple can reinvent the phone?" Jobs doesn\'t list specs. He tells a story: "Every once in a while, a revolutionary product comes along that changes everything." Then he holds up the device like a priest lifting a relic. He doesn\'t argue. He narrates destiny. The crowd doesn\'t just listen; they believe.',
+          hook: 'Senate Hearings, 1954. McCarthy hurls accusations. The witness says nothing. Ten seconds. Thirty. The silence grows unbearable. McCarthy stumbles, voice cracks, rage looks desperate. Finally, the witness whispers: "Are you finished?" Silence destroyed him more than argument ever could.',
           concept: [
-            'Authority doesn\'t defend itself with facts—it wraps reality in narrative.',
-            'Stories bypass logic; they implant inevitability.',
-            'When you tell the story, you own the script.'
+            'Silence is not absence — it\'s dominance.',
+            'The one who holds silence controls rhythm.',
+            'Words fill space; silence makes others drown in it.',
+            'Most people fear silence. They rush to fill it, exposing their nerves.'
           ],
-                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
+          teaching: 'Most people fear silence. They rush to fill it, exposing their nerves. But if you master silence, you radiate unshakable authority. Every pause adds gravity to your words. Silence is the heaviest sound in any room.',
           drill: Drill(
-            question: 'They say: "Prove it." What do you do?',
+            question: 'They demand: "Explain yourself now!"',
             options: [
-              'Rattle off evidence.',
-              'Evidence? Once, someone said the same thing to me. They regretted it.'
+              'I can explain—',
+              '[5-second pause. Calm gaze.] "When you\'re ready to listen, I\'ll speak."'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this statement into one that uses narrative authority.',
-            input: 'Trust me, I know what I\'m doing.',
-            example: 'This isn\'t my first revolution. But it may be yours.'
+            prompt: 'Transform this statement into one that uses silence as a weapon.',
+            input: 'You don\'t care.',
+            example: '[Steady pause.] "Done?"'
           ),
-          reflection: 'Do you argue in bullet points like a salesman, or do you paint worlds where disbelief cannot survive?'
+          reflection: 'Do you rush to fill gaps with nervous words — or do you let silence and calmness destroy them instead?'
         ),
       ),
     },
     2: {
-      6: const Lesson(
+      6: Lesson(
         id: 'frame_2_6',
-        title: 'The Shadow Dance',
+        title: 'The Reframe Blade (Turning Attacks Into Assets)',
         category: 'frame',
         world: 2,
         lesson: 6,
         xp: 75,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Venice, 1720. A masquerade ball. Candlelight flickers on painted masks. Casanova does not reveal himself with declarations; he drifts past her, gaze lingering a heartbeat too long, vanishing into the crowd. She laughs with others but keeps glancing at the doorway, searching for the phantom presence that left a mark without words. Seduction thrives not in possession, but in haunting absence.',
+          hook: 'Apple Town Hall, 1997. A heckler shouts: "You don\'t know what you\'re talking about!" The room stiffens. Steve Jobs smiles: "You\'re right. I don\'t know everything. But I know users don\'t care about code — they care about experience. That\'s why this matters." The crowd erupts. Weakness became vision.',
           concept: [
-            'Mystery seduces harder than certainty.',
-            'Depart at your peak moment of intrigue; absence ignites imagination.',
-            'To be unforgettable, you must first be elusive.'
+            'Attacks are traps. Reframe and they collapse.',
+            'Weakness + spin = strength.',
+            'Never deny. Redefine.',
+            'Every insult is an attempt to force you inside their frame.'
           ],
+          teaching: 'Every insult is an attempt to force you inside their frame. If you defend, you\'re already beaten. But if you reframe, you don\'t fight — you shift meaning until the blade they threw becomes your sword.',
           drill: Drill(
-            question: 'They text: "Where did you disappear to last night?" What do you say?',
+            question: 'They sneer: "You\'ve got no experience."',
             options: [
-              'Sorry, I just got tired and went home.',
-              'I prefer leaving behind questions rather than answers.'
+              'I do, actually—',
+              'Exactly. No baggage. Fresh eyes see what stale ones miss.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this statement into one that creates mystery and intrigue.',
-            input: 'I miss you already.',
-            example: 'Your shadow is still in my thoughts, though you\'ve barely left.'
+            prompt: 'Transform this statement into one that uses the reframe blade.',
+            input: 'You\'re too young.',
+            example: 'Youth is an advantage — you haven\'t realized how expensive energy is yet.'
           ),
-          reflection: 'Do you make yourself forgettable by always being present, or unforgettable by leaving traces of absence?'
+          reflection: 'Do you defend against attacks? Or do you bend them until they crown you instead?'
         ),
       ),
-      7: const Lesson(
+      7: Lesson(
         id: 'frame_2_7',
-        title: 'The Slow Burn',
+        title: 'The Authority Frame (Commanding Respect Without Asking)',
         category: 'frame',
         world: 2,
         lesson: 7,
         xp: 75,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Kyoto, 11th century. In The Tale of Genji, the prince courts women not with conquest but with patience. A glance one evening, a poem slipped under a door the next, a silent gift of incense the following week. Each layer builds anticipation until longing itself becomes unbearable. The art is not in arrival, but in delay.',
+          hook: 'Boston hospital, 1970s. A young female doctor is dismissed by senior surgeons. She cuts them off: "While you debate me, a patient in room 3 is bleeding out. We can save him — or we can argue. Choose." Authority wasn\'t granted — it was seized.',
           concept: [
-            'Rushed desire collapses. Longing stretches it into obsession.',
-            'Anticipation is sweeter than climax.',
-            'Every pause is foreplay for the imagination.'
+            'Authority isn\'t requested — it\'s assumed.',
+            'Respect follows certainty, not explanations.',
+            'Speak like the crown is already on your head.',
+            'People hesitate, explain, seek permission. Masters don\'t.'
           ],
+          teaching: 'People hesitate, explain, seek permission. Masters don\'t. They project certainty, define urgency, act as if respect is a fact. Authority is gravity — others fall into orbit automatically.',
           drill: Drill(
-            question: 'They ask: "Why haven\'t you kissed me yet?" What do you say?',
+            question: 'They ask: "Why should we listen to you?"',
             options: [
-              'Sorry, I didn\'t know if you wanted me to.',
-              'Smile. "Because suspense tastes better than certainty."'
+              'Because I studied this…',
+              'Because while you\'re asking, I\'m already solving.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this direct statement into one that builds anticipation.',
-            input: 'I want you now.',
-            example: 'Patience makes wanting you a dangerous addiction.'
+            prompt: 'Transform this statement into one that uses the authority frame.',
+            input: 'Maybe we could try this?',
+            example: 'We\'re doing this. The old way failed. Let\'s move.'
           ),
-          reflection: 'Do you rush to the reward, or do you craft the hunger that makes the reward unforgettable?'
+          reflection: 'Do you wait for crowns to be placed — or do you wear them before anyone dares object?'
         ),
       ),
-      8: const Lesson(
+      8: Lesson(
         id: 'frame_2_8',
-        title: 'The Puzzle of Desire',
+        title: 'The Status Trap Detector (Spotting Hidden Power Games)',
         category: 'frame',
         world: 2,
         lesson: 8,
         xp: 75,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Paris, 1935. Pablo Picasso sits in a café, sketching on a napkin. A woman leans over, fascinated. He folds it and tucks it away. "May I see it?" she asks. He smirks: "Not yet." She spends the evening desperate for the reveal, only to realize the sketch matters less than the anticipation he orchestrated. Seduction is not the gift itself—it is the unfinished riddle.',
+          hook: 'Hollywood, 1960s. A producer tests Clint Eastwood: arrives 20 minutes late, takes calls mid-meeting, moves him to a worse chair. Each is a trap: will he submit? Eastwood stands: "When you\'re ready for a real conversation, you know where to find me." He leaves. Minutes later, the producer chases him down. Clint won by refusing the game.',
           concept: [
-            'Humans crave completion; withholding creates compulsion.',
-            'Desire is strongest when it is unresolved.',
-            'Seduction is not about answers but about questions left hanging.'
+            'Status traps = subtle dominance tests.',
+            'Lateness, interruptions, "jokes that sting."',
+            'Recognize → refuse → reset.',
+            'Most lose because they don\'t see the game.'
           ],
+          teaching: 'Most lose because they don\'t see the game. They explain, they appease, they laugh nervously. But once you spot the trap, calm refusal flips the script. The test reveals you, not them.',
           drill: Drill(
-            question: 'They ask: "What are you thinking right now?" What do you say?',
+            question: 'They keep you waiting 20 minutes.',
             options: [
-              'Just about how much I like you.',
-              'Something that would ruin the fun if I told you.'
+              'It\'s fine.',
+              'Let\'s reschedule when you\'re ready for full focus.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this statement into one that creates mystery and intrigue.',
-            input: 'You\'re perfect.',
-            example: 'You\'re a mystery I\'d rather never solve completely.'
+            prompt: 'Transform this statement into one that uses status trap detection.',
+            input: 'Relax, I was just joking.',
+            example: 'If that was a joke, the punchline still hasn\'t landed.'
           ),
-          reflection: 'Do you hand out certainty, or do you plant riddles that keep them chasing?'
+          reflection: 'What hidden traps have you been failing? How would life change if you spotted and neutralized every test?'
         ),
       ),
       9: Lesson(
         id: 'frame_2_9',
-        title: 'The Touch of Almost',
+        title: 'Agree & Amplify (Absurdity as Defense)',
         category: 'frame',
         world: 2,
         lesson: 9,
         xp: 75,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Paris opera house, 1875. A young baron escorts his lover through the gilded hall. His hand hovers just above hers, never touching, never claiming—an almost unbearable closeness. She feels heat without contact, possession without grasp. True seduction lies not in the obvious touch, but in the electricity of almost.',
+          hook: 'Late Night TV, 1980s. A guest sneers: "Letterman, you\'re weird and unprofessional." Letterman beams: "Weird? Oh, you haven\'t seen me play xylophone with my teeth during commercial breaks." The crowd howls. The attack disintegrates.',
           concept: [
-            'Tension > contact. The moment before the kiss often outweighs the kiss itself.',
-            'A whisper beats a shout.',
-            'To inflame desire, flirt with proximity but deny the finish.'
+            'Arguing validates.',
+            'Agree + exaggerate = ridicule.',
+            'Absurdity flips venom into comedy.',
+            'The fastest way to kill hostility is laughter.'
           ],
+          teaching: 'The fastest way to kill hostility is laughter. By amplifying their insult into absurdity, you don\'t just survive — you entertain. The attacker looks petty. You look untouchable.',
           drill: Drill(
-            question: 'They lean close, whisper: "Are you going to kiss me?" What do you do?',
+            question: 'They snarl: "You\'re too sensitive."',
             options: [
-              'Rush in and kiss.',
-              'Brush your lips near theirs, pause. "Not until you can\'t stand the wait."'
+              'No, I\'m not!',
+              'Sensitive? I cry during dog food commercials. It\'s exhausting.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this statement into one that creates tension and anticipation.',
-            input: 'I can\'t wait to touch you.',
-            example: 'Your skin already remembers me, and I haven\'t touched it yet.'
+            prompt: 'Transform this statement into one that uses agree & amplify.',
+            input: 'You\'re lazy.',
+            example: 'Correct. I\'m auditioning for world champion napper. Almost at gold medal level.'
           ),
-          reflection: 'Do you rush to possession, or do you command the unbearable ache of the almost?'
+          reflection: 'Do you waste energy defending — or do you turn attacks into comedy so sharp the attacker becomes your clown?'
         ),
       ),
       10: Lesson(
         id: 'frame_2_10',
-        title: 'The Mask of Contradiction',
+        title: 'The Frame Breaker (Resetting the Game)',
         category: 'frame',
         world: 2,
         lesson: 10,
         xp: 75,
         content: LessonContent(
-          hook: 'Hollywood, 1955. James Dean, equal parts rebel and innocent, enters a party. To some, he\'s danger; to others, he\'s vulnerability. The contradiction multiplies intrigue: the untamed wolf with the boyish grin. True seduction lies in refusing to be one thing—your contradictions force others to crave decoding.',
+          hook: 'UN, 1962. Soviet ambassador floods the chamber with rhetoric. Stevenson slams the table: "Do you deny placing missiles in Cuba? Yes or no. Don\'t wait for translation." The room freezes. Rhetoric dies. Frame broken.',
           concept: [
-            'People are addicted to contradictions.',
-            'Softness wrapped in danger, cruelty laced with tenderness—such paradoxes ignite obsession.',
-            'A single archetype is forgettable; a contradiction is unforgettable.'
+            'When trapped, break the script.',
+            'New rules = new reality.',
+            'The boldest power move isn\'t arguing harder — it\'s changing the game.',
+            'Frames trap you in endless loops.'
           ],
-                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
+          teaching: 'Frames trap you in endless loops. Break them by stepping outside: ask meta-questions, force clarity, reset stakes. You move from player to referee. Everyone must follow.',
           drill: Drill(
-            question: 'They tease: "You\'re trouble, aren\'t you?" What do you say?',
+            question: 'They blame endlessly.',
             options: [
-              'No, I\'m really nice once you know me.',
-              'Danger with a conscience. Which side tempts you more?'
+              'It wasn\'t my fault.',
+              'Pause. Do we want to solve this, or keep trading blame?'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this statement into one that embraces contradiction.',
-            input: 'I\'m complicated.',
-            example: 'I\'m the contradiction you\'ll never solve, and that\'s why you\'ll stay.'
+            prompt: 'Transform this statement into one that uses the frame breaker.',
+            input: 'Why are you so defensive?',
+            example: 'Better question — are we here to attack or to understand?'
           ),
-          reflection: 'Do you flatten yourself into predictability, or do you weave paradoxes that make people hunger to decode you?'
+          reflection: 'Where are you trapped in someone else\'s script? What single question could slice it in half?'
         ),
       ),
     },
     3: {
       11: Lesson(
         id: 'frame_3_11',
-        title: 'The Glance That Burns',
+        title: 'Irony & Mockery (Twin Blades of Disarmament)',
         category: 'frame',
         world: 3,
         lesson: 11,
         xp: 100,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Cairo, 1920. In the thick air of a jazz club, a woman in emerald silk doesn\'t smile, doesn\'t speak—she only looks. Her gaze lingers, slow and deliberate, as if peeling away every defense. Men who meet it laugh nervously, tug their collars, retreat. One man, however, cannot look away. He feels undressed, claimed, consumed. A glance, wielded correctly, is not observation—it is possession.',
+          hook: 'Roman Senate, 63 BC. Cicero faces Catiline, accused of treason. Instead of a direct attack, Cicero smiles: "O most loyal Catiline, how fortunate Rome is that you grace us today — plotting by night, pretending patriot by day." The senators laugh. Catiline burns. He is destroyed not by facts, but by irony that cuts deeper than insults.',
           concept: [
-            'The eyes seduce more than words.',
-            'A gaze held too long creates tension almost unbearable.',
-            'Looking away too soon kills the spark; holding it claims dominance.'
+            'Mockery humiliates publicly.',
+            'Irony corrodes privately.',
+            'The master knows which blade to draw.',
+            'Mockery wins the crowd; irony kills from the inside.'
           ],
+          teaching: 'Mockery wins the crowd; irony kills from the inside. Mockery makes them look foolish; irony makes them feel foolish. Use mockery for spectacle, irony for scars.',
           drill: Drill(
-            question: 'They notice you staring: "Why are you looking at me like that?" What do you say?',
+            question: 'They brag: "Everyone listens to me."',
             options: [
-              'Sorry, I didn\'t mean to stare.',
-              'Because I wanted to see if you\'d be brave enough not to look away.'
+              'Not really.',
+              'Celebrity in the room! / Amazing how much you admire yourself.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this statement into one that creates intrigue and mystery.',
-            input: 'You\'re really attractive.',
-            example: 'You have the kind of face that refuses to be forgotten.'
+            prompt: 'Transform this statement into one that uses irony & mockery.',
+            input: 'You\'re obsessed with yourself.',
+            example: 'And yet you\'re studying me like scripture.'
           ),
-          reflection: 'Do you scatter your gaze timidly, or do you brand someone\'s soul with the weight of your attention?'
+          reflection: 'Do you settle for cheap mockery — or do you carve with irony that leaves echoes?'
         ),
       ),
       12: Lesson(
         id: 'frame_3_12',
-        title: 'The Silence Between Notes',
+        title: 'The Unreactive Shield (Never Taking the Bait)',
         category: 'frame',
         world: 3,
         lesson: 12,
         xp: 100,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Vienna, 1805. At a private salon, Beethoven plays a sonata. The most devastating moment is not a cascade of notes but a pause, a silence so thick the room holds its breath. Anticipation floods the air—every ear leans into the void. When the music resumes, it lands like thunder. Silence, used deliberately, is the loudest sound in the world.',
+          hook: 'Wimbledon, 1980. McEnroe rages, smashes rackets, screams. Björn Borg stands still, calm as stone. The crowd turns — McEnroe looks childish, Borg godlike. Borg wins not just the match, but the aura.',
           concept: [
-            'Speech is cheap; silence is costly.',
-            'The unsaid carries more weight than the said.',
-            'Pauses make words taste richer, like wine sipped slowly.'
+            'Provocation is bait. Reaction is the bite.',
+            'Stillness reframes chaos as weakness.',
+            'The louder they shout, the smaller they look.',
+            'Every outburst is an invitation into their frame.'
           ],
+          teaching: 'Every outburst is an invitation into their frame. If you react, you lose. If you stay unshaken, their energy boomerangs back. Calm is terrifying because it cannot be moved.',
           drill: Drill(
-            question: 'They ask: "Why aren\'t you saying anything?" What do you say?',
+            question: 'They scream: "You\'re pathetic!"',
             options: [
-              'Sorry, I just don\'t know what to say.',
-              'Smile faintly. "Because silence makes you lean closer."'
+              'No, I\'m not!',
+              '[Pause. Calm smile.] "Finished?"'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this statement into one that uses silence strategically.',
-            input: 'I like listening to you.',
-            example: 'Your words sound better against the backdrop of my silence.'
+            prompt: 'Transform this statement into one that uses the unreactive shield.',
+            input: 'You\'re full of yourself.',
+            example: 'Strange… yet you\'re fuller of me than I am.'
           ),
-          reflection: 'Do you rush to fill every pause, or do you craft silences that force others to chase your meaning?'
+          reflection: 'Do you bite when provoked — or can you let silence and calmness destroy them instead?'
         ),
       ),
       13: Lesson(
         id: 'frame_3_13',
-        title: 'The Gift of Withholding',
+        title: 'The Reality Flip (Hunter Becomes Hunted)',
         category: 'frame',
         world: 3,
         lesson: 13,
         xp: 100,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Paris, 1958. Yves Saint Laurent unveils a gown, but backstage, the hem is deliberately unfinished. Critics sneer—until weeks later, women across Europe beg for replicas. By withholding perfection, he gave them hunger. Desire is not about giving everything—it\'s about giving almost everything, leaving the soul restless for the missing piece.',
+          hook: 'Oxford, 1940. A journalist presses Churchill: "Aren\'t you terrified of Hitler invading?" Churchill exhales his cigar: "I pity Hitler. He is about to learn what it means to wake a lion." The frame flips — England isn\'t fearful, Hitler is doomed.',
           concept: [
-            'Completion satisfies; incompletion enslaves.',
-            'The greatest seducers are architects of longing.',
-            'What you deny becomes the object of obsession.'
+            'Attacks are lenses. Flip the lens, own the view.',
+            'The accuser becomes the accused.',
+            'Reality bends to the boldest definition.',
+            'Accusations trap you in their reality.'
           ],
+          teaching: 'Accusations trap you in their reality. By flipping — asking why they need that story, or redefining terms — you turn the spotlight back. The hunter becomes prey.',
           drill: Drill(
-            question: 'They ask: "So when can I see you again?" What do you say?',
+            question: 'They say: "You overreact to everything."',
             options: [
-              'Tomorrow night, whenever you want!',
-              'Soon. But not yet. Anticipation is part of the taste.'
+              'No, I don\'t!',
+              'Interesting how much my reactions control you. Why does it unsettle you so?'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this statement into one that creates longing through withholding.',
-            input: 'I want to give you everything.',
-            example: 'I want to give you almost everything, so you\'ll never stop craving the rest.'
+            prompt: 'Transform this statement into one that uses the reality flip.',
+            input: 'You\'re insecure.',
+            example: 'And yet you keep pointing it out… curious.'
           ),
-          reflection: 'Do you try to complete others quickly, or do you leave them restless, dreaming of the piece you\'ve kept back?'
+          reflection: 'Whose frames are you still trapped in? When was the last time you flipped the lens instead of defending?'
         ),
       ),
       14: Lesson(
         id: 'frame_3_14',
-        title: 'The Scent That Stays',
+        title: 'Escalating Control (Stacking Frames)',
         category: 'frame',
         world: 3,
         lesson: 14,
         xp: 100,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Istanbul, 1890. A merchant lights oud incense in a narrow alley before leaving. Hours after he\'s gone, the fragrance still lingers—haunting, intoxicating, inseparable from him. People remember him less for his words and more for the trace he left behind. Seduction is not just in presence—it is in the afterglow.',
+          hook: 'Chicago, 1925. Clarence Darrow defends a man accused of murder. He doesn\'t just argue the case. He stacks frames: Frame 1: "This boy is no monster." Frame 2: "The greater monster is poverty." Frame 3: "And the true verdict is about America itself." The jury isn\'t deciding one life — they\'re deciding their nation\'s soul.',
           concept: [
-            'A lingering trace can outlast hours of presence.',
-            'Scents, phrases, gestures—anything that echoes after you\'ve left—become signatures of desire.',
-            'The most potent seduction begins after the door closes.'
+            'Petty frames = petty outcomes.',
+            'Stacked frames = cosmic stakes.',
+            'The higher the frame, the heavier the gravity.',
+            'Small fights trap you. Escalation reframes them into higher ground.'
           ],
+          teaching: 'Small fights trap you. Escalation reframes them into higher ground. The quarrel becomes a principle. The insult becomes a social mirror. When you raise the altitude, everyone else looks small.',
           drill: Drill(
-            question: 'They say: "You\'re leaving already?" What do you say?',
+            question: 'They snap: "You were late!"',
             options: [
-              'Yeah, I\'m tired.',
-              'I prefer to leave while the air still remembers me.'
+              'Traffic was bad.',
+              'Late is one thing. Wasting our time together is worse. Let\'s not waste more now.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this statement into one that creates lingering presence.',
-            input: 'I\'ll see you later.',
-            example: 'Even after I\'m gone, you\'ll keep catching me in the air.'
+            prompt: 'Transform this statement into one that uses escalating control.',
+            input: 'You\'re not serious.',
+            example: 'I\'m serious enough to challenge mediocrity.'
           ),
-          reflection: 'Do you vanish completely when absent, or do you leave behind a haunting trace that keeps you alive in their senses?'
+          reflection: 'Do you let yourself fight small battles — or do you stack frames until the argument becomes history itself?'
         ),
       ),
       15: Lesson(
         id: 'frame_3_15',
-        title: 'The Poisoned Compliment',
+        title: 'Anchoring Reality (Locking the Frame)',
         category: 'frame',
         world: 3,
         lesson: 15,
         xp: 100,
         content: LessonContent(
-          hook: 'London, 1927. A poet leans across the table to his muse. "Your beauty unsettles me," he murmurs, "but your silence unsettles me more." The line wounds and flatters in equal measure. She cannot dismiss him; his words cling like perfume and venom. True seduction is not in empty praise, but in compliments laced with a sting that forces them to replay it endlessly.',
+          hook: 'New York, 1980s. A tycoon enters a lease negotiation: "I could buy the whole block." Hours later, he "settles" for one floor. The landlord feels relief. The anchor worked — the modest ask now feels generous.',
           concept: [
-            'Flattery fades; tension lingers.',
-            'A poisoned compliment binds desire with doubt, making them crave more for resolution.',
-            'To seduce is to disturb equilibrium.'
+            'First impression = anchor.',
+            'Anchor sets gravity.',
+            'Everything after feels small compared to the anchor.',
+            'Humans judge value by comparison, not truth.'
           ],
-                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
+          teaching: 'Humans judge value by comparison, not truth. If you set the first number, tone, or standard, everything else is pulled into orbit. Anchoring reality is locking reality.',
           drill: Drill(
-            question: 'They ask: "Do you think I\'m attractive?" What do you say?',
+            question: 'They ask: "Stay an hour late?"',
             options: [
-              'Yes, you\'re gorgeous.',
-              'Yes, dangerously so. But beauty that reckless usually leaves scars.'
+              'Sure.',
+              'I might need you all evening. But one hour will do.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this statement into one that creates tension and intrigue.',
-            input: 'You\'re perfect.',
-            example: 'You\'re nearly perfect—the kind of flaw that makes perfection unbearable.'
+            prompt: 'Transform this statement into one that uses anchoring reality.',
+            input: 'Can we lower the price?',
+            example: 'Of course — we can adjust from \$10,000.'
           ),
-          reflection: 'Do you hand out cheap validation, or do you craft words that live inside them, sweet and sharp at once?'
+          reflection: 'Do you let others set the first number, or do you drop anchors so heavy the world bends around them?'
         ),
       ),
     },
     4: {
       16: Lesson(
         id: 'frame_4_16',
-        title: 'The Dangerous Secret',
+        title: 'The Celebrity Frame (Owning Attention)',
         category: 'frame',
         world: 4,
         lesson: 16,
-        xp: 125,
+        xp: 150,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Venice, 1703. A masked courtesan whispers to a nobleman in the candlelit shadows of Carnival: "If I told you the truth, you\'d never sleep again." Then she laughs and disappears into the crowd. He spends years recalling that one line, haunted by the mystery of a secret never revealed. A hint of danger intoxicates far more than confession.',
+          hook: 'Hollywood, 1955. James Dean strolls into a diner. He doesn\'t speak, doesn\'t even order food. Yet every head turns. The waitress pours coffee like serving royalty. He isn\'t famous yet — but he carries himself like the room already belongs to him. Within months, the world agrees.',
           concept: [
-            'The promise of revelation seduces more than the revelation itself.',
-            'People desire what they cannot fully know.',
-            'Secrets are not walls—they are invitations.'
+            'Attention isn\'t begged for — it\'s assumed.',
+            'Confidence creates gravity.',
+            'People orbit certainty like planets around suns.',
+            'Humans follow status cues.'
           ],
+          teaching: 'Humans follow status cues. If you carry yourself like the main character, the world unconsciously writes you into that role. The celebrity frame isn\'t arrogance — it\'s relaxed inevitability.',
           drill: Drill(
-            question: 'They ask: "So what are you hiding?" What do you say?',
+            question: 'They say: "Who do you think you are?"',
             options: [
-              'Nothing really, I\'m an open book.',
-              'Enough to keep you awake tonight.'
+              'Sorry, I didn\'t mean—',
+              'Strange… the same question I was going to ask you.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this statement into one that maintains mystery and intrigue.',
-            input: 'I\'ll tell you everything about me.',
-            example: 'If I told you everything, I\'d be less interesting tomorrow.'
+            prompt: 'Transform this statement into one that uses the celebrity frame.',
+            input: 'Can I join this group?',
+            example: 'Looks like you all needed someone interesting to show up.'
           ),
-          reflection: 'Do you trade all your mystery for cheap intimacy, or do you guard secrets so others dream of unlocking you?'
+          reflection: 'Do you wait for permission — or do you walk in like the story already centers on you?'
         ),
       ),
       17: Lesson(
         id: 'frame_4_17',
-        title: 'The Feather and the Blade',
+        title: 'The Meaning Flip (Gaslight Frame)',
         category: 'frame',
         world: 4,
         lesson: 17,
-        xp: 125,
+        xp: 150,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Kyoto, 1650. A geisha entertains a samurai with gentle teasing. She praises his haiku, then with a sly smile adds: "It is beautiful… in its simplicity." He laughs, stung and charmed at once. She strokes his pride, then nicks it with a blade. He leaves restless, desperate to win her unqualified admiration. Seduction thrives on duality—pleasure followed by the faintest cut.',
+          hook: 'Boardroom, 1990s. A CEO accused: "You\'re cutting corners." He smiles: "Interesting you call efficiency by another name. Some people fear progress." The room laughs. The accusation is still technically true — but now it feels like praise.',
           concept: [
-            'Praise alone dulls desire; tension sharpens it.',
-            'To tease is to balance kindness with the faintest cruelty.',
-            'A feather softens, a blade awakens.'
+            'Facts don\'t matter — meaning does.',
+            'Accusation reframed becomes compliment.',
+            'Reality is interpretation, not evidence.',
+            'Humans don\'t react to events, only meanings.'
           ],
+          teaching: 'Humans don\'t react to events, only meanings. Redefine the meaning, and the attack collapses. You didn\'t "fail" — you "experimented." You weren\'t "selfish" — you "valued focus." The world bends to interpreters, not observers.',
           drill: Drill(
-            question: 'They boast: "I\'m really good at this." What do you say?',
+            question: 'They say: "You\'re stubborn."',
             options: [
-              'Yes, you\'re amazing!',
-              'Good, yes. But greatness makes me harder to impress.'
+              'I\'m not.',
+              'Consistency is rare these days. Guilty as charged.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this statement into one that creates tension through duality.',
-            input: 'You\'re perfect.',
-            example: 'You\'re the most perfect imperfection I\'ve ever wanted.'
+            prompt: 'Transform this statement into one that uses the meaning flip.',
+            input: 'You forgot me.',
+            example: 'I gave you space — I respect independence.'
           ),
-          reflection: 'Do you hand out unconditional flattery, or do you lace desire with the sting that keeps them addicted?'
+          reflection: 'Do you let others define meaning — or do you own the dictionary every time you speak?'
         ),
       ),
       18: Lesson(
         id: 'frame_4_18',
-        title: 'The Disappearing Act',
+        title: 'The Group Frame (Commanding the Many)',
         category: 'frame',
         world: 4,
         lesson: 18,
-        xp: 125,
+        xp: 150,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'New York, 1982. At Studio 54, a man holds the entire dance floor in thrall—until he suddenly vanishes. No word, no goodbye. Whispers ripple through the crowd: "Where did he go?" His absence becomes larger than his presence. The next night, all eyes search for him. Seduction is not only in showing up—it is in leaving when the desire peaks.',
+          hook: 'Apple, 2007. Steve Jobs doesn\'t present specs. He says: "Today Apple reinvents the phone." Suddenly, this isn\'t a product demo — it\'s a historical event. By defining what the moment means, Jobs controls not individuals, but the entire room.',
           concept: [
-            'Timing your exit is more powerful than timing your entrance.',
-            'To vanish at the height of attention creates hunger.',
-            'Absence plants obsession deeper than presence ever could.'
+            'Individuals argue. Crowds unite.',
+            'Whoever defines the group story rules the group.',
+            'Collective frames crush private doubts.',
+            'In groups, people surrender private skepticism to collective story.'
           ],
+          teaching: 'In groups, people surrender private skepticism to collective story. If you set the group\'s meaning — "This isn\'t a debate, it\'s a turning point" — you dissolve opposition before it speaks.',
           drill: Drill(
-            question: 'The night is electric. They ask: "Stay a little longer?" What do you say?',
+            question: 'The team complains: "We\'re arguing too much."',
             options: [
-              'Of course, as long as you want.',
-              'Not tonight. It\'s better to leave you wanting.'
+              'Let\'s calm down.',
+              'This tension proves we care. That\'s why we\'ll win.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this statement into one that uses strategic exit.',
-            input: 'I\'ll stay until the end.',
-            example: 'The ending is stronger when it arrives too soon.'
+            prompt: 'Transform this statement into one that uses the group frame.',
+            input: 'This meeting is a waste of time.',
+            example: 'Then let\'s make it the meeting everyone remembers.'
           ),
-          reflection: 'Do you cling until desire fades, or do you vanish at the crest of the wave, leaving them gasping in your wake?'
+          reflection: 'Do you get lost in group chaos — or seize the pen that writes what the group is really doing?'
         ),
       ),
       19: Lesson(
         id: 'frame_4_19',
-        title: 'The Unreachable Kiss',
+        title: 'The Debate Duel (Choosing the Arena)',
         category: 'frame',
         world: 4,
         lesson: 19,
-        xp: 125,
+        xp: 175,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Madrid, 1901. On a balcony, two lovers lean close. Lips nearly touch—then she withdraws, smiling. The kiss never lands. The man is left drunk on what almost was. Denial is not rejection—it is an acceleration. What is withheld burns hotter than what is consumed.',
+          hook: 'Oxford Union, 1965. A rival floods the floor with data. William F. Buckley smiles: "The real question isn\'t numbers. It\'s freedom. Do you believe in liberty — or in control?" Instantly the audience shifts. His opponent keeps arguing facts — but the duel has moved. Now it\'s identity, not data. And Buckley already won.',
           concept: [
-            'Fulfillment is an end; deferral is a chain.',
-            'To offer and withdraw is to multiply desire.',
-            'The unreachable kiss is more dangerous than the kiss given freely.'
+            'The first rule of combat: pick the battlefield.',
+            'Whoever defines the arena defines victory.',
+            'Identity frames beat evidence every time.',
+            'Arguments inside their frame are unwinnable.'
           ],
+          teaching: 'Arguments inside their frame are unwinnable. Shift the frame: move the duel to values, to identity, to higher ground. Their facts drown when the river itself belongs to you.',
           drill: Drill(
-            question: 'They lean in. What do you do?',
+            question: 'They say: "Your plan costs too much."',
             options: [
-              'Rush forward eagerly, sealing the moment.',
-              'Brush their cheek, pause, whisper: "Not yet. Patience is part of the taste."'
+              'Here are the numbers.',
+              'The bigger cost is doing nothing. Stagnation bankrupts faster.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this statement into one that creates anticipation through restraint.',
-            input: 'Kiss me now.',
-            example: 'You\'ll think about this kiss longer if I don\'t give it yet.'
+            prompt: 'Transform this statement into one that uses the debate duel.',
+            input: 'Your idea won\'t work.',
+            example: 'Depends if you define \'work\' as repeating the past, or as progress.'
           ),
-          reflection: 'Do you satisfy immediately, or do you chain their hunger with restraint so the fire grows unbearable?'
+          reflection: 'Do you fight inside their arena — or do you choose your own and drag them onto your field?'
         ),
       ),
       20: Lesson(
         id: 'frame_4_20',
-        title: 'The Frame of Fire',
+        title: 'Frame Immunity (Becoming Untouchable)',
         category: 'frame',
         world: 4,
         lesson: 20,
-        xp: 125,
+        xp: 200,
         content: LessonContent(
-          hook: 'Berlin, 1932. In a smoke-choked café, a poet tells a woman: "Every man here wants you. But I am the only one who dares admit I don\'t." She laughs, unsettled. He has shattered the frame—no longer a pursuer, but the pursued. Frame control is the alchemy of seduction: whoever defines reality owns the game.',
+          hook: 'India, 1930. Gandhi faces British soldiers who shove, mock, even strike him. He doesn\'t flinch. He doesn\'t argue. He just walks. Reporters capture the scene. Soldiers look savage; Gandhi looks immortal. He is untouchable — not because he won the fight, but because no attack could define him.',
           concept: [
-            'Desire follows the frame. If you act as if they are chasing you, they will.',
-            'Reversing roles unsettles and excites.',
-            'Seduction is not begging—it is dictating the script.'
+            'The final mastery is not fighting frames — it\'s dissolving them.',
+            'No insult, no attack, no lie can stick.',
+            'The one who cannot be framed becomes myth.',
+            'Every attack needs fuel.'
           ],
-                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
+          teaching: 'Every attack needs fuel. If you argue, resist, or even mock, you keep it alive. If you\'re immune — if nothing defines you but yourself — the attacker collapses under their own noise. Frame immunity is the inner fortress.',
           drill: Drill(
-            question: 'They tease: "You like me, don\'t you?" What do you say?',
+            question: 'They shout: "Everyone thinks you\'re a joke!"',
             options: [
-              'Of course, I do!',
-              'Smile. "You\'d like to think so, wouldn\'t you?"'
+              'No, they don\'t!',
+              '[Calm smile.] "And yet, here you are repeating me."'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this statement into one that controls the frame.',
-            input: 'I really want you.',
-            example: 'The question is not whether I want you. It\'s whether you\'re bold enough to handle being wanted.'
+            prompt: 'Transform this statement into one that shows frame immunity.',
+            input: 'You\'re pathetic.',
+            example: 'Strange how invested you are in me.'
           ),
-          reflection: 'Do you play inside the frame they hand you, or do you redraw the borders so they\'re trapped inside your design?'
+          reflection: 'Do you scramble to fight every attack — or have you built the unshakable center no frame can pierce?'
         ),
       ),
     },
@@ -1907,628 +1317,648 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
     1: {
       1: Lesson(
         id: 'scarcity_1_1',
-        title: 'The First Law — To Withhold is to Possess',
+        title: 'The Power of Absence',
         category: 'scarcity',
         world: 1,
         lesson: 1,
         xp: 50,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Versailles, 1745. The King\'s messenger delivers a necklace to Madame de Pompadour. She doesn\'t touch it. For hours, the unopened box sits untouched as the King paces, his mind devoured by uncertainty. When she finally replies, she sends not words, not consent — but a pressed flower. His obsession is no accident. She understood: what you hold back is stronger than what you give.',
+          hook: 'Versailles, 1682. Nobles rise at dawn just to wait outside Louis XIV\'s door. Hours pass. When the King finally appears, he may give a glance, a nod, or nothing at all. That second of attention becomes priceless. His absence ruled harder than his presence ever could.',
           concept: [
-            'Scarcity fuels obsession.',
-            'Mystery is a vacuum the mind can\'t leave alone.',
-            'The pause, the delay, the withheld word — these are the pressure points of desire.'
+            'Presence satisfies; absence enslaves.',
+            'What is rare rules the mind.',
+            'Silence burns louder than noise.',
+            'A glimpse is worth more than constant sight.'
           ],
+          teaching: 'The brain cannot stop circling around what is missing. Constant presence dulls desire. But when you withdraw, you create a vacuum — one they fill with memory, fantasy, and hunger. Scarcity isn\'t distance; it\'s magnetism through absence.',
           drill: Drill(
-            question: 'They text: "I had the best night with you." What do you respond?',
+            question: 'They ask: "Why didn\'t you text me back?"',
             options: [
-              'Me too! Can\'t wait to see you again.',
-              'Hours later: "Still unravelling last night. You surprised me."'
+              'Sorry, I was busy.',
+              'Sometimes I like to leave room for you to miss me.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this desperate plea into one that creates scarcity.',
-            input: 'I\'m free all weekend. Please see me.',
-            example: 'My weekend is a locked diary. I may let you write a page.'
+            prompt: 'Transform this statement into one that creates scarcity through absence.',
+            input: 'I\'m always around.',
+            example: 'I come and go.'
           ),
-          reflection: 'Do you rush to give all of yourself, or do you create the ache of waiting?'
+          reflection: 'Where are you flooding people with too much of yourself? What hunger could you create if you let absence speak for you?'
         ),
       ),
       2: Lesson(
         id: 'scarcity_1_2',
-        title: 'The Second Law — Presence is a Physical Spell',
+        title: 'The Hourglass of Anticipation',
         category: 'scarcity',
         world: 1,
         lesson: 2,
         xp: 50,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Berlin, 1930. A club freezes not when Marlene Dietrich enters, but seconds later, when people realize she\'s already there. She doesn\'t demand attention. Her stillness, her scent, her silence announce her. A man approaches. She does not look at him. She lets him burn in the quiet until she finally lowers her eyes like a guillotine. He is conquered before words.',
+          hook: 'San Francisco, 2007. Steve Jobs paces the stage. He shows an iPod. A phone. An internet device. The crowd frowns. Then he repeats it — three times. The pause stretches. Then he smiles: "These are not three devices. They are one." He pulls out the iPhone. History changes. The wait made it divine.',
           concept: [
-            'Your energy enters a room before your body.',
-            'The eyes aren\'t for looking — they\'re for holding.',
-            'Stillness screams louder than noise.'
+            'Delay multiplies desire.',
+            'What comes too fast is consumed and forgotten.',
+            'The pause sharpens appetite.',
+            'Time is seasoning.'
           ],
+          teaching: 'Dopamine isn\'t released at the moment of reward, but during anticipation of it. Draw out the reveal. Stretch the silence. Desire grows in the waiting more than the having.',
           drill: Drill(
-            question: 'At a party, you see someone you want. What do you do?',
+            question: 'They demand: "Tell me now!"',
             options: [
-              'Rush over, smiling brightly.',
-              'Anchor yourself, catch their eye, let it linger a beat too long, then drift away.'
+              'Spill it instantly.',
+              'Smile. "Patience makes it unforgettable."'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this desperate greeting into one that commands presence.',
-            input: 'Hey! Over here, I saved you a seat!',
-            example: 'A slow gesture to the empty chair beside you. Not a wave. A summons.'
+            prompt: 'Transform this statement into one that creates anticipation.',
+            input: 'I like you.',
+            example: 'You\'ll know soon.'
           ),
-          reflection: 'Do you enter rooms hoping to be welcomed, or do you let the room rearrange itself around you?'
+          reflection: 'Do you rush to satisfy — or do you let hunger grow until your presence feels like a feast?'
         ),
       ),
       3: Lesson(
         id: 'scarcity_1_3',
-        title: 'The Third Law — Language is a Labyrinth',
+        title: 'Push & Pull Tension',
         category: 'scarcity',
         world: 1,
         lesson: 3,
         xp: 50,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Paris, 1924. A young writer pours clichés of love at Gertrude Stein\'s feet. When he\'s finished, she says only: "A rose is a rose is a rose." He is bewildered, but hooked. She gave him no answer, only a riddle. He will spend weeks lost in her words. Literal language informs. Poetic language transforms.',
+          hook: 'Hollywood, 1955. James Dean leans in close, whispering until she feels like the only woman alive. Then, mid-sentence, he turns, lights a cigarette, and drifts away. She chases, desperate to close the gap. The fire was never constant — it was rhythm, pull then push, warmth then frost.',
           concept: [
-            'Subtext is stronger than plain text.',
-            'Unfinished sentences are irresistible.',
-            'Secrets don\'t need to exist — only the suggestion of them.'
+            'Contrast creates craving.',
+            'Heat without cold numbs; cold without heat kills.',
+            'The dance between approach and retreat is the hook.',
+            'Predictability is the enemy of desire.'
           ],
+          teaching: 'Addiction is born not from steady supply, but unpredictable rhythm. Push–pull keeps them off balance, always chasing the next spark.',
           drill: Drill(
-            question: 'They ask: "What are you looking for?" What do you say?',
+            question: 'They say: "You\'re confusing."',
             options: [
-              'A real connection, someone kind and honest.',
-              'Someone who understands that silence can be louder than words.'
+              'Sorry, I\'ll explain better.',
+              '[Half-smile] "Confusion is curiosity in disguise."'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this direct statement into one that creates intrigue.',
-            input: 'I can\'t stop thinking about you.',
-            example: 'You\'ve become a delightful interruption in my thoughts.'
+            prompt: 'Transform this statement into one that creates push & pull tension.',
+            input: 'I missed you.',
+            example: 'I wasn\'t sure I\'d miss you.'
           ),
-          reflection: 'Do you speak like a manual, or like a maze? Which of your words leave people thinking long after you\'ve left?'
+          reflection: 'Are you predictable comfort — or are you the storm that keeps them guessing, addicted to your rhythm?'
         ),
       ),
       4: Lesson(
         id: 'scarcity_1_4',
-        title: 'The Fourth Law — Vulnerability is a Calculated Strike',
+        title: 'The Rare Gift',
         category: 'scarcity',
         world: 1,
         lesson: 4,
         xp: 50,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Rome, 44 BC. Julius Caesar does not show Cleopatra his armies. He shows her his seizures. The most powerful man alive, trembling in her presence. It is not weakness. It is intimacy disguised as surrender. By revealing a fracture, he created a bond stronger than steel.',
+          hook: 'New York, 1961. Tiffany\'s display window: three jewels in a vast sea of empty space. Crowds stop, breathless. Not because of what\'s shown, but because of what\'s withheld. The rarity made them sacred.',
           concept: [
-            'Vulnerability, when chosen, is power.',
-            'The gift of trust forces reciprocity.',
-            'A curated flaw seduces more than perfection ever could.'
+            'Commonness kills value.',
+            'Space frames worth.',
+            'The rare becomes ritual.',
+            'Too much access makes you cheap.'
           ],
+          teaching: 'Your time, attention, and energy are the rarest currency. Spend them everywhere, and they depreciate. Withhold them, and they inflate. Scarcity turns you from background noise into a crown jewel.',
           drill: Drill(
-            question: 'On a date, they ask about your past. What do you reveal?',
+            question: 'They ask: "When are you free?"',
             options: [
-              'Spill everything: the heartbreaks, the scars.',
-              'Offer one gem: "Once, I trusted someone with too much of me. It taught me to guard the fire."'
+              'Anytime.',
+              'One night next week. Maybe. Make it worth it.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this fearful statement into one that shows strength through vulnerability.',
-            input: 'I\'m scared of getting hurt.',
-            example: 'My heart doesn\'t break easily — but when it does, it breaks beautifully.'
+            prompt: 'Transform this statement into one that creates rarity.',
+            input: 'I\'m available.',
+            example: 'I\'ll see.'
           ),
-          reflection: 'Do you smother with oversharing or bore with perfection? What one curated scar could make you unforgettable?'
+          reflection: 'Do people treat you like spare change — or like treasure they must fight to earn?'
         ),
       ),
       5: Lesson(
         id: 'scarcity_1_5',
-        title: 'The Fifth Law — You Are the Prize',
+        title: 'The Longing Withdrawal',
         category: 'scarcity',
         world: 1,
         lesson: 5,
         xp: 50,
         content: LessonContent(
-          hook: 'The Riviera, 1966. Brigitte Bardot is drowned in jewels and yachts by admirers. She doesn\'t flinch. She turns to the poorest man at the table and asks, "And you? What will you offer me that they cannot?" The power shifts. They are auditioning. She is the prize.',
+          hook: 'Paris, 1920s. Coco Chanel never cut ties with drama. She withdrew piece by piece. A missing letter. A delayed visit. A perfume she once wore, now absent. The men around her grew frantic, chasing not her presence, but the ghost of what she used to give.',
           concept: [
-            'The frame decides the game. Set it: they audition, you select.',
-            'Assume value. Never beg for it.',
-            'Their desire reflects their taste, not your worth.'
+            'Sudden endings break; gradual fading enslaves.',
+            'Longing grows in inches, not miles.',
+            'Small withdrawals carve deeper hunger.',
+            'Constancy kills fire; subtraction fuels it.'
           ],
-                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
+          teaching: 'The mind adapts to consistency. But when presence fades slowly, the brain panics — searching for what\'s lost, clinging tighter. The gradual withdrawal is sharper than the clean break.',
           drill: Drill(
-            question: 'They say: "You\'re so beautiful." How do you respond?',
+            question: 'They say: "Why do you feel different lately?"',
             options: [
-              'Oh thank you, that\'s so sweet!',
-              'A smirk. "I know. But it\'s rare to hear it from someone with good taste."'
+              'I\'m not.',
+              'Maybe I don\'t give everything at once anymore.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this supplicant statement into one that positions you as the prize.',
-            input: 'I\'d be lucky to have you.',
-            example: 'Someone like you might thrive with me at their side.'
+            prompt: 'Transform this statement into one that creates longing withdrawal.',
+            input: 'I miss you.',
+            example: 'I kind of miss you.'
           ),
-          reflection: 'Do you beg to be chosen, or do you demand the world prove worthy of you?'
+          reflection: 'Do you let people consume you endlessly — or do you take away in small cuts, forcing them to hunger for your return?'
         ),
       ),
     },
     2: {
       6: Lesson(
         id: 'scarcity_2_6',
-        title: 'The Art of the Unfinished (Weaving Incomplete Narratives)',
+        title: 'The Intrusive Thought',
         category: 'scarcity',
         world: 2,
         lesson: 6,
-        xp: 50,
+        xp: 75,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Paris, 1922. Marcel Proust does not simply tell a story; he builds a labyrinth of memory, leaving corridors unexplored and doors locked forever. A single description — a madeleine dipped in tea — detonates an entire universe of memory. Yet he never maps the universe; he gives you only a fragment, a hint. The rest you must chase inside your own mind. His genius is in the unfinished. The reader becomes the co-creator, forever haunted by what they cannot complete.',
+          hook: 'New York, 1970s. Andy Warhol leans to a model: "You\'re beautiful… but unfinished." He leaves before she can ask what he means. For weeks, every mirror whispers his voice back. He isn\'t in her room — he\'s in her mind.',
           concept: [
-            'The Mind Hates a Vacuum: When you leave something incomplete, the psyche rushes to fill it.',
-            'You Are the Architect, Not the Tenant: Do not furnish the whole room. Leave it bare, let them decorate it with their own fantasies.',
-            'Closure is Death: The final word, the neat ending, ends desire. Always leave a thread undone.'
+            'Unfinished sentences replay forever.',
+            'What is incomplete, the brain completes.',
+            'Desire grows where clarity is denied.',
+            'The mind cannot bear incompletion.'
           ],
+          teaching: 'The mind cannot bear incompletion — psychologists call this the Zeigarnik Effect. Leave a phrase hanging, a glance unexplained, and they\'ll replay you endlessly.',
           drill: Drill(
-            question: 'They ask: "Have you ever been in love?" What do you say?',
+            question: 'They ask: "What did you mean by that?"',
             options: [
-              'Yes, once. It was tough, but I learned a lot.',
-              'There was someone who taught me storms don\'t always announce themselves… but I\'ll leave that story unfinished.'
+              'Explain it all.',
+              'If I told you, you\'d stop thinking about it.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this complete story into one that leaves them wanting more.',
-            input: 'I had my heart broken once. It was terrible.',
-            example: 'I gave someone a key to a hidden room inside me. They locked it on their way out. Sometimes I wonder if I even want it opened again.'
+            prompt: 'Transform this statement into one that creates intrusive thoughts.',
+            input: 'You\'re pretty.',
+            example: 'There\'s something about you no mirror could ever show.'
           ),
-          reflection: 'Do you tell tidy stories to be understood, or do you drop fragments that turn into obsessions? Which of your stories could you leave open-ended — so it grows inside them like ivy?'
+          reflection: 'When was the last time someone\'s words haunted you? How can you plant that same echo?'
         ),
       ),
       7: Lesson(
         id: 'scarcity_2_7',
-        title: 'The Thermodynamics of Desire (Hot-Cold Calculus)',
+        title: 'The Puzzle of Mixed Signals',
         category: 'scarcity',
         world: 2,
         lesson: 7,
-        xp: 50,
+        xp: 75,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Berlin, 1929. Marlene Dietrich, all smoke and contradictions, pulls a man in with her eyes — molten, unflinching. He leans in, hungry. Suddenly, she turns cold, her attention gone, her posture steel. The heat evaporates, leaving him shivering in its absence. By night\'s end, he is addicted, desperate to recreate the warmth she gave and snatched away.',
+          hook: 'Berlin, Cold War. A spy sends tender notes one week, then turns distant the next. Her contact burns himself alive trying to decode her contradictions. He doesn\'t chase her — he chases clarity.',
           concept: [
-            'Addiction is Born in Contrast: Heat means nothing without cold.',
-            'Warmth Without Withdrawal is Cheap: To give without taking away is to breed complacency.',
-            'You Must Be the Weather, Not the Forecast: You control the climate. They dress according to your storms.'
+            'Clear signals end the chase; mixed ones extend it.',
+            'Confusion enslaves attention.',
+            'Riddles replay longer than answers.',
+            'Contradiction hijacks the brain.'
           ],
+          teaching: 'Contradiction hijacks the brain. When warmth flips cold, people don\'t walk away — they analyze harder. That analysis is the chain.',
           drill: Drill(
-            question: 'After a night of intimacy, they text: "Last night was perfect." What do you do?',
+            question: 'They ask: "Do you like me or not?"',
             options: [
-              'Yes! I can\'t wait to see you again!',
-              'Wait. Let silence stretch. Hours later: "You made my schedule pleasantly inconvenient. I may need to rearrange everything."'
+              'Yes, of course.',
+              '[Half-smile] "Depends on the day."'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this eager statement into one that creates hot-cold contrast.',
-            input: 'I can\'t stop thinking about last night.',
-            example: 'You became a distraction I hadn\'t accounted for. I\'m still recalculating the damage.'
+            prompt: 'Transform this statement into one that creates mixed signals.',
+            input: 'I\'m into you.',
+            example: 'Sometimes.'
           ),
-          reflection: 'Are you a constant flame, burning evenly, or do you let them freeze so your warmth becomes divine when it returns?'
+          reflection: 'Do you present yourself as solved, or as a puzzle that refuses to end?'
         ),
       ),
       8: Lesson(
         id: 'scarcity_2_8',
-        title: 'The Economy of Access (Rarity as Worth)',
+        title: 'The Chase Dynamic',
         category: 'scarcity',
         world: 2,
         lesson: 8,
-        xp: 50,
+        xp: 75,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Fifth Avenue, 1961. Tiffany\'s windows are mostly empty. A single necklace lies in velvet darkness, and it feels like a holy relic. Audrey Hepburn does not beg for it — she gazes, detached, elevating both herself and the object. Scarcity isn\'t real; it\'s engineered. The rare is worshiped.',
+          hook: 'Riviera, 1950s. Grace Kelly never pursued Prince Rainier. She floated — always slightly out of reach. By the time he proposed, he believed he had conquered the rarest jewel alive. In truth, she never stopped running just a step ahead.',
           concept: [
-            'Commonness is Death: Abundant affection becomes invisible.',
-            'Levels of Access: Not everyone gets the same you. Some earn only your public face, others your secrets.',
-            'You Auction, They Bid: You do not prove yourself. They must prove themselves worthy of your time.'
+            'What runs is chased.',
+            'What chases is cheapened.',
+            'Effort crowns the prize.',
+            'Humans inflate the value of what they fight for.'
           ],
+          teaching: 'Humans inflate the value of what they fight for. If they must earn you, they treasure you. Scarcity is not denial — it\'s distance.',
           drill: Drill(
-            question: 'They ask you to meet last-minute. What do you say?',
+            question: 'They sigh: "Why are you hard to get?"',
             options: [
-              'Sure, I\'ll drop everything for you!',
-              'My time\'s already claimed. Convince me yours should take its place.'
+              'I\'m not.',
+              'Because anything worth having takes sweat.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this available statement into one that creates scarcity around your time.',
-            input: 'I\'m free whenever you want me.',
-            example: 'I guard my solitude like treasure. Convince me why I should give it to you.'
+            prompt: 'Transform this statement into one that creates chase dynamics.',
+            input: 'Yes, I\'ll see you.',
+            example: 'Maybe.'
           ),
-          reflection: 'Do you hand out your time like a free sample, or do you make them bleed a little to earn it?'
+          reflection: 'Do you run just enough for the chase to never end?'
         ),
       ),
       9: Lesson(
         id: 'scarcity_2_9',
-        title: 'The Architecture of Longing (Designing the Void)',
+        title: 'The High-Point Exit',
         category: 'scarcity',
         world: 2,
         lesson: 9,
-        xp: 50,
+        xp: 75,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Florence, 1501. Michelangelo does not create David by adding — he removes. Chip by chip, absence becomes form. The masterpiece is not what he built, but what he took away. Longing is carved the same way — not by piling on affection, but by deliberate subtraction.',
+          hook: 'Woodstock, 1969. Hendrix ends with "Purple Haze." The crowd begs for more — but he never returns. No encore. No decline. Just eternal fire, frozen at its peak.',
           concept: [
-            'Creation by Subtraction: Stop filling silence. Let absence echo.',
-            'Longing is Space: Desire only grows when you step away.',
-            'The Withdrawal is the Offering: By leaving, you give them the ache of wanting you back.'
+            'Leave at climax, not the fade.',
+            'Endings weigh more than beginnings.',
+            'Depart hungry, not full.',
+            'The brain remembers peaks and ends, not middles.'
           ],
+          teaching: 'The brain remembers peaks and ends, not middles. Leave at the height, and you\'re immortal. Stay too long, and you decay.',
           drill: Drill(
-            question: 'A conversation reaches its peak. What do you do?',
+            question: 'They plead: "Stay a bit longer."',
             options: [
-              'Keep talking, filling silence until it dies.',
-              'End it yourself: "I\'ll leave the echo of that last thing you said hanging between us."'
+              'Stay until boredom.',
+              'Better to leave you starving than stuffed.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this clingy statement into one that creates longing through withdrawal.',
-            input: 'Don\'t go, stay a little longer.',
-            example: 'I want to leave this moment untouched, before it loses its beauty.'
+            prompt: 'Transform this statement into one that creates high-point exits.',
+            input: 'Bye.',
+            example: 'This was perfect — that\'s why I\'m ending it here.'
           ),
-          reflection: 'Do you pile clay until your statue is bloated, or do you carve absence until the masterpiece appears?'
+          reflection: 'Do you end too late — or do you leave so high they ache forever?'
         ),
       ),
       10: Lesson(
         id: 'scarcity_2_10',
-        title: 'The Haunting (Becoming the Lingering Thought)',
+        title: 'The Long Wait',
         category: 'scarcity',
         world: 2,
         lesson: 10,
         xp: 75,
         content: LessonContent(
-          hook: 'Venice, 1580. Casanova leaves women not just in pleasure, but in torment. He was gone days ago, yet his words, gestures, and silences replay endlessly in their minds. To haunt is the highest form of seduction. It is not the kiss they crave again — it is the echo of the kiss, the phantom that refuses to die.',
+          hook: 'Rome, 1508. Pope Julius begs to see Michelangelo\'s progress. Four years he waits. When the Sistine ceiling is unveiled, the anticipation itself has made it divine.',
           concept: [
-            'Memory is the Drug: It\'s not about now. It\'s about after.',
-            'Small, Strange Details Stick: A whispered phrase, a touch in an unexpected place, an unfinished look.',
-            'Presence Fades. Echoes Remain: Seduction that ends with the night dies. Seduction that lingers owns them.'
+            'What\'s instant is disposable.',
+            'Waiting sanctifies.',
+            'Hunger deepens in time\'s furnace.',
+            'Effort + patience = ownership.'
           ],
-                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
+          teaching: 'Effort + patience = ownership. The longer they invest, the more they must believe you\'re worth it. Waiting doesn\'t weaken desire — it cements it.',
           drill: Drill(
-            question: 'After the first kiss, what do you say?',
+            question: 'They snap: "Why make me wait?"',
             options: [
-              'That was amazing. You\'re incredible.',
-              'Whisper something oblique: "I\'ll remember the taste of this moment when the world is quiet."'
+              'Sorry, I was busy.',
+              'Because waiting makes it burn brighter.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this direct statement into one that creates a haunting echo.',
-            input: 'I miss you already.',
-            example: 'It\'s not you I miss — it\'s the silence you left behind.'
+            prompt: 'Transform this statement into one that creates anticipation through waiting.',
+            input: 'See you soon.',
+            example: 'If you can wait, you\'ll understand why it mattered.'
           ),
-          reflection: 'Do you vanish like smoke the moment you leave, or do you become the ghost they carry with them, whispering in every quiet room?'
+          reflection: 'Do you rush to deliver — or do you let time carve you into treasure?'
         ),
       ),
     },
     3: {
       11: Lesson(
         id: 'scarcity_3_11',
-        title: 'The Hot–Cold Calculus',
+        title: 'Obsession Triggers',
         category: 'scarcity',
         world: 3,
         lesson: 11,
         xp: 100,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Berlin, 1929. Marlene Dietrich takes a man\'s hand, whispers a compliment so soft it trembles in his chest. He leans closer—just as she turns away, laughing at another\'s joke. His warmth collapses into frost. He spends days replaying the moment, addicted to the memory of her sun. Seduction is not constant heat—it is the plunge between fire and ice.',
+          hook: 'Paris, 1920s. Marcel Proust whispers: "Every time you laugh like that, I feel history shift." From then on, his lover can\'t laugh without hearing his voice in her head. He didn\'t claim her once — he lived inside her daily habits.',
           concept: [
-            'Emotion lives in contrast, not consistency.',
-            'Warmth means nothing without the threat of cold.',
-            'The addict doesn\'t chase the high; he chases the memory of it.'
+            'Anchor yourself to their involuntary gestures.',
+            'Habits become shrines to memory.',
+            'Obsession is repetition infected with you.',
+            'By tying yourself to gestures they can\'t control.'
           ],
+          teaching: 'By tying yourself to gestures they can\'t control (smiling, sighs, nervous habits), you embed yourself in their routine. Every time they move, you reappear.',
           drill: Drill(
-            question: 'They text: "Last night with you was amazing." What do you do?',
+            question: 'They laugh nervously.',
             options: [
-              'Reply instantly with equal warmth.',
-              'Wait. Hours later: "It was… disruptive. I\'m still adjusting."'
+              'Cute.',
+              'That laugh feels like you\'re hiding something dangerous.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this eager statement into one that creates hot-cold contrast.',
-            input: 'I can\'t wait to see you again.',
-            example: 'You left me recalculating my schedule.'
+            prompt: 'Transform this statement into one that creates obsession triggers.',
+            input: 'You\'re funny.',
+            example: 'Every time you laugh, I feel like I\'m hearing a secret the world isn\'t ready for.'
           ),
-          reflection: 'Do you give steady comfort, or orchestrate storms that make your warmth unforgettable?'
+          reflection: 'Which habits could you haunt — so they can\'t escape you even in their own body?'
         ),
       ),
       12: Lesson(
         id: 'scarcity_3_12',
-        title: 'The Rhythm of Approach and Retreat',
+        title: 'Scarcity in Social Proof',
         category: 'scarcity',
         world: 3,
         lesson: 12,
         xp: 100,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Venice, 1510. A masked courtesan leans forward, her breath grazing a nobleman\'s ear. Just as he opens his mouth to speak, she drifts away across the ballroom floor, swallowed by the crowd. He spends the night chasing her shadow. Seduction is not pursuit—it is choreography.',
+          hook: 'Studio 54, 1978. Bianca Jagger arrives on a white horse. She doesn\'t have to chase — the crowd\'s hunger makes her priceless. Everyone wanted her because everyone else wanted her.',
           concept: [
-            'Desire thrives on rhythm: advance, retreat, return.',
-            'Constant pursuit signals neediness. Constant distance kills connection. The dance lives in between.',
-            'The art is to be almost theirs, then vanish.'
+            'Desire multiplies when witnessed.',
+            'Social proof crowns rarity.',
+            'Scarcity amplified by demand becomes spectacle.',
+            'When many want you, each feels they\'re battling for treasure.'
           ],
+          teaching: 'Scarcity isn\'t only private absence — it\'s public demand. When many want you, each feels they\'re battling for treasure. Competition sharpens obsession.',
           drill: Drill(
-            question: 'At dinner, conversation flows. What do you do?',
+            question: 'They say: "You seem popular."',
             options: [
-              'Stay locked on them, hanging on every word.',
-              'Mid-laughter, excuse yourself, touch their shoulder lightly, and disappear for a while. Let them notice your absence.'
+              'Not really.',
+              'People try. Few succeed.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this clingy statement into one that creates rhythm and mystery.',
-            input: 'I could listen to you all night.',
-            example: 'Don\'t tempt me to disappear just to see if you\'d notice.'
+            prompt: 'Transform this statement into one that creates social proof scarcity.',
+            input: 'Lots of people talk to me.',
+            example: 'Attention\'s cheap. My focus isn\'t.'
           ),
-          reflection: 'Do you smother until interest dies, or vanish until they ache for your return?'
+          reflection: 'Do you hide demand — or let it crown you?'
         ),
       ),
       13: Lesson(
         id: 'scarcity_3_13',
-        title: 'The Bitter-Sweet Alchemy',
+        title: 'The Forbidden Fruit',
         category: 'scarcity',
         world: 3,
         lesson: 13,
         xp: 100,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Mughal India, 1620. Nur Jahan gifts her lover a rose laced with saffron. Sweet on the tongue, bitter on the breath. He never forgets it. Pleasure alone fades. Pain alone repels. But a blend—honey laced with steel—creates memory that burns forever.',
+          hook: 'Havana, 1950s. An American businessman kisses a revolutionary\'s daughter. Each touch feels like treason. The risk fuels the fire — not the kiss itself.',
           concept: [
-            'Pure sweetness breeds boredom.',
-            'A touch of sting—sarcasm, a withheld smile, a challenge—sharpens attraction.',
-            'Seduction is an elixir: sugar, then salt, then sugar again.'
+            'Prohibition inflames passion.',
+            'Obstacles multiply value.',
+            'Every "no" turns into a deeper "yes."',
+            'Humans crave the off-limits.'
           ],
+          teaching: 'Humans crave the off-limits. What is forbidden becomes irresistible because it feels stolen, secret, rare. Scarcity is magnified by boundary.',
           drill: Drill(
-            question: 'They say: "You\'re perfect." How do you respond?',
+            question: 'They whisper: "This feels wrong."',
             options: [
-              'Thank you! That\'s so sweet.',
-              'A slow smirk: "Perfect? Don\'t ruin the fun with exaggeration."'
+              'No, it\'s fine.',
+              'That\'s why you\'ll never forget it.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this simple compliment into one that creates bitter-sweet tension.',
-            input: 'You\'re amazing.',
-            example: 'Dangerous of you to notice.'
+            prompt: 'Transform this statement into one that creates forbidden fruit desire.',
+            input: 'We shouldn\'t.',
+            example: 'The best stories are the ones we\'re not supposed to tell.'
           ),
-          reflection: 'Do you give only comfort and fade from memory, or lace your sweetness with a taste they can\'t wash away?'
+          reflection: 'What boundaries, framed carefully, could make your presence burn hotter?'
         ),
       ),
       14: Lesson(
         id: 'scarcity_3_14',
-        title: 'The Crescendo and the Pause',
+        title: 'The Fantasy Anchor',
         category: 'scarcity',
         world: 3,
         lesson: 14,
         xp: 100,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Vienna, 1805. Beethoven slams his fingers on the keys, flooding the hall with thunder. Just as the audience leans forward, desperate, he halts. Silence. That pause—the aching gap—rings louder than the music itself. The audience sits on edge, begging for release. Seduction is music. Without silence, noise is nothing.',
+          hook: 'WWII. Soldiers pin photos of Rita Hayworth in their barracks. They don\'t know her — but in their minds, she\'s perfect. She isn\'t flesh to them; she\'s fantasy, and fantasy survives longer than presence.',
           concept: [
-            'Build energy like a symphony, then stop.',
-            'The pause heightens desire more than the action.',
-            'Silence is not emptiness; it is a weapon.'
+            'Reality fades; fantasy endures.',
+            'Imagination outlives experience.',
+            'Anchor yourself in dreams, not diaries.',
+            'Give fragments, not the whole.'
           ],
+          teaching: 'Give fragments, not the whole. A sentence, an image, a glance — enough to seed fantasy. They\'ll build the rest themselves, and in doing so, crown you immortal in their imagination.',
           drill: Drill(
-            question: 'They lean in close, waiting for your kiss. What do you do?',
+            question: 'They press: "Tell me everything about you."',
             options: [
-              'Kiss them immediately.',
-              'Hold their gaze. Smile faintly. Whisper: "Not yet." Then step back.'
+              'Overshare.',
+              'If I told you everything, what would be left to dream about?'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this direct statement into one that creates tension through pause.',
-            input: 'I couldn\'t resist kissing you.',
-            example: 'I almost kissed you, but I prefer to let the tension breathe.'
+            prompt: 'Transform this statement into one that creates fantasy anchors.',
+            input: 'I like to travel.',
+            example: 'I belong more to places I haven\'t reached than the ones I\'ve seen.'
           ),
-          reflection: 'Do you rush to climax and lose the moment, or do you wield the pause as your sharpest blade?'
+          reflection: 'Are you feeding fantasy — or killing it with too much truth?'
         ),
       ),
       15: Lesson(
         id: 'scarcity_3_15',
-        title: 'The Furnace of Jealousy',
+        title: 'Obsession by Interruption',
         category: 'scarcity',
         world: 3,
         lesson: 15,
         xp: 100,
         content: LessonContent(
-          hook: 'Hollywood, 1955. Marilyn Monroe doesn\'t cling to her date at a party. She laughs with others, lets her hand rest a second too long on another man\'s arm. Her companion watches, half in rage, half in hunger. Jealousy is gasoline. A dangerous fuel—but in measured doses, it burns hotter than devotion.',
+          hook: 'Los Angeles, 1975. Joni Mitchell is halfway through a perfect set when the power cuts. Silence. No encore. Decades later, the unfinished night is remembered as her most haunting performance.',
           concept: [
-            'Possession kills desire. Rivalry feeds it.',
-            'Subtle suggestion of competition sharpens your value.',
-            'But too much fire burns the house down.'
+            'Closure kills memory.',
+            'The cut-off replays endlessly.',
+            'Endings unfinished become eternal.',
+            'Humans crave resolution.'
           ],
-                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
+          teaching: 'Humans crave resolution. Deny it, and they\'ll replay you endlessly in search of it. The sharpest obsession isn\'t built in fulfillment — it\'s built in interruption.',
           drill: Drill(
-            question: 'At an event, they cling to you. What do you do?',
+            question: 'They beg: "Stay a little longer."',
             options: [
-              'Stay glued to their side.',
-              'Break away, engage someone else, laugh warmly. Return later: "You looked like you missed me."'
+              'Okay.',
+              'Better to leave with hunger than with regret.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this possessive statement into one that creates subtle competition.',
-            input: 'I only want you.',
-            example: 'I enjoy others, but you… you\'re the one who unsettles me.'
+            prompt: 'Transform this statement into one that creates obsession through interruption.',
+            input: 'I had fun.',
+            example: 'I\'m leaving now — before this moment becomes ordinary.'
           ),
-          reflection: 'Do you guard them so tightly they suffocate, or let them taste the fear of losing you—and thus value you more?'
+          reflection: 'Do you linger until boredom, or cut off at the peak so you\'re replayed forever?'
         ),
       ),
     },
     4: {
       16: Lesson(
         id: 'scarcity_4_16',
-        title: 'The Mask is the Magnet',
+        title: 'The Intermittent Flame',
         category: 'scarcity',
         world: 4,
         lesson: 16,
-        xp: 100,
+        xp: 150,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Venice, 1725. At the masquerade, Casanova enters behind a porcelain mask. His identity is unknown, but his movements are deliberate—fluid, enigmatic. A woman leans in, whispering, "Who are you really?" He does not answer. That single question haunts her the entire night. Seduction begins not with revelation, but with concealment.',
+          hook: 'Las Vegas, 1970s. Psychologists study slot machines. People don\'t get addicted to steady wins — they get addicted to uncertainty. The jackpot that comes after 20 losses is irresistible. Lovers fall the same way: not from consistency, but flickers of warmth and withdrawal.',
           concept: [
-            'The unknown is more magnetic than the known.',
-            'A mask—literal or metaphorical—invites pursuit.',
-            'Remove your mask too soon, and the game collapses.'
+            'Predictable = comfort.',
+            'Unpredictable = compulsion.',
+            'Desire lives in the maybe.',
+            'The brain is wired for intermittent rewards.'
           ],
+          teaching: 'The brain is wired for intermittent rewards. By mixing presence and absence, affection and withdrawal, you create the strongest loop of all: addiction through uncertainty.',
           drill: Drill(
-            question: 'They ask: "So tell me, who are you really?" What do you say?',
+            question: 'They say: "You\'re inconsistent."',
             options: [
-              'Pour out your life story.',
-              'Smile faintly. "That depends which version of me you\'re ready to handle."'
+              'Sorry, I\'ll fix it.',
+              'Consistency comforts. I prefer you addicted.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this revealing statement into one that maintains mystery.',
-            input: 'I\'m just a normal person.',
-            example: 'I wear masks for a reason. Guess which one I\'m showing you.'
+            prompt: 'Transform this statement into one that creates intermittent flame addiction.',
+            input: 'I like you.',
+            example: 'Some days I drown in you. Others I disappear. That\'s what makes it dangerous.'
           ),
-          reflection: 'Do you rush to prove your authenticity, or let them ache to unmask you?'
+          reflection: 'Are you a steady flame—or the flicker that keeps them pulling the lever?'
         ),
       ),
       17: Lesson(
         id: 'scarcity_4_17',
-        title: 'The Glamour of Storytelling',
+        title: 'The Long Silence',
         category: 'scarcity',
         world: 4,
         lesson: 17,
-        xp: 100,
+        xp: 150,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Cairo, 1001 nights. Scheherazade spins tales that end on a cliff\'s edge. The Sultan cannot kill her—he must know what happens next. Each unfinished story buys her another dawn. Seduction is no different: the story you leave unfinished will hold them captive long after your words fade.',
+          hook: 'Hollywood, 1950s. Marilyn Monroe vanishes from the spotlight. Months of silence. When she returns, the world is ravenous. Her absence didn\'t weaken her—it fermented her into myth.',
           concept: [
-            'A good story is bait; an unfinished one is a shackle.',
-            'Speak in vignettes, fragments, cliffhangers.',
-            'Let them be desperate for the next chapter.'
+            'Silence grows louder with time.',
+            'Absence multiplies presence.',
+            'The pause engraves the return.',
+            'Silence is not empty. It\'s fermentation.'
           ],
+          teaching: 'Silence is not empty. It\'s fermentation. When you retreat, imaginations work overtime. By the time you return, you\'ve grown larger than life.',
           drill: Drill(
-            question: 'They ask about your past. What do you reveal?',
+            question: 'They ask: "Why did you disappear?"',
             options: [
-              'Tell the whole story.',
-              'Offer only the edge. "I once walked away from something priceless. I\'ll tell you why… another time."'
+              'Sorry, I was busy.',
+              'Stars vanish, then burn brighter.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this complete story into one that creates intrigue and mystery.',
-            input: 'Yeah, my ex broke my heart.',
-            example: 'I once gave someone a part of me I didn\'t know existed. They left it behind. Strange how some rooms stay locked forever.'
+            prompt: 'Transform this statement into one that creates long silence desire.',
+            input: 'I didn\'t mean to ghost you.',
+            example: 'Eclipses end. That\'s why the sun feels hotter when it returns.'
           ),
-          reflection: 'Do your stories satisfy quickly, or do they haunt like unfinished music?'
+          reflection: 'Do you fear silence — or wield it as your sharpest weapon?'
         ),
       ),
       18: Lesson(
         id: 'scarcity_4_18',
-        title: 'The Shadow and the Spotlight',
+        title: 'The Invisible Chain',
         category: 'scarcity',
         world: 4,
         lesson: 18,
-        xp: 100,
+        xp: 150,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Paris, 1890. In the cabaret, Sarah Bernhardt doesn\'t speak first. She lets the spotlight warm her profile, waiting until the silence swells. The audience leans forward, begging for her voice. Only then does she deliver a single line, and the room collapses in applause. True seduction is theater: light and shadow. You decide when to step into view.',
+          hook: '1950s Beat Generation. Jack Kerouac told lovers: "Go, see whoever you want." They left — but always came back. Freedom was the chain. Because they weren\'t trapped by his rules — they were trapped by their memory of him.',
           concept: [
-            'People notice what you choose to illuminate.',
-            'Hold yourself in shadow until the moment burns brightest.',
-            'Anticipation is applause waiting to erupt.'
+            'Chains made visible are broken.',
+            'Freedom disguised as permission binds deeper.',
+            'They don\'t stay because you forbid—they stay because they can\'t escape.',
+            'The strongest bonds aren\'t forced. They\'re felt.'
           ],
+          teaching: 'The strongest bonds aren\'t forced. They\'re felt. When you give freedom, and they still orbit you, the chain is invisible — and unbreakable.',
           drill: Drill(
-            question: 'In a group conversation, someone asks your opinion. What do you do?',
+            question: 'They ask: "Can I see other people?"',
             options: [
-              'Answer immediately.',
-              'Pause. Sip your drink. Then: "I was waiting to see who asked the right question."'
+              'No.',
+              'Of course. Compare all you want.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this simple response into one that creates anticipation and drama.',
-            input: 'Sure, I think it\'s fine.',
-            example: 'My silence was the real answer. But since you insisted…'
+            prompt: 'Transform this statement into one that creates invisible chains.',
+            input: 'I don\'t want you seeing others.',
+            example: 'Freedom only reminds you where you belong.'
           ),
-          reflection: 'Do you rush into every spotlight, or wait until your absence has primed the stage for you?'
+          reflection: 'Do you demand loyalty — or let them discover they are already bound?'
         ),
       ),
       19: Lesson(
         id: 'scarcity_4_19',
-        title: 'The Serpent\'s Mirror',
+        title: 'The Withdrawal Test',
         category: 'scarcity',
         world: 4,
         lesson: 19,
-        xp: 100,
+        xp: 175,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Alexandria, Cleopatra receives Roman envoys. She studies each gesture, each word, then reflects it back like polished glass. To the serious one, she is grave. To the playful one, she is mischief. Each leaves convinced she is uniquely aligned with him. But none have seen the real Cleopatra. Seduction thrives not in authenticity, but in reflection.',
+          hook: '2010s. Facebook engineers secretly hid a user\'s posts for a week. Friends grew restless, searching, messaging, refreshing. The silence revealed importance. The absence was the test.',
           concept: [
-            'People fall in love with their reflection in you.',
-            'Mirror their tone, their rhythm, their energy—until they believe you are the missing half of themselves.',
-            'True power is not showing yourself, but reflecting them more beautifully than they imagined.'
+            'Withdrawal exposes attachment.',
+            'Silence measures gravity.',
+            'If absence hurts, you matter.',
+            'If they don\'t notice your absence, you had no hold.'
           ],
+          teaching: 'If they don\'t notice your absence, you had no hold. But if they search, wonder, check — then your absence revealed your power. Withdrawal is the clearest mirror.',
           drill: Drill(
-            question: 'They confess: "I feel like I\'m too intense." What do you say?',
+            question: 'They say: "I missed you."',
             options: [
-              'No, you\'re fine!',
-              'A sly smile. "Intensity recognizes intensity. It\'s why you found me."'
+              'I missed you too.',
+              'Good. That proves I matter.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this simple agreement into one that creates mirroring and connection.',
-            input: 'I like you too.',
-            example: 'Strange… you sound exactly like my own thoughts, only out loud.'
+            prompt: 'Transform this statement into one that creates withdrawal tests.',
+            input: 'Sorry I was gone.',
+            example: 'Now you know what life without me feels like.'
           ),
-          reflection: 'Are you showing your true face, or are you their mirror polished into gold?'
+          reflection: 'Do you measure your worth by presence — or by how hard they chase your absence?'
         ),
       ),
       20: Lesson(
         id: 'scarcity_4_20',
-        title: 'The Art of Vanishing',
+        title: 'The Endless Chase',
         category: 'scarcity',
         world: 4,
         lesson: 20,
-        xp: 100,
+        xp: 200,
         content: LessonContent(
-          hook: 'Tokyo, 1923. A geisha spends weeks captivating a wealthy merchant—smiles, music, tea ceremonies. Just as he thinks he has secured her, she vanishes. No explanation. For months, he burns incense at the teahouse door, desperate for her return. When she reappears, her worth has tripled. The most seductive act is sometimes disappearance.',
+          hook: 'Paris, 1970s. Françoise Sagan gave glimpses, never the whole. A flicker of pain, a laugh, a fragment of her novel. Each time someone thought they knew her, another layer appeared. They never caught her. The chase was endless.',
           concept: [
-            'Presence intoxicates. Absence addicts.',
-            'To vanish is to engrave your outline in their memory.',
-            'A strategic disappearance turns you from a person into a myth.'
+            'Final possession kills desire.',
+            'Mystery stretched eternal creates devotion.',
+            'The chase must never end.',
+            'Desire doesn\'t live in the having — it lives in the almost.'
           ],
-                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
+          teaching: 'The final secret of scarcity: never be fully possessed. Always leave something undiscovered. Desire doesn\'t live in the having — it lives in the almost.',
           drill: Drill(
-            question: 'They expect your constant presence. What do you do?',
+            question: 'They beg: "Tell me everything about you."',
             options: [
-              'Stay available, always replying fast.',
-              'Withdraw for days, reappear with a smile: "I had to miss you properly."'
+              'Here\'s all of me.',
+              'Every time you think you\'ve found me, another layer opens.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this apologetic statement into one that makes absence strategic.',
-            input: 'Sorry I was busy.',
-            example: 'Some absences are necessary. Otherwise you\'d forget how good the return feels.'
+            prompt: 'Transform this statement into one that creates endless chase dynamics.',
+            input: 'You know me now.',
+            example: 'You\'ve only read the first chapter. The story runs deeper.'
           ),
-          reflection: 'Do you flood them until they drown, or vanish until thirst carves your shape into their soul?'
+          reflection: 'Do you let yourself be fully owned — or do you design a chase that has no finish line?'
         ),
       ),
     },
@@ -2537,628 +1967,648 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
     1: {
       1: Lesson(
         id: 'deception_1_1',
-        title: 'The Mask of Virtue (Machiavelli Reforged)',
+        title: 'The Mask of Mystery',
         category: 'deception',
         world: 1,
         lesson: 1,
         xp: 50,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Florence, 1513. A candlelit banquet. Cesare Borgia lifts a golden chalice, blessing God in front of noblemen and priests. By morning, the rivals who toasted with him are dead, poisoned with the wine he sanctified. The city praises his piety. Machiavelli, watching from the shadows, writes in despair: "Everyone sees what you appear to be, few feel what you are." The deadliest predator doesn\'t roar like a beast—it prays like a saint.',
+          hook: 'Venice, 17th century. At the masquerade ball, dukes and princes hide behind painted masks. A merchant, usually invisible, now draws whispers and stares. A veiled glance feels sharper than a crown. The mask doesn\'t conceal—it transforms. What is hidden becomes more magnetic than what is shown.',
           concept: [
-            'Virtue as Armor: People weaponize morality as the ultimate disguise.',
-            'Public Image vs Private Reality: The louder the virtue signal, the deeper the rot might run.',
-            'Modern Application: When someone is obsessed with telling you who they are, pay more attention to what they do when nobody is watching.'
+            'What\'s unseen lingers longer than what\'s revealed.',
+            'Uncertainty sharpens desire; certainty dulls it.',
+            'A mask is not deception—it\'s amplification.',
+            'Slow revelation is stronger than instant truth.'
           ],
+          teaching: 'The brain is addicted to unfinished puzzles. A pause, a veil, an unanswered question sparks imagination to fill in the blanks—usually with something more powerful than reality. Mystery magnifies. Clarity closes.',
           drill: Drill(
-            question: 'Someone constantly speaks of honesty, integrity, and loyalty—yet keeps being "caught" in contradictions. This suggests:',
+            question: 'They press: "Tell me everything about you."',
             options: [
-              'They\'re trying to live up to high ideals',
-              'They\'re using virtue as camouflage'
+              'Sure, here\'s my story.',
+              'Better to read the book in chapters, don\'t you think?'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this virtue claim into a recognition of the mask.',
-            input: 'I\'m always honest, you can trust me.',
-            example: 'Those who insist on their honesty often wear it like a mask to hide what they fear you\'ll see.'
+            prompt: 'Transform this statement into one that creates mystery through veiling.',
+            input: 'I was just home last night.',
+            example: 'I didn\'t sleep much—but not for the reason you think.'
           ),
-          reflection: 'Who around you is obsessed with appearing good? What cracks show through their mask?'
+          reflection: 'Where are you giving away too much, too fast? What veil could you keep, so imagination does the work for you?'
         ),
       ),
       2: Lesson(
         id: 'deception_1_2',
-        title: 'Half-Truths as Weapons (Sharper Edition)',
+        title: 'The Rule of Three',
         category: 'deception',
         world: 1,
         lesson: 2,
         xp: 50,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Berlin, 1943. A radio crackles. Goebbels\' voice fills the air: "The Allies bomb women and children." True—but stripped of context, it becomes poison. He crafts lies from fragments of truth, knowing that a half-truth is harder to fight than a blatant falsehood. The audience believes because pieces are real. Like a glass of wine with a drop of cyanide—the drink is mostly pure, but death hides in the dilution.',
+          hook: 'Rome, ancient days. Orators knew: once is forgettable, twice is uncertain, thrice becomes eternal. "Veni, vidi, vici." Three beats—immortalized forever. Across cultures, stories, jokes, and charms repeat in threes. Three isn\'t number—it\'s spell.',
           concept: [
-            'The Half-Truth: Lies anchored in reality.',
-            'Weaponized Context: The truth is twisted by what is omitted.',
-            'Modern Application: News, gossip, and even personal conflicts thrive on this tactic.'
+            'The mind craves rhythm more than reason.',
+            'One is chance. Two is pattern. Three is law.',
+            'Triads echo longer than speeches.',
+            'Brains encode threes naturally.'
           ],
+          teaching: 'Brains encode threes naturally: fairy tales, rituals, comedy, even persuasion. Three is completion. Less feels weak, more feels forced. The third beat feels inevitable—destiny disguised as structure.',
           drill: Drill(
-            question: 'A friend whispers: "She was talking about you last night." They omit it was praise. This is:',
+            question: 'First meeting:',
             options: [
-              'Neutral sharing',
-              'A half-truth designed to seed doubt'
+              'You\'re attractive.',
+              'Your walk, your voice, your timing—dangerous.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this half-truth into a recognition of the weapon.',
-            input: 'Coffee is dangerous.',
-            example: 'Yes, coffee can harm—if you drink twenty cups a day. The truth is meaningless without the missing frame.'
+            prompt: 'Transform this statement into one that uses the rule of three.',
+            input: 'I like your smile.',
+            example: 'Your smile, your eyes, your pause—it\'s a dangerous equation.'
           ),
-          reflection: 'When were you last manipulated by something that was true, but not the whole truth?'
+          reflection: 'Where can you use the rhythm of three—in words, gestures, pauses—to make your presence unforgettable?'
         ),
       ),
       3: Lesson(
         id: 'deception_1_3',
-        title: 'Hiding in Plain Sight (Turned Legendary)',
+        title: 'The Mirror Illusion',
         category: 'deception',
         world: 1,
         lesson: 3,
         xp: 50,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Moscow, 1967. Apartment #42, third floor, same routine for 20 years. A man feeds pigeons at dawn, lends sugar to neighbors, reads Pushkin quietly by lamp. Nobody suspects the librarian is a KGB ghost courier—carrying messages that decide wars. His invisibility comes not from shadows but from banality. He is the wallpaper. He is the chair in the room nobody notices. True power doesn\'t need mystery—it thrives in ordinariness.',
+          hook: 'Paris, 18th century. Casanova sits with a countess. He doesn\'t reveal himself—he reflects her. "Men praise your beauty, but they miss your wit." Her eyes light up. She feels seen for the first time. He isn\'t showing his truth—he\'s holding up her dream.',
           concept: [
-            'Blandness as Weapon: To hide, become boring.',
-            'Camouflage of the Ordinary: Predictability breeds trust.',
-            'Modern Application: Scammers, spies, and manipulators are rarely flamboyant—they\'re the ones who look like everybody else.'
+            'People fall for their reflection, not for you.',
+            'The mirror binds deeper than the spotlight.',
+            'To reflect desire is to possess it.',
+            'Every person carries a hidden vision of how they long to be seen.'
           ],
+          teaching: 'Every person carries a hidden vision of how they long to be seen. Mirror it back, and they fall into the illusion that you "understand" them like no one else. In truth—they are in love with themselves through you.',
           drill: Drill(
-            question: 'Who is more dangerous?',
+            question: 'They say: "No one understands me."',
             options: [
-              'The loud, secretive neighbor with dark glasses.',
-              'The friendly neighbor who seems normal, but owns items they shouldn\'t afford.'
+              'I do.',
+              'Strange… I was about to say the same about you.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this observation into a recognition of camouflage.',
-            input: 'He\'s just a nice, quiet guy.',
-            example: 'Sometimes the quietest man in the room holds the loudest secrets.'
+            prompt: 'Transform this statement into one that creates mirror illusions.',
+            input: 'You\'re beautiful.',
+            example: 'It\'s eerie—you feel like the answer I didn\'t know I was searching for.'
           ),
-          reflection: 'What "ordinary" people in your life don\'t quite add up?'
+          reflection: 'Do you try to impress—or do you mirror what others most crave to believe about themselves?'
         ),
       ),
       4: Lesson(
         id: 'deception_1_4',
-        title: 'Feigned Weakness (Amplified)',
+        title: 'The Balance Trick (Symmetry)',
         category: 'deception',
         world: 1,
         lesson: 4,
         xp: 50,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Ancient China, 200 BC. A battlefield littered with broken banners. Han Xin retreats, leaving supplies and weapons scattered. The enemy surges forward, laughing at his weakness. But the laughter dies as ambush horns echo from the mountains—Han Xin\'s "defeated" army crashes down from the hills, annihilating the overconfident pursuers. What looked like collapse was bait. Weakness was camouflage for the kill.',
+          hook: 'Florence, 1500s. Artists carve symmetry into cathedrals and portraits. A balanced face feels more beautiful. A mirrored sentence feels more true. Symmetry is not truth—but the brain mistakes it for truth every time.',
           concept: [
-            'Weaponized Helplessness: Pretend to be beaten to bait overconfidence.',
-            'Strategic Collapse: Appear smaller so your strike feels bigger.',
-            'Modern Application: People sometimes crumble right before victory—or pretend to.'
+            'Balance feels like truth, even if false.',
+            'Symmetry seduces the senses before logic wakes.',
+            'Pattern is proof in disguise.',
+            'Our ancestors trusted balance—it meant health, safety, survival.'
           ],
+          teaching: 'Our ancestors trusted balance—it meant health, safety, survival. That instinct still rules us. A phrase balanced in rhythm convinces without evidence. People believe form as if it were fact.',
           drill: Drill(
-            question: 'In a heated negotiation, someone suddenly sighs and says: "Fine, you win." This is:',
+            question: 'They challenge: "Prove it\'s true."',
             options: [
-              'Genuine surrender',
-              'Feigned weakness to make you careless'
+              'Rattle off evidence.',
+              'If it begins in silence, it ends in silence.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this surrender into a recognition of feigned weakness.',
-            input: 'I give up.',
-            example: 'When someone surrenders too easily, it\'s rarely the end—it\'s the opening move.'
+            prompt: 'Transform this statement into one that uses balance and symmetry.',
+            input: 'I\'ll always care for you.',
+            example: 'If you rise, I rise. If you fall, I fall.'
           ),
-          reflection: 'Who has played weak in your life, only to strike harder later?'
+          reflection: 'When have you mistaken balance for proof? Where are you moved more by beauty than truth?'
         ),
       ),
       5: Lesson(
         id: 'deception_1_5',
-        title: 'The Noble Lie (Sharpened)',
+        title: 'The Gap Effect (Power of Pauses)',
         category: 'deception',
         world: 1,
         lesson: 5,
         xp: 50,
         content: LessonContent(
-          hook: 'Athens, 380 BC. Plato writes by lamplight: "Sometimes rulers must lie for the greater good." A mother tells her child medicine tastes sweet. A king withholds news of an invasion to prevent panic. A doctor tells a patient, "You\'ll be fine" to summon hope. These are noble lies. But the shadow creeps in: who decides what is noble? Who guards the guardians? The same excuse—"it\'s for your own good"—is used by tyrants and caretakers alike.',
+          hook: 'Cold War, 1962. Khrushchev pounds the table. Kennedy doesn\'t shout—he waits. Thirty seconds of silence bend the room until his calm voice cuts: "Is that everything?" The pause outweighed the threats.',
           concept: [
-            'The Noble Lie: Deception wrapped in love.',
-            'Weaponized Care: Claiming to protect while controlling.',
-            'Modern Application: The line between care and manipulation is razor-thin.'
+            'Silence costs more than words.',
+            'Pauses weigh heavier than paragraphs.',
+            'Absence speaks louder than noise.',
+            'Humans fear silence—they rush to fill it.'
           ],
-                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
+          teaching: 'Humans fear silence—they rush to fill it. The one who waits controls. In rooms, speeches, relationships—the pause flips power. It turns discomfort into gravity.',
           drill: Drill(
-            question: 'Someone says: "I didn\'t tell you because I didn\'t want you to worry." This is:',
+            question: 'They ask: "What do you think?"',
             options: [
-              'Protection',
-              'Noble lie to control your choices'
+              'Answer instantly.',
+              'Let silence ache. "…I think you already know."'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this claim into a recognition of the noble lie.',
-            input: 'I kept it from you to spare your feelings.',
-            example: 'You weren\'t spared—you were controlled under the mask of kindness.'
+            prompt: 'Transform this statement into one that uses the gap effect.',
+            input: 'I missed you.',
+            example: '[Pause] "…Strange how silence can feel louder than words."'
           ),
-          reflection: 'Who has claimed to protect you when they were really deciding for you?'
+          reflection: 'When do you fear the pause? How could stillness itself become your sharpest weapon?'
         ),
       ),
     },
     2: {
       6: Lesson(
         id: 'deception_2_6',
-        title: 'The Double Cross',
+        title: 'The Scarcity Equation',
         category: 'deception',
         world: 2,
         lesson: 6,
-        xp: 100,
+        xp: 75,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Normandy, 1944. A Spaniard named Garbo sends false reports to Hitler: "The invasion will be at Calais." His intel is so convincing the Fuhrer diverts Panzer divisions away from Normandy. On D-Day, thousands of Allied soldiers live because of one man\'s betrayal. The greatest lies don\'t hide—they redirect. The double cross works because the victim believes they are the one being trusted.',
+          hook: 'Amsterdam, 1637. Tulip bulbs were everywhere—but a single striped bulb sold for the price of a house. Not beauty, but scarcity made it priceless. For a season, entire fortunes bent to flowers. The frenzy collapsed, but the lesson endured: rarity rules perception.',
           concept: [
-            'Trust is the Bait: The deeper the trust, the sharper the betrayal.',
-            'False Loyalty: Pretend allegiance to misdirect the enemy.',
-            'Modern Edge: Fake alliances are the deadliest shields.'
+            'What is rare feels priceless.',
+            'Abundance blinds; scarcity burns.',
+            'Value expands when access shrinks.',
+            'The brain confuses rarity with importance.'
           ],
+          teaching: 'The brain confuses rarity with importance. Time-limits, limited editions, exclusivity—all hijack survival instincts. Scarcity doesn\'t change the thing—it changes its story.',
           drill: Drill(
-            question: 'Your coworker leaks "confidential info" that later proves false. They claim they were "just misinformed." Was this:',
+            question: 'They ask: "When are you free?"',
             options: [
-              'A mistake',
-              'A planted lie to steer you'
+              'Anytime.',
+              'Thursday, maybe—if you make it worth the reshuffle.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this trust into a recognition of the double cross.',
-            input: 'I trust you completely.',
-            example: 'The surest way to betray someone is first to make them believe you never could.'
+            prompt: 'Transform this statement into one that creates scarcity.',
+            input: 'I\'m always available.',
+            example: 'One window this week. Convince me it should be yours.'
           ),
-          reflection: 'Who benefits most when you believe in their loyalty?'
+          reflection: 'Where do you flood access? What would shift if your time became rare currency?'
         ),
       ),
       7: Lesson(
         id: 'deception_2_7',
-        title: 'Owning the Narrative',
+        title: 'The Illusion of Choice',
         category: 'deception',
         world: 2,
         lesson: 7,
-        xp: 100,
+        xp: 75,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Baghdad, 1258. The Mongols breach the city walls. Instead of hiding, Caliph Al-Mustaʿsim parades through the streets in silk, declaring calm. The citizens hesitate to flee—believing him. By the time they realize the truth, escape is impossible. The city burns. Whoever owns the story owns reality itself.',
+          hook: 'Paris, 19th century. A waiter offers tart or custard. Most choose tart. Add a second tart—slightly worse—and suddenly everyone picks the first tart. The custard never stood a chance. The third option wasn\'t real—it was a frame.',
           concept: [
-            'The First Story Wins: Once a narrative is believed, it\'s hard to uproot.',
-            'Silence is Dangerous: If you don\'t tell the story, someone else will.',
-            'Modern Edge: PR, gossip, politics—control the frame before your rival does.'
+            'Control isn\'t in the options—it\'s in the frame.',
+            'People feel free inside invisible walls.',
+            'The one who sets the menu decides the choice.',
+            'Humans crave freedom but don\'t notice pre-shaped choices.'
           ],
+          teaching: 'Humans crave freedom but don\'t notice pre-shaped choices. Politicians, stores, even conversations use this trick: offer options that lead to the same outcome. The illusion of choice hides the leash.',
           drill: Drill(
-            question: 'A rumor spreads: "You\'re difficult to work with." Do you:',
+            question: 'They ask: "Tonight or tomorrow?"',
             options: [
-              'Stay silent, hope it dies down.',
-              'Create your own counter-story: "I\'m selective because I value excellence."'
+              'Pick one.',
+              'Or maybe we invent a third option neither of us expected.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this denial into a narrative takeover.',
-            input: 'That\'s not true.',
-            example: 'Here\'s what really happened. (Seize the frame, don\'t defend—replace).'
+            prompt: 'Transform this statement into one that creates the illusion of choice.',
+            input: 'Yes, I\'ll do that one.',
+            example: 'Interesting… but maybe I\'ll redraw the menu.'
           ),
-          reflection: 'Are you living your own narrative, or someone else\'s version of you?'
+          reflection: 'When did you last mistake options for freedom?'
         ),
       ),
       8: Lesson(
         id: 'deception_2_8',
-        title: 'The Honey Trap',
+        title: 'The Framing Lens',
         category: 'deception',
         world: 2,
         lesson: 8,
-        xp: 100,
+        xp: 75,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Cold War, Moscow. A diplomat meets a beautiful stranger in a hotel bar. She laughs at his jokes, leans close, makes him feel like the most interesting man alive. By dawn, there are photos of him in bed, and the KGB owns him. He thought he was seducing—he was being seduced. The honey trap weaponizes desire, turning passion into chains.',
+          hook: 'WWII, Britain. Rationing looms. Officials warn: "We\'ve lost half our butter." Churchill reframes: "We\'ve doubled our steel for tanks." Same fact—new lens. The people cheered. The war effort surged. The numbers never changed, only the story.',
           concept: [
-            'Desire is Leverage: People reveal more when they want something.',
-            'The Illusion of Control: Believing you\'re the hunter makes you the prey.',
-            'Modern Edge: Honey traps aren\'t just sexual—they can be money, fame, validation.'
+            'Facts don\'t move people—frames do.',
+            'The wrapper changes the taste.',
+            'Numbers mean nothing until the lens defines them.',
+            'The mind is emotional before rational.'
           ],
+          teaching: 'The mind is emotional before rational. A problem framed as a gain inspires; framed as a loss, it paralyzes. To control the lens is to control the feeling of truth itself.',
           drill: Drill(
-            question: 'You\'re offered an "exclusive opportunity" that feels too flattering. Is it:',
+            question: 'They ask: "Are you nervous?"',
             options: [
-              'Genuine admiration',
-              'A baited hook'
+              'Yes.',
+              'Excited—same feeling, different name.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this flattery into a recognition of the honey trap.',
-            input: 'They really like me.',
-            example: 'Sometimes the warmth you feel is just the web tightening.'
+            prompt: 'Transform this statement into one that uses framing to change perception.',
+            input: 'This is hard.',
+            example: 'This is the test sharpening me.'
           ),
-          reflection: 'Where in your life are you most vulnerable to honey traps—sex, validation, or ambition?'
+          reflection: 'What in your life feels heavy only because of its frame?'
         ),
       ),
       9: Lesson(
         id: 'deception_2_9',
-        title: 'The False Choice',
+        title: 'Anchoring Bias',
         category: 'deception',
         world: 2,
         lesson: 9,
-        xp: 100,
+        xp: 75,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Ancient Greece. A general captures rebels. Instead of threatening them, he offers two "choices": execution now, or lifelong service in his army. They believe they\'ve chosen freedom by choosing servitude. The trick: both options lead to the same destination. The false choice is control disguised as liberty.',
+          hook: 'Las Vegas, 1970s. A dealer warns: "Careful, the last three rolls were sixes." Dice don\'t remember—but gamblers still adjust. The anchor works. Merchants use the same trick: show the \$1000 watch first, then the \$200 one feels cheap. Anchors warp value more than reality does.',
           concept: [
-            'Choice as Illusion: Offer two paths, both ending where you want.',
-            'Perceived Autonomy: People defend decisions they think they made.',
-            'Modern Edge: "Do you want the deluxe or the premium package?" Either way, they buy.'
+            'First numbers drag the mind.',
+            'Anchors pull even when false.',
+            'Comparison defines value, not the thing itself.',
+            'Humans cling to the first reference point.'
           ],
+          teaching: 'Humans cling to the first reference point. A fake "before price," a high "first ask," even random numbers—all tilt perception. Anchors don\'t reveal truth—they set gravity.',
           drill: Drill(
-            question: 'Your boss says: "Would you rather work late tonight or come in early tomorrow?" That\'s:',
+            question: 'They ask: "How serious is this?"',
             options: [
-              'Genuine flexibility',
-              'False choice—both serve their needs, not yours'
+              'Not too bad.',
+              'On a scale of ten, it\'s a three.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this choice into a recognition of the false option.',
-            input: 'You have two options.',
-            example: 'Sometimes both doors lead to the same cage.'
+            prompt: 'Transform this statement into one that uses anchoring bias.',
+            input: 'I\'ll do it fast.',
+            example: 'Compared to most, I\'ll do it in half the time.'
           ),
-          reflection: 'Where are you mistaking an illusion of choice for real freedom?'
+          reflection: 'What anchors control your view of money, love, or time—without you realizing?'
         ),
       ),
       10: Lesson(
         id: 'deception_2_10',
-        title: 'The Invisible Hand',
+        title: 'The Mock Retreat',
         category: 'deception',
         world: 2,
         lesson: 10,
-        xp: 100,
+        xp: 75,
         content: LessonContent(
-          hook: 'Venice, 1500s. Merchants rise and fall in mysterious patterns. Prices soar, rumors swirl, guild wars erupt—yet behind it all is one banker pulling invisible strings, funding both sides, whispering in both ears. He is never seen. His name is never spoken. Yet every outcome traces back to his hand. The greatest deceiver is not the actor—it\'s the director who writes the script from the wings.',
+          hook: 'Battle of Hastings, 1066. Norman cavalry charge, then flee. The English break ranks to chase. Suddenly, the Normans wheel back and crush them. The retreat was the trap. Weakness turned to strike.',
           concept: [
-            'Power in Shadows: Directing outcomes without appearing present.',
-            'Hands-Off Influence: If they don\'t see you, they can\'t blame you.',
-            'Modern Edge: Anonymous leaks, silent investors, shadow puppeteers.'
+            'Weakness can be armor.',
+            'Retreat can be advance in disguise.',
+            'Not every collapse is real.',
+            'Humans relax when they sense surrender.'
           ],
-                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
+          teaching: 'Humans relax when they sense surrender. That\'s why a retreat or apology often disarms. But if staged, it lures people into overstepping. Awareness means pausing before chasing a sudden collapse.',
           drill: Drill(
-            question: 'Two rivals destroy each other while a third party "stays out of it." Later, he\'s the only one left standing. Was he uninvolved?',
+            question: 'They say: "You\'re right, I give up."',
             options: [
-              'Yes, he was uninvolved',
-              'No, that\'s the invisible hand'
+              'Forgive instantly.',
+              'Maybe. But let\'s see what follows that surrender.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this claim into a recognition of the invisible hand.',
-            input: 'I had nothing to do with it.',
-            example: 'The best deceivers are invisible—they leave no fingerprints, only outcomes.'
+            prompt: 'Transform this statement into one that uses mock retreat tactics.',
+            input: 'Okay, all forgiven.',
+            example: 'Weakness is easy. Consistency is proof.'
           ),
-          reflection: 'Where in your life might someone unseen be shaping the events you think are random?'
+          reflection: 'Where have you mistaken retreat for truth? How could patience save you from the trap?'
         ),
       ),
     },
     3: {
       11: Lesson(
         id: 'deception_3_11',
-        title: 'The Gray Man Principle',
+        title: 'The Mask Within the Mask',
         category: 'deception',
         world: 3,
         lesson: 11,
         xp: 100,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Occupied Paris, 1942. Resistance fighters walk among German patrols unnoticed—not by hiding, but by blending. No fancy hats, no flashy gestures, no eye contact. Just quiet conformity. The soldiers see them every day but never once notice them. The perfect camouflage is not the disguise—it\'s invisibility by ordinariness.',
+          hook: 'Florence, Renaissance courts. A courtier accused of betrayal laughs off the charge. "Me? I\'m harmless." His enemies believe it. Later, he dazzles with sudden brilliance. What they didn\'t see: the "harmless" mask was the outer disguise, hiding the inner mask of calculation. Masks stacked upon masks—they never touched his true face.',
           concept: [
-            'Stand Out Strategically: Be memorable only when you choose.',
-            'Blend as Default: In hostile terrain, neutrality is armor.',
-            'Modern Edge: In offices, negotiations, or conflicts—sometimes the safest move is to be unseen until it matters.'
+            'One mask hides; two masks rule.',
+            'People stop searching after the first illusion.',
+            'The outer mask protects; the inner one directs.',
+            'Humans expect only one layer of disguise.'
           ],
+          teaching: 'Humans expect only one layer of disguise. If you feign simplicity, no one imagines it\'s staged. Layering masks forces miscalculation. Recognition means always asking: what\'s beneath the mask I already see?',
           drill: Drill(
-            question: 'You enter a room of strangers. Do you:',
+            question: 'They ask: "So you\'re really not ambitious?"',
             options: [
-              'Assert yourself loudly, grabbing attention.',
-              'Blend in quietly, letting the room forget you until you strike.'
+              'Not really.',
+              'Strange how people only notice what I let them notice.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this observation into a recognition of the gray man principle.',
-            input: 'No one noticed me.',
-            example: 'The most dangerous place to be is invisible by design.'
+            prompt: 'Transform this statement into one that uses layered masks.',
+            input: 'I\'m clever.',
+            example: 'I only reveal what I want remembered.'
           ),
-          reflection: 'Do you always crave attention—or do you know how to wield invisibility as a weapon?'
+          reflection: 'What mask do people already accept from you? What deeper truth does it shield?'
         ),
       ),
       12: Lesson(
         id: 'deception_3_12',
-        title: 'Predator\'s Patience',
+        title: 'The Paradox Effect',
         category: 'deception',
         world: 3,
         lesson: 12,
         xp: 100,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'A tiger in the tall grass waits, unmoving, as deer graze inches away. Its hunger gnaws, but it does not flinch. The prey relaxes, convinced there is no danger. Then, with terrifying precision, the tiger strikes. Camouflage is not just appearance—it\'s timing. The longer you wait, the deadlier your strike.',
+          hook: 'Ancient Greece. Diogenes lives in a barrel. Alexander the Great offers him riches, armies, anything. Diogenes only replies: "Stand out of my sunlight." The world\'s most powerful man looks smaller than a beggar. Paradox reversed the throne.',
           concept: [
-            'Patience is Camouflage: Waiting disarms suspicion.',
-            'The Strike Must Be Swift: Delay long enough to relax them, then move before they can react.',
-            'Modern Edge: In business or love, let them underestimate you until the reveal.'
+            'Contradiction unsettles more than logic.',
+            'Rejecting value creates higher value.',
+            'Paradox makes the ordinary unforgettable.',
+            'The human brain hates contradiction—it lingers, searching for resolution.'
           ],
+          teaching: 'The human brain hates contradiction—it lingers, searching for resolution. A paradox spoken with confidence bends perception: weakness appears like strength, lack appears like luxury. Recognition means spotting when contradictions are staged illusions.',
           drill: Drill(
-            question: 'A rival underestimates you for months. Do you:',
+            question: 'They ask: "Don\'t you care about winning?"',
             options: [
-              'Correct them early, showing your hand.',
-              'Let them stay blind until their weakness is total.'
+              'Of course.',
+              'Winning is nothing—unless I decide it matters.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this statement into a recognition of predator\'s patience.',
-            input: 'I\'ll act when I\'m ready.',
-            example: 'Every moment of silence is the tightening of the snare.'
+            prompt: 'Transform this statement into one that creates paradox effects.',
+            input: 'I like you.',
+            example: 'Strange—wanting you feels freer than having you.'
           ),
-          reflection: 'Are you striking too soon—out of hunger—or waiting until the moment of inevitability?'
+          reflection: 'When has a paradox held your attention? Where might you use contradiction to unsettle and reshape perception?'
         ),
       ),
       13: Lesson(
         id: 'deception_3_13',
-        title: 'Chameleon Mindset',
+        title: 'The Echo Chamber',
         category: 'deception',
         world: 3,
         lesson: 13,
         xp: 100,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Tokyo, 1600s. A spy infiltrates a rival clan by mirroring their dialect, their rituals, even their drinking games. Within weeks, they treat him like family. When he disappears with their secrets, they cannot comprehend how he was ever a stranger. True camouflage is not about clothes—it\'s about psychology.',
+          hook: 'Berlin, 1930s. A simple phrase is repeated until mockery turns to belief. By the tenth time, nods. By the fiftieth, obedience. Repetition was not truth—but it felt like truth. The echo carved grooves in minds deeper than evidence ever could.',
           concept: [
-            'Mirroring Builds Trust: Subtle mimicry creates unconscious acceptance.',
-            'Adopt Their Colors: Dress, speak, move like them until suspicion dissolves.',
-            'Modern Edge: In social groups, teams, or negotiations—matching tempo gains entry.'
+            'Repetition makes the unreal feel real.',
+            'Familiarity disguises itself as truth.',
+            'Echoes carve grooves thought can\'t escape.',
+            'The brain equates repetition with reliability.'
           ],
+          teaching: 'The brain equates repetition with reliability. Advertisers, leaders, even inner doubts use this trick: repeat, and it sticks. Awareness means asking: does this feel true because it is—or because I\'ve heard it too many times?',
           drill: Drill(
-            question: 'At a new job, colleagues joke in slang. Do you:',
+            question: 'They insist: "Everyone says this."',
             options: [
-              'Correct them with your own style.',
-              'Absorb their rhythm, then introduce your difference later.'
+              'Maybe.',
+              'Echoes aren\'t evidence.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this statement into a recognition of chameleon mindset.',
-            input: 'I fit in quickly.',
-            example: 'I learned their colors so well they mistook me for one of their own.'
+            prompt: 'Transform this statement into one that exposes echo chamber effects.',
+            input: 'It\'s true.',
+            example: 'Funny how repetition can dress up as truth.'
           ),
-          reflection: 'Do you resist mirroring because of pride—or do you weaponize it as entry?'
+          reflection: 'What do you "believe" only because you\'ve heard it echoed endlessly?'
         ),
       ),
       14: Lesson(
         id: 'deception_3_14',
-        title: 'The Mask of Authority',
+        title: 'The False Balance',
         category: 'deception',
         world: 3,
         lesson: 14,
         xp: 100,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Berlin, 1945. A Soviet officer in a stolen German uniform marches straight into enemy command posts, issuing false orders. Soldiers obey without question—not because they know him, but because the mask of rank commands reflexive obedience. Authority, real or not, is its own camouflage.',
+          hook: 'Victorian newspapers. A scientist proves germs exist. Editors still give equal space to skeptics with no evidence. Readers think: "Both sides must be valid." Balance felt fair—but it was illusion. The scales looked equal while carrying nothing.',
           concept: [
-            'Uniforms Are Shortcuts: Symbols override skepticism.',
-            'Confidence Sells the Mask: Authority collapses if you hesitate.',
-            'Modern Edge: A title, a tone, a costume—people rarely check the credentials behind the mask.'
+            'Equal airtime doesn\'t equal truth.',
+            'False balance makes weakness look like strength.',
+            'Fairness itself can be an illusion.',
+            'Humans equate symmetry with fairness.'
           ],
+          teaching: 'Humans equate symmetry with fairness. If both sides appear equal, we assume legitimacy. Illusionists exploit this bias—giving nonsense the mask of balance. Recognition means asking: does one side actually hold weight?',
           drill: Drill(
-            question: 'You want entry to an exclusive event. Do you:',
+            question: 'They argue: "Both are equally valid."',
             options: [
-              'Plead your case as yourself.',
-              'Adopt the language, dress, and tone of someone who obviously belongs.'
+              'Yes, maybe.',
+              'Balance looks fair, but weight decides truth.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this statement into a recognition of the mask of authority.',
-            input: 'I\'m just like you.',
-            example: 'I don\'t need to belong—I only need to look like I do.'
+            prompt: 'Transform this statement into one that exposes false balance.',
+            input: 'Both matter.',
+            example: 'One is echo, one is evidence. Balance isn\'t always real.'
           ),
-          reflection: 'Do you underestimate how quickly people obey the costume rather than the person?'
+          reflection: 'When did false fairness sway you into giving weight to emptiness?'
         ),
       ),
       15: Lesson(
         id: 'deception_3_15',
-        title: 'Shadows Speak Loudest',
+        title: 'The Phantom Authority',
         category: 'deception',
         world: 3,
         lesson: 15,
         xp: 100,
         content: LessonContent(
-          hook: 'Medieval castles built secret passages where lords could watch feasts from hidden slits in the walls. Guests laughed, flirted, schemed—never realizing eyes observed them. The unseen presence shapes behavior more than the seen. Camouflage is not only blending in—it\'s hiding where no one even thinks to look.',
+          hook: '1920s advertising. A man in a white coat promotes cigarettes. He isn\'t a doctor—but the costume convinces millions. Authority wasn\'t earned—it was borrowed from a symbol. The illusion sold more than proof ever could.',
           concept: [
-            'Unseen Influence is Strongest: People reveal their truth when they believe no one watches.',
-            'Silence is Camouflage: Words announce presence; silence conceals it.',
-            'Modern Edge: Observe unnoticed—knowing the game before you play it.'
+            'Authority wears robes, not proof.',
+            'Symbols enslave faster than evidence.',
+            'A costume can command obedience longer than truth.',
+            'Humans shortcut trust through signals: uniforms, titles, platforms.'
           ],
-                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
+          teaching: 'Humans shortcut trust through signals: uniforms, titles, platforms. The costume feels safer than the content. This is efficient, but dangerous. Phantom authority means asking: does the symbol match reality?',
           drill: Drill(
-            question: 'You\'re in a group chat where rivals boast. Do you:',
+            question: 'They claim: "I\'m an expert, trust me."',
             options: [
-              'Respond, correcting them.',
-              'Say nothing, watching their egos expose weakness.'
+              'Okay.',
+              'The symbol is convincing—but where\'s the substance?'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this statement into a recognition of shadows speaking loudest.',
-            input: 'I kept quiet.',
-            example: 'Shadows don\'t need to speak—they let the light betray the foolish.'
+            prompt: 'Transform this statement into one that exposes phantom authority.',
+            input: 'You know best.',
+            example: 'Symbols impress. Truth stands without them.'
           ),
-          reflection: 'Do you waste energy proving you\'re in the room—or do you let invisibility hand you their secrets?'
+          reflection: 'What robes of authority do you obey without questioning the proof beneath?'
         ),
       ),
     },
     4: {
       16: Lesson(
         id: 'deception_4_16',
-        title: 'The Power of Silence',
+        title: 'The Invisible Hand',
         category: 'deception',
         world: 4,
         lesson: 16,
-        xp: 100,
+        xp: 125,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Cold War, 1962. During a tense negotiation, one diplomat speaks endlessly, trying to dominate the room. His counterpart sits in silence, his gaze steady, saying nothing. The silence grows unbearable. The speaker reveals too much, desperate to fill the void. Silence was not weakness—it was the loudest move in the room.',
+          hook: 'Paris, early 1800s. Napoleon enters a salon. He doesn\'t speak, doesn\'t push. Yet conversations tilt toward him, decisions rearrange themselves around him. No command was given—but the room moved as if by gravity. His power wasn\'t loud. It was invisible orchestration.',
           concept: [
-            'Noise Reveals, Silence Conceals: The quiet one forces others to expose themselves.',
-            'Mystery is Power: Words limit you. Silence suggests infinite depth.',
-            'Defense Today: When silence pressures you—pause. Don\'t rush to fill it.'
+            'The greatest control leaves no fingerprints.',
+            'Guidance disguised as coincidence feels like fate.',
+            'Power works best when it looks like free choice.',
+            'People resist visible pressure but embrace invisible nudges.'
           ],
+          teaching: 'People resist visible pressure but embrace invisible nudges. If it feels like their own idea, they hold it tighter. The Invisible Hand doesn\'t push—it arranges. It doesn\'t claim control—it lets others believe they chose.',
           drill: Drill(
-            question: 'Someone stares at you after you confess something. What do you do?',
+            question: 'They ask: "Was this your idea?"',
             options: [
-              'Keep explaining, trying to win them.',
-              'Let the silence rest. Their reaction is theirs to own.'
+              'Yes, I suggested it.',
+              'I only asked a question—you chose the rest.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this statement into a recognition of the power of silence.',
-            input: 'I had to explain myself.',
-            example: 'My silence is explanation enough.'
+            prompt: 'Transform this statement into one that uses the invisible hand technique.',
+            input: 'Do this.',
+            example: 'Curious—if you chose this path, what might it open for you?'
           ),
-          reflection: 'Do you treat silence as emptiness—or as a weapon?'
+          reflection: 'Where might you be guided right now, mistaking influence for your own decision?'
         ),
       ),
       17: Lesson(
         id: 'deception_4_17',
-        title: 'The Mirror Trick',
+        title: 'The Mirror Labyrinth',
         category: 'deception',
         world: 4,
         lesson: 17,
-        xp: 100,
+        xp: 125,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Tokyo, 1800s. A thief is suspected in a gambling house. When accused, he simply mirrors his accuser\'s outrage: "How dare you insult me like this!" His anger is identical, his body language copied, his tone echoed. The crowd believes him, because we trust our own reflection. The real thief walks out untouched.',
+          hook: 'Versailles, Hall of Mirrors. Diplomats enter, dazzled by endless reflections. No matter where they turn, their own image confronts them, multiplied. Louis XIV needed no debate—the architecture itself confused, then awed. Surrounded by illusions of self, they bent to his magnificence.',
           concept: [
-            'Mirroring Disarms: People see themselves in you and drop suspicion.',
-            'Imitation as Invisibility: Blend so well, no one suspects you.',
-            'Defense Today: Beware those who agree too perfectly.'
+            'Confusion makes guidance irresistible.',
+            'Endless reflections exhaust the mind.',
+            'In a maze, the calm guide becomes king.',
+            'Humans crave clarity.'
           ],
+          teaching: 'Humans crave clarity. Overwhelm them with mirrored options, narratives, or paths, and they\'ll grasp for direction. The illusion isn\'t in lying—it\'s in multiplying truths until surrender feels like relief.',
           drill: Drill(
-            question: 'A date repeats your phrases, mirrors your posture, copies your laugh. What do you think?',
+            question: 'They say: "This is too complicated."',
             options: [
-              'Think they\'re your "soulmate."',
-              'Realize you\'re being mirrored—chemistry manufactured.'
+              'Yes, it\'s messy.',
+              'Exactly—too many mirrors. Let\'s find the one that matters.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this statement into a recognition of the mirror trick.',
-            input: 'We have so much in common!',
-            example: 'We have so much in common—or they\'re showing me myself.'
+            prompt: 'Transform this statement into one that creates mirror labyrinth effects.',
+            input: 'It\'s complicated.',
+            example: 'Illusions multiply… but truth hides in a single reflection.'
           ),
-          reflection: 'Do you fall for your own reflection?'
+          reflection: 'When were you lost in too many mirrors? Who offered you "clarity"—and what did it cost?'
         ),
       ),
       18: Lesson(
         id: 'deception_4_18',
-        title: 'The Delayed Truth',
+        title: 'The Time Distortion',
         category: 'deception',
         world: 4,
         lesson: 18,
-        xp: 100,
+        xp: 125,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'London, 1890s. A banker accused of fraud admits nothing… until months later. By then, evidence has faded, emotions cooled. When he finally "confesses," it feels like closure, not crime. Timing reshapes truth. Delay is camouflage—the crime is remembered faintly, the confession feels refreshing.',
+          hook: 'Las Vegas casinos hide clocks and windows. Hours vanish. Gamblers swear it\'s still night as dawn breaks outside. The trick isn\'t money—it\'s time. When people lose track of time, they lose track of resistance.',
           concept: [
-            'Delay Dissolves Emotion: Time weakens outrage.',
-            'Late Confession Feels Like Honesty: Too late to punish, just soon enough to forgive.',
-            'Defense Today: When someone waits too long to "come clean," ask—why now?'
+            'Control time, control choice.',
+            'Slow feels eternal, fast feels urgent.',
+            'The moment that bends time bends memory.',
+            'Time is perception, not numbers.'
           ],
+          teaching: 'Time is perception, not numbers. Stretch it, and a moment feels eternal. Compress it, and decisions rush forward. Encounters that feel "timeless" etch themselves deeper than ones measured by hours. To bend time is to bend attachment.',
           drill: Drill(
-            question: 'A partner reveals a secret only years later. What do you do?',
+            question: 'They say: "It\'s too soon."',
             options: [
-              'Praise their "bravery."',
-              'Question the timing—what do they gain by waiting?'
+              'You\'re right, let\'s wait.',
+              'Strange how the right moment feels shorter than the clock says.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this statement into a recognition of the delayed truth.',
-            input: 'At least they finally told me.',
-            example: 'They told me only when the cost was safe.'
+            prompt: 'Transform this statement into one that creates time distortion effects.',
+            input: 'We\'ve known each other a long time.',
+            example: 'We just met—yet it feels like years folded into minutes.'
           ),
-          reflection: 'Are you comforted by closure—or blinded by delay?'
+          reflection: 'When has time vanished for you? When was urgency created to move you faster than you realized?'
         ),
       ),
       19: Lesson(
         id: 'deception_4_19',
-        title: 'The Fog of Complexity',
+        title: 'The Ghost Effect',
         category: 'deception',
         world: 4,
         lesson: 19,
-        xp: 100,
+        xp: 125,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Wall Street, 2008. Investors are sold financial products so complex that even experts can\'t explain them. The fog of jargon hides the rot beneath. Complexity isn\'t always brilliance. Sometimes it is camouflage. The thicker the fog, the easier the theft.',
+          hook: 'Edo Japan. Haiku masters end poems with fragments: unfinished, echoing. The silence after the verse becomes the meaning. Readers fill the void with their own longing. The ghost wasn\'t in the words—it was in what was left unsaid.',
           concept: [
-            'Obscurity Protects Lies: Confuse them, and they stop asking.',
-            'Simplicity Threatens Liars: Clear words cut fog.',
-            'Defense Today: If you can\'t explain it simply, it\'s either genius—or deceit.'
+            'Absence haunts longer than presence.',
+            'The unfinished lingers stronger than the complete.',
+            'Closure kills obsession—echo keeps it alive.',
+            'Humans can\'t leave gaps alone.'
           ],
+          teaching: 'Humans can\'t leave gaps alone. An unanswered question, an unfinished story, an unresolved gesture—these loop in the mind, replaying endlessly. The Ghost Effect works by withholding the ending so they keep writing it themselves.',
           drill: Drill(
-            question: 'A consultant uses endless jargon. What do you think?',
+            question: 'At the end of a meeting:',
             options: [
-              'Assume they\'re an expert.',
-              'Realize fog may hide emptiness or corruption.'
+              'That\'s everything.',
+              '…That\'s a story for next time.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this statement into a recognition of the fog of complexity.',
-            input: 'I don\'t understand, so they must be smart.',
-            example: 'I don\'t understand—so maybe they don\'t want me to.'
+            prompt: 'Transform this statement into one that creates ghost effects.',
+            input: 'Goodbye.',
+            example: 'Careful—you\'ll be thinking about this long after I\'m gone.'
           ),
-          reflection: 'How often do you confuse confusion for wisdom?'
+          reflection: 'Where in your life do you close too neatly? What ghost could you leave behind?'
         ),
       ),
       20: Lesson(
         id: 'deception_4_20',
-        title: 'The Ghost Exit',
+        title: 'The Grand Illusion',
         category: 'deception',
         world: 4,
         lesson: 20,
-        xp: 100,
+        xp: 125,
         content: LessonContent(
-          hook: 'Istanbul, 1600s. A spy is cornered, accused, surrounded. That night, guards find his room empty—yet the door was locked from the outside. He had already set up a false trail: decoys, rumors of escape routes, forged letters. By the time they realized, he was gone. True mastery of deception is not the lie itself—it\'s leaving no trace of ever being there.',
+          hook: '1920s New York. Houdini escapes chains underwater. The crowd gasps, certain they witnessed impossible strength. Yet the true trick wasn\'t escape—it was attention. While eyes locked on one hand, the other set him free. Reality bent, not by magic, but by focus.',
           concept: [
-            'Pre-planned Disappearance: Escape is created before danger arrives.',
-            'False Trails Protect: Give them clues to chase while you vanish.',
-            'Defense Today: When someone disappears without explanation—look for the trails they left behind.'
+            'Attention defines reality.',
+            'What they don\'t see decides what they believe.',
+            'The greatest illusion isn\'t hiding truth—it\'s redirecting sight.',
+            'The mind can\'t watch everything at once.'
           ],
-                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
+          teaching: 'The mind can\'t watch everything at once. Whoever controls the spotlight controls the story. The Grand Illusion isn\'t deception—it\'s mastery of attention. You don\'t hide. You redirect. And reality reshapes itself around the focus you control.',
           drill: Drill(
-            question: 'A business partner ghosts you suddenly. What do you think?',
+            question: 'They say: "How did you do that?"',
             options: [
-              'Assume they panicked.',
-              'Consider the ghost exit—was it planned long before?'
+              'It\'s a trick.',
+              'You saw everything… except what mattered.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this statement into a recognition of the ghost exit.',
-            input: 'They just vanished.',
-            example: 'They vanished—but only after paving the road for it.'
+            prompt: 'Transform this statement into one that uses grand illusion techniques.',
+            input: 'It\'s practice.',
+            example: 'Illusion isn\'t hiding—it\'s guiding your eyes away.'
           ),
-          reflection: 'Do you notice the trail ghosts leave behind—or just the absence they create?'
+          reflection: 'Where is your attention being pulled right now—and what truth is hidden just outside your focus?'
         ),
       ),
     },
@@ -3167,1258 +2617,1298 @@ const lessonsCatalog = <String, Map<int, Map<int, Lesson>>>{
     1: {
       1: Lesson(
         id: 'coldpower_1_1',
-        title: 'The Marble Face (Law of Detachment)',
+        title: 'The Silent Magnet',
         category: 'coldpower',
         world: 1,
         lesson: 1,
-        xp: 125,
+        xp: 50,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Rome, 180 AD. A senator, trembling, delivers news to Marcus Aurelius: his most trusted general has been cut down in battle. The Senate chamber expects grief, rage, perhaps madness. Instead, Aurelius turns his head slowly, his expression carved from stone. He writes in his journal without looking up: "The universe is change; our mind is choice." His enemies are chilled to the bone. They realize: no one can move a man who does not allow himself to be moved.',
+          hook: 'Kyoto, 1582. A warlord enters the teahouse. He says nothing. He doesn\'t demand tea, doesn\'t raise his voice. He simply sits. Within moments, the room quiets. Samurai who moments ago boasted loudly now whisper. Servants trip over themselves to serve him. His silence weighs more than their noise.',
           concept: [
-            'Cold power begins with detachment—your emotions are yours, never theirs.',
-            'Reaction is surrender. Non-reaction is domination.',
-            'The man who cannot be provoked is the man who cannot be controlled.'
+            'Stillness attracts more than motion.',
+            'The loud chase attention; the quiet pull it.',
+            'Silence radiates weight that noise cannot.',
+            'Most people seek attention by pushing: louder, faster, bigger.'
           ],
+          teaching: 'Most people seek attention by pushing: louder, faster, bigger. But true gravity is pull. Humans instinctively focus on what is still, composed, unbothered. The silent magnet works because it makes others lean in to fill the void.',
           drill: Drill(
-            question: 'They spit venom at you. Which proves you\'re untouchable?',
+            question: 'They ask: "Why are you so quiet?"',
             options: [
-              'Argue your worth.',
-              'A calm nod. "Noted."'
+              'I don\'t know.',
+              '[Calm smile] "Because silence makes you listen harder."'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this attack into a display of cold detachment.',
-            input: 'You\'re pathetic.',
-            example: 'Curious. [Nothing more.]'
+            prompt: 'Transform this statement into one that uses the silent magnet technique.',
+            input: 'I don\'t talk much.',
+            example: 'Words are expensive. I spend them wisely.'
           ),
-          reflection: 'What would your enemies do if they realized they could no longer make you feel?'
+          reflection: 'When do you chase with noise? What would shift if you let silence do the work for you?'
         ),
       ),
       2: Lesson(
         id: 'coldpower_1_2',
-        title: 'The Glacier Gaze (Law of Indifference)',
+        title: 'The Center of the Room',
         category: 'coldpower',
         world: 1,
         lesson: 2,
-        xp: 125,
+        xp: 50,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Cannes, 1960s. Brigitte Bardot sits among billionaires and kings. One brags of his yachts, another of his fame. She studies her nails. They escalate—diamonds, castles, armies. She stirs her coffee, unmoved. By midnight, the wealthiest men alive are begging for a single smile. Her indifference stripped them of everything money could buy. Desire burns hottest against the ice.',
+          hook: 'New York, 1929. Wall Street crashes. In the stock exchange chaos, J.P. Morgan enters calmly, hands behind his back. He doesn\'t shout orders. He simply stands in the center, unshaken. Traders who minutes ago panicked now watch him instead of the numbers. By holding the center of the room, he became the anchor in the storm.',
           concept: [
-            'Indifference weaponizes status.',
-            'What others flaunt, you render meaningless.',
-            'The glacier gaze: you do not react. They melt to please you.'
+            'The center is claimed, not requested.',
+            'Calmness in chaos makes others orbit.',
+            'Attention flows to stability.',
+            'In groups, most fight for scraps of attention.'
           ],
+          teaching: 'In groups, most fight for scraps of attention. Gravity means taking the center—not by demand, but by composure. Humans subconsciously gather around what feels immovable. To stand firm when others wobble is to control the room.',
           drill: Drill(
-            question: 'They brag: "I drive a Lamborghini." What do you do?',
+            question: 'They ask: "Why aren\'t you worried like everyone else?"',
             options: [
-              '"Wow, that\'s amazing!"',
-              '"Hm." Then silence.'
+              'I am worried.',
+              'Storms are loud. Anchors are quiet.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this boast into a display of cold indifference.',
-            input: 'I bought a \$50,000 watch.',
-            example: 'Time still passes the same.'
+            prompt: 'Transform this statement into one that uses the center of the room technique.',
+            input: 'I\'m fine.',
+            example: 'Chaos swirls. I stay centered. That\'s why they come to me.'
           ),
-          reflection: 'What would happen if nothing impressed you ever again?'
+          reflection: 'Do you scatter with the crowd—or stand so firm that the crowd bends toward you?'
         ),
       ),
       3: Lesson(
         id: 'coldpower_1_3',
-        title: 'The Black Silence (Law of Absence)',
+        title: 'The Gaze Anchor',
         category: 'coldpower',
         world: 1,
         lesson: 3,
-        xp: 125,
+        xp: 50,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Cuban Missile Crisis, 1962. Khrushchev shouts, slams, pounds. Kennedy sits in abyssal silence. Thirty seconds. A minute. Khrushchev grows frantic, his rage now desperate. When Kennedy finally says, "Are you finished?"—the room dies. Silence won the war before weapons could.',
+          hook: 'London, 1815. At the Congress of Vienna, diplomats argue for hours. Then, Prince Metternich locks eyes with a rival and holds the gaze calmly—longer than polite, not aggressive, just unbroken. The rival stumbles mid-sentence. The room shifts. Words lost to history, but the gaze remembered. The anchor of eye contact can sink even the strongest speech.',
           concept: [
-            'Silence is not absence. Silence is a weapon.',
-            'The void forces others to expose themselves.',
-            'The one who fills silence loses; the one who wields it rules.'
+            'Eyes anchor more than arguments.',
+            'A steady gaze shakes shaky words.',
+            'To look without flinching is to own the frame.',
+            'Most people glance away quickly, signaling submission.'
           ],
+          teaching: 'Most people glance away quickly, signaling submission. A calm, grounded gaze communicates certainty without a word. It doesn\'t mean staring aggressively; it means unbroken attention that makes others feel examined, measured, weighed.',
           drill: Drill(
-            question: 'They scream: "You\'re worthless!" What do you do?',
+            question: 'They ask: "Why are you staring?"',
             options: [
-              'Defend.',
-              'Stare. Say nothing.'
+              'Sorry.',
+              'I\'m just making sure you believe what you\'re saying.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this attack into a display of black silence.',
-            input: 'You ruin everything!',
-            example: '[Silence. Then softly:] "Done?"'
+            prompt: 'Transform this statement into one that uses the gaze anchor technique.',
+            input: 'I\'m listening.',
+            example: 'I see you—and that matters more than hearing.'
           ),
-          reflection: 'How many wars could you win if you stopped speaking?'
+          reflection: 'Do your eyes dart and scatter, or do you let your gaze hold others until they break away first?'
         ),
       ),
       4: Lesson(
         id: 'coldpower_1_4',
-        title: 'The Porcelain Mask (Law of Unreadability)',
+        title: 'The Slow Pulse',
         category: 'coldpower',
         world: 1,
         lesson: 4,
-        xp: 125,
+        xp: 50,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Las Vegas, 1978. A poker master holds garbage cards. His opponents search his eyes, his breath, his hands. His face is porcelain, blank, inhuman. They fold aces out of fear of ghosts. He wins empires holding nothing. The porcelain mask turns their need to read into their own undoing.',
+          hook: 'Rome, 44 BC. Julius Caesar moves through the Senate with unhurried steps. His enemies plot his death, yet he doesn\'t rush, doesn\'t speak fast, doesn\'t seem concerned. His movements are deliberate, his words slow, as though time itself bends to his pace. Even his assassins tremble before they strike—the slow pulse makes a man untouchable.',
           concept: [
-            'Unreadability is armor.',
-            'Never show joy, fear, anger, desire.',
-            'While they bleed emotion, you remain sculpture.'
+            'Slow pace signals control.',
+            'The rushed are ruled; the calm rule.',
+            'Time bends to those who walk unhurried.',
+            'Anxiety speeds you up. Authority slows you down.'
           ],
+          teaching: 'Anxiety speeds you up. Authority slows you down. Humans read pace as power: fast equals nervous, slow equals sovereign. By moving, speaking, and reacting at your own tempo, you signal that the world must adjust to you—not the other way around.',
           drill: Drill(
-            question: 'They tell you scandalous news, watching for your reaction. What do you do?',
+            question: 'They ask: "Why are you so slow to answer?"',
             options: [
-              'Laugh, frown, or show surprise.',
-              '"Noted. Continue."'
+              'Sorry, I\'m thinking.',
+              'Because speed is panic. I prefer precision.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this gossip into a display of porcelain mask.',
-            input: 'Did you hear what they said about you?',
-            example: '[Blank expression] "Words float. I remain."'
+            prompt: 'Transform this statement into one that uses the slow pulse technique.',
+            input: 'Here\'s my answer.',
+            example: '[Pause] "Here\'s the answer that matters."'
           ),
-          reflection: 'Do you feed your enemies with expressions, or starve them with silence?'
+          reflection: 'Are you rushed by the tempo of others, or do you slow the room until they match your rhythm?'
         ),
       ),
       5: Lesson(
         id: 'coldpower_1_5',
-        title: 'The Executioner\'s Pause (Law of Delay)',
+        title: 'The Aura of Certainty',
         category: 'coldpower',
         world: 1,
         lesson: 5,
-        xp: 125,
+        xp: 50,
         content: LessonContent(
-          hook: 'Supreme Court, 1950s. A lawyer delivers weak arguments. Justice Frankfurter leans back. He does not interrupt. He does not scold. He waits. Ten seconds. Twenty. The courtroom suffocates. The lawyer collapses under the silence. When the Justice finally says: "Proceed."—it feels like a sentence. The pause destroyed him more than thunder could.',
+          hook: 'Jerusalem, 33 AD. Pontius Pilate asks Jesus: "What is truth?" Jesus doesn\'t argue, doesn\'t explain, doesn\'t debate philosophy. He simply stands silent. The crowd screams, leaders demand answers, yet his composure makes him larger than all of them. Certainty doesn\'t always speak—it radiates.',
           concept: [
-            'Pauses are daggers.',
-            'A delayed word carries ten times the weight.',
-            'Let silence hang like a blade above the guilty.'
+            'Doubt argues. Certainty just stands.',
+            'Confidence is quiet; insecurity is loud.',
+            'Belief projected becomes belief received.',
+            'People don\'t follow the one with the best logic—they follow the one who seems most certain.'
           ],
-                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
+          teaching: 'People don\'t follow the one with the best logic—they follow the one who seems most certain. Certainty spreads like fire. If you radiate unshakable conviction, others bend to your story, even if it\'s unproven.',
           drill: Drill(
-            question: 'Someone makes a crude joke in your presence. What do you do?',
+            question: 'They press: "But what if you\'re wrong?"',
             options: [
-              'Correct them instantly.',
-              'Pause. Stare. Resume.'
+              'Maybe I am.',
+              'Then I\'ll still carry it with conviction.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this insult into a display of executioner\'s pause.',
-            input: 'Haha, you\'re so soft.',
-            example: '[5-second pause. Cold gaze.] "As I was saying…"'
+            prompt: 'Transform this statement into one that uses the aura of certainty technique.',
+            input: 'I think so.',
+            example: 'Whether you believe me or not—I\'ve already decided.'
           ),
-          reflection: 'What could your enemies confess if you punished them only with pauses?'
+          reflection: 'Do you leak doubt in your words and tone—or do you project certainty so strong others can\'t help but believe?'
         ),
       ),
     },
     2: {
       6: Lesson(
         id: 'coldpower_2_6',
-        title: 'The Crown You Don\'t Ask For (Law of Assumed Value)',
+        title: 'The Vacuum Effect',
         category: 'coldpower',
         world: 2,
         lesson: 6,
-        xp: 125,
+        xp: 75,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Versailles, 1700s. The courtiers bow as Louis XIV enters—not because he commands it, but because he radiates it. He never asks for respect; he exists as if he was born entitled to it. When a duke dares to withhold his bow, the king\'s silence and slight glance at the guards ends the rebellion. His frame is reality itself. The Sun King does not beg the planets to orbit—he assumes they will.',
+          hook: 'Paris, 1920s. Picasso enters a café, sketchbook closed. He doesn\'t announce himself. He sits, orders wine, and waits. Within minutes, artists and patrons swivel in their chairs, whispering: What is he thinking? What is he drawing? He hasn\'t lifted a pencil — but the vacuum he creates sucks all attention toward him.',
           concept: [
-            'Value is never requested. It is embodied.',
-            'Asking, pleading, or proving fractures the illusion.',
-            'The highest throne is occupied by the one who never competes for it.'
+            'Attention rushes to fill silence.',
+            'The less you reveal, the more others project.',
+            'A vacuum is gravity disguised as absence.',
+            'Most people try to impress by filling space with chatter and proof.'
           ],
+          teaching: 'Most people try to impress by filling space with chatter and proof. But emptiness is magnetic. A pause, a withheld answer, an unfinished sentence makes the mind lean in, desperate to complete the picture.',
           drill: Drill(
-            question: 'They ask: "Why should I respect you?" What do you do?',
+            question: 'They ask: "Why aren\'t you saying anything?"',
             options: [
-              'List your achievements.',
-              '"Because you already do."'
+              'I don\'t have anything to say.',
+              'I was seeing how long it\'d take for you to notice.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this question into a display of assumed value.',
-            input: 'So what makes you special?',
-            example: 'I don\'t answer questions already written in your eyes.'
+            prompt: 'Transform this statement into one that uses the vacuum effect technique.',
+            input: 'I forgot to reply.',
+            example: 'Sometimes silence says more than words ever could.'
           ),
-          reflection: 'Do you live like a supplicant—or like someone born crowned?'
+          reflection: 'Do you rush to fill every gap — or let others trip over themselves to fill the vacuum you create?'
         ),
       ),
       7: Lesson(
         id: 'coldpower_2_7',
-        title: 'The Gaze That Grants Existence (Law of Selective Attention)',
+        title: 'The Role Giver',
         category: 'coldpower',
         world: 2,
         lesson: 7,
-        xp: 125,
+        xp: 75,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Andy Warhol, Studio 54. Celebrities fight for his eyes. He scans the crowd, blank. Then, for three seconds, he rests his gaze on one nobody. The club freezes. By dawn, that nobody is famous. Warhol\'s attention turned dust into gold. To be looked at by him was to be made real. To be ignored was to be erased.',
+          hook: 'Florence, 1500s. In Medici courts, minor nobles bicker for status. Cosimo de\' Medici never competes. Instead, he says: "You — tell the story. You — pour the wine. You — sit beside me." By giving roles, he frames the hierarchy. They leave believing they mattered, when in truth, they were cast in his play.',
           concept: [
-            'Attention is a currency more powerful than money.',
-            'To look at someone is to grant them existence; to withdraw it is annihilation.',
-            'Your gaze must be a gift.'
+            'The one who assigns roles owns the script.',
+            'Give someone a part, and they rarely question the play.',
+            'Authority is subtle when disguised as generosity.',
+            'Instead of competing for roles, hand them out.'
           ],
+          teaching: 'Instead of competing for roles, hand them out. By framing others as helpers, advisors, challengers, or allies, you define the structure of interaction. People feel valued while bending to your script.',
           drill: Drill(
-            question: 'They whine: "You\'re not listening to me!" What do you do?',
+            question: 'They ask: "Why me?"',
             options: [
-              'Apologize and overcompensate.',
-              'Turn your gaze slowly, hold for two seconds, and then return to your task.'
+              'No reason.',
+              'Because you\'re the only one who could pull it off.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this complaint into a display of selective attention.',
-            input: 'Why are you ignoring me?',
-            example: 'Not ignoring. Deciding.'
+            prompt: 'Transform this statement into one that uses the role giver technique.',
+            input: 'Do this for me.',
+            example: 'You\'re perfect for this role — no one else fits.'
           ),
-          reflection: 'When was the last time you weaponized your gaze like a king\'s decree?'
+          reflection: 'Do you scramble for parts in someone else\'s story — or hand out roles in the play of your own making?'
         ),
       ),
       8: Lesson(
         id: 'coldpower_2_8',
-        title: 'The Throne of Absence (Law of Scarcity)',
+        title: 'The Selective Spotlight',
         category: 'coldpower',
         world: 2,
         lesson: 8,
-        xp: 125,
+        xp: 75,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Greta Garbo retires at the height of her fame. The world screams for her return. Her absence makes her immortal. Decades later, her silence is more seductive than all the actresses still begging for attention. Presence creates familiarity; absence creates myth.',
+          hook: 'Hollywood, 1930s. A producer at a party ignores the crowd. He laughs only at one actress\'s joke, nods only at her story. By midnight, she feels like the brightest star in the room. Others fade. His selective spotlight made her shine — and made him the man who decides who shines.',
           concept: [
-            'Scarcity is the highest luxury.',
-            'Too available = invisible. Rare = priceless.',
-            'To vanish at your peak is to be eternal.'
+            'Attention is currency; spend it strategically.',
+            'Whoever you spotlight becomes brighter — and you become the sun.',
+            'To elevate one is to diminish others without a word.',
+            'Instead of trying to please everyone, shine selectively.'
           ],
+          teaching: 'Instead of trying to please everyone, shine selectively. Attention is scarce — by rationing it, you magnify its weight. The chosen feel special; the ignored feel small. Either way, you control the balance.',
           drill: Drill(
-            question: 'They text you three times in a row. What do you do?',
+            question: 'They ask: "Why are you ignoring the others?"',
             options: [
-              'Reply instantly, explaining yourself.',
-              'Leave them with silence for a day, then return with presence like thunder.'
+              'I wasn\'t paying attention.',
+              'Because I prefer focusing on what matters.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this complaint into a display of scarcity.',
-            input: 'Why don\'t you ever reply fast?',
-            example: 'Because I\'m not meant to be consumed like fast food.'
+            prompt: 'Transform this statement into one that uses the selective spotlight technique.',
+            input: 'Good job.',
+            example: 'Of everyone here — you\'re the only one who caught me.'
           ),
-          reflection: 'What would you become if your presence were a rare event instead of a constant supply?'
+          reflection: 'Do you scatter your spotlight across the crowd — or make someone burn because your light chose them?'
         ),
       ),
       9: Lesson(
         id: 'coldpower_2_9',
-        title: 'The Shadow Play (Law of Perception)',
+        title: 'The Reflective Echo',
         category: 'coldpower',
         world: 2,
         lesson: 9,
-        xp: 125,
+        xp: 75,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: '1940s Hollywood. Orson Welles steps into a room, not with facts, but with shadows. His voice suggests secrets, his posture hints at empires unseen. He never proves; he implies. The less he shows, the more people imagine. And what they imagine is always greater than what you could confess.',
+          hook: 'Paris salon, 18th century. Madame de Staël listens more than she speaks. When others talk, she mirrors their gestures, echoes their words, sharpens their phrasing slightly. Guests leave saying: "She understood me like no one else." She hardly revealed herself — but everyone felt she was their reflection.',
           concept: [
-            'Perception is more powerful than reality.',
-            'People seduce themselves with the story you let them invent.',
-            'Never clarify. Suggest. Hint. Let the mystery grow wild.'
+            'Reflection flatters more than compliments.',
+            'People love themselves most when seen in you.',
+            'Echoing is influence in disguise.',
+            'Instead of asserting, reflect.'
           ],
+          teaching: 'Instead of asserting, reflect. By subtly mirroring posture, tone, or words, you create resonance. People interpret it as deep connection, though you\'ve revealed little of yourself. The reflective echo pulls others into orbit effortlessly.',
           drill: Drill(
-            question: 'They demand: "Are you serious about me or not?" What do you do?',
+            question: 'They say: "No one gets me."',
             options: [
-              'Answer directly, ending the tension.',
-              'A half-smile: "Depends how serious you want me to be."'
+              'I do.',
+              'Strange — I was about to say the same about you.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this demand into a display of shadow play.',
-            input: 'Tell me exactly how you feel.',
-            example: 'If I said it plain, you\'d stop wondering. And I\'d never forgive myself for that.'
+            prompt: 'Transform this statement into one that uses the reflective echo technique.',
+            input: 'You\'re right.',
+            example: 'You put into words what I didn\'t know I was feeling.'
           ),
-          reflection: 'Do you control perception, or do you reveal so much you let them cage you in their definition?'
+          reflection: 'Do you try to impress people with your brilliance — or do you let them fall in love with their reflection in you?'
         ),
       ),
       10: Lesson(
         id: 'coldpower_2_10',
-        title: 'The Summit Effect (Law of Distance)',
+        title: 'The Waited Word',
         category: 'coldpower',
         world: 2,
         lesson: 10,
-        xp: 125,
+        xp: 75,
         content: LessonContent(
-          hook: 'Mount Everest, 1953. Few reach its peak, fewer still survive. Its very difficulty makes it divine. The mountain never descends; it forces men to die climbing. The summit seduces not by approach—but by demanding others ascend. The higher you remain, the more they crave the climb.',
+          hook: 'Berlin, 1936. Einstein is asked for comment on a rival\'s new theory. Reporters lean forward, pens ready. Einstein adjusts his coat, takes a long pause, then finally says one sentence: "It is… interesting." The word lands heavier than volumes. Because he made them wait, his words became scripture.',
           concept: [
-            'Power is maintained by distance, not proximity.',
-            'When you make yourself hard to reach, your worth multiplies.',
-            'Make them climb. Make them sweat for your presence.'
+            'Delay amplifies weight.',
+            'Words given too easily lose value.',
+            'One phrase, well-timed, outweighs paragraphs.',
+            'Scarcity applies to speech.'
           ],
-                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
+          teaching: 'Scarcity applies to speech. If you talk constantly, words depreciate. If you ration them, each becomes currency. The waited word creates silence first, then fills it with gold.',
           drill: Drill(
-            question: 'They say: "Why don\'t you make more effort for me?" What do you do?',
+            question: 'They demand: "Well? What do you think?"',
             options: [
-              'Apologize, chase harder.',
-              '"Because the climb is the proof you\'re worthy of the view."'
+              'I like it.',
+              '[Pause] "It has potential."'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this complaint into a display of summit effect.',
-            input: 'Why do you make things difficult?',
-            example: 'Everything valuable is.'
+            prompt: 'Transform this statement into one that uses the waited word technique.',
+            input: 'That\'s good.',
+            example: '[Pause] "That… matters."'
           ),
-          reflection: 'Would they worship you more if you were Everest instead of a hillside?'
+          reflection: 'Do you spill words instantly — or do you let silence build until your sentence feels like a verdict?'
         ),
       ),
     },
     3: {
       11: Lesson(
         id: 'coldpower_3_11',
-        title: 'The Poisoned Chalice (Law of Craving & Withdrawal)',
+        title: 'The Golden Chain (Consistency Trap)',
         category: 'coldpower',
         world: 3,
         lesson: 11,
-        xp: 125,
+        xp: 100,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Venice, 16th century. Casanova did not seduce by constant presence. He intoxicated, then vanished. A night of wine, poetry, and touch—and then nothing. Days later, the women grew frantic, their minds replaying every detail. He had poured the sweetest wine into their veins, then pulled the cup away. Desire is not born from indulgence—it is born from denial.',
+          hook: 'Tokyo, 1800s. A tea master gifts a nobleman a tiny porcelain cup. The nobleman treasures it. Each time the master visits, he asks: "Did you use the cup?" Soon the nobleman cannot host tea without it. The small gift became a chain — one porcelain handle tying him to its giver forever.',
           concept: [
-            'Obsession thrives on withdrawal.',
-            'To give continuously is to numb. To give, then withhold, is to addict.',
-            'Every high must be followed by silence, to make them chase the echo.'
+            'What begins small becomes habit.',
+            'A ritual repeated is a chain disguised as comfort.',
+            'People defend what they\'ve invested in.',
+            'Humans crave consistency.'
           ],
+          teaching: 'Humans crave consistency. Once they\'ve begun a ritual with you, their brain resists breaking it. By creating small traditions — shared jokes, regular calls, familiar gestures — you bind them without command.',
           drill: Drill(
-            question: 'They say: "I miss you, why don\'t you come around more?" What do you do?',
+            question: 'They say: "We always talk at this time."',
             options: [
-              'Apologize, rush to see them.',
-              '"Missing is the sweetest part. Don\'t ruin it by ending it too soon."'
+              'Yeah, I guess.',
+              'Exactly. Imagine breaking tradition now.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this desire into a display of poisoned chalice.',
-            input: 'I want to see you every day.',
-            example: 'If you had me every day, you\'d stop dreaming of me.'
+            prompt: 'Transform this statement into one that uses the golden chain technique.',
+            input: 'I remembered you.',
+            example: 'Strange how this little ritual already feels eternal.'
           ),
-          reflection: 'Are you a steady supply… or the rare, dangerous wine they can never drink enough of?'
+          reflection: 'What rituals have you accidentally created? Which ones could you craft deliberately as golden chains?'
         ),
       ),
       12: Lesson(
         id: 'coldpower_3_12',
-        title: 'The Candle & The Moth (Law of Dangerous Contrast)',
+        title: 'The Mirror Cage',
         category: 'coldpower',
         world: 3,
         lesson: 12,
-        xp: 125,
+        xp: 100,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Paris, 1920s. Josephine Baker dances, laughter bursting like champagne. Her lovers drown in joy. Then, abruptly, she grows cold—her gaze distant, her laughter gone. They panic, desperate to bring the fire back. It is the dance of flame and frost: one moment intoxicating warmth, the next a deathly chill. The moth never loves the candle\'s flame—it loves the risk of being burned.',
+          hook: 'Vienna, 1890s. Freud listens as patients speak. He repeats their words back — but sharper, cleaner. They feel seen in ways they\'ve never been seen. Soon, they can\'t stop confessing. Freud didn\'t give them truth; he trapped them in their own reflection.',
           concept: [
-            'Obsession is fueled by contrast.',
-            'Warmth without cold loses edge. Cold without warmth loses hope.',
-            'To keep them addicted, you must alternate between feast and famine.'
+            'Reflection flatters — but too much binds.',
+            'To echo someone is to make them addicted to being heard.',
+            'The mirror can become a cage.',
+            'Humans chase those who mirror them because it feels like validation.'
           ],
+          teaching: 'Humans chase those who mirror them because it feels like validation. By echoing back their values, feelings, or phrasing, you lock them inside a cage of recognition. They don\'t love you — they love themselves through you, and can\'t let go.',
           drill: Drill(
-            question: 'They say: "Sometimes I don\'t know if you even like me." What do you do?',
+            question: 'They sigh: "No one understands me."',
             options: [
-              'Reassure them endlessly.',
-              '"If you never wondered, you\'d never feel the thrill of knowing."'
+              'I do.',
+              'Funny… I thought the same thing about you.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this confusion into a display of dangerous contrast.',
-            input: 'Why are you so hot and cold?',
-            example: 'Because straight lines never intoxicate. Only curves do.'
+            prompt: 'Transform this statement into one that uses the mirror cage technique.',
+            input: 'I get you.',
+            example: 'I understand you in ways you\'ve never dared admit.'
           ),
-          reflection: 'Are you consistent and safe—or dangerous enough to burn their wings?'
+          reflection: 'Do you reflect others just enough to bond — or deeply enough to trap?'
         ),
       ),
       13: Lesson(
         id: 'coldpower_3_13',
-        title: 'The Hourglass Effect (Law of Waiting)',
+        title: 'The Commitment Hook',
         category: 'coldpower',
         world: 3,
         lesson: 13,
-        xp: 125,
+        xp: 100,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Napoleon at Josephine\'s door. He writes feverishly, begging for her. She delays. Hours, then days. Each minute stretches into eternity. His empire bends under his command, but in her silence, he crumbles. By the time she appears, his hunger is not desire—it is desperation. Waiting did what power could not: it enslaved him.',
+          hook: 'Chicago, 1960s. A salesman asks: "Would you like to help children learn to read?" Parents nod. Later, he asks them to buy encyclopedias. They can\'t say no — they already said yes to the idea. The first small agreement shackled them to the second.',
           concept: [
-            'The longer the wait, the deeper the hook.',
-            'Quick satisfaction dissolves; delayed gratification engraves.',
-            'The hourglass turns longing into chains.'
+            'One "yes" breeds another.',
+            'The hook isn\'t the sale — it\'s the principle.',
+            'Agreement once = obligation forever.',
+            'People seek to appear consistent.'
           ],
+          teaching: 'People seek to appear consistent. If they commit to something small, they\'ll defend it with bigger commitments later. Frame conversations to win small "yeses" first — the chain tightens without them noticing.',
           drill: Drill(
-            question: 'They text: "Why didn\'t you reply sooner?" What do you do?',
+            question: 'They say: "I don\'t know if I want this."',
             options: [
-              'Apologize.',
-              '"Because hunger sharpens the taste. And you were worth sharpening."'
+              'Okay, no worries.',
+              'But you do want growth, don\'t you?'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this impatience into a display of hourglass effect.',
-            input: 'I hate waiting for you.',
-            example: 'And yet you wait. That tells me everything.'
+            prompt: 'Transform this statement into one that uses the commitment hook technique.',
+            input: 'Will you support me?',
+            example: 'If you already believe this matters, this next step is obvious.'
           ),
-          reflection: 'Are you easy to reach—or worth every hour of hunger?'
+          reflection: 'Do you fight for the big win first — or seed small yeses that grow into chains?'
         ),
       ),
       14: Lesson(
         id: 'coldpower_3_14',
-        title: 'The Sting of Jealousy (Law of Rivalry)',
+        title: 'The Magnetic Contrast',
         category: 'coldpower',
         world: 3,
         lesson: 14,
-        xp: 125,
+        xp: 100,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Cleopatra sails the Nile, flanked by two Roman titans—Caesar and Antony. Each believes he is her chosen. Each feels the other\'s shadow. She feeds both, never choosing, never closing the wound. Their jealousy is her crown. Men who conquered worlds now clawed at each other for her smile. To spark rivalry is to forge obsession sharper than steel.',
+          hook: 'Hollywood, 1950s. Marlon Brando shifts mid-scene — one moment gentle, the next volcanic. Directors called it "magnetic chaos." Co-stars never knew which Brando they\'d face. But that unpredictability chained them — they leaned closer, desperate to decode him.',
           concept: [
-            'A rival makes desire burn brighter.',
-            'Monopolies bore. Competition enslaves.',
-            'Jealousy transforms affection into addiction.'
+            'Contrast binds tighter than consistency.',
+            'The mix of warmth and distance, fire and ice, enslaves attention.',
+            'Predictable = forgettable.',
+            'The human brain is wired to notice shifts.'
           ],
+          teaching: 'The human brain is wired to notice shifts. If you\'re always calm, they adjust. But if you\'re calm one moment, fiery the next, they obsessively track you. Contrast creates a magnetic pull that feels inescapable.',
           drill: Drill(
-            question: 'They ask: "Are you seeing anyone else?" What do you do?',
+            question: 'They ask: "Why are you hot and cold?"',
             options: [
-              'Deny, soothe them.',
-              '"I don\'t compete. But I don\'t stop others from trying."'
+              'Sorry, I\'ll be consistent.',
+              'Maybe consistency is boring.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this jealousy into a display of rivalry law.',
-            input: 'I don\'t like when others look at you.',
-            example: 'And yet they do. Perhaps you should hold me closer.'
+            prompt: 'Transform this statement into one that uses the magnetic contrast technique.',
+            input: 'I missed you.',
+            example: 'I miss you… and then I don\'t. That\'s why it matters.'
           ),
-          reflection: 'Do you leave them safe in monopoly—or restless in rivalry?'
+          reflection: 'Do you keep people comfortable — or chain them by making them crave your unpredictable contrasts?'
         ),
       ),
       15: Lesson(
         id: 'coldpower_3_15',
-        title: 'The Web That Tightens (Law of Intermittent Reward)',
+        title: 'The Invisible Thread',
         category: 'coldpower',
         world: 3,
         lesson: 15,
-        xp: 125,
+        xp: 100,
         content: LessonContent(
-          hook: 'Las Vegas, 1960s. The slot machine doesn\'t pay every time. It pays unpredictably. That\'s why gamblers lose fortunes—because the reward might come this spin. Lovers work the same way. If you respond every time, the game dies. If you reward randomly, unpredictably, they cannot stop pulling your lever. Intermittence is the secret of every addiction in history.',
+          hook: 'Ancient China. A poet tells his lover: "Wherever you walk, imagine a red thread tied to your wrist, tied to mine. Even oceans can\'t cut it." She spends years believing in the invisible bond. Even when apart, she feels pulled. The poet isn\'t there — but his thread binds her soul.',
           concept: [
-            'Predictability breeds comfort.',
-            'Randomness breeds obsession.',
-            'The strongest chains are woven from uncertainty.'
+            'Invisible bonds outlast visible ones.',
+            'Suggestion is stronger than presence.',
+            'What can\'t be seen can\'t be broken.',
+            'Symbolism is the deepest chain.'
           ],
-                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
+          teaching: 'Symbolism is the deepest chain. A word, image, song, or idea can act as an invisible thread. Whenever they encounter it, they feel you pulling them back. Unlike visible chains, invisible ones are unbreakable because they live in the mind.',
           drill: Drill(
-            question: 'They ask: "Why are you so unpredictable?" What do you do?',
+            question: 'They say: "Why do I keep thinking of you?"',
             options: [
-              'Apologize, promise stability.',
-              '"Because certainty kills thrill. And I prefer you addicted."'
+              'Because you miss me.',
+              'Because the thread pulls, even when I don\'t.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this confusion into a display of intermittent reward.',
-            input: 'You confuse me.',
-            example: 'Confusion is just curiosity refusing to let go.'
+            prompt: 'Transform this statement into one that uses the invisible thread technique.',
+            input: 'Don\'t forget me.',
+            example: 'When you hear that song, you\'ll feel me near.'
           ),
-          reflection: 'Do you reward predictably like a loyal dog—or unpredictably like a casino god?'
+          reflection: 'Do you build visible ties that can be cut — or invisible ones that live forever in memory?'
         ),
       ),
     },
     4: {
       16: Lesson(
         id: 'coldpower_4_16',
-        title: 'The Law of Unattainable Fire',
+        title: 'The Throne Effect',
         category: 'coldpower',
         world: 4,
         lesson: 16,
-        xp: 125,
+        xp: 150,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Spain, 1930s. Federico García Lorca, the poet, sat with lovers who adored him. He gave them glances, words, fragments—but never himself whole. His allure was not in what he gave, but in what he withheld. He was the fire no one could fully hold, and so they burned themselves trying.',
+          hook: 'Moscow, 1945. Stalin speaks fewer words than anyone in the Politburo. Yet when he leans back, silent, every general argues in circles until someone "guesses" his stance. Stalin doesn\'t need to command — his mere seat shapes reality. His presence is the throne.',
           concept: [
-            'Desire dies when fulfilled completely.',
-            'To remain unattainable, you must give pieces, never the whole.',
-            'The spell is in the absence, not the abundance.'
+            'The throne doesn\'t move — others circle it.',
+            'Stillness outweighs motion.',
+            'Presence itself is policy.',
+            'When you establish yourself as the center, others orient around you without orders.'
           ],
+          teaching: 'When you establish yourself as the center, others orient around you without orders. The throne effect is gravity by posture: you don\'t chase, you don\'t scramble — you let orbit form around your stillness.',
           drill: Drill(
-            question: 'They beg: "I want all of you." What do you do?',
+            question: 'They ask: "So what\'s your decision?"',
             options: [
-              'Give everything.',
-              '"Even the gods never give themselves entirely. Why should I?"'
+              'I don\'t know yet.',
+              '[Pause] "I\'ll let you know when the answer arrives."'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this demand into a display of unattainable fire.',
-            input: 'Tell me everything about you.',
-            example: 'If you knew it all, there\'d be nothing left to discover.'
+            prompt: 'Transform this statement into one that uses the throne effect technique.',
+            input: 'I want you.',
+            example: 'The throne doesn\'t move — it chooses who approaches.'
           ),
-          reflection: 'Do you let yourself be consumed—or do you keep enough mystery to keep them starving?'
+          reflection: 'Do you chase approval — or sit so firmly that others move just to be near you?'
         ),
       ),
       17: Lesson(
         id: 'coldpower_4_17',
-        title: 'The Eclipse Effect (Law of Vanishing)',
+        title: 'The Gravitational Aura',
         category: 'coldpower',
         world: 4,
         lesson: 17,
-        xp: 125,
+        xp: 150,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Hollywood, 1950s. Marilyn Monroe laughed, dazzled, consumed every gaze in the room. Then she disappeared for weeks. When she returned, demand for her doubled. Her absence was her sharpest performance. An eclipse always returns more dazzling because it leaves. Seduction demands you vanish, so they ache for your return.',
+          hook: 'Mecca, 632 AD. The Prophet Muhammad passes, yet his followers continue his rituals as if he were still alive. His presence outlives him — not because of orders, but because of aura. The rituals orbit the man, even when the man is gone.',
           concept: [
-            'To vanish is to increase value.',
-            'The heart grows addicted in absence.',
-            'Your silence is as powerful as your voice.'
+            'Presence that outlives presence is aura.',
+            'Aura is not explained — it\'s felt.',
+            'To carry aura is to become eternal in absence.',
+            'Aura is forged by consistency of essence.'
           ],
+          teaching: 'Aura is forged by consistency of essence. Not every word matters — but the impression of you must remain the same. Aura makes people reference you when you\'re not there, defend you when you\'re silent, miss you even when you\'re near.',
           drill: Drill(
-            question: 'They text: "Where have you been?" What do you do?',
+            question: 'They whisper: "Why do you always stand out?"',
             options: [
-              'Apologize profusely.',
-              '"Some stars shine brightest after a little darkness."'
+              'I don\'t.',
+              'Because aura can\'t be hidden.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this complaint into a display of eclipse effect.',
-            input: 'You ghosted me.',
-            example: 'No, I eclipsed. And now you see me brighter.'
+            prompt: 'Transform this statement into one that uses the gravitational aura technique.',
+            input: 'I\'m just me.',
+            example: 'Even when I\'m gone, you\'ll feel me in the room.'
           ),
-          reflection: 'Do you fear absence—or do you wield it as your deadliest weapon?'
+          reflection: 'Do people only feel you in presence — or do they carry your echo everywhere?'
         ),
       ),
       18: Lesson(
         id: 'coldpower_4_18',
-        title: 'The Law of Sweet Poison',
+        title: 'Timelessness',
         category: 'coldpower',
         world: 4,
         lesson: 18,
-        xp: 125,
+        xp: 175,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'The Medici courts of Florence. A courtesan serves sugared almonds laced with opium. The men who eat them never forget her—they crave her touch as much as the drug. Seduction works the same: lace sweetness with danger. They must feel that you are both cure and curse, pleasure and poison.',
+          hook: 'Mahatma Gandhi in prison, 1930s. Asked why he does not fear death, he replies: "Time is not my master. My work is already immortal." Suddenly, the guards feel smaller. Gandhi has stepped outside the cage of clocks. His presence is timeless — therefore unbreakable.',
           concept: [
-            'Pure sweetness fades. Sweetness laced with venom lingers.',
-            'The duality—pleasure entwined with risk—is what enslaves the heart.',
-            'Fear sharpens attraction.'
+            'Time chains mortals; the timeless command them.',
+            'Those who act without urgency bend urgency itself.',
+            'The eternal swallows the temporary.',
+            'When you detach from rushing, others feel it.'
           ],
+          teaching: 'When you detach from rushing, others feel it. The person who seems timeless creates timelessness in others. Urgency collapses around them, decisions orbit their calm. They win because they cannot be hurried.',
           drill: Drill(
-            question: 'They confess: "I think you\'re dangerous." What do you do?',
+            question: 'They push: "Answer now!"',
             options: [
-              'Deny it, reassure.',
-              '"Danger tastes sweeter when you survive it."'
+              'Okay, fine.',
+              '[Slow breath] "Time bends to me. I\'ll answer when it matters."'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this fear into a display of sweet poison.',
-            input: 'You\'re too much for me.',
-            example: 'Too much is the perfect dose when nothing else is enough.'
+            prompt: 'Transform this statement into one that uses the timelessness technique.',
+            input: 'We\'re late.',
+            example: 'I don\'t run on clocks. Clocks run on me.'
           ),
-          reflection: 'Do you present yourself as harmless honey—or the nectar spiked with poison?'
+          reflection: 'Do you live enslaved by time — or do you create the illusion you own eternity?'
         ),
       ),
       19: Lesson(
         id: 'coldpower_4_19',
-        title: 'The Mirror of Madness',
+        title: 'The Event Horizon',
         category: 'coldpower',
         world: 4,
         lesson: 19,
-        xp: 125,
+        xp: 175,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Vienna, 1900s. Freud listened as his patient became obsessed with him. Why? Because he reflected her deepest thoughts back to her, amplifying them. She didn\'t love him—she loved her own reflection in his mirror. The cruel truth: people don\'t fall for you. They fall for the parts of themselves you reflect back.',
+          hook: '1960s, Hollywood. Marilyn Monroe walks through Times Square with no makeup. Few notice. Then she adjusts her scarf, changes her walk — suddenly, the air changes. People turn, cars stop, cameras flash. She flips her aura on like a switch. In that moment she becomes an event horizon: nothing around her escapes her pull.',
           concept: [
-            'To obsess someone, reflect their hidden self.',
-            'Become the mirror of their unspoken desires.',
-            'They won\'t know if it\'s you they love—or themselves through you.'
+            'The event horizon = the point of no escape.',
+            'When you choose to shine, no one looks away.',
+            'Gravity activated at will is irresistible.',
+            'The event horizon isn\'t constant glow — it\'s selective radiance.'
           ],
+          teaching: 'The event horizon isn\'t constant glow — it\'s selective radiance. By learning to "switch on" your magnetism, you trap attention. People who enter your field cannot leave unchanged.',
           drill: Drill(
-            question: 'They say: "It\'s like you understand me better than I do." What do you do?',
+            question: 'They murmur: "Why is everyone looking at you?"',
             options: [
-              'Laugh it off.',
-              '"Maybe I\'m just the mirror you\'ve been avoiding."'
+              'I don\'t know.',
+              'Because right now, I decided to be seen.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this recognition into a display of mirror madness.',
-            input: 'You know me too well.',
-            example: 'I only show you what you\'ve always known.'
+            prompt: 'Transform this statement into one that uses the event horizon technique.',
+            input: 'I\'m noticed.',
+            example: 'When I switch on, the world has no choice but to orbit.'
           ),
-          reflection: 'Are you demanding to be loved—or are you making them fall for their own reflection in your eyes?'
+          reflection: 'Do you glow by accident — or can you control when the world bends toward you?'
         ),
       ),
       20: Lesson(
         id: 'coldpower_4_20',
-        title: 'The Final Chain (Law of Irreversibility)',
+        title: 'The Crown Principle',
         category: 'coldpower',
         world: 4,
         lesson: 20,
-        xp: 125,
+        xp: 200,
         content: LessonContent(
-          hook: 'The myth of Circe. She enchanted men not with spells, but with transformation. Once you drank from her cup, you could never return unchanged. This is the ultimate law: seduction must leave scars. When they leave you, they must never be the same. The memory of you must haunt every future lover. That is how you win eternity.',
+          hook: 'England, 1953. Queen Elizabeth walks into Westminster Abbey. She says little, but the crown is placed on her head. The crown itself changes nothing physically — yet everyone kneels. Why? Because symbols are stronger than strength. The crown is a principle: once worn, reality reorders itself.',
           concept: [
-            'True seduction is irreversible.',
-            'Once touched by your fire, they can never feel warmth in lesser flames.',
-            'The goal is not to win them now—but to live rent-free in their soul forever.'
+            'Symbols outlive flesh.',
+            'The crown is authority made eternal.',
+            'When you wear the crown, resistance is impossible.',
+            'At the final stage, gravity is no longer action or absence — it\'s identity.'
           ],
-                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
+          teaching: 'At the final stage, gravity is no longer action or absence — it\'s identity. When people accept your "crown" (a role, symbol, title, legend), they don\'t question it. The crown principle makes your presence law.',
           drill: Drill(
-            question: 'They whisper: "I\'ll never forget you." What do you do?',
+            question: 'They say: "Who made you king?"',
             options: [
-              'Blush, say something sweet.',
-              '"Good. That was the plan all along."'
+              'No one.',
+              'The crown is not given. It is recognized.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this promise into a display of final chain.',
-            input: 'I\'ll get over you.',
-            example: 'You may leave me, but you\'ll never leave me behind.'
+            prompt: 'Transform this statement into one that uses the crown principle technique.',
+            input: 'I lead.',
+            example: 'The crown doesn\'t ask permission — it makes permission irrelevant.'
           ),
-          reflection: 'Do you chase fleeting victories—or do you etch yourself into their very being?'
+          reflection: 'Do you chase authority — or have you built a symbol that crowns you without words?'
         ),
       ),
     },
   },
-  'psychwar': {
+  'gravity': {
     1: {
       1: Lesson(
-        id: 'psychwar_1_1',
-        title: 'The Invisible Battlefield (Sun Tzu\'s Mind War)',
-        category: 'psychwar',
+        id: 'gravity_1_1',
+        title: 'Naming the Flame',
+        category: 'gravity',
         world: 1,
         lesson: 1,
         xp: 50,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'China, 500 BC. The armies gather. Spears gleam. But Sun Tzu doesn\'t unleash soldiers—he unleashes whispers. Fires are lit in random hills at night to suggest phantom armies. Drums echo in empty valleys to mimic battalions. Rumors of plague spread through enemy camps. By dawn, the enemy commander trembles before shadows that don\'t exist. When Sun Tzu advances, the enemy has already surrendered—beaten not by swords, but by their own imagination. The first true battlefield is not the land—it is the mind.',
+          hook: 'Harvard, 1983. Psychologist Daniel Goleman watches as a student storms into office hours, fists clenched. The professor doesn\'t argue. He says calmly: "You\'re not angry. You\'re frustrated because you expected more." The student freezes, shocked. With a single word swap, the storm dissolves. Naming the flame tamed the fire.',
           concept: [
-            'War of Perceptions: Make them see what isn\'t there.',
-            'Mental Disruption: Fear and confusion weaken more than blades.',
-            'Defense Today: Be wary of signals, rumors, and "facts" designed to rattle your mind.'
+            'What you name, you control.',
+            'Undefined emotion controls you; defined emotion bends to you.',
+            'The first alchemy is language.',
+            'Emotions feel like chaos until you name them.'
           ],
+          teaching: 'Emotions feel like chaos until you name them. Neuroscience shows labeling reduces intensity by half. Saying "I\'m furious" shifts the brain from raw limbic fire into logical control. Alchemists of emotion don\'t drown in feelings — they rename them into metals they can forge.',
           drill: Drill(
-            question: 'Someone insists: "Everyone\'s against you—it\'s pointless to resist." What do you do?',
+            question: 'They shout: "I\'m so angry at you!"',
             options: [
-              'Accept their claim and lose hope.',
-              'Question the source—are they describing reality, or trying to shape it?'
+              'Don\'t be mad.',
+              'You\'re not angry — you\'re disappointed. That\'s a lighter fire to work with.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this statement into a recognition of invisible battlefield tactics.',
-            input: 'The enemy is strong.',
-            example: 'The enemy wants you to think they\'re strong—that\'s their first weapon.'
+            prompt: 'Transform this statement into one that uses the naming the flame technique.',
+            input: 'I\'m angry.',
+            example: 'I\'m challenged — which means I\'m growing.'
           ),
-          reflection: 'Who controls your perception—your eyes, or someone else\'s whispers?'
+          reflection: 'When did you last let an emotion stay nameless and wild? How could naming it have given you the handle to wield it?'
         ),
       ),
       2: Lesson(
-        id: 'psychwar_1_2',
-        title: 'Fear as a Blade',
-        category: 'psychwar',
+        id: 'gravity_1_2',
+        title: 'Cooling the Storm',
+        category: 'gravity',
         world: 1,
         lesson: 2,
         xp: 50,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Salem, 1692. A girl points her trembling hand: "She\'s with the Devil." No evidence. No proof. Just a spark. Fear spreads like fire through dry grass. Fathers betray daughters. Neighbors turn executioner. No army was needed—terror itself held the sword. The lesson? Fear is the cheapest, most devastating weapon. Once it spreads, it doesn\'t need to be true. It only needs to be believed.',
+          hook: 'Tokyo, 1600s. A samurai faces an enemy hurling insults. He doesn\'t flinch. He sips tea, silent, until the man tires himself out. The crowd whispers: "His calm drowned the storm." That warrior won before the swords left their sheaths.',
           concept: [
-            'Fear Overrides Reason: Panic erases logic.',
-            'Contagion Effect: One spark can consume whole crowds.',
-            'Defense Today: Ask—is this fear based on fact, or is it manufactured?'
+            'Anger burns out when it finds no fuel.',
+            'Calm is contagious.',
+            'The cooler you are, the hotter they look.',
+            'Anger is fire seeking fire.'
           ],
+          teaching: 'Anger is fire seeking fire. But if you meet it with water — stillness, calm tone, slow pace — the other burns themselves out. Emotional alchemy is not fighting rage with rage, but smothering it with serenity.',
           drill: Drill(
-            question: 'You hear: "If you don\'t follow me, everything will collapse." What do you do?',
+            question: 'They snap: "You never listen!"',
             options: [
-              'Panic and comply.',
-              'Ask: collapse how, collapse why, collapse when?'
+              'Yes I do!',
+              '[Pause, soft voice] "I hear you. Say it again."'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this fear into a recognition of manufactured terror.',
-            input: 'This is dangerous.',
-            example: 'This feels dangerous because someone wants me afraid.'
+            prompt: 'Transform this statement into one that uses the cooling the storm technique.',
+            input: 'Stop yelling.',
+            example: 'I want to hear you clearly — not loudly.'
           ),
-          reflection: 'Which of your fears are real—and which were planted in you?'
+          reflection: 'When have you poured fuel on fire by reacting? What would shift if your silence became water instead?'
         ),
       ),
       3: Lesson(
-        id: 'psychwar_1_3',
-        title: 'Planting Doubt, Harvesting Paranoia',
-        category: 'psychwar',
+        id: 'gravity_1_3',
+        title: 'Turning Fear into Focus',
+        category: 'gravity',
         world: 1,
         lesson: 3,
         xp: 50,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Cold War Berlin. An American diplomat receives a quiet remark at dinner: "Strange, your secretary takes a lot of late-night calls." That\'s it. Just a seed. Days later, another whisper: "She lingers near the phones too long, doesn\'t she?" Soon the diplomat distrusts everyone. He checks shadows, eyes his friends like enemies. No chains are needed—the KGB turned his own mind into his prison. Doubt is the cheapest poison. Once planted, it grows itself.',
+          hook: 'Apollo 13, 1970. Astronauts face death: oxygen failing, systems collapsing. Panic could kill them faster than space. Mission control reframes: "This is the greatest engineering challenge of our lives." Fear becomes focus. That shift saves the crew.',
           concept: [
-            'Seeds Over Swords: Suggestion beats confrontation.',
-            'Paranoia Multiplies Alone: A whisper today becomes obsession tomorrow.',
-            'Defense Today: When suspicion feels planted, check—did it come from evidence, or someone else\'s hint?'
+            'Fear is energy. Focus is fear disciplined.',
+            'Anxiety is fuel waiting for direction.',
+            'Reframe threat as challenge — the body obeys.',
+            'Fear quickens breath, raises heartbeat, sharpens senses.'
           ],
+          teaching: 'Fear quickens breath, raises heartbeat, sharpens senses. It feels like danger, but physiologically, it\'s readiness. The alchemist doesn\'t suppress fear — they redirect it into alertness and presence.',
           drill: Drill(
-            question: 'A colleague says: "Funny, your partner\'s been smiling at that new coworker a lot." What do you do?',
+            question: 'They say: "I\'m terrified to speak."',
             options: [
-              'Get suspicious immediately.',
-              'Ask yourself: is this observation fact, or manipulation?'
+              'Calm down.',
+              'That\'s not fear — that\'s energy saying, "use me."'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this doubt into a recognition of planted paranoia.',
-            input: 'Maybe I can\'t trust them.',
-            example: 'Maybe someone wants me to doubt them without reason.'
+            prompt: 'Transform this statement into one that uses the turning fear into focus technique.',
+            input: 'I\'m scared.',
+            example: 'I\'m electric with energy.'
           ),
-          reflection: 'Whose seeds of doubt are you watering?'
+          reflection: 'Do you run from fear, or do you forge it into sharpness?'
         ),
       ),
       4: Lesson(
-        id: 'psychwar_1_4',
-        title: 'The Mirror Weapon',
-        category: 'psychwar',
+        id: 'gravity_1_4',
+        title: 'Shifting Sadness into Connection',
+        category: 'gravity',
         world: 1,
         lesson: 4,
         xp: 50,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'France, 1680. Court whispers accuse Madame de Montespan of poison plots. Instead of defending herself, she turns the blade back: "How curious you think of poison. Why so detailed? Unless…" The room shifts. Her accuser begins defending themselves, sweating under suspicion. The mirror trick is perfect reversal: you accuse me? I make you the guilty one. No evidence needed—just reflection turned sharp.',
+          hook: 'Vienna, 1930s. Viktor Frankl loses family in the camps. In despair, he decides: "If suffering is unavoidable, it must have meaning." He turns grief into purpose — helping millions through Man\'s Search for Meaning. Sadness became connection to all humanity.',
           concept: [
-            'Accusation Reversal: Mirror suspicion back at attacker.',
-            'Confusion As Defense: Make them defend instead of you.',
-            'Defense Today: Notice when your valid concerns are flipped into questions about you.'
+            'Sadness is heavy — but shared, it becomes bond.',
+            'Vulnerability isn\'t weakness, it\'s glue.',
+            'Pain, when spoken, forges trust.',
+            'Sadness isolates if hidden.'
           ],
+          teaching: 'Sadness isolates if hidden. But voiced honestly, it forges deep bonds. When you reveal your hurt without drowning in it, people lean closer, not away. Emotional alchemists turn sorrow into connection.',
           drill: Drill(
-            question: 'You say: "I don\'t like how you\'ve hidden this from me." They reply: "Why are you always paranoid?" What do you recognize?',
+            question: 'They ask: "Are you okay?"',
             options: [
-              'Get defensive about being "paranoid."',
-              'Recognize the mirror—they dodged your point.'
+              'I\'m fine.',
+              'Not really — but I want to share it, not hide it.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this self-doubt into a recognition of the mirror weapon.',
-            input: 'Maybe I\'m too suspicious.',
-            example: 'They\'re reflecting my concern to silence me.'
+            prompt: 'Transform this statement into one that uses the shifting sadness into connection technique.',
+            input: 'I\'m sad.',
+            example: 'I\'m human, and this moment reminds me of it.'
           ),
-          reflection: 'When arguments flip back onto you—ask: am I being mirrored?'
+          reflection: 'Do you hide your lows — or do you let them forge intimacy?'
         ),
       ),
       5: Lesson(
-        id: 'psychwar_1_5',
-        title: 'The Silence That Crushes',
-        category: 'psychwar',
+        id: 'gravity_1_5',
+        title: 'The Spark of Humor',
+        category: 'gravity',
         world: 1,
         lesson: 5,
         xp: 50,
         content: LessonContent(
-          hook: 'Stanford, 1971. In Zimbardo\'s infamous experiment, some "guards" scream. Others… say nothing. Just stare. Just wait. The prisoners fear the quiet ones most. A silence that stretches becomes unbearable—every second whispers: you are beneath me. Words can be challenged. Silence is unanswerable. In psychological warfare, silence is not absence. It is dominance distilled.',
+          hook: 'Apollo 11, 1969. As the Eagle prepares to land, alarms blare. Neil Armstrong stays calm. Buzz Aldrin cracks a joke: "Program alarm. We\'re inventing new problems now." Laughter lightens fear, steadies the crew. Humor was not escape — it was oxygen.',
           concept: [
-            'Implied Authority: The less you say, the more they imagine.',
-            'Silence as Pressure: Pauses make others fill the void.',
-            'Defense Today: Don\'t mistake silence for superiority—it\'s a tactic, not truth.'
+            'Humor turns fear into play.',
+            'Laughter short-circuits tension.',
+            'The one who jokes controls the mood.',
+            'Humor isn\'t distraction — it\'s a reset button.'
           ],
-                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
+          teaching: 'Humor isn\'t distraction — it\'s a reset button. A laugh cuts through panic, tension, or awkwardness. Emotional alchemists use humor not to avoid seriousness, but to make people strong enough to face it.',
           drill: Drill(
-            question: 'They give you long pauses, forcing you to babble explanations. Do you:',
+            question: 'They mutter: "This is hopeless."',
             options: [
-              'Rush to fill the silence.',
-              'Sit calmly—their silence doesn\'t define you.'
+              'It\'s serious, yeah.',
+              'At least we\'ll have a great tragedy-comedy to tell.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this panic into a recognition of weaponized silence.',
-            input: 'They said nothing—I panicked.',
-            example: 'Their silence was a tactic. My calm is my armor.'
+            prompt: 'Transform this statement into one that uses the spark of humor technique.',
+            input: 'Don\'t worry.',
+            example: 'If this goes wrong, at least my stand-up career starts tomorrow.'
           ),
-          reflection: 'Who in your life uses silence as a leash?'
+          reflection: 'Do you treat humor as frivolous — or as fire that melts fear into joy?'
         ),
       ),
     },
     2: {
       6: Lesson(
-        id: 'psychwar_2_6',
-        title: 'The Web of Half-Truths',
-        category: 'psychwar',
+        id: 'gravity_2_6',
+        title: 'Turning Anger into Power',
+        category: 'gravity',
         world: 2,
         lesson: 6,
-        xp: 50,
+        xp: 75,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Venice, 1500. A merchant is accused of smuggling. In court, he admits: "Yes, I did send ships without full duty. But only to feed orphans in winter." He weaves fact with virtue, lie with charity. By the end, the judges argue for him. The genius? He didn\'t deny guilt. He bent it into a half-truth wrapped in nobility. A pure lie risks collapse. A half-truth survives.',
+          hook: 'Harlem, 1963. Martin Luther King Jr. is arrested. Reporters expect rage. Instead, he writes: "Injustice anywhere is a threat to justice everywhere." His fury doesn\'t erupt — it crystallizes into words that ignite nations. He turned anger into immortal fuel.',
           concept: [
-            'Best Lies Hold Truth: A shard of reality makes poison drinkable.',
-            'Emotional Justification: Cloak deception in moral clothing.',
-            'Defense Today: When something feels "mostly true," ask: which part is the bait?'
+            'Anger is wasted in fire. Refined, it becomes steel.',
+            'Rage burns bridges; focus builds empires.',
+            'The hottest flame hardens the strongest sword.',
+            'Anger is raw energy.'
           ],
+          teaching: 'Anger is raw energy. Most spill it recklessly. The alchemist channels it — into speeches, creation, change. By naming the injustice and redirecting the heat, anger becomes precision power.',
           drill: Drill(
-            question: 'A politician says: "Yes, I made mistakes—but only because I cared too much." What do you think?',
+            question: 'They bark: "You\'re pissing me off!"',
             options: [
-              'Admire their "honesty."',
-              'Notice how truth is wrapped around misdirection.'
+              'Sorry!',
+              'Good. Energy\'s awake. Let\'s use it to fix this.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this acceptance into a recognition of half-truth tactics.',
-            input: 'They admitted guilt—it must be true.',
-            example: 'They admitted guilt—but did they frame it to gain sympathy?'
+            prompt: 'Transform this statement into one that uses the turning anger into power technique.',
+            input: 'I\'m mad.',
+            example: 'I\'m a storm — and storms carve mountains.'
           ),
-          reflection: 'Are you swallowing lies easier when sweetened with honesty?'
+          reflection: 'When did you last waste anger as heat? How could you transmute it into light?'
         ),
       ),
       7: Lesson(
-        id: 'psychwar_2_7',
-        title: 'Masks Within Masks',
-        category: 'psychwar',
+        id: 'gravity_2_7',
+        title: 'Turning Envy into Aspiration',
+        category: 'gravity',
         world: 2,
         lesson: 7,
-        xp: 50,
+        xp: 75,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Paris, 1770. An aristocrat hosts salons where he mocks the king. But when guards arrive, he dons another mask: loyal servant, hand over heart. When spies listen, he wears yet another: bumbling fool, harmless. The truth? He is all and none. He survives by shifting masks faster than others can pin him down. If you cannot read the mask, you cannot touch the man beneath.',
+          hook: 'Florence, 1500s. Michelangelo sees Da Vinci\'s sketches — graceful, perfect, untouchable. He feels envy, a poison in the gut. Instead of drowning, he obsesses. That envy pushes him to carve David from stone, eclipsing even his rival. The envy became a ladder.',
           concept: [
-            'Multiple Personae: One face for friends, another for enemies.',
-            'Confusion as Shield: If they can\'t place you, they can\'t control you.',
-            'Defense Today: Notice when someone is too many people at once—it may not be charm, but camouflage.'
+            'Envy shows you what you secretly desire.',
+            'Poison, when distilled, becomes medicine.',
+            'Envy ignored rots; envy harnessed climbs.',
+            'Envy is not shameful — it\'s a compass.'
           ],
+          teaching: 'Envy is not shameful — it\'s a compass. It reveals what you crave. The trick is not resenting the one above you, but using their shadow as your staircase.',
           drill: Drill(
-            question: 'A new partner acts romantic with you, stoic with friends, humble with elders. Do you:',
+            question: 'They mutter: "I hate how successful she is."',
             options: [
-              'See this as versatility.',
-              'Realize they may have no "real" self—only masks.'
+              'Yeah, it sucks.',
+              'Then she\'s showing you your next mountain.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this admiration into a recognition of multiple masks.',
-            input: 'They\'re complicated.',
-            example: 'They are skilled at masks—complication is camouflage.'
+            prompt: 'Transform this statement into one that uses the turning envy into aspiration technique.',
+            input: 'I\'m jealous.',
+            example: 'Her success is my map, not my prison.'
           ),
-          reflection: 'Do you know the person, or the mask they chose for you?'
+          reflection: 'Who triggers your envy — and what if they were just your secret teacher?'
         ),
       ),
       8: Lesson(
-        id: 'psychwar_2_8',
-        title: 'The Trap of Agreement',
-        category: 'psychwar',
+        id: 'gravity_2_8',
+        title: 'Transmuting Fear into Excitement',
+        category: 'gravity',
         world: 2,
         lesson: 8,
-        xp: 50,
+        xp: 75,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Berlin, 1933. A young officer is tested. His superior says: "We agree loyalty is everything, yes?" The officer nods. Next: "And loyalty requires obedience, yes?" Another nod. Soon he finds himself agreeing to betray his own conscience—all from a chain of small yeses. Agreement is not always alignment. It can be a trap set one nod at a time.',
+          hook: 'New Zealand, 1953. Edmund Hillary stands at the foot of Everest. Terrified. Each gust of wind could kill him. But he reframes: fear means the climb matters. He climbs anyway. At the summit, his fear is indistinguishable from exhilaration.',
           concept: [
-            'Incremental Consent: Each small "yes" leads to bigger concessions.',
-            'Loyalty as Weapon: "If you agree on X, then surely Y…"',
-            'Defense Today: Pause before automatic agreement—where does this path lead?'
+            'Fear and excitement are twins with different names.',
+            'The body doesn\'t know the difference — only the mind does.',
+            'Rename fear, and you flip terror into thrill.',
+            'Physiologically, fear = excitement: pounding heart, adrenaline, sweaty palms.'
           ],
+          teaching: 'Physiologically, fear = excitement: pounding heart, adrenaline, sweaty palms. The alchemist\'s trick is relabeling. "I\'m scared" → "I\'m thrilled." With a single word, the storm becomes a rocket.',
           drill: Drill(
-            question: 'Your boss says: "You agree teamwork matters, right?" (harmless). Then: "So you\'ll stay late every night, right?" What do you do?',
+            question: 'They say: "I\'m so nervous."',
             options: [
-              'Feel trapped by your first "yes."',
-              'Recognize the leap from small truth to big exploitation.'
+              'Relax.',
+              'That\'s excitement disguised. Feel it — it means you\'re alive.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this trap into a recognition of incremental consent.',
-            input: 'I said yes, so now I must continue.',
-            example: 'Each yes stands alone. One agreement doesn\'t enslave me.'
+            prompt: 'Transform this statement into one that uses the transmuting fear into excitement technique.',
+            input: 'I\'m afraid.',
+            example: 'I\'m thrilled — fear is just excitement in costume.'
           ),
-          reflection: 'Where have your nods led you into cages?'
+          reflection: 'When was fear secretly your compass to adventure?'
         ),
       ),
       9: Lesson(
-        id: 'psychwar_2_9',
-        title: 'The Serpent\'s Compliment',
-        category: 'psychwar',
+        id: 'gravity_2_9',
+        title: 'Transmuting Doubt into Curiosity',
+        category: 'gravity',
         world: 2,
         lesson: 9,
-        xp: 50,
+        xp: 75,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Hollywood, 1950s. An actress is told: "You\'re far too brilliant for this role—it\'s beneath you." She blushes at the praise… then quits. Months later, she realizes the role went to another star. The compliment wasn\'t praise—it was poison. The serpent\'s compliment inflates ego while steering you away from power. Not every sweet word is meant to lift you—some are designed to move you.',
+          hook: 'Athens, 399 BC. Socrates stands trial. They accuse him of corrupting youth. He doesn\'t fight doubt — he multiplies it. "I know that I know nothing." Instead of fear, he turns doubt into eternal curiosity. The question outlives the accusation.',
           concept: [
-            'Flattery as Leash: People follow where their ego is stroked.',
-            'Praise as Redirection: Compliment what removes them from opportunity.',
-            'Defense Today: Ask—what do they gain by complimenting me?'
+            'Doubt destroys the timid, but fuels the wise.',
+            'Questions are stronger than certainty.',
+            'Curiosity is doubt refined into progress.',
+            'Doubt feels like weakness.'
           ],
+          teaching: 'Doubt feels like weakness. But if you see it as hunger — a sign there\'s more to know — it becomes strength. The alchemist doesn\'t silence doubt; he sharpens it into questions that move him forward.',
           drill: Drill(
-            question: 'A rival says: "You\'re too good for that job—you deserve better." What do you think?',
+            question: 'They groan: "I don\'t know if I\'m good enough."',
             options: [
-              'Glow with pride and step aside.',
-              'Pause. Why would they encourage you to quit?'
+              'Don\'t doubt yourself.',
+              'Good. Now ask — what would make you great?'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this flattery into a recognition of the serpent\'s compliment.',
-            input: 'They praised me—it must be sincere.',
-            example: 'They praised me—but does it lead me away from power?'
+            prompt: 'Transform this statement into one that uses the transmuting doubt into curiosity technique.',
+            input: 'I doubt myself.',
+            example: 'My doubt is my compass toward mastery.'
           ),
-          reflection: 'Do you chase the sugar of praise, or the substance of truth?'
+          reflection: 'Do you see doubt as weakness — or as the spark that drives exploration?'
         ),
       ),
       10: Lesson(
-        id: 'psychwar_2_10',
-        title: 'The Vanishing Act',
-        category: 'psychwar',
+        id: 'gravity_2_10',
+        title: 'Turning Pain into Art',
+        category: 'gravity',
         world: 2,
         lesson: 10,
-        xp: 50,
+        xp: 75,
         content: LessonContent(
-          hook: 'Naples, 1600s. A gambler owes debts he cannot pay. Instead of running, he throws a feast. Wine flows, women laugh, music drowns the night. By morning, the creditors awake to empty halls—he has vanished while they were distracted. Distraction is the purest camouflage. Make them look here, while you slip away there. Magic is not sorcery. It is control of attention.',
+          hook: 'Vienna, 1824. Beethoven, deaf, broken, isolated. He cannot hear a single note. Instead of surrendering, he pours his agony into the Ninth Symphony — music that shakes the world. His pain became cathedral sound.',
           concept: [
-            'Distraction Equals Freedom: Attention is a leash. Break it, you escape.',
-            'Spectacle as Smoke: Loud colors, big gestures, shiny surfaces hide the move.',
-            'Defense Today: Ask—what am I not looking at while dazzled?'
+            'Pain is raw ore. Art is forged metal.',
+            'Suffering wastes you if you bury it — saves you if you shape it.',
+            'The deepest wounds create the deepest echoes.',
+            'Pain can drown or elevate.'
           ],
-                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
+          teaching: 'Pain can drown or elevate. The alchemist transmutes it — writing, painting, creating, speaking. By expressing it, pain becomes beauty, purpose, connection.',
           drill: Drill(
-            question: 'An ad flashes: "LIMITED TIME! BUY NOW!" What do you do?',
+            question: 'They confess: "This hurts too much."',
             options: [
-              'Focus only on the countdown timer.',
-              'Ask: what are they hiding while I panic about the clock?'
+              'Don\'t think about it.',
+              'Good. Now use it — bleed it into something others can touch.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this distraction into a recognition of the vanishing act.',
-            input: 'It caught my eye—it must matter.',
-            example: 'It caught my eye—so what did it pull me away from?'
+            prompt: 'Transform this statement into one that uses the turning pain into art technique.',
+            input: 'I\'m in pain.',
+            example: 'I\'m building something from my wounds.'
           ),
-          reflection: 'Where are you being dazzled into blindness?'
+          reflection: 'What pain of yours could be turned into creation that outlives you?'
         ),
       ),
     },
     3: {
       11: Lesson(
-        id: 'psychwar_3_11',
-        title: 'Divide and Rule',
-        category: 'psychwar',
+        id: 'gravity_3_11',
+        title: 'The Fusion of Fear & Desire',
+        category: 'gravity',
         world: 3,
         lesson: 11,
         xp: 100,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Ancient Rome. Senators whisper rebellion. Caesar doesn\'t confront them directly. Instead, he spreads subtle rumors—this one mocked you in private, that one plans to betray you first. Unity fractures into suspicion. Soon, his enemies fight one another, too busy to unite against him. He never drew a sword—he simply split their trust.',
+          hook: 'Seville, 1904. A matador faces the bull. He trembles, but the crowd doesn\'t see fear — they see fire. Fear sharpens his senses; desire drives his strike. The two blend into electricity. If he had only fear, he\'d freeze. Only desire, he\'d rush blindly. But together — he dances with death and becomes immortal.',
           concept: [
-            'Suspicion Destroys Unity: A divided enemy cannot stand.',
-            'Whispers Are Sharper Than Swords: Rumors fight battles for you.',
-            'Defense Today: When groups suddenly splinter, look for the invisible hand fanning distrust.'
+            'Fear alone = paralysis.',
+            'Desire alone = recklessness.',
+            'Fear + Desire = charged vitality.',
+            'The alchemist uses fear as brakes, desire as engine.'
           ],
+          teaching: 'The alchemist uses fear as brakes, desire as engine. Together they create perfect speed. Blend the two and you move with precision: bold, but not blind.',
           drill: Drill(
-            question: 'Your workplace suddenly turns hostile—colleagues mistrust each other. What do you do?',
+            question: 'They whisper: "I\'m scared to want this."',
             options: [
-              'Assume it\'s just stress.',
-              'Ask: Who benefits from us fighting each other?'
+              'Don\'t be scared.',
+              'Good — if it scares and excites you, it means you\'re alive.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this observation into a recognition of divide and rule tactics.',
-            input: 'They\'re fighting each other.',
-            example: 'They\'re fighting each other—while someone else wins.'
+            prompt: 'Transform this statement into one that uses the fusion of fear & desire technique.',
+            input: 'I\'m nervous.',
+            example: 'I\'m trembling with fire — exactly where greatness begins.'
           ),
-          reflection: 'Do you see conflict at face value—or trace the hidden architect?'
+          reflection: 'Where have you split fear and desire? What could you do if you fused them instead?'
         ),
       ),
       12: Lesson(
-        id: 'psychwar_3_12',
-        title: 'The Poisoned Gift',
-        category: 'psychwar',
+        id: 'gravity_3_12',
+        title: 'Blending Anger with Love',
+        category: 'gravity',
         world: 3,
         lesson: 12,
         xp: 100,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Medieval France. A rival lord presents his enemy with a lavish horse, adorned in silk. Days later, the animal collapses, diseased. The lord accepts the gift, and with it, ruin. Not every offering is kindness. Sometimes generosity is a weapon wrapped in velvet.',
+          hook: 'South Africa, 1990. Nelson Mandela walks free after 27 years. He feels fury at injustice, but he doesn\'t unleash it. He welds his anger to love of his people. That alloy becomes forgiveness stronger than steel. It dissolves war into reconciliation.',
           concept: [
-            'A Gift Can Carry Chains: The more generous the act, the more careful you must be.',
-            'Obligation Weakens Freedom: Accepting creates invisible debt.',
-            'Defense Today: Ask what strings are tied to every gift.'
+            'Anger alone = destruction.',
+            'Love alone = weakness.',
+            'Anger + Love = justice with compassion.',
+            'Raw anger smashes. Pure love submits.'
           ],
+          teaching: 'Raw anger smashes. Pure love submits. But together, they form righteous fire: love strong enough to fight, anger softened enough to heal. Alchemy lies in refusing to choose — instead, fusing both.',
           drill: Drill(
-            question: 'A new "friend" showers you with favors early on. What do you think?',
+            question: 'They spit: "Don\'t you hate them?"',
             options: [
-              'Accept freely—it\'s generosity.',
-              'Pause. Realize every gift carries expectation.'
+              'Yes.',
+              'I hate what they did. I love us more.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this acceptance into a recognition of the poisoned gift.',
-            input: 'They gave it to me for free.',
-            example: 'They gave it to me—but freedom rarely comes free.'
+            prompt: 'Transform this statement into one that uses the blending anger with love technique.',
+            input: 'I forgive.',
+            example: 'My love is fierce enough to carry my anger.'
           ),
-          reflection: 'Do you measure kindness—or do you count the chains behind it?'
+          reflection: 'Where could your fury be softened by love — or your love sharpened by anger?'
         ),
       ),
       13: Lesson(
-        id: 'psychwar_3_13',
-        title: 'The Serpent\'s Compliment',
-        category: 'psychwar',
+        id: 'gravity_3_13',
+        title: 'Merging Doubt with Faith',
+        category: 'gravity',
         world: 3,
         lesson: 13,
         xp: 100,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Renaissance Italy. A courtier flatters a duke: "No man alive is as wise as you." The duke beams, but over time, the words poison him. He stops listening to counsel, believing he already knows best. Flattery sharpens pride into blindness, and blindness into downfall.',
+          hook: 'Florence, 1500s. Galileo looks through his telescope. Doubt whispers: "What if I\'m wrong?" Faith answers: "Look again." That tension drives him past comfort into truth. His doubt tested, his faith fortified. Without doubt, faith is blind. Without faith, doubt is paralysis. Together — they became science.',
           concept: [
-            'Flattery is a Cage: Praise lulls you into weakness.',
-            'The Compliment is a Blade: It cuts your awareness if you lean on it.',
-            'Defense Today: When words of praise feel too perfect, ask what action follows them.'
+            'Doubt checks.',
+            'Faith drives.',
+            'Doubt + Faith = wisdom tested by fire.',
+            'Faith without doubt is fanaticism.'
           ],
+          teaching: 'Faith without doubt is fanaticism. Doubt without faith is despair. But together, they forge confidence that is flexible, resilient, unbreakable.',
           drill: Drill(
-            question: 'A partner says: "You\'re perfect—you never make mistakes." What do you think?',
+            question: 'They sigh: "I don\'t know if I can trust myself."',
             options: [
-              'Smile and accept.',
-              'Recognize it as either shallow—or manipulation.'
+              'Just believe.',
+              'Good — doubt means you\'re alive. Now let faith carry you past it.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this flattery into a recognition of the serpent\'s compliment.',
-            input: 'They said I was flawless.',
-            example: 'They said I was flawless—so they must want me blind.'
+            prompt: 'Transform this statement into one that uses the merging doubt with faith technique.',
+            input: 'I believe.',
+            example: 'My doubt hammers my faith into something unshakable.'
           ),
-          reflection: 'Do you crave sweet words—or cut through them for truth?'
+          reflection: 'Do you flee doubt, or do you let it strengthen your faith?'
         ),
       ),
       14: Lesson(
-        id: 'psychwar_3_14',
-        title: 'Confusion as a Weapon',
-        category: 'psychwar',
+        id: 'gravity_3_14',
+        title: 'Mixing Sorrow with Joy',
+        category: 'gravity',
         world: 3,
         lesson: 14,
         xp: 100,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Cold War interrogation rooms. Some prisoners were not beaten—they were drowned in contradiction. Guards would praise them one hour, insult them the next. They\'d be promised release, then threatened with life sentences. The goal wasn\'t answers—it was disorientation. Confusion breaks the mind faster than cruelty.',
+          hook: 'Japan, 1680s. A poet watches cherry blossoms fall. He weeps — beauty dying so quickly. Yet he smiles — because its fragility makes it divine. Sorrow and joy mix into mono no aware, the Japanese sense of bittersweet beauty. The ache is the gift.',
           concept: [
-            'Mixed Signals Corrode Trust: Uncertainty leaves people clinging to the abuser.',
-            'The Fog of Contradiction: If nothing makes sense, people surrender control.',
-            'Defense Today: When someone constantly shifts, it may not be chaos—it may be strategy.'
+            'Pure joy is shallow.',
+            'Pure sorrow is despair.',
+            'Joy + Sorrow = depth, poignancy, sacredness.',
+            'The most moving moments are never pure.'
           ],
+          teaching: 'The most moving moments are never pure. Weddings carry tears. Endings carry laughter. The alchemist sees beauty not in choosing joy or sorrow, but in holding both at once.',
           drill: Drill(
-            question: 'A partner alternates between adoration and cruelty. What do you recognize?',
+            question: 'They say: "Why do I feel happy and sad at the same time?"',
             options: [
-              'Believe their love is just "complicated."',
-              'Recognize it as control through confusion.'
+              'That\'s weird.',
+              'That\'s real. That\'s beauty.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this confusion into a recognition of weaponized chaos.',
-            input: 'They\'re unpredictable.',
-            example: 'They\'re unpredictable—because predictability would free me.'
+            prompt: 'Transform this statement into one that uses the mixing sorrow with joy technique.',
+            input: 'I\'m sad.',
+            example: 'My sorrow makes my joy burn brighter.'
           ),
-          reflection: 'Do you accept chaos—or see the hidden hand scripting it?'
+          reflection: 'What memories cut and comfort you at once? That\'s emotional alchemy already at work.'
         ),
       ),
       15: Lesson(
-        id: 'psychwar_3_15',
-        title: 'The Burnt Bridge Strategy',
-        category: 'psychwar',
+        id: 'gravity_3_15',
+        title: 'Converting Loneliness into Vision',
+        category: 'gravity',
         world: 3,
         lesson: 15,
         xp: 100,
         content: LessonContent(
-          hook: 'Hannibal, 3rd century BC. After crossing into enemy territory, he burned the ships behind him. His soldiers had no path home but victory. By destroying retreat, he left them only one road: forward. A ruthless tactic—sometimes the absence of escape creates the fiercest resolve.',
+          hook: 'Patmos, 1st century AD. Exiled and alone, John writes Revelation. Isolation drives most to despair. He uses it as canvas, birthing visions that outlast empires. His loneliness became prophecy.',
           concept: [
-            'No Retreat, No Weakness: Remove options, and resolve hardens.',
-            'Desperation Can Be Engineered: Forced scarcity amplifies commitment.',
-            'Defense Today: If someone cuts off your alternatives, ask who benefits from your cornering.'
+            'Loneliness empties the cup.',
+            'Vision fills it.',
+            'The cave of exile can become the cathedral of revelation.',
+            'Isolation is raw hunger for connection.'
           ],
-                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
+          teaching: 'Isolation is raw hunger for connection. The alchemist feeds it not with distraction but with imagination. Alone, you can hear whispers too faint for crowded rooms. Loneliness is space for vision.',
           drill: Drill(
-            question: 'A boss insists: "You either stay late every night—or you\'ll lose your spot." What do you realize?',
+            question: 'They sigh: "I hate being alone."',
             options: [
-              'Feel you have no choice.',
-              'Realize they\'re burning your bridges for control.'
+              'You\'ll be fine.',
+              'Good. That means you have room for something new to arrive.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this helplessness into a recognition of the burnt bridge strategy.',
-            input: 'I had no choice.',
-            example: 'They burned the bridges so I\'d believe I had no choice.'
+            prompt: 'Transform this statement into one that uses the converting loneliness into vision technique.',
+            input: 'I\'m lonely.',
+            example: 'Alone is where vision finds me.'
           ),
-          reflection: 'When do you fight hardest—when you\'re free, or when cornered?'
+          reflection: 'Do you escape your solitude, or let it shape revelation?'
         ),
       ),
     },
     4: {
       16: Lesson(
-        id: 'psychwar_4_16',
-        title: 'The Web of Silence',
-        category: 'psychwar',
+        id: 'gravity_4_16',
+        title: 'Transmuting Fear into Awe',
+        category: 'gravity',
         world: 4,
         lesson: 16,
-        xp: 125,
+        xp: 150,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Mafia New York, 1970s. A man under suspicion is invited to a meeting. He speaks nervously, filling the room with explanations, excuses, reassurances. His words betray his fear. Across the table, his boss says nothing. Just silence. The man keeps talking—until he reveals everything. Silence, weaponized, is louder than any shout.',
+          hook: 'Florence, 1501. Crowds gather to see Michelangelo\'s David. At first, they fear its size, its glare, its almost living intensity. But the fear bends into awe — a collective hush. Michelangelo didn\'t kill fear — he redirected it into reverence.',
           concept: [
-            'Speech Reveals, Silence Conceals: The less you speak, the more others expose.',
-            'The Pressure of the Void: Humans rush to fill silence, often with secrets.',
-            'Defense Today: When someone stays quiet, don\'t spill your truth to break the tension.'
+            'Fear contracts, awe expands.',
+            'Both are born of the unknown.',
+            'Redirect fear → elevate it into wonder.',
+            'When people tremble before you (or a situation), you can crush them with it — or lift them.'
           ],
+          teaching: 'When people tremble before you (or a situation), you can crush them with it — or lift them. Fear becomes awe when you frame it as sacred, as rare. The difference between terror and transcendence is your guidance.',
           drill: Drill(
-            question: 'You confess too much during an awkward pause. What do you do?',
+            question: 'They say: "You scare me."',
             options: [
-              'Keep explaining until they nod.',
-              'Breathe, own the silence, and say nothing.'
+              'Sorry.',
+              'Good. It means you feel the weight of what matters.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this confession into a recognition of the web of silence.',
-            input: 'I kept talking because it was awkward.',
-            example: 'They used silence as a net—and I walked straight in.'
+            prompt: 'Transform this statement into one that uses the transmuting fear into awe technique.',
+            input: 'Don\'t be afraid.',
+            example: 'That fear? It\'s awe in disguise.'
           ),
-          reflection: 'Do you panic in silence—or use it as your battlefield?'
+          reflection: 'Do you inspire panic — or reverence? What could shift if you reframed fear as wonder?'
         ),
       ),
       17: Lesson(
-        id: 'psychwar_4_17',
-        title: 'The Mask of Agreement',
-        category: 'psychwar',
+        id: 'gravity_4_17',
+        title: 'Turning Anger into Loyalty',
+        category: 'gravity',
         world: 4,
         lesson: 17,
-        xp: 125,
+        xp: 150,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Feudal Japan. A samurai bows deeply to his enemy lord, agreeing to every command. He never resists, never argues. Months later, when trust is won, he strikes at the moment least expected. Submission was not weakness—it was camouflage. Agreement became his sharpest disguise.',
+          hook: 'Rome, 44 BC. Julius Caesar\'s soldiers grumble at a brutal march. He doesn\'t silence them — he walks barefoot beside them, bleeding. Their anger dissolves into fierce loyalty. They fight harder, not because the march softened, but because Caesar transmuted fury into devotion.',
           concept: [
-            'Agree to Disarm: Agreement removes suspicion.',
-            'Yielding Can Be Power: By bending, you position yourself to strike.',
-            'Defense Today: Beware of those who nod too easily—they may not be allies, just waiting.'
+            'Anger isolates. Loyalty binds.',
+            'Shared struggle turns resentment into unity.',
+            'The alchemist absorbs heat and releases it as fire for the cause.',
+            'When anger rises, most leaders fight it.'
           ],
+          teaching: 'When anger rises, most leaders fight it. But if you acknowledge it, share it, even carry it yourself, you flip it into loyalty. Rage is not destroyed — it\'s recycled.',
           drill: Drill(
-            question: 'A coworker always agrees, never challenges. What do you consider?',
+            question: 'They growl: "You\'ve made this hard."',
             options: [
-              'Assume loyalty.',
-              'Consider they may be waiting for leverage.'
+              'No I didn\'t!',
+              'Yes. And I walk it with you.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this trust into a recognition of the mask of agreement.',
-            input: 'They never disagreed with me.',
-            example: 'They never disagreed—because silence was their weapon.'
+            prompt: 'Transform this statement into one that uses the turning anger into loyalty technique.',
+            input: 'Stop being mad.',
+            example: 'Your anger proves you care — let\'s turn that into something worth fighting for.'
           ),
-          reflection: 'Do you equate agreement with loyalty—or do you see the trap in compliance?'
+          reflection: 'When faced with anger, do you resist it — or transform it into the glue of loyalty?'
         ),
       ),
       18: Lesson(
-        id: 'psychwar_4_18',
-        title: 'Reflection Warfare',
-        category: 'psychwar',
+        id: 'gravity_4_18',
+        title: 'Shaping Envy into Aspiration',
+        category: 'gravity',
         world: 4,
         lesson: 18,
-        xp: 125,
+        xp: 150,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: 'Cold War diplomacy. A negotiator never offers an opinion. Instead, he mirrors the desires of his opponent: "That\'s an interesting thought." "I can see why you\'d feel that way." The opponent mistakes reflection for rapport, slowly lowering his guard. By the end, he has revealed his full playbook—while the mirror never once showed its own face.',
+          hook: 'Harlem, 1920s. Young musicians envy Duke Ellington\'s genius. Instead of letting envy poison, Ellington opens his rehearsals, tells them: "Learn from me, then outplay me." Their envy mutates into hunger, and Harlem\'s jazz scene explodes into golden age.',
           concept: [
-            'Mirroring Creates Illusion: People trust themselves when reflected back.',
-            'The Danger of False Rapport: A mirror can extract secrets without ever giving one.',
-            'Defense Today: Ask: are they truly sharing themselves, or just echoing you?'
+            'Envy poisons downward.',
+            'Aspiration rises upward.',
+            'Same root: wanting what another has.',
+            'You can\'t erase envy — but you can redirect it.'
           ],
+          teaching: 'You can\'t erase envy — but you can redirect it. By framing yourself as a model, you make others\' envy fuel their climb instead of their resentment.',
           drill: Drill(
-            question: 'A date mirrors your every word and passion. What do you think?',
+            question: 'They mutter: "I wish I had what you do."',
             options: [
-              'Feel instantly connected.',
-              'Pause—true connection has differences too.'
+              'Don\'t be jealous.',
+              'Good — it means you\'re close. Take it. Make it yours.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this connection into a recognition of reflection warfare.',
-            input: 'They seemed just like me.',
-            example: 'They seemed just like me—because they never showed who they really were.'
+            prompt: 'Transform this statement into one that uses the shaping envy into aspiration technique.',
+            input: 'Don\'t envy me.',
+            example: 'If you\'re envying me, it means you already feel it in yourself.'
           ),
-          reflection: 'Do you fall for your own reflection—or demand substance behind the mirror?'
+          reflection: 'Do others envy you secretly — or do you guide that envy into admiration and growth?'
         ),
       ),
       19: Lesson(
-        id: 'psychwar_4_19',
-        title: 'The Trap of False Choice',
-        category: 'psychwar',
+        id: 'gravity_4_19',
+        title: 'Converting Doubt into Devotion',
+        category: 'gravity',
         world: 4,
         lesson: 19,
-        xp: 125,
+        xp: 175,
         content: LessonContent(
-          teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
-          hook: '1930s Chicago. A gangster corners a shop owner: "Do you want to pay for protection monthly—or in one big sum right now?" The choice is an illusion. Both roads lead to surrender. The man never realizes he could refuse the game altogether. This is the art of the false choice: framing captivity as freedom.',
+          hook: 'India, 1930. Gandhi is doubted by his own followers: "How can spinning cloth defeat an empire?" Gandhi spins anyway. Day after day. The doubt itself becomes fuel — until the act is no longer questioned, but worshipped. What was once skepticism becomes religious devotion.',
           concept: [
-            'Two Doors, Same Prison: An enemy narrows your vision to options that serve them.',
-            'The Illusion of Agency: Being allowed to "choose" means nothing if the choices are rigged.',
-            'Defense Today: Always look for the hidden third option.'
+            'Doubt is energy without anchor.',
+            'Anchor it with consistency → devotion forms.',
+            'Faith is born not in the absence of doubt, but its transformation.',
+            'You don\'t erase doubt by arguing.'
           ],
+          teaching: 'You don\'t erase doubt by arguing. You erase it by embodying consistency so unwavering that doubt is forced to bend into belief.',
           drill: Drill(
-            question: 'A boss says: "You can stay late or take a pay cut—your choice." What do you do?',
+            question: 'They sneer: "This will never work."',
             options: [
-              'Pick the "less bad" option.',
-              'Recognize the false frame—and challenge it.'
+              'Yes it will!',
+              'You may be right. Keep watching anyway.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this choice into a recognition of the false choice trap.',
-            input: 'They gave me two choices.',
-            example: 'They gave me two choices—but both were chains.'
+            prompt: 'Transform this statement into one that uses the converting doubt into devotion technique.',
+            input: 'Trust me.',
+            example: 'Doubt if you must. I\'ll still be here when doubt becomes belief.'
           ),
-          reflection: 'Do you see choice—or the cage disguised as one?'
+          reflection: 'Do you argue with skeptics — or stand so consistently that their doubt becomes your altar?'
         ),
       ),
       20: Lesson(
-        id: 'psychwar_4_20',
-        title: 'The Predator\'s Patience',
-        category: 'psychwar',
+        id: 'gravity_4_20',
+        title: 'Turning Mortality into Legacy',
+        category: 'gravity',
         world: 4,
         lesson: 20,
-        xp: 125,
+        xp: 200,
         content: LessonContent(
-          hook: 'Ancient Mongolia. A hunter watches the herd for days. He does not chase the strongest animal. He does not rush. He waits for the one that lingers at the edges, limping, distracted. When he strikes, it looks inevitable. The kill was not in the attack—it was in the patience before it.',
+          hook: 'Egypt, 2500 BC. Pharaoh Khufu knows he will die. But he bends mortality into eternity through the Great Pyramid. He cannot live forever — but his name, his story, his frame of godhood does. Death itself becomes devotion.',
           concept: [
-            'Patience is a Weapon: Time weakens enemies more than force.',
-            'The Watcher Always Wins: Observation reveals the inevitable opening.',
-            'Defense Today: If someone lingers quietly, don\'t mistake them for absent—they may be calculating.'
+            'Mortality terrifies.',
+            'Legacy sanctifies.',
+            'Death is the raw material; meaning is the transmutation.',
+            'The greatest alchemy isn\'t about moods — it\'s about mortality.'
           ],
-                    teaching: "The core principle that transforms these concepts into power. When you understand the psychology behind each technique, you become not just a practitioner but a master of human nature.",
+          teaching: 'The greatest alchemy isn\'t about moods — it\'s about mortality. By embracing death, you create works, stories, and presences that outlast life. Mortality bends into myth.',
           drill: Drill(
-            question: 'An opponent stays silent, watching for weeks before acting. What do you recognize?',
+            question: 'They whisper: "Everything ends."',
             options: [
-              'Dismiss them as irrelevant.',
-              'Recognize they may be studying your weaknesses.'
+              'That\'s sad.',
+              'Yes — which is why it matters.'
             ],
             answerIndex: 1
           ),
           rewrite: RewriteTask(
-            prompt: 'Transform this surprise into a recognition of the predator\'s patience.',
-            input: 'They struck out of nowhere.',
-            example: 'They struck after waiting until I weakened myself.'
+            prompt: 'Transform this statement into one that uses the turning mortality into legacy technique.',
+            input: 'I don\'t want it to end.',
+            example: 'Death is the ink. Legacy is the story it writes.'
           ),
-          reflection: 'Do you rush for the prize—or have the discipline to let time kill for you?'
+          reflection: 'Do you shrink from endings — or transmute them into beginnings others will worship long after you\'re gone?'
         ),
       ),
     },

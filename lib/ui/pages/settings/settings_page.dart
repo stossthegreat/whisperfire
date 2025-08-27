@@ -32,54 +32,54 @@ class SettingsPage extends ConsumerWidget {
 
   Widget _buildSettingsContent(BuildContext context, UserProfile profile) {
     return SingleChildScrollView(
-      padding: const EdgeInsets.all(WFDims.paddingL),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // Header
-          Center(
-            child: Column(
-              children: [
-                Container(
-                  width: 80,
-                  height: 80,
-                  decoration: BoxDecoration(
-                    gradient: WFGradients.purpleGradient,
-                    borderRadius: BorderRadius.circular(WFDims.radiusXLarge),
-                    boxShadow: WFShadows.purpleGlow,
-                  ),
-                  child: Icon(
-                    Icons.settings,
-                    size: 40,
-                    color: WFColors.textPrimary,
-                  ),
-                ),
-                const SizedBox(height: WFDims.spacingL),
-                Text('SETTINGS', style: WFTextStyles.h1),
-                const SizedBox(height: WFDims.spacingS),
-                Text(
+          padding: const EdgeInsets.all(WFDims.paddingL),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Header
+              Center(
+                child: Column(
+                  children: [
+                    Container(
+                      width: 80,
+                      height: 80,
+                      decoration: BoxDecoration(
+                        gradient: WFGradients.purpleGradient,
+                        borderRadius: BorderRadius.circular(WFDims.radiusXLarge),
+                        boxShadow: WFShadows.purpleGlow,
+                      ),
+                      child: Icon(
+                        Icons.settings,
+                        size: 40,
+                        color: WFColors.textPrimary,
+                      ),
+                    ),
+                    const SizedBox(height: WFDims.spacingL),
+                    Text('SETTINGS', style: WFTextStyles.h1),
+                    const SizedBox(height: WFDims.spacingS),
+                    Text(
                   'Manage your Beguile AI experience',
-                  style: WFTextStyles.bodyMedium.copyWith(color: WFColors.textTertiary),
+                      style: WFTextStyles.bodyMedium.copyWith(color: WFColors.textTertiary),
+                    ),
+                  ],
                 ),
-              ],
-            ),
-          ),
-          
-          const SizedBox(height: WFDims.spacingXXL),
-          
+              ),
+              
+              const SizedBox(height: WFDims.spacingXXL),
+              
           // Profile Section (Inline)
           _buildProfileSection(context, profile),
-          
-          const SizedBox(height: WFDims.spacingL),
-          
+              
+              const SizedBox(height: WFDims.spacingL),
+              
           // Settings Options
           _buildSettingsOption(
-            context,
+                context,
             'Account Management',
             'Delete account, reset progress, manage data',
             Icons.account_circle,
-            () => Navigator.push(
-              context,
+                    () => Navigator.push(
+                      context,
               MaterialPageRoute(builder: (context) => const AccountManagementPage()),
             ),
           ),
@@ -87,12 +87,12 @@ class SettingsPage extends ConsumerWidget {
           const SizedBox(height: WFDims.spacingM),
           
           _buildSettingsOption(
-            context,
+                context,
             'Privacy Policy',
             'Read our privacy policy',
             Icons.privacy_tip,
-            () => Navigator.push(
-              context,
+                    () => Navigator.push(
+                      context,
               MaterialPageRoute(builder: (context) => const PrivacyPolicyPage()),
             ),
           ),
@@ -100,12 +100,12 @@ class SettingsPage extends ConsumerWidget {
           const SizedBox(height: WFDims.spacingM),
           
           _buildSettingsOption(
-            context,
-            'Terms of Service',
+                    context,
+                    'Terms of Service',
             'Read our terms of service',
-            Icons.description,
-            () => Navigator.push(
-              context,
+                    Icons.description,
+                    () => Navigator.push(
+                      context,
               MaterialPageRoute(builder: (context) => const TermsOfServicePage()),
             ),
           ),
@@ -113,18 +113,18 @@ class SettingsPage extends ConsumerWidget {
           const SizedBox(height: WFDims.spacingM),
           
           _buildSettingsOption(
-            context,
+                    context,
             'App Information',
             'Version, about, contact',
             Icons.info,
-            () => Navigator.push(
-              context,
+                    () => Navigator.push(
+                      context,
               MaterialPageRoute(builder: (context) => const AppInfoPage()),
             ),
-          ),
-          
-          const SizedBox(height: WFDims.spacingXXL),
-        ],
+              ),
+              
+              const SizedBox(height: WFDims.spacingXXL),
+            ],
       ),
     );
   }
@@ -133,13 +133,13 @@ class SettingsPage extends ConsumerWidget {
     return GlassCard(
       child: Padding(
         padding: const EdgeInsets.all(WFDims.paddingL),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
                 Icon(Icons.person, color: WFColors.purple400, size: 24),
-                const SizedBox(width: WFDims.spacingS),
+              const SizedBox(width: WFDims.spacingS),
                 Text('Profile Information', style: WFTextStyles.h3),
               ],
             ),
@@ -195,25 +195,25 @@ class SettingsPage extends ConsumerWidget {
       borderRadius: BorderRadius.circular(WFDims.radiusMedium),
       child: Container(
         padding: const EdgeInsets.all(WFDims.paddingM),
-        decoration: BoxDecoration(
+          decoration: BoxDecoration(
           color: WFColors.gray800.withOpacity(0.3),
           borderRadius: BorderRadius.circular(WFDims.radiusMedium),
           border: Border.all(color: WFColors.glassBorder.withOpacity(0.3)),
         ),
-        child: Row(
-          children: [
+      child: Row(
+        children: [
             Icon(icon, color: WFColors.purple400, size: 20),
-            const SizedBox(width: WFDims.spacingM),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(title, style: WFTextStyles.labelLarge),
-                  const SizedBox(height: 2),
-                  Text(subtitle, style: WFTextStyles.bodySmall.copyWith(color: WFColors.textTertiary)),
-                ],
-              ),
+          const SizedBox(width: WFDims.spacingM),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(title, style: WFTextStyles.labelLarge),
+                const SizedBox(height: 2),
+                Text(subtitle, style: WFTextStyles.bodySmall.copyWith(color: WFColors.textTertiary)),
+              ],
             ),
+          ),
             Icon(
               Icons.arrow_forward_ios,
               color: WFColors.textTertiary,
