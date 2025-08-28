@@ -19,15 +19,14 @@ val flutterVersionCode = (localProps.getProperty("flutter.versionCode") ?: "1").
 val flutterVersionName = localProps.getProperty("flutter.versionName") ?: "1.0"
 
 android {
-    namespace = "com.example.whisperfire"
+    namespace = "com.beguileai.whisperfire"
 
-    // Use explicit ints in KTS (don’t rely on flutter.compileSdkVersion in KTS)
+    // Use explicit ints in KTS (don't rely on flutter.compileSdkVersion in KTS)
     compileSdk = 34
-    // If this line causes "unresolved reference", just delete it.
-    // ndkVersion = flutter.ndkVersion
+    ndkVersion = "25.2.9519653"
 
     defaultConfig {
-        applicationId = "com.example.whisperfire"
+        applicationId = "com.beguileai.whisperfire"
         minSdk = 21
         targetSdk = 34
 
@@ -38,8 +37,15 @@ android {
 
     buildTypes {
         release {
-            // Debug signing so you can build quickly; change later for Play release.
+            isMinifyEnabled = false
+            isShrinkResources = false
+            // proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            // TODO: Change to release signing config when ready for production
             signingConfig = signingConfigs.getByName("debug")
+        }
+        debug {
+            isDebuggable = true
+            applicationIdSuffix = ".debug"
         }
     }
 

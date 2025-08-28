@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../core/theme/theme.dart';
 import '../../data/providers.dart';
-import '../../data/models/profile_models.dart';
 import '../../ui/pages/onboarding/beguile_onboarding.dart';
 import '../shared/loading_shell.dart';
 
@@ -67,8 +66,8 @@ class _BottomNavBar extends StatelessWidget {
     return Container(
       height: WFDims.bottomNavHeight,
       decoration: BoxDecoration(
-        color: WFColors.gray900.withOpacity(0.95),
-        border: Border(top: BorderSide(color: WFColors.gray700.withOpacity(0.5), width: WFDims.borderThin)),
+        color: WFColors.gray900.withValues(alpha: 0.95),
+        border: Border(top: BorderSide(color: WFColors.gray700.withValues(alpha: 0.5), width: WFDims.borderThin)),
       ),
       child: SafeArea(
         child: Padding(
@@ -110,7 +109,7 @@ class _NavItem extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: WFDims.paddingS, vertical: WFDims.paddingS),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(WFDims.radiusMedium),
-          color: isActive ? WFColors.purple500.withOpacity(0.1) : null,
+          color: isActive ? WFColors.purple500.withValues(alpha: 0.1) : null,
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,

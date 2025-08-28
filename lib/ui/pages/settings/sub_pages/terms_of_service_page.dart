@@ -195,9 +195,9 @@ If any provision of these terms is found to be unenforceable, the remaining prov
                       width: double.infinity,
                       padding: const EdgeInsets.all(WFDims.paddingL),
                       decoration: BoxDecoration(
-                        color: WFColors.gray800.withOpacity(0.3),
+                        color: WFColors.gray800.withValues(alpha: 0.3),
                         borderRadius: BorderRadius.circular(WFDims.radiusMedium),
-                        border: Border.all(color: WFColors.glassBorder.withOpacity(0.3)),
+                        border: Border.all(color: WFColors.glassBorder.withValues(alpha: 0.3)),
                       ),
                       child: Text(
                         _termsContent,

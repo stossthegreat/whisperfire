@@ -89,7 +89,7 @@ class WFTextStyles {
   static TextStyle get kicker => GoogleFonts.inter(
     fontSize: 10,
     fontWeight: FontWeight.w600,
-    color: WFColors.purple300.withOpacity(0.8),
+    color: WFColors.purple300.withValues(alpha: 0.8),
     letterSpacing: 0.2,
     height: 1.2,
   );

@@ -18,13 +18,26 @@ import '../../../widgets/app_header.dart';
 final apiServiceProvider = Provider<ApiService>((ref) => ApiService());
 final analyzeResultProvider = StateProvider<WhisperfireResponse?>((ref) => null);
 final isAnalyzingProvider = StateProvider<bool>((ref) => false);
+
+// FIXED: Properly initialized providers that work immediately
 final analyzeToneProvider = StateProvider<String>((ref) {
+  try {
   final settings = CacheService.getSettings();
   return settings.defaultTone;
+  } catch (e) {
+    // Fallback to default if cache not ready
+    return 'brutal';
+  }
 });
+
 final analyzeModeProvider = StateProvider<String>((ref) {
+  try {
   final settings = CacheService.getSettings();
   return settings.defaultAnalyzeMode;
+  } catch (e) {
+    // Fallback to default if cache not ready
+    return 'scan';
+  }
 });
 
 class AnalyzePage extends ConsumerStatefulWidget {
@@ -47,11 +60,20 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
   }
 
   void _loadSettings() {
-    final settings = CacheService.getSettings();
-    // Initialize providers with correct default values
+    // FIXED: Ensure providers are properly synchronized with cache
     WidgetsBinding.instance.addPostFrameCallback((_) {
+      try {
+        final settings = CacheService.getSettings();
+        // Only update if values are different to avoid unnecessary rebuilds
+        if (ref.read(analyzeToneProvider) != settings.defaultTone) {
       ref.read(analyzeToneProvider.notifier).state = settings.defaultTone;
+        }
+        if (ref.read(analyzeModeProvider) != settings.defaultAnalyzeMode) {
       ref.read(analyzeModeProvider.notifier).state = settings.defaultAnalyzeMode;
+        }
+      } catch (e) {
+        // Providers already have fallback values, no action needed
+      }
     });
   }
 
@@ -174,7 +196,7 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
                               : 'Message 1\nMessage 2\nMessage 3...',
                             hintStyle: WFTextStyles.bodyMedium.copyWith(color: WFColors.textMuted),
                             filled: true,
-                            fillColor: WFColors.gray800.withOpacity(0.5),
+                            fillColor: WFColors.gray800.withValues(alpha: 0.5),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(WFDims.radiusMedium),
                               borderSide: BorderSide(color: WFColors.glassBorder),
@@ -195,11 +217,11 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
                           right: 8,
                           child: Container(
                             decoration: BoxDecoration(
-                              color: WFColors.purple400.withOpacity(0.9),
+                              color: WFColors.purple400.withValues(alpha: 0.9),
                               borderRadius: BorderRadius.circular(20),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black.withOpacity(0.1),
+                                  color: Colors.black.withValues(alpha: 0.1),
                                   blurRadius: 8,
                                   offset: const Offset(0, 2),
                                 ),
@@ -278,7 +300,7 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
         child: Container(
           padding: const EdgeInsets.symmetric(vertical: WFDims.paddingS),
           decoration: BoxDecoration(
-            color: isSelected ? WFColors.purple500.withOpacity(0.2) : WFColors.gray800.withOpacity(0.3),
+            color: isSelected ? WFColors.purple500.withValues(alpha: 0.2) : WFColors.gray800.withValues(alpha: 0.3),
             borderRadius: BorderRadius.circular(WFDims.radiusSmall),
             border: Border.all(
               color: isSelected ? WFColors.purple400 : WFColors.gray600,
@@ -304,7 +326,7 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
         child: Container(
           padding: const EdgeInsets.symmetric(vertical: WFDims.paddingS),
           decoration: BoxDecoration(
-            color: isSelected ? WFColors.purple500.withOpacity(0.2) : WFColors.gray800.withOpacity(0.3),
+            color: isSelected ? WFColors.purple500.withValues(alpha: 0.2) : WFColors.gray800.withValues(alpha: 0.3),
             borderRadius: BorderRadius.circular(WFDims.radiusSmall),
             border: Border.all(
               color: isSelected ? WFColors.purple400 : WFColors.gray600,

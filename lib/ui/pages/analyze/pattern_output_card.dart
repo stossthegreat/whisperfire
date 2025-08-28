@@ -21,9 +21,7 @@ class PatternOutputCard extends StatelessWidget {
     final frameLedger = result.pattern?.cycle?.trim().isNotEmpty == true
         ? result.pattern!.cycle!
         : 'Start → Mid → End (frame shifts not fully mapped)';
-    final errorChain = result.pattern?.prognosis?.trim().isNotEmpty == true
-        ? result.pattern!.prognosis!
-        : 'Defense → Energy drop → Power transfer';
+
     final fixes = _precisionFixes(result);                          // 🎯 Precision Fixes (why+how)
     final recovery = _lines(result.nextMoves, max: 6);              // 🔄 Recovery Protocol
     final principle = (result.counterIntervention ?? 'Begin Challenger, end Victor—never downgrade to Clerk.').trim();
@@ -45,11 +43,11 @@ class PatternOutputCard extends StatelessWidget {
                     // Share button - top right
                     Container(
                       decoration: BoxDecoration(
-                        color: WFColors.purple400.withOpacity(0.9),
+                        color: WFColors.purple400.withValues(alpha: 0.9),
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black.withOpacity(0.1),
+                            color: Colors.black.withValues(alpha: 0.1),
                             blurRadius: 8,
                             offset: const Offset(0, 2),
                           ),
@@ -126,7 +124,7 @@ class PatternOutputCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.15),
+                    color: Colors.black.withValues(alpha: 0.15),
                     blurRadius: 10,
                     offset: const Offset(0, 3),
                   ),
@@ -280,7 +278,7 @@ class PatternOutputCard extends StatelessWidget {
           width: double.infinity,
           padding: const EdgeInsets.all(WFDims.paddingM),
           decoration: BoxDecoration(
-            color: WFColors.gray800.withOpacity(0.3),
+            color: WFColors.gray800.withValues(alpha: 0.3),
             borderRadius: BorderRadius.circular(WFDims.radiusSmall),
             border: Border(left: BorderSide(color: WFColors.purple400, width: 3)),
           ),

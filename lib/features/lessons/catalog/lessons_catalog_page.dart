@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../utils/color_compat.dart';
-import '../../../data/providers.dart';
-import '../../../data/models/profile_models.dart';
 import '../../../core/theme/theme.dart';
+import '../../../data/models/profile_models.dart';
+import '../../../data/providers.dart';
 import '../world_overview/world_overview_page.dart';
 
 class LessonsCatalogPage extends ConsumerWidget {
@@ -72,7 +71,7 @@ class LessonsCatalogPage extends ConsumerWidget {
   ) {
     return GestureDetector(
       onTap: () {
-        print('🔍 DEBUG: Category card tapped with slug: $categorySlug');
+        // Category card tapped with slug: $categorySlug
         Navigator.of(context).push(
           MaterialPageRoute(
             builder: (context) => WorldOverviewPage(category: categorySlug),

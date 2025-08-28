@@ -131,7 +131,6 @@ class TextSanitizer {
     TextOverflow? overflow,
   }) {
     final sanitizedText = sanitizeText(text);
-    final hasProblems = hasProblematicCharacters(text);
     
     return Text(
       sanitizedText,

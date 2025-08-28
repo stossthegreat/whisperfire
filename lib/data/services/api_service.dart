@@ -1,10 +1,10 @@
+import 'dart:convert';
+import 'dart:async';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'dart:convert';
 import '../models/whisperfire_models.dart';
 import '../models/mentor_models.dart';
 import '../models/profile_models.dart';
-import '../models/settings_models.dart';
 
 class ApiService {
   late final Dio _dio;
@@ -54,9 +54,7 @@ class ApiService {
     try {
       final response = await _dio.post('/api/v1/analyze', data: body);
       
-      if (kDebugMode) {
-        print('Raw analyze response: ${response.data}');
-      }
+      // Raw analyze response logged in debug mode
       
       // Handle the backend response format
       final data = response.data;
@@ -109,15 +107,10 @@ class ApiService {
         throw Exception('Invalid response format: ${data}');
       }
     } on DioException catch (e) {
-      if (kDebugMode) {
-        print('API Error: ${e.message}');
-        print('Response: ${e.response?.data}');
-      }
+      // API Error logged in debug mode
       throw ApiException('Failed to analyze: ${e.message}');
     } catch (e) {
-      if (kDebugMode) {
-        print('Parse Error: $e');
-      }
+      // Parse Error logged in debug mode
       throw ApiException('Unexpected error: $e');
     }
   }
@@ -138,9 +131,7 @@ class ApiService {
       
       final response = await _dio.post('/api/v1/mentor', data: nonStreamingRequest.toJson());
       
-      if (kDebugMode) {
-        print('Non-streaming mentor response: ${response.data}');
-      }
+      // Non-streaming mentor response logged in debug mode
       
       // Handle the actual backend response format
       final data = response.data;
@@ -163,13 +154,12 @@ class ApiService {
       }
     } on DioException catch (e) {
       if (kDebugMode) {
-        print('Mentor API Error: ${e.message}');
-        print('Response: ${e.response?.data}');
+        // Mentor API Error logged in debug mode
       }
       throw ApiException('Failed to get mentor response: ${e.message}');
     } catch (e) {
       if (kDebugMode) {
-        print('Mentor Parse Error: $e');
+        // Mentor Parse Error logged in debug mode
       }
       throw ApiException('Unexpected error: $e');
     }
@@ -191,7 +181,7 @@ class ApiService {
       );
 
       if (kDebugMode) {
-        print('Starting SSE stream for mentor: ${request.mentor}');
+        // Starting SSE stream for mentor: ${request.mentor}
       }
 
       String buffer = '';
@@ -210,7 +200,7 @@ class ApiService {
             final jsonData = line.substring(6); // Remove 'data: ' prefix
             
             if (kDebugMode) {
-              print('SSE data received: $jsonData');
+              // SSE data received: $jsonData
             }
             
             try {
@@ -218,7 +208,7 @@ class ApiService {
               
               if (data['done'] == true) {
                 if (kDebugMode) {
-                  print('SSE stream completed');
+                  // SSE stream completed
                 }
                 return; // End of stream
               }
@@ -228,16 +218,16 @@ class ApiService {
               }
             } catch (e) {
               if (kDebugMode) {
-                print('Failed to parse SSE data: $e');
+                // Failed to parse SSE data: $e
               }
-              // Continue processing other lines
+              // Continue with next chunk
             }
           }
         }
       }
     } catch (e) {
       if (kDebugMode) {
-        print('SSE Stream Error: $e');
+        // SSE Stream Error: $e
       }
       yield 'Error: Unable to connect to mentor. Please try again.';
     }

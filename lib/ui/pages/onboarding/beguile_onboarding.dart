@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 import '../../../core/theme/theme.dart';
 
 class BeguileOnboarding extends ConsumerStatefulWidget {
@@ -21,19 +19,6 @@ class _BeguileOnboardingState extends ConsumerState<BeguileOnboarding>
   void dispose() {
     _controller.dispose();
     super.dispose();
-  }
-
-  void _share() async {
-    const text = '"The greatest seducers don\'t chase. They command with charm." — Beguile AI • beguile.ai';
-    await Clipboard.setData(const ClipboardData(text: text));
-    if (mounted) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Legendary quote copied to clipboard'),
-          backgroundColor: WFColors.purple400,
-        ),
-      );
-    }
   }
 
   @override
@@ -862,61 +847,6 @@ class _CinemaFrame extends StatelessWidget {
   }
 }
 
-class _PowerFeature extends StatelessWidget {
-  final IconData icon;
-  final String title;
-  final String description;
-  final Color color;
-
-  const _PowerFeature({
-    required this.icon,
-    required this.title,
-    required this.description,
-    required this.color,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: color.withOpacity(0.1),
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(
-          color: color.withOpacity(0.3),
-          width: 1,
-        ),
-      ),
-      child: Column(
-        children: [
-          Icon(
-            icon,
-            color: color,
-            size: 32,
-          ),
-          const SizedBox(height: 12),
-          Text(
-            title,
-            style: WFTextStyles.bodyMedium.copyWith(
-              color: color,
-              fontWeight: FontWeight.w700,
-            ),
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: 4),
-          Text(
-            description,
-            style: WFTextStyles.bodySmall.copyWith(
-              color: WFColors.gray400,
-            ),
-            textAlign: TextAlign.center,
-          ),
-        ],
-      ),
-    );
-  }
-}
-
 class _InputField extends StatelessWidget {
   final TextEditingController controller;
   final String hint;
@@ -948,14 +878,14 @@ class _InputField extends StatelessWidget {
           color: WFColors.gray500,
         ),
         filled: true,
-        fillColor: WFColors.gray800.withOpacity(0.5),
+        fillColor: WFColors.gray800.withValues(alpha: 0.5),
         contentPadding: const EdgeInsets.symmetric(
           horizontal: 16,
           vertical: 16,
         ),
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(
-            color: WFColors.gray700.withOpacity(0.5),
+            color: WFColors.gray700.withValues(alpha: 0.5),
           ),
           borderRadius: BorderRadius.circular(12),
         ),
@@ -994,7 +924,7 @@ class _AgreeRow extends StatelessWidget {
           activeColor: WFColors.purple400,
           checkColor: WFColors.base,
           side: BorderSide(
-            color: WFColors.gray600.withOpacity(0.6),
+            color: WFColors.gray600.withValues(alpha: 0.6),
           ),
         ),
         Expanded(
@@ -1005,7 +935,7 @@ class _AgreeRow extends StatelessWidget {
               style: WFTextStyles.bodyMedium.copyWith(
                 color: WFColors.gray300,
                 decoration: TextDecoration.underline,
-                decorationColor: WFColors.purple400.withOpacity(0.7),
+                decorationColor: WFColors.purple400.withValues(alpha: 0.7),
               ),
             ),
           ),
@@ -1055,7 +985,7 @@ class _CTAButton extends StatelessWidget {
           boxShadow: primary && enabled
               ? [
                   BoxShadow(
-                    color: WFColors.purple400.withOpacity(0.3),
+                    color: WFColors.purple400.withValues(alpha: 0.3),
                     blurRadius: 20,
                     offset: const Offset(0, 8),
                   ),
@@ -1089,10 +1019,10 @@ class _GhostButton extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
         decoration: BoxDecoration(
-          color: WFColors.gray800.withOpacity(0.8),
+          color: WFColors.gray800.withValues(alpha: 0.8),
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
-            color: WFColors.gray600.withOpacity(0.5),
+            color: WFColors.gray600.withValues(alpha: 0.5),
             width: 1,
           ),
         ),
@@ -1126,7 +1056,7 @@ class _PageDots extends StatelessWidget {
           decoration: BoxDecoration(
             color: i == index
                 ? WFColors.purple400
-                : WFColors.gray600.withOpacity(0.5),
+                : WFColors.gray600.withValues(alpha: 0.5),
             borderRadius: BorderRadius.circular(4),
           ),
         ),
@@ -1141,10 +1071,10 @@ class _BrandedFooter extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       decoration: BoxDecoration(
-        color: WFColors.purple400.withOpacity(0.1),
+        color: WFColors.purple400.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color: WFColors.purple400.withOpacity(0.3),
+          color: WFColors.purple400.withValues(alpha: 0.3),
           width: 1,
         ),
       ),

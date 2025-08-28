@@ -42,7 +42,6 @@ class AppRouter {
             name: 'lessonWorld',
             builder: (context, state) {
               final category = state.pathParameters['category']!;
-              final world = int.parse(state.pathParameters['world']!);
               return WorldOverviewPage(category: category);
             },
           ),

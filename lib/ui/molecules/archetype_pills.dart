@@ -18,7 +18,7 @@ class ArchetypePills extends StatelessWidget {
       children: archetypes.map((archetype) {
         return Pill(
           text: '${_getArchetypeEmoji(archetype.label)} ${archetype.label} — ${archetype.weight}%',
-          backgroundColor: _getArchetypeColor(archetype.weight).withOpacity(0.2),
+          backgroundColor: _getArchetypeColor(archetype.weight).withValues(alpha: 0.2),
           textColor: _getArchetypeColor(archetype.weight),
         );
       }).toList(),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';
-import '../../../utils/color_compat.dart';
 
 class FrostedCard extends StatelessWidget {
   final Widget child;

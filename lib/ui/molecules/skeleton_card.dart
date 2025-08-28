@@ -63,7 +63,7 @@ class _SkeletonCardState extends State<SkeletonCard> with SingleTickerProviderSt
                     width: 120,
                     height: 20,
                     decoration: BoxDecoration(
-                      color: WFColors.gray600.withOpacity(_animation.value),
+                      color: WFColors.gray600.withValues(alpha: _animation.value),
                       borderRadius: BorderRadius.circular(4),
                     ),
                   );
@@ -77,7 +77,7 @@ class _SkeletonCardState extends State<SkeletonCard> with SingleTickerProviderSt
                     width: 60,
                     height: 16,
                     decoration: BoxDecoration(
-                      color: WFColors.gray600.withOpacity(_animation.value),
+                      color: WFColors.gray600.withValues(alpha: _animation.value),
                       borderRadius: BorderRadius.circular(4),
                     ),
                   );
@@ -105,7 +105,7 @@ class _SkeletonCardState extends State<SkeletonCard> with SingleTickerProviderSt
                           width: 16,
                           height: 16,
                           decoration: BoxDecoration(
-                            color: WFColors.gray600.withOpacity(_animation.value),
+                            color: WFColors.gray600.withValues(alpha: _animation.value),
                             borderRadius: BorderRadius.circular(4),
                           ),
                         );
@@ -119,7 +119,7 @@ class _SkeletonCardState extends State<SkeletonCard> with SingleTickerProviderSt
                           width: 80 + (index * 20).toDouble(),
                           height: 14,
                           decoration: BoxDecoration(
-                            color: WFColors.gray600.withOpacity(_animation.value),
+                            color: WFColors.gray600.withValues(alpha: _animation.value),
                             borderRadius: BorderRadius.circular(4),
                           ),
                         );
@@ -141,7 +141,7 @@ class _SkeletonCardState extends State<SkeletonCard> with SingleTickerProviderSt
                         width: double.infinity - (lineIndex * 40),
                         height: 12,
                         decoration: BoxDecoration(
-                          color: WFColors.gray700.withOpacity(_animation.value),
+                          color: WFColors.gray700.withValues(alpha: _animation.value),
                           borderRadius: BorderRadius.circular(4),
                         ),
                       );

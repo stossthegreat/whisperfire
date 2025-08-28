@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../utils/color_compat.dart';
 import '../../../data/services/constants.dart';
 import '../../../data/models/mentor_models.dart';
 import '../../../core/theme/theme.dart';
@@ -86,19 +85,20 @@ class _MentorsContent extends ConsumerWidget {
           
           const SizedBox(height: WFDims.spacingXXL),
           
-          // Mentors grid (2 columns for beautiful square cards) - RESPONSIVE
+          // Mentors grid (2 columns that scale gracefully with screen size)
           GridView.count(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
-            crossAxisCount: MediaQuery.of(context).size.width > 600 ? 2 : 1,
-            mainAxisSpacing: MediaQuery.of(context).size.height * 0.02,
-            crossAxisSpacing: MediaQuery.of(context).size.width * 0.04,
-            childAspectRatio: MediaQuery.of(context).size.width > 600 ? 1.0 : 1.2,
+            crossAxisCount: 2,
+            mainAxisSpacing: 16,
+            crossAxisSpacing: 16,
+            childAspectRatio: 0.8,
             children: MentorConstants.mentors.map((mentor) {
               return _MentorCard(mentor: mentor);
             }).toList(),
           ),
           
+          // Remove the debug fallback grid
           const SizedBox(height: WFDims.spacingXXL),
           // Add extra bottom padding to prevent overflow
           const SizedBox(height: 100),
@@ -168,6 +168,17 @@ class _MentorCardState extends ConsumerState<_MentorCard>
 
   @override
   Widget build(BuildContext context) {
+    // Get screen dimensions for responsive sizing
+    final screenWidth = MediaQuery.of(context).size.width;
+    
+    // Responsive sizing based on screen dimensions
+    final portraitSize = screenWidth < 400 ? 80.0 : 
+                        screenWidth < 600 ? 100.0 : 120.0;
+    final titleFontSize = screenWidth < 400 ? 14.0 : 
+                         screenWidth < 600 ? 16.0 : 18.0;
+    final subtitleFontSize = screenWidth < 400 ? 10.0 : 
+                            screenWidth < 600 ? 12.0 : 14.0;
+    
     return AnimatedBuilder(
       animation: _animationController,
       builder: (context, child) {
@@ -186,12 +197,12 @@ class _MentorCardState extends ConsumerState<_MentorCard>
                     duration: const Duration(milliseconds: 200),
                     curve: Curves.easeInOut,
                     child: GlassCard(
-                      padding: EdgeInsets.zero, // Remove padding for full card usage
+                      padding: EdgeInsets.zero,
                       child: Column(
                         children: [
                           // Big portrait container (takes most of the card height)
                           Expanded(
-                            flex: 4, // Takes 4/5 of the card height
+                            flex: 4,
                             child: Container(
                               width: double.infinity,
                               decoration: BoxDecoration(
@@ -213,8 +224,8 @@ class _MentorCardState extends ConsumerState<_MentorCard>
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Container(
-                                      width: 120,
-                                      height: 120,
+                                      width: portraitSize,
+                                      height: portraitSize,
                                       decoration: BoxDecoration(
                                         shape: BoxShape.circle,
                                         color: Colors.white.withValues(alpha: 0.2),
@@ -240,9 +251,9 @@ class _MentorCardState extends ConsumerState<_MentorCard>
                                                 shape: BoxShape.circle,
                                                 gradient: WFGradients.purpleGradient,
                                               ),
-                                              child: const Icon(
+                                              child: Icon(
                                                 Icons.person,
-                                                size: 60,
+                                                size: portraitSize * 0.5,
                                                 color: WFColors.textPrimary,
                                               ),
                                             );
@@ -252,7 +263,10 @@ class _MentorCardState extends ConsumerState<_MentorCard>
                                     ),
                                     const SizedBox(height: 16),
                                     Container(
-                                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 16,
+                                        vertical: 8,
+                                      ),
                                       decoration: BoxDecoration(
                                         color: Colors.white.withValues(alpha: 0.15),
                                         borderRadius: BorderRadius.circular(20),
@@ -263,12 +277,14 @@ class _MentorCardState extends ConsumerState<_MentorCard>
                                       ),
                                       child: Text(
                                         _getMentorSubtitle(),
-                                        style: const TextStyle(
-                                          fontSize: 14,
+                                        style: TextStyle(
+                                          fontSize: subtitleFontSize,
                                           color: Colors.white,
                                           fontWeight: FontWeight.w600,
                                         ),
                                         textAlign: TextAlign.center,
+                                        maxLines: 2,
+                                        overflow: TextOverflow.ellipsis,
                                       ),
                                     ),
                                   ],
@@ -295,7 +311,7 @@ class _MentorCardState extends ConsumerState<_MentorCard>
                                   style: WFTextStyles.h5.copyWith(
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 18,
+                                    fontSize: titleFontSize,
                                   ),
                                   textAlign: TextAlign.center,
                                   maxLines: 1,

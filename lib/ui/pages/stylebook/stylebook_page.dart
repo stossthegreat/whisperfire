@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import '../../../core/theme/theme.dart';
-import '../atoms/glass_card.dart';
-import '../atoms/kicker.dart';
-import '../atoms/metric_bar.dart';
-import '../atoms/section_title.dart';
-import '../atoms/copy_line.dart';
-import '../atoms/pill.dart';
-import '../atoms/divider_faint.dart';
-import '../atoms/wf_icon_button.dart';
-import '../atoms/wf_primary_button.dart';
+import '../../atoms/glass_card.dart';
+import '../../atoms/kicker.dart';
+import '../../atoms/metric_bar.dart';
+import '../../atoms/section_title.dart';
+import '../../atoms/copy_line.dart';
+import '../../atoms/pill.dart';
+import '../../atoms/divider_faint.dart';
+import '../../atoms/wf_icon_button.dart';
+import '../../atoms/wf_primary_button.dart';
 import '../../../widgets/app_header.dart';
 
 class StylebookPage extends StatelessWidget {

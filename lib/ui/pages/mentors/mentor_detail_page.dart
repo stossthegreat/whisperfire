@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/theme/theme.dart';
 import '../../../core/utils/text_sanitizer.dart';
@@ -23,8 +24,11 @@ final streamingEnabledProvider = StateProvider<bool>((ref) {
   return settings.streaming;
 });
 
-// NEW: Preset selection provider
-final selectedPresetProvider = StateProvider<String>((ref) => 'chat');
+// FIXED: Preset selection provider - properly initialized with cache service
+final selectedPresetProvider = StateProvider<String>((ref) {
+  // Initialize with default 'chat' preset
+  return 'chat';
+});
 
 // ===== DATA MODELS =====
 class MentorMessage {
@@ -184,8 +188,9 @@ class _MentorDetailPageState extends ConsumerState<MentorDetailPage> {
   void initState() {
     super.initState();
     
-    // Initialize preset to 'chat' when page loads
+    // FIXED: Properly initialize preset provider to ensure generate button works immediately
     WidgetsBinding.instance.addPostFrameCallback((_) {
+      // Ensure the preset provider is set to 'chat' by default
       ref.read(selectedPresetProvider.notifier).state = 'chat';
     });
   }
@@ -367,7 +372,7 @@ class _MentorDetailPageState extends ConsumerState<MentorDetailPage> {
                           hintText: 'Ask ${widget.mentor.name} about defense tactics...',
                           hintStyle: WFTextStyles.bodyMedium.copyWith(color: WFColors.textMuted),
                           filled: true,
-                          fillColor: WFColors.gray800.withOpacity(0.5),
+                          fillColor: WFColors.gray800.withValues(alpha: 0.5),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(WFDims.radiusMedium),
                             borderSide: BorderSide(color: WFColors.glassBorder),
@@ -444,7 +449,7 @@ class _PresetButton extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.symmetric(vertical: WFDims.paddingS),
           decoration: BoxDecoration(
-            color: isSelected ? WFColors.purple500.withOpacity(0.2) : WFColors.gray800.withOpacity(0.3),
+            color: isSelected ? WFColors.purple500.withValues(alpha: 0.2) : WFColors.gray800.withValues(alpha: 0.3),
             borderRadius: BorderRadius.circular(WFDims.radiusSmall),
             border: Border.all(
               color: isSelected ? WFColors.purple400 : WFColors.gray600,
@@ -508,9 +513,9 @@ class _MessageBubble extends StatelessWidget {
                   ),
                   padding: const EdgeInsets.all(WFDims.paddingM),
                   decoration: BoxDecoration(
-                    color: isUser ? WFColors.purple600 : WFColors.gray800.withOpacity(0.6),
+                    color: isUser ? WFColors.purple600 : WFColors.gray800.withValues(alpha: 0.6),
                     borderRadius: BorderRadius.circular(WFDims.radiusMedium),
-                    border: isUser ? null : Border.all(color: WFColors.glassBorder.withOpacity(0.3)),
+                    border: isUser ? null : Border.all(color: WFColors.glassBorder.withValues(alpha: 0.3)),
                   ),
                   child: Text(
                     TextSanitizer.sanitizeText(message.text),
@@ -519,6 +524,64 @@ class _MessageBubble extends StatelessWidget {
                     ),
                   ),
                 ),
+                
+                // ADDED: Copy button for mentor messages only
+                if (!isUser) ...[
+                  const SizedBox(height: 8),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          Clipboard.setData(ClipboardData(text: message.text));
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text(
+                                'Message copied to clipboard',
+                                style: WFTextStyles.bodySmall.copyWith(color: WFColors.textPrimary),
+                              ),
+                              backgroundColor: WFColors.purple400.withValues(alpha: 0.9),
+                              duration: const Duration(seconds: 2),
+                              behavior: SnackBarBehavior.floating,
+                            ),
+                          );
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: WFDims.paddingS,
+                            vertical: 4,
+                          ),
+                          decoration: BoxDecoration(
+                            color: WFColors.purple400.withValues(alpha: 0.2),
+                            borderRadius: BorderRadius.circular(WFDims.radiusSmall),
+                            border: Border.all(
+                              color: WFColors.purple400.withValues(alpha: 0.5),
+                              width: 1,
+                            ),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(
+                                Icons.copy,
+                                size: 14,
+                                color: WFColors.purple300,
+                              ),
+                              const SizedBox(width: 4),
+                              Text(
+                                'Copy',
+                                style: WFTextStyles.labelSmall.copyWith(
+                                  color: WFColors.purple300,
+                                  fontSize: 11,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
                 const SizedBox(height: 4),
                 Text(
                   _formatTime(message.timestamp),
@@ -610,9 +673,9 @@ class _TypingIndicatorState extends State<_TypingIndicator>
           Container(
             padding: const EdgeInsets.all(WFDims.paddingM),
             decoration: BoxDecoration(
-              color: WFColors.gray800.withOpacity(0.6),
+              color: WFColors.gray800.withValues(alpha: 0.6),
               borderRadius: BorderRadius.circular(WFDims.radiusMedium),
-              border: Border.all(color: WFColors.glassBorder.withOpacity(0.3)),
+              border: Border.all(color: WFColors.glassBorder.withValues(alpha: 0.3)),
             ),
             child: AnimatedBuilder(
               animation: _controller,
@@ -630,7 +693,7 @@ class _TypingIndicatorState extends State<_TypingIndicator>
                         width: 6,
                         height: 6,
                         decoration: BoxDecoration(
-                          color: WFColors.purple400.withOpacity(opacity.clamp(0.3, 1.0)),
+                          color: WFColors.purple400.withValues(alpha: opacity.clamp(0.3, 1.0)),
                           borderRadius: BorderRadius.circular(3),
                         ),
                       ),

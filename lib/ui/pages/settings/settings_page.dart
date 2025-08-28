@@ -140,7 +140,7 @@ class SettingsPage extends ConsumerWidget {
             children: [
                 Icon(Icons.person, color: WFColors.purple400, size: 24),
               const SizedBox(width: WFDims.spacingS),
-                Text('Profile Information', style: WFTextStyles.h3),
+                Text('Profile', style: WFTextStyles.h3),
               ],
             ),
             const SizedBox(height: WFDims.spacingL),
@@ -160,9 +160,9 @@ class SettingsPage extends ConsumerWidget {
     return Container(
       padding: const EdgeInsets.all(WFDims.paddingM),
       decoration: BoxDecoration(
-        color: WFColors.gray800.withOpacity(0.3),
+        color: WFColors.gray800.withValues(alpha: 0.3),
         borderRadius: BorderRadius.circular(WFDims.radiusMedium),
-        border: Border.all(color: WFColors.glassBorder.withOpacity(0.3)),
+        border: Border.all(color: WFColors.glassBorder.withValues(alpha: 0.3)),
       ),
       child: Row(
         children: [
@@ -196,9 +196,9 @@ class SettingsPage extends ConsumerWidget {
       child: Container(
         padding: const EdgeInsets.all(WFDims.paddingM),
           decoration: BoxDecoration(
-          color: WFColors.gray800.withOpacity(0.3),
+          color: WFColors.gray800.withValues(alpha: 0.3),
           borderRadius: BorderRadius.circular(WFDims.radiusMedium),
-          border: Border.all(color: WFColors.glassBorder.withOpacity(0.3)),
+          border: Border.all(color: WFColors.glassBorder.withValues(alpha: 0.3)),
         ),
       child: Row(
         children: [

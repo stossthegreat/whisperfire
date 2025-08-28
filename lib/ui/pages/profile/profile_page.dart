@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../core/theme/theme.dart';
 import '../../../data/providers.dart';
 import '../../../data/models/profile_models.dart';
 import '../../../data/models/lesson_models.dart';
 import '../../../content/lessons_catalog.dart';
-import '../../atoms/atoms.dart';
 import '../../shared/loading_shell.dart';
 import '../../../features/lessons/lesson_player/lesson_player_page.dart';
 import '../../../widgets/app_header.dart';
@@ -105,7 +103,7 @@ class _ProfilePageState extends ConsumerState<ProfilePage>
                     child: Container(
                       padding: const EdgeInsets.all(WFDims.paddingL),
                       decoration: BoxDecoration(
-                        color: WFColors.gray800.withOpacity(0.3),
+                        color: WFColors.gray800.withValues(alpha: 0.3),
                         borderRadius: BorderRadius.circular(WFDims.radiusMedium),
                       ),
                       child: Column(
@@ -113,7 +111,31 @@ class _ProfilePageState extends ConsumerState<ProfilePage>
                         children: [
                           Text('Profile Stats', style: WFTextStyles.h3),
                           const SizedBox(height: WFDims.spacingM),
-                          Row(
+                          // FIXED: Responsive stats layout to prevent overflow
+                          LayoutBuilder(
+                            builder: (context, constraints) {
+                              if (constraints.maxWidth < 400) {
+                                // Stack vertically on very small screens
+                                return Column(
+                                  children: [
+                                    _StatCard(
+                                      title: 'Total XP',
+                                      value: '${profile.xpTotal}',
+                                      icon: Icons.star,
+                                      color: WFColors.purple400,
+                                    ),
+                                    const SizedBox(height: WFDims.spacingM),
+                                    _StatCard(
+                                      title: 'Lessons Completed',
+                                      value: '${profile.unlockedLessons.length}',
+                                      icon: Icons.school,
+                                      color: WFColors.success,
+                                    ),
+                                  ],
+                                );
+                              } else {
+                                // Side by side on larger screens
+                                return Row(
                             children: [
                               Expanded(
                                 child: _StatCard(
@@ -133,6 +155,9 @@ class _ProfilePageState extends ConsumerState<ProfilePage>
                                 ),
                               ),
                             ],
+                                );
+                              }
+                            },
                           ),
                           const SizedBox(height: WFDims.spacingM),
                           // Reset onboarding button for testing
@@ -178,7 +203,7 @@ class _ProfilePageState extends ConsumerState<ProfilePage>
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: Colors.black.withValues(alpha: 0.1),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -195,7 +220,7 @@ class _ProfilePageState extends ConsumerState<ProfilePage>
                   width: 48,
                   height: 48,
                   decoration: BoxDecoration(
-                    color: color.withOpacity(0.1),
+                    color: color.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(24),
                   ),
                   child: Icon(
@@ -233,7 +258,7 @@ class _ProfilePageState extends ConsumerState<ProfilePage>
                     vertical: 6,
                   ),
                   decoration: BoxDecoration(
-                    color: color.withOpacity(0.1),
+                    color: color.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Text(
@@ -405,9 +430,9 @@ class _StatCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(WFDims.paddingM),
       decoration: BoxDecoration(
-        color: WFColors.gray800.withOpacity(0.3),
+        color: WFColors.gray800.withValues(alpha: 0.3),
         borderRadius: BorderRadius.circular(WFDims.radiusMedium),
-        border: Border.all(color: color.withOpacity(0.3)),
+        border: Border.all(color: color.withValues(alpha: 0.3)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -416,11 +441,15 @@ class _StatCard extends StatelessWidget {
             children: [
               Icon(icon, color: color, size: 20),
               const SizedBox(width: WFDims.spacingS),
-              Text(
+              Expanded(
+                child: Text(
                 title,
                 style: WFTextStyles.bodyMedium.copyWith(
                   color: WFColors.textSecondary,
                   fontSize: 12,
+                  ),
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 1,
                 ),
               ),
             ],
@@ -429,6 +458,8 @@ class _StatCard extends StatelessWidget {
           Text(
             value,
             style: WFTextStyles.h3.copyWith(color: color),
+            overflow: TextOverflow.ellipsis,
+            maxLines: 1,
           ),
         ],
       ),

@@ -98,9 +98,9 @@ class AccountManagementPage extends ConsumerWidget {
     return Container(
       padding: const EdgeInsets.all(WFDims.paddingL),
       decoration: BoxDecoration(
-        color: Colors.amber.withOpacity(0.1),
+        color: Colors.amber.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(WFDims.radiusMedium),
-        border: Border.all(color: Colors.amber.withOpacity(0.3)),
+        border: Border.all(color: Colors.amber.withValues(alpha: 0.3)),
       ),
       child: Row(
         children: [
@@ -158,9 +158,9 @@ class AccountManagementPage extends ConsumerWidget {
       child: Container(
         padding: const EdgeInsets.all(WFDims.paddingM),
         decoration: BoxDecoration(
-          color: WFColors.gray800.withOpacity(0.3),
+          color: WFColors.gray800.withValues(alpha: 0.3),
           borderRadius: BorderRadius.circular(WFDims.radiusMedium),
-          border: Border.all(color: WFColors.glassBorder.withOpacity(0.3)),
+          border: Border.all(color: WFColors.glassBorder.withValues(alpha: 0.3)),
         ),
         child: Row(
           children: [

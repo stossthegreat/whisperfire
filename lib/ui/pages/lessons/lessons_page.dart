@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
+
 import '../../../core/theme/theme.dart';
 import '../../../data/providers.dart';
 import '../../../data/models/profile_models.dart';
-import '../../atoms/atoms.dart';
+
 import '../../shared/loading_shell.dart';
-import '../../../features/lessons/catalog/lessons_catalog_page.dart';
 import '../../../features/lessons/world_overview/world_overview_page.dart';
 import '../../../widgets/app_header.dart';
 
@@ -68,7 +67,7 @@ class _LessonsContent extends ConsumerWidget {
                     borderRadius: BorderRadius.circular(WFDims.radiusXLarge),
                     boxShadow: WFShadows.purpleGlow,
                   ),
-                  child: Icon(
+                  child: const Icon(
                     Icons.school,
                     size: 40,
                     color: WFColors.textPrimary,

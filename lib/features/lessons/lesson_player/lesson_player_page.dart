@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:confetti/confetti.dart';
-import '../../../utils/color_compat.dart';
+
 import '../../../data/providers.dart';
 import '../../../data/models/lesson_models.dart';
 import '../widgets/tts_controls.dart';
@@ -169,8 +169,10 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
   }
   
   Widget _buildCompletionDialog(Lesson lesson, BuildContext dialogContext) {
-    return WillPopScope(
-      onWillPop: () async {
+    return PopScope(
+      canPop: false,
+      onPopInvoked: (didPop) {
+        if (didPop) return;
         // Handle back button press
         Navigator.of(dialogContext).pop();
         Future.delayed(const Duration(milliseconds: 100), () {
@@ -178,7 +180,6 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
             Navigator.of(context).pop();
           }
         });
-        return false; // Prevent default back behavior
       },
       child: AlertDialog(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
@@ -536,7 +537,7 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
       ),
     );
   }
-
+  
   Widget _buildDrillStep(LessonContent content) {
     return FrostedCard(
       child: Column(
@@ -633,7 +634,7 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
           TextField(
             controller: _rewriteController,
             maxLines: 3,
-            style: TextStyle(color: Colors.black), // Make user text black
+            style: const TextStyle(color: Colors.black), // Make user text black
             decoration: InputDecoration(
               hintText: 'Your rewrite...',
               border: OutlineInputBorder(
@@ -676,7 +677,7 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
           TextField(
             controller: _reflectionController,
             maxLines: 5,
-            style: TextStyle(color: Colors.black), // Make user text black
+            style: const TextStyle(color: Colors.black), // Make user text black
             decoration: InputDecoration(
               hintText: 'Your thoughts...',
               border: OutlineInputBorder(

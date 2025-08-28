@@ -23,10 +23,10 @@ class Pill extends StatelessWidget {
         vertical: WFDims.paddingS,
       ),
       decoration: BoxDecoration(
-        color: backgroundColor ?? WFColors.purple500.withOpacity(0.2),
+        color: backgroundColor ?? WFColors.purple500.withValues(alpha: 0.2),
         borderRadius: BorderRadius.circular(WFDims.radiusXLarge),
         border: Border.all(
-          color: WFColors.purple500.withOpacity(0.3),
+          color: WFColors.purple500.withValues(alpha: 0.3),
           width: WFDims.borderThin,
         ),
       ),

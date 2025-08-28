@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
-import 'dart:math';
 
 class TtsControls extends StatefulWidget {
   final String text;
@@ -138,7 +137,7 @@ class _TtsControlsState extends State<TtsControls> with TickerProviderStateMixin
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: Colors.black.withValues(alpha: 0.1),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -214,7 +213,7 @@ class _TtsControlsState extends State<TtsControls> with TickerProviderStateMixin
         borderRadius: BorderRadius.circular(24),
         boxShadow: onPressed != null ? [
           BoxShadow(
-            color: color.withOpacity(0.3),
+            color: color.withValues(alpha: 0.3),
             blurRadius: 8,
             offset: const Offset(0, 2),
           ),

@@ -16,12 +16,10 @@ class WFTheme {
         colorScheme: const ColorScheme.dark(
           primary: WFColors.purple400,
           secondary: WFColors.purple300,
-          surface: WFColors.gray800,
-          background: WFColors.base,
+          surface: WFColors.base,
           onPrimary: WFColors.textPrimary,
           onSecondary: WFColors.textPrimary,
           onSurface: WFColors.textPrimary,
-          onBackground: WFColors.textPrimary,
         ),
         textTheme: TextTheme(
           displayLarge: WFTextStyles.h1,
@@ -36,7 +34,7 @@ class WFTheme {
           labelMedium: WFTextStyles.labelMedium,
           labelSmall: WFTextStyles.labelSmall,
         ),
-        appBarTheme: AppBarTheme(
+        appBarTheme: const AppBarTheme(
           backgroundColor: Colors.transparent,
           foregroundColor: WFColors.textPrimary,
           elevation: 0,

@@ -26,7 +26,7 @@ class WFIconButton extends StatelessWidget {
     final button = Container(
       padding: padding ?? const EdgeInsets.all(WFDims.paddingM),
       decoration: BoxDecoration(
-        color: backgroundColor ?? WFColors.gray800.withOpacity(0.6),
+        color: backgroundColor ?? WFColors.gray800.withValues(alpha: 0.6),
         borderRadius: BorderRadius.circular(WFDims.radiusMedium),
         border: Border.all(
           color: WFColors.glassBorder,

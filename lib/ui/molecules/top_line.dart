@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../core/theme/theme.dart';
-import '../atoms/atoms.dart';
+import '../../core/theme/text_styles.dart';
 
 class TopLine extends StatelessWidget {
   final String tabLabel;
@@ -17,7 +16,7 @@ class TopLine extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: WFDims.topLineFirstSection),
+      padding: const EdgeInsets.only(bottom: 24.0),
       child: Row(
         children: [
           Expanded(

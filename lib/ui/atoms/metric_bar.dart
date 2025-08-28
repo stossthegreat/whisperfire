@@ -83,7 +83,7 @@ class _MetricBarState extends State<MetricBar> with SingleTickerProviderStateMix
           height: 6,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(3),
-            color: WFColors.gray700.withOpacity(0.6),
+            color: WFColors.gray700.withValues(alpha: 0.6),
           ),
           child: AnimatedBuilder(
             animation: _animation,

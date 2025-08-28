@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../../../utils/color_compat.dart';
-import '../../../data/providers.dart';
 import '../../../data/models/lesson_models.dart';
+import '../../../data/providers.dart';
 import '../lesson_player/lesson_player_page.dart';
 
 class WorldOverviewPage extends ConsumerWidget {
@@ -16,7 +15,7 @@ class WorldOverviewPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    print('🔍 DEBUG: WorldOverviewPage.build called with category: $category');
+    // WorldOverviewPage.build called with category: $category
     
     final categoryName = _getCategoryDisplayName(category);
     final color = _getCategoryColor(category);
@@ -73,7 +72,7 @@ class WorldOverviewPage extends ConsumerWidget {
   Widget _buildWorldCard(BuildContext context, int world, Color color) {
     return Consumer(
       builder: (context, ref, child) {
-        print('🔍 DEBUG: _buildWorldCard called with category: $category, world: $world');
+        // _buildWorldCard called with category: $category, world: $world
         
         final lessonsFuture = ref.watch(
           worldLessonsProvider((category, world))
@@ -130,7 +129,7 @@ class WorldOverviewPage extends ConsumerWidget {
                               width: 48,
                               height: 48,
                               decoration: BoxDecoration(
-                                color: color.withOpacity(0.1),
+                                color: color.withValues(alpha: 0.1),
                                 borderRadius: BorderRadius.circular(24),
                               ),
                               child: Icon(
@@ -209,7 +208,7 @@ class WorldOverviewPage extends ConsumerWidget {
               borderRadius: BorderRadius.circular(20),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.1),
+                  color: Colors.black.withValues(alpha: 0.1),
                   blurRadius: 10,
                   offset: const Offset(0, 4),
                 ),
@@ -225,7 +224,7 @@ class WorldOverviewPage extends ConsumerWidget {
               borderRadius: BorderRadius.circular(20),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.1),
+                  color: Colors.black.withValues(alpha: 0.1),
                   blurRadius: 10,
                   offset: const Offset(0, 4),
                 ),

@@ -16,15 +16,15 @@ class ProgressService {
     if (p.unlockedLessons.contains(lesson.id)) {
       // Lesson already completed, return profile without changes
       if (kDebugMode) {
-        print('Lesson ${lesson.id} already completed. Skipping XP award.');
+        // Lesson ${lesson.id} already completed. Skipping XP award.
       }
       return p;
     }
     
     // Award XP for first-time completion
     if (kDebugMode) {
-      print('Awarding ${lesson.xp} XP for lesson ${lesson.id}');
-      print('Previous total XP: ${p.xpTotal}');
+              // Awarding ${lesson.xp} XP for lesson ${lesson.id}
+        // Previous total XP: ${p.xpTotal}
     }
     
     p.xpTotal += lesson.xp;
@@ -35,8 +35,8 @@ class ProgressService {
     p.unlockedLessons.add(lesson.id);
     
     if (kDebugMode) {
-      print('New total XP: ${p.xpTotal}');
-      print('Category ${lesson.category} XP: ${cp.xp}');
+              // New total XP: ${p.xpTotal}
+        // Category ${lesson.category} XP: ${cp.xp}
     }
     
     await _repo.saveProfile(p);

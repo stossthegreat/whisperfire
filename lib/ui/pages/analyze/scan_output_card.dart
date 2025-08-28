@@ -32,11 +32,11 @@ class ScanOutputCard extends StatelessWidget {
                     // Share button - top right
                     Container(
                       decoration: BoxDecoration(
-                        color: WFColors.purple400.withOpacity(0.9),
+                        color: WFColors.purple400.withValues(alpha: 0.9),
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black.withOpacity(0.1),
+                            color: Colors.black.withValues(alpha: 0.1),
                             blurRadius: 8,
                             offset: const Offset(0, 2),
                           ),
@@ -110,7 +110,7 @@ class ScanOutputCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.15),
+                    color: Colors.black.withValues(alpha: 0.15),
                     blurRadius: 10,
                     offset: const Offset(0, 3),
                   ),
