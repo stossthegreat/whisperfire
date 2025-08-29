@@ -19,9 +19,9 @@ class DividerFaint extends StatelessWidget {
       height: height ?? WFDims.borderThin,
       margin: margin ?? const EdgeInsets.symmetric(vertical: WFDims.spacingM),
       decoration: BoxDecoration(
-        color: color ?? WFColors.gray700.withValues(alpha: 0.4),
+        color: (color ?? WFColors.gray700).withOpacity(0.4),
         borderRadius: BorderRadius.circular(0.5),
       ),
     );
   }
-} 
+}
