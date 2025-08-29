@@ -3,6 +3,7 @@ export 'text_styles.dart';
 export 'dimensions.dart';
 export 'shadows.dart';
 export 'gradients.dart';
+export 'package:your_app/utils/color_compat.dart';
 
 import 'package:flutter/material.dart';
 import 'colors.dart';
