@@ -2,4 +2,4 @@
 export 'whisperfire_models.dart';
 export 'mentor_models.dart';
 export 'profile_models.dart';
-export 'settings_models.dart'; 
+export 'settings_models.dart';

@@ -15,4 +15,4 @@ class WhisperfireApp extends StatelessWidget {
       theme: WFTheme.darkTheme,
     );
   }
-} 
+}

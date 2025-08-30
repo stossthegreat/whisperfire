@@ -15,16 +15,18 @@ class PatternOutputCard extends StatelessWidget {
     final profileTag = WhisperfireServices.extractProfileTag(result);
     final receipts = WhisperfireServices.getReceipts(result, 'pattern');
 
-    final snapshot = receipts.take(8).toList();                     // 🧵 Thread Snapshot
-    final critical = _criticalMoments(result);                      // 💣 Critical Moments
-    final psych = _psychProfile(result);                            // 🧠 Psych Profile (with explanation)
+    final snapshot = receipts.take(8).toList(); // 🧵 Thread Snapshot
+    final critical = _criticalMoments(result); // 💣 Critical Moments
+    final psych = _psychProfile(result); // 🧠 Psych Profile (with explanation)
     final frameLedger = result.pattern?.cycle?.trim().isNotEmpty == true
         ? result.pattern!.cycle!
         : 'Start → Mid → End (frame shifts not fully mapped)';
 
-    final fixes = _precisionFixes(result);                          // 🎯 Precision Fixes (why+how)
-    final recovery = _lines(result.nextMoves, max: 6);              // 🔄 Recovery Protocol
-    final principle = (result.counterIntervention ?? 'Begin Challenger, end Victor—never downgrade to Clerk.').trim();
+    final fixes = _precisionFixes(result); // 🎯 Precision Fixes (why+how)
+    final recovery = _lines(result.nextMoves, max: 6); // 🔄 Recovery Protocol
+    final principle = (result.counterIntervention ??
+            'Begin Challenger, end Victor—never downgrade to Clerk.')
+        .trim();
     final hidden = (result.hiddenAgenda?.trim().isNotEmpty ?? false)
         ? result.hiddenAgenda!.trim()
         : (result.longGame?.trim() ?? '');
@@ -36,18 +38,19 @@ class PatternOutputCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               TopLine(
-                tabLabel: '🕵️‍♀️ PATTERN — ${_archetypeNickname(result.tactic.label)}',
+                tabLabel:
+                    '🕵️‍♀️ PATTERN — ${_archetypeNickname(result.tactic.label)}',
                 profileTag: profileTag,
                 rightWidget: Column(
                   children: [
                     // Share button - top right
                     Container(
                       decoration: BoxDecoration(
-                        color: WFColors.purple400.withValues(alpha: 0.9),
+                        color: WFColors.purple400.withOpacity(0.9),
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black.withValues(alpha: 0.1),
+                            color: Colors.black.withOpacity(0.1),
                             blurRadius: 8,
                             offset: const Offset(0, 2),
                           ),
@@ -81,34 +84,38 @@ class PatternOutputCard extends StatelessWidget {
               _section('💥', 'Headline', result.headline),
 
               // 2) 🧵 Thread Snapshot (compact, no walls)
-              if (snapshot.isNotEmpty) _bullets('🧵', 'Thread Snapshot', snapshot),
+              if (snapshot.isNotEmpty)
+                _bullets('🧵', 'Thread Snapshot', snapshot),
 
               // 3) 💣 Critical Moments
-              if (critical.isNotEmpty) _bullets('💣', 'Critical Moments', critical),
+              if (critical.isNotEmpty)
+                _bullets('💣', 'Critical Moments', critical),
 
               // 4) 🧠 Psych Profile (with plain-English explanation)
-              _section('🧠', 'Psych Profile', psych), 
+              _section('🧠', 'Psych Profile', psych),
 
               // 7) 🎯 Precision Fixes
               if (fixes.isNotEmpty) _bullets('🎯', 'Precision Fixes', fixes),
 
               // 8) 🔄 Recovery Protocol
-              if (recovery.isNotEmpty) _bullets('🔄', 'Recovery Protocol', recovery),
+              if (recovery.isNotEmpty)
+                _bullets('🔄', 'Recovery Protocol', recovery),
 
               // 9) 📜 Principle to Keep
               _section('📜', 'Principle to Keep', principle),
 
               // 10) 🔍 Hidden Agenda Scan
-              if (hidden.isNotEmpty) _section('🔍', 'Hidden Agenda Scan', hidden),
+              if (hidden.isNotEmpty)
+                _section('🔍', 'Hidden Agenda Scan', hidden),
 
               // 11) 💬 Boundary Script (final message to send)
               _script(result.suggestedReply.text),
-              
+
               // Add spacing before the logo
               const SizedBox(height: 60),
             ],
           ),
-          
+
           // Beguile AI logo - positioned at the very bottom
           Positioned(
             bottom: 16,
@@ -124,7 +131,7 @@ class PatternOutputCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.15),
+                    color: Colors.black.withOpacity(0.15),
                     blurRadius: 10,
                     offset: const Offset(0, 3),
                   ),
@@ -195,7 +202,9 @@ class PatternOutputCard extends StatelessWidget {
     final lines = _lines(r.powerPlay, max: 5);
     return lines.map((e) {
       // Light verb‑forward rewrite cue
-      if (!RegExp(r'^(Lead|Host|Close|Escalate|Answer|Set|Invite|Cut|Stop)\b', caseSensitive: false).hasMatch(e)) {
+      if (!RegExp(r'^(Lead|Host|Close|Escalate|Answer|Set|Invite|Cut|Stop)\b',
+              caseSensitive: false)
+          .hasMatch(e)) {
         return 'Apply: $e';
       }
       return e;
@@ -243,7 +252,8 @@ class PatternOutputCard extends StatelessWidget {
                 Container(
                   width: 4,
                   height: 4,
-                  margin: const EdgeInsets.only(top: 10, right: WFDims.spacingS),
+                  margin:
+                      const EdgeInsets.only(top: 10, right: WFDims.spacingS),
                   decoration: BoxDecoration(
                     color: WFColors.purple400,
                     borderRadius: BorderRadius.circular(2),
@@ -278,9 +288,10 @@ class PatternOutputCard extends StatelessWidget {
           width: double.infinity,
           padding: const EdgeInsets.all(WFDims.paddingM),
           decoration: BoxDecoration(
-            color: WFColors.gray800.withValues(alpha: 0.3),
+            color: WFColors.gray800.withOpacity(0.3),
             borderRadius: BorderRadius.circular(WFDims.radiusSmall),
-            border: Border(left: BorderSide(color: WFColors.purple400, width: 3)),
+            border:
+                Border(left: BorderSide(color: WFColors.purple400, width: 3)),
           ),
           child: Text(
             text.trim(),

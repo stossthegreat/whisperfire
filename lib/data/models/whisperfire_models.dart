@@ -139,7 +139,8 @@ class WhisperfireContext extends Equatable {
   Map<String, dynamic> toJson() => _$WhisperfireContextToJson(this);
 
   @override
-  List<Object?> get props => [relationship, tone, contentType, subjectName, tab];
+  List<Object?> get props =>
+      [relationship, tone, contentType, subjectName, tab];
 }
 
 @JsonSerializable()
@@ -287,7 +288,7 @@ class WhisperfireArchetype extends Equatable {
 @JsonSerializable()
 class WhisperfireForecast extends Equatable {
   final String window; // e.g., "3-5 days"
-  final String event;  // e.g., "Escalation attempt"
+  final String event; // e.g., "Escalation attempt"
   final int likelihood; // 0-100
 
   const WhisperfireForecast({

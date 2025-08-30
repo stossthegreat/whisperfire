@@ -17,4 +17,4 @@ class ProfileRepo {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString(_key, json.encode(p.toJson()));
   }
-} 
+}

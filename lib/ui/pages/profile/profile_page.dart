@@ -31,7 +31,7 @@ class _ProfilePageState extends ConsumerState<ProfilePage>
   void _initAnimations() {
     _progressControllers = {};
     _progressAnimations = {};
-    
+
     for (final category in kCategories) {
       _progressControllers[category] = AnimationController(
         duration: const Duration(milliseconds: 500),
@@ -89,9 +89,8 @@ class _ProfilePageState extends ConsumerState<ProfilePage>
                           ),
                         ),
                         const SizedBox(height: 24),
-                        ...kCategories.map((category) => 
-                          _buildCategoryCard(context, category, profile)
-                        ),
+                        ...kCategories.map((category) =>
+                            _buildCategoryCard(context, category, profile)),
                       ],
                     ),
                   ),
@@ -103,8 +102,9 @@ class _ProfilePageState extends ConsumerState<ProfilePage>
                     child: Container(
                       padding: const EdgeInsets.all(WFDims.paddingL),
                       decoration: BoxDecoration(
-                        color: WFColors.gray800.withValues(alpha: 0.3),
-                        borderRadius: BorderRadius.circular(WFDims.radiusMedium),
+                        color: WFColors.gray800.withOpacity(0.3),
+                        borderRadius:
+                            BorderRadius.circular(WFDims.radiusMedium),
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -127,7 +127,8 @@ class _ProfilePageState extends ConsumerState<ProfilePage>
                                     const SizedBox(height: WFDims.spacingM),
                                     _StatCard(
                                       title: 'Lessons Completed',
-                                      value: '${profile.unlockedLessons.length}',
+                                      value:
+                                          '${profile.unlockedLessons.length}',
                                       icon: Icons.school,
                                       color: WFColors.success,
                                     ),
@@ -136,25 +137,26 @@ class _ProfilePageState extends ConsumerState<ProfilePage>
                               } else {
                                 // Side by side on larger screens
                                 return Row(
-                            children: [
-                              Expanded(
-                                child: _StatCard(
-                                  title: 'Total XP',
-                                  value: '${profile.xpTotal}',
-                                  icon: Icons.star,
-                                  color: WFColors.purple400,
-                                ),
-                              ),
-                              const SizedBox(width: WFDims.spacingM),
-                              Expanded(
-                                child: _StatCard(
-                                  title: 'Lessons Completed',
-                                  value: '${profile.unlockedLessons.length}',
-                                  icon: Icons.school,
-                                  color: WFColors.success,
-                                ),
-                              ),
-                            ],
+                                  children: [
+                                    Expanded(
+                                      child: _StatCard(
+                                        title: 'Total XP',
+                                        value: '${profile.xpTotal}',
+                                        icon: Icons.star,
+                                        color: WFColors.purple400,
+                                      ),
+                                    ),
+                                    const SizedBox(width: WFDims.spacingM),
+                                    Expanded(
+                                      child: _StatCard(
+                                        title: 'Lessons Completed',
+                                        value:
+                                            '${profile.unlockedLessons.length}',
+                                        icon: Icons.school,
+                                        color: WFColors.success,
+                                      ),
+                                    ),
+                                  ],
                                 );
                               }
                             },
@@ -164,11 +166,15 @@ class _ProfilePageState extends ConsumerState<ProfilePage>
                           ElevatedButton(
                             onPressed: () async {
                               profile.hasSeenOnboarding = false;
-                              await ref.read(profileRepoProvider).saveProfile(profile);
+                              await ref
+                                  .read(profileRepoProvider)
+                                  .saveProfile(profile);
                               ref.invalidate(userProfileProvider);
                               if (context.mounted) {
                                 ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(content: Text('Onboarding reset! Refresh the app to see it.')),
+                                  const SnackBar(
+                                      content: Text(
+                                          'Onboarding reset! Refresh the app to see it.')),
                                 );
                               }
                             },
@@ -191,11 +197,12 @@ class _ProfilePageState extends ConsumerState<ProfilePage>
     );
   }
 
-  Widget _buildCategoryCard(BuildContext context, String category, UserProfile profile) {
+  Widget _buildCategoryCard(
+      BuildContext context, String category, UserProfile profile) {
     final categoryName = kCategoryNames[category]!;
     final color = _getCategoryColor(category);
     final progress = profile.categories[category] ?? CategoryProgress();
-    
+
     return Container(
       margin: const EdgeInsets.only(bottom: 20),
       decoration: BoxDecoration(
@@ -203,7 +210,7 @@ class _ProfilePageState extends ConsumerState<ProfilePage>
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.1),
+            color: Colors.black.withOpacity(0.1),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -220,7 +227,7 @@ class _ProfilePageState extends ConsumerState<ProfilePage>
                   width: 48,
                   height: 48,
                   decoration: BoxDecoration(
-                    color: color.withValues(alpha: 0.1),
+                    color: color.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(24),
                   ),
                   child: Icon(
@@ -258,7 +265,7 @@ class _ProfilePageState extends ConsumerState<ProfilePage>
                     vertical: 6,
                   ),
                   decoration: BoxDecoration(
-                    color: color.withValues(alpha: 0.1),
+                    color: color.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Text(
@@ -273,7 +280,7 @@ class _ProfilePageState extends ConsumerState<ProfilePage>
               ],
             ),
             const SizedBox(height: 20),
-            
+
             // Progress bar
             AnimatedBuilder(
               animation: _progressAnimations[category]!,
@@ -281,7 +288,7 @@ class _ProfilePageState extends ConsumerState<ProfilePage>
                 final animatedProgress = _progressAnimations[category]!.value;
                 final bandPercent = _bandPercent(progress.xp, progress.level);
                 final animatedBandPercent = bandPercent * animatedProgress;
-                
+
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -304,9 +311,9 @@ class _ProfilePageState extends ConsumerState<ProfilePage>
                 );
               },
             ),
-            
+
             const SizedBox(height: 20),
-            
+
             // Continue button
             SizedBox(
               width: double.infinity,
@@ -335,10 +342,11 @@ class _ProfilePageState extends ConsumerState<ProfilePage>
     );
   }
 
-  void _continueCategory(BuildContext context, String category, CategoryProgress progress) {
+  void _continueCategory(
+      BuildContext context, String category, CategoryProgress progress) {
     // Find next lesson to continue
     final nextLesson = _findNextLesson(category, progress);
-    
+
     if (nextLesson != null) {
       Navigator.of(context).push(
         MaterialPageRoute(
@@ -369,11 +377,21 @@ class _ProfilePageState extends ConsumerState<ProfilePage>
     return null;
   }
 
-  int _prevThreshold(int level) => 
-    level <= 1 ? 0 : level == 2 ? 100 : level == 3 ? 250 : 500;
+  int _prevThreshold(int level) => level <= 1
+      ? 0
+      : level == 2
+          ? 100
+          : level == 3
+              ? 250
+              : 500;
 
-  int _nextThreshold(int level) => 
-    level == 1 ? 100 : level == 2 ? 250 : level == 3 ? 500 : 999999;
+  int _nextThreshold(int level) => level == 1
+      ? 100
+      : level == 2
+          ? 250
+          : level == 3
+              ? 500
+              : 999999;
 
   double _bandPercent(int xp, int level) {
     final p = _prevThreshold(level);
@@ -389,25 +407,39 @@ class _ProfilePageState extends ConsumerState<ProfilePage>
 
   Color _getCategoryColor(String category) {
     switch (category) {
-      case 'charisma': return const Color(0xFFE91E63);
-      case 'gravity': return const Color(0xFF26A69A);
-      case 'frame': return const Color(0xFF3F51B5);
-      case 'scarcity': return const Color(0xFFFF9800);
-      case 'composed_authority': return const Color(0xFF9C27B0);
-      case 'hidden_dynamics': return const Color(0xFF4CAF50);
-      default: return Colors.purple;
+      case 'charisma':
+        return const Color(0xFFE91E63);
+      case 'gravity':
+        return const Color(0xFF26A69A);
+      case 'frame':
+        return const Color(0xFF3F51B5);
+      case 'scarcity':
+        return const Color(0xFFFF9800);
+      case 'composed_authority':
+        return const Color(0xFF9C27B0);
+      case 'hidden_dynamics':
+        return const Color(0xFF4CAF50);
+      default:
+        return Colors.purple;
     }
   }
 
   IconData _getCategoryIcon(String category) {
     switch (category) {
-      case 'charisma': return Icons.favorite;
-      case 'gravity': return Icons.arrow_downward;
-      case 'frame': return Icons.crop_square;
-      case 'scarcity': return Icons.trending_up;
-      case 'composed_authority': return Icons.psychology;
-      case 'hidden_dynamics': return Icons.masks;
-      default: return Icons.school;
+      case 'charisma':
+        return Icons.favorite;
+      case 'gravity':
+        return Icons.arrow_downward;
+      case 'frame':
+        return Icons.crop_square;
+      case 'scarcity':
+        return Icons.trending_up;
+      case 'composed_authority':
+        return Icons.psychology;
+      case 'hidden_dynamics':
+        return Icons.masks;
+      default:
+        return Icons.school;
     }
   }
 }
@@ -430,9 +462,9 @@ class _StatCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(WFDims.paddingM),
       decoration: BoxDecoration(
-        color: WFColors.gray800.withValues(alpha: 0.3),
+        color: WFColors.gray800.withOpacity(0.3),
         borderRadius: BorderRadius.circular(WFDims.radiusMedium),
-        border: Border.all(color: color.withValues(alpha: 0.3)),
+        border: Border.all(color: color.withOpacity(0.3)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -443,10 +475,10 @@ class _StatCard extends StatelessWidget {
               const SizedBox(width: WFDims.spacingS),
               Expanded(
                 child: Text(
-                title,
-                style: WFTextStyles.bodyMedium.copyWith(
-                  color: WFColors.textSecondary,
-                  fontSize: 12,
+                  title,
+                  style: WFTextStyles.bodyMedium.copyWith(
+                    color: WFColors.textSecondary,
+                    fontSize: 12,
                   ),
                   overflow: TextOverflow.ellipsis,
                   maxLines: 1,
@@ -465,4 +497,4 @@ class _StatCard extends StatelessWidget {
       ),
     );
   }
-} 
+}

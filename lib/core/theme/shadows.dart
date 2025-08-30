@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class WFShadows {
   // Glass effect shadows
   static const List<BoxShadow> glass = [
@@ -10,7 +9,7 @@ class WFShadows {
       offset: Offset(0, 4),
     ),
   ];
-  
+
   // Button shadows
   static const List<BoxShadow> button = [
     BoxShadow(
@@ -19,7 +18,7 @@ class WFShadows {
       offset: Offset(0, 2),
     ),
   ];
-  
+
   // Purple glow for special elements
   static const List<BoxShadow> purpleGlow = [
     BoxShadow(
@@ -28,7 +27,7 @@ class WFShadows {
       offset: Offset(0, 8),
     ),
   ];
-  
+
   // Card shadows
   static const List<BoxShadow> card = [
     BoxShadow(
@@ -37,7 +36,7 @@ class WFShadows {
       offset: Offset(0, 4),
     ),
   ];
-  
+
   // Subtle shadows
   static const List<BoxShadow> subtle = [
     BoxShadow(
@@ -46,4 +45,4 @@ class WFShadows {
       offset: Offset(0, 1),
     ),
   ];
-} 
+}

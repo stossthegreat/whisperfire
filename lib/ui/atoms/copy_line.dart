@@ -28,7 +28,8 @@ class CopyLine extends StatelessWidget {
             Clipboard.setData(ClipboardData(text: text));
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
-                content: Text('Copied to clipboard', style: WFTextStyles.bodySmall),
+                content:
+                    Text('Copied to clipboard', style: WFTextStyles.bodySmall),
                 backgroundColor: WFColors.purple600,
                 duration: const Duration(seconds: 2),
               ),
@@ -43,4 +44,4 @@ class CopyLine extends StatelessWidget {
       ],
     );
   }
-} 
+}

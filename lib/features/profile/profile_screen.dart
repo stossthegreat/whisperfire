@@ -28,7 +28,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen>
   void _initAnimations() {
     _progressControllers = {};
     _progressAnimations = {};
-    
+
     for (final category in kCategories) {
       _progressControllers[category] = AnimationController(
         duration: const Duration(milliseconds: 500),
@@ -104,7 +104,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen>
                               vertical: 8,
                             ),
                             decoration: BoxDecoration(
-                              color: Colors.white.withValues(alpha: 0.2),
+                              color: Colors.white.withOpacity(0.2),
                               borderRadius: BorderRadius.circular(20),
                             ),
                             child: Text(
@@ -138,9 +138,8 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen>
                         ),
                       ),
                       const SizedBox(height: 24),
-                      ...kCategories.map((category) => 
-                        _buildCategoryCard(context, category, profile)
-                      ),
+                      ...kCategories.map((category) =>
+                          _buildCategoryCard(context, category, profile)),
                     ],
                   ),
                 ),
@@ -158,11 +157,12 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen>
     );
   }
 
-  Widget _buildCategoryCard(BuildContext context, String category, UserProfile profile) {
+  Widget _buildCategoryCard(
+      BuildContext context, String category, UserProfile profile) {
     final categoryName = kCategoryNames[category]!;
     final color = _getCategoryColor(category);
     final progress = profile.categories[category] ?? CategoryProgress();
-    
+
     return Container(
       margin: const EdgeInsets.only(bottom: 20),
       decoration: BoxDecoration(
@@ -170,7 +170,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen>
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.1),
+            color: Colors.black.withOpacity(0.1),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -187,7 +187,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen>
                   width: 48,
                   height: 48,
                   decoration: BoxDecoration(
-                    color: color.withValues(alpha: 0.1),
+                    color: color.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(24),
                   ),
                   child: Icon(
@@ -224,7 +224,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen>
                     vertical: 6,
                   ),
                   decoration: BoxDecoration(
-                    color: color.withValues(alpha: 0.1),
+                    color: color.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Text(
@@ -239,7 +239,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen>
               ],
             ),
             const SizedBox(height: 20),
-            
+
             // Progress bar
             AnimatedBuilder(
               animation: _progressAnimations[category]!,
@@ -247,7 +247,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen>
                 final animatedProgress = _progressAnimations[category]!.value;
                 final bandPercent = _bandPercent(progress.xp, progress.level);
                 final animatedBandPercent = bandPercent * animatedProgress;
-                
+
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -270,9 +270,9 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen>
                 );
               },
             ),
-            
+
             const SizedBox(height: 20),
-            
+
             // Continue button
             SizedBox(
               width: double.infinity,
@@ -301,10 +301,11 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen>
     );
   }
 
-  void _continueCategory(BuildContext context, String category, CategoryProgress progress) {
+  void _continueCategory(
+      BuildContext context, String category, CategoryProgress progress) {
     // Find next lesson to continue
     final nextLesson = _findNextLesson(category, progress);
-    
+
     if (nextLesson != null) {
       Navigator.of(context).push(
         MaterialPageRoute(
@@ -335,11 +336,21 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen>
     return null;
   }
 
-  int _prevThreshold(int level) => 
-    level <= 1 ? 0 : level == 2 ? 100 : level == 3 ? 250 : 500;
+  int _prevThreshold(int level) => level <= 1
+      ? 0
+      : level == 2
+          ? 100
+          : level == 3
+              ? 250
+              : 500;
 
-  int _nextThreshold(int level) => 
-    level == 1 ? 100 : level == 2 ? 250 : level == 3 ? 500 : 999999;
+  int _nextThreshold(int level) => level == 1
+      ? 100
+      : level == 2
+          ? 250
+          : level == 3
+              ? 500
+              : 999999;
 
   double _bandPercent(int xp, int level) {
     final p = _prevThreshold(level);
@@ -355,25 +366,39 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen>
 
   Color _getCategoryColor(String category) {
     switch (category) {
-      case 'charisma': return const Color(0xFFE91E63);
-      case 'gravity': return const Color(0xFF26A69A);
-      case 'frame': return const Color(0xFF3F51B5);
-      case 'scarcity': return const Color(0xFFFF9800);
-      case 'composed_authority': return const Color(0xFF9C27B0);
-      case 'hidden_dynamics': return const Color(0xFF4CAF50);
-      default: return Colors.purple;
+      case 'charisma':
+        return const Color(0xFFE91E63);
+      case 'gravity':
+        return const Color(0xFF26A69A);
+      case 'frame':
+        return const Color(0xFF3F51B5);
+      case 'scarcity':
+        return const Color(0xFFFF9800);
+      case 'composed_authority':
+        return const Color(0xFF9C27B0);
+      case 'hidden_dynamics':
+        return const Color(0xFF4CAF50);
+      default:
+        return Colors.purple;
     }
   }
 
   IconData _getCategoryIcon(String category) {
     switch (category) {
-      case 'charisma': return Icons.favorite;
-      case 'gravity': return Icons.arrow_downward;
-      case 'frame': return Icons.crop_square;
-      case 'scarcity': return Icons.trending_up;
-      case 'composed_authority': return Icons.psychology;
-      case 'hidden_dynamics': return Icons.masks;
-      default: return Icons.school;
+      case 'charisma':
+        return Icons.favorite;
+      case 'gravity':
+        return Icons.arrow_downward;
+      case 'frame':
+        return Icons.crop_square;
+      case 'scarcity':
+        return Icons.trending_up;
+      case 'composed_authority':
+        return Icons.psychology;
+      case 'hidden_dynamics':
+        return Icons.masks;
+      default:
+        return Icons.school;
     }
   }
-} 
+}

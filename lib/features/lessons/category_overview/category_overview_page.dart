@@ -6,7 +6,6 @@ import '../../../data/providers.dart';
 import '../../../data/models/profile_models.dart';
 import '../../../ui/atoms/atoms.dart';
 
-
 class CategoryOverviewPage extends ConsumerWidget {
   final String category;
 
@@ -41,7 +40,7 @@ class CategoryOverviewPage extends ConsumerWidget {
   Widget _buildWorldsList(BuildContext context, UserProfile profile) {
     // Define worlds for each category
     final worlds = _getWorldsForCategory(category);
-    
+
     return SingleChildScrollView(
       padding: const EdgeInsets.all(WFDims.paddingL),
       child: Column(
@@ -81,20 +80,21 @@ class CategoryOverviewPage extends ConsumerWidget {
               ],
             ),
           ),
-          
+
           const SizedBox(height: WFDims.spacingXXL),
-          
+
           // Worlds
           Text('Training Worlds', style: WFTextStyles.h3),
           const SizedBox(height: WFDims.spacingL),
-          
+
           ...worlds.map((world) => _buildWorldCard(context, world, profile)),
         ],
       ),
     );
   }
 
-  Widget _buildWorldCard(BuildContext context, Map<String, dynamic> world, UserProfile profile) {
+  Widget _buildWorldCard(
+      BuildContext context, Map<String, dynamic> world, UserProfile profile) {
     final worldNumber = world['world'] as int;
     final title = world['title'] as String;
     final subtitle = world['subtitle'] as String;
@@ -102,7 +102,7 @@ class CategoryOverviewPage extends ConsumerWidget {
     final lessonCount = world['lessonCount'] as int;
     final requiredXp = world['requiredXp'] as int;
     final isUnlocked = profile.xpTotal >= requiredXp;
-    
+
     final categoryProgress = profile.categories[category];
     final completedLessons = categoryProgress?.xp ?? 0;
     final level = categoryProgress?.level ?? 1;
@@ -111,7 +111,9 @@ class CategoryOverviewPage extends ConsumerWidget {
       padding: EdgeInsets.only(bottom: WFDims.spacingL),
       child: GlassCard(
         child: InkWell(
-          onTap: isUnlocked ? () => _navigateToWorld(context, category, worldNumber) : null,
+          onTap: isUnlocked
+              ? () => _navigateToWorld(context, category, worldNumber)
+              : null,
           borderRadius: BorderRadius.circular(WFDims.radiusMedium),
           child: Row(
             children: [
@@ -119,9 +121,9 @@ class CategoryOverviewPage extends ConsumerWidget {
                 width: 60,
                 height: 60,
                 decoration: BoxDecoration(
-                  gradient: isUnlocked 
-                    ? WFGradients.purpleGradient
-                    : WFGradients.purpleGradient,
+                  gradient: isUnlocked
+                      ? WFGradients.purpleGradient
+                      : WFGradients.purpleGradient,
                   borderRadius: BorderRadius.circular(WFDims.radiusMedium),
                 ),
                 child: Center(
@@ -139,13 +141,16 @@ class CategoryOverviewPage extends ConsumerWidget {
                     Text(
                       title,
                       style: WFTextStyles.h4.copyWith(
-                        color: isUnlocked ? WFColors.textPrimary : WFColors.textTertiary,
+                        color: isUnlocked
+                            ? WFColors.textPrimary
+                            : WFColors.textTertiary,
                       ),
                     ),
                     const SizedBox(height: 4),
                     Text(
                       subtitle,
-                      style: WFTextStyles.bodySmall.copyWith(color: WFColors.textTertiary),
+                      style: WFTextStyles.bodySmall
+                          .copyWith(color: WFColors.textTertiary),
                     ),
                     const SizedBox(height: WFDims.spacingS),
                     Row(
@@ -153,7 +158,9 @@ class CategoryOverviewPage extends ConsumerWidget {
                         Text(
                           '$lessonCount lessons',
                           style: WFTextStyles.labelMedium.copyWith(
-                            color: isUnlocked ? WFColors.purple400 : WFColors.gray500,
+                            color: isUnlocked
+                                ? WFColors.purple400
+                                : WFColors.gray500,
                           ),
                         ),
                         if (isUnlocked && completedLessons > 0) ...[
@@ -322,4 +329,4 @@ class CategoryOverviewPage extends ConsumerWidget {
   void _navigateToWorld(BuildContext context, String category, int world) {
     context.push('/lesson/$category/$world');
   }
-} 
+}

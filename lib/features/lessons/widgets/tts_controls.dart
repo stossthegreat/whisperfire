@@ -4,7 +4,7 @@ import 'package:flutter_tts/flutter_tts.dart';
 class TtsControls extends StatefulWidget {
   final String text;
   final double width;
-  
+
   const TtsControls({
     super.key,
     required this.text,
@@ -15,26 +15,27 @@ class TtsControls extends StatefulWidget {
   State<TtsControls> createState() => _TtsControlsState();
 }
 
-class _TtsControlsState extends State<TtsControls> with TickerProviderStateMixin {
+class _TtsControlsState extends State<TtsControls>
+    with TickerProviderStateMixin {
   late FlutterTts _tts;
   bool _isPlaying = false;
   bool _isPaused = false;
   late AnimationController _waveformController;
   late List<AnimationController> _barControllers;
-  
+
   @override
   void initState() {
     super.initState();
     _initTts();
     _initAnimations();
   }
-  
+
   void _initTts() async {
     _tts = FlutterTts();
     await _tts.setLanguage('en-GB');
     await _tts.setPitch(1.05);
     await _tts.setSpeechRate(0.44);
-    
+
     _tts.setCompletionHandler(() {
       setState(() {
         _isPlaying = false;
@@ -42,7 +43,7 @@ class _TtsControlsState extends State<TtsControls> with TickerProviderStateMixin
       });
       _stopWaveform();
     });
-    
+
     _tts.setErrorHandler((msg) {
       setState(() {
         _isPlaying = false;
@@ -51,35 +52,35 @@ class _TtsControlsState extends State<TtsControls> with TickerProviderStateMixin
       _stopWaveform();
     });
   }
-  
+
   void _initAnimations() {
     _waveformController = AnimationController(
       duration: const Duration(milliseconds: 2000),
       vsync: this,
     );
-    
-    _barControllers = List.generate(5, (index) => 
-      AnimationController(
-        duration: Duration(milliseconds: 800 + (index * 200)),
-        vsync: this,
-      )
-    );
+
+    _barControllers = List.generate(
+        5,
+        (index) => AnimationController(
+              duration: Duration(milliseconds: 800 + (index * 200)),
+              vsync: this,
+            ));
   }
-  
+
   void _startWaveform() {
     _waveformController.repeat();
     for (final controller in _barControllers) {
       controller.repeat();
     }
   }
-  
+
   void _stopWaveform() {
     _waveformController.stop();
     for (final controller in _barControllers) {
       controller.stop();
     }
   }
-  
+
   Future<void> _play() async {
     if (_isPaused) {
       // For pause/resume, we'll just restart since FlutterTts doesn't have resume
@@ -98,7 +99,7 @@ class _TtsControlsState extends State<TtsControls> with TickerProviderStateMixin
       _startWaveform();
     }
   }
-  
+
   Future<void> _pause() async {
     await _tts.pause();
     setState(() {
@@ -107,7 +108,7 @@ class _TtsControlsState extends State<TtsControls> with TickerProviderStateMixin
     });
     _stopWaveform();
   }
-  
+
   Future<void> _stop() async {
     await _tts.stop();
     setState(() {
@@ -116,7 +117,7 @@ class _TtsControlsState extends State<TtsControls> with TickerProviderStateMixin
     });
     _stopWaveform();
   }
-  
+
   @override
   void dispose() {
     _tts.stop();
@@ -137,7 +138,7 @@ class _TtsControlsState extends State<TtsControls> with TickerProviderStateMixin
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.1),
+            color: Colors.black.withOpacity(0.1),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -156,7 +157,8 @@ class _TtsControlsState extends State<TtsControls> with TickerProviderStateMixin
                   return AnimatedBuilder(
                     animation: _barControllers[index],
                     builder: (context, child) {
-                      final height = 8.0 + (_barControllers[index].value * 32.0);
+                      final height =
+                          8.0 + (_barControllers[index].value * 32.0);
                       return Container(
                         width: 4,
                         height: height,
@@ -173,7 +175,7 @@ class _TtsControlsState extends State<TtsControls> with TickerProviderStateMixin
             ),
             const SizedBox(height: 16),
           ],
-          
+
           // Control buttons
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -199,7 +201,7 @@ class _TtsControlsState extends State<TtsControls> with TickerProviderStateMixin
       ),
     );
   }
-  
+
   Widget _buildControlButton({
     required IconData icon,
     required VoidCallback? onPressed,
@@ -211,13 +213,15 @@ class _TtsControlsState extends State<TtsControls> with TickerProviderStateMixin
       decoration: BoxDecoration(
         color: onPressed != null ? color : Colors.grey[300],
         borderRadius: BorderRadius.circular(24),
-        boxShadow: onPressed != null ? [
-          BoxShadow(
-            color: color.withValues(alpha: 0.3),
-            blurRadius: 8,
-            offset: const Offset(0, 2),
-          ),
-        ] : null,
+        boxShadow: onPressed != null
+            ? [
+                BoxShadow(
+                  color: color.withOpacity(0.3),
+                  blurRadius: 8,
+                  offset: const Offset(0, 2),
+                ),
+              ]
+            : null,
       ),
       child: IconButton(
         icon: Icon(icon, color: Colors.white),
@@ -225,4 +229,4 @@ class _TtsControlsState extends State<TtsControls> with TickerProviderStateMixin
       ),
     );
   }
-} 
+}

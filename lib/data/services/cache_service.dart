@@ -52,10 +52,11 @@ class CacheService {
   }
 
   // History methods (for analyze/mentor sessions)
-  static Future<void> saveAnalysisHistory(String sessionId, Map<String, dynamic> data) async {
+  static Future<void> saveAnalysisHistory(
+      String sessionId, Map<String, dynamic> data) async {
     final settings = getSettings();
     if (!settings.saveHistory) return;
-    
+
     await _historyBox.put('analysis_$sessionId', {
       'timestamp': DateTime.now().toIso8601String(),
       'type': 'analysis',
@@ -63,10 +64,11 @@ class CacheService {
     });
   }
 
-  static Future<void> saveMentorHistory(String sessionId, Map<String, dynamic> data) async {
+  static Future<void> saveMentorHistory(
+      String sessionId, Map<String, dynamic> data) async {
     final settings = getSettings();
     if (!settings.saveHistory) return;
-    
+
     await _historyBox.put('mentor_$sessionId', {
       'timestamp': DateTime.now().toIso8601String(),
       'type': 'mentor',
@@ -78,14 +80,14 @@ class CacheService {
     final allHistory = _historyBox.values
         .map((item) => Map<String, dynamic>.from(item))
         .toList();
-    
+
     // Sort by timestamp descending
     allHistory.sort((a, b) {
       final aTime = DateTime.tryParse(a['timestamp'] ?? '') ?? DateTime(1970);
       final bTime = DateTime.tryParse(b['timestamp'] ?? '') ?? DateTime(1970);
       return bTime.compareTo(aTime);
     });
-    
+
     return allHistory.take(limit).toList();
   }
 
@@ -104,4 +106,4 @@ class CacheService {
     _profileBox.close();
     _historyBox.close();
   }
-} 
+}

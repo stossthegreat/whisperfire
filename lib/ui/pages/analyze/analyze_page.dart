@@ -16,14 +16,15 @@ import '../../../widgets/app_header.dart';
 
 // ===== PROVIDERS =====
 final apiServiceProvider = Provider<ApiService>((ref) => ApiService());
-final analyzeResultProvider = StateProvider<WhisperfireResponse?>((ref) => null);
+final analyzeResultProvider =
+    StateProvider<WhisperfireResponse?>((ref) => null);
 final isAnalyzingProvider = StateProvider<bool>((ref) => false);
 
 // FIXED: Properly initialized providers that work immediately
 final analyzeToneProvider = StateProvider<String>((ref) {
   try {
-  final settings = CacheService.getSettings();
-  return settings.defaultTone;
+    final settings = CacheService.getSettings();
+    return settings.defaultTone;
   } catch (e) {
     // Fallback to default if cache not ready
     return 'brutal';
@@ -32,8 +33,8 @@ final analyzeToneProvider = StateProvider<String>((ref) {
 
 final analyzeModeProvider = StateProvider<String>((ref) {
   try {
-  final settings = CacheService.getSettings();
-  return settings.defaultAnalyzeMode;
+    final settings = CacheService.getSettings();
+    return settings.defaultAnalyzeMode;
   } catch (e) {
     // Fallback to default if cache not ready
     return 'scan';
@@ -54,7 +55,7 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
   @override
   void initState() {
     super.initState();
-    
+
     // Load settings immediately to ensure providers are initialized
     _loadSettings();
   }
@@ -66,10 +67,11 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
         final settings = CacheService.getSettings();
         // Only update if values are different to avoid unnecessary rebuilds
         if (ref.read(analyzeToneProvider) != settings.defaultTone) {
-      ref.read(analyzeToneProvider.notifier).state = settings.defaultTone;
+          ref.read(analyzeToneProvider.notifier).state = settings.defaultTone;
         }
         if (ref.read(analyzeModeProvider) != settings.defaultAnalyzeMode) {
-      ref.read(analyzeModeProvider.notifier).state = settings.defaultAnalyzeMode;
+          ref.read(analyzeModeProvider.notifier).state =
+              settings.defaultAnalyzeMode;
         }
       } catch (e) {
         // Providers already have fallback values, no action needed
@@ -110,7 +112,8 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
                       height: 80,
                       decoration: BoxDecoration(
                         gradient: WFGradients.purpleGradient,
-                        borderRadius: BorderRadius.circular(WFDims.radiusXLarge),
+                        borderRadius:
+                            BorderRadius.circular(WFDims.radiusXLarge),
                         boxShadow: WFShadows.purpleGlow,
                       ),
                       child: Icon(
@@ -124,14 +127,15 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
                     const SizedBox(height: WFDims.spacingS),
                     Text(
                       'Scan messages for manipulation patterns',
-                      style: WFTextStyles.bodyMedium.copyWith(color: WFColors.textTertiary),
+                      style: WFTextStyles.bodyMedium
+                          .copyWith(color: WFColors.textTertiary),
                     ),
                   ],
                 ),
               ),
-              
+
               const SizedBox(height: WFDims.spacingXXL),
-              
+
               // Controls
               GlassCard(
                 child: Column(
@@ -149,9 +153,9 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
                         _toneButton('clinical', 'Clinical', selectedTone),
                       ],
                     ),
-                    
+
                     const SizedBox(height: WFDims.spacingL),
-                    
+
                     // Mode selector
                     Text('Mode', style: WFTextStyles.h4),
                     const SizedBox(height: WFDims.spacingS),
@@ -165,23 +169,26 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
                   ],
                 ),
               ),
-              
+
               const SizedBox(height: WFDims.spacingL),
-              
+
               // Input
               GlassCard(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      selectedMode == 'scan' ? 'Message to analyze' : 'Messages (one per line)',
+                      selectedMode == 'scan'
+                          ? 'Message to analyze'
+                          : 'Messages (one per line)',
                       style: WFTextStyles.h4,
                     ),
                     const SizedBox(height: WFDims.spacingS),
                     if (selectedMode == 'pattern')
                       Text(
                         'One message per line.',
-                        style: WFTextStyles.bodySmall.copyWith(color: WFColors.textTertiary),
+                        style: WFTextStyles.bodySmall
+                            .copyWith(color: WFColors.textTertiary),
                       ),
                     const SizedBox(height: WFDims.spacingS),
                     Stack(
@@ -191,23 +198,30 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
                           maxLines: selectedMode == 'scan' ? 6 : 8,
                           style: WFTextStyles.bodyMedium,
                           decoration: InputDecoration(
-                            hintText: selectedMode == 'scan' 
-                              ? 'Paste the message you want to analyze...'
-                              : 'Message 1\nMessage 2\nMessage 3...',
-                            hintStyle: WFTextStyles.bodyMedium.copyWith(color: WFColors.textMuted),
+                            hintText: selectedMode == 'scan'
+                                ? 'Paste the message you want to analyze...'
+                                : 'Message 1\nMessage 2\nMessage 3...',
+                            hintStyle: WFTextStyles.bodyMedium
+                                .copyWith(color: WFColors.textMuted),
                             filled: true,
-                            fillColor: WFColors.gray800.withValues(alpha: 0.5),
+                            fillColor: WFColors.gray800.withOpacity(0.5),
                             border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(WFDims.radiusMedium),
-                              borderSide: BorderSide(color: WFColors.glassBorder),
+                              borderRadius:
+                                  BorderRadius.circular(WFDims.radiusMedium),
+                              borderSide:
+                                  BorderSide(color: WFColors.glassBorder),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(WFDims.radiusMedium),
-                              borderSide: BorderSide(color: WFColors.glassBorder),
+                              borderRadius:
+                                  BorderRadius.circular(WFDims.radiusMedium),
+                              borderSide:
+                                  BorderSide(color: WFColors.glassBorder),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(WFDims.radiusMedium),
-                              borderSide: BorderSide(color: WFColors.purple400, width: 2),
+                              borderRadius:
+                                  BorderRadius.circular(WFDims.radiusMedium),
+                              borderSide: BorderSide(
+                                  color: WFColors.purple400, width: 2),
                             ),
                           ),
                         ),
@@ -217,11 +231,11 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
                           right: 8,
                           child: Container(
                             decoration: BoxDecoration(
-                              color: WFColors.purple400.withValues(alpha: 0.9),
+                              color: WFColors.purple400.withOpacity(0.9),
                               borderRadius: BorderRadius.circular(20),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black.withValues(alpha: 0.1),
+                                  color: Colors.black.withOpacity(0.1),
                                   blurRadius: 8,
                                   offset: const Offset(0, 2),
                                 ),
@@ -243,9 +257,9 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
                   ],
                 ),
               ),
-              
+
               const SizedBox(height: WFDims.spacingL),
-              
+
               // Analyze button
               SizedBox(
                 width: double.infinity,
@@ -253,12 +267,14 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
                   text: 'Analyze',
                   icon: Icons.visibility,
                   isLoading: isAnalyzing,
-                  onPressed: _textController.text.trim().isEmpty ? null : () => _analyze(ref),
+                  onPressed: _textController.text.trim().isEmpty
+                      ? null
+                      : () => _analyze(ref),
                 ),
               ),
-              
+
               const SizedBox(height: WFDims.spacingL),
-              
+
               // Results area
               if (isAnalyzing)
                 const SkeletonCard(height: 400)
@@ -277,13 +293,14 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
                         const SizedBox(height: WFDims.spacingM),
                         Text(
                           'Results will appear here',
-                          style: WFTextStyles.bodyMedium.copyWith(color: WFColors.textMuted),
+                          style: WFTextStyles.bodyMedium
+                              .copyWith(color: WFColors.textMuted),
                         ),
                       ],
                     ),
                   ),
                 ),
-              
+
               const SizedBox(height: WFDims.spacingXXL),
             ],
           ),
@@ -300,7 +317,9 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
         child: Container(
           padding: const EdgeInsets.symmetric(vertical: WFDims.paddingS),
           decoration: BoxDecoration(
-            color: isSelected ? WFColors.purple500.withValues(alpha: 0.2) : WFColors.gray800.withValues(alpha: 0.3),
+            color: isSelected
+                ? WFColors.purple500.withOpacity(0.2)
+                : WFColors.gray800.withOpacity(0.3),
             borderRadius: BorderRadius.circular(WFDims.radiusSmall),
             border: Border.all(
               color: isSelected ? WFColors.purple400 : WFColors.gray600,
@@ -326,7 +345,9 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
         child: Container(
           padding: const EdgeInsets.symmetric(vertical: WFDims.paddingS),
           decoration: BoxDecoration(
-            color: isSelected ? WFColors.purple500.withValues(alpha: 0.2) : WFColors.gray800.withValues(alpha: 0.3),
+            color: isSelected
+                ? WFColors.purple500.withOpacity(0.2)
+                : WFColors.gray800.withOpacity(0.3),
             borderRadius: BorderRadius.circular(WFDims.radiusSmall),
             border: Border.all(
               color: isSelected ? WFColors.purple400 : WFColors.gray600,
@@ -388,7 +409,8 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
         actions: [
           TextButton(
             onPressed: () => Navigator.of(context).pop(),
-            child: Text('Close', style: WFTextStyles.button.copyWith(color: WFColors.purple400)),
+            child: Text('Close',
+                style: WFTextStyles.button.copyWith(color: WFColors.purple400)),
           ),
         ],
       ),
@@ -398,7 +420,7 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
   Future<void> _pickImage(ImageSource source) async {
     // Store context before async operations
     final context = this.context;
-    
+
     try {
       final ImagePicker picker = ImagePicker();
       final XFile? image = await picker.pickImage(
@@ -411,7 +433,7 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
       if (image != null) {
         // Check if widget is still mounted before showing dialog
         if (!mounted) return;
-        
+
         // Show loading dialog
         showDialog(
           context: context,
@@ -423,7 +445,8 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
               children: [
                 const CircularProgressIndicator(color: WFColors.purple400),
                 const SizedBox(height: WFDims.spacingM),
-                Text('Processing image with OCR...', style: WFTextStyles.bodyMedium),
+                Text('Processing image with OCR...',
+                    style: WFTextStyles.bodyMedium),
               ],
             ),
           ),
@@ -432,13 +455,14 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
         try {
           // Create InputImage from the picked image
           final inputImage = InputImage.fromFilePath(image.path);
-          
+
           // Initialize text recognizer
           final textRecognizer = GoogleMlKit.vision.textRecognizer();
-          
+
           // Process the image
-          final RecognizedText recognizedText = await textRecognizer.processImage(inputImage);
-          
+          final RecognizedText recognizedText =
+              await textRecognizer.processImage(inputImage);
+
           // Extract text blocks
           String extractedText = '';
           for (TextBlock block in recognizedText.blocks) {
@@ -446,25 +470,26 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
               extractedText += '${line.text}\n';
             }
           }
-          
+
           // Clean up the recognizer
           textRecognizer.close();
-          
+
           // Check if widget is still mounted before closing dialog
           if (!mounted) return;
-          
+
           // Close loading dialog
           Navigator.of(context).pop();
 
           if (extractedText.trim().isNotEmpty) {
             // Insert extracted text into the controller
             _textController.text = extractedText.trim();
-            
+
             // Show success message
             if (mounted) {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  content: Text('✅ OCR Complete! Extracted ${extractedText.trim().split('\n').length} lines of text.'),
+                  content: Text(
+                      '✅ OCR Complete! Extracted ${extractedText.trim().split('\n').length} lines of text.'),
                   backgroundColor: WFColors.purple400,
                   duration: const Duration(seconds: 3),
                 ),
@@ -475,21 +500,21 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
             if (mounted) {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  content: Text('⚠️ No text detected in the image. Please try a clearer image.'),
+                  content: Text(
+                      '⚠️ No text detected in the image. Please try a clearer image.'),
                   backgroundColor: WFColors.warning,
                   duration: const Duration(seconds: 3),
                 ),
               );
             }
           }
-          
         } catch (ocrError) {
           // Check if widget is still mounted before closing dialog
           if (!mounted) return;
-          
+
           // Close loading dialog
           Navigator.of(context).pop();
-          
+
           // Show OCR error
           if (mounted) {
             ScaffoldMessenger.of(context).showSnackBar(
@@ -505,12 +530,12 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
     } catch (e) {
       // Check if widget is still mounted before closing dialog
       if (!mounted) return;
-      
+
       // Close loading dialog if open
       if (Navigator.canPop(context)) {
         Navigator.of(context).pop();
       }
-      
+
       // Show error message
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
@@ -526,16 +551,16 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
   Future<void> _analyze(WidgetRef ref) async {
     final selectedTone = ref.read(analyzeToneProvider);
     final selectedMode = ref.read(analyzeModeProvider);
-    
+
     ref.read(isAnalyzingProvider.notifier).state = true;
     ref.read(analyzeResultProvider.notifier).state = null;
 
     try {
       final apiService = ref.read(apiServiceProvider);
-      
+
       // Build request payload (exact bodies)
       final Map<String, dynamic> requestBody;
-      
+
       if (selectedMode == 'scan') {
         requestBody = WhisperfireServices.buildRequestPayload(
           tab: 'scan',
@@ -552,7 +577,7 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
             .map((line) => line.trim())
             .where((line) => line.isNotEmpty)
             .toList();
-            
+
         requestBody = WhisperfireServices.buildRequestPayload(
           tab: 'pattern',
           relationship: 'Partner', // Default
@@ -598,7 +623,6 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
           curve: Curves.easeOut,
         );
       });
-
     } catch (e) {
       // Show error
       if (mounted) {
@@ -616,7 +640,8 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
 
   Widget _buildResultCard(WhisperfireResponse result, String mode) {
     if (mode == 'scan') {
-      return ScanOutputCard(result: result, original: _textController.text.trim());
+      return ScanOutputCard(
+          result: result, original: _textController.text.trim());
     } else {
       return PatternOutputCard(result: result);
     }
@@ -625,7 +650,7 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
   // Mock response for development
   Future<WhisperfireResponse> _getMockResponse(String mode, String tone) async {
     await Future.delayed(const Duration(seconds: 2)); // Simulate API delay
-    
+
     if (mode == 'scan') {
       return MockData.mockScanResponse;
     } else {

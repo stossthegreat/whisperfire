@@ -1,5 +1,3 @@
-
-
 class CategoryProgress {
   int xp;
   int level;
@@ -34,8 +32,8 @@ class UserProfile {
     Map<String, CategoryProgress>? categories,
     Set<String>? unlockedLessons,
     this.hasSeenOnboarding = false,
-  }) : categories = categories ?? {},
-       unlockedLessons = unlockedLessons ?? {};
+  })  : categories = categories ?? {},
+        unlockedLessons = unlockedLessons ?? {};
 
   void ensureCategory(String key) {
     categories.putIfAbsent(key, () => CategoryProgress());
@@ -46,7 +44,8 @@ class UserProfile {
     if (json['categories'] != null) {
       final categoriesJson = json['categories'] as Map<String, dynamic>;
       categoriesJson.forEach((key, value) {
-        categoriesMap[key] = CategoryProgress.fromJson(value as Map<String, dynamic>);
+        categoriesMap[key] =
+            CategoryProgress.fromJson(value as Map<String, dynamic>);
       });
     }
 
@@ -69,9 +68,10 @@ class UserProfile {
     return {
       'id': id,
       'xpTotal': xpTotal,
-      'categories': categories.map((key, value) => MapEntry(key, value.toJson())),
+      'categories':
+          categories.map((key, value) => MapEntry(key, value.toJson())),
       'unlockedLessons': unlockedLessons.toList(),
       'hasSeenOnboarding': hasSeenOnboarding,
     };
   }
-} 
+}

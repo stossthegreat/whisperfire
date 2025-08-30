@@ -69,9 +69,10 @@ class ConceptView extends StatelessWidget {
                     children: [
                       Text(
                         '${index + 1}.',
-                        style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style:
+                            Theme.of(context).textTheme.titleMedium?.copyWith(
+                                  fontWeight: FontWeight.bold,
+                                ),
                       ),
                       const SizedBox(width: 16),
                       Expanded(
@@ -198,15 +199,15 @@ class _RewriteViewState extends State<RewriteView> {
           Text(
             'Original: "${widget.task.input}"',
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-              fontStyle: FontStyle.italic,
-            ),
+                  fontStyle: FontStyle.italic,
+                ),
           ),
           const SizedBox(height: 8),
           Text(
             'Example: "${widget.task.example}"',
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-              color: Colors.grey[600],
-            ),
+                  color: Colors.grey[600],
+                ),
           ),
           const SizedBox(height: 24),
           Expanded(
@@ -299,13 +300,15 @@ class _SimulationViewState extends State<SimulationView> {
   bool _evaluateResponse(String response) {
     // MVP scoring: success if reply is short, contains intrigue words, and excludes over-explaining words
     if (response.length >= 140) return false;
-    
+
     final intrigueWords = ['maybe', 'later', 'curious', 'earn', 'depends'];
     final overExplainingWords = ['because', 'let me explain'];
-    
-    final hasIntrigue = intrigueWords.any((word) => response.toLowerCase().contains(word));
-    final hasOverExplaining = overExplainingWords.any((word) => response.toLowerCase().contains(word));
-    
+
+    final hasIntrigue =
+        intrigueWords.any((word) => response.toLowerCase().contains(word));
+    final hasOverExplaining = overExplainingWords
+        .any((word) => response.toLowerCase().contains(word));
+
     return hasIntrigue && !hasOverExplaining;
   }
 }
@@ -388,9 +391,9 @@ class CompleteView extends StatelessWidget {
           Text(
             '+$xp XP',
             style: Theme.of(context).textTheme.headlineLarge?.copyWith(
-              color: Colors.green,
-              fontWeight: FontWeight.bold,
-            ),
+                  color: Colors.green,
+                  fontWeight: FontWeight.bold,
+                ),
           ),
           const SizedBox(height: 32),
           ElevatedButton(
@@ -401,4 +404,4 @@ class CompleteView extends StatelessWidget {
       ),
     );
   }
-} 
+}

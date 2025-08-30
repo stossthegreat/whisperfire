@@ -17,8 +17,10 @@ class ArchetypePills extends StatelessWidget {
       runSpacing: WFDims.spacingS,
       children: archetypes.map((archetype) {
         return Pill(
-          text: '${_getArchetypeEmoji(archetype.label)} ${archetype.label} — ${archetype.weight}%',
-          backgroundColor: _getArchetypeColor(archetype.weight).withValues(alpha: 0.2),
+          text:
+              '${_getArchetypeEmoji(archetype.label)} ${archetype.label} — ${archetype.weight}%',
+          backgroundColor:
+              _getArchetypeColor(archetype.weight).withOpacity(0.2),
           textColor: _getArchetypeColor(archetype.weight),
         );
       }).toList(),
@@ -63,4 +65,4 @@ class ArchetypeItem {
     required this.label,
     required this.weight,
   });
-} 
+}

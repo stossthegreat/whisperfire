@@ -96,28 +96,28 @@ class ResponsiveUtils {
 extension ResponsiveExtension on BuildContext {
   /// Get screen width
   double get screenWidth => MediaQuery.of(this).size.width;
-  
+
   /// Get screen height
   double get screenHeight => MediaQuery.of(this).size.height;
-  
+
   /// Get responsive width percentage
   double w(double percentage) => screenWidth * (percentage / 100);
-  
+
   /// Get responsive height percentage
   double h(double percentage) => screenHeight * (percentage / 100);
-  
+
   /// Get responsive font size
   double fs(double percentage) => screenWidth * (percentage / 100);
-  
+
   /// Get responsive spacing
   double sp(double percentage) => screenHeight * (percentage / 100);
-  
+
   /// Check if screen is small
   bool get isSmallScreen => screenWidth < 400;
-  
+
   /// Check if screen is medium
   bool get isMediumScreen => screenWidth >= 400 && screenWidth < 600;
-  
+
   /// Check if screen is large
   bool get isLargeScreen => screenWidth >= 600;
-} 
+}

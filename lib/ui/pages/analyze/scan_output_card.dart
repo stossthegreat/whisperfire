@@ -10,7 +10,8 @@ import '../../molecules/molecules.dart';
 class ScanOutputCard extends StatelessWidget {
   final WhisperfireResponse result;
   final String original;
-  const ScanOutputCard({super.key, required this.result, required this.original});
+  const ScanOutputCard(
+      {super.key, required this.result, required this.original});
 
   @override
   Widget build(BuildContext context) {
@@ -32,11 +33,11 @@ class ScanOutputCard extends StatelessWidget {
                     // Share button - top right
                     Container(
                       decoration: BoxDecoration(
-                        color: WFColors.purple400.withValues(alpha: 0.9),
+                        color: WFColors.purple400.withOpacity(0.9),
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black.withValues(alpha: 0.1),
+                            color: Colors.black.withOpacity(0.1),
                             blurRadius: 8,
                             offset: const Offset(0, 2),
                           ),
@@ -80,7 +81,8 @@ class ScanOutputCard extends StatelessWidget {
                 _section('⚠️', 'Mistake', result.motives),
 
               // 5) 🔥 What you should've said (one lethal line or first line)
-              _section('🔥', 'What you should\'ve said', _oneLine(result.suggestedReply.text)),
+              _section('🔥', 'What you should\'ve said',
+                  _oneLine(result.suggestedReply.text)),
 
               // 6) ✨ Why it works (3–5 bullets from power_play)
               if (whyBullets.isNotEmpty)
@@ -94,7 +96,7 @@ class ScanOutputCard extends StatelessWidget {
               const SizedBox(height: 60),
             ],
           ),
-          
+
           // Beguile AI logo - positioned at the very bottom
           Positioned(
             bottom: 16,
@@ -110,7 +112,7 @@ class ScanOutputCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.15),
+                    color: Colors.black.withOpacity(0.15),
                     blurRadius: 10,
                     offset: const Offset(0, 3),
                   ),
@@ -178,15 +180,24 @@ Powered by Beguile AI 🚀
 
   String _nickname(String label) {
     switch (label.toLowerCase()) {
-      case 'gaslighting': return 'Gaslight Gourmet';
-      case 'love bombing': return 'Love Bomber';
-      case 'darvo': return 'DARVO Master';
-      case 'triangulation': return 'Triangle Architect';
-      case 'silent treatment': return 'Silent Assassin';
-      case 'hoovering': return 'Hoover Hero';
-      case 'breadcrumbing': return 'Breadcrumb Baker';
-      case 'none detected': return 'Clean Scan';
-      default: return 'Pattern Detected';
+      case 'gaslighting':
+        return 'Gaslight Gourmet';
+      case 'love bombing':
+        return 'Love Bomber';
+      case 'darvo':
+        return 'DARVO Master';
+      case 'triangulation':
+        return 'Triangle Architect';
+      case 'silent treatment':
+        return 'Silent Assassin';
+      case 'hoovering':
+        return 'Hoover Hero';
+      case 'breadcrumbing':
+        return 'Breadcrumb Baker';
+      case 'none detected':
+        return 'Clean Scan';
+      default:
+        return 'Pattern Detected';
     }
   }
 
@@ -227,31 +238,33 @@ Powered by Beguile AI 🚀
         SectionTitle(emoji: emoji, title: title),
         const SizedBox(height: WFDims.titleBodySpacing),
         ...items.map((b) => Padding(
-          padding: const EdgeInsets.only(bottom: 6),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                width: 4, height: 4,
-                margin: const EdgeInsets.only(top: 10, right: WFDims.spacingS),
-                decoration: BoxDecoration(
-                  color: WFColors.purple400,
-                  borderRadius: BorderRadius.circular(2),
-                ),
-              ),
-              Expanded(
-                child: Text(
-                  b,
-                  style: WFTextStyles.bodyMedium.copyWith(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.black,
+              padding: const EdgeInsets.only(bottom: 6),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    width: 4,
+                    height: 4,
+                    margin:
+                        const EdgeInsets.only(top: 10, right: WFDims.spacingS),
+                    decoration: BoxDecoration(
+                      color: WFColors.purple400,
+                      borderRadius: BorderRadius.circular(2),
+                    ),
                   ),
-                ),
+                  Expanded(
+                    child: Text(
+                      b,
+                      style: WFTextStyles.bodyMedium.copyWith(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w700,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            ],
-          ),
-        )),
+            )),
         const SizedBox(height: WFDims.sectionSpacing),
       ],
     );

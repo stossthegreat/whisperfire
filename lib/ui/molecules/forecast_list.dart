@@ -15,14 +15,16 @@ class ForecastList extends StatelessWidget {
       children: forecasts.asMap().entries.map((entry) {
         final index = entry.key;
         final forecast = entry.value;
-        
+
         return Padding(
           padding: EdgeInsets.only(
             bottom: index < forecasts.length - 1 ? WFDims.spacingS : 0,
           ),
           child: Row(
             children: [
-              Text('📈', style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600)),
+              Text('📈',
+                  style: const TextStyle(
+                      fontSize: 18, fontWeight: FontWeight.w600)),
               const SizedBox(width: WFDims.spacingS),
               Expanded(
                 child: RichText(
@@ -79,4 +81,4 @@ class ForecastItem {
     required this.event,
     required this.likelihood,
   });
-} 
+}

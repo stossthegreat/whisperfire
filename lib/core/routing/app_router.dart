@@ -52,7 +52,7 @@ class AppRouter {
               final category = state.pathParameters['category']!;
               final world = int.parse(state.pathParameters['world']!);
               final lesson = int.parse(state.pathParameters['lesson']!);
-              
+
               // Validate category
               if (!kCategories.contains(category)) {
                 return Scaffold(
@@ -64,7 +64,7 @@ class AppRouter {
                   ),
                 );
               }
-              
+
               // Validate world
               if (world < 1 || world > 4) {
                 return Scaffold(
@@ -76,7 +76,7 @@ class AppRouter {
                   ),
                 );
               }
-              
+
               return LessonPlayerPage(
                 category: category,
                 world: world,
@@ -93,13 +93,16 @@ class AppRouter {
             path: '/mentor/:mentorId',
             name: 'mentorDetail',
             builder: (context, state) {
-              final mentorId = state.pathParameters['mentorId']!; // Fixed: use pathParameters
-              final mentor = MentorConstants.getMentorById(mentorId); // Get mentor object
-              
+              final mentorId = state
+                  .pathParameters['mentorId']!; // Fixed: use pathParameters
+              final mentor =
+                  MentorConstants.getMentorById(mentorId); // Get mentor object
+
               // Fallback to first mentor if not found
               final selectedMentor = mentor ?? MentorConstants.mentors.first;
-              
-              return MentorDetailPage(mentor: selectedMentor); // Fixed: pass Mentor object
+
+              return MentorDetailPage(
+                  mentor: selectedMentor); // Fixed: pass Mentor object
             },
           ),
           GoRoute(

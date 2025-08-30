@@ -28,12 +28,42 @@ class LessonsCatalogPage extends ConsumerWidget {
 
   Widget _buildCategoriesGrid(BuildContext context, UserProfile profile) {
     const categoryData = [
-      {'slug': 'seduction', 'name': 'Magnetic Presence', 'color': 0xFFE91E63, 'emoji': '💫'},
-      {'slug': 'gravity', 'name': 'Composed Authority', 'color': 0xFF26A69A, 'emoji': '❄️'},
-      {'slug': 'frame', 'name': 'Conversation Frames', 'color': 0xFF3F51B5, 'emoji': '🎭'},
-      {'slug': 'scarcity', 'name': 'Scarcity & Desire', 'color': 0xFFFF9800, 'emoji': '💎'},
-      {'slug': 'deception', 'name': 'Hidden Dynamics', 'color': 0xFF9C27B0, 'emoji': '🎭'},
-      {'slug': 'coldpower', 'name': 'Strategic Influence', 'color': 0xFF4CAF50, 'emoji': '⚔️'},
+      {
+        'slug': 'seduction',
+        'name': 'Magnetic Presence',
+        'color': 0xFFE91E63,
+        'emoji': '💫'
+      },
+      {
+        'slug': 'gravity',
+        'name': 'Composed Authority',
+        'color': 0xFF26A69A,
+        'emoji': '❄️'
+      },
+      {
+        'slug': 'frame',
+        'name': 'Conversation Frames',
+        'color': 0xFF3F51B5,
+        'emoji': '🎭'
+      },
+      {
+        'slug': 'scarcity',
+        'name': 'Scarcity & Desire',
+        'color': 0xFFFF9800,
+        'emoji': '💎'
+      },
+      {
+        'slug': 'deception',
+        'name': 'Hidden Dynamics',
+        'color': 0xFF9C27B0,
+        'emoji': '🎭'
+      },
+      {
+        'slug': 'coldpower',
+        'name': 'Strategic Influence',
+        'color': 0xFF4CAF50,
+        'emoji': '⚔️'
+      },
     ];
 
     return GridView.builder(
@@ -47,8 +77,9 @@ class LessonsCatalogPage extends ConsumerWidget {
       itemCount: categoryData.length,
       itemBuilder: (context, index) {
         final category = categoryData[index];
-        final categoryProgress = profile.categories[category['slug']!] ?? CategoryProgress();
-        
+        final categoryProgress =
+            profile.categories[category['slug']!] ?? CategoryProgress();
+
         return _buildCategoryCard(
           context,
           category['slug'] as String,
@@ -84,24 +115,24 @@ class LessonsCatalogPage extends ConsumerWidget {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              Color(color).withValues(alpha: 0.05),
-              Color(color).withValues(alpha: 0.1),
+              Color(color).withOpacity(0.05),
+              Color(color).withOpacity(0.1),
             ],
           ),
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
-            color: Color(color).withValues(alpha: 0.2),
+            color: Color(color).withOpacity(0.2),
             width: 1.5,
           ),
           boxShadow: [
             BoxShadow(
-              color: Color(color).withValues(alpha: 0.08),
+              color: Color(color).withOpacity(0.08),
               blurRadius: 16,
               offset: const Offset(0, 6),
               spreadRadius: 0,
             ),
             BoxShadow(
-              color: Colors.black.withValues(alpha: 0.04),
+              color: Colors.black.withOpacity(0.04),
               blurRadius: 32,
               offset: const Offset(0, 12),
               spreadRadius: 0,
@@ -128,7 +159,8 @@ class LessonsCatalogPage extends ConsumerWidget {
               ),
               const SizedBox(height: 16),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                 decoration: BoxDecoration(
                   color: Color(color),
                   borderRadius: BorderRadius.circular(12),
@@ -154,4 +186,4 @@ class LessonsCatalogPage extends ConsumerWidget {
       ),
     );
   }
-} 
+}

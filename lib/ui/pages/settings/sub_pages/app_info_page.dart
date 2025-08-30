@@ -65,7 +65,8 @@ class _AppInfoPageState extends State<AppInfoPage> {
                             height: 100,
                             decoration: BoxDecoration(
                               gradient: WFGradients.purpleGradient,
-                              borderRadius: BorderRadius.circular(WFDims.radiusXLarge),
+                              borderRadius:
+                                  BorderRadius.circular(WFDims.radiusXLarge),
                               boxShadow: WFShadows.purpleGlow,
                             ),
                             child: Icon(
@@ -93,43 +94,53 @@ class _AppInfoPageState extends State<AppInfoPage> {
                         ],
                       ),
                     ),
-                    
+
                     const SizedBox(height: WFDims.spacingXXL),
-                    
+
                     // App Version Section
                     _buildInfoSection(
                       'App Information',
                       Icons.info,
                       [
                         if (_packageInfo != null) ...[
-                          _buildInfoTile('Version', _packageInfo!.version, Icons.system_update),
+                          _buildInfoTile('Version', _packageInfo!.version,
+                              Icons.system_update),
                           const SizedBox(height: WFDims.spacingM),
-                          _buildInfoTile('Build Number', _packageInfo!.buildNumber, Icons.build),
+                          _buildInfoTile('Build Number',
+                              _packageInfo!.buildNumber, Icons.build),
                           const SizedBox(height: WFDims.spacingM),
                         ],
                         _buildInfoTile('App Name', 'Beguile AI', Icons.apps),
                         const SizedBox(height: WFDims.spacingM),
-                        _buildInfoTile('Package', _packageInfo?.packageName ?? 'com.beguile.ai', Icons.inventory),
+                        _buildInfoTile(
+                            'Package',
+                            _packageInfo?.packageName ?? 'com.beguile.ai',
+                            Icons.inventory),
                       ],
                     ),
-                    
+
                     const SizedBox(height: WFDims.spacingL),
-                    
+
                     // About Section
                     _buildInfoSection(
                       'About',
                       Icons.auto_awesome,
                       [
-                        _buildInfoTile('Description', 'AI-powered learning platform for mastering influence and psychology', Icons.description),
+                        _buildInfoTile(
+                            'Description',
+                            'AI-powered learning platform for mastering influence and psychology',
+                            Icons.description),
                         const SizedBox(height: WFDims.spacingM),
-                        _buildInfoTile('Category', 'Education & Learning', Icons.category),
+                        _buildInfoTile(
+                            'Category', 'Education & Learning', Icons.category),
                         const SizedBox(height: WFDims.spacingM),
-                        _buildInfoTile('Developer', 'Beguile AI Team', Icons.developer_mode),
+                        _buildInfoTile('Developer', 'Beguile AI Team',
+                            Icons.developer_mode),
                       ],
                     ),
-                    
+
                     const SizedBox(height: WFDims.spacingL),
-                    
+
                     // Contact Section
                     _buildInfoSection(
                       'Contact & Support',
@@ -157,9 +168,9 @@ class _AppInfoPageState extends State<AppInfoPage> {
                         ),
                       ],
                     ),
-                    
+
                     const SizedBox(height: WFDims.spacingXXL),
-                    
+
                     // Footer
                     Center(
                       child: Text(
@@ -170,7 +181,7 @@ class _AppInfoPageState extends State<AppInfoPage> {
                         textAlign: TextAlign.center,
                       ),
                     ),
-                    
+
                     const SizedBox(height: WFDims.spacingXXL),
                   ],
                 ),
@@ -205,9 +216,9 @@ class _AppInfoPageState extends State<AppInfoPage> {
     return Container(
       padding: const EdgeInsets.all(WFDims.paddingM),
       decoration: BoxDecoration(
-        color: WFColors.gray800.withValues(alpha: 0.3),
+        color: WFColors.gray800.withOpacity(0.3),
         borderRadius: BorderRadius.circular(WFDims.radiusMedium),
-        border: Border.all(color: WFColors.glassBorder.withValues(alpha: 0.3)),
+        border: Border.all(color: WFColors.glassBorder.withOpacity(0.3)),
       ),
       child: Row(
         children: [
@@ -221,7 +232,8 @@ class _AppInfoPageState extends State<AppInfoPage> {
                 const SizedBox(height: 2),
                 Text(
                   value,
-                  style: WFTextStyles.bodyMedium.copyWith(color: WFColors.textSecondary),
+                  style: WFTextStyles.bodyMedium
+                      .copyWith(color: WFColors.textSecondary),
                 ),
               ],
             ),
@@ -243,9 +255,9 @@ class _AppInfoPageState extends State<AppInfoPage> {
       child: Container(
         padding: const EdgeInsets.all(WFDims.paddingM),
         decoration: BoxDecoration(
-          color: WFColors.gray800.withValues(alpha: 0.3),
+          color: WFColors.gray800.withOpacity(0.3),
           borderRadius: BorderRadius.circular(WFDims.radiusMedium),
-          border: Border.all(color: WFColors.glassBorder.withValues(alpha: 0.3)),
+          border: Border.all(color: WFColors.glassBorder.withOpacity(0.3)),
         ),
         child: Row(
           children: [
@@ -259,7 +271,8 @@ class _AppInfoPageState extends State<AppInfoPage> {
                   const SizedBox(height: 2),
                   Text(
                     subtitle,
-                    style: WFTextStyles.bodySmall.copyWith(color: WFColors.textTertiary),
+                    style: WFTextStyles.bodySmall
+                        .copyWith(color: WFColors.textTertiary),
                   ),
                 ],
               ),
@@ -279,16 +292,17 @@ class _AppInfoPageState extends State<AppInfoPage> {
     const email = 'support@beguile.ai';
     const subject = 'Beguile AI Support Request';
     const body = 'Hello Beguile AI team,\n\nI need help with:';
-    
+
     final url = 'mailto:$email?subject=$subject&body=$body';
-    
+
     try {
       // TODO: Implement email opening
       await Clipboard.setData(const ClipboardData(text: email));
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: Text('Support email copied to clipboard: support@beguile.ai'),
+            content:
+                Text('Support email copied to clipboard: support@beguile.ai'),
             backgroundColor: WFColors.purple400,
           ),
         );
@@ -328,7 +342,7 @@ Package: ${_packageInfo?.packageName ?? 'com.beguile.ai'}
 Website: beguile.ai
 Support: support@beguile.ai
 ''';
-    
+
     await Clipboard.setData(ClipboardData(text: info));
     if (mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -339,4 +353,4 @@ Support: support@beguile.ai
       );
     }
   }
-} 
+}

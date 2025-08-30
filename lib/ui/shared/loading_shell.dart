@@ -3,7 +3,7 @@ import '../../core/theme/theme.dart';
 
 class LoadingShell extends StatelessWidget {
   final String? message;
-  
+
   const LoadingShell({super.key, this.message});
 
   @override
@@ -27,4 +27,4 @@ class LoadingShell extends StatelessWidget {
       ),
     );
   }
-} 
+}

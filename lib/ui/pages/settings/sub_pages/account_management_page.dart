@@ -41,9 +41,9 @@ class AccountManagementPage extends ConsumerWidget {
         children: [
           // Warning Section
           _buildWarningSection(context),
-          
+
           const SizedBox(height: WFDims.spacingL),
-          
+
           // Data Management Section
           _buildSection(
             'Data Management',
@@ -63,9 +63,9 @@ class AccountManagementPage extends ConsumerWidget {
               ),
             ],
           ),
-          
+
           const SizedBox(height: WFDims.spacingL),
-          
+
           // Account Actions Section
           _buildSection(
             'Account Actions',
@@ -87,7 +87,7 @@ class AccountManagementPage extends ConsumerWidget {
               ),
             ],
           ),
-          
+
           const SizedBox(height: WFDims.spacingXXL),
         ],
       ),
@@ -98,9 +98,9 @@ class AccountManagementPage extends ConsumerWidget {
     return Container(
       padding: const EdgeInsets.all(WFDims.paddingL),
       decoration: BoxDecoration(
-        color: Colors.amber.withValues(alpha: 0.1),
+        color: Colors.amber.withOpacity(0.1),
         borderRadius: BorderRadius.circular(WFDims.radiusMedium),
-        border: Border.all(color: Colors.amber.withValues(alpha: 0.3)),
+        border: Border.all(color: Colors.amber.withOpacity(0.3)),
       ),
       child: Row(
         children: [
@@ -135,10 +135,13 @@ class AccountManagementPage extends ConsumerWidget {
               ],
             ),
             const SizedBox(height: WFDims.spacingL),
-            ...children.expand((child) => [
-              child,
-              if (child != children.last) const SizedBox(height: WFDims.spacingM),
-            ]).toList(),
+            ...children
+                .expand((child) => [
+                      child,
+                      if (child != children.last)
+                        const SizedBox(height: WFDims.spacingM),
+                    ])
+                .toList(),
           ],
         ),
       ),
@@ -158,33 +161,30 @@ class AccountManagementPage extends ConsumerWidget {
       child: Container(
         padding: const EdgeInsets.all(WFDims.paddingM),
         decoration: BoxDecoration(
-          color: WFColors.gray800.withValues(alpha: 0.3),
+          color: WFColors.gray800.withOpacity(0.3),
           borderRadius: BorderRadius.circular(WFDims.radiusMedium),
-          border: Border.all(color: WFColors.glassBorder.withValues(alpha: 0.3)),
+          border: Border.all(color: WFColors.glassBorder.withOpacity(0.3)),
         ),
         child: Row(
           children: [
-            Icon(
-              icon, 
-              color: isDestructive ? Colors.red : WFColors.purple400, 
-              size: 20
-            ),
+            Icon(icon,
+                color: isDestructive ? Colors.red : WFColors.purple400,
+                size: 20),
             const SizedBox(width: WFDims.spacingM),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    title, 
+                    title,
                     style: WFTextStyles.labelLarge.copyWith(
                       color: isDestructive ? Colors.red : null,
                     ),
                   ),
                   const SizedBox(height: 2),
-                  Text(
-                    subtitle, 
-                    style: WFTextStyles.bodySmall.copyWith(color: WFColors.textTertiary)
-                  ),
+                  Text(subtitle,
+                      style: WFTextStyles.bodySmall
+                          .copyWith(color: WFColors.textTertiary)),
                 ],
               ),
             ),
@@ -312,10 +312,11 @@ class AccountManagementPage extends ConsumerWidget {
                 const SnackBar(content: Text('Account deleted permanently')),
               );
             },
-            child: Text('Delete Permanently', style: TextStyle(color: Colors.red)),
+            child:
+                Text('Delete Permanently', style: TextStyle(color: Colors.red)),
           ),
         ],
       ),
     );
   }
-} 
+}

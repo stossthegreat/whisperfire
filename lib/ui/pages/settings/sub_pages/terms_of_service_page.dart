@@ -187,17 +187,19 @@ If any provision of these terms is found to be unenforceable, the remaining prov
                         ],
                       ),
                     ),
-                    
+
                     const SizedBox(height: WFDims.spacingXXL),
-                    
+
                     // Terms of Service Content
                     Container(
                       width: double.infinity,
                       padding: const EdgeInsets.all(WFDims.paddingL),
                       decoration: BoxDecoration(
-                        color: WFColors.gray800.withValues(alpha: 0.3),
-                        borderRadius: BorderRadius.circular(WFDims.radiusMedium),
-                        border: Border.all(color: WFColors.glassBorder.withValues(alpha: 0.3)),
+                        color: WFColors.gray800.withOpacity(0.3),
+                        borderRadius:
+                            BorderRadius.circular(WFDims.radiusMedium),
+                        border: Border.all(
+                            color: WFColors.glassBorder.withOpacity(0.3)),
                       ),
                       child: Text(
                         _termsContent,
@@ -207,7 +209,7 @@ If any provision of these terms is found to be unenforceable, the remaining prov
                         ),
                       ),
                     ),
-                    
+
                     const SizedBox(height: WFDims.spacingXXL),
                   ],
                 ),
@@ -228,4 +230,4 @@ If any provision of these terms is found to be unenforceable, the remaining prov
       );
     }
   }
-} 
+}

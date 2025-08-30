@@ -23,7 +23,6 @@ android {
 
     // Use explicit ints in KTS (don't rely on flutter.compileSdkVersion in KTS)
     compileSdk = 34
-    ndkVersion = "25.2.9519653"
 
     defaultConfig {
         applicationId = "com.beguileai.whisperfire"

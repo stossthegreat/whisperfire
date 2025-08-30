@@ -7,13 +7,13 @@ class WFGradients {
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );
-  
+
   static const LinearGradient redPink = LinearGradient(
     colors: WFColors.redPink,
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );
-  
+
   static const LinearGradient purpleGradient = LinearGradient(
     colors: [
       Color(0xFF7C3AED), // purple-600
@@ -22,4 +22,4 @@ class WFGradients {
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );
-} 
+}

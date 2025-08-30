@@ -16,8 +16,8 @@ class Kicker extends StatelessWidget {
     return Text(
       text.toUpperCase(),
       style: WFTextStyles.kicker.copyWith(
-        color: color ?? WFColors.purple300.withValues(alpha: 0.8),
+        color: color ?? WFColors.purple300.withOpacity(0.8),
       ),
     );
   }
-} 
+}

@@ -7,7 +7,7 @@ import '../lesson_player/lesson_player_page.dart';
 
 class WorldOverviewPage extends ConsumerWidget {
   final String category;
-  
+
   const WorldOverviewPage({
     super.key,
     required this.category,
@@ -16,10 +16,10 @@ class WorldOverviewPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     // WorldOverviewPage.build called with category: $category
-    
+
     final categoryName = _getCategoryDisplayName(category);
     final color = _getCategoryColor(category);
-    
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -68,20 +68,19 @@ class WorldOverviewPage extends ConsumerWidget {
       ),
     );
   }
-  
+
   Widget _buildWorldCard(BuildContext context, int world, Color color) {
     return Consumer(
       builder: (context, ref, child) {
         // _buildWorldCard called with category: $category, world: $world
-        
-        final lessonsFuture = ref.watch(
-          worldLessonsProvider((category, world))
-        );
-        
+
+        final lessonsFuture =
+            ref.watch(worldLessonsProvider((category, world)));
+
         return lessonsFuture.when(
           data: (lessons) {
             final lessonCount = lessons.length;
-            
+
             return Container(
               margin: const EdgeInsets.only(bottom: 24),
               decoration: BoxDecoration(
@@ -90,23 +89,23 @@ class WorldOverviewPage extends ConsumerWidget {
                   end: Alignment.bottomRight,
                   colors: [
                     Colors.white,
-                    color.withValues(alpha: 0.02),
+                    color.withOpacity(0.02),
                   ],
                 ),
                 borderRadius: BorderRadius.circular(24),
                 border: Border.all(
-                  color: color.withValues(alpha: 0.15),
+                  color: color.withOpacity(0.15),
                   width: 1.5,
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: color.withValues(alpha: 0.08),
+                    color: color.withOpacity(0.08),
                     blurRadius: 20,
                     offset: const Offset(0, 8),
                     spreadRadius: 0,
                   ),
                   BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.04),
+                    color: Colors.black.withOpacity(0.04),
                     blurRadius: 40,
                     offset: const Offset(0, 16),
                     spreadRadius: 0,
@@ -129,7 +128,7 @@ class WorldOverviewPage extends ConsumerWidget {
                               width: 48,
                               height: 48,
                               decoration: BoxDecoration(
-                                color: color.withValues(alpha: 0.1),
+                                color: color.withOpacity(0.1),
                                 borderRadius: BorderRadius.circular(24),
                               ),
                               child: Icon(
@@ -208,7 +207,7 @@ class WorldOverviewPage extends ConsumerWidget {
               borderRadius: BorderRadius.circular(20),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.1),
+                  color: Colors.black.withOpacity(0.1),
                   blurRadius: 10,
                   offset: const Offset(0, 4),
                 ),
@@ -224,7 +223,7 @@ class WorldOverviewPage extends ConsumerWidget {
               borderRadius: BorderRadius.circular(20),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.1),
+                  color: Colors.black.withOpacity(0.1),
                   blurRadius: 10,
                   offset: const Offset(0, 4),
                 ),
@@ -236,8 +235,9 @@ class WorldOverviewPage extends ConsumerWidget {
       },
     );
   }
-  
-  void _showWorldLessons(BuildContext context, int world, List<Lesson> lessons) {
+
+  void _showWorldLessons(
+      BuildContext context, int world, List<Lesson> lessons) {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
@@ -305,7 +305,7 @@ class WorldOverviewPage extends ConsumerWidget {
       ),
     );
   }
-  
+
   Widget _buildLessonTile(BuildContext context, Lesson lesson) {
     return Container(
       margin: const EdgeInsets.only(bottom: 16),
@@ -315,23 +315,23 @@ class WorldOverviewPage extends ConsumerWidget {
           end: Alignment.bottomRight,
           colors: [
             Colors.white,
-            _getCategoryColor(category).withValues(alpha: 0.02),
+            _getCategoryColor(category).withOpacity(0.02),
           ],
         ),
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: _getCategoryColor(category).withValues(alpha: 0.1),
+          color: _getCategoryColor(category).withOpacity(0.1),
           width: 1,
         ),
         boxShadow: [
           BoxShadow(
-            color: _getCategoryColor(category).withValues(alpha: 0.06),
+            color: _getCategoryColor(category).withOpacity(0.06),
             blurRadius: 12,
             offset: const Offset(0, 4),
             spreadRadius: 0,
           ),
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.03),
+            color: Colors.black.withOpacity(0.03),
             blurRadius: 24,
             offset: const Offset(0, 8),
             spreadRadius: 0,
@@ -371,12 +371,13 @@ class WorldOverviewPage extends ConsumerWidget {
                       ),
                       const SizedBox(height: 6),
                       Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 12, vertical: 6),
                         decoration: BoxDecoration(
-                          color: _getCategoryColor(category).withValues(alpha: 0.1),
+                          color: _getCategoryColor(category).withOpacity(0.1),
                           borderRadius: BorderRadius.circular(12),
                           border: Border.all(
-                            color: _getCategoryColor(category).withValues(alpha: 0.2),
+                            color: _getCategoryColor(category).withOpacity(0.2),
                             width: 1,
                           ),
                         ),
@@ -395,10 +396,10 @@ class WorldOverviewPage extends ConsumerWidget {
                 Container(
                   padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(
-                    color: _getCategoryColor(category).withValues(alpha: 0.1),
+                    color: _getCategoryColor(category).withOpacity(0.1),
                     borderRadius: BorderRadius.circular(12),
                     border: Border.all(
-                      color: _getCategoryColor(category).withValues(alpha: 0.2),
+                      color: _getCategoryColor(category).withOpacity(0.2),
                       width: 1,
                     ),
                   ),
@@ -415,28 +416,42 @@ class WorldOverviewPage extends ConsumerWidget {
       ),
     );
   }
-  
+
   String _getCategoryDisplayName(String category) {
     switch (category) {
-      case 'charisma': return 'Magnetic Presence';
-      case 'gravity': return 'Composed Authority';
-      case 'frame': return 'Conversation Frames';
-      case 'scarcity': return 'Scarcity & Desire';
-      case 'composed_authority': return 'Composed Authority';
-      case 'hidden_dynamics': return 'Hidden Dynamics';
-      default: return category;
+      case 'charisma':
+        return 'Magnetic Presence';
+      case 'gravity':
+        return 'Composed Authority';
+      case 'frame':
+        return 'Conversation Frames';
+      case 'scarcity':
+        return 'Scarcity & Desire';
+      case 'composed_authority':
+        return 'Composed Authority';
+      case 'hidden_dynamics':
+        return 'Hidden Dynamics';
+      default:
+        return category;
     }
   }
-  
+
   Color _getCategoryColor(String category) {
     switch (category) {
-      case 'charisma': return const Color(0xFFE91E63);
-      case 'gravity': return const Color(0xFF26A69A);
-      case 'frame': return const Color(0xFF3F51B5);
-      case 'scarcity': return const Color(0xFFFF9800);
-      case 'composed_authority': return const Color(0xFF9C27B0);
-      case 'hidden_dynamics': return const Color(0xFF4CAF50);
-      default: return Colors.purple;
+      case 'charisma':
+        return const Color(0xFFE91E63);
+      case 'gravity':
+        return const Color(0xFF26A69A);
+      case 'frame':
+        return const Color(0xFF3F51B5);
+      case 'scarcity':
+        return const Color(0xFFFF9800);
+      case 'composed_authority':
+        return const Color(0xFF9C27B0);
+      case 'hidden_dynamics':
+        return const Color(0xFF4CAF50);
+      default:
+        return Colors.purple;
     }
   }
-} 
+}

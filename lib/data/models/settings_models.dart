@@ -6,7 +6,8 @@ part 'settings_models.g.dart';
 @JsonSerializable()
 class AppSettings extends Equatable {
   @JsonKey(name: 'default_tone')
-  final String defaultTone; // "brutal|soft|clinical" maps to "savage|soft|clinical"
+  final String
+      defaultTone; // "brutal|soft|clinical" maps to "savage|soft|clinical"
   @JsonKey(name: 'default_analyze_mode')
   final String defaultAnalyzeMode; // "scan|pattern"
   final bool streaming;
@@ -26,18 +27,19 @@ class AppSettings extends Equatable {
     required this.safeMode,
   });
 
-  factory AppSettings.fromJson(Map<String, dynamic> json) => _$AppSettingsFromJson(json);
+  factory AppSettings.fromJson(Map<String, dynamic> json) =>
+      _$AppSettingsFromJson(json);
   Map<String, dynamic> toJson() => _$AppSettingsToJson(this);
 
   // Default settings
   factory AppSettings.defaults() => const AppSettings(
-    defaultTone: 'brutal', // Maps to 'savage'
-    defaultAnalyzeMode: 'scan',
-    streaming: true,
-    saveHistory: true,
-    ocrLang: 'eng',
-    safeMode: false,
-  );
+        defaultTone: 'brutal', // Maps to 'savage'
+        defaultAnalyzeMode: 'scan',
+        streaming: true,
+        saveHistory: true,
+        ocrLang: 'eng',
+        safeMode: false,
+      );
 
   AppSettings copyWith({
     String? defaultTone,
@@ -58,5 +60,12 @@ class AppSettings extends Equatable {
   }
 
   @override
-  List<Object?> get props => [defaultTone, defaultAnalyzeMode, streaming, saveHistory, ocrLang, safeMode];
-} 
+  List<Object?> get props => [
+        defaultTone,
+        defaultAnalyzeMode,
+        streaming,
+        saveHistory,
+        ocrLang,
+        safeMode
+      ];
+}

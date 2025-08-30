@@ -7,7 +7,7 @@ class FrostedCard extends StatelessWidget {
   final double borderRadius;
   final Color? backgroundColor;
   final double? blurStrength;
-  
+
   const FrostedCard({
     super.key,
     required this.child,
@@ -29,15 +29,15 @@ class FrostedCard extends StatelessWidget {
         child: Container(
           padding: padding ?? const EdgeInsets.all(20),
           decoration: BoxDecoration(
-            color: (backgroundColor ?? Colors.white).withValues(alpha: 0.8),
+            color: (backgroundColor ?? Colors.white).withOpacity(0.8),
             borderRadius: BorderRadius.circular(borderRadius),
             border: Border.all(
-              color: Colors.white.withValues(alpha: 0.2),
+              color: Colors.white.withOpacity(0.2),
               width: 1.5,
             ),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withValues(alpha: 0.1),
+                color: Colors.black.withOpacity(0.1),
                 blurRadius: 20,
                 offset: const Offset(0, 10),
               ),
@@ -48,4 +48,4 @@ class FrostedCard extends StatelessWidget {
       ),
     );
   }
-} 
+}

@@ -14,16 +14,15 @@ class ReceiptsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Scan: exactly 2; Pattern: 3-4 ordered
-    final displayReceipts = mode == 'scan' 
-        ? receipts.take(2).toList() 
-        : receipts.take(4).toList();
+    final displayReceipts =
+        mode == 'scan' ? receipts.take(2).toList() : receipts.take(4).toList();
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: displayReceipts.asMap().entries.map((entry) {
         final index = entry.key;
         final receipt = entry.value;
-        
+
         return Padding(
           padding: EdgeInsets.only(
             bottom: index < displayReceipts.length - 1 ? WFDims.spacingS : 0,
@@ -59,4 +58,4 @@ class ReceiptsList extends StatelessWidget {
       }).toList(),
     );
   }
-} 
+}

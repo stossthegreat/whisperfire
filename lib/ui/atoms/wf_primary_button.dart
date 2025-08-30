@@ -41,10 +41,11 @@ class WFPrimaryButton extends StatelessWidget {
           onTap: isLoading ? null : onPressed,
           borderRadius: BorderRadius.circular(WFDims.radiusMedium),
           child: Container(
-            padding: padding ?? const EdgeInsets.symmetric(
-              horizontal: WFDims.paddingXL,
-              vertical: WFDims.paddingM,
-            ),
+            padding: padding ??
+                const EdgeInsets.symmetric(
+                  horizontal: WFDims.paddingXL,
+                  vertical: WFDims.paddingM,
+                ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
@@ -55,7 +56,8 @@ class WFPrimaryButton extends StatelessWidget {
                     height: 16,
                     child: CircularProgressIndicator(
                       strokeWidth: 2,
-                      valueColor: AlwaysStoppedAnimation<Color>(WFColors.textPrimary),
+                      valueColor:
+                          AlwaysStoppedAnimation<Color>(WFColors.textPrimary),
                     ),
                   ),
                   const SizedBox(width: WFDims.spacingS),
@@ -74,4 +76,4 @@ class WFPrimaryButton extends StatelessWidget {
       ),
     );
   }
-} 
+}

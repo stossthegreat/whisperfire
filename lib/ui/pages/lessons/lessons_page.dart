@@ -74,7 +74,8 @@ class _LessonsContent extends ConsumerWidget {
                   ),
                 ),
                 const SizedBox(height: WFDims.spacingL),
-                Text('Learning Hub', style: WFTextStyles.h1.copyWith(color: Colors.white)),
+                Text('Learning Hub',
+                    style: WFTextStyles.h1.copyWith(color: Colors.white)),
                 const SizedBox(height: WFDims.spacingS),
                 Text(
                   'Total XP: ${profile.xpTotal}',
@@ -86,9 +87,9 @@ class _LessonsContent extends ConsumerWidget {
               ],
             ),
           ),
-          
+
           const SizedBox(height: WFDims.spacingXL),
-          
+
           // Categories Grid
           Text(
             'Choose Your Path',
@@ -98,7 +99,7 @@ class _LessonsContent extends ConsumerWidget {
             ),
           ),
           const SizedBox(height: WFDims.spacingL),
-          
+
           // Categories Grid
           GridView.builder(
             shrinkWrap: true,
@@ -113,17 +114,48 @@ class _LessonsContent extends ConsumerWidget {
             itemCount: 6,
             itemBuilder: (context, index) {
               final categoryData = [
-                {'slug': 'seduction', 'name': 'Magnetic Presence', 'color': 0xFFE91E63, 'emoji': '💫'},
-                {'slug': 'gravity', 'name': 'Composed Authority', 'color': 0xFF26A69A, 'emoji': '❄️'},
-                {'slug': 'frame', 'name': 'Conversation Frames', 'color': 0xFF3F51B5, 'emoji': '🎭'},
-                {'slug': 'scarcity', 'name': 'Scarcity & Desire', 'color': 0xFFFF9800, 'emoji': '💎'},
-                {'slug': 'deception', 'name': 'Hidden Dynamics', 'color': 0xFF9C27B0, 'emoji': '🎭'},
-                {'slug': 'coldpower', 'name': 'Strategic Influence', 'color': 0xFF4CAF50, 'emoji': '⚔️'},
+                {
+                  'slug': 'seduction',
+                  'name': 'Magnetic Presence',
+                  'color': 0xFFE91E63,
+                  'emoji': '💫'
+                },
+                {
+                  'slug': 'gravity',
+                  'name': 'Composed Authority',
+                  'color': 0xFF26A69A,
+                  'emoji': '❄️'
+                },
+                {
+                  'slug': 'frame',
+                  'name': 'Conversation Frames',
+                  'color': 0xFF3F51B5,
+                  'emoji': '🎭'
+                },
+                {
+                  'slug': 'scarcity',
+                  'name': 'Scarcity & Desire',
+                  'color': 0xFFFF9800,
+                  'emoji': '💎'
+                },
+                {
+                  'slug': 'deception',
+                  'name': 'Hidden Dynamics',
+                  'color': 0xFF9C27B0,
+                  'emoji': '🎭'
+                },
+                {
+                  'slug': 'coldpower',
+                  'name': 'Strategic Influence',
+                  'color': 0xFF4CAF50,
+                  'emoji': '⚔️'
+                },
               ];
-              
+
               final category = categoryData[index];
-              final categoryProgress = profile.categories[category['slug']!] ?? CategoryProgress();
-              
+              final categoryProgress =
+                  profile.categories[category['slug']!] ?? CategoryProgress();
+
               return _buildCategoryCard(
                 context,
                 category['slug'] as String,
@@ -138,7 +170,7 @@ class _LessonsContent extends ConsumerWidget {
       ),
     );
   }
-  
+
   Widget _buildCategoryCard(
     BuildContext context,
     String categorySlug,
@@ -149,7 +181,7 @@ class _LessonsContent extends ConsumerWidget {
   ) {
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
-    
+
     return GestureDetector(
       onTap: () {
         Navigator.of(context).push(
@@ -160,9 +192,9 @@ class _LessonsContent extends ConsumerWidget {
       },
       child: Container(
         decoration: BoxDecoration(
-          color: Color(color).withValues(alpha: 0.1),
+          color: Color(color).withOpacity(0.1),
           borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: Color(color).withValues(alpha: 0.3)),
+          border: Border.all(color: Color(color).withOpacity(0.3)),
         ),
         child: Padding(
           padding: EdgeInsets.all(screenWidth * 0.03),
@@ -190,9 +222,8 @@ class _LessonsContent extends ConsumerWidget {
               SizedBox(height: screenHeight * 0.015),
               Container(
                 padding: EdgeInsets.symmetric(
-                  horizontal: screenWidth * 0.025, 
-                  vertical: screenHeight * 0.005
-                ),
+                    horizontal: screenWidth * 0.025,
+                    vertical: screenHeight * 0.005),
                 decoration: BoxDecoration(
                   color: Color(color),
                   borderRadius: BorderRadius.circular(10),
@@ -220,4 +251,4 @@ class _LessonsContent extends ConsumerWidget {
       ),
     );
   }
-} 
+}

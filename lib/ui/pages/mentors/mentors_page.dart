@@ -17,7 +17,7 @@ class MentorsPage extends ConsumerStatefulWidget {
 
 class _MentorsPageState extends ConsumerState<MentorsPage> {
   bool _isLoading = true;
-  
+
   @override
   void initState() {
     super.initState();
@@ -37,9 +37,7 @@ class _MentorsPageState extends ConsumerState<MentorsPage> {
       backgroundColor: WFColors.base,
       appBar: const AppHeader(),
       body: SafeArea(
-        child: _isLoading 
-          ? const _LoadingShell()
-          : const _MentorsContent(),
+        child: _isLoading ? const _LoadingShell() : const _MentorsContent(),
       ),
     );
   }
@@ -77,14 +75,15 @@ class _MentorsContent extends ConsumerWidget {
                 const SizedBox(height: WFDims.spacingS),
                 Text(
                   'Select a legendary defender to guide your training',
-                  style: WFTextStyles.bodyMedium.copyWith(color: WFColors.textTertiary),
+                  style: WFTextStyles.bodyMedium
+                      .copyWith(color: WFColors.textTertiary),
                 ),
               ],
             ),
           ),
-          
+
           const SizedBox(height: WFDims.spacingXXL),
-          
+
           // Mentors grid (2 columns that scale gracefully with screen size)
           GridView.count(
             shrinkWrap: true,
@@ -97,7 +96,7 @@ class _MentorsContent extends ConsumerWidget {
               return _MentorCard(mentor: mentor);
             }).toList(),
           ),
-          
+
           // Remove the debug fallback grid
           const SizedBox(height: WFDims.spacingXXL),
           // Add extra bottom padding to prevent overflow
@@ -110,14 +109,14 @@ class _MentorsContent extends ConsumerWidget {
 
 class _MentorCard extends ConsumerStatefulWidget {
   final Mentor mentor;
-  
+
   const _MentorCard({required this.mentor});
 
   @override
   ConsumerState<_MentorCard> createState() => _MentorCardState();
 }
 
-class _MentorCardState extends ConsumerState<_MentorCard> 
+class _MentorCardState extends ConsumerState<_MentorCard>
     with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
   late Animation<double> _scaleAnimation;
@@ -132,7 +131,7 @@ class _MentorCardState extends ConsumerState<_MentorCard>
       duration: const Duration(milliseconds: 300),
       vsync: this,
     );
-    
+
     _scaleAnimation = Tween<double>(
       begin: 0.8,
       end: 1.0,
@@ -140,7 +139,7 @@ class _MentorCardState extends ConsumerState<_MentorCard>
       parent: _animationController,
       curve: Curves.elasticOut,
     ));
-    
+
     _fadeAnimation = Tween<double>(
       begin: 0.0,
       end: 1.0,
@@ -148,7 +147,7 @@ class _MentorCardState extends ConsumerState<_MentorCard>
       parent: _animationController,
       curve: Curves.easeOut,
     ));
-    
+
     _slideAnimation = Tween<Offset>(
       begin: const Offset(0, 0.3),
       end: Offset.zero,
@@ -156,7 +155,7 @@ class _MentorCardState extends ConsumerState<_MentorCard>
       parent: _animationController,
       curve: Curves.easeOutCubic,
     ));
-    
+
     _animationController.forward();
   }
 
@@ -170,15 +169,24 @@ class _MentorCardState extends ConsumerState<_MentorCard>
   Widget build(BuildContext context) {
     // Get screen dimensions for responsive sizing
     final screenWidth = MediaQuery.of(context).size.width;
-    
+
     // Responsive sizing based on screen dimensions
-    final portraitSize = screenWidth < 400 ? 80.0 : 
-                        screenWidth < 600 ? 100.0 : 120.0;
-    final titleFontSize = screenWidth < 400 ? 14.0 : 
-                         screenWidth < 600 ? 16.0 : 18.0;
-    final subtitleFontSize = screenWidth < 400 ? 10.0 : 
-                            screenWidth < 600 ? 12.0 : 14.0;
-    
+    final portraitSize = screenWidth < 400
+        ? 80.0
+        : screenWidth < 600
+            ? 100.0
+            : 120.0;
+    final titleFontSize = screenWidth < 400
+        ? 14.0
+        : screenWidth < 600
+            ? 16.0
+            : 18.0;
+    final subtitleFontSize = screenWidth < 400
+        ? 10.0
+        : screenWidth < 600
+            ? 12.0
+            : 14.0;
+
     return AnimatedBuilder(
       animation: _animationController,
       builder: (context, child) {
@@ -214,8 +222,8 @@ class _MentorCardState extends ConsumerState<_MentorCard>
                                   begin: Alignment.topLeft,
                                   end: Alignment.bottomRight,
                                   colors: [
-                                    Colors.white.withValues(alpha: 0.15),
-                                    Colors.white.withValues(alpha: 0.05),
+                                    Colors.white.withOpacity(0.15),
+                                    Colors.white.withOpacity(0.05),
                                   ],
                                 ),
                               ),
@@ -228,14 +236,15 @@ class _MentorCardState extends ConsumerState<_MentorCard>
                                       height: portraitSize,
                                       decoration: BoxDecoration(
                                         shape: BoxShape.circle,
-                                        color: Colors.white.withValues(alpha: 0.2),
+                                        color: Colors.white.withOpacity(0.2),
                                         border: Border.all(
-                                          color: Colors.white.withValues(alpha: 0.4),
+                                          color: Colors.white.withOpacity(0.4),
                                           width: 3,
                                         ),
                                         boxShadow: [
                                           BoxShadow(
-                                            color: Colors.black.withValues(alpha: 0.2),
+                                            color:
+                                                Colors.black.withOpacity(0.2),
                                             blurRadius: 15,
                                             offset: const Offset(0, 6),
                                           ),
@@ -245,11 +254,13 @@ class _MentorCardState extends ConsumerState<_MentorCard>
                                         child: Image.asset(
                                           'assets/images/mentors/${widget.mentor.id}.png',
                                           fit: BoxFit.cover,
-                                          errorBuilder: (context, error, stackTrace) {
+                                          errorBuilder:
+                                              (context, error, stackTrace) {
                                             return Container(
                                               decoration: BoxDecoration(
                                                 shape: BoxShape.circle,
-                                                gradient: WFGradients.purpleGradient,
+                                                gradient:
+                                                    WFGradients.purpleGradient,
                                               ),
                                               child: Icon(
                                                 Icons.person,
@@ -268,10 +279,10 @@ class _MentorCardState extends ConsumerState<_MentorCard>
                                         vertical: 8,
                                       ),
                                       decoration: BoxDecoration(
-                                        color: Colors.white.withValues(alpha: 0.15),
+                                        color: Colors.white.withOpacity(0.15),
                                         borderRadius: BorderRadius.circular(20),
                                         border: Border.all(
-                                          color: Colors.white.withValues(alpha: 0.3),
+                                          color: Colors.white.withOpacity(0.3),
                                           width: 1,
                                         ),
                                       ),
@@ -292,17 +303,19 @@ class _MentorCardState extends ConsumerState<_MentorCard>
                               ),
                             ),
                           ),
-                          
+
                           // Name section (takes 1/5 of the card height)
                           Expanded(
                             flex: 1,
                             child: Container(
                               width: double.infinity,
                               decoration: BoxDecoration(
-                                color: WFColors.gray800.withValues(alpha: 0.3),
+                                color: WFColors.gray800.withOpacity(0.3),
                                 borderRadius: const BorderRadius.only(
-                                  bottomLeft: Radius.circular(WFDims.radiusLarge),
-                                  bottomRight: Radius.circular(WFDims.radiusLarge),
+                                  bottomLeft:
+                                      Radius.circular(WFDims.radiusLarge),
+                                  bottomRight:
+                                      Radius.circular(WFDims.radiusLarge),
                                 ),
                               ),
                               child: Center(
@@ -355,12 +368,14 @@ class _MentorCardState extends ConsumerState<_MentorCard>
   void _selectMentor(BuildContext context) {
     // Add haptic feedback
     HapticFeedback.lightImpact();
-    
+
     ref.read(selectedMentorProvider.notifier).state = widget.mentor;
-    
+
     // Initialize with greeting
-    ref.read(mentorMessagesProvider(widget.mentor.id).notifier).addGreeting(widget.mentor.greeting);
-    
+    ref
+        .read(mentorMessagesProvider(widget.mentor.id).notifier)
+        .addGreeting(widget.mentor.greeting);
+
     // Navigate to mentor detail
     Navigator.of(context).push(
       MaterialPageRoute(

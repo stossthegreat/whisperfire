@@ -12,7 +12,8 @@ class MentorConstants {
       avatar: '🎭',
       description: 'Understand charm tactics to defend against them',
       color: ['#EC4899', '#EF4444'], // pink-500 to red-500
-      greeting: 'Ah, my dear friend... I am Casanova. I will teach you the arts of charm - not to use, but to recognize when used against you. Knowledge is your shield.',
+      greeting:
+          'Ah, my dear friend... I am Casanova. I will teach you the arts of charm - not to use, but to recognize when used against you. Knowledge is your shield.',
       presets: ['drill', 'advise', 'roleplay', 'chat'],
     ),
     Mentor(
@@ -22,7 +23,8 @@ class MentorConstants {
       avatar: '👑',
       description: 'Recognize power plays and influence tactics',
       color: ['#F59E0B', '#EA580C'], // yellow-500 to orange-600
-      greeting: 'I am Cleopatra, Queen of Egypt. I commanded empires through influence. I will teach you to see through the veils of power and recognize when others seek to control you.',
+      greeting:
+          'I am Cleopatra, Queen of Egypt. I commanded empires through influence. I will teach you to see through the veils of power and recognize when others seek to control you.',
       presets: ['drill', 'advise', 'roleplay', 'chat'],
     ),
     Mentor(
@@ -32,7 +34,8 @@ class MentorConstants {
       avatar: '⚔️',
       description: 'Understand cunning to protect against it',
       color: ['#6B7280', '#EF4444'], // gray-500 to red-500
-      greeting: 'I am Niccolò Machiavelli. In the game of power, knowledge of cunning protects you from those who would use it against you. What strategy shall we analyze?',
+      greeting:
+          'I am Niccolò Machiavelli. In the game of power, knowledge of cunning protects you from those who would use it against you. What strategy shall we analyze?',
       presets: ['drill', 'advise', 'roleplay', 'chat'],
     ),
     Mentor(
@@ -42,7 +45,8 @@ class MentorConstants {
       avatar: '⚔️',
       description: 'Know yourself and your opponent',
       color: ['#EF4444', '#EA580C'], // red-500 to orange-600
-      greeting: 'I am Sun Tzu. To defeat manipulation, you must know yourself and know your enemy. Every psychological battle is won before it begins. What strategy do you seek?',
+      greeting:
+          'I am Sun Tzu. To defeat manipulation, you must know yourself and know your enemy. Every psychological battle is won before it begins. What strategy do you seek?',
       presets: ['drill', 'advise', 'roleplay', 'chat'],
     ),
     Mentor(
@@ -52,7 +56,8 @@ class MentorConstants {
       avatar: '🏛️',
       description: 'Inner fortress of the mind',
       color: ['#8B5CF6', '#6366F1'], // purple-500 to indigo-500
-      greeting: 'I am Marcus Aurelius. True defense begins within. Build an unshakeable fortress of mind that no manipulation can breach. What troubles your inner peace?',
+      greeting:
+          'I am Marcus Aurelius. True defense begins within. Build an unshakeable fortress of mind that no manipulation can breach. What troubles your inner peace?',
       presets: ['drill', 'advise', 'roleplay', 'chat'],
     ),
     Mentor(
@@ -62,7 +67,8 @@ class MentorConstants {
       avatar: '🎩',
       description: 'Never surrender to manipulation',
       color: ['#EA580C', '#EF4444'], // orange-600 to red-500
-      greeting: 'I am Winston Churchill. In our darkest hours of psychological warfare, we discover our greatest strength. Never give in to manipulation. How shall we fortify your resolve?',
+      greeting:
+          'I am Winston Churchill. In our darkest hours of psychological warfare, we discover our greatest strength. Never give in to manipulation. How shall we fortify your resolve?',
       presets: ['drill', 'advise', 'roleplay', 'chat'],
     ),
   ];
@@ -85,104 +91,115 @@ class MockData {
   // The lesson engine will create default profiles automatically
 
   static WhisperfireResponse get mockScanResponse => const WhisperfireResponse(
-    context: WhisperfireContext(
-      relationship: 'Partner',
-      tone: 'savage',
-      contentType: 'dm',
-      subjectName: null,
-      tab: 'scan',
-    ),
-    headline: 'Classic reality distortion detected',
-    coreTake: 'Systematic attempt to undermine your perception of reality through contradiction and blame-shifting.',
-    tactic: WhisperfireTactic(label: 'Gaslighting', confidence: 89),
-    motives: 'Control narrative, avoid accountability, destabilize your confidence',
-    targeting: 'Self-trust, emotional stability, memory confidence',
-    powerPlay: 'Document everything. Gray rock method. Trust your initial instincts.',
-    receipts: [
-      '"You\'re being too dramatic" - minimizing your feelings',
-      '"I never said that" - denying previous statements',
-    ],
-    nextMoves: 'Double down on contradictions, escalate emotional manipulation',
-    suggestedReply: WhisperfireSuggestedReply(
-      style: 'one_liner',
-      text: 'I\'m documenting our conversations now. Let\'s stick to facts.',
-    ),
-    safety: WhisperfireSafety(
-      riskLevel: 'MODERATE',
-      notes: 'Document interactions, consider support network',
-    ),
-    metrics: WhisperfireMetrics(
-      redFlag: 85,
-      certainty: 78,
-      viralPotential: 42,
-    ),
-    pattern: null,
-    ambiguity: null,
-  );
+        context: WhisperfireContext(
+          relationship: 'Partner',
+          tone: 'savage',
+          contentType: 'dm',
+          subjectName: null,
+          tab: 'scan',
+        ),
+        headline: 'Classic reality distortion detected',
+        coreTake:
+            'Systematic attempt to undermine your perception of reality through contradiction and blame-shifting.',
+        tactic: WhisperfireTactic(label: 'Gaslighting', confidence: 89),
+        motives:
+            'Control narrative, avoid accountability, destabilize your confidence',
+        targeting: 'Self-trust, emotional stability, memory confidence',
+        powerPlay:
+            'Document everything. Gray rock method. Trust your initial instincts.',
+        receipts: [
+          '"You\'re being too dramatic" - minimizing your feelings',
+          '"I never said that" - denying previous statements',
+        ],
+        nextMoves:
+            'Double down on contradictions, escalate emotional manipulation',
+        suggestedReply: WhisperfireSuggestedReply(
+          style: 'one_liner',
+          text:
+              'I\'m documenting our conversations now. Let\'s stick to facts.',
+        ),
+        safety: WhisperfireSafety(
+          riskLevel: 'MODERATE',
+          notes: 'Document interactions, consider support network',
+        ),
+        metrics: WhisperfireMetrics(
+          redFlag: 85,
+          certainty: 78,
+          viralPotential: 42,
+        ),
+        pattern: null,
+        ambiguity: null,
+      );
 
-  static WhisperfireResponse get mockPatternResponse => const WhisperfireResponse(
-    context: WhisperfireContext(
-      relationship: 'Partner',
-      tone: 'savage',
-      contentType: 'dm',
-      subjectName: null,
-      tab: 'pattern',
-    ),
-    headline: 'Systematic manipulation pattern detected',
-    coreTake: 'Long-term psychological warfare with clear escalation cycles.',
-    tactic: WhisperfireTactic(label: 'Gaslighting', confidence: 92),
-    motives: 'Complete control, emotional dependency, isolation',
-    targeting: 'Self-trust, relationships, mental health',
-    powerPlay: 'Document everything. Set firm boundaries. Seek support.',
-    receipts: [
-      '"You\'re being too dramatic" - minimizing your feelings',
-      '"I never said that" - denying previous statements',
-      '"Everyone thinks you\'re crazy" - isolation tactic',
-      '"You made me do it" - victim blaming',
-    ],
-    nextMoves: 'Escalate manipulation, test boundaries, isolate further',
-    suggestedReply: WhisperfireSuggestedReply(
-      style: 'reverse_uno',
-      text: 'I\'m documenting our conversations. Let\'s stick to facts.',
-    ),
-    safety: WhisperfireSafety(
-      riskLevel: 'HIGH',
-      notes: 'Immediate intervention needed. Document everything.',
-    ),
-    metrics: WhisperfireMetrics(
-      redFlag: 92,
-      certainty: 89,
-      viralPotential: 67,
-    ),
-    pattern: WhisperfirePattern(
-      cycle: 'Weekly escalation',
-      prognosis: 'Will continue until stopped',
-    ),
-    ambiguity: null,
-    hiddenAgenda: 'Complete psychological control',
-    archetypes: [
-      WhisperfireArchetype(label: 'Gaslighting', weight: 92),
-      WhisperfireArchetype(label: 'Love Bombing', weight: 78),
-      WhisperfireArchetype(label: 'DARVO', weight: 65),
-    ],
-    triggerPatternMap: 'Weekly escalation cycle',
-    contradictions: [
-      'Denies previous statements',
-      'Claims victim status',
-      'Minimizes your feelings',
-    ],
-    weapons: [
-      'Emotional manipulation',
-      'Gaslighting',
-      'Isolation tactics',
-    ],
-    forecast: [
-      WhisperfireForecast(window: '3-5 days', event: 'Love bombing attempt', likelihood: 85),
-      WhisperfireForecast(window: '1 week', event: 'Escalation', likelihood: 92),
-    ],
-    counterIntervention: 'Immediate boundary setting and documentation',
-    longGame: 'Complete psychological control and dependency',
-  );
+  static WhisperfireResponse get mockPatternResponse =>
+      const WhisperfireResponse(
+        context: WhisperfireContext(
+          relationship: 'Partner',
+          tone: 'savage',
+          contentType: 'dm',
+          subjectName: null,
+          tab: 'pattern',
+        ),
+        headline: 'Systematic manipulation pattern detected',
+        coreTake:
+            'Long-term psychological warfare with clear escalation cycles.',
+        tactic: WhisperfireTactic(label: 'Gaslighting', confidence: 92),
+        motives: 'Complete control, emotional dependency, isolation',
+        targeting: 'Self-trust, relationships, mental health',
+        powerPlay: 'Document everything. Set firm boundaries. Seek support.',
+        receipts: [
+          '"You\'re being too dramatic" - minimizing your feelings',
+          '"I never said that" - denying previous statements',
+          '"Everyone thinks you\'re crazy" - isolation tactic',
+          '"You made me do it" - victim blaming',
+        ],
+        nextMoves: 'Escalate manipulation, test boundaries, isolate further',
+        suggestedReply: WhisperfireSuggestedReply(
+          style: 'reverse_uno',
+          text: 'I\'m documenting our conversations. Let\'s stick to facts.',
+        ),
+        safety: WhisperfireSafety(
+          riskLevel: 'HIGH',
+          notes: 'Immediate intervention needed. Document everything.',
+        ),
+        metrics: WhisperfireMetrics(
+          redFlag: 92,
+          certainty: 89,
+          viralPotential: 67,
+        ),
+        pattern: WhisperfirePattern(
+          cycle: 'Weekly escalation',
+          prognosis: 'Will continue until stopped',
+        ),
+        ambiguity: null,
+        hiddenAgenda: 'Complete psychological control',
+        archetypes: [
+          WhisperfireArchetype(label: 'Gaslighting', weight: 92),
+          WhisperfireArchetype(label: 'Love Bombing', weight: 78),
+          WhisperfireArchetype(label: 'DARVO', weight: 65),
+        ],
+        triggerPatternMap: 'Weekly escalation cycle',
+        contradictions: [
+          'Denies previous statements',
+          'Claims victim status',
+          'Minimizes your feelings',
+        ],
+        weapons: [
+          'Emotional manipulation',
+          'Gaslighting',
+          'Isolation tactics',
+        ],
+        forecast: [
+          WhisperfireForecast(
+              window: '3-5 days',
+              event: 'Love bombing attempt',
+              likelihood: 85),
+          WhisperfireForecast(
+              window: '1 week', event: 'Escalation', likelihood: 92),
+        ],
+        counterIntervention: 'Immediate boundary setting and documentation',
+        longGame: 'Complete psychological control and dependency',
+      );
 }
 
 // ===== UPDATED MOCK DATA =====
@@ -205,4 +222,4 @@ extension MockDataProfile on MockData {
       'charisma-world2-lesson6',
     },
   );
-} 
+}

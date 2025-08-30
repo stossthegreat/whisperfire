@@ -43,7 +43,7 @@ class WhisperfireServices {
         'messages': messages ?? [],
       };
     }
-    
+
     throw ArgumentError('Invalid tab: $tab. Must be "scan" or "pattern"');
   }
 
@@ -121,14 +121,16 @@ class WhisperfireServices {
   }
 
   // Get pattern cycle (cycle or trigger_pattern_map)
-  static String? getPatternCycle(WhisperfirePattern? pattern, String? triggerPatternMap) {
+  static String? getPatternCycle(
+      WhisperfirePattern? pattern, String? triggerPatternMap) {
     return pattern?.cycle ?? triggerPatternMap;
   }
 
   // Split comeback reply (for future use)
   static Map<String, String> splitComebackReply(String reply) {
     // Keep for future - not currently used
-    final lines = reply.split('\n').where((line) => line.trim().isNotEmpty).toList();
+    final lines =
+        reply.split('\n').where((line) => line.trim().isNotEmpty).toList();
     return {
       'roast': lines.isNotEmpty ? lines[0] : '',
       'savageAlt': lines.length > 1 ? lines[1] : '',
@@ -156,7 +158,7 @@ class WhisperfireServices {
         .where((line) => line.isNotEmpty)
         .toSet()
         .toList();
-    
+
     final dedupedReply = WhisperfireSuggestedReply(
       style: output.suggestedReply.style,
       text: replyLines.join('\n'),

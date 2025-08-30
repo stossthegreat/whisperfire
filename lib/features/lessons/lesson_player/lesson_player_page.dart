@@ -12,7 +12,7 @@ class LessonPlayerPage extends ConsumerStatefulWidget {
   final String category;
   final int world;
   final int lesson;
-  
+
   const LessonPlayerPage({
     super.key,
     required this.category,
@@ -24,29 +24,28 @@ class LessonPlayerPage extends ConsumerStatefulWidget {
   ConsumerState<LessonPlayerPage> createState() => _LessonPlayerPageState();
 }
 
-class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage> 
+class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
     with TickerProviderStateMixin {
   late Future<Lesson> _lessonFuture;
   late ConfettiController _confettiController;
   late AnimationController _pageController;
   late AnimationController _cardController;
-  
+
   int _currentStep = 0;
   bool _isCompleting = false; // Flag to prevent multiple completion calls
-  
+
   // Text controllers for validation
   late TextEditingController _rewriteController;
   late TextEditingController _reflectionController;
-  
+
   @override
   void initState() {
     super.initState();
-    _lessonFuture = ref.read(lessonRepoProvider).load(
-      widget.category, 
-      widget.world, 
-      widget.lesson
-    );
-    _confettiController = ConfettiController(duration: const Duration(milliseconds: 1200));
+    _lessonFuture = ref
+        .read(lessonRepoProvider)
+        .load(widget.category, widget.world, widget.lesson);
+    _confettiController =
+        ConfettiController(duration: const Duration(milliseconds: 1200));
     _pageController = AnimationController(
       duration: const Duration(milliseconds: 300),
       vsync: this,
@@ -55,16 +54,16 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
       duration: const Duration(milliseconds: 500),
       vsync: this,
     );
-    
+
     // Initialize text controllers
     _rewriteController = TextEditingController();
     _reflectionController = TextEditingController();
-    
+
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _cardController.forward();
     });
   }
-  
+
   @override
   void dispose() {
     _confettiController.dispose();
@@ -74,24 +73,26 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
     _reflectionController.dispose();
     super.dispose();
   }
-  
+
   void _nextStep() {
     // Validate current step before proceeding
     if (!_canProceedToNextStep()) {
       return;
     }
-    
-    if (_currentStep < 5) { // Changed from 4 to 5 to handle 6 steps
+
+    if (_currentStep < 5) {
+      // Changed from 4 to 5 to handle 6 steps
       setState(() {
         _currentStep++;
       });
       _pageController.forward(from: 0);
     }
   }
-  
+
   bool _canProceedToNextStep() {
     // Check if user has entered text for rewrite step
-    if (_currentStep == 4) { // Rewrite step (index 4, was 3)
+    if (_currentStep == 4) {
+      // Rewrite step (index 4, was 3)
       if (_rewriteController.text.trim().isEmpty) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
@@ -102,23 +103,25 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
         return false;
       }
     }
-    
+
     // Check if user has entered text for reflection step
-    if (_currentStep == 5) { // Reflection step (index 5, was 4)
+    if (_currentStep == 5) {
+      // Reflection step (index 5, was 4)
       if (_reflectionController.text.trim().isEmpty) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: Text('Please enter your reflection before completing the lesson'),
+            content: Text(
+                'Please enter your reflection before completing the lesson'),
             backgroundColor: Colors.orange,
           ),
         );
         return false;
       }
     }
-    
+
     return true;
   }
-  
+
   void _previousStep() {
     if (_currentStep > 0) {
       setState(() {
@@ -127,47 +130,49 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
       _pageController.forward(from: 0);
     }
   }
-  
+
   void _completeLesson(Lesson lesson) async {
     // Validate reflection is filled before completing
     if (_reflectionController.text.trim().isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text('Please enter your reflection before completing the lesson'),
+          content:
+              Text('Please enter your reflection before completing the lesson'),
           backgroundColor: Colors.orange,
         ),
       );
       return;
     }
-    
+
     if (!mounted || _isCompleting) return; // Prevent multiple completion calls
-    
+
     _isCompleting = true; // Set flag to prevent duplicate calls
-    
+
     _confettiController.play();
-    
+
     // Award XP
     final userId = ref.read(currentUserIdProvider);
     await ref.read(progressServiceProvider).awardXp(userId, lesson);
-    
+
     // Invalidate userProfileProvider to refresh all UI components
     ref.invalidate(userProfileProvider);
-    
+
     // Double-check if still mounted before showing dialog
     if (mounted) {
       // Use a small delay to ensure the XP award is processed
       await Future.delayed(const Duration(milliseconds: 100));
-      
-    if (mounted) {
-      showDialog(
-        context: context,
-        barrierDismissible: false,
-          builder: (dialogContext) => _buildCompletionDialog(lesson, dialogContext),
-      );
+
+      if (mounted) {
+        showDialog(
+          context: context,
+          barrierDismissible: false,
+          builder: (dialogContext) =>
+              _buildCompletionDialog(lesson, dialogContext),
+        );
       }
     }
   }
-  
+
   Widget _buildCompletionDialog(Lesson lesson, BuildContext dialogContext) {
     return PopScope(
       canPop: false,
@@ -182,49 +187,49 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
         });
       },
       child: AlertDialog(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      title: Text(
-        'Lesson Complete!',
-        style: GoogleFonts.playfairDisplay(
-          fontSize: 24,
-          fontWeight: FontWeight.bold,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        title: Text(
+          'Lesson Complete!',
+          style: GoogleFonts.playfairDisplay(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+          ),
+          textAlign: TextAlign.center,
         ),
-        textAlign: TextAlign.center,
-      ),
-      content: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(
-            'You earned ${lesson.xp} XP!',
-            style: GoogleFonts.inter(fontSize: 18),
-          ),
-          const SizedBox(height: 16),
-          Container(
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: Colors.purple[50],
-              borderRadius: BorderRadius.circular(12),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              'You earned ${lesson.xp} XP!',
+              style: GoogleFonts.inter(fontSize: 18),
             ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.star, color: Colors.purple[600], size: 24),
-                const SizedBox(width: 8),
-                Text(
-                  '${lesson.xp} XP',
-                  style: GoogleFonts.inter(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.purple[600],
+            const SizedBox(height: 16),
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.purple[50],
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.star, color: Colors.purple[600], size: 24),
+                  const SizedBox(width: 8),
+                  Text(
+                    '${lesson.xp} XP',
+                    style: GoogleFonts.inter(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.purple[600],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-        ],
-      ),
-      actions: [
-        TextButton(
+          ],
+        ),
+        actions: [
+          TextButton(
             onPressed: () {
               // Close dialog first
               Navigator.of(dialogContext).pop();
@@ -237,10 +242,10 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
                 }
               });
             },
-          child: const Text('Back to Worlds'),
-        ),
-        ElevatedButton(
-          onPressed: () {
+            child: const Text('Back to Worlds'),
+          ),
+          ElevatedButton(
+            onPressed: () {
               // Close dialog first
               Navigator.of(dialogContext).pop();
               // Reset completion flag
@@ -248,13 +253,13 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
               // Use a small delay to ensure dialog is closed before navigation
               Future.delayed(const Duration(milliseconds: 100), () {
                 if (mounted) {
-            Navigator.of(context).pop();
+                  Navigator.of(context).pop();
                 }
               });
-          },
+            },
             child: const Text('Continue'),
-        ),
-      ],
+          ),
+        ],
       ),
     );
   }
@@ -268,7 +273,7 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(child: CircularProgressIndicator());
           }
-          
+
           if (snapshot.hasError) {
             return Center(
               child: Column(
@@ -290,14 +295,14 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
               ),
             );
           }
-          
+
           final lesson = snapshot.data!;
           return _buildLessonContent(lesson);
         },
       ),
     );
   }
-  
+
   Widget _buildLessonContent(Lesson lesson) {
     return CustomScrollView(
       slivers: [
@@ -313,8 +318,8 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                   colors: [
-                    _getCategoryColor(lesson.category).withValues(alpha: 0.8),
-                    _getCategoryColor(lesson.category).withValues(alpha: 0.6),
+                    _getCategoryColor(lesson.category).withOpacity(0.8),
+                    _getCategoryColor(lesson.category).withOpacity(0.6),
                   ],
                 ),
               ),
@@ -332,7 +337,7 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
             ),
           ),
         ),
-        
+
         // Lesson content
         SliverToBoxAdapter(
           child: Padding(
@@ -342,7 +347,7 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
                 // Step indicator
                 _buildStepIndicator(),
                 const SizedBox(height: 24),
-                
+
                 // Current step content
                 AnimatedSwitcher(
                   duration: const Duration(milliseconds: 300),
@@ -357,9 +362,9 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
                   },
                   child: _buildCurrentStep(lesson),
                 ),
-                
+
                 const SizedBox(height: 24),
-                
+
                 // Navigation buttons
                 _buildNavigationButtons(lesson),
               ],
@@ -369,10 +374,17 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
       ],
     );
   }
-  
+
   Widget _buildStepIndicator() {
-    final steps = ['Hook', 'Concept', 'Teaching', 'Drill', 'Rewrite', 'Reflection'];
-    
+    final steps = [
+      'Hook',
+      'Concept',
+      'Teaching',
+      'Drill',
+      'Rewrite',
+      'Reflection'
+    ];
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: steps.asMap().entries.map((entry) {
@@ -380,16 +392,16 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
         final step = entry.value;
         final isActive = index == _currentStep;
         final isCompleted = index < _currentStep;
-        
+
         return Column(
           children: [
             Container(
               width: 32,
               height: 32,
               decoration: BoxDecoration(
-                color: isCompleted 
-                    ? Colors.green 
-                    : isActive 
+                color: isCompleted
+                    ? Colors.green
+                    : isActive
                         ? _getCategoryColor(widget.category)
                         : Colors.grey[300],
                 shape: BoxShape.circle,
@@ -406,7 +418,8 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
               style: GoogleFonts.inter(
                 fontSize: 12,
                 fontWeight: isActive ? FontWeight.bold : FontWeight.normal,
-                color: isActive ? _getCategoryColor(widget.category) : Colors.grey,
+                color:
+                    isActive ? _getCategoryColor(widget.category) : Colors.grey,
               ),
             ),
           ],
@@ -414,7 +427,7 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
       }).toList(),
     );
   }
-  
+
   Widget _buildCurrentStep(Lesson lesson) {
     switch (_currentStep) {
       case 0:
@@ -433,7 +446,7 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
         return const SizedBox.shrink();
     }
   }
-  
+
   Widget _buildHookStep(LessonContent content) {
     return FrostedCard(
       child: Column(
@@ -451,7 +464,7 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
           Text(
             content.hook,
             style: GoogleFonts.inter(
-              fontSize: 16, 
+              fontSize: 16,
               height: 1.6,
               color: Colors.black,
             ),
@@ -462,7 +475,7 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
       ),
     );
   }
-  
+
   Widget _buildConceptStep(LessonContent content) {
     return FrostedCard(
       child: Column(
@@ -478,32 +491,32 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
           ),
           const SizedBox(height: 16),
           ...content.concept.map((concept) => Padding(
-            padding: const EdgeInsets.only(bottom: 12),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  width: 8,
-                  height: 8,
-                  margin: const EdgeInsets.only(top: 6, right: 12),
-                  decoration: BoxDecoration(
-                    color: _getCategoryColor(widget.category),
-                    shape: BoxShape.circle,
-                  ),
-                ),
-                Expanded(
-                  child: Text(
-                    concept,
-                    style: GoogleFonts.inter(
-                      fontSize: 16, 
-                      height: 1.5,
-                      color: Colors.black,
+                padding: const EdgeInsets.only(bottom: 12),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      width: 8,
+                      height: 8,
+                      margin: const EdgeInsets.only(top: 6, right: 12),
+                      decoration: BoxDecoration(
+                        color: _getCategoryColor(widget.category),
+                        shape: BoxShape.circle,
+                      ),
                     ),
-                  ),
+                    Expanded(
+                      child: Text(
+                        concept,
+                        style: GoogleFonts.inter(
+                          fontSize: 16,
+                          height: 1.5,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
-          )),
+              )),
         ],
       ),
     );
@@ -526,7 +539,7 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
           Text(
             content.teaching,
             style: GoogleFonts.inter(
-              fontSize: 16, 
+              fontSize: 16,
               height: 1.6,
               color: Colors.black,
             ),
@@ -537,7 +550,7 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
       ),
     );
   }
-  
+
   Widget _buildDrillStep(LessonContent content) {
     return FrostedCard(
       child: Column(
@@ -555,7 +568,7 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
           Text(
             content.drill.question,
             style: GoogleFonts.inter(
-              fontSize: 18, 
+              fontSize: 18,
               fontWeight: FontWeight.w500,
               color: Colors.black,
             ),
@@ -569,7 +582,8 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
               child: SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () => _handleDrillAnswer(index == content.drill.answerIndex),
+                  onPressed: () =>
+                      _handleDrillAnswer(index == content.drill.answerIndex),
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.all(20),
                     shape: RoundedRectangleBorder(
@@ -592,7 +606,7 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
       ),
     );
   }
-  
+
   Widget _buildRewriteStep(LessonContent content) {
     return FrostedCard(
       child: Column(
@@ -624,7 +638,7 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
             child: Text(
               content.rewrite.input,
               style: GoogleFonts.inter(
-                fontSize: 16, 
+                fontSize: 16,
                 fontStyle: FontStyle.italic,
                 color: Colors.black,
               ),
@@ -651,7 +665,7 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
       ),
     );
   }
-  
+
   Widget _buildReflectionStep(LessonContent content) {
     return FrostedCard(
       child: Column(
@@ -689,7 +703,7 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
       ),
     );
   }
-  
+
   Widget _buildNavigationButtons(Lesson lesson) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -701,8 +715,8 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
           )
         else
           const SizedBox(width: 100),
-        
-        if (_currentStep < 5) // Changed from 4 to 5 so reflection step shows Complete Lesson
+        if (_currentStep <
+            5) // Changed from 4 to 5 so reflection step shows Complete Lesson
           ElevatedButton(
             onPressed: _nextStep,
             child: const Text('Next'),
@@ -718,19 +732,21 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
       ],
     );
   }
-  
+
   void _handleDrillAnswer(bool isCorrect) {
     if (isCorrect) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Correct!'), backgroundColor: Colors.green),
+        const SnackBar(
+            content: Text('Correct!'), backgroundColor: Colors.green),
       );
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Try again!'), backgroundColor: Colors.orange),
+        const SnackBar(
+            content: Text('Try again!'), backgroundColor: Colors.orange),
       );
     }
   }
-  
+
   void _showExample(String example) {
     showDialog(
       context: context,
@@ -746,16 +762,23 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
       ),
     );
   }
-  
+
   Color _getCategoryColor(String category) {
     switch (category) {
-      case 'charisma': return const Color(0xFFE91E63);
-      case 'gravity': return const Color(0xFF26A69A);
-      case 'frame': return const Color(0xFF3F51B5);
-      case 'scarcity': return const Color(0xFFFF9800);
-      case 'composed_authority': return const Color(0xFF9C27B0);
-      case 'hidden_dynamics': return const Color(0xFF4CAF50);
-      default: return Colors.purple;
+      case 'charisma':
+        return const Color(0xFFE91E63);
+      case 'gravity':
+        return const Color(0xFF26A69A);
+      case 'frame':
+        return const Color(0xFF3F51B5);
+      case 'scarcity':
+        return const Color(0xFFFF9800);
+      case 'composed_authority':
+        return const Color(0xFF9C27B0);
+      case 'hidden_dynamics':
+        return const Color(0xFF4CAF50);
+      default:
+        return Colors.purple;
     }
   }
-} 
+}

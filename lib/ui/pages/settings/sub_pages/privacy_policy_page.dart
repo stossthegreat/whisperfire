@@ -162,17 +162,19 @@ By using Beguile AI, you consent to this privacy policy and our data practices a
                         ],
                       ),
                     ),
-                    
+
                     const SizedBox(height: WFDims.spacingXXL),
-                    
+
                     // Privacy Policy Content
                     Container(
                       width: double.infinity,
                       padding: const EdgeInsets.all(WFDims.paddingL),
                       decoration: BoxDecoration(
-                        color: WFColors.gray800.withValues(alpha: 0.3),
-                        borderRadius: BorderRadius.circular(WFDims.radiusMedium),
-                        border: Border.all(color: WFColors.glassBorder.withValues(alpha: 0.3)),
+                        color: WFColors.gray800.withOpacity(0.3),
+                        borderRadius:
+                            BorderRadius.circular(WFDims.radiusMedium),
+                        border: Border.all(
+                            color: WFColors.glassBorder.withOpacity(0.3)),
                       ),
                       child: Text(
                         _privacyContent,
@@ -182,7 +184,7 @@ By using Beguile AI, you consent to this privacy policy and our data practices a
                         ),
                       ),
                     ),
-                    
+
                     const SizedBox(height: WFDims.spacingXXL),
                   ],
                 ),
@@ -192,7 +194,8 @@ By using Beguile AI, you consent to this privacy policy and our data practices a
   }
 
   void _sharePrivacyPolicy() async {
-    const text = 'Beguile AI Privacy Policy - Read how we protect your privacy at beguile.ai';
+    const text =
+        'Beguile AI Privacy Policy - Read how we protect your privacy at beguile.ai';
     await Clipboard.setData(const ClipboardData(text: text));
     if (mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -203,4 +206,4 @@ By using Beguile AI, you consent to this privacy policy and our data practices a
       );
     }
   }
-} 
+}

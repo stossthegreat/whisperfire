@@ -8,7 +8,8 @@ import '../models/profile_models.dart';
 
 class ApiService {
   late final Dio _dio;
-  static const String baseUrl = 'https://whisperfire-backend-production.up.railway.app'; // Your Railway backend URL
+  static const String baseUrl =
+      'https://whisperfire-backend-production.up.railway.app'; // Your Railway backend URL
   static const Duration timeout = Duration(seconds: 18);
 
   ApiService() {
@@ -34,7 +35,8 @@ class ApiService {
     // Add retry interceptor
     _dio.interceptors.add(InterceptorsWrapper(
       onError: (error, handler) async {
-        if (error.response?.statusCode == null && error.type == DioExceptionType.connectionTimeout) {
+        if (error.response?.statusCode == null &&
+            error.type == DioExceptionType.connectionTimeout) {
           // Retry once on timeout
           try {
             final response = await _dio.fetch(error.requestOptions);
@@ -50,18 +52,19 @@ class ApiService {
   }
 
   // Analyze endpoint
-  Future<WhisperfireResponse> postAnalyzeWhisperfire(Map<String, dynamic> body) async {
+  Future<WhisperfireResponse> postAnalyzeWhisperfire(
+      Map<String, dynamic> body) async {
     try {
       final response = await _dio.post('/api/v1/analyze', data: body);
-      
+
       // Raw analyze response logged in debug mode
-      
+
       // Handle the backend response format
       final data = response.data;
       if (data['success'] == true && data['data'] != null) {
         // Extract the actual analysis data and ensure all required fields exist
         final analysisData = data['data'] as Map<String, dynamic>;
-        
+
         // Ensure all required nested objects exist
         if (analysisData['context'] == null) {
           analysisData['context'] = {
@@ -72,28 +75,28 @@ class ApiService {
             'subject_name': body['subject_name'],
           };
         }
-        
+
         if (analysisData['tactic'] == null) {
           analysisData['tactic'] = {
             'label': 'Standard Communication',
             'confidence': 70
           };
         }
-        
+
         if (analysisData['suggested_reply'] == null) {
           analysisData['suggested_reply'] = {
             'style': body['tone'] ?? 'neutral',
             'text': 'Thank you for sharing that.'
           };
         }
-        
+
         if (analysisData['safety'] == null) {
           analysisData['safety'] = {
             'risk_level': 'LOW',
             'notes': 'Analysis complete'
           };
         }
-        
+
         if (analysisData['metrics'] == null) {
           analysisData['metrics'] = {
             'red_flag': 15,
@@ -101,7 +104,7 @@ class ApiService {
             'viral_potential': 25
           };
         }
-        
+
         return WhisperfireResponse.fromJson(analysisData);
       } else {
         throw Exception('Invalid response format: ${data}');
@@ -128,16 +131,17 @@ class ApiService {
           safeMode: request.options.safeMode,
         ),
       );
-      
-      final response = await _dio.post('/api/v1/mentor', data: nonStreamingRequest.toJson());
-      
+
+      final response =
+          await _dio.post('/api/v1/mentor', data: nonStreamingRequest.toJson());
+
       // Non-streaming mentor response logged in debug mode
-      
+
       // Handle the actual backend response format
       final data = response.data;
       if (data['success'] == true && data['data'] != null) {
         final mentorData = data['data'];
-        
+
         // Convert backend format to Flutter model format with proper types
         final mentorResponse = {
           'success': true,
@@ -147,7 +151,7 @@ class ApiService {
           'tips': null,
           'tokens': null,
         };
-        
+
         return MentorResponse.fromJson(mentorResponse);
       } else {
         throw Exception('Invalid response format: ${data}');
@@ -185,34 +189,34 @@ class ApiService {
       }
 
       String buffer = '';
-      
+
       await for (final chunk in response.data.stream) {
         final chunkString = String.fromCharCodes(chunk);
         buffer += chunkString;
-        
+
         // Process complete lines
         while (buffer.contains('\n')) {
           final lineEnd = buffer.indexOf('\n');
           final line = buffer.substring(0, lineEnd).trim();
           buffer = buffer.substring(lineEnd + 1);
-          
+
           if (line.startsWith('data: ')) {
             final jsonData = line.substring(6); // Remove 'data: ' prefix
-            
+
             if (kDebugMode) {
               // SSE data received: $jsonData
             }
-            
+
             try {
               final data = jsonDecode(jsonData);
-              
+
               if (data['done'] == true) {
                 if (kDebugMode) {
                   // SSE stream completed
                 }
                 return; // End of stream
               }
-              
+
               if (data['text'] != null) {
                 yield data['text'].toString();
               }
@@ -268,7 +272,8 @@ class ApiService {
     }
   }
 
-  Future<Map<String, dynamic>> getLesson(String worldId, String lessonId) async {
+  Future<Map<String, dynamic>> getLesson(
+      String worldId, String lessonId) async {
     try {
       final response = await _dio.get('/api/v1/lessons/$worldId/$lessonId');
       return response.data;

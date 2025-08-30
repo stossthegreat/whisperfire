@@ -10,15 +10,16 @@ class AppHeader extends StatelessWidget implements PreferredSizeWidget {
       height: 130, // Increased from 110 to 130 for more thickness
       color: const Color(0xFF53199C), // Purple background
       child: Padding(
-        padding: const EdgeInsets.only(top: 20), // Add top padding to move text lower
-      child: const Center(
-        child: Text(
-          "Beguile AI",
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-            fontSize: 48,
-            letterSpacing: 1.2,
+        padding: const EdgeInsets.only(
+            top: 20), // Add top padding to move text lower
+        child: const Center(
+          child: Text(
+            "Beguile AI",
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              fontSize: 48,
+              letterSpacing: 1.2,
             ),
           ),
         ),
@@ -27,5 +28,6 @@ class AppHeader extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(130); // Updated to match new height
-} 
+  Size get preferredSize =>
+      const Size.fromHeight(130); // Updated to match new height
+}

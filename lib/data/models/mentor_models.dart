@@ -5,7 +5,8 @@ part 'mentor_models.g.dart';
 
 @JsonSerializable()
 class MentorRequest extends Equatable {
-  final String mentor; // "casanova|cleopatra|machiavelli|sun_tzu|marcus_aurelius|churchill"
+  final String
+      mentor; // "casanova|cleopatra|machiavelli|sun_tzu|marcus_aurelius|churchill"
   final String preset; // "drill|advise|roleplay|chat"
   @JsonKey(name: 'user_text')
   final String userText;
@@ -18,7 +19,8 @@ class MentorRequest extends Equatable {
     required this.options,
   });
 
-  factory MentorRequest.fromJson(Map<String, dynamic> json) => _$MentorRequestFromJson(json);
+  factory MentorRequest.fromJson(Map<String, dynamic> json) =>
+      _$MentorRequestFromJson(json);
   Map<String, dynamic> toJson() => _$MentorRequestToJson(this);
 
   @override
@@ -36,7 +38,8 @@ class MentorOptions extends Equatable {
     required this.safeMode,
   });
 
-  factory MentorOptions.fromJson(Map<String, dynamic> json) => _$MentorOptionsFromJson(json);
+  factory MentorOptions.fromJson(Map<String, dynamic> json) =>
+      _$MentorOptionsFromJson(json);
   Map<String, dynamic> toJson() => _$MentorOptionsToJson(this);
 
   @override
@@ -61,7 +64,8 @@ class MentorResponse extends Equatable {
     this.tokens,
   });
 
-  factory MentorResponse.fromJson(Map<String, dynamic> json) => _$MentorResponseFromJson(json);
+  factory MentorResponse.fromJson(Map<String, dynamic> json) =>
+      _$MentorResponseFromJson(json);
   Map<String, dynamic> toJson() => _$MentorResponseToJson(this);
 
   @override
@@ -78,7 +82,8 @@ class MentorTokens extends Equatable {
     required this.completion,
   });
 
-  factory MentorTokens.fromJson(Map<String, dynamic> json) => _$MentorTokensFromJson(json);
+  factory MentorTokens.fromJson(Map<String, dynamic> json) =>
+      _$MentorTokensFromJson(json);
   Map<String, dynamic> toJson() => _$MentorTokensToJson(this);
 
   @override
@@ -108,5 +113,6 @@ class Mentor extends Equatable {
   });
 
   @override
-  List<Object?> get props => [id, name, subtitle, avatar, description, color, greeting, presets];
-} 
+  List<Object?> get props =>
+      [id, name, subtitle, avatar, description, color, greeting, presets];
+}

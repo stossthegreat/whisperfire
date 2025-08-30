@@ -6,13 +6,13 @@ import 'app.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  
+
   // Initialize Hive for local storage
   await Hive.initFlutter();
-  
+
   // Initialize cache service
   await CacheService.init();
-  
+
   runApp(
     const ProviderScope(
       child: WhisperfireApp(),

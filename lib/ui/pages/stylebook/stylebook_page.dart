@@ -32,21 +32,22 @@ class StylebookPage extends StatelessWidget {
                 children: [
                   Text('Glass Card Example', style: WFTextStyles.h4),
                   const SizedBox(height: WFDims.spacingS),
-                  Text('Glass panels: white 28–36% opacity + blur(18) + 1px border rgba(168,85,255,0.35)', 
-                       style: WFTextStyles.bodyMedium),
+                  Text(
+                      'Glass panels: white 28–36% opacity + blur(18) + 1px border rgba(168,85,255,0.35)',
+                      style: WFTextStyles.bodyMedium),
                 ],
               ),
             ),
-            
+
             const SizedBox(height: WFDims.spacingXL),
-            
+
             // Kicker Demo
             Text('Kicker', style: WFTextStyles.h3),
             const SizedBox(height: WFDims.spacingS),
             const Kicker(text: 'scan mode'),
-            
+
             const SizedBox(height: WFDims.spacingXL),
-            
+
             // Metric Bar Demo
             Text('Metric Bar', style: WFTextStyles.h3),
             const SizedBox(height: WFDims.spacingS),
@@ -61,9 +62,9 @@ class StylebookPage extends StatelessWidget {
                 ],
               ),
             ),
-            
+
             const SizedBox(height: WFDims.spacingXL),
-            
+
             // Section Title Demo
             Text('Section Title', style: WFTextStyles.h3),
             const SizedBox(height: WFDims.spacingS),
@@ -73,26 +74,28 @@ class StylebookPage extends StatelessWidget {
                 children: [
                   SectionTitle(emoji: '💥', title: 'Headline'),
                   const SizedBox(height: WFDims.titleBodySpacing),
-                  Text('This is the content under the section title', style: WFTextStyles.bodyMedium),
+                  Text('This is the content under the section title',
+                      style: WFTextStyles.bodyMedium),
                   const SizedBox(height: WFDims.sectionSpacing),
                   SectionTitle(emoji: '🕵️', title: 'The Read'),
                   const SizedBox(height: WFDims.titleBodySpacing),
-                  Text('Another section with proper spacing', style: WFTextStyles.bodyMedium),
+                  Text('Another section with proper spacing',
+                      style: WFTextStyles.bodyMedium),
                 ],
               ),
             ),
-            
+
             const SizedBox(height: WFDims.spacingXL),
-            
+
             // Copy Line Demo
             Text('Copy Line', style: WFTextStyles.h3),
             const SizedBox(height: WFDims.spacingS),
             GlassCard(
               child: CopyLine(text: 'This text can be copied to clipboard'),
             ),
-            
+
             const SizedBox(height: WFDims.spacingXL),
-            
+
             // Pills Demo
             Text('Pills', style: WFTextStyles.h3),
             const SizedBox(height: WFDims.spacingS),
@@ -105,9 +108,9 @@ class StylebookPage extends StatelessWidget {
                 Pill(text: '⚔️ DARVO — 45%'),
               ],
             ),
-            
+
             const SizedBox(height: WFDims.spacingXL),
-            
+
             // Divider Demo
             Text('Divider Faint', style: WFTextStyles.h3),
             const SizedBox(height: WFDims.spacingS),
@@ -120,9 +123,9 @@ class StylebookPage extends StatelessWidget {
                 ],
               ),
             ),
-            
+
             const SizedBox(height: WFDims.spacingXL),
-            
+
             // Buttons Demo
             Text('Buttons', style: WFTextStyles.h3),
             const SizedBox(height: WFDims.spacingS),
@@ -149,19 +152,19 @@ class StylebookPage extends StatelessWidget {
                 ),
               ],
             ),
-            
+
             const SizedBox(height: WFDims.spacingM),
-            
+
             WFPrimaryButton(
               text: 'Loading Button',
               isLoading: true,
               onPressed: () {},
             ),
-            
+
             const SizedBox(height: WFDims.spacingXXL),
           ],
         ),
       ),
     );
   }
-} 
+}

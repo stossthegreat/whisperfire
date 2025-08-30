@@ -19,7 +19,8 @@ class MetricBar extends StatefulWidget {
   State<MetricBar> createState() => _MetricBarState();
 }
 
-class _MetricBarState extends State<MetricBar> with SingleTickerProviderStateMixin {
+class _MetricBarState extends State<MetricBar>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
 
@@ -37,7 +38,7 @@ class _MetricBarState extends State<MetricBar> with SingleTickerProviderStateMix
       parent: _controller,
       curve: Curves.easeOutCubic,
     ));
-    
+
     if (widget.animate) {
       _controller.forward();
     } else {
@@ -60,22 +61,18 @@ class _MetricBarState extends State<MetricBar> with SingleTickerProviderStateMix
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              widget.label, 
-              style: WFTextStyles.labelMedium.copyWith(
-                fontSize: 16, // Bigger text
-                fontWeight: FontWeight.w700, // Thicker text
-                color: Colors.black, // Black text for analyze page
-              )
-            ),
-            Text(
-              '${widget.value}%', 
-              style: WFTextStyles.labelMedium.copyWith(
-                color: Colors.black, // Black text for analyze page
-                fontSize: 16, // Bigger text
-                fontWeight: FontWeight.w700, // Thicker text
-              )
-            ),
+            Text(widget.label,
+                style: WFTextStyles.labelMedium.copyWith(
+                  fontSize: 16, // Bigger text
+                  fontWeight: FontWeight.w700, // Thicker text
+                  color: Colors.black, // Black text for analyze page
+                )),
+            Text('${widget.value}%',
+                style: WFTextStyles.labelMedium.copyWith(
+                  color: Colors.black, // Black text for analyze page
+                  fontSize: 16, // Bigger text
+                  fontWeight: FontWeight.w700, // Thicker text
+                )),
           ],
         ),
         const SizedBox(height: 6),
@@ -83,7 +80,7 @@ class _MetricBarState extends State<MetricBar> with SingleTickerProviderStateMix
           height: 6,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(3),
-            color: WFColors.gray700.withValues(alpha: 0.6),
+            color: WFColors.gray700.withOpacity(0.6),
           ),
           child: AnimatedBuilder(
             animation: _animation,
@@ -94,9 +91,10 @@ class _MetricBarState extends State<MetricBar> with SingleTickerProviderStateMix
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(3),
-                    gradient: widget.color != null 
+                    gradient: widget.color != null
                         ? LinearGradient(colors: [widget.color!, widget.color!])
-                        : WFGradients.redPink, // Default to red→pink for danger metrics
+                        : WFGradients
+                            .redPink, // Default to red→pink for danger metrics
                   ),
                 ),
               );
@@ -106,4 +104,4 @@ class _MetricBarState extends State<MetricBar> with SingleTickerProviderStateMix
       ],
     );
   }
-} 
+}

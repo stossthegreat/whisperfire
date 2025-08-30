@@ -18,15 +18,16 @@ class Pill extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: padding ?? const EdgeInsets.symmetric(
-        horizontal: WFDims.paddingM,
-        vertical: WFDims.paddingS,
-      ),
+      padding: padding ??
+          const EdgeInsets.symmetric(
+            horizontal: WFDims.paddingM,
+            vertical: WFDims.paddingS,
+          ),
       decoration: BoxDecoration(
-        color: backgroundColor ?? WFColors.purple500.withValues(alpha: 0.2),
+        color: backgroundColor ?? WFColors.purple500.withOpacity(0.2),
         borderRadius: BorderRadius.circular(WFDims.radiusXLarge),
         border: Border.all(
-          color: WFColors.purple500.withValues(alpha: 0.3),
+          color: WFColors.purple500.withOpacity(0.3),
           width: WFDims.borderThin,
         ),
       ),
@@ -40,4 +41,4 @@ class Pill extends StatelessWidget {
       ),
     );
   }
-} 
+}
