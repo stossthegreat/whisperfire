@@ -16,12 +16,12 @@ class ArchetypePills extends StatelessWidget {
       spacing: WFDims.spacingS,
       runSpacing: WFDims.spacingS,
       children: archetypes.map((archetype) {
+        final baseColor = _getArchetypeColor(archetype.weight);
         return Pill(
           text:
               '${_getArchetypeEmoji(archetype.label)} ${archetype.label} — ${archetype.weight}%',
-          backgroundColor:
-              _getArchetypeColor(archetype.weight).withOpacity(0.2),
-          textColor: _getArchetypeColor(archetype.weight),
+          backgroundColor: baseColor.withOpacity(0.2),
+          textColor: baseColor,
         );
       }).toList(),
     );
@@ -51,9 +51,9 @@ class ArchetypePills extends StatelessWidget {
   }
 
   Color _getArchetypeColor(int weight) {
-    if (weight >= 80) return WFColors.redPink[0]; // High risk - red
-    if (weight >= 60) return const Color(0xFFF59E0B); // Medium risk - orange
-    return WFColors.purple400; // Low risk - purple
+    if (weight >= 80) return WFColors.redPink[0];
+    if (weight >= 60) return const Color(0xFFF59E0B);
+    return WFColors.purple400;
   }
 }
 

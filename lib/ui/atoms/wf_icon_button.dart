@@ -23,7 +23,7 @@ class WFIconButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final button = Container(
+    final content = Container(
       padding: padding ?? const EdgeInsets.all(WFDims.paddingM),
       decoration: BoxDecoration(
         color: backgroundColor ?? WFColors.gray800.withOpacity(0.6),
@@ -41,13 +41,13 @@ class WFIconButton extends StatelessWidget {
       ),
     );
 
-    final gestureDetector = GestureDetector(
+    final tappable = GestureDetector(
       onTap: onPressed,
-      child: button,
+      child: content,
     );
 
     return tooltip != null
-        ? Tooltip(message: tooltip!, child: gestureDetector)
-        : gestureDetector;
+        ? Tooltip(message: tooltip!, child: tappable)
+        : tappable;
   }
 }
