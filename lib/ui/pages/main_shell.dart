@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import '../../core/theme/theme.dart';
+
 import '../../data/providers.dart';
-import '../../ui/pages/onboarding/beguile_onboarding.dart';
+import '../../data/providers/auth_providers.dart';
+import '../../core/theme/theme.dart';
 import '../shared/loading_shell.dart';
+import 'onboarding/onboarding_page.dart';
 
 class MainShell extends ConsumerWidget {
   final Widget child;
@@ -14,158 +16,143 @@ class MainShell extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final profileAsync = ref.watch(userProfileProvider);
+    final authState = ref.watch(authStateProvider);
+
+    // TEMPORARY: Skip authentication check for development
+    // TODO: Restore authentication logic when Firebase is set up
+    
+    // Show loading while checking auth state
+    // if (authState == AuthState.loading) {
+    //   return const LoadingShell();
+    // }
+             
+    // If not authenticated, this should be handled by router redirect
+    // if (authState == AuthState.unauthenticated) {
+    //   return const LoadingShell();
+    // }
 
     return profileAsync.when(
       data: (profile) {
         // Check if user has seen onboarding
-        if (!profile.hasSeenOnboarding) {
-          return BeguileOnboarding(
-            onFinish: () {
-              // Mark onboarding as complete and refresh profile
-              profile.hasSeenOnboarding = true;
-              ref.read(profileRepoProvider).saveProfile(profile);
-              ref.invalidate(userProfileProvider);
-            },
-          );
-        }
+        // TEMP: disable onboarding for now
+        // if (!profile.hasSeenOnboarding) {
+        //   return const OnboardingPage();
+        // }
 
-        // Show main app if onboarding is complete
-        return Scaffold(
-          backgroundColor: WFColors.base,
-          body: child,
-          bottomNavigationBar: _BottomNavBar(),
-        );
+        // Return main shell with bottom navigation
+        return _MainShellContent(child: child);
       },
       loading: () => const LoadingShell(),
-      error: (error, stack) => Scaffold(
-        body: Center(
-          child: Text('Error loading profile: $error'),
-        ),
-      ),
-    );
-  }
-}
-
-class _BottomNavBar extends StatelessWidget {
-  const _BottomNavBar();
-
-  @override
-  Widget build(BuildContext context) {
-    final currentLocation = GoRouterState.of(context).uri.path;
-
-    // Determine active tab index
-    int selectedIndex = 0;
-    switch (currentLocation) {
-      case '/lessons':
-        selectedIndex = 0;
-        break;
-      case '/mentors':
-        selectedIndex = 1;
-        break;
-      case '/analyze':
-        selectedIndex = 2;
-        break;
-      case '/profile':
-        selectedIndex = 3;
-        break;
-      case '/settings':
-        selectedIndex = 4;
-        break;
-    }
-
-    return Container(
-      height: WFDims.bottomNavHeight,
-      decoration: BoxDecoration(
-        color: WFColors.gray900.withOpacity(0.95),
-        border: Border(
-            top: BorderSide(
-                color: WFColors.gray700.withOpacity(0.5),
-                width: WFDims.borderThin)),
-      ),
-      child: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-              horizontal: WFDims.paddingS, vertical: WFDims.paddingS),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              _NavItem(
-                  icon: Icons.school_outlined,
-                  activeIcon: Icons.school,
-                  label: 'Lessons',
-                  isActive: selectedIndex == 0,
-                  onTap: () => context.go('/lessons')),
-              _NavItem(
-                  icon: Icons.psychology_outlined,
-                  activeIcon: Icons.psychology,
-                  label: 'Mentors',
-                  isActive: selectedIndex == 1,
-                  onTap: () => context.go('/mentors')),
-              _NavItem(
-                  icon: Icons.visibility_outlined,
-                  activeIcon: Icons.visibility,
-                  label: 'Analyze',
-                  isActive: selectedIndex == 2,
-                  onTap: () => context.go('/analyze')),
-              _NavItem(
-                  icon: Icons.person_outline,
-                  activeIcon: Icons.person,
-                  label: 'Profile',
-                  isActive: selectedIndex == 3,
-                  onTap: () => context.go('/profile')),
-              _NavItem(
-                  icon: Icons.settings_outlined,
-                  activeIcon: Icons.settings,
-                  label: 'Settings',
-                  isActive: selectedIndex == 4,
-                  onTap: () => context.go('/settings')),
-            ],
+      error: (error, stack) {
+        return Scaffold(
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Icon(Icons.error_outline, size: 64, color: WFColors.error),
+                const SizedBox(height: 16),
+                Text(
+                  'Error loading profile',
+                  style: WFTextStyles.h3.copyWith(color: WFColors.error),
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  error.toString(),
+                  style: WFTextStyles.bodyMedium.copyWith(color: WFColors.textSecondary),
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
           ),
-        ),
-      ),
+        );
+      },
     );
   }
 }
 
-class _NavItem extends StatelessWidget {
-  final IconData icon, activeIcon;
-  final String label;
-  final bool isActive;
-  final VoidCallback onTap;
+class _MainShellContent extends StatelessWidget {
+  final Widget child;
 
-  const _NavItem(
-      {required this.icon,
-      required this.activeIcon,
-      required this.label,
-      required this.isActive,
-      required this.onTap});
+  const _MainShellContent({required this.child});
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        padding: const EdgeInsets.symmetric(
-            horizontal: WFDims.paddingS, vertical: WFDims.paddingS),
+    return Scaffold(
+      backgroundColor: WFColors.base,
+      body: child,
+      bottomNavigationBar: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(WFDims.radiusMedium),
-          color: isActive ? WFColors.purple500.withOpacity(0.1) : null,
+          color: WFColors.surface,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              blurRadius: 8,
+              offset: const Offset(0, -2),
+            ),
+          ],
         ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(isActive ? activeIcon : icon,
-                size: WFDims.iconM,
-                color: isActive ? WFColors.purple400 : WFColors.gray500),
-            const SizedBox(height: 4),
-            Text(label,
-                style: TextStyle(
-                    fontSize: 10,
-                    fontWeight: FontWeight.w500,
-                    color: isActive ? WFColors.purple400 : WFColors.gray500)),
+        child: BottomNavigationBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          type: BottomNavigationBarType.fixed,
+          selectedItemColor: WFColors.primary,
+          unselectedItemColor: WFColors.textSecondary,
+          currentIndex: _getCurrentIndex(context),
+          onTap: (index) => _onItemTapped(context, index),
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.school),
+              label: 'Lessons',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.psychology),
+              label: 'Mentors',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.visibility),
+              label: 'Analyze',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: 'Profile',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.settings),
+              label: 'Settings',
+            ),
           ],
         ),
       ),
     );
+  }
+
+  int _getCurrentIndex(BuildContext context) {
+    final String location = GoRouterState.of(context).matchedLocation;
+    if (location.startsWith('/lessons')) return 0;
+    if (location.startsWith('/mentors')) return 1;
+    if (location.startsWith('/analyze')) return 2;
+    if (location.startsWith('/profile')) return 3;
+    if (location.startsWith('/settings')) return 4;
+    return 0;
+  }
+
+  void _onItemTapped(BuildContext context, int index) {
+    switch (index) {
+      case 0:
+        context.goNamed('lessons');
+        break;
+      case 1:
+        context.goNamed('mentors');
+        break;
+      case 2:
+        context.goNamed('analyze');
+        break;
+      case 3:
+        context.goNamed('profile');
+        break;
+      case 4:
+        context.goNamed('settings');
+        break;
+    }
   }
 }

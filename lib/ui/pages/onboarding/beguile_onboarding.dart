@@ -49,13 +49,16 @@ class _BeguileOnboardingState extends ConsumerState<BeguileOnboarding>
               bottom: 24,
               left: 24,
               right: 24,
-              child: Row(
-                children: [
-                  _PageDots(count: pages.length, index: _page),
-                  const Spacer(),
-                  _BrandedFooter(),
-                  const SizedBox(width: 8),
-                ],
+              child: IgnorePointer(
+                ignoring: true,
+                child: Row(
+                  children: [
+                    _PageDots(count: pages.length, index: _page),
+                    const Spacer(),
+                    _BrandedFooter(),
+                    const SizedBox(width: 8),
+                  ],
+                ),
               ),
             ),
 
@@ -658,7 +661,7 @@ class _SignUpSlideState extends ConsumerState<_SignUpSlide> {
   final _password = TextEditingController();
   bool _agreeTerms = false;
   bool _agreePrivacy = false;
-  bool get _canContinue => _agreeTerms && _agreePrivacy;
+  bool get _canContinue => true;
 
   @override
   void dispose() {
@@ -713,12 +716,10 @@ class _SignUpSlideState extends ConsumerState<_SignUpSlide> {
   }
 
   void _submitPremium() {
-    if (!_canContinue) return;
     widget.onFinish();
   }
 
   void _submitFree() {
-    if (!_canContinue) return;
     widget.onFinish();
   }
 
@@ -975,6 +976,7 @@ class _CTAButton extends StatelessWidget {
           );
 
     return GestureDetector(
+      behavior: HitTestBehavior.opaque,
       onTap: enabled ? onTap : null,
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 200),

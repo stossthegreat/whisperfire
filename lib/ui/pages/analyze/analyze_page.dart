@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:google_ml_kit/google_ml_kit.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
+import '../../../web/ocr_bridge.dart';
 import '../../../core/theme/theme.dart';
 import '../../../data/models/whisperfire_models.dart';
 import '../../../data/services/api_service.dart';
@@ -248,7 +250,7 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
                                 color: Colors.white,
                                 size: 20,
                               ),
-                              tooltip: 'OCR (Tesseract)',
+                              tooltip: 'OCR',
                             ),
                           ),
                         ),
@@ -364,11 +366,15 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
   }
 
   void _showOCRModal(BuildContext context) {
+    if (kIsWeb) {
+      _runWebOcr();
+      return;
+    }
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
         backgroundColor: WFColors.gray900,
-        title: Text('OCR (Tesseract)', style: WFTextStyles.h3),
+        title: Text('OCR', style: WFTextStyles.h3),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -413,6 +419,26 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
         ],
       ),
     );
+  }
+
+  Future<void> _runWebOcr() async {
+    try {
+      final bridge = WebOcrBridge();
+      final text = await bridge.pickAndOcr();
+      if (text.trim().isNotEmpty) {
+        setState(() {
+          final current = _textController.text.trim();
+          _textController.text = current.isEmpty ? text.trim() : '$current\n${text.trim()}';
+        });
+      }
+    } catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('OCR failed: $e'),
+        ),
+      );
+    }
   }
 
   Future<void> _pickImage(ImageSource source) async {

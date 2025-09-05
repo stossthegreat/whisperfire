@@ -191,7 +191,7 @@ class ApiService {
       String buffer = '';
 
       await for (final chunk in response.data.stream) {
-        final chunkString = String.fromCharCodes(chunk);
+        final chunkString = utf8.decode(chunk, allowMalformed: true);
         buffer += chunkString;
 
         // Process complete lines

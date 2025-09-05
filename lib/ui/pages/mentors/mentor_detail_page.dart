@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/theme/theme.dart';
 import '../../../core/utils/text_sanitizer.dart';
+import '../../../core/encoding_sanitize.dart';
 import '../../../data/models/mentor_models.dart';
 import '../../../data/services/api_service.dart';
 import '../../../data/services/cache_service.dart';
@@ -114,13 +115,26 @@ class MentorMessagesNotifier extends StateNotifier<List<MentorMessage>> {
 
         addMessage(mentorMessage);
 
-        await for (final chunk in apiService.postMentorStream(request)) {
-          accumulatedText += chunk;
-          // Update the last message with accumulated text
+        try {
+          await for (final chunk in apiService.postMentorStream(request)) {
+            accumulatedText += chunk;
+            // Update the last message with accumulated text
+            final updatedMessages = [...state];
+            updatedMessages[updatedMessages.length - 1] = MentorMessage(
+              id: mentorMessage.id,
+              text: accumulatedText.trim(),
+              sender: 'mentor',
+              timestamp: mentorMessage.timestamp,
+            );
+            state = updatedMessages;
+          }
+        } catch (e) {
+          // Fallback response if streaming fails
+          final fallbackResponse = _getFallbackResponse(mentorId, userText, preset);
           final updatedMessages = [...state];
           updatedMessages[updatedMessages.length - 1] = MentorMessage(
             id: mentorMessage.id,
-            text: accumulatedText.trim(),
+            text: fallbackResponse,
             sender: 'mentor',
             timestamp: mentorMessage.timestamp,
           );
@@ -128,15 +142,27 @@ class MentorMessagesNotifier extends StateNotifier<List<MentorMessage>> {
         }
       } else {
         // Handle regular response
-        final response = await apiService.postMentor(request);
+        try {
+          final response = await apiService.postMentor(request);
 
-        final mentorMessage = MentorMessage(
-          id: DateTime.now().millisecondsSinceEpoch.toString(),
-          text: response.reply,
-          sender: 'mentor',
-          timestamp: DateTime.now(),
-        );
-        addMessage(mentorMessage);
+          final mentorMessage = MentorMessage(
+            id: DateTime.now().millisecondsSinceEpoch.toString(),
+            text: response.reply,
+            sender: 'mentor',
+            timestamp: DateTime.now(),
+          );
+          addMessage(mentorMessage);
+        } catch (e) {
+          // Fallback response if API fails
+          final fallbackResponse = _getFallbackResponse(mentorId, userText, preset);
+          final mentorMessage = MentorMessage(
+            id: DateTime.now().millisecondsSinceEpoch.toString(),
+            text: fallbackResponse,
+            sender: 'mentor',
+            timestamp: DateTime.now(),
+          );
+          addMessage(mentorMessage);
+        }
       }
 
       // Save to history if enabled
@@ -170,6 +196,20 @@ class MentorMessagesNotifier extends StateNotifier<List<MentorMessage>> {
 
   void clearMessages() {
     state = [];
+  }
+
+  String _getFallbackResponse(String mentorId, String userText, String preset) {
+    // Fallback responses for when the API is not working
+    final responses = {
+      'machiavelli': 'The ends justify the means, but remember that true power comes from being both feared and loved. Consider your long-term strategy carefully.',
+      'sun_tzu': 'In every situation, understand the terrain and your opponent. The supreme art of war is to subdue the enemy without fighting.',
+      'robert_greene': 'Power is not given, it is taken. Master the art of seduction and influence. Remember, the greatest power is often invisible.',
+      'jordan_peterson': 'Take responsibility for your own life. Face the chaos with courage and truth. Order emerges from the integration of responsibility.',
+      'marcus_aurelius': 'The happiness of your life depends upon the quality of your thoughts. Focus on what you can control and accept what you cannot.',
+      'confucius': 'The superior man is modest in his speech but exceeds in his actions. Cultivate virtue and wisdom through continuous learning.',
+    };
+    
+    return responses[mentorId] ?? 'I understand your question. Let me provide some guidance based on my experience and wisdom.';
   }
 }
 
@@ -554,7 +594,7 @@ class _MessageBubble extends StatelessWidget {
                             color: WFColors.glassBorder.withOpacity(0.3)),
                   ),
                   child: Text(
-                    TextSanitizer.sanitizeText(message.text),
+                    cleanMentorText(message.text),
                     style: WFTextStyles.mentorResponse.copyWith(
                       color: WFColors.textPrimary,
                     ),

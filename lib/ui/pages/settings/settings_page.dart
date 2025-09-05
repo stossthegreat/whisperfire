@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import '../../../core/theme/theme.dart';
 import '../../../widgets/app_header.dart';
 import '../../atoms/atoms.dart';
 import '../../../data/providers.dart';
+import '../../../data/providers/auth_providers.dart';
 import '../../../data/models/profile_models.dart';
 import 'sub_pages/account_management_page.dart';
 import 'sub_pages/privacy_policy_page.dart';
@@ -127,6 +129,11 @@ class SettingsPage extends ConsumerWidget {
             ),
           ),
 
+          const SizedBox(height: WFDims.spacingM),
+
+          // Sign Out Button
+          _buildSignOutOption(context),
+
           const SizedBox(height: WFDims.spacingXXL),
         ],
       ),
@@ -242,5 +249,97 @@ class SettingsPage extends ConsumerWidget {
     if (xp < 2000) return 4;
     if (xp < 5000) return 5;
     return 6;
+  }
+
+  Widget _buildSignOutOption(BuildContext context) {
+    return InkWell(
+      onTap: () => _showSignOutDialog(context),
+      borderRadius: BorderRadius.circular(WFDims.radiusMedium),
+      child: Container(
+        padding: const EdgeInsets.all(WFDims.paddingM),
+        decoration: BoxDecoration(
+          color: WFColors.gray800.withOpacity(0.3),
+          borderRadius: BorderRadius.circular(WFDims.radiusMedium),
+          border: Border.all(color: WFColors.glassBorder.withOpacity(0.3)),
+        ),
+        child: Row(
+          children: [
+            Icon(Icons.logout, color: Colors.red, size: 20),
+            const SizedBox(width: WFDims.spacingM),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Sign Out', style: WFTextStyles.labelLarge.copyWith(color: Colors.red)),
+                  const SizedBox(height: 2),
+                  Text('Sign out of your account',
+                      style: WFTextStyles.bodySmall
+                          .copyWith(color: WFColors.textTertiary)),
+                ],
+              ),
+            ),
+            Icon(
+              Icons.arrow_forward_ios,
+              color: WFColors.textTertiary,
+              size: 16,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  void _showSignOutDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          backgroundColor: WFColors.gray800,
+          title: Text(
+            'Sign Out',
+            style: WFTextStyles.h3.copyWith(color: Colors.white),
+          ),
+          content: Text(
+            'Are you sure you want to sign out?',
+            style: WFTextStyles.bodyMedium.copyWith(color: WFColors.textSecondary),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: Text(
+                'Cancel',
+                style: WFTextStyles.bodyMedium.copyWith(color: WFColors.gray400),
+              ),
+            ),
+            TextButton(
+              onPressed: () async {
+                Navigator.of(context).pop();
+                await _signOut(context);
+              },
+              child: Text(
+                'Sign Out',
+                style: WFTextStyles.bodyMedium.copyWith(color: Colors.red),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Future<void> _signOut(BuildContext context) async {
+    try {
+      final authService = ProviderScope.containerOf(context).read(authServiceProvider);
+      await authService.signOut();
+      if (context.mounted) {
+        context.go('/login');
+      }
+    } catch (e) {
+      if (context.mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Error signing out: $e')),
+        );
+      }
+    }
   }
 }

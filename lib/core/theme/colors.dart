@@ -4,6 +4,10 @@ class WFColors {
   // Base: #0B0F14 (near-black)
   static const Color base = Color(0xFF0B0F14);
 
+  // Primary and surface colors
+  static const Color primary = Color(0xFF8B5CF6); // purple-500
+  static const Color surface = Color(0xFF1F2937); // gray-800
+
   // Glass panels: white 28–36% opacity
   static const Color glassLight = Color(0x47FFFFFF); // 28% white
   static const Color glassMedium = Color(0x5CFFFFFF); // 36% white

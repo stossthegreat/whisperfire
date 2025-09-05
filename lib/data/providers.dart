@@ -2,8 +2,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'repos/lesson_repo.dart';
 import 'repos/profile_repo.dart';
 import 'services/progress_service.dart';
+import 'services/auth_service.dart';
 import 'models/lesson_models.dart';
 import 'models/profile_models.dart';
+import 'providers/auth_providers.dart';
 
 final lessonRepoProvider = Provider((_) => LessonRepo());
 final profileRepoProvider = Provider((_) => ProfileRepo());
