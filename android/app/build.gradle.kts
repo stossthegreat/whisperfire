@@ -50,9 +50,11 @@ android {
                 System.getenv("ANDROID_KEY_PASSWORD") != null
             ) signingConfigs.getByName("release") else signingConfigs.getByName("debug")
             isMinifyEnabled = false
+            isShrinkResources = false
         }
         debug {
             signingConfig = signingConfigs.getByName("debug")
+            isShrinkResources = false
         }
     }
 }
