@@ -23,6 +23,11 @@ jobs:
         with:
           channel: stable
 
+      - name: Reset Gradle caches (fix Com.google.gms metadata mismatch)
+        run: |
+          rm -rf ~/.gradle/caches ~/.gradle/daemon ~/.gradle/native ~/.gradle/notifications
+          ./gradlew -p android --no-daemon buildEnvironment --refresh-dependencies || true 
+
       - name: Flutter pub get
         run: flutter pub get
 
