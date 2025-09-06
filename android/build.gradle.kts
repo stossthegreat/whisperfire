@@ -24,6 +24,13 @@ subprojects {
 }
 subprojects {
     project.evaluationDependsOn(":app")
+
+    // Workaround: some third-party libraries still declare package in their manifest.
+    if (project.name == "google_mlkit_smart_reply") {
+        extensions.findByName("android")?.let {
+            (it as com.android.build.gradle.LibraryExtension).namespace = "com.google_mlkit_smart_reply"
+        }
+    }
 }
 
 tasks.register<Delete>("clean") {
