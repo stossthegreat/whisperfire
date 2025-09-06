@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:877360246883:android:f146b97aa08bc24dab4856",
         "android_client_info": {
-          "package_name": "com.beguileai.app"
+          "package_name": "Com.beguileai.app"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "877360246883-rit12j2lm7vfauin5ru5acv8o9k9qigu.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.beguileai.app",
+            "package_name": "Com.beguileai.app",
             "certificate_hash": "86f4e34c46fc86a1c3575b8d9e20bf91f3c8e470"
           }
         },
