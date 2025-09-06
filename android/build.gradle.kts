@@ -4,6 +4,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
+        // MUST be lowercase group
         classpath("com.google.gms:google-services:4.4.0")
     }
 }
@@ -24,18 +25,8 @@ subprojects {
 }
 subprojects {
     project.evaluationDependsOn(":app")
-
-    // Workaround: some third-party libraries still declare package in their manifest.
-    if (project.name == "google_mlkit_smart_reply") {
-        plugins.withId("com.android.library") {
-            extensions.configure<com.android.build.gradle.LibraryExtension>("android") {
-                namespace = "com.google_mlkit_smart_reply"
-            }
-        }
-    }
 }
 
 tasks.register<Delete>("clean") {
     delete(rootProject.layout.buildDirectory)
 }
-
