@@ -42,39 +42,23 @@ android {
     }
 
     buildTypes {
-        getByName("debug") {
-            // Keep debug builds fast & compatible with Firebase JSON lookup
-            // (No suffix; no shrink/minify)
-            // applicationIdSuffix = ".debug" // <- leave commented unless you also add this package to Firebase
-            isMinifyEnabled = false
-            isShrinkResources = false
-            signingConfig = signingConfigs.getByName("debug")
-        }
-
-        getByName("release") {
+        release {
             // Use release signing if provided; otherwise fallback to debug
             signingConfig = if (
                 System.getenv("ANDROID_KEYSTORE_PASSWORD") != null &&
                 System.getenv("ANDROID_KEY_ALIAS") != null &&
                 System.getenv("ANDROID_KEY_PASSWORD") != null
             ) signingConfigs.getByName("release") else signingConfigs.getByName("debug")
-
-            // Proper shrinking for store builds
-            isMinifyEnabled = true
-            isShrinkResources = true
-
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            isMinifyEnabled = false
+            isShrinkResources = false
+        }
+        debug {
+            signingConfig = signingConfigs.getByName("debug")
+            isShrinkResources = false
         }
     }
 }
 
 flutter {
     source = "../.."
-}
-
-dependencies {
-    // Your app/module dependencies go here (Flutter will manage most)
 }
