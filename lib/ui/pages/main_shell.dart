@@ -18,26 +18,12 @@ class MainShell extends ConsumerWidget {
     final profileAsync = ref.watch(userProfileProvider);
     final authState = ref.watch(authStateProvider);
 
-    // TEMPORARY: Skip authentication check for development
-    // TODO: Restore authentication logic when Firebase is set up
-    
-    // Show loading while checking auth state
-    // if (authState == AuthState.loading) {
-    //   return const LoadingShell();
-    // }
-             
-    // If not authenticated, this should be handled by router redirect
-    // if (authState == AuthState.unauthenticated) {
-    //   return const LoadingShell();
-    // }
-
     return profileAsync.when(
       data: (profile) {
         // Check if user has seen onboarding
-        // TEMP: disable onboarding for now
-        // if (!profile.hasSeenOnboarding) {
-        //   return const OnboardingPage();
-        // }
+        if (!profile.hasSeenOnboarding) {
+          return const OnboardingPage();
+        }
 
         // Return main shell with bottom navigation
         return _MainShellContent(child: child);
