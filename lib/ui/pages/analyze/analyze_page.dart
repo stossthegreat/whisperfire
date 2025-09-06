@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:google_ml_kit/google_ml_kit.dart';
+import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import '../../../web/ocr_bridge.dart';
 import '../../../core/theme/theme.dart';
@@ -477,55 +477,39 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
         );
 
         try {
-          // Create InputImage from the picked image
-          final inputImage = InputImage.fromFilePath(image.path);
+          final InputImage inputImage = InputImage.fromFilePath(image.path);
+          final TextRecognizer textRecognizer = TextRecognizer();
+          final RecognizedText recognizedText = await textRecognizer.processImage(inputImage);
 
-          // Initialize text recognizer
-          final textRecognizer = GoogleMlKit.vision.textRecognizer();
-
-          // Process the image
-          final RecognizedText recognizedText =
-              await textRecognizer.processImage(inputImage);
-
-          // Extract text blocks
           String extractedText = '';
-          for (TextBlock block in recognizedText.blocks) {
-            for (TextLine line in block.lines) {
+          for (final block in recognizedText.blocks) {
+            for (final line in block.lines) {
               extractedText += '${line.text}\n';
             }
           }
 
-          // Clean up the recognizer
-          textRecognizer.close();
+          await textRecognizer.close();
 
-          // Check if widget is still mounted before closing dialog
           if (!mounted) return;
 
-          // Close loading dialog
           Navigator.of(context).pop();
 
           if (extractedText.trim().isNotEmpty) {
-            // Insert extracted text into the controller
             _textController.text = extractedText.trim();
-
-            // Show success message
             if (mounted) {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  content: Text(
-                      '✅ OCR Complete! Extracted ${extractedText.trim().split('\n').length} lines of text.'),
+                  content: Text('✅ OCR Complete! Extracted ${extractedText.trim().split('\n').length} lines of text.'),
                   backgroundColor: WFColors.purple400,
                   duration: const Duration(seconds: 3),
                 ),
               );
             }
           } else {
-            // Show warning if no text was extracted
             if (mounted) {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  content: Text(
-                      '⚠️ No text detected in the image. Please try a clearer image.'),
+                  content: Text('⚠️ No text detected in the image. Please try a clearer image.'),
                   backgroundColor: WFColors.warning,
                   duration: const Duration(seconds: 3),
                 ),
@@ -533,13 +517,8 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
             }
           }
         } catch (ocrError) {
-          // Check if widget is still mounted before closing dialog
           if (!mounted) return;
-
-          // Close loading dialog
           Navigator.of(context).pop();
-
-          // Show OCR error
           if (mounted) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
@@ -552,15 +531,10 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
         }
       }
     } catch (e) {
-      // Check if widget is still mounted before closing dialog
       if (!mounted) return;
-
-      // Close loading dialog if open
       if (Navigator.canPop(context)) {
         Navigator.of(context).pop();
       }
-
-      // Show error message
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
@@ -595,7 +569,6 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
           message: _textController.text.trim(),
         );
       } else {
-        // Pattern mode - split by lines
         final messages = _textController.text
             .split('\n')
             .map((line) => line.trim())
@@ -612,7 +585,6 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
         );
       }
 
-      // Make API call
       WhisperfireResponse response;
       if (false) {
         response = await _getMockResponse(selectedMode, selectedTone);
@@ -620,26 +592,9 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
         response = await apiService.postAnalyzeWhisperfire(requestBody);
       }
 
-      // Enforce client guards (clamp metrics, trim receipts, dedup reply lines)
       final guardedResponse = WhisperfireServices.enforceClientGuards(response);
-
       ref.read(analyzeResultProvider.notifier).state = guardedResponse;
 
-      // Save to history if enabled - DISABLED TO FIX HIVE ERROR
-      // final settings = CacheService.getSettings();
-      // if (settings.saveHistory) {
-      //   await CacheService.saveAnalysisHistory(
-      //     DateTime.now().millisecondsSinceEpoch.toString(),
-      //     {
-      //       'mode': selectedMode,
-      //       'tone': selectedTone,
-      //       'input': _textController.text.trim(),
-      //       'result': guardedResponse.toJson(),
-      //     },
-      //   );
-      // }
-
-      // Scroll to results
       WidgetsBinding.instance.addPostFrameCallback((_) {
         _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
@@ -648,7 +603,6 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
         );
       });
     } catch (e) {
-      // Show error
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
@@ -671,10 +625,8 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
     }
   }
 
-  // Mock response for development
   Future<WhisperfireResponse> _getMockResponse(String mode, String tone) async {
-    await Future.delayed(const Duration(seconds: 2)); // Simulate API delay
-
+    await Future.delayed(const Duration(seconds: 2));
     if (mode == 'scan') {
       return MockData.mockScanResponse;
     } else {
