@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.beguileai.app"
+    namespace = "Com.beguileai.app"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
