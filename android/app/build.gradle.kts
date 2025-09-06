@@ -28,6 +28,24 @@ android {
         versionName = flutter.versionName
     }
 
+buildTypes {
+    release {
+        val hasKs = file(System.getenv("ANDROID_KEYSTORE_PATH") ?: "").exists() &&
+            System.getenv("ANDROID_KEYSTORE_PASSWORD") != null &&
+            System.getenv("ANDROID_KEY_ALIAS") != null &&
+            System.getenv("ANDROID_KEY_PASSWORD") != null
+
+        signingConfig = if (hasKs) signingConfigs.getByName("release")
+                        else signingConfigs.getByName("debug")
+
+        isMinifyEnabled = false
+        isShrinkResources = false
+    }
+    debug {
+        signingConfig = signingConfigs.getByName("debug")
+        isShrinkResources = false
+    }
+}
     signingConfigs {
         create("release") {
             val ksPath = System.getenv("ANDROID_KEYSTORE_PATH") ?: "${project.rootDir}/android/app/keystore.jks"
@@ -41,23 +59,6 @@ android {
         }
     }
 
-    buildTypes {
-        release {
-            // Use release signing if provided; otherwise fallback to debug
-            signingConfig = if (
-                System.getenv("ANDROID_KEYSTORE_PASSWORD") != null &&
-                System.getenv("ANDROID_KEY_ALIAS") != null &&
-                System.getenv("ANDROID_KEY_PASSWORD") != null
-            ) signingConfigs.getByName("release") else signingConfigs.getByName("debug")
-            isMinifyEnabled = false
-            isShrinkResources = false
-        }
-        debug {
-            signingConfig = signingConfigs.getByName("debug")
-            isShrinkResources = false
-        }
-    }
-}
 
 flutter {
     source = "../.."
