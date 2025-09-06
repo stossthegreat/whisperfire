@@ -9,10 +9,23 @@
       "client_info": {
         "mobilesdk_app_id": "1:877360246883:android:f146b97aa08bc24dab4856",
         "android_client_info": {
-          "package_name": "com.beguileai.app"
+          "package_name": "Com.beguileai.app"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "877360246883-rit12j2lm7vfauin5ru5acv8o9k9qigu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "Com.beguileai.app",
+            "certificate_hash": "86f4e34c46fc86a1c3575b8d9e20bf91f3c8e470"
+          }
+        },
+        {
+          "client_id": "877360246883-a192bklb2l1vn14vbu9tgjrf25ll7rie.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyB323h5RJN7FvoLXu82m4qW13s7xrZjgHs"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "877360246883-a192bklb2l1vn14vbu9tgjrf25ll7rie.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "877360246883-dp17jfvdnckfa6ghvcu2060pam36l0e9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "Com.beguileai.app"
+              }
+            }
+          ]
         }
       }
     }
