@@ -21,7 +21,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.beguileai.app"
+        applicationId = "Com.beguileai.app"
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
