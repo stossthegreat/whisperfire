@@ -223,7 +223,7 @@ class WFTextStyles {
           fontSize: 16,
           fontWeight: FontWeight.w500,
           color: WFColors.textPrimary,
-          height: 1.45,
+          height: 1.38,
         ),
         fallbackFonts: [
           'Arial Unicode MS', // Best Unicode support
