@@ -129,16 +129,9 @@ class MentorMessagesNotifier extends StateNotifier<List<MentorMessage>> {
             state = updatedMessages;
           }
         } catch (e) {
-          // Fallback response if streaming fails
-          final fallbackResponse = _getFallbackResponse(mentorId, userText, preset);
-          final updatedMessages = [...state];
-          updatedMessages[updatedMessages.length - 1] = MentorMessage(
-            id: mentorMessage.id,
-            text: fallbackResponse,
-            sender: 'mentor',
-            timestamp: mentorMessage.timestamp,
-          );
-          state = updatedMessages;
+          // Keep the placeholder message empty; do not inject generic fallback
+          // Optionally, you can append an empty/error marker if needed.
+          // We avoid client-side fallback text here.
         }
       } else {
         // Handle regular response
@@ -153,15 +146,7 @@ class MentorMessagesNotifier extends StateNotifier<List<MentorMessage>> {
           );
           addMessage(mentorMessage);
         } catch (e) {
-          // Fallback response if API fails
-          final fallbackResponse = _getFallbackResponse(mentorId, userText, preset);
-          final mentorMessage = MentorMessage(
-            id: DateTime.now().millisecondsSinceEpoch.toString(),
-            text: fallbackResponse,
-            sender: 'mentor',
-            timestamp: DateTime.now(),
-          );
-          addMessage(mentorMessage);
+          // Do not inject generic fallback text; show nothing new
         }
       }
 
@@ -198,19 +183,7 @@ class MentorMessagesNotifier extends StateNotifier<List<MentorMessage>> {
     state = [];
   }
 
-  String _getFallbackResponse(String mentorId, String userText, String preset) {
-    // Fallback responses for when the API is not working
-    final responses = {
-      'machiavelli': 'The ends justify the means, but remember that true power comes from being both feared and loved. Consider your long-term strategy carefully.',
-      'sun_tzu': 'In every situation, understand the terrain and your opponent. The supreme art of war is to subdue the enemy without fighting.',
-      'robert_greene': 'Power is not given, it is taken. Master the art of seduction and influence. Remember, the greatest power is often invisible.',
-      'jordan_peterson': 'Take responsibility for your own life. Face the chaos with courage and truth. Order emerges from the integration of responsibility.',
-      'marcus_aurelius': 'The happiness of your life depends upon the quality of your thoughts. Focus on what you can control and accept what you cannot.',
-      'confucius': 'The superior man is modest in his speech but exceeds in his actions. Cultivate virtue and wisdom through continuous learning.',
-    };
-    
-    return responses[mentorId] ?? 'I understand your question. Let me provide some guidance based on my experience and wisdom.';
-  }
+  // Removed client-side fallback response creator. We only display backend results.
 }
 
 class MentorDetailPage extends ConsumerStatefulWidget {

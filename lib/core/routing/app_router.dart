@@ -21,8 +21,10 @@ final appRouterProvider = Provider<GoRouter>((ref) {
 
       if (authState == AuthState.loading) return null;
 
-      final isOnLogin = state.matchedLocation == '/login';
-      final isOnOnboarding = state.matchedLocation == '/onboarding';
+      final location = state.matchedLocation;
+      final isOnLogin = location == '/login';
+      final isOnOnboarding = location == '/onboarding';
+      final isOnRootOrHome = location == '/' || location == '/home';
 
       // Unauthenticated: show onboarding first; allow /login and /onboarding
       if (authState == AuthState.unauthenticated) {
@@ -30,13 +32,20 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         return null;
       }
 
-      // Authenticated: send to lessons from root/login/onboarding
-      if (authState == AuthState.authenticated && (isOnLogin || isOnOnboarding || state.matchedLocation == '/')) {
+      // Authenticated: send to lessons from root/login/onboarding/home
+      if (authState == AuthState.authenticated && (isOnLogin || isOnOnboarding || isOnRootOrHome)) {
         return '/lessons';
       }
       return null;
     },
     routes: [
+      // Alias: /home (no UI, just a path that gets redirected in redirect())
+      GoRoute(
+        path: '/home',
+        name: 'home',
+        builder: (context, state) => const SizedBox.shrink(),
+      ),
+
       // Login route (outside shell)
       GoRoute(
         path: '/login',
