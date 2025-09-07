@@ -24,9 +24,13 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       final isOnLogin = state.matchedLocation == '/login';
       final isOnOnboarding = state.matchedLocation == '/onboarding';
 
-      if (authState == AuthState.unauthenticated && !isOnLogin && !isOnOnboarding) {
-        return '/login';
+      // Unauthenticated: show onboarding first; allow /login and /onboarding
+      if (authState == AuthState.unauthenticated) {
+        if (!isOnOnboarding && !isOnLogin) return '/onboarding';
+        return null;
       }
+
+      // Authenticated: send to lessons from root/login/onboarding
       if (authState == AuthState.authenticated && (isOnLogin || isOnOnboarding || state.matchedLocation == '/')) {
         return '/lessons';
       }

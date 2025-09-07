@@ -29,7 +29,7 @@ class _BeguileOnboardingState extends ConsumerState<BeguileOnboarding>
       const _MentorsSlide(),
       const _AnalyzeSlide(),
       const _PowerSlide(),
-      _SignUpSlide(onFinish: widget.onFinish),
+      _FinishSlide(onContinue: widget.onFinish),
     ];
 
     return Scaffold(

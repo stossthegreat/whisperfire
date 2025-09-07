@@ -20,12 +20,7 @@ class MainShell extends ConsumerWidget {
 
     return profileAsync.when(
       data: (profile) {
-        // Check if user has seen onboarding
-        if (!profile.hasSeenOnboarding) {
-          return const OnboardingPage();
-        }
-
-        // Return main shell with bottom navigation
+        // Always show the main shell here; onboarding is handled before login
         return _MainShellContent(child: child);
       },
       loading: () => const LoadingShell(),
