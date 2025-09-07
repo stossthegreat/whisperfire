@@ -32,10 +32,14 @@ android {
         create("release") {
             val ksEnv = System.getenv("ANDROID_KEYSTORE_PATH")
             val ksPath = if (!ksEnv.isNullOrBlank()) ksEnv else "${project.rootDir}/keystore.jks"
+            val storePass = System.getenv("ANDROID_KEYSTORE_PASSWORD")
+            val alias = System.getenv("ANDROID_KEY_ALIAS")
+
             storeFile = file(ksPath)
-            storePassword = System.getenv("ANDROID_KEYSTORE_PASSWORD")
-            this.keyAlias = System.getenv("ANDROID_KEY_ALIAS")
-            keyPassword = System.getenv("ANDROID_KEY_PASSWORD")
+            storePassword = storePass
+            this.keyAlias = alias
+            // Use store password for key as well to avoid PKCS12 mismatch
+            keyPassword = storePass
         }
     }
 
@@ -45,8 +49,7 @@ android {
             val ksPath = if (!ksEnv.isNullOrBlank()) ksEnv else "${project.rootDir}/keystore.jks"
             val hasKs = file(ksPath).exists() &&
                 System.getenv("ANDROID_KEYSTORE_PASSWORD") != null &&
-                System.getenv("ANDROID_KEY_ALIAS") != null &&
-                System.getenv("ANDROID_KEY_PASSWORD") != null
+                System.getenv("ANDROID_KEY_ALIAS") != null
 
             signingConfig = if (hasKs) signingConfigs.getByName("release") else signingConfigs.getByName("debug")
             isMinifyEnabled = false

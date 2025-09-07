@@ -10,7 +10,6 @@ jobs:
       ANDROID_KEYSTORE_PATH: ${{ github.workspace }}/android/app/keystore.jks
       ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
       ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
-      ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
 
     steps:
       - name: Checkout
@@ -39,12 +38,11 @@ jobs:
         run: |
           test -n "${{ env.ANDROID_KEYSTORE_PASSWORD }}" || (echo "MISSING ANDROID_KEYSTORE_PASSWORD" && exit 1)
           test -n "${{ env.ANDROID_KEY_ALIAS }}" || (echo "MISSING ANDROID_KEY_ALIAS" && exit 1)
-          test -n "${{ env.ANDROID_KEY_PASSWORD }}" || (echo "MISSING ANDROID_KEY_PASSWORD" && exit 1)
           if [ ! -s "$ANDROID_KEYSTORE_PATH" ]; then
-            echo "Keystore not found at $ANDROID_KEYSTORE_PATH. Check ANDROID_KEYSTORE_BASE64.";
-            exit 1
+            echo "Keystore not found at $ANDROID_KEYSTORE_PATH. Check ANDROID_KEYSTORE_BASE64."; exit 1
           fi
           ls -l "$ANDROID_KEYSTORE_PATH"
+          keytool -list -alias "${{ env.ANDROID_KEY_ALIAS }}" -keystore "$ANDROID_KEYSTORE_PATH" -storepass "${{ env.ANDROID_KEYSTORE_PASSWORD }}" -v | sed -n '1,8p'
 
       - name: Flutter pub get
         run: flutter pub get
