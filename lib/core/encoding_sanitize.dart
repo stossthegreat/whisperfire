@@ -37,13 +37,16 @@ String _killMojibake(String s) => s
 String _paragraphize(String input) {
   var t = _killMojibake(input);
 
-  // Only normalize bullets if they're at the start of lines, don't force line breaks
-  t = t.replaceAll(RegExp(r'(^|\n)\s*(?:-|\u2022|\*)\s+'), '\n• ');
+  // Normalize bullets without injecting an extra leading newline
+  t = t.replaceAllMapped(
+    RegExp(r'(^|\n)\s*(?:-|\u2022|\*)\s+'),
+    (m) => '${m.group(1)}• ',
+  );
 
-  // Very gentle whitespace cleanup - preserve natural flow
+  // Gentle whitespace cleanup with tighter paragraph spacing
   t = t
-      .replaceAll(RegExp(r'[ \t]+\n'), '\n')  // Remove trailing spaces
-      .replaceAll(RegExp(r'\n{4,}'), '\n\n\n')  // Max 3 line breaks (more conservative)
+      .replaceAll(RegExp(r'[ \t]+\n'), '\n') // Remove trailing spaces
+      .replaceAll(RegExp(r'\n{3,}'), '\n\n') // Max 2 line breaks
       .trim();
 
   return t;
