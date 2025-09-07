@@ -30,23 +30,25 @@ android {
 
     signingConfigs {
         create("release") {
-            val ksPath = System.getenv("ANDROID_KEYSTORE_PATH") ?: "${project.rootDir}/android/app/keystore.jks"
-            val ksPass = System.getenv("ANDROID_KEYSTORE_PASSWORD")
-            val keyAlias = System.getenv("ANDROID_KEY_ALIAS")
-            val keyPass = System.getenv("ANDROID_KEY_PASSWORD")
-
-            if (ksPass != null && keyAlias != null && keyPass != null) {
-                storeFile = file(ksPath)
-                storePassword = ksPass
-                this.keyAlias = keyAlias
-                keyPassword = keyPass
-            }
+            val ksEnv = System.getenv("ANDROID_KEYSTORE_PATH")
+            val ksPath = if (!ksEnv.isNullOrBlank()) ksEnv else "${project.rootDir}/keystore.jks"
+            storeFile = file(ksPath)
+            storePassword = System.getenv("ANDROID_KEYSTORE_PASSWORD")
+            this.keyAlias = System.getenv("ANDROID_KEY_ALIAS")
+            keyPassword = System.getenv("ANDROID_KEY_PASSWORD")
         }
     }
 
     buildTypes {
         release {
-            signingConfig = signingConfigs.getByName("release")
+            val ksEnv = System.getenv("ANDROID_KEYSTORE_PATH")
+            val ksPath = if (!ksEnv.isNullOrBlank()) ksEnv else "${project.rootDir}/keystore.jks"
+            val hasKs = file(ksPath).exists() &&
+                System.getenv("ANDROID_KEYSTORE_PASSWORD") != null &&
+                System.getenv("ANDROID_KEY_ALIAS") != null &&
+                System.getenv("ANDROID_KEY_PASSWORD") != null
+
+            signingConfig = if (hasKs) signingConfigs.getByName("release") else signingConfigs.getByName("debug")
             isMinifyEnabled = false
             isShrinkResources = false
         }

@@ -7,7 +7,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      ANDROID_KEYSTORE_PATH: android/app/keystore.jks
+      ANDROID_KEYSTORE_PATH: ${{ github.workspace }}/android/app/keystore.jks
       ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
       ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
       ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
@@ -31,7 +31,8 @@ jobs:
 
       - name: Prepare keystore
         run: |
-          mkdir -p android/app
+          mkdir -p "${{ github.workspace }}/android/app"
+          echo "Writing keystore to: $ANDROID_KEYSTORE_PATH"
           echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 -d > "$ANDROID_KEYSTORE_PATH" || true
 
       - name: Validate secrets/keystore
