@@ -62,4 +62,4 @@ buildTypes {
 
 flutter {
     source = "../.."
-}
+'}'
