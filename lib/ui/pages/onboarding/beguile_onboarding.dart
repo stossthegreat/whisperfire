@@ -730,96 +730,29 @@ class _SignUpSlideState extends ConsumerState<_SignUpSlide> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Spacer(),
-
-          // Title
           Text(
-            'JOIN THE CIRCLE',
+            'YOU\'RE READY',
             style: WFTextStyles.h1.copyWith(
               color: WFColors.purple400,
               fontWeight: FontWeight.w900,
               letterSpacing: 2.0,
             ),
           ),
-          const SizedBox(height: 8),
-
-          // Subtitle
+          const SizedBox(height: 12),
           Text(
-            'Your transformation begins now',
+            'Let\'s continue to sign in.',
             style: WFTextStyles.h3.copyWith(
               color: WFColors.gray400,
               fontWeight: FontWeight.w600,
             ),
           ),
           const SizedBox(height: 32),
-
-          // Inputs
-          _InputField(
-            controller: _email,
-            hint: 'Email',
-            icon: Icons.email,
+          _CTAButton(
+            label: 'Continue',
+            enabled: true,
+            onTap: widget.onFinish,
+            primary: true,
           ),
-          const SizedBox(height: 16),
-          _InputField(
-            controller: _password,
-            hint: 'Password',
-            obscure: true,
-            icon: Icons.lock,
-          ),
-          const SizedBox(height: 24),
-
-          // Agreements
-          _AgreeRow(
-            value: _agreeTerms,
-            onChanged: (v) => setState(() => _agreeTerms = v ?? false),
-            label: 'I agree to the Terms & Conditions',
-            onTapLink: () => _openSheet(
-              'Terms & Conditions',
-              'Your Terms & Conditions go here. Replace this placeholder with your legal text.',
-            ),
-          ),
-          const SizedBox(height: 12),
-          _AgreeRow(
-            value: _agreePrivacy,
-            onChanged: (v) => setState(() => _agreePrivacy = v ?? false),
-            label: 'I agree to the Privacy Policy',
-            onTapLink: () => _openSheet(
-              'Privacy Policy',
-              'Your Privacy Policy goes here. Replace this placeholder with your legal text.',
-            ),
-          ),
-          const SizedBox(height: 32),
-
-          // Buttons
-          Row(
-            children: [
-              Expanded(
-                child: _CTAButton(
-                  label: 'Unlock Premium',
-                  enabled: _canContinue,
-                  onTap: _submitPremium,
-                  primary: true,
-                ),
-              ),
-              const SizedBox(width: 16),
-              Expanded(
-                child: _CTAButton(
-                  label: 'Continue Free',
-                  enabled: _canContinue,
-                  onTap: _submitFree,
-                  primary: false,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 16),
-
-          Text(
-            'You must accept both to continue.',
-            style: WFTextStyles.bodySmall.copyWith(
-              color: WFColors.gray500,
-            ),
-          ),
-
           const Spacer(),
         ],
       ),
@@ -1097,6 +1030,47 @@ class _BrandedFooter extends StatelessWidget {
               fontWeight: FontWeight.w700,
             ),
           ),
+        ],
+      ),
+    );
+  }
+}
+
+class _FinishSlide extends StatelessWidget {
+  final VoidCallback onContinue;
+  const _FinishSlide({required this.onContinue});
+
+  @override
+  Widget build(BuildContext context) {
+    return _CinemaFrame(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Spacer(),
+          Text(
+            'YOU\'RE READY',
+            style: WFTextStyles.h1.copyWith(
+              color: WFColors.purple400,
+              fontWeight: FontWeight.w900,
+              letterSpacing: 2.0,
+            ),
+          ),
+          const SizedBox(height: 12),
+          Text(
+            'Let\'s set up your account and continue.',
+            style: WFTextStyles.h3.copyWith(
+              color: WFColors.gray400,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          const SizedBox(height: 32),
+          _CTAButton(
+            label: 'Continue',
+            enabled: true,
+            onTap: onContinue,
+            primary: true,
+          ),
+          const Spacer(),
         ],
       ),
     );
