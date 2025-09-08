@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter/foundation.dart' show defaultTargetPlatform, TargetPlatform, kIsWeb;
+import 'package:url_launcher/url_launcher.dart';
 import '../../../core/theme/theme.dart';
 import '../../../data/providers/auth_providers.dart';
 import '../../../data/services/auth_service.dart';
@@ -25,6 +26,17 @@ class _LoginPageState extends ConsumerState<LoginPage> {
 
   bool get _canSubmit => _agreeTerms && _agreePrivacy && !_isLoading;
   bool get _showApple => !kIsWeb && defaultTargetPlatform == TargetPlatform.iOS;
+
+  Future<void> _openUrl(String url) async {
+    final uri = Uri.parse(url);
+    if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Could not open link: $url')),
+        );
+      }
+    }
+  }
 
   @override
   void dispose() {
@@ -172,9 +184,21 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                     ),
                     const SizedBox(width: 4),
                     Expanded(
-                      child: Text(
-                        'I agree to the Terms & Conditions',
-                        style: WFTextStyles.bodySmall.copyWith(color: WFColors.gray400),
+                      child: Wrap(
+                        alignment: WrapAlignment.start,
+                        children: [
+                          Text(
+                            'I agree to the ',
+                            style: WFTextStyles.bodySmall.copyWith(color: WFColors.gray400),
+                          ),
+                          InkWell(
+                            onTap: () => _openUrl('https://stossthegreat.github.io/Whisper/terms.html'),
+                            child: Text(
+                              'Terms & Conditions',
+                              style: WFTextStyles.bodySmall.copyWith(color: WFColors.purple400, decoration: TextDecoration.underline),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
@@ -188,9 +212,21 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                     ),
                     const SizedBox(width: 4),
                     Expanded(
-                      child: Text(
-                        'I agree to the Privacy Policy',
-                        style: WFTextStyles.bodySmall.copyWith(color: WFColors.gray400),
+                      child: Wrap(
+                        alignment: WrapAlignment.start,
+                        children: [
+                          Text(
+                            'I agree to the ',
+                            style: WFTextStyles.bodySmall.copyWith(color: WFColors.gray400),
+                          ),
+                          InkWell(
+                            onTap: () => _openUrl('https://stossthegreat.github.io/Whisper/privacy.html'),
+                            child: Text(
+                              'Privacy Policy',
+                              style: WFTextStyles.bodySmall.copyWith(color: WFColors.purple400, decoration: TextDecoration.underline),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
