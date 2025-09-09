@@ -20,13 +20,11 @@ class PatternOutputCard extends StatelessWidget {
     final psych = _psychProfile(result); // 🧠 Psych Profile (with explanation)
     final frameLedger = result.pattern?.cycle?.trim().isNotEmpty == true
         ? result.pattern!.cycle!
-        : 'Start → Mid → End (frame shifts not fully mapped)';
+        : '';
 
     final fixes = _precisionFixes(result); // 🎯 Precision Fixes (why+how)
     final recovery = _lines(result.nextMoves, max: 6); // 🔄 Recovery Protocol
-    final principle = (result.counterIntervention ??
-            'Begin Challenger, end Victor—never downgrade to Clerk.')
-        .trim();
+    final principle = (result.counterIntervention ?? '').trim();
     final hidden = (result.hiddenAgenda?.trim().isNotEmpty ?? false)
         ? result.hiddenAgenda!.trim()
         : (result.longGame?.trim() ?? '');

@@ -4,6 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../../core/taxonomy/tag_registry.dart';
 import '../../../data/providers.dart';
 import '../../../data/models/lesson_models.dart';
+import '../../../data/models/profile_models.dart';
+import '../../../data/services/gating_service.dart';
 import '../lesson_player/lesson_player_page.dart';
 
 class WorldOverviewPage extends ConsumerWidget {
@@ -60,7 +62,7 @@ class WorldOverviewPage extends ConsumerWidget {
                 itemCount: 4,
                 itemBuilder: (context, index) {
                   final world = index + 1;
-                  return _buildWorldCard(context, world, color);
+                  return _buildWorldCard(context, ref, world, color);
                 },
               ),
             ),
@@ -70,175 +72,199 @@ class WorldOverviewPage extends ConsumerWidget {
     );
   }
 
-  Widget _buildWorldCard(BuildContext context, int world, Color color) {
+  Widget _buildWorldCard(BuildContext context, WidgetRef ref, int world, Color color) {
     return Consumer(
       builder: (context, ref, child) {
         // _buildWorldCard called with category: $category, world: $world
 
-        final lessonsFuture =
-            ref.watch(worldLessonsProvider((category, world)));
+        final lessonsFuture = ref.watch(worldLessonsProvider((category, world)));
+        final profileAsync = ref.watch(userProfileProvider);
 
         return lessonsFuture.when(
           data: (lessons) {
             final lessonCount = lessons.length;
 
-            return Container(
-              margin: const EdgeInsets.only(bottom: 24),
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [
-                    Colors.white,
-                    color.withOpacity(0.02),
-                  ],
-                ),
-                borderRadius: BorderRadius.circular(24),
-                border: Border.all(
-                  color: color.withOpacity(0.15),
-                  width: 1.5,
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: color.withOpacity(0.08),
-                    blurRadius: 20,
-                    offset: const Offset(0, 8),
-                    spreadRadius: 0,
+            return profileAsync.when(
+              data: (profile) {
+                final isUnlocked = GatingService.isWorldUnlocked(profile, category, world);
+
+                final card = Container(
+                  margin: const EdgeInsets.only(bottom: 24),
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                        Colors.white,
+                        color.withOpacity(0.02),
+                      ],
+                    ),
+                    borderRadius: BorderRadius.circular(24),
+                    border: Border.all(
+                      color: color.withOpacity(0.15),
+                      width: 1.5,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: color.withOpacity(0.08),
+                        blurRadius: 20,
+                        offset: const Offset(0, 8),
+                        spreadRadius: 0,
+                      ),
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.04),
+                        blurRadius: 40,
+                        offset: const Offset(0, 16),
+                        spreadRadius: 0,
+                      ),
+                    ],
                   ),
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.04),
-                    blurRadius: 40,
-                    offset: const Offset(0, 16),
-                    spreadRadius: 0,
-                  ),
-                ],
-              ),
-              child: Material(
-                color: Colors.transparent,
-                child: InkWell(
-                  borderRadius: BorderRadius.circular(20),
-                  onTap: () => _showWorldLessons(context, world, lessons),
-                  child: Padding(
-                    padding: const EdgeInsets.all(24),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Container(
-                              width: 48,
-                              height: 48,
-                              decoration: BoxDecoration(
-                                color: color.withOpacity(0.1),
-                                borderRadius: BorderRadius.circular(24),
-                              ),
-                              child: Icon(
-                                Icons.public,
-                                color: color,
-                                size: 24,
-                              ),
-                            ),
-                            const SizedBox(width: 16),
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'World $world',
-                                    style: GoogleFonts.playfairDisplay(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      borderRadius: BorderRadius.circular(20),
+                      onTap: isUnlocked ? () => _showWorldLessons(context, ref, world, lessons) : null,
+                      child: Stack(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(24),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
+                                    Container(
+                                      width: 48,
+                                      height: 48,
+                                      decoration: BoxDecoration(
+                                        color: color.withOpacity(0.1),
+                                        borderRadius: BorderRadius.circular(24),
+                                      ),
+                                      child: Icon(
+                                        Icons.public,
+                                        color: color,
+                                        size: 24,
+                                      ),
                                     ),
-                                  ),
-                                  Text(
-                                    '$lessonCount lessons',
-                                    style: GoogleFonts.inter(
-                                      fontSize: 14,
-                                      color: Colors.grey[600],
+                                    const SizedBox(width: 16),
+                                    Expanded(
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            'World $world',
+                                            style: GoogleFonts.playfairDisplay(
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                          Text(
+                                            '$lessonCount lessons',
+                                            style: GoogleFonts.inter(
+                                              fontSize: 14,
+                                              color: Colors.grey[600],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Icon(
+                                      Icons.arrow_forward_ios,
+                                      color: Colors.grey[400],
+                                    ),
+                                  ],
+                                ),
+                                if (lessonCount == 0) ...[
+                                  const SizedBox(height: 16),
+                                  Container(
+                                    padding: const EdgeInsets.all(16),
+                                    decoration: BoxDecoration(
+                                      color: Colors.grey[50],
+                                      borderRadius: BorderRadius.circular(12),
+                                    ),
+                                    child: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.hourglass_empty,
+                                          color: Colors.grey[400],
+                                          size: 20,
+                                        ),
+                                        const SizedBox(width: 8),
+                                        Text(
+                                          'World is waiting. Lessons will appear here.',
+                                          style: GoogleFonts.inter(
+                                            fontSize: 14,
+                                            color: Colors.grey[600],
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ],
-                              ),
-                            ),
-                            Icon(
-                              Icons.arrow_forward_ios,
-                              color: Colors.grey[400],
-                            ),
-                          ],
-                        ),
-                        if (lessonCount == 0) ...[
-                          const SizedBox(height: 16),
-                          Container(
-                            padding: const EdgeInsets.all(16),
-                            decoration: BoxDecoration(
-                              color: Colors.grey[50],
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            child: Row(
-                              children: [
-                                Icon(
-                                  Icons.hourglass_empty,
-                                  color: Colors.grey[400],
-                                  size: 20,
-                                ),
-                                const SizedBox(width: 8),
-                                Text(
-                                  'World is waiting. Lessons will appear here.',
-                                  style: GoogleFonts.inter(
-                                    fontSize: 14,
-                                    color: Colors.grey[600],
-                                  ),
-                                ),
                               ],
                             ),
                           ),
+                          if (!isUnlocked)
+                            Positioned(
+                              right: 16,
+                              top: 16,
+                              child: Icon(Icons.lock, color: color.withOpacity(0.8)),
+                            ),
                         ],
-                      ],
+                      ),
                     ),
                   ),
-                ),
-              ),
+                );
+
+                return Opacity(opacity: isUnlocked ? 1.0 : 0.6, child: card);
+              },
+              loading: () => _loadingCard(color),
+              error: (_, __) => _errorCard(color),
             );
           },
-          loading: () => Container(
-            margin: const EdgeInsets.only(bottom: 20),
-            padding: const EdgeInsets.all(24),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.1),
-                  blurRadius: 10,
-                  offset: const Offset(0, 4),
-                ),
-              ],
-            ),
-            child: const Center(child: CircularProgressIndicator()),
-          ),
-          error: (error, stack) => Container(
-            margin: const EdgeInsets.only(bottom: 20),
-            padding: const EdgeInsets.all(24),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.1),
-                  blurRadius: 10,
-                  offset: const Offset(0, 4),
-                ),
-              ],
-            ),
-            child: Text('Error: $error'),
-          ),
+          loading: () => _loadingCard(color),
+          error: (error, stack) => _errorCard(color),
         );
       },
     );
   }
 
+  Widget _loadingCard(Color color) => Container(
+        margin: const EdgeInsets.only(bottom: 20),
+        padding: const EdgeInsets.all(24),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              blurRadius: 10,
+              offset: const Offset(0, 4),
+            ),
+          ],
+        ),
+        child: const Center(child: CircularProgressIndicator()),
+      );
+
+  Widget _errorCard(Color color) => Container(
+        margin: const EdgeInsets.only(bottom: 20),
+        padding: const EdgeInsets.all(24),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              blurRadius: 10,
+              offset: const Offset(0, 4),
+            ),
+          ],
+        ),
+        child: const Text('Error'),
+      );
+
   void _showWorldLessons(
-      BuildContext context, int world, List<Lesson> lessons) {
+      BuildContext context, WidgetRef ref, int world, List<Lesson> lessons) {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
@@ -297,7 +323,7 @@ class WorldOverviewPage extends ConsumerWidget {
                       itemCount: lessons.length,
                       itemBuilder: (context, index) {
                         final lesson = lessons[index];
-                        return _buildLessonTile(context, lesson);
+                        return _buildLessonTile(context, ref, lesson);
                       },
                     ),
             ),
@@ -307,110 +333,121 @@ class WorldOverviewPage extends ConsumerWidget {
     );
   }
 
-  Widget _buildLessonTile(BuildContext context, Lesson lesson) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 16),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [
-            Colors.white,
-            _getCategoryColor(category).withOpacity(0.02),
+  Widget _buildLessonTile(BuildContext context, WidgetRef ref, Lesson lesson) {
+    final profile = ref.watch(userProfileProvider).maybeWhen(
+          data: (p) => p,
+          orElse: () => null,
+        );
+    final isUnlocked = profile != null && GatingService.isLessonUnlocked(profile, lesson);
+
+    return Opacity(
+      opacity: isUnlocked ? 1.0 : 0.5,
+      child: Container(
+        margin: const EdgeInsets.only(bottom: 16),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              Colors.white,
+              _getCategoryColor(category).withOpacity(0.02),
+            ],
+          ),
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(
+            color: _getCategoryColor(category).withOpacity(0.1),
+            width: 1,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: _getCategoryColor(category).withOpacity(0.06),
+              blurRadius: 12,
+              offset: const Offset(0, 4),
+              spreadRadius: 0,
+            ),
+            BoxShadow(
+              color: Colors.black.withOpacity(0.03),
+              blurRadius: 24,
+              offset: const Offset(0, 8),
+              spreadRadius: 0,
+            ),
           ],
         ),
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(
-          color: _getCategoryColor(category).withOpacity(0.1),
-          width: 1,
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: _getCategoryColor(category).withOpacity(0.06),
-            blurRadius: 12,
-            offset: const Offset(0, 4),
-            spreadRadius: 0,
-          ),
-          BoxShadow(
-            color: Colors.black.withOpacity(0.03),
-            blurRadius: 24,
-            offset: const Offset(0, 8),
-            spreadRadius: 0,
-          ),
-        ],
-      ),
-      child: Material(
-        color: Colors.transparent,
-        child: InkWell(
-          borderRadius: BorderRadius.circular(16),
-          onTap: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => LessonPlayerPage(
-                  category: lesson.category,
-                  world: lesson.world,
-                  lesson: lesson.lesson,
-                ),
-              ),
-            );
-          },
-          child: Padding(
-            padding: const EdgeInsets.all(20),
-            child: Row(
-              children: [
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        lesson.title,
-                        style: GoogleFonts.inter(
-                          fontSize: 17,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.black87,
+        child: Material(
+          color: Colors.transparent,
+          child: InkWell(
+            borderRadius: BorderRadius.circular(16),
+            onTap: isUnlocked
+                ? () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => LessonPlayerPage(
+                          category: lesson.category,
+                          world: lesson.world,
+                          lesson: lesson.lesson,
                         ),
                       ),
-                      const SizedBox(height: 6),
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 12, vertical: 6),
-                        decoration: BoxDecoration(
-                          color: _getCategoryColor(category).withOpacity(0.1),
-                          borderRadius: BorderRadius.circular(12),
-                          border: Border.all(
-                            color: _getCategoryColor(category).withOpacity(0.2),
-                            width: 1,
-                          ),
-                        ),
-                        child: Text(
-                          '${lesson.xp} XP',
+                    );
+                  }
+                : null,
+            child: Padding(
+              padding: const EdgeInsets.all(20),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          lesson.title,
                           style: GoogleFonts.inter(
-                            fontSize: 13,
-                            color: _getCategoryColor(category),
+                            fontSize: 17,
                             fontWeight: FontWeight.w600,
+                            color: Colors.black87,
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  padding: const EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                    color: _getCategoryColor(category).withOpacity(0.1),
-                    borderRadius: BorderRadius.circular(12),
-                    border: Border.all(
-                      color: _getCategoryColor(category).withOpacity(0.2),
-                      width: 1,
+                        const SizedBox(height: 6),
+                        Container(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 12, vertical: 6),
+                          decoration: BoxDecoration(
+                            color: _getCategoryColor(category).withOpacity(0.1),
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(
+                              color: _getCategoryColor(category).withOpacity(0.2),
+                              width: 1,
+                            ),
+                          ),
+                          child: Text(
+                            '${lesson.xp} XP',
+                            style: GoogleFonts.inter(
+                              fontSize: 13,
+                              color: _getCategoryColor(category),
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                  child: Icon(
-                    Icons.play_circle_outline,
-                    color: _getCategoryColor(category),
-                    size: 24,
+                  Container(
+                    padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      color: _getCategoryColor(category).withOpacity(0.1),
+                      borderRadius: BorderRadius.circular(12),
+                      border: Border.all(
+                        color: _getCategoryColor(category).withOpacity(0.2),
+                        width: 1,
+                      ),
+                    ),
+                    child: Icon(
+                      isUnlocked ? Icons.play_circle_outline : Icons.lock,
+                      color: _getCategoryColor(category),
+                      size: 24,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

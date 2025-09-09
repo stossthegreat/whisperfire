@@ -51,13 +51,13 @@ class _BeguileOnboardingState extends ConsumerState<BeguileOnboarding>
               right: 24,
               child: IgnorePointer(
                 ignoring: true,
-                child: Row(
-                  children: [
-                    _PageDots(count: pages.length, index: _page),
-                    const Spacer(),
-                    _BrandedFooter(),
-                    const SizedBox(width: 8),
-                  ],
+              child: Row(
+                children: [
+                  _PageDots(count: pages.length, index: _page),
+                  const Spacer(),
+                  _BrandedFooter(),
+                  const SizedBox(width: 8),
+                ],
                 ),
               ),
             ),
@@ -751,8 +751,8 @@ class _SignUpSlideState extends ConsumerState<_SignUpSlide> {
             label: 'Continue',
             enabled: true,
             onTap: widget.onFinish,
-            primary: true,
-          ),
+                  primary: true,
+                ),
           const Spacer(),
         ],
       ),

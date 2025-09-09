@@ -45,5 +45,24 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	
+	<!-- Google Sign-In URL scheme -->
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.877360246883-dp17jfvdnckfa6ghvcu2060pam36l0e9</string>
+			</array>
+		</dict>
+	</array>
+
+	<!-- Permissions for OCR image picking/camera access -->
+	<key>NSCameraUsageDescription</key>
+	<string>We use the camera to scan text for analysis.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We need photo library access to select images for OCR.</string>
 </dict>
 </plist>

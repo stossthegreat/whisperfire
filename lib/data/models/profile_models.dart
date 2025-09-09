@@ -25,6 +25,7 @@ class UserProfile {
   Map<String, CategoryProgress> categories;
   Set<String> unlockedLessons;
   bool hasSeenOnboarding;
+  Set<String> unlockedCategories;
 
   UserProfile({
     required this.id,
@@ -32,8 +33,10 @@ class UserProfile {
     Map<String, CategoryProgress>? categories,
     Set<String>? unlockedLessons,
     this.hasSeenOnboarding = false,
+    Set<String>? unlockedCategories,
   })  : categories = categories ?? {},
-        unlockedLessons = unlockedLessons ?? {};
+        unlockedLessons = unlockedLessons ?? {},
+        unlockedCategories = unlockedCategories ?? {};
 
   void ensureCategory(String key) {
     categories.putIfAbsent(key, () => CategoryProgress());
@@ -55,12 +58,19 @@ class UserProfile {
       unlockedLessonsSet.addAll(unlockedList.cast<String>());
     }
 
+    final unlockedCategoriesSet = <String>{};
+    if (json['unlockedCategories'] != null) {
+      final unlockedCatList = json['unlockedCategories'] as List<dynamic>;
+      unlockedCategoriesSet.addAll(unlockedCatList.cast<String>());
+    }
+
     return UserProfile(
       id: json['id'] as String,
       xpTotal: json['xpTotal'] as int? ?? 0,
       categories: categoriesMap,
       unlockedLessons: unlockedLessonsSet,
       hasSeenOnboarding: json['hasSeenOnboarding'] as bool? ?? false,
+      unlockedCategories: unlockedCategoriesSet,
     );
   }
 
@@ -68,10 +78,10 @@ class UserProfile {
     return {
       'id': id,
       'xpTotal': xpTotal,
-      'categories':
-          categories.map((key, value) => MapEntry(key, value.toJson())),
+      'categories': categories.map((key, value) => MapEntry(key, value.toJson())),
       'unlockedLessons': unlockedLessons.toList(),
       'hasSeenOnboarding': hasSeenOnboarding,
+      'unlockedCategories': unlockedCategories.toList(),
     };
   }
 }

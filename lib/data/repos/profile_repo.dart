@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/profile_models.dart';
+import '../services/gating_service.dart';
 
 class ProfileRepo {
   static const _key = 'user_profile_v1';
@@ -8,9 +9,19 @@ class ProfileRepo {
   Future<UserProfile> getProfile(String userId) async {
     final prefs = await SharedPreferences.getInstance();
     final raw = prefs.getString(_key);
-    if (raw == null) return UserProfile(id: userId);
+    if (raw == null) {
+      final p = UserProfile(id: userId);
+      if (p.unlockedCategories.isEmpty) {
+        p.unlockedCategories = GatingService.defaultUnlockedCategories();
+      }
+      return p;
+    }
     final m = json.decode(raw) as Map<String, dynamic>;
-    return UserProfile.fromJson(m);
+    final p = UserProfile.fromJson(m);
+    if (p.unlockedCategories.isEmpty) {
+      p.unlockedCategories = GatingService.defaultUnlockedCategories();
+    }
+    return p;
   }
 
   Future<void> saveProfile(UserProfile p) async {

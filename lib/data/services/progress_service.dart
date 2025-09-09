@@ -2,6 +2,7 @@ import '../models/lesson_models.dart';
 import '../models/profile_models.dart';
 import '../repos/profile_repo.dart';
 import 'package:flutter/foundation.dart';
+import 'gating_service.dart';
 
 class ProgressService {
   final ProfileRepo _repo;
@@ -20,17 +21,15 @@ class ProgressService {
 
     // Check if lesson has already been completed to prevent duplicate XP
     if (p.unlockedLessons.contains(lesson.id)) {
-      // Lesson already completed, return profile without changes
       if (kDebugMode) {
-        // Lesson ${lesson.id} already completed. Skipping XP award.
+        // Lesson already completed. Skipping XP award.
       }
       return p;
     }
 
     // Award XP for first-time completion
     if (kDebugMode) {
-      // Awarding ${lesson.xp} XP for lesson ${lesson.id}
-      // Previous total XP: ${p.xpTotal}
+      // Awarding XP for lesson
     }
 
     p.xpTotal += lesson.xp;
@@ -40,9 +39,12 @@ class ProgressService {
     cp.level = _levelForXp(cp.xp);
     p.unlockedLessons.add(lesson.id);
 
-    if (kDebugMode) {
-      // New total XP: ${p.xpTotal}
-      // Category ${lesson.category} XP: ${cp.xp}
+    // If category now completed, unlock next category
+    if (GatingService.isCategoryCompleted(p, lesson.category)) {
+      final nextCat = GatingService.nextCategoryToUnlock(lesson.category);
+      if (nextCat != null) {
+        p.unlockedCategories.add(nextCat);
+      }
     }
 
     await _repo.saveProfile(p);
