@@ -262,10 +262,10 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
             onPressed: (nextLesson == null)
                 ? null
                 : () {
-                    // Close dialog first
-                    Navigator.of(dialogContext).pop();
-                    // Reset completion flag
-                    _isCompleting = false;
+              // Close dialog first
+              Navigator.of(dialogContext).pop();
+              // Reset completion flag
+              _isCompleting = false;
                     // Navigate to the next lesson
                     Future.delayed(const Duration(milliseconds: 100), () async {
                       if (!mounted) return;
@@ -281,8 +281,8 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
                           ),
                         ),
                       );
-                    });
-                  },
+              });
+            },
             child: const Text('Next Lesson'),
           ),
         ],

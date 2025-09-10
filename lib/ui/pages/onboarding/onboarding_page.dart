@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'beguile_onboarding.dart';
+import '../../../data/services/onboarding_service.dart';
 
 // Simple wrapper for the actual onboarding implementation
 class OnboardingPage extends StatelessWidget {
@@ -9,9 +10,10 @@ class OnboardingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BeguileOnboarding(
-      onFinish: () {
-        // After onboarding, go to proper login
-        context.go('/login');
+      onFinish: () async {
+        await OnboardingService.complete();
+        // After onboarding, go to paywall
+        context.go('/paywall');
       },
     );
   }

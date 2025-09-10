@@ -89,120 +89,120 @@ class WorldOverviewPage extends ConsumerWidget {
                 final isUnlocked = GatingService.isWorldUnlocked(profile, category, world);
 
                 final card = Container(
-                  margin: const EdgeInsets.only(bottom: 24),
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      colors: [
-                        Colors.white,
-                        color.withOpacity(0.02),
-                      ],
-                    ),
-                    borderRadius: BorderRadius.circular(24),
-                    border: Border.all(
-                      color: color.withOpacity(0.15),
-                      width: 1.5,
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: color.withOpacity(0.08),
-                        blurRadius: 20,
-                        offset: const Offset(0, 8),
-                        spreadRadius: 0,
-                      ),
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.04),
-                        blurRadius: 40,
-                        offset: const Offset(0, 16),
-                        spreadRadius: 0,
-                      ),
-                    ],
+              margin: const EdgeInsets.only(bottom: 24),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Colors.white,
+                    color.withOpacity(0.02),
+                  ],
+                ),
+                borderRadius: BorderRadius.circular(24),
+                border: Border.all(
+                  color: color.withOpacity(0.15),
+                  width: 1.5,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: color.withOpacity(0.08),
+                    blurRadius: 20,
+                    offset: const Offset(0, 8),
+                    spreadRadius: 0,
                   ),
-                  child: Material(
-                    color: Colors.transparent,
-                    child: InkWell(
-                      borderRadius: BorderRadius.circular(20),
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.04),
+                    blurRadius: 40,
+                    offset: const Offset(0, 16),
+                    spreadRadius: 0,
+                  ),
+                ],
+              ),
+              child: Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(20),
                       onTap: isUnlocked ? () => _showWorldLessons(context, ref, world, lessons) : null,
                       child: Stack(
                         children: [
                           Padding(
-                            padding: const EdgeInsets.all(24),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  children: [
-                                    Container(
-                                      width: 48,
-                                      height: 48,
-                                      decoration: BoxDecoration(
-                                        color: color.withOpacity(0.1),
-                                        borderRadius: BorderRadius.circular(24),
-                                      ),
-                                      child: Icon(
-                                        Icons.public,
-                                        color: color,
-                                        size: 24,
-                                      ),
+                    padding: const EdgeInsets.all(24),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Container(
+                              width: 48,
+                              height: 48,
+                              decoration: BoxDecoration(
+                                color: color.withOpacity(0.1),
+                                borderRadius: BorderRadius.circular(24),
+                              ),
+                              child: Icon(
+                                Icons.public,
+                                color: color,
+                                size: 24,
+                              ),
+                            ),
+                            const SizedBox(width: 16),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'World $world',
+                                    style: GoogleFonts.playfairDisplay(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
                                     ),
-                                    const SizedBox(width: 16),
-                                    Expanded(
-                                      child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            'World $world',
-                                            style: GoogleFonts.playfairDisplay(
-                                              fontSize: 20,
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                          ),
-                                          Text(
-                                            '$lessonCount lessons',
-                                            style: GoogleFonts.inter(
-                                              fontSize: 14,
-                                              color: Colors.grey[600],
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    Icon(
-                                      Icons.arrow_forward_ios,
-                                      color: Colors.grey[400],
-                                    ),
-                                  ],
-                                ),
-                                if (lessonCount == 0) ...[
-                                  const SizedBox(height: 16),
-                                  Container(
-                                    padding: const EdgeInsets.all(16),
-                                    decoration: BoxDecoration(
-                                      color: Colors.grey[50],
-                                      borderRadius: BorderRadius.circular(12),
-                                    ),
-                                    child: Row(
-                                      children: [
-                                        Icon(
-                                          Icons.hourglass_empty,
-                                          color: Colors.grey[400],
-                                          size: 20,
-                                        ),
-                                        const SizedBox(width: 8),
-                                        Text(
-                                          'World is waiting. Lessons will appear here.',
-                                          style: GoogleFonts.inter(
-                                            fontSize: 14,
-                                            color: Colors.grey[600],
-                                          ),
-                                        ),
-                                      ],
+                                  ),
+                                  Text(
+                                    '$lessonCount lessons',
+                                    style: GoogleFonts.inter(
+                                      fontSize: 14,
+                                      color: Colors.grey[600],
                                     ),
                                   ),
                                 ],
+                              ),
+                            ),
+                            Icon(
+                              Icons.arrow_forward_ios,
+                              color: Colors.grey[400],
+                            ),
+                          ],
+                        ),
+                        if (lessonCount == 0) ...[
+                          const SizedBox(height: 16),
+                          Container(
+                            padding: const EdgeInsets.all(16),
+                            decoration: BoxDecoration(
+                              color: Colors.grey[50],
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.hourglass_empty,
+                                  color: Colors.grey[400],
+                                  size: 20,
+                                ),
+                                const SizedBox(width: 8),
+                                Text(
+                                  'World is waiting. Lessons will appear here.',
+                                  style: GoogleFonts.inter(
+                                    fontSize: 14,
+                                    color: Colors.grey[600],
+                                  ),
+                                ),
                               ],
                             ),
+                          ),
+                        ],
+                      ],
+                    ),
                           ),
                           if (!isUnlocked)
                             Positioned(
@@ -211,10 +211,10 @@ class WorldOverviewPage extends ConsumerWidget {
                               child: Icon(Icons.lock, color: color.withOpacity(0.8)),
                             ),
                         ],
-                      ),
-                    ),
                   ),
-                );
+                ),
+              ),
+            );
 
                 return Opacity(opacity: isUnlocked ? 1.0 : 0.6, child: card);
               },
@@ -230,38 +230,38 @@ class WorldOverviewPage extends ConsumerWidget {
   }
 
   Widget _loadingCard(Color color) => Container(
-        margin: const EdgeInsets.only(bottom: 20),
-        padding: const EdgeInsets.all(24),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(20),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.1),
-              blurRadius: 10,
-              offset: const Offset(0, 4),
+            margin: const EdgeInsets.only(bottom: 20),
+            padding: const EdgeInsets.all(24),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.1),
+                  blurRadius: 10,
+                  offset: const Offset(0, 4),
+                ),
+              ],
             ),
-          ],
-        ),
-        child: const Center(child: CircularProgressIndicator()),
+            child: const Center(child: CircularProgressIndicator()),
       );
 
   Widget _errorCard(Color color) => Container(
-        margin: const EdgeInsets.only(bottom: 20),
-        padding: const EdgeInsets.all(24),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(20),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.1),
-              blurRadius: 10,
-              offset: const Offset(0, 4),
+            margin: const EdgeInsets.only(bottom: 20),
+            padding: const EdgeInsets.all(24),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.1),
+                  blurRadius: 10,
+                  offset: const Offset(0, 4),
+                ),
+              ],
             ),
-          ],
-        ),
         child: const Text('Error'),
-      );
+    );
 
   void _showWorldLessons(
       BuildContext context, WidgetRef ref, int world, List<Lesson> lessons) {
@@ -343,110 +343,110 @@ class WorldOverviewPage extends ConsumerWidget {
     return Opacity(
       opacity: isUnlocked ? 1.0 : 0.5,
       child: Container(
-        margin: const EdgeInsets.only(bottom: 16),
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              Colors.white,
-              _getCategoryColor(category).withOpacity(0.02),
-            ],
-          ),
-          borderRadius: BorderRadius.circular(16),
-          border: Border.all(
-            color: _getCategoryColor(category).withOpacity(0.1),
-            width: 1,
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: _getCategoryColor(category).withOpacity(0.06),
-              blurRadius: 12,
-              offset: const Offset(0, 4),
-              spreadRadius: 0,
-            ),
-            BoxShadow(
-              color: Colors.black.withOpacity(0.03),
-              blurRadius: 24,
-              offset: const Offset(0, 8),
-              spreadRadius: 0,
-            ),
+      margin: const EdgeInsets.only(bottom: 16),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            Colors.white,
+            _getCategoryColor(category).withOpacity(0.02),
           ],
         ),
-        child: Material(
-          color: Colors.transparent,
-          child: InkWell(
-            borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(
+          color: _getCategoryColor(category).withOpacity(0.1),
+          width: 1,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: _getCategoryColor(category).withOpacity(0.06),
+            blurRadius: 12,
+            offset: const Offset(0, 4),
+            spreadRadius: 0,
+          ),
+          BoxShadow(
+            color: Colors.black.withOpacity(0.03),
+            blurRadius: 24,
+            offset: const Offset(0, 8),
+            spreadRadius: 0,
+          ),
+        ],
+      ),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(16),
             onTap: isUnlocked
                 ? () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => LessonPlayerPage(
-                          category: lesson.category,
-                          world: lesson.world,
-                          lesson: lesson.lesson,
-                        ),
-                      ),
-                    );
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => LessonPlayerPage(
+                  category: lesson.category,
+                  world: lesson.world,
+                  lesson: lesson.lesson,
+                ),
+              ),
+            );
                   }
                 : null,
-            child: Padding(
-              padding: const EdgeInsets.all(20),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          lesson.title,
-                          style: GoogleFonts.inter(
-                            fontSize: 17,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.black87,
-                          ),
+          child: Padding(
+            padding: const EdgeInsets.all(20),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        lesson.title,
+                        style: GoogleFonts.inter(
+                          fontSize: 17,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.black87,
                         ),
-                        const SizedBox(height: 6),
-                        Container(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 12, vertical: 6),
-                          decoration: BoxDecoration(
-                            color: _getCategoryColor(category).withOpacity(0.1),
-                            borderRadius: BorderRadius.circular(12),
-                            border: Border.all(
-                              color: _getCategoryColor(category).withOpacity(0.2),
-                              width: 1,
-                            ),
-                          ),
-                          child: Text(
-                            '${lesson.xp} XP',
-                            style: GoogleFonts.inter(
-                              fontSize: 13,
-                              color: _getCategoryColor(category),
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      color: _getCategoryColor(category).withOpacity(0.1),
-                      borderRadius: BorderRadius.circular(12),
-                      border: Border.all(
-                        color: _getCategoryColor(category).withOpacity(0.2),
-                        width: 1,
                       ),
-                    ),
-                    child: Icon(
-                      isUnlocked ? Icons.play_circle_outline : Icons.lock,
-                      color: _getCategoryColor(category),
-                      size: 24,
+                      const SizedBox(height: 6),
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 12, vertical: 6),
+                        decoration: BoxDecoration(
+                          color: _getCategoryColor(category).withOpacity(0.1),
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(
+                            color: _getCategoryColor(category).withOpacity(0.2),
+                            width: 1,
+                          ),
+                        ),
+                        child: Text(
+                          '${lesson.xp} XP',
+                          style: GoogleFonts.inter(
+                            fontSize: 13,
+                            color: _getCategoryColor(category),
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: _getCategoryColor(category).withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(
+                      color: _getCategoryColor(category).withOpacity(0.2),
+                      width: 1,
                     ),
                   ),
-                ],
+                  child: Icon(
+                      isUnlocked ? Icons.play_circle_outline : Icons.lock,
+                    color: _getCategoryColor(category),
+                    size: 24,
+                  ),
+                ),
+              ],
               ),
             ),
           ),

@@ -255,6 +255,7 @@ class _LessonsContent extends ConsumerWidget {
               ),
             ],
           ),
+            ),
             if (!isUnlocked)
               Positioned(
                 right: 8,
