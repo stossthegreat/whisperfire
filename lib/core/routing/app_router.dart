@@ -11,6 +11,8 @@ import '../../ui/pages/profile/profile_page.dart';
 import '../../ui/pages/settings/settings_page.dart';
 import '../../ui/pages/onboarding/onboarding_page.dart';
 import '../../ui/pages/auth/login_page.dart';
+import '../../ui/pages/paywall/paywall_page.dart';
+import '../../data/services/paywall_service.dart';
 
 final appRouterProvider = Provider<GoRouter>((ref) {
   return GoRouter(
@@ -18,27 +20,27 @@ final appRouterProvider = Provider<GoRouter>((ref) {
     redirect: (context, state) {
       final container = ProviderScope.containerOf(context);
       final authState = container.read(authStateProvider);
-
+      
       final location = state.matchedLocation;
       final isOnLogin = location == '/login';
       final isOnOnboarding = location == '/onboarding';
       final isOnRootOrHome = location == '/' || location == '/home';
+      final isOnPaywall = location == '/paywall';
 
       // If we're on root/home, immediately route based on auth state to avoid blank screen
       if (isOnRootOrHome) {
         if (authState == AuthState.authenticated) return '/lessons';
-        // Treat loading same as unauthenticated for initial UX
         return '/onboarding';
       }
 
-      // Unauthenticated: show onboarding first; allow /login and /onboarding
+      // Unauthenticated: show onboarding first; allow onboarding -> paywall -> login
       if (authState == AuthState.unauthenticated) {
-        if (!isOnOnboarding && !isOnLogin) return '/onboarding';
-        return null;
+        if (isOnOnboarding || isOnPaywall || isOnLogin) return null;
+        return '/onboarding';
       }
 
-      // Authenticated: send to lessons from login/onboarding
-      if (authState == AuthState.authenticated && (isOnLogin || isOnOnboarding)) {
+      // Authenticated: send to lessons from login/onboarding/paywall
+      if (authState == AuthState.authenticated && (isOnLogin || isOnOnboarding || isOnPaywall)) {
         return '/lessons';
       }
       return null;
@@ -68,6 +70,12 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         path: '/onboarding',
         name: 'onboarding',
         builder: (context, state) => const OnboardingPage(),
+      ),
+      // Paywall route (outside shell)
+      GoRoute(
+        path: '/paywall',
+        name: 'paywall',
+        builder: (context, state) => const PaywallPage(),
       ),
       // Main shell with bottom navigation
       ShellRoute(

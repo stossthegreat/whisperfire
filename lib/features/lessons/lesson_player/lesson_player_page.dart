@@ -6,6 +6,7 @@ import 'package:confetti/confetti.dart';
 import '../../../data/providers.dart';
 import '../../../data/models/lesson_models.dart';
 import '../../../core/streak/streak_service.dart';
+import '../../../data/services/gating_service.dart';
 import '../widgets/tts_controls.dart';
 import '../widgets/frosted_card.dart';
 
@@ -178,6 +179,15 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
   }
 
   Widget _buildCompletionDialog(Lesson lesson, BuildContext dialogContext) {
+    // Compute next lesson using current profile and gating rules
+    final profile = ref.read(userProfileProvider).maybeWhen(
+          data: (p) => p,
+          orElse: () => null,
+        );
+    final nextLesson = profile != null
+        ? GatingService.findNextLessonInCategory(profile, lesson.category)
+        : null;
+
     return PopScope(
       canPop: false,
       onPopInvoked: (didPop) {
@@ -239,29 +249,41 @@ class _LessonPlayerPageState extends ConsumerState<LessonPlayerPage>
               Navigator.of(dialogContext).pop();
               // Reset completion flag
               _isCompleting = false;
-              // Use a small delay to ensure dialog is closed before navigation
+              // Navigate back to Lessons tab (root lessons page)
               Future.delayed(const Duration(milliseconds: 100), () {
                 if (mounted) {
-                  Navigator.of(context).pop();
+                  Navigator.of(context).pop(); // pop player
                 }
               });
             },
-            child: const Text('Back to Worlds'),
+            child: const Text('Back to Lessons'),
           ),
           ElevatedButton(
-            onPressed: () {
+            onPressed: (nextLesson == null)
+                ? null
+                : () {
               // Close dialog first
               Navigator.of(dialogContext).pop();
               // Reset completion flag
               _isCompleting = false;
-              // Use a small delay to ensure dialog is closed before navigation
-              Future.delayed(const Duration(milliseconds: 100), () {
-                if (mounted) {
-                  Navigator.of(context).pop();
-                }
+                    // Navigate to the next lesson
+                    Future.delayed(const Duration(milliseconds: 100), () async {
+                      if (!mounted) return;
+                      Navigator.of(context).pop(); // pop current player
+                      await Future.delayed(const Duration(milliseconds: 100));
+                      if (!mounted) return;
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => LessonPlayerPage(
+                            category: nextLesson.category,
+                            world: nextLesson.world,
+                            lesson: nextLesson.lesson,
+                          ),
+                        ),
+                      );
               });
             },
-            child: const Text('Continue'),
+            child: const Text('Next Lesson'),
           ),
         ],
       ),

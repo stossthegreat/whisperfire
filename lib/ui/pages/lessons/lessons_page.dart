@@ -182,22 +182,29 @@ class _LessonsContent extends ConsumerWidget {
   ) {
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
+    final isUnlocked = profile.unlockedCategories.contains(categorySlug);
 
     return GestureDetector(
-      onTap: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (context) => WorldOverviewPage(category: categorySlug),
-          ),
-        );
-      },
-      child: Container(
+      onTap: isUnlocked
+          ? () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => WorldOverviewPage(category: categorySlug),
+                ),
+              );
+            }
+          : null,
+      child: Opacity(
+        opacity: isUnlocked ? 1.0 : 0.5,
+        child: Container(
         decoration: BoxDecoration(
           color: Color(color).withOpacity(0.1),
           borderRadius: BorderRadius.circular(16),
           border: Border.all(color: Color(color).withOpacity(0.3)),
         ),
-        child: Padding(
+        child: Stack(
+          children: [
+            Padding(
           padding: EdgeInsets.all(screenWidth * 0.03),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -248,6 +255,15 @@ class _LessonsContent extends ConsumerWidget {
               ),
             ],
           ),
+            ),
+            if (!isUnlocked)
+              Positioned(
+                right: 8,
+                top: 8,
+                child: Icon(Icons.lock, color: Color(color).withOpacity(0.8)),
+              ),
+          ],
+        ),
         ),
       ),
     );

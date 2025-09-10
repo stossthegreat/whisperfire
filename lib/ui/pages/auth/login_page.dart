@@ -244,13 +244,13 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                 
                 const SizedBox(height: WFDims.spacingM),
                 if (_showApple)
-                  _SocialSignInButton(
-                    text: 'Continue with Apple',
-                    icon: Icons.apple,
-                    backgroundColor: Colors.black,
-                    textColor: Colors.white,
+                _SocialSignInButton(
+                  text: 'Continue with Apple',
+                  icon: Icons.apple,
+                  backgroundColor: Colors.black,
+                  textColor: Colors.white,
                     onPressed: _canSubmit ? _signInWithApple : null,
-                  ),
+                ),
                 
                 const SizedBox(height: WFDims.spacingL),
                 

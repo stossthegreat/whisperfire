@@ -4,6 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../../core/taxonomy/tag_registry.dart';
 import '../../../data/providers.dart';
 import '../../../data/models/lesson_models.dart';
+import '../../../data/models/profile_models.dart';
+import '../../../data/services/gating_service.dart';
 import '../lesson_player/lesson_player_page.dart';
 
 class WorldOverviewPage extends ConsumerWidget {
@@ -60,7 +62,7 @@ class WorldOverviewPage extends ConsumerWidget {
                 itemCount: 4,
                 itemBuilder: (context, index) {
                   final world = index + 1;
-                  return _buildWorldCard(context, world, color);
+                  return _buildWorldCard(context, ref, world, color);
                 },
               ),
             ),
@@ -70,19 +72,23 @@ class WorldOverviewPage extends ConsumerWidget {
     );
   }
 
-  Widget _buildWorldCard(BuildContext context, int world, Color color) {
+  Widget _buildWorldCard(BuildContext context, WidgetRef ref, int world, Color color) {
     return Consumer(
       builder: (context, ref, child) {
         // _buildWorldCard called with category: $category, world: $world
 
-        final lessonsFuture =
-            ref.watch(worldLessonsProvider((category, world)));
+        final lessonsFuture = ref.watch(worldLessonsProvider((category, world)));
+        final profileAsync = ref.watch(userProfileProvider);
 
         return lessonsFuture.when(
           data: (lessons) {
             final lessonCount = lessons.length;
 
-            return Container(
+            return profileAsync.when(
+              data: (profile) {
+                final isUnlocked = GatingService.isWorldUnlocked(profile, category, world);
+
+                final card = Container(
               margin: const EdgeInsets.only(bottom: 24),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
@@ -117,8 +123,10 @@ class WorldOverviewPage extends ConsumerWidget {
                 color: Colors.transparent,
                 child: InkWell(
                   borderRadius: BorderRadius.circular(20),
-                  onTap: () => _showWorldLessons(context, world, lessons),
-                  child: Padding(
+                      onTap: isUnlocked ? () => _showWorldLessons(context, ref, world, lessons) : null,
+                      child: Stack(
+                        children: [
+                          Padding(
                     padding: const EdgeInsets.all(24),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -195,12 +203,33 @@ class WorldOverviewPage extends ConsumerWidget {
                         ],
                       ],
                     ),
+                          ),
+                          if (!isUnlocked)
+                            Positioned(
+                              right: 16,
+                              top: 16,
+                              child: Icon(Icons.lock, color: color.withOpacity(0.8)),
+                            ),
+                        ],
                   ),
                 ),
               ),
             );
+
+                return Opacity(opacity: isUnlocked ? 1.0 : 0.6, child: card);
+              },
+              loading: () => _loadingCard(color),
+              error: (_, __) => _errorCard(color),
+            );
           },
-          loading: () => Container(
+          loading: () => _loadingCard(color),
+          error: (error, stack) => _errorCard(color),
+        );
+      },
+    );
+  }
+
+  Widget _loadingCard(Color color) => Container(
             margin: const EdgeInsets.only(bottom: 20),
             padding: const EdgeInsets.all(24),
             decoration: BoxDecoration(
@@ -215,8 +244,9 @@ class WorldOverviewPage extends ConsumerWidget {
               ],
             ),
             child: const Center(child: CircularProgressIndicator()),
-          ),
-          error: (error, stack) => Container(
+      );
+
+  Widget _errorCard(Color color) => Container(
             margin: const EdgeInsets.only(bottom: 20),
             padding: const EdgeInsets.all(24),
             decoration: BoxDecoration(
@@ -230,15 +260,11 @@ class WorldOverviewPage extends ConsumerWidget {
                 ),
               ],
             ),
-            child: Text('Error: $error'),
-          ),
-        );
-      },
+        child: const Text('Error'),
     );
-  }
 
   void _showWorldLessons(
-      BuildContext context, int world, List<Lesson> lessons) {
+      BuildContext context, WidgetRef ref, int world, List<Lesson> lessons) {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
@@ -297,7 +323,7 @@ class WorldOverviewPage extends ConsumerWidget {
                       itemCount: lessons.length,
                       itemBuilder: (context, index) {
                         final lesson = lessons[index];
-                        return _buildLessonTile(context, lesson);
+                        return _buildLessonTile(context, ref, lesson);
                       },
                     ),
             ),
@@ -307,8 +333,16 @@ class WorldOverviewPage extends ConsumerWidget {
     );
   }
 
-  Widget _buildLessonTile(BuildContext context, Lesson lesson) {
-    return Container(
+  Widget _buildLessonTile(BuildContext context, WidgetRef ref, Lesson lesson) {
+    final profile = ref.watch(userProfileProvider).maybeWhen(
+          data: (p) => p,
+          orElse: () => null,
+        );
+    final isUnlocked = profile != null && GatingService.isLessonUnlocked(profile, lesson);
+
+    return Opacity(
+      opacity: isUnlocked ? 1.0 : 0.5,
+      child: Container(
       margin: const EdgeInsets.only(bottom: 16),
       decoration: BoxDecoration(
         gradient: LinearGradient(
@@ -343,7 +377,8 @@ class WorldOverviewPage extends ConsumerWidget {
         color: Colors.transparent,
         child: InkWell(
           borderRadius: BorderRadius.circular(16),
-          onTap: () {
+            onTap: isUnlocked
+                ? () {
             Navigator.of(context).push(
               MaterialPageRoute(
                 builder: (context) => LessonPlayerPage(
@@ -353,7 +388,8 @@ class WorldOverviewPage extends ConsumerWidget {
                 ),
               ),
             );
-          },
+                  }
+                : null,
           child: Padding(
             padding: const EdgeInsets.all(20),
             child: Row(
@@ -405,12 +441,13 @@ class WorldOverviewPage extends ConsumerWidget {
                     ),
                   ),
                   child: Icon(
-                    Icons.play_circle_outline,
+                      isUnlocked ? Icons.play_circle_outline : Icons.lock,
                     color: _getCategoryColor(category),
                     size: 24,
                   ),
                 ),
               ],
+              ),
             ),
           ),
         ),

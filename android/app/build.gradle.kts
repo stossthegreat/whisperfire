@@ -7,9 +7,9 @@ plugins {
 }
 
 android {
-    namespace = "Com.beguileai.app"
+    namespace = "com.beguileai.app"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    // ndkVersion = flutter.ndkVersion
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -21,7 +21,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "Com.beguileai.app"
+        applicationId = "com.beguileai.app"
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
