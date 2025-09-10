@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import '../../../core/theme/theme.dart';
 import '../../../widgets/app_header.dart';
 import '../../../data/services/paywall_service.dart';
@@ -36,19 +37,24 @@ class _PaywallPageState extends ConsumerState<PaywallPage> {
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(WFDims.paddingL),
-          child: Column(
-            children: [
-              _hero(),
-              const SizedBox(height: WFDims.spacingXL),
-              _plans(),
-              const SizedBox(height: WFDims.spacingL),
-              _benefits(),
-              const SizedBox(height: WFDims.spacingL),
-              _inviteUnlock(),
-              const SizedBox(height: WFDims.spacingXL),
-              _cta(entitledAsync),
-              const SizedBox(height: WFDims.spacingXXL),
-            ],
+          child: Center(
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 640),
+              child: Column(
+                children: [
+                  _hero(),
+                  const SizedBox(height: WFDims.spacingXL),
+                  _plans(),
+                  const SizedBox(height: WFDims.spacingL),
+                  _benefits(),
+                  const SizedBox(height: WFDims.spacingL),
+                  _inviteUnlock(),
+                  const SizedBox(height: WFDims.spacingXL),
+                  _cta(entitledAsync),
+                  const SizedBox(height: WFDims.spacingXXL),
+                ],
+              ),
+            ),
           ),
         ),
       ),
@@ -81,11 +87,27 @@ class _PaywallPageState extends ConsumerState<PaywallPage> {
   }
 
   Widget _plans() {
+    final width = MediaQuery.of(context).size.width;
+    final isNarrow = width < 560;
+
+    final monthly = Expanded(child: _planCard('monthly', '\$9.99/mo', 'Cancel anytime'));
+    final yearly = Expanded(child: _planCard('yearly', '\$90/year', '2 months free'));
+
+    if (isNarrow) {
+      return Column(
+        children: [
+          monthly,
+          const SizedBox(height: WFDims.spacingM),
+          yearly,
+        ],
+      );
+    }
+
     return Row(
       children: [
-        Expanded(child: _planCard('monthly', '\$9.99/mo', 'Cancel anytime')),
+        monthly,
         const SizedBox(width: WFDims.spacingM),
-        Expanded(child: _planCard('yearly', '\$90/year', '2 months free')),
+        yearly,
       ],
     );
   }
@@ -202,7 +224,7 @@ class _PaywallPageState extends ConsumerState<PaywallPage> {
     return SizedBox(
       width: double.infinity,
       child: ElevatedButton.icon(
-        onPressed: (_isProcessing || (!entitled && !PaywallService.bypassPaywall)) ? null : () => Navigator.of(context).pushReplacementNamed('/login'),
+        onPressed: (_isProcessing || (!entitled && !PaywallService.bypassPaywall)) ? null : () => context.go('/login'),
         icon: const Icon(Icons.lock_open),
         label: Text(entitled || PaywallService.bypassPaywall ? 'Continue' : 'Subscribe to Continue'),
         style: ElevatedButton.styleFrom(
