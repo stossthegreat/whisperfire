@@ -109,26 +109,10 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
               Center(
                 child: Column(
                   children: [
-                    Container(
-                      width: 80,
-                      height: 80,
-                      decoration: BoxDecoration(
-                        gradient: WFGradients.purpleGradient,
-                        borderRadius:
-                            BorderRadius.circular(WFDims.radiusXLarge),
-                        boxShadow: WFShadows.purpleGlow,
-                      ),
-                      child: Icon(
-                        Icons.visibility,
-                        size: 40,
-                        color: WFColors.textPrimary,
-                      ),
-                    ),
-                    const SizedBox(height: WFDims.spacingL),
                     Text('ANALYZE', style: WFTextStyles.h1),
                     const SizedBox(height: WFDims.spacingS),
                     Text(
-                      'Scan messages for analysis',
+                      'Scan messages for rigorous analysis',
                       style: WFTextStyles.bodyMedium
                           .copyWith(color: WFColors.textTertiary),
                     ),

@@ -9,6 +9,18 @@ import '../world_overview/world_overview_page.dart';
 class LessonsCatalogPage extends ConsumerWidget {
   const LessonsCatalogPage({super.key});
 
+  // Resolve image base path for category, supporting custom names for specific slugs
+  String _categoryAssetBase(String slug) {
+    switch (slug) {
+      case 'composed_authority':
+        return 'assets/images/categories/emotional_alchemy';
+      case 'strategic_influence':
+        return 'assets/images/categories/psychological_gravity';
+      default:
+        return 'assets/images/categories/$slug';
+    }
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final profileAsync = ref.watch(userProfileProvider);
@@ -101,88 +113,63 @@ class LessonsCatalogPage extends ConsumerWidget {
     String emoji,
     CategoryProgress progress,
   ) {
+    final isUnlocked = true; // Catalog screen is purely visual; tap always navigates
+    final String assetBase = _categoryAssetBase(categorySlug);
+
     return GestureDetector(
       onTap: () {
-        // Category card tapped with slug: $categorySlug
         Navigator.of(context).push(
           MaterialPageRoute(
             builder: (context) => WorldOverviewPage(category: categorySlug),
           ),
         );
       },
-      child: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              Color(color).withOpacity(0.05),
-              Color(color).withOpacity(0.1),
-            ],
-          ),
-          borderRadius: BorderRadius.circular(20),
-          border: Border.all(
-            color: Color(color).withOpacity(0.2),
-            width: 1.5,
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: Color(color).withOpacity(0.08),
-              blurRadius: 16,
-              offset: const Offset(0, 6),
-              spreadRadius: 0,
-            ),
-            BoxShadow(
-              color: Colors.black.withOpacity(0.04),
-              blurRadius: 32,
-              offset: const Offset(0, 12),
-              spreadRadius: 0,
-            ),
-          ],
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                emoji,
-                style: const TextStyle(fontSize: 48),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(20),
+        child: Stack(
+          children: [
+            Positioned.fill(
+              child: Image.asset(
+                '$assetBase.jpg',
+                fit: BoxFit.cover,
+                errorBuilder: (context, error, stackTrace) {
+                  return Image.asset(
+                    '$assetBase.png',
+                    fit: BoxFit.cover,
+                    errorBuilder: (context2, error2, stackTrace2) {
+                      return Container(
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [
+                              Color(color).withOpacity(0.08),
+                              Color(color).withOpacity(0.16),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  );
+                },
               ),
-              const SizedBox(height: 16),
-              Text(
-                categoryName,
-                style: WFTextStyles.h3.copyWith(
-                  color: Color(color),
-                  fontWeight: FontWeight.bold,
-                ),
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 16),
-              Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+            ),
+            // Subtle gradient (future-proof)
+            Positioned.fill(
+              child: Container(
                 decoration: BoxDecoration(
-                  color: Color(color),
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Text(
-                  'Lv.${progress.level}',
-                  style: WFTextStyles.bodySmall.copyWith(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Colors.black.withOpacity(0.12),
+                      Colors.black.withOpacity(0.28),
+                    ],
                   ),
                 ),
               ),
-              const SizedBox(height: 8),
-              Text(
-                '${progress.xp} XP',
-                style: WFTextStyles.bodySmall.copyWith(
-                  color: Color(color),
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

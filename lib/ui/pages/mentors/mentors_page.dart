@@ -56,21 +56,6 @@ class _MentorsContent extends ConsumerWidget {
           Center(
             child: Column(
               children: [
-                Container(
-                  width: 80,
-                  height: 80,
-                  decoration: BoxDecoration(
-                    gradient: WFGradients.purpleGradient,
-                    borderRadius: BorderRadius.circular(WFDims.radiusXLarge),
-                    boxShadow: WFShadows.purpleGlow,
-                  ),
-                  child: const Icon(
-                    Icons.psychology,
-                    size: 40,
-                    color: WFColors.textPrimary,
-                  ),
-                ),
-                const SizedBox(height: WFDims.spacingL),
                 Text('Choose Your AI Mentor', style: WFTextStyles.h1),
                 const SizedBox(height: WFDims.spacingS),
                 Text(

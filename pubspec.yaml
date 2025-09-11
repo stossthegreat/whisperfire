@@ -86,6 +86,7 @@ flutter:
   assets:
     - assets/images/mentors/
     - assets/images/onboarding/
+    - assets/images/categories/
     - assets/legal/
 
 

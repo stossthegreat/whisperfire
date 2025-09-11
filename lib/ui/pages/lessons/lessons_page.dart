@@ -49,6 +49,18 @@ class _LessonsContent extends ConsumerWidget {
 
   const _LessonsContent({required this.profile});
 
+  // Resolve image base path for category, supporting custom names for specific slugs
+  String _categoryAssetBase(String slug) {
+    switch (slug) {
+      case 'composed_authority':
+        return 'assets/images/categories/emotional_alchemy';
+      case 'strategic_influence':
+        return 'assets/images/categories/psychological_gravity';
+      default:
+        return 'assets/images/categories/$slug';
+    }
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return SingleChildScrollView(
@@ -60,21 +72,6 @@ class _LessonsContent extends ConsumerWidget {
           Center(
             child: Column(
               children: [
-                Container(
-                  width: 80,
-                  height: 80,
-                  decoration: BoxDecoration(
-                    gradient: WFGradients.purpleGradient,
-                    borderRadius: BorderRadius.circular(WFDims.radiusXLarge),
-                    boxShadow: WFShadows.purpleGlow,
-                  ),
-                  child: const Icon(
-                    Icons.school,
-                    size: 40,
-                    color: WFColors.textPrimary,
-                  ),
-                ),
-                const SizedBox(height: WFDims.spacingL),
                 Text('Learning Hub',
                     style: WFTextStyles.h1.copyWith(color: Colors.white)),
                 const SizedBox(height: WFDims.spacingS),
@@ -92,13 +89,6 @@ class _LessonsContent extends ConsumerWidget {
           const SizedBox(height: WFDims.spacingXL),
 
           // Categories Grid
-          Text(
-            'Choose Your Path',
-            style: WFTextStyles.h2.copyWith(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
           const SizedBox(height: WFDims.spacingL),
 
           // Categories Grid
@@ -183,6 +173,7 @@ class _LessonsContent extends ConsumerWidget {
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
     final isUnlocked = profile.unlockedCategories.contains(categorySlug);
+    final String assetBase = _categoryAssetBase(categorySlug);
 
     return GestureDetector(
       onTap: isUnlocked
@@ -196,74 +187,103 @@ class _LessonsContent extends ConsumerWidget {
           : null,
       child: Opacity(
         opacity: isUnlocked ? 1.0 : 0.5,
-        child: Container(
-        decoration: BoxDecoration(
-          color: Color(color).withOpacity(0.1),
+        child: ClipRRect(
           borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: Color(color).withOpacity(0.3)),
-        ),
-        child: Stack(
-          children: [
-            Padding(
-          padding: EdgeInsets.all(screenWidth * 0.03),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+          child: Stack(
             children: [
-              Text(
-                emoji,
-                style: TextStyle(fontSize: screenWidth * 0.09),
-              ),
-              SizedBox(height: screenHeight * 0.015),
-              Flexible(
-                child: Text(
-                  categoryName,
-                  style: WFTextStyles.h4.copyWith(
-                    color: Color(color),
-                    fontWeight: FontWeight.bold,
-                    fontSize: screenWidth * 0.035,
-                  ),
-                  textAlign: TextAlign.center,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
+              // Background image for category
+              Positioned.fill(
+                child: Image.asset(
+                  '$assetBase.jpg',
+                  fit: BoxFit.cover,
+                  errorBuilder: (context, error, stackTrace) {
+                    return Image.asset(
+                      '$assetBase.png',
+                      fit: BoxFit.cover,
+                      errorBuilder: (context2, error2, stackTrace2) {
+                        // Fallback to colored background if asset missing
+                        return Container(color: Color(color).withOpacity(0.15));
+                      },
+                    );
+                  },
                 ),
               ),
-              SizedBox(height: screenHeight * 0.015),
-              Container(
-                padding: EdgeInsets.symmetric(
-                    horizontal: screenWidth * 0.025,
-                    vertical: screenHeight * 0.005),
-                decoration: BoxDecoration(
-                  color: Color(color),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Text(
-                  'Lv.${progress.level}',
-                  style: WFTextStyles.bodySmall.copyWith(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: screenWidth * 0.025,
+              // Dark gradient overlay for readability
+              Positioned.fill(
+                child: Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Colors.black.withOpacity(0.15),
+                        Colors.black.withOpacity(0.35),
+                      ],
+                    ),
                   ),
                 ),
               ),
-              SizedBox(height: screenHeight * 0.008),
-              Text(
-                '${progress.xp} XP',
-                style: WFTextStyles.bodySmall.copyWith(
-                  color: Color(color),
-                  fontSize: screenWidth * 0.025,
+
+              // Top row: chips left, lock right
+              Positioned(
+                top: screenWidth * 0.03,
+                left: screenWidth * 0.03,
+                right: screenWidth * 0.03,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // Progress chips (Lv, XP)
+                    Row(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: screenWidth * 0.025,
+                              vertical: screenHeight * 0.004),
+                          decoration: BoxDecoration(
+                            color: Colors.white.withOpacity(0.15),
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: Colors.white24),
+                          ),
+                          child: Text(
+                            'Lv.${progress.level}',
+                            style: WFTextStyles.bodySmall.copyWith(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w600,
+                              fontSize: screenWidth * 0.028,
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: screenWidth * 0.02),
+                        Container(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: screenWidth * 0.025,
+                              vertical: screenHeight * 0.004),
+                          decoration: BoxDecoration(
+                            color: Colors.white.withOpacity(0.12),
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: Colors.white24),
+                          ),
+                          child: Text(
+                            '${progress.xp} XP',
+                            style: WFTextStyles.bodySmall.copyWith(
+                              color: Colors.white,
+                              fontSize: screenWidth * 0.028,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const Spacer(),
+                    if (!isUnlocked)
+                      Icon(
+                        Icons.lock,
+                        color: Colors.white.withOpacity(0.85),
+                      ),
+                  ],
                 ),
               ),
             ],
           ),
-            ),
-            if (!isUnlocked)
-              Positioned(
-                right: 8,
-                top: 8,
-                child: Icon(Icons.lock, color: Color(color).withOpacity(0.8)),
-              ),
-          ],
-        ),
         ),
       ),
     );

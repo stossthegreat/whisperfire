@@ -56,7 +56,8 @@ class GatingService {
   }
 
   static bool isLessonUnlocked(UserProfile profile, Lesson lesson) {
-    // Only the next uncompleted lesson is playable
+    // Allow replay of completed lessons; otherwise only the next uncompleted lesson is playable
+    if (profile.unlockedLessons.contains(lesson.id)) return true;
     final next = findNextLessonInCategory(profile, lesson.category);
     return next != null && next.id == lesson.id;
   }

@@ -62,6 +62,14 @@ class _PaywallPageState extends ConsumerState<PaywallPage> {
   }
 
   Widget _hero() {
+    final width = MediaQuery.of(context).size.width;
+    final TextStyle titleStyle = width < 340
+        ? WFTextStyles.h3
+        : (width < 420 ? WFTextStyles.h2 : WFTextStyles.h1);
+    final TextStyle subtitleStyle = (width < 360)
+        ? WFTextStyles.bodySmall.copyWith(color: WFColors.textTertiary)
+        : WFTextStyles.bodyMedium.copyWith(color: WFColors.textTertiary);
+
     return Column(
       children: [
         Container(
@@ -75,12 +83,20 @@ class _PaywallPageState extends ConsumerState<PaywallPage> {
           child: const Icon(Icons.auto_awesome, color: Colors.white, size: 48),
         ),
         const SizedBox(height: WFDims.spacingL),
-        Text('Unlock Whisperfire Pro', style: WFTextStyles.h1),
+        Text(
+          'Unlock Whisperfire Pro',
+          style: titleStyle,
+          textAlign: TextAlign.center,
+          maxLines: 2,
+          softWrap: true,
+        ),
         const SizedBox(height: WFDims.spacingS),
         Text(
           'Master persuasion. See patterns. Build unshakeable presence.',
-          style: WFTextStyles.bodyMedium.copyWith(color: WFColors.textTertiary),
+          style: subtitleStyle,
           textAlign: TextAlign.center,
+          maxLines: 3,
+          softWrap: true,
         ),
       ],
     );
@@ -90,8 +106,8 @@ class _PaywallPageState extends ConsumerState<PaywallPage> {
     final width = MediaQuery.of(context).size.width;
     final isNarrow = width < 560;
 
-    final monthly = Expanded(child: _planCard('monthly', '\$9.99/mo', 'Cancel anytime'));
-    final yearly = Expanded(child: _planCard('yearly', '\$90/year', '2 months free'));
+    final monthly = Flexible(fit: FlexFit.loose, child: _planCard('monthly', '\$9.99/mo', 'Cancel anytime'));
+    final yearly = Flexible(fit: FlexFit.loose, child: _planCard('yearly', '\$90/year', '2 months free'));
 
     if (isNarrow) {
       return Column(
@@ -114,6 +130,12 @@ class _PaywallPageState extends ConsumerState<PaywallPage> {
 
   Widget _planCard(String id, String price, String tag) {
     final bool selected = _selectedPlan == id;
+    final double width = MediaQuery.of(context).size.width;
+    final TextStyle tierStyle = width < 360 ? WFTextStyles.h5 : WFTextStyles.h4;
+    final TextStyle priceStyle = width < 360
+        ? WFTextStyles.h3.copyWith(color: Colors.white)
+        : WFTextStyles.h2.copyWith(color: Colors.white);
+
     return GestureDetector(
       onTap: () => setState(() => _selectedPlan = id),
       child: AnimatedContainer(
@@ -133,11 +155,11 @@ class _PaywallPageState extends ConsumerState<PaywallPage> {
               children: [
                 Icon(selected ? Icons.radio_button_checked : Icons.radio_button_off, color: WFColors.purple300),
                 const SizedBox(width: 8),
-                Text(id == 'monthly' ? 'Monthly' : 'Yearly', style: WFTextStyles.h4),
+                Text(id == 'monthly' ? 'Monthly' : 'Yearly', style: tierStyle),
               ],
             ),
             const SizedBox(height: WFDims.spacingS),
-            Text(price, style: WFTextStyles.h2.copyWith(color: Colors.white)),
+            Text(price, style: priceStyle),
             const SizedBox(height: 4),
             Text(tag, style: WFTextStyles.labelMedium.copyWith(color: WFColors.textTertiary)),
           ],
@@ -175,7 +197,14 @@ class _PaywallPageState extends ConsumerState<PaywallPage> {
                     const SizedBox(width: 10),
                     Expanded(child: Text(b[0], style: WFTextStyles.bodyMedium)),
                     const SizedBox(width: 8),
-                    Text(b[1], style: WFTextStyles.bodySmall.copyWith(color: WFColors.textTertiary)),
+                    Flexible(
+                      child: Text(
+                        b[1],
+                        style: WFTextStyles.bodySmall.copyWith(color: WFColors.textTertiary),
+                        textAlign: TextAlign.right,
+                        softWrap: true,
+                      ),
+                    ),
                   ],
                 ),
               )),
