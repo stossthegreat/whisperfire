@@ -84,7 +84,7 @@ class _PaywallPageState extends ConsumerState<PaywallPage> {
         ),
         const SizedBox(height: WFDims.spacingL),
         Text(
-          'Unlock Whisperfire Pro',
+          'Unlock Beguile AI Pro',
           style: titleStyle,
           textAlign: TextAlign.center,
           maxLines: 2,
@@ -106,24 +106,24 @@ class _PaywallPageState extends ConsumerState<PaywallPage> {
     final width = MediaQuery.of(context).size.width;
     final isNarrow = width < 560;
 
-    final monthly = Flexible(fit: FlexFit.loose, child: _planCard('monthly', '\$9.99/mo', 'Cancel anytime'));
-    final yearly = Flexible(fit: FlexFit.loose, child: _planCard('yearly', '\$90/year', '2 months free'));
+    final monthlyCard = _planCard('monthly', '\$9.99/mo', 'Cancel anytime');
+    final yearlyCard = _planCard('yearly', '\$90/year', '2 months free');
 
     if (isNarrow) {
       return Column(
         children: [
-          monthly,
+          monthlyCard,
           const SizedBox(height: WFDims.spacingM),
-          yearly,
+          yearlyCard,
         ],
       );
     }
 
     return Row(
       children: [
-        monthly,
+        Expanded(child: monthlyCard),
         const SizedBox(width: WFDims.spacingM),
-        yearly,
+        Expanded(child: yearlyCard),
       ],
     );
   }
