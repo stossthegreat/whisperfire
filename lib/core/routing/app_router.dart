@@ -13,6 +13,7 @@ import '../../ui/pages/onboarding/onboarding_page.dart';
 import '../../ui/pages/auth/login_page.dart';
 import '../../ui/pages/paywall/paywall_page.dart';
 import '../../data/services/paywall_service.dart';
+import '../../data/services/onboarding_service.dart';
 
 final appRouterProvider = Provider<GoRouter>((ref) {
   return GoRouter(
