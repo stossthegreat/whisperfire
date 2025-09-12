@@ -41,11 +41,15 @@ class AuthService {
     try {
       if (kIsWeb) {
         final provider = fb.GoogleAuthProvider();
+        // Force account chooser on web
+        provider.setCustomParameters({'prompt': 'select_account'});
         final cred = await _auth.signInWithPopup(provider);
         final user = cred.user;
         if (user == null) return null;
         return AuthUserCredential(AuthUser.fromFirebase(user));
       } else {
+        // If a previous session exists, GoogleSignIn may auto-select.
+        // After a proper signOut() (below), this will show the chooser.
         final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
         if (googleUser == null) return null;
         final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
@@ -127,6 +131,14 @@ class AuthService {
   }
 
   Future<void> signOut() async {
+    // Clear Google session so chooser appears next time after sign-out
+    if (!kIsWeb) {
+      try {
+        final google = GoogleSignIn();
+        await google.signOut();
+        await google.disconnect();
+      } catch (_) {}
+    }
     await _auth.signOut();
   }
 
