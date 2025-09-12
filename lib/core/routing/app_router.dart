@@ -23,24 +23,32 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       
       final location = state.matchedLocation;
       final isOnLogin = location == '/login';
+      final isOnSignup = location == '/signup';
       final isOnOnboarding = location == '/onboarding';
       final isOnRootOrHome = location == '/' || location == '/home';
       final isOnPaywall = location == '/paywall';
 
+      // During auth loading, do not redirect to prevent flicker/loops
+      if (authState == AuthState.loading) {
+        return null;
+      }
+
       // If we're on root/home, immediately route based on auth state to avoid blank screen
       if (isOnRootOrHome) {
         if (authState == AuthState.authenticated) return '/lessons';
-        return '/onboarding';
+        // If onboarding already completed previously, skip to paywall/login path
+        return OnboardingService.isCompleted ? '/paywall' : '/onboarding';
       }
 
       // Unauthenticated: show onboarding first; allow onboarding -> paywall -> login
       if (authState == AuthState.unauthenticated) {
-        if (isOnOnboarding || isOnPaywall || isOnLogin) return null;
-        return '/onboarding';
+        if (isOnOnboarding || isOnPaywall || isOnLogin || isOnSignup) return null;
+        // If onboarding already completed in a prior session, skip it this time
+        return OnboardingService.isCompleted ? '/paywall' : '/onboarding';
       }
 
       // Authenticated: send to lessons from login/onboarding/paywall
-      if (authState == AuthState.authenticated && (isOnLogin || isOnOnboarding || isOnPaywall)) {
+      if (authState == AuthState.authenticated && (isOnLogin || isOnSignup || isOnOnboarding || isOnPaywall)) {
         return '/lessons';
       }
       return null;
@@ -64,6 +72,12 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         path: '/login',
         name: 'login',
         builder: (context, state) => const LoginPage(),
+      ),
+      // Signup route (outside shell)
+      GoRoute(
+        path: '/signup',
+        name: 'signup',
+        builder: (context, state) => const LoginPage(initialSignUp: true),
       ),
       // Onboarding route (outside shell)
       GoRoute(

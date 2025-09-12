@@ -9,7 +9,9 @@ import '../../../data/services/auth_service.dart';
 import '../../../widgets/app_header.dart';
 
 class LoginPage extends ConsumerStatefulWidget {
-  const LoginPage({super.key});
+  final bool initialSignUp;
+
+  const LoginPage({super.key, this.initialSignUp = false});
 
   @override
   ConsumerState<LoginPage> createState() => _LoginPageState();
@@ -26,6 +28,12 @@ class _LoginPageState extends ConsumerState<LoginPage> {
 
   bool get _canSubmit => _agreeTerms && _agreePrivacy && !_isLoading;
   bool get _showApple => !kIsWeb && defaultTargetPlatform == TargetPlatform.iOS;
+
+  @override
+  void initState() {
+    super.initState();
+    _isSignUp = widget.initialSignUp;
+  }
 
   Future<void> _openUrl(String url) async {
     final uri = Uri.parse(url);
