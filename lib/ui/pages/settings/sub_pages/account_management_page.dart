@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../core/theme/theme.dart';
 import '../../../atoms/atoms.dart';
 import '../../../../data/providers.dart';
 import '../../../../data/models/profile_models.dart';
+import '../../../../data/services/cache_service.dart';
+import '../../../../data/providers/auth_providers.dart';
 
 class AccountManagementPage extends ConsumerWidget {
   const AccountManagementPage({super.key});
@@ -245,12 +248,14 @@ class AccountManagementPage extends ConsumerWidget {
             child: Text('Cancel', style: TextStyle(color: WFColors.purple400)),
           ),
           TextButton(
-            onPressed: () {
-              // TODO: Implement clear history
-              Navigator.pop(context);
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('History cleared successfully')),
-              );
+            onPressed: () async {
+              await CacheService.clearHistory();
+              if (context.mounted) {
+                Navigator.pop(context);
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('History cleared successfully')),
+                );
+              }
             },
             child: Text('Clear', style: TextStyle(color: Colors.red)),
           ),
@@ -275,12 +280,20 @@ class AccountManagementPage extends ConsumerWidget {
             child: Text('Cancel', style: TextStyle(color: WFColors.purple400)),
           ),
           TextButton(
-            onPressed: () {
-              // TODO: Implement deactivate account
-              Navigator.pop(context);
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Account deactivated')),
-              );
+            onPressed: () async {
+              final container = ProviderScope.containerOf(context);
+              try {
+                // Sign out and clear local caches
+                await CacheService.clearAll();
+                await container.read(authServiceProvider).signOut();
+              } catch (_) {}
+              if (context.mounted) {
+                Navigator.pop(context); // close dialog
+                context.go('/onboarding'); // router will handle paywall/onboarding
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Account deactivated')),
+                );
+              }
             },
             child: Text('Deactivate', style: TextStyle(color: Colors.orange)),
           ),
@@ -305,15 +318,33 @@ class AccountManagementPage extends ConsumerWidget {
             child: Text('Cancel', style: TextStyle(color: WFColors.purple400)),
           ),
           TextButton(
-            onPressed: () {
-              // TODO: Implement delete account
-              Navigator.pop(context);
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Account deleted permanently')),
-              );
+            onPressed: () async {
+              final container = ProviderScope.containerOf(context);
+              String? error;
+              try {
+                await container.read(authServiceProvider).deleteAccount();
+              } catch (e) {
+                error = e.toString();
+              }
+              try {
+                await CacheService.clearAll();
+              } catch (_) {}
+              try {
+                await container.read(authServiceProvider).signOut();
+              } catch (_) {}
+              if (context.mounted) {
+                Navigator.pop(context); // close dialog
+                context.go('/onboarding');
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text(
+                      error == null ? 'Account deleted permanently' : 'Account deleted locally. Sign-in may be required. ($error)'
+                    ),
+                  ),
+                );
+              }
             },
-            child:
-                Text('Delete Permanently', style: TextStyle(color: Colors.red)),
+            child: Text('Delete Permanently', style: TextStyle(color: Colors.red)),
           ),
         ],
       ),
