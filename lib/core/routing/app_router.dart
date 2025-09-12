@@ -17,7 +17,7 @@ import '../../data/services/onboarding_service.dart';
 
 final appRouterProvider = Provider<GoRouter>((ref) {
   return GoRouter(
-    initialLocation: '/',
+    initialLocation: '/onboarding',
     redirect: (context, state) {
       final container = ProviderScope.containerOf(context);
       final authState = container.read(authStateProvider);
@@ -29,8 +29,11 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       final isOnRootOrHome = location == '/' || location == '/home';
       final isOnPaywall = location == '/paywall';
 
-      // During auth loading, do not redirect to prevent flicker/loops
+      // During auth loading, route away from blank root/home to avoid white screen
       if (authState == AuthState.loading) {
+        if (isOnRootOrHome) {
+          return OnboardingService.isCompleted ? '/paywall' : '/onboarding';
+        }
         return null;
       }
 
