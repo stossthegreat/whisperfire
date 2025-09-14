@@ -26,6 +26,7 @@ jobs:
 
       - name: Restore keystore from secrets
         run: |
+          mkdir -p android/app
           echo "$ANDROID_KEYSTORE_BASE64" | base64 -d > android/app/upload-keystore.jks
           echo "ANDROID_KEYSTORE_PATH=$GITHUB_WORKSPACE/android/app/upload-keystore.jks" >> $GITHUB_ENV
         env:
@@ -34,44 +35,15 @@ jobs:
       - name: Install deps
         run: flutter pub get
 
-      # Optional: bump versionCode so Play accepts each build
-      - name: Bump versionCode in build.gradle
-        run: |
-          FILE=android/app/build.gradle
-          CODE=$(grep -oP 'versionCode \K[0-9]+' "$FILE")
-          NEW=$((CODE+1))
-          sed -i "s/versionCode $CODE/versionCode $NEW/" "$FILE" || true
-          git config user.email "ci@github" && git config user.name "ci"
-          git add "$FILE" && git commit -m "CI: bump versionCode to $NEW" || true
-
-      - name: Build AAB (not APK)
+      - name: Build AAB (signed, unique versionCode each run)
         env:
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
           STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
-        run: flutter build appbundle --release
+        run: flutter build appbundle --release --build-number $GITHUB_RUN_NUMBER
 
       - name: Upload artifact (AAB)
         uses: actions/upload-artifact@v4
         with:
           name: app-release-aab
           path: build/app/outputs/bundle/release/app-release.aab
-
-      # --- Safe check for optional Play upload (avoid 'secrets' in if) ---
-      - name: Flag if Play JSON exists
-        run: |
-          if [ -n "${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_JSON }}" ]; then
-            echo "HAS_PLAY_JSON=true" >> $GITHUB_ENV
-          else
-            echo "HAS_PLAY_JSON=false" >> $GITHUB_ENV
-          fi
-
-      - name: Upload to Play Internal (optional)
-        if: env.HAS_PLAY_JSON == 'true'
-        uses: r0adkll/upload-google-play@v1
-        with:
-          serviceAccountJsonPlainText: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_JSON }}
-          packageName: com.beguileai.app
-          releaseFiles: build/app/outputs/bundle/release/app-release.aab
-          track: internal
-          status: completed
