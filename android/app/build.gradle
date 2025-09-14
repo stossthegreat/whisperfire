@@ -1,18 +1,23 @@
-// android/app/build.gradle  (Module-level)
+// android/app/build.gradle
 plugins {
     id "com.android.application"
     id "org.jetbrains.kotlin.android"
+    // If you use Firebase keep this; otherwise you can remove it:
+    id "com.google.gms.google-services"
+    // ✅ New Flutter Gradle plugin (replaces apply-from + flutterRoot)
+    id "dev.flutter.flutter-gradle-plugin"
 }
 
 android {
-    namespace "com.beguileai.app"          // == PACKAGE_ID
+    namespace "com.beguileai.app"          // <-- your package, all lowercase; must match Play
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.beguileai.app"  // == PACKAGE_ID
+        applicationId "com.beguileai.app"  // <-- same as namespace
         minSdk 21
         targetSdk 34
-        versionCode 1                      // CI overrides with --build-number
+        // Baseline; CI will override with --build-number
+        versionCode 1
         versionName "1.0"
     }
 
@@ -38,22 +43,13 @@ android {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
-
-    kotlinOptions {
-        jvmTarget = "17"
-    }
+    kotlinOptions { jvmTarget = "17" }
 }
 
-// Flutter Gradle integration
-apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
-
-flutter {
-    source '../..'
-}
+// ❌ REMOVE these if present anywhere in this file:
+// apply from: "$flutterRoot/..."
+// flutter { ... }
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:1.9.24"
-}
-
-// Apply Google Services plugin at the end (uses classpath from project build.gradle)
-apply plugin: 'com.google.gms.google-services' 
+} 
