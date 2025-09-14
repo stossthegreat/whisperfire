@@ -8,6 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
@@ -37,13 +38,13 @@ jobs:
       - name: Bump versionCode in build.gradle
         run: |
           FILE=android/app/build.gradle
-          CODE=$(grep -oP 'versionCode \K[0-9]+' $FILE)
+          CODE=$(grep -oP 'versionCode \K[0-9]+' "$FILE")
           NEW=$((CODE+1))
-          sed -i "s/versionCode $CODE/versionCode $NEW/" $FILE
+          sed -i "s/versionCode $CODE/versionCode $NEW/" "$FILE" || true
           git config user.email "ci@github" && git config user.name "ci"
-          git add $FILE && git commit -m "CI: bump versionCode to $NEW" || true
+          git add "$FILE" && git commit -m "CI: bump versionCode to $NEW" || true
 
-      - name: Build **AAB** (not APK)
+      - name: Build AAB (not APK)
         env:
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
@@ -56,9 +57,17 @@ jobs:
           name: app-release-aab
           path: build/app/outputs/bundle/release/app-release.aab
 
-      # ---- OPTIONAL: auto-upload to Play Internal track ----
-      - name: Upload to Play Internal
-        if: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_JSON != '' }}
+      # --- Safe check for optional Play upload (avoid 'secrets' in if) ---
+      - name: Flag if Play JSON exists
+        run: |
+          if [ -n "${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_JSON }}" ]; then
+            echo "HAS_PLAY_JSON=true" >> $GITHUB_ENV
+          else
+            echo "HAS_PLAY_JSON=false" >> $GITHUB_ENV
+          fi
+
+      - name: Upload to Play Internal (optional)
+        if: env.HAS_PLAY_JSON == 'true'
         uses: r0adkll/upload-google-play@v1
         with:
           serviceAccountJsonPlainText: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_JSON }}
