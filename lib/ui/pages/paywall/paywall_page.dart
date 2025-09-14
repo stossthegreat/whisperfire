@@ -84,7 +84,7 @@ class _PaywallPageState extends ConsumerState<PaywallPage> {
         ),
         const SizedBox(height: WFDims.spacingL),
         Text(
-          'Unlock Whisperfire Pro',
+          'Unlock Beguile AI Pro',
           style: titleStyle,
           textAlign: TextAlign.center,
           maxLines: 2,
