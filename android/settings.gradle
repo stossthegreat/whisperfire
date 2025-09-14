@@ -1,5 +1,21 @@
 // android/settings.gradle
+
 pluginManagement {
+    // 🔎 Locate Flutter SDK via local.properties
+    def flutterSdkPath = null
+    def localProps = new File(rootProject.projectDir, "local.properties")
+    if (localProps.exists()) {
+        def Properties p = new Properties()
+        localProps.withReader("UTF-8") { r -> p.load(r) }
+        flutterSdkPath = p.getProperty("flutter.sdk")
+    }
+    if (flutterSdkPath == null) {
+        throw new GradleException("Flutter SDK not found. Define 'flutter.sdk' in android/local.properties.")
+    }
+
+    // 👇 This line makes the Flutter Gradle plugin (and loader) resolvable
+    includeBuild("$flutterSdkPath/packages/flutter_tools/gradle")
+
     repositories {
         google()
         mavenCentral()
@@ -8,11 +24,10 @@ pluginManagement {
 }
 
 plugins {
-    // Loader for the Flutter Gradle plugin
     id "dev.flutter.flutter-plugin-loader" version "1.0.0"
 }
 
-include ":app"
+include(":app")
 
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
