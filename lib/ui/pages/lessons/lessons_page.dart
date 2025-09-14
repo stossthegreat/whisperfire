@@ -189,7 +189,7 @@ class _LessonsContent extends ConsumerWidget {
         opacity: isUnlocked ? 1.0 : 0.5,
         child: ClipRRect(
           borderRadius: BorderRadius.circular(16),
-          child: Stack(
+        child: Stack(
             children: [
               // Background image for category
               Positioned.fill(
@@ -235,24 +235,24 @@ class _LessonsContent extends ConsumerWidget {
                     // Progress chips (Lv, XP)
                     Row(
                       children: [
-                        Container(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: screenWidth * 0.025,
+              Container(
+                padding: EdgeInsets.symmetric(
+                    horizontal: screenWidth * 0.025,
                               vertical: screenHeight * 0.004),
-                          decoration: BoxDecoration(
+                decoration: BoxDecoration(
                             color: Colors.white.withOpacity(0.15),
-                            borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(10),
                             border: Border.all(color: Colors.white24),
-                          ),
-                          child: Text(
-                            'Lv.${progress.level}',
-                            style: WFTextStyles.bodySmall.copyWith(
-                              color: Colors.white,
+                ),
+                child: Text(
+                  'Lv.${progress.level}',
+                  style: WFTextStyles.bodySmall.copyWith(
+                    color: Colors.white,
                               fontWeight: FontWeight.w600,
                               fontSize: screenWidth * 0.028,
-                            ),
-                          ),
-                        ),
+                  ),
+                ),
+              ),
                         SizedBox(width: screenWidth * 0.02),
                         Container(
                           padding: EdgeInsets.symmetric(
@@ -264,17 +264,17 @@ class _LessonsContent extends ConsumerWidget {
                             border: Border.all(color: Colors.white24),
                           ),
                           child: Text(
-                            '${progress.xp} XP',
-                            style: WFTextStyles.bodySmall.copyWith(
+                '${progress.xp} XP',
+                style: WFTextStyles.bodySmall.copyWith(
                               color: Colors.white,
                               fontSize: screenWidth * 0.028,
                             ),
-                          ),
-                        ),
-                      ],
-                    ),
+                ),
+              ),
+            ],
+          ),
                     const Spacer(),
-                    if (!isUnlocked)
+            if (!isUnlocked)
                       Icon(
                         Icons.lock,
                         color: Colors.white.withOpacity(0.85),
@@ -282,8 +282,8 @@ class _LessonsContent extends ConsumerWidget {
                   ],
                 ),
               ),
-            ],
-          ),
+          ],
+        ),
         ),
       ),
     );

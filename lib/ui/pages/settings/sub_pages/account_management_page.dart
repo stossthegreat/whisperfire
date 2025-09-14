@@ -251,10 +251,10 @@ class AccountManagementPage extends ConsumerWidget {
             onPressed: () async {
               await CacheService.clearHistory();
               if (context.mounted) {
-                Navigator.pop(context);
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('History cleared successfully')),
-                );
+              Navigator.pop(context);
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('History cleared successfully')),
+              );
               }
             },
             child: Text('Clear', style: TextStyle(color: Colors.red)),
@@ -290,9 +290,9 @@ class AccountManagementPage extends ConsumerWidget {
               if (context.mounted) {
                 Navigator.pop(context); // close dialog
                 context.go('/onboarding'); // router will handle paywall/onboarding
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Account deactivated')),
-                );
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Account deactivated')),
+              );
               }
             },
             child: Text('Deactivate', style: TextStyle(color: Colors.orange)),
@@ -335,13 +335,13 @@ class AccountManagementPage extends ConsumerWidget {
               if (context.mounted) {
                 Navigator.pop(context); // close dialog
                 context.go('/onboarding');
-                ScaffoldMessenger.of(context).showSnackBar(
+              ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
                     content: Text(
                       error == null ? 'Account deleted permanently' : 'Account deleted locally. Sign-in may be required. ($error)'
                     ),
                   ),
-                );
+              );
               }
             },
             child: Text('Delete Permanently', style: TextStyle(color: Colors.red)),

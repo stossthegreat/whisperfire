@@ -138,15 +138,15 @@ class LessonsCatalogPage extends ConsumerWidget {
                     fit: BoxFit.cover,
                     errorBuilder: (context2, error2, stackTrace2) {
                       return Container(
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                            colors: [
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
                               Color(color).withOpacity(0.08),
                               Color(color).withOpacity(0.16),
-                            ],
-                          ),
+            ],
+          ),
                         ),
                       );
                     },
@@ -165,11 +165,11 @@ class LessonsCatalogPage extends ConsumerWidget {
                       Colors.black.withOpacity(0.12),
                       Colors.black.withOpacity(0.28),
                     ],
-                  ),
                 ),
               ),
-            ),
-          ],
+                ),
+              ),
+            ],
         ),
       ),
     );
