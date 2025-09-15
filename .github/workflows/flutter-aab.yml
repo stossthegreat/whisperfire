@@ -39,8 +39,15 @@ jobs:
 
       - name: Restore keystore from secrets
         run: |
+          set -e
           mkdir -p android/app
-          echo "$ANDROID_KEYSTORE_BASE64" | base64 -d > android/app/upload-keystore.jks
+          CLEAN_B64=$(echo "$ANDROID_KEYSTORE_BASE64" | tr -d '\r\n ')
+          if [ -z "$CLEAN_B64" ]; then echo "ERROR: ANDROID_KEYSTORE_BASE64 is empty"; exit 1; fi
+          if echo "$CLEAN_B64" | base64 -d -i > android/app/upload-keystore.jks 2>/dev/null; then
+            echo "Decoded keystore from ANDROID_KEYSTORE_BASE64"
+          else
+            echo "ERROR: ANDROID_KEYSTORE_BASE64 is not valid base64 (ensure one-line, no wrapping)"; exit 1;
+          fi
           echo "ANDROID_KEYSTORE_PATH=$GITHUB_WORKSPACE/android/app/upload-keystore.jks" >> $GITHUB_ENV
         env:
           ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
