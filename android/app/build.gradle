@@ -1,21 +1,19 @@
-// android/app/build.gradle
-apply plugin: "com.android.application"
-apply plugin: "kotlin-android"
-// If you use Firebase, uncomment this line:
-// apply plugin: "com.google.gms.google-services"
-
-// Pull in Flutter's Gradle
-apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+plugins {
+    id "com.android.application"
+    id "org.jetbrains.kotlin.android"
+    id "dev.flutter.flutter-gradle-plugin"
+    // id "com.google.gms.google-services" // only if you use Firebase
+}
 
 android {
-    namespace "com.beguileai.app"             // <<< your package (must match Play, all lowercase)
-    compileSdkVersion 34
+    namespace "com.beguileai.app"          // MUST match Play package exactly
+    compileSdk 34
 
     defaultConfig {
-        applicationId "com.beguileai.app"     // <<< must match Play exactly
-        minSdkVersion 21
-        targetSdkVersion 34
-        versionCode 1                          // CI overrides with --build-number
+        applicationId "com.beguileai.app"  // MUST match Play package exactly
+        minSdk 21
+        targetSdk 34
+        versionCode 1                      // overridden by CI with --build-number
         versionName "1.0"
     }
 
@@ -34,7 +32,6 @@ android {
             minifyEnabled false
             shrinkResources false
         }
-        debug { }
     }
 
     compileOptions {
@@ -44,10 +41,6 @@ android {
     kotlinOptions { jvmTarget = "17" }
 }
 
-flutter {
-    source "../.."
-}
-
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.9.24"
 } 
