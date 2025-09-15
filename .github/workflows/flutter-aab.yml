@@ -77,6 +77,9 @@ jobs:
             echo "KEY_PASSWORD=pass123" >> $GITHUB_ENV
           fi
           echo "ANDROID_KEYSTORE_PATH=$GITHUB_WORKSPACE/android/app/upload-keystore.jks" >> $GITHUB_ENV
+          ls -l android/app/upload-keystore.jks
+          # Print first bytes signature (JKS starts with hex FE ED FE ED for older, or binary header)
+          head -c 16 android/app/upload-keystore.jks | xxd
 
       - name: Keystore sanity check
         run: |
@@ -86,11 +89,9 @@ jobs:
           if [ -z "$STORE_PASSWORD" ]; then echo "ERROR: STORE_PASSWORD is empty"; exit 1; fi
           if [ -z "$KEY_ALIAS" ]; then echo "ERROR: KEY_ALIAS is empty"; exit 1; fi
           if [ -z "$KEY_PASSWORD" ]; then echo "ERROR: KEY_PASSWORD is empty"; exit 1; fi
-          echo "Listing keystore alias..."
+          keytool -list -keystore "$ANDROID_KEYSTORE_PATH" -storepass "$STORE_PASSWORD" | head -n 5
           keytool -list -alias "$KEY_ALIAS" -keystore "$ANDROID_KEYSTORE_PATH" -storepass "$STORE_PASSWORD" -v | sed -n '1,8p' || { echo "ERROR: Invalid STORE_PASSWORD or KEY_ALIAS"; exit 1; }
-          echo "Exporting cert (sanity check)..."
           keytool -exportcert -alias "$KEY_ALIAS" -keystore "$ANDROID_KEYSTORE_PATH" -storepass "$STORE_PASSWORD" -keypass "$KEY_PASSWORD" -rfc | head -n 5 >/dev/null || { echo "ERROR: Invalid KEY_PASSWORD (or alias mismatch)"; exit 1; }
-          echo "Keystore sanity check passed."
 
       - name: Build signed AAB
         run: |
