@@ -7,12 +7,12 @@ plugins {
 
 android {
     namespace "com.beguileai.app"          // MUST match Play package exactly
-    compileSdk 34
+    compileSdk 35
 
     defaultConfig {
         applicationId "com.beguileai.app"  // MUST match Play package exactly
         minSdk 21
-        targetSdk 34
+        targetSdk 35
         versionCode 1                      // overridden by CI with --build-number
         versionName "1.0"
     }
