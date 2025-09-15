@@ -35,6 +35,16 @@ jobs:
           echo "flutter.sdk=$FLUTTER_SDK" > android/local.properties
           echo "sdk.dir=$ANDROID_SDK_ROOT" >> android/local.properties
 
+      - name: Verify Flutter SDK path
+        run: |
+          which flutter
+          flutter --version
+
+      - name: Pre-cache Flutter engine artifacts (Android)
+        working-directory: ${{ env.WORKDIR }}
+        run: |
+          flutter precache --android
+
       - name: Restore keystore from secrets
         working-directory: ${{ env.WORKDIR }}
         run: |
