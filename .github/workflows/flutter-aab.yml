@@ -37,16 +37,38 @@ jobs:
       - name: flutter pub get
         run: flutter pub get
 
+      - name: Restore keystore from secrets
+        run: |
+          mkdir -p android/app
+          echo "$ANDROID_KEYSTORE_BASE64" | base64 -d > android/app/upload-keystore.jks
+          echo "ANDROID_KEYSTORE_PATH=$GITHUB_WORKSPACE/android/app/upload-keystore.jks" >> $GITHUB_ENV
+        env:
+          ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+
+      - name: Keystore sanity check
+        run: |
+          set -e
+          echo "Keystore path: $ANDROID_KEYSTORE_PATH"
+          if [ ! -s "$ANDROID_KEYSTORE_PATH" ]; then echo "ERROR: Keystore missing at $ANDROID_KEYSTORE_PATH"; exit 1; fi
+          if [ -z "$STORE_PASSWORD" ]; then echo "ERROR: STORE_PASSWORD is empty"; exit 1; fi
+          if [ -z "$KEY_ALIAS" ]; then echo "ERROR: KEY_ALIAS is empty"; exit 1; fi
+          if [ -z "$KEY_PASSWORD" ]; then echo "ERROR: KEY_PASSWORD is empty"; exit 1; fi
+          echo "Listing keystore alias..."
+          keytool -list -alias "$KEY_ALIAS" -keystore "$ANDROID_KEYSTORE_PATH" -storepass "$STORE_PASSWORD" -v | sed -n '1,8p' || { echo "ERROR: Invalid STORE_PASSWORD or KEY_ALIAS"; exit 1; }
+          echo "Exporting cert (sanity check)..."
+          keytool -exportcert -alias "$KEY_ALIAS" -keystore "$ANDROID_KEYSTORE_PATH" -storepass "$STORE_PASSWORD" -keypass "$KEY_PASSWORD" -rfc | head -n 5 >/dev/null || { echo "ERROR: Invalid KEY_PASSWORD (or alias mismatch)"; exit 1; }
+          echo "Keystore sanity check passed."
+        env:
+          STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+
       - name: Build signed AAB
         env:
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
           STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
-          ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
         run: |
-          mkdir -p android/app
-          echo "$ANDROID_KEYSTORE_BASE64" | base64 -d > android/app/upload-keystore.jks
-          echo "ANDROID_KEYSTORE_PATH=$GITHUB_WORKSPACE/android/app/upload-keystore.jks" >> $GITHUB_ENV
           flutter build appbundle --release --build-number $GITHUB_RUN_NUMBER
 
       - name: Upload artifact
