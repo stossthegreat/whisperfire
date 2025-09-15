@@ -1,4 +1,4 @@
-name: Build Flutter AAB
+name: Build AAB (fallback)
 
 on:
   workflow_dispatch:
