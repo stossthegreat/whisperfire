@@ -27,13 +27,15 @@ jobs:
           flutter-version: '3.22.0'
           channel: stable
 
-      - name: Write local.properties (Flutter & Android SDK paths)
+      - name: Write local.properties (Flutter & Android SDK)
         working-directory: ${{ env.WORKDIR }}
         run: |
           mkdir -p android
           FLUTTER_SDK=$(dirname "$(dirname "$(which flutter)")")
           echo "flutter.sdk=$FLUTTER_SDK" > android/local.properties
           echo "sdk.dir=$ANDROID_SDK_ROOT" >> android/local.properties
+          echo "--- android/local.properties ---"
+          cat android/local.properties
 
       - name: Verify Flutter SDK path
         run: |
@@ -42,15 +44,14 @@ jobs:
 
       - name: Pre-cache Flutter engine artifacts (Android)
         working-directory: ${{ env.WORKDIR }}
-        run: |
-          flutter precache --android
+        run: flutter precache --android
 
       - name: Restore keystore from secrets
         working-directory: ${{ env.WORKDIR }}
         run: |
           mkdir -p android/app
           echo "$ANDROID_KEYSTORE_BASE64" | base64 -d > android/app/upload-keystore.jks
-          echo "ANDROID_KEYSTORE_PATH=$GITHUB_WORKSPACE/${{ env.WORKDIR }}/android/app/upload-keystore.jks" >> $GITHUB_ENV
+          echo "ANDROID_KEYSTORE_PATH=$GITHUB_WORKDIR/${{ env.WORKDIR }}/android/app/upload-keystore.jks" >> $GITHUB_ENV
         env:
           ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
 
