@@ -53,16 +53,6 @@ class ScanOutputCard extends StatelessWidget {
                         tooltip: 'Share Analysis',
                       ),
                     ),
-                    const SizedBox(height: 8),
-                    // Red flag below share button
-                    SizedBox(
-                      width: 120,
-                      child: MetricBar(
-                        label: 'Red Flag',
-                        value: result.metrics.redFlag,
-                        color: WFColors.redPink[0],
-                      ),
-                    ),
                   ],
                 ),
               ),

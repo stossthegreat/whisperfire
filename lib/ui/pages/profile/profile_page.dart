@@ -483,17 +483,17 @@ class _ProfilePageState extends ConsumerState<ProfilePage>
   Color _getCategoryColor(String category) {
     switch (category) {
       case 'charisma':
-        return const Color(0xFFE91E63);
+        return const Color(0xFF9C27B0);
       case 'gravity':
-        return const Color(0xFF26A69A);
+        return const Color(0xFF9C27B0);
       case 'frame':
-        return const Color(0xFF3F51B5);
+        return const Color(0xFF9C27B0);
       case 'scarcity':
-        return const Color(0xFFFF9800);
+        return const Color(0xFF9C27B0);
       case 'composed_authority':
         return const Color(0xFF9C27B0);
       case 'hidden_dynamics':
-        return const Color(0xFF4CAF50);
+        return const Color(0xFF9C27B0);
       default:
         return Colors.purple;
     }

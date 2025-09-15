@@ -152,6 +152,14 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
                         _modeButton('pattern', 'Pattern', selectedMode),
                       ],
                     ),
+                    const SizedBox(height: WFDims.spacingS),
+                    Text(
+                      selectedMode == 'scan'
+                          ? 'Analyze a single message for detailed insights'
+                          : 'Analyze multiple messages to identify behavioral patterns',
+                      style: WFTextStyles.bodySmall
+                          .copyWith(color: WFColors.textTertiary),
+                    ),
                   ],
                 ),
               ),
@@ -166,16 +174,9 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
                     Text(
                       selectedMode == 'scan'
                           ? 'Message to analyze'
-                          : 'Messages (one per line)',
+                          : 'Messages to analyze',
                       style: WFTextStyles.h4,
                     ),
-                    const SizedBox(height: WFDims.spacingS),
-                    if (selectedMode == 'pattern')
-                      Text(
-                        'One message per line.',
-                        style: WFTextStyles.bodySmall
-                            .copyWith(color: WFColors.textTertiary),
-                      ),
                     const SizedBox(height: WFDims.spacingS),
                     Stack(
                       children: [
