@@ -43,12 +43,27 @@ jobs:
           mkdir -p android/app
           if [ -n "$ANDROID_KEYSTORE_BASE64" ] && [ -n "$KEY_ALIAS" ] && [ -n "$STORE_PASSWORD" ] && [ -n "$KEY_PASSWORD" ]; then
             echo "Using provided GitHub secrets for signing"
-            echo "$ANDROID_KEYSTORE_BASE64" | base64 -d > android/app/upload-keystore.jks
-            echo "ANDROID_KEYSTORE_PATH=$GITHUB_WORKSPACE/android/app/upload-keystore.jks" >> $GITHUB_ENV
-            echo "KEY_ALIAS=$KEY_ALIAS"       >> $GITHUB_ENV
-            echo "STORE_PASSWORD=$STORE_PASSWORD" >> $GITHUB_ENV
-            echo "KEY_PASSWORD=$KEY_PASSWORD" >> $GITHUB_ENV
-            echo "SECRETS_MODE=1" >> $GITHUB_ENV
+            # Try robust base64 decode (strip whitespace, ignore garbage)
+            if echo "$ANDROID_KEYSTORE_BASE64" | tr -d '\r\n ' | base64 -d -i > android/app/upload-keystore.jks 2>/dev/null; then
+              echo "Decoded keystore from ANDROID_KEYSTORE_BASE64"
+              echo "ANDROID_KEYSTORE_PATH=$GITHUB_WORKSPACE/android/app/upload-keystore.jks" >> $GITHUB_ENV
+              echo "KEY_ALIAS=$KEY_ALIAS"       >> $GITHUB_ENV
+              echo "STORE_PASSWORD=$STORE_PASSWORD" >> $GITHUB_ENV
+              echo "KEY_PASSWORD=$KEY_PASSWORD" >> $GITHUB_ENV
+              echo "SECRETS_MODE=1" >> $GITHUB_ENV
+            else
+              echo "WARN: base64 decode failed. Falling back to generating a fresh keystore." >&2
+              keytool -genkeypair -v -storetype JKS \
+                -keystore android/app/upload-keystore.jks \
+                -alias upload -keyalg RSA -keysize 2048 -validity 10000 \
+                -storepass pass123 -keypass pass123 \
+                -dname "CN=Upload, OU=CI, O=App, L=, S=, C=US"
+              echo "ANDROID_KEYSTORE_PATH=$GITHUB_WORKSPACE/android/app/upload-keystore.jks" >> $GITHUB_ENV
+              echo "KEY_ALIAS=upload"  >> $GITHUB_ENV
+              echo "STORE_PASSWORD=pass123" >> $GITHUB_ENV
+              echo "KEY_PASSWORD=pass123"   >> $GITHUB_ENV
+              echo "SECRETS_MODE=0" >> $GITHUB_ENV
+            fi
           else
             echo "Secrets missing — generating fresh upload key (alias=upload)"
             keytool -genkeypair -v -storetype JKS \
