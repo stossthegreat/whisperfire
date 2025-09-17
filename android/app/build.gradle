@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId "com.beguileai.app"  // MUST match Play package exactly
-        minSdk 21
+        minSdk 24                          // Changed from 21 to 24
         targetSdk 35
         versionCode 1                      // overridden by CI with --build-number
         versionName "1.0"
