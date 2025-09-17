@@ -19,7 +19,7 @@ android {
 
     signingConfigs {
         release {
-            storeFile file(System.getenv("ANDROID_KEYSTORE_PATH"))
+            storeFile file("upload-keystore.jks")
             storePassword System.getenv("STORE_PASSWORD") ?: "pass123"
             keyAlias System.getenv("KEY_ALIAS") ?: "upload"
             keyPassword System.getenv("KEY_PASSWORD") ?: "pass123"
@@ -43,4 +43,4 @@ android {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:1.9.24"
-} 
+}
