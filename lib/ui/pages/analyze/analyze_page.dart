@@ -176,7 +176,7 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
                           ? 'Message to analyze'
                           : 'Messages to analyze',
                       style: WFTextStyles.h4,
-                    ),
+                      ),
                     const SizedBox(height: WFDims.spacingS),
                     Stack(
                       children: [
