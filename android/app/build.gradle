@@ -13,8 +13,8 @@ android {
         applicationId "com.beguileai.app"  // MUST match Play package exactly
         minSdk 24                          // Changed from 21 to 24
         targetSdk 35
-        versionCode 3                      // Changed from 2 to 3
-        versionName "1.0.2"
+        versionCode 4                      // Changed from 3 to 4
+        versionName "1.0.3"
     }
 
     signingConfigs {
