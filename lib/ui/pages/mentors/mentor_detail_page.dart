@@ -7,6 +7,7 @@ import '../../../core/encoding_sanitize.dart';
 import '../../../data/models/mentor_models.dart';
 import '../../../data/services/api_service.dart';
 import '../../../data/services/cache_service.dart';
+import '../../../data/services/constants.dart';
 import '../../atoms/atoms.dart';
 
 // ===== PROVIDERS =====
@@ -850,7 +851,11 @@ class _PresetInfoCard extends StatelessWidget {
                       text: 'Use example',
                       icon: Icons.playlist_add,
                       onPressed: onUseExample,
-                      compact: true,
+                      height: 36,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: WFDims.paddingM,
+                        vertical: 8,
+                      ),
                     ),
                   )
                 ],
