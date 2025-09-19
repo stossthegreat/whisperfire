@@ -480,7 +480,10 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
           Navigator.of(context).pop();
 
           if (extractedText.trim().isNotEmpty) {
-            _textController.text = extractedText.trim();
+            final current = _textController.text.trim();
+            _textController.text = current.isEmpty
+                ? extractedText.trim()
+                : current + '\n' + extractedText.trim();
             if (mounted) {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
@@ -517,6 +520,16 @@ class _AnalyzePageState extends ConsumerState<AnalyzePage> {
       }
     } catch (e) {
       if (!mounted) return;
+      // If user canceled picking an image, give gentle feedback
+      if (e is Exception && !Navigator.canPop(context)) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: const Text('No image selected.'),
+            backgroundColor: WFColors.gray700,
+            duration: const Duration(seconds: 2),
+          ),
+        );
+      }
       if (Navigator.canPop(context)) {
         Navigator.of(context).pop();
       }
