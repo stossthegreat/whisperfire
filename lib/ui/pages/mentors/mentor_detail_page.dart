@@ -346,8 +346,8 @@ class _MentorDetailPageState extends ConsumerState<MentorDetailPage> {
             padding: const EdgeInsets.all(WFDims.paddingL),
             child: Column(
               children: [
-                // Preset info helper card
-                _PresetInfoCard(
+                // Compact preset info line above presets
+                _PresetInfoInline(
                   mentor: widget.mentor,
                   selectedPreset: selectedPreset,
                   onUseExample: () {
@@ -363,7 +363,7 @@ class _MentorDetailPageState extends ConsumerState<MentorDetailPage> {
                     );
                   },
                 ),
-                const SizedBox(height: WFDims.spacingL),
+                const SizedBox(height: WFDims.spacingS),
                 // Preset selection buttons
                 Row(
                   children: [
@@ -782,12 +782,12 @@ class _TypingIndicatorState extends State<_TypingIndicator>
   }
 }
 
-class _PresetInfoCard extends StatelessWidget {
+class _PresetInfoInline extends StatelessWidget {
   final Mentor mentor;
   final String selectedPreset;
   final VoidCallback onUseExample;
 
-  const _PresetInfoCard({
+  const _PresetInfoInline({
     required this.mentor,
     required this.selectedPreset,
     required this.onUseExample,
@@ -800,70 +800,44 @@ class _PresetInfoCard extends StatelessWidget {
     final description = meta['description'] ?? '';
     final example = meta['example'] ?? '';
 
-    return GlassCard(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Container(
-                width: 28,
-                height: 28,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: mentor.color
-                        .map((c) => Color(int.parse(c.replaceFirst('#', '0xFF'))))
-                        .toList(),
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
-                  borderRadius: BorderRadius.circular(14),
-                ),
-                child: Center(child: Text(mentor.avatar, style: const TextStyle(fontSize: 14))),
-              ),
-              const SizedBox(width: WFDims.spacingM),
-              Text('$title preset', style: WFTextStyles.h4),
-            ],
-          ),
-          const SizedBox(height: WFDims.spacingS),
-          if (description.isNotEmpty)
-            Text(description, style: WFTextStyles.bodyMedium.copyWith(color: WFColors.textSecondary)),
-          if (example.isNotEmpty) ...[
-            const SizedBox(height: WFDims.spacingM),
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(WFDims.paddingM),
-              decoration: BoxDecoration(
-                color: WFColors.gray800.withOpacity(0.5),
-                borderRadius: BorderRadius.circular(WFDims.radiusSmall),
-                border: Border.all(color: WFColors.glassBorder),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('Example', style: WFTextStyles.labelMedium.copyWith(color: WFColors.textTertiary)),
-                  const SizedBox(height: 6),
-                  Text(example, style: WFTextStyles.bodySmall),
-                  const SizedBox(height: WFDims.spacingS),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: WFPrimaryButton(
-                      text: 'Use example',
-                      icon: Icons.playlist_add,
-                      onPressed: onUseExample,
-                      height: 36,
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: WFDims.paddingM,
-                        vertical: 8,
-                      ),
-                    ),
-                  )
-                ],
-              ),
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Container(
+          width: 22,
+          height: 22,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: mentor.color
+                  .map((c) => Color(int.parse(c.replaceFirst('#', '0xFF'))))
+                  .toList(),
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
             ),
-          ],
-        ],
-      ),
+            borderRadius: BorderRadius.circular(11),
+          ),
+          child: Center(child: Text(mentor.avatar, style: const TextStyle(fontSize: 12))),
+        ),
+        const SizedBox(width: WFDims.spacingS),
+        Expanded(
+          child: Text(
+            description.isNotEmpty ? '$title · $description' : title,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: WFTextStyles.bodySmall.copyWith(color: WFColors.textSecondary),
+          ),
+        ),
+        const SizedBox(width: WFDims.spacingS),
+        WFPrimaryButton(
+          text: 'Use',
+          onPressed: onUseExample,
+          height: 28,
+          padding: const EdgeInsets.symmetric(
+            horizontal: WFDims.paddingM,
+            vertical: 4,
+          ),
+        ),
+      ],
     );
   }
 }
