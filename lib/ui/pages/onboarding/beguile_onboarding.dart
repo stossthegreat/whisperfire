@@ -241,7 +241,6 @@ class _LessonsSlide extends StatelessWidget {
                   widthFactor: 0.5,
                   child: Container(
                 width: double.infinity,
-                height: screenHeight * 0.23,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
                   border: Border.all(
@@ -251,9 +250,14 @@ class _LessonsSlide extends StatelessWidget {
                 ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(14),
-                  child: Image.asset(
+                  child: AspectRatio(
+                    aspectRatio: 16/9,
+                    child: Stack(
+                      children: [
+                        Positioned.fill(
+                          child: Image.asset(
                     'assets/images/onboarding/lessons_screenshot.png',
-                    fit: BoxFit.contain,
+                    fit: BoxFit.cover,
                     errorBuilder: (context, error, stackTrace) => Container(
                       color: WFColors.gray800,
                       child: Column(
@@ -264,25 +268,9 @@ class _LessonsSlide extends StatelessWidget {
                             size: screenWidth * 0.12,
                             color: WFColors.purple400,
                           ),
-                          SizedBox(height: screenHeight * 0.02),
-                          Text(
-                            'LESSONS SCREENSHOT',
-                            style: WFTextStyles.bodyMedium.copyWith(
-                              color: WFColors.gray400,
-                              fontWeight: FontWeight.w600,
-                              fontSize: screenWidth * 0.035,
-                            ),
-                          ),
-                          SizedBox(height: screenHeight * 0.01),
-                          Text(
-                            'Add lessons_screenshot.png to assets',
-                            style: WFTextStyles.bodySmall.copyWith(
-                              color: WFColors.gray500,
-                              fontSize: screenWidth * 0.03,
-                            ),
-                          ),
-                        ],
-                      ),
+                  ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -360,7 +348,6 @@ class _MentorsSlide extends StatelessWidget {
                   widthFactor: 0.5,
                   child: Container(
                 width: double.infinity,
-                height: screenHeight * 0.23,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
                   border: Border.all(
@@ -370,9 +357,14 @@ class _MentorsSlide extends StatelessWidget {
                 ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(14),
-                  child: Image.asset(
+                  child: AspectRatio(
+                    aspectRatio: 16/9,
+                    child: Stack(
+                      children: [
+                        Positioned.fill(
+                          child: Image.asset(
                     'assets/images/onboarding/mentors_screenshot.png',
-                    fit: BoxFit.contain,
+                    fit: BoxFit.cover,
                     errorBuilder: (context, error, stackTrace) => Container(
                       color: WFColors.gray800,
                       child: Column(
@@ -383,25 +375,9 @@ class _MentorsSlide extends StatelessWidget {
                             size: screenWidth * 0.12,
                             color: WFColors.purple400,
                           ),
-                          SizedBox(height: screenHeight * 0.02),
-                          Text(
-                            'MENTORS SCREENSHOT',
-                            style: WFTextStyles.bodySmall.copyWith(
-                              color: WFColors.gray400,
-                              fontWeight: FontWeight.w600,
-                              fontSize: screenWidth * 0.035,
-                            ),
-                          ),
-                          SizedBox(height: screenHeight * 0.01),
-                          Text(
-                            'Add mentors_screenshot.png to assets',
-                            style: WFTextStyles.bodySmall.copyWith(
-                              color: WFColors.gray500,
-                              fontSize: screenWidth * 0.03,
-                            ),
-                          ),
-                        ],
-                      ),
+                  ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -479,7 +455,6 @@ class _AnalyzeSlide extends StatelessWidget {
                   widthFactor: 0.5,
                   child: Container(
                 width: double.infinity,
-                height: screenHeight * 0.23,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
                   border: Border.all(
@@ -489,9 +464,14 @@ class _AnalyzeSlide extends StatelessWidget {
                 ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(14),
-                  child: Image.asset(
+                  child: AspectRatio(
+                    aspectRatio: 16/9,
+                    child: Stack(
+                      children: [
+                        Positioned.fill(
+                          child: Image.asset(
                     'assets/images/onboarding/analyze_screenshot.png',
-                    fit: BoxFit.contain,
+                    fit: BoxFit.cover,
                     errorBuilder: (context, error, stackTrace) => Container(
                       color: WFColors.gray800,
                       child: Column(
@@ -502,25 +482,9 @@ class _AnalyzeSlide extends StatelessWidget {
                             size: screenWidth * 0.12,
                             color: WFColors.purple400,
                           ),
-                          SizedBox(height: screenHeight * 0.02),
-                          Text(
-                            'ANALYZE SCREENSHOT',
-                            style: WFTextStyles.bodyMedium.copyWith(
-                              color: WFColors.gray400,
-                              fontWeight: FontWeight.w600,
-                              fontSize: screenWidth * 0.035,
-                            ),
-                          ),
-                          SizedBox(height: screenHeight * 0.01),
-                          Text(
-                            'Add analyze_screenshot.png to assets',
-                            style: WFTextStyles.bodySmall.copyWith(
-                              color: WFColors.gray500,
-                              fontSize: screenWidth * 0.03,
-                            ),
-                          ),
-                        ],
-                      ),
+                  ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
