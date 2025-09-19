@@ -82,12 +82,12 @@ class _MainShellContent extends StatelessWidget {
           onTap: (index) => _onItemTapped(context, index),
           items: const [
             BottomNavigationBarItem(
-              icon: Icon(Icons.school),
-              label: 'Lessons',
-            ),
-            BottomNavigationBarItem(
               icon: Icon(Icons.psychology),
               label: 'Mentors',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.school),
+              label: 'Lessons',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.visibility),
@@ -109,8 +109,8 @@ class _MainShellContent extends StatelessWidget {
 
   int _getCurrentIndex(BuildContext context) {
     final String location = GoRouterState.of(context).matchedLocation;
-    if (location.startsWith('/lessons')) return 0;
-    if (location.startsWith('/mentors')) return 1;
+    if (location.startsWith('/mentors')) return 0;
+    if (location.startsWith('/lessons')) return 1;
     if (location.startsWith('/analyze')) return 2;
     if (location.startsWith('/profile')) return 3;
     if (location.startsWith('/settings')) return 4;
@@ -120,10 +120,10 @@ class _MainShellContent extends StatelessWidget {
   void _onItemTapped(BuildContext context, int index) {
     switch (index) {
       case 0:
-        context.goNamed('lessons');
+        context.goNamed('mentors');
         break;
       case 1:
-        context.goNamed('mentors');
+        context.goNamed('lessons');
         break;
       case 2:
         context.goNamed('analyze');
