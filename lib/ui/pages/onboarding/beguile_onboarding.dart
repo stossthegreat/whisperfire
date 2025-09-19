@@ -251,7 +251,7 @@ class _LessonsSlide extends StatelessWidget {
                     aspectRatio: 16 / 9,
                     child: Image.asset(
                       'assets/images/onboarding/lessons_screenshot.png',
-                      fit: BoxFit.cover,
+                      fit: BoxFit.contain,
                       errorBuilder: (context, error, stackTrace) => Container(
                         color: WFColors.gray800,
                       ),
@@ -340,7 +340,7 @@ class _MentorsSlide extends StatelessWidget {
                     aspectRatio: 16 / 9,
                     child: Image.asset(
                       'assets/images/onboarding/mentors_screenshot.png',
-                      fit: BoxFit.cover,
+                      fit: BoxFit.contain,
                       errorBuilder: (context, error, stackTrace) => Container(
                         color: WFColors.gray800,
                       ),
@@ -429,7 +429,7 @@ class _AnalyzeSlide extends StatelessWidget {
                     aspectRatio: 16 / 9,
                     child: Image.asset(
                       'assets/images/onboarding/analyze_screenshot.png',
-                      fit: BoxFit.cover,
+                      fit: BoxFit.contain,
                       errorBuilder: (context, error, stackTrace) => Container(
                         color: WFColors.gray800,
                       ),
