@@ -39,7 +39,7 @@ final appRouterProvider = Provider<GoRouter>((ref) {
 
       // If we're on root/home, immediately route based on auth state to avoid blank screen
       if (isOnRootOrHome) {
-        if (authState == AuthState.authenticated) return '/lessons';
+        if (authState == AuthState.authenticated) return '/mentors';
         // If onboarding already completed previously, skip to paywall/login path
         return OnboardingService.isCompleted ? '/paywall' : '/onboarding';
       }
@@ -53,7 +53,7 @@ final appRouterProvider = Provider<GoRouter>((ref) {
 
       // Authenticated: send to lessons from login/onboarding/paywall
       if (authState == AuthState.authenticated && (isOnLogin || isOnSignup || isOnOnboarding || isOnPaywall)) {
-        return '/lessons';
+        return '/mentors';
       }
       return null;
     },
