@@ -345,6 +345,24 @@ class _MentorDetailPageState extends ConsumerState<MentorDetailPage> {
             padding: const EdgeInsets.all(WFDims.paddingL),
             child: Column(
               children: [
+                // Preset info helper card
+                _PresetInfoCard(
+                  mentor: widget.mentor,
+                  selectedPreset: selectedPreset,
+                  onUseExample: () {
+                    final meta = MentorPresetMeta.byKey[selectedPreset];
+                    final example = meta != null ? meta['example'] ?? '' : '';
+                    if (example.isEmpty) return;
+                    final current = _textController.text.trim();
+                    _textController.text = current.isEmpty
+                        ? example
+                        : current + '\n' + example;
+                    _textController.selection = TextSelection.fromPosition(
+                      TextPosition(offset: _textController.text.length),
+                    );
+                  },
+                ),
+                const SizedBox(height: WFDims.spacingL),
                 // Preset selection buttons
                 Row(
                   children: [
@@ -757,6 +775,88 @@ class _TypingIndicatorState extends State<_TypingIndicator>
               },
             ),
           ),
+        ],
+      ),
+    );
+  }
+}
+
+class _PresetInfoCard extends StatelessWidget {
+  final Mentor mentor;
+  final String selectedPreset;
+  final VoidCallback onUseExample;
+
+  const _PresetInfoCard({
+    required this.mentor,
+    required this.selectedPreset,
+    required this.onUseExample,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final meta = MentorPresetMeta.byKey[selectedPreset] ?? const {};
+    final title = meta['title'] ?? selectedPreset;
+    final description = meta['description'] ?? '';
+    final example = meta['example'] ?? '';
+
+    return GlassCard(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Container(
+                width: 28,
+                height: 28,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: mentor.color
+                        .map((c) => Color(int.parse(c.replaceFirst('#', '0xFF'))))
+                        .toList(),
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                  borderRadius: BorderRadius.circular(14),
+                ),
+                child: Center(child: Text(mentor.avatar, style: const TextStyle(fontSize: 14))),
+              ),
+              const SizedBox(width: WFDims.spacingM),
+              Text('$title preset', style: WFTextStyles.h4),
+            ],
+          ),
+          const SizedBox(height: WFDims.spacingS),
+          if (description.isNotEmpty)
+            Text(description, style: WFTextStyles.bodyMedium.copyWith(color: WFColors.textSecondary)),
+          if (example.isNotEmpty) ...[
+            const SizedBox(height: WFDims.spacingM),
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(WFDims.paddingM),
+              decoration: BoxDecoration(
+                color: WFColors.gray800.withOpacity(0.5),
+                borderRadius: BorderRadius.circular(WFDims.radiusSmall),
+                border: Border.all(color: WFColors.glassBorder),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Example', style: WFTextStyles.labelMedium.copyWith(color: WFColors.textTertiary)),
+                  const SizedBox(height: 6),
+                  Text(example, style: WFTextStyles.bodySmall),
+                  const SizedBox(height: WFDims.spacingS),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: WFPrimaryButton(
+                      text: 'Use example',
+                      icon: Icons.playlist_add,
+                      onPressed: onUseExample,
+                      compact: true,
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ],
         ],
       ),
     );

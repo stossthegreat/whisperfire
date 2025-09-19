@@ -85,6 +85,39 @@ class MentorConstants {
   static List<String> get presetKeys => ['drill', 'advise', 'roleplay', 'chat'];
 }
 
+// Preset metadata used for UI helper card under mentor intro
+class MentorPresetMeta {
+  static const Map<String, Map<String, String>> byKey = {
+    'drill': {
+      'title': 'Drill',
+      'description':
+          'Rapid practice to build instinct. Short, targeted exercises to sharpen defenses.',
+      'example':
+          'Give me 5 quick drills to resist love bombing in text conversations.'
+    },
+    'advise': {
+      'title': 'Advise',
+      'description':
+          'Direct, actionable guidance for a specific situation you describe.',
+      'example':
+          'She stopped replying after I teased her once. What should I do now?'
+    },
+    'roleplay': {
+      'title': 'Roleplay',
+      'description':
+          'Simulate the other side so you can anticipate tactics and practice responses.',
+      'example':
+          'Roleplay a manipulator trying to make me feel guilty for saying no.'
+    },
+    'chat': {
+      'title': 'Chat',
+      'description':
+          'Open conversation for questions, ideas, or general breakdowns.',
+      'example': 'Break down this message and tell me what hidden tactics are in it.'
+    },
+  };
+}
+
 // Mock user data for development
 class MockData {
   // Note: mockUser removed - now using the lesson engine UserProfile structure
