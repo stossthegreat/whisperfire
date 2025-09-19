@@ -238,7 +238,7 @@ class _LessonsSlide extends StatelessWidget {
               // App screenshot
               Container(
                 width: double.infinity,
-                height: screenHeight * 0.6,
+                height: screenHeight * 0.35,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
                   border: Border.all(
@@ -250,7 +250,7 @@ class _LessonsSlide extends StatelessWidget {
                   borderRadius: BorderRadius.circular(14),
                   child: Image.asset(
                     'assets/images/onboarding/lessons_screenshot.png',
-                    fit: BoxFit.cover,
+                    fit: BoxFit.contain,
                     errorBuilder: (context, error, stackTrace) => Container(
                       color: WFColors.gray800,
                       child: Column(
@@ -352,7 +352,7 @@ class _MentorsSlide extends StatelessWidget {
               // App screenshot
               Container(
                 width: double.infinity,
-                height: screenHeight * 0.6,
+                height: screenHeight * 0.35,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
                   border: Border.all(
@@ -364,7 +364,7 @@ class _MentorsSlide extends StatelessWidget {
                   borderRadius: BorderRadius.circular(14),
                   child: Image.asset(
                     'assets/images/onboarding/mentors_screenshot.png',
-                    fit: BoxFit.cover,
+                    fit: BoxFit.contain,
                     errorBuilder: (context, error, stackTrace) => Container(
                       color: WFColors.gray800,
                       child: Column(
@@ -466,7 +466,7 @@ class _AnalyzeSlide extends StatelessWidget {
               // App screenshot
               Container(
                 width: double.infinity,
-                height: screenHeight * 0.6,
+                height: screenHeight * 0.35,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
                   border: Border.all(
@@ -478,7 +478,7 @@ class _AnalyzeSlide extends StatelessWidget {
                   borderRadius: BorderRadius.circular(14),
                   child: Image.asset(
                     'assets/images/onboarding/analyze_screenshot.png',
-                    fit: BoxFit.cover,
+                    fit: BoxFit.contain,
                     errorBuilder: (context, error, stackTrace) => Container(
                       color: WFColors.gray800,
                       child: Column(
@@ -580,7 +580,7 @@ class _PowerSlide extends StatelessWidget {
               // App screenshot
               Container(
                 width: double.infinity,
-                height: screenHeight * 0.6,
+                height: screenHeight * 0.35,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
                   border: Border.all(
@@ -592,7 +592,7 @@ class _PowerSlide extends StatelessWidget {
                   borderRadius: BorderRadius.circular(14),
                   child: Image.asset(
                     'assets/images/onboarding/power_screenshot.png',
-                    fit: BoxFit.cover,
+                    fit: BoxFit.contain,
                     errorBuilder: (context, error, stackTrace) => Container(
                       color: WFColors.gray800,
                       child: Column(
