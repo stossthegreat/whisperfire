@@ -238,7 +238,7 @@ class _LessonsSlide extends StatelessWidget {
               // App screenshot
               Center(
                 child: FractionallySizedBox(
-                  widthFactor: 0.78,
+                  widthFactor: 0.5,
                   child: Container(
                 width: double.infinity,
                 height: null,
@@ -357,7 +357,7 @@ class _MentorsSlide extends StatelessWidget {
               // App screenshot
               Center(
                 child: FractionallySizedBox(
-                  widthFactor: 0.78,
+                  widthFactor: 0.5,
                   child: Container(
                 width: double.infinity,
                 height: null,
@@ -476,7 +476,7 @@ class _AnalyzeSlide extends StatelessWidget {
               // App screenshot
               Center(
                 child: FractionallySizedBox(
-                  widthFactor: 0.78,
+                  widthFactor: 0.5,
                   child: Container(
                 width: double.infinity,
                 height: null,
