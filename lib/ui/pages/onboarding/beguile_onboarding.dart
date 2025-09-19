@@ -238,7 +238,7 @@ class _LessonsSlide extends StatelessWidget {
               // App screenshot
               Container(
                 width: double.infinity,
-                height: screenHeight * 0.35,
+                height: screenHeight * 0.6,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
                   border: Border.all(
@@ -352,7 +352,7 @@ class _MentorsSlide extends StatelessWidget {
               // App screenshot
               Container(
                 width: double.infinity,
-                height: screenHeight * 0.35,
+                height: screenHeight * 0.6,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
                   border: Border.all(
@@ -466,7 +466,7 @@ class _AnalyzeSlide extends StatelessWidget {
               // App screenshot
               Container(
                 width: double.infinity,
-                height: screenHeight * 0.35,
+                height: screenHeight * 0.6,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
                   border: Border.all(
@@ -580,7 +580,7 @@ class _PowerSlide extends StatelessWidget {
               // App screenshot
               Container(
                 width: double.infinity,
-                height: screenHeight * 0.35,
+                height: screenHeight * 0.6,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
                   border: Border.all(
