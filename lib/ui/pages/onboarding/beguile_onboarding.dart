@@ -241,7 +241,7 @@ class _LessonsSlide extends StatelessWidget {
                   widthFactor: 0.5,
                   child: Container(
                 width: double.infinity,
-                height: null,
+                height: screenHeight * 0.23,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
                   border: Border.all(
@@ -253,7 +253,7 @@ class _LessonsSlide extends StatelessWidget {
                   borderRadius: BorderRadius.circular(14),
                   child: Image.asset(
                     'assets/images/onboarding/lessons_screenshot.png',
-                    fit: BoxFit.fitWidth,
+                    fit: BoxFit.contain,
                     errorBuilder: (context, error, stackTrace) => Container(
                       color: WFColors.gray800,
                       child: Column(
@@ -360,7 +360,7 @@ class _MentorsSlide extends StatelessWidget {
                   widthFactor: 0.5,
                   child: Container(
                 width: double.infinity,
-                height: null,
+                height: screenHeight * 0.23,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
                   border: Border.all(
@@ -372,7 +372,7 @@ class _MentorsSlide extends StatelessWidget {
                   borderRadius: BorderRadius.circular(14),
                   child: Image.asset(
                     'assets/images/onboarding/mentors_screenshot.png',
-                    fit: BoxFit.fitWidth,
+                    fit: BoxFit.contain,
                     errorBuilder: (context, error, stackTrace) => Container(
                       color: WFColors.gray800,
                       child: Column(
@@ -479,7 +479,7 @@ class _AnalyzeSlide extends StatelessWidget {
                   widthFactor: 0.5,
                   child: Container(
                 width: double.infinity,
-                height: null,
+                height: screenHeight * 0.23,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
                   border: Border.all(
@@ -491,7 +491,7 @@ class _AnalyzeSlide extends StatelessWidget {
                   borderRadius: BorderRadius.circular(14),
                   child: Image.asset(
                     'assets/images/onboarding/analyze_screenshot.png',
-                    fit: BoxFit.fitWidth,
+                    fit: BoxFit.contain,
                     errorBuilder: (context, error, stackTrace) => Container(
                       color: WFColors.gray800,
                       child: Column(
