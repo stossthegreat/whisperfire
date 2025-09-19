@@ -236,7 +236,10 @@ class _LessonsSlide extends StatelessWidget {
               SizedBox(height: screenHeight * 0.04),
 
               // App screenshot
-              Container(
+              Center(
+                child: FractionallySizedBox(
+                  widthFactor: 0.78,
+                  child: Container(
                 width: double.infinity,
                 height: null,
                 decoration: BoxDecoration(
@@ -282,6 +285,8 @@ class _LessonsSlide extends StatelessWidget {
                       ),
                     ),
                   ),
+                ),
+              ),
                 ),
               ),
               SizedBox(height: screenHeight * 0.03),
@@ -350,7 +355,10 @@ class _MentorsSlide extends StatelessWidget {
               SizedBox(height: screenHeight * 0.04),
 
               // App screenshot
-              Container(
+              Center(
+                child: FractionallySizedBox(
+                  widthFactor: 0.78,
+                  child: Container(
                 width: double.infinity,
                 height: null,
                 decoration: BoxDecoration(
@@ -396,6 +404,8 @@ class _MentorsSlide extends StatelessWidget {
                       ),
                     ),
                   ),
+                ),
+              ),
                 ),
               ),
               SizedBox(height: screenHeight * 0.03),
@@ -464,7 +474,10 @@ class _AnalyzeSlide extends StatelessWidget {
               SizedBox(height: screenHeight * 0.04),
 
               // App screenshot
-              Container(
+              Center(
+                child: FractionallySizedBox(
+                  widthFactor: 0.78,
+                  child: Container(
                 width: double.infinity,
                 height: null,
                 decoration: BoxDecoration(
@@ -510,6 +523,8 @@ class _AnalyzeSlide extends StatelessWidget {
                       ),
                     ),
                   ),
+                ),
+              ),
                 ),
               ),
               SizedBox(height: screenHeight * 0.03),
