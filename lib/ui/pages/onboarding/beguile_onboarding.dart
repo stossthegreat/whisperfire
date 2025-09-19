@@ -236,10 +236,7 @@ class _LessonsSlide extends StatelessWidget {
               SizedBox(height: screenHeight * 0.04),
 
               // App screenshot
-              Center(
-                child: FractionallySizedBox(
-                  widthFactor: 0.5,
-                  child: Container(
+              Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
@@ -251,30 +248,15 @@ class _LessonsSlide extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(14),
                   child: AspectRatio(
-                    aspectRatio: 16/9,
-                    child: Stack(
-                      children: [
-                        Positioned.fill(
-                          child: Image.asset(
-                    'assets/images/onboarding/lessons_screenshot.png',
-                    fit: BoxFit.cover,
-                    errorBuilder: (context, error, stackTrace) => Container(
-                      color: WFColors.gray800,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.school,
-                            size: screenWidth * 0.12,
-                            color: WFColors.purple400,
-                          ),
-                  ),
-                        ),
-                      ],
+                    aspectRatio: 16 / 9,
+                    child: Image.asset(
+                      'assets/images/onboarding/lessons_screenshot.png',
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) => Container(
+                        color: WFColors.gray800,
+                      ),
                     ),
                   ),
-                ),
-              ),
                 ),
               ),
               SizedBox(height: screenHeight * 0.03),
@@ -343,10 +325,7 @@ class _MentorsSlide extends StatelessWidget {
               SizedBox(height: screenHeight * 0.04),
 
               // App screenshot
-              Center(
-                child: FractionallySizedBox(
-                  widthFactor: 0.5,
-                  child: Container(
+              Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
@@ -358,30 +337,15 @@ class _MentorsSlide extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(14),
                   child: AspectRatio(
-                    aspectRatio: 16/9,
-                    child: Stack(
-                      children: [
-                        Positioned.fill(
-                          child: Image.asset(
-                    'assets/images/onboarding/mentors_screenshot.png',
-                    fit: BoxFit.cover,
-                    errorBuilder: (context, error, stackTrace) => Container(
-                      color: WFColors.gray800,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.psychology,
-                            size: screenWidth * 0.12,
-                            color: WFColors.purple400,
-                          ),
-                  ),
-                        ),
-                      ],
+                    aspectRatio: 16 / 9,
+                    child: Image.asset(
+                      'assets/images/onboarding/mentors_screenshot.png',
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) => Container(
+                        color: WFColors.gray800,
+                      ),
                     ),
                   ),
-                ),
-              ),
                 ),
               ),
               SizedBox(height: screenHeight * 0.03),
@@ -450,10 +414,7 @@ class _AnalyzeSlide extends StatelessWidget {
               SizedBox(height: screenHeight * 0.04),
 
               // App screenshot
-              Center(
-                child: FractionallySizedBox(
-                  widthFactor: 0.5,
-                  child: Container(
+              Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
@@ -465,30 +426,15 @@ class _AnalyzeSlide extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(14),
                   child: AspectRatio(
-                    aspectRatio: 16/9,
-                    child: Stack(
-                      children: [
-                        Positioned.fill(
-                          child: Image.asset(
-                    'assets/images/onboarding/analyze_screenshot.png',
-                    fit: BoxFit.cover,
-                    errorBuilder: (context, error, stackTrace) => Container(
-                      color: WFColors.gray800,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.analytics,
-                            size: screenWidth * 0.12,
-                            color: WFColors.purple400,
-                          ),
-                  ),
-                        ),
-                      ],
+                    aspectRatio: 16 / 9,
+                    child: Image.asset(
+                      'assets/images/onboarding/analyze_screenshot.png',
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) => Container(
+                        color: WFColors.gray800,
+                      ),
                     ),
                   ),
-                ),
-              ),
                 ),
               ),
               SizedBox(height: screenHeight * 0.03),
